@@ -16,7 +16,7 @@ LEVEL_LABELS = {
 
 TYPE_LABELS = {
     "rss": "RSS",
-    "github_release": "GitHub 发布",
+    "github_release": "GitHub Releases",
     "hackernews": "Hacker News",
 }
 
@@ -305,13 +305,14 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     level_label = LEVEL_LABELS.get(item.get("source_level"), "待验证")
     source_name = item.get("source_name") or "未知来源"
     type_label = TYPE_LABELS.get(source_type, source_type or "未知")
+    channel_label = "发布渠道" if source_type == "github_release" else "来源类型"
     matched = "、".join(item.get("matched_keywords") or []) or "无"
     core_excerpt = _core_excerpt(item)
     translated_excerpt = _rule_based_translation(core_excerpt, item)
     lines = [
         f"### {index}. {item.get('title') or '无标题'}",
         "",
-        f"**判断：{level_label}｜{source_name}｜{type_label}｜规则分 {item.get('score', 0)}**",
+        f"**判断：{level_label}｜信息来源：{source_name}｜{channel_label}：{type_label}｜规则分 {item.get('score', 0)}**",
         "",
         f"- 为什么值得看：{_one_line_reason(item)}",
         f"- 发布时间：{format_local_time(item.get('published_at'))}",

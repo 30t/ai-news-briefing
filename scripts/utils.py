@@ -83,7 +83,7 @@ def normalize_space(value: Optional[str]) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
 
-def excerpt(value: Optional[str], limit: int = 420) -> str:
+def excerpt(value: Optional[str], limit: int = 1200) -> str:
     text = normalize_space(strip_html(value))
     if len(text) <= limit:
         return text

@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import re
 from datetime import datetime
 from typing import Any
 
-from utils import format_local_time
+from utils import format_local_time, normalize_space, strip_html
 
 
 LEVEL_LABELS = {
@@ -18,6 +19,189 @@ TYPE_LABELS = {
     "github_release": "GitHub 发布",
     "hackernews": "Hacker News",
 }
+
+GLOSSARY = {
+    "Claude Desktop": "Claude 桌面版",
+    "Claude Code": "Claude Code 编程工具",
+    "GitHub Release": "GitHub 发布",
+    "Hacker News": "Hacker News 技术社区",
+    "open source": "开源",
+    "OpenAI": "OpenAI",
+    "Anthropic": "Anthropic",
+    "DeepMind": "DeepMind",
+    "Meta AI": "Meta AI",
+    "benchmark": "基准测试",
+    "release": "发布",
+    "pricing": "定价",
+    "API": "API",
+    "agent": "智能体",
+    "Agent": "智能体",
+    "coding": "编程",
+    "workflow": "工作流",
+    "automation": "自动化",
+    "inference": "推理",
+    "fine-tuning": "微调",
+    "model": "模型",
+    "models": "模型",
+    "GPU": "GPU",
+    "CUDA": "CUDA",
+    "semiconductor": "半导体",
+    "funding": "融资",
+    "startup": "创业公司",
+    "partnership": "合作",
+    "enterprise": "企业",
+    "productivity": "生产力",
+}
+
+
+def _split_sentences(text: str) -> list[str]:
+    cleaned = normalize_space(strip_html(text))
+    if not cleaned:
+        return []
+    chunks = re.split(r"(?<=[.!?。！？])\s+|\n+", cleaned)
+    return [chunk.strip(" -•*") for chunk in chunks if len(chunk.strip()) >= 24]
+
+
+def _sentence_score(sentence: str, item: dict[str, Any]) -> int:
+    lower = sentence.lower()
+    score = 0
+    for keyword in item.get("matched_keywords") or []:
+        if str(keyword).lower() in lower:
+            score += 8
+    title_words = re.findall(r"[a-zA-Z0-9][a-zA-Z0-9.+#-]{2,}", item.get("title", "").lower())
+    for word in set(title_words):
+        if word in lower:
+            score += 2
+    signal_words = (
+        "release",
+        "launched",
+        "announced",
+        "supports",
+        "now",
+        "new",
+        "benchmark",
+        "performance",
+        "pricing",
+        "api",
+        "model",
+        "open source",
+        "github",
+        "gpu",
+        "cuda",
+    )
+    for word in signal_words:
+        if word in lower:
+            score += 3
+    if 60 <= len(sentence) <= 260:
+        score += 4
+    if sentence.startswith(("http://", "https://")):
+        score -= 8
+    if len(re.findall(r"https?://", sentence)) >= 2:
+        score -= 8
+    return score
+
+
+def _core_excerpt(item: dict[str, Any], limit: int = 520) -> str:
+    raw = item.get("summary_or_excerpt") or ""
+    sentences = _split_sentences(raw)
+    if not sentences:
+        return "暂无摘要，请查看原文。"
+    ranked = sorted(enumerate(sentences), key=lambda pair: _sentence_score(pair[1], item), reverse=True)
+    selected_indexes = sorted(index for index, _sentence in ranked[:2])
+    selected = " ".join(sentences[index] for index in selected_indexes)
+    selected = normalize_space(selected)
+    if len(selected) <= limit:
+        return selected
+    return selected[: limit - 1].rstrip() + "..."
+
+
+def _rule_based_translation(text: str) -> str:
+    if not text or text == "暂无摘要，请查看原文。":
+        return "暂无可翻译摘要，请查看原文。"
+    text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
+    text = re.sub(r"`([^`]+)`", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    translated_sentences = []
+    for sentence in _split_sentences(text) or [text]:
+        translated_sentences.append(_translate_sentence(sentence))
+    return normalize_space(" ".join(translated_sentences))
+
+
+def _translate_sentence(sentence: str) -> str:
+    patterns = [
+        (
+            r"Both (?P<a>.+?) and (?P<b>.+?) are supported within the (?P<c>.+?) App\.?$",
+            lambda match: f"{match.group('c')} 应用内已经支持 {match.group('a')} 和 {match.group('b')}。",
+        ),
+        (
+            r"(?P<a>.+?) on the terminal can still be accessed through the CLI with (?P<cmd>.+?)\.?$",
+            lambda match: f"终端里的 {match.group('a')} 仍可通过 CLI 命令 {match.group('cmd')} 访问。",
+        ),
+        (
+            r"(?P<a>.+?) is now supported with (?P<b>.+?)\.?$",
+            lambda match: f"{match.group('a')} 现在可通过 {match.group('b')} 支持。",
+        ),
+        (
+            r"(?P<a>.+?) now supports (?P<b>.+?)\.?$",
+            lambda match: f"{match.group('a')} 现在支持 {match.group('b')}。",
+        ),
+        (
+            r"(?P<a>.+?) supports (?P<b>.+?)\.?$",
+            lambda match: f"{match.group('a')} 支持 {match.group('b')}。",
+        ),
+        (
+            r"fix:\s*(?P<a>.+)$",
+            lambda match: f"修复：{match.group('a')}。",
+        ),
+        (
+            r"(?P<a>.+?) beats (?P<b>.+?) in (?P<c>.+?)\.?$",
+            lambda match: f"{match.group('a')} 在 {match.group('c')} 中超过了 {match.group('b')}。",
+        ),
+        (
+            r"(?P<a>.+?) is the best (?P<b>.+?) for (?P<c>.+?)\.?$",
+            lambda match: f"{match.group('a')} 是用于 {match.group('c')} 的最佳 {match.group('b')}。",
+        ),
+    ]
+    for pattern, builder in patterns:
+        match = re.search(pattern, sentence, flags=re.IGNORECASE)
+        if match:
+            return _apply_glossary(builder(match))
+
+    translated = _apply_glossary(sentence)
+    ascii_letters = len(re.findall(r"[A-Za-z]", translated))
+    if ascii_letters > max(80, len(translated) * 0.45):
+        return f"规则版暂不能完整翻译这句，请以原文为准：{sentence}"
+    return translated
+
+
+def _apply_glossary(text: str) -> str:
+    translated = text
+    for english, chinese in sorted(GLOSSARY.items(), key=lambda pair: len(pair[0]), reverse=True):
+        translated = re.sub(re.escape(english), chinese, translated, flags=re.IGNORECASE)
+    replacements = [
+        (r"\bnow supports\b", "现在支持"),
+        (r"\bis now supported with\b", "现在可通过以下方式支持"),
+        (r"\bcan still be accessed through\b", "仍可通过以下方式访问"),
+        (r"\bwhat'?s changed\b", "主要变化"),
+        (r"\bfix:\b", "修复："),
+        (r"\bnew\b", "新的"),
+        (r"\blaunch\b", "启动"),
+        (r"\blaunched\b", "已发布"),
+        (r"\bannounced\b", "宣布"),
+        (r"\bsupported\b", "支持"),
+        (r"\bsupports\b", "支持"),
+        (r"\bperformance\b", "性能"),
+        (r"\bcompared\b", "对比"),
+        (r"\bfully local\b", "完全本地运行"),
+        (r"\bsingle\b", "单个"),
+        (r"\bWindows\b", "Windows"),
+        (r"\bMac\b", "Mac"),
+        (r"\bno Docker\b", "不需要 Docker"),
+        (r"\bno WSL\b", "不需要 WSL"),
+    ]
+    for pattern, replacement in replacements:
+        translated = re.sub(pattern, replacement, translated, flags=re.IGNORECASE)
+    return normalize_space(translated)
 
 
 def _read_hint(level: str) -> str:
@@ -72,6 +256,8 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     source_name = item.get("source_name") or "未知来源"
     type_label = TYPE_LABELS.get(source_type, source_type or "未知")
     matched = "、".join(item.get("matched_keywords") or []) or "无"
+    core_excerpt = _core_excerpt(item)
+    translated_excerpt = _rule_based_translation(core_excerpt)
     lines = [
         f"### {index}. {item.get('title') or '无标题'}",
         "",
@@ -87,7 +273,10 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     lines.extend(
         [
             "- 原文摘录：",
-            f"  > {item.get('summary_or_excerpt') or '暂无摘要，请查看原文。'}",
+            f"  > {core_excerpt}",
+            "",
+            "- 中文翻译（规则版，仅供快速理解）：",
+            f"  > {translated_excerpt}",
             "",
             f"- 阅读提醒：{_read_hint(item.get('source_level', 'needs_verification'))}",
             "",
@@ -112,6 +301,7 @@ def generate_markdown(items: list[dict[str, Any]], total_count: int, max_items: 
         "- 官方确认：公司官方博客、官方 changelog、论文源或开源项目发布页，可信度较高。",
         "- 技术社区：Hacker News、Reddit、技术博客等，适合看热度和工程讨论。",
         "- 早期信号 / 待验证：适合发现苗头，但需要等待官方或多来源确认。",
+        "- 中文翻译：当前为 No API Key 规则版参考翻译，不调用模型 API；准确含义仍以原文为准。",
         "",
     ]
     if not items:

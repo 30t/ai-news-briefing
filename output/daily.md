@@ -16,9 +16,9 @@
 
 这一部分可信度最高，适合先读。仍建议点开原文确认细节和上下文。
 
-### 1. Ollama: v0.23.0
+### 1. Ollama v0.23.0：支持 Claude Desktop 与 Claude Code 启动
 
-**判断：官方确认｜Ollama｜GitHub 发布｜规则分 83**
+**判断：官方确认｜信息来源：Ollama｜发布渠道：GitHub Releases｜规则分 83**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 Claude、Claude Code、GitHub 等关键词，值得快速浏览。
 - 发布时间：2026-05-03 03:34
@@ -34,9 +34,9 @@
 
 ---
 
-### 2. llama.cpp: b9010
+### 2. llama.cpp b9010：fix: CUDA device PCI bus ID de-dupe OOMing (ignoring other 3 gpus entirely) (#22533)
 
-**判断：官方确认｜llama.cpp｜GitHub 发布｜规则分 80**
+**判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 CUDA、GitHub、GPU、Llama 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 22:08
@@ -52,13 +52,85 @@
 
 ---
 
+### 3. llama.cpp b9006：opencl: Adreno optimization for MoE - MxFP4 (#22301)
+
+**判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
+
+- 为什么值得看：来自官方或项目发布渠道，命中 GitHub、GPU、Llama 等关键词，值得快速浏览。
+- 发布时间：2026-05-02 08:37
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9006
+- 命中关键词：GitHub、GPU、Llama
+- 原文摘录：
+  > MoE Mxfp4 CLC kernel added, router reorder on GPU. remove putenv in llama-model.cpp.
+
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > MoE Mxfp4 CLC kernel added, router reorder on GPU. remove putenv in llama-模型.cpp.
+
+- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+
+---
+
+### 4. llama.cpp b9009：server : avoid checkpoint data host copies (#22558)
+
+**判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
+
+- 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
+- 发布时间：2026-05-02 16:51
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9009
+- 命中关键词：GitHub、Llama
+- 原文摘录：
+  > server : avoid checkpoint data host copies ( 22558). server : avoid checkpoint data host copies.
+
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > server : avoid checkpoint data host copies ( 22558). server : avoid checkpoint data host copies.
+
+- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+
+---
+
+### 5. llama.cpp b9008：ggml-virtgpu: fix circular dependency in headers (#22557)
+
+**判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
+
+- 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
+- 发布时间：2026-05-02 15:32
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9008
+- 命中关键词：GitHub、Llama
+- 原文摘录：
+  > ggml-virtgpu: fix circular dependency in headers ( 22557)
+
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > ggml-virtGPU: fix circular dependency in headers ( 22557)
+
+- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+
+---
+
+### 6. llama.cpp b9004：sync : ggml
+
+**判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
+
+- 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
+- 发布时间：2026-05-02 08:24
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9004
+- 命中关键词：GitHub、Llama
+- 原文摘录：
+  > 暂无摘要，请查看原文。
+
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 暂无可翻译摘要，请查看原文。
+
+- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+
+---
+
 ## 二、技术社区正在讨论
 
 这一部分反映社区热度和工程师关注点，可以用来发现趋势，但不能直接当作事实结论。
 
-### 3. Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer
+### 7. Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 65**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 65**
 
 - 为什么值得看：来自技术社区讨论，命中 GitHub、GPU、open source、OpenAI 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 08:12
@@ -74,9 +146,9 @@
 
 ---
 
-### 4. Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.
+### 8. Warpdrv - my open-source Llama.cpp launcher for daily-driving Qwen 35b + 27b on Strix Halo + RTX Pro.
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 58**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 58**
 
 - 为什么值得看：来自技术社区讨论，命中 Blackwell、Claude、CUDA、GitHub 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 17:33
@@ -92,9 +164,9 @@
 
 ---
 
-### 5. I implemented meta paper [P]
+### 9. I implemented meta paper [P]
 
-**判断：技术社区｜Reddit r/MachineLearning｜RSS｜规则分 53**
+**判断：技术社区｜信息来源：Reddit r/MachineLearning｜来源类型：RSS｜规则分 53**
 
 - 为什么值得看：来自技术社区讨论，命中 API、benchmark、Gemini、GitHub 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 14:37
@@ -110,9 +182,9 @@
 
 ---
 
-### 6. GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.
+### 10. GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 50**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Codex、GPT 等关键词，值得快速浏览。
 - 发布时间：2026-05-03 01:35
@@ -128,9 +200,9 @@
 
 ---
 
-### 7. Sightings
+### 11. Sightings
 
-**判断：技术社区｜Simon Willison｜RSS｜规则分 50**
+**判断：技术社区｜信息来源：Simon Willison｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Claude、Claude Code 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 17:26
@@ -146,9 +218,9 @@
 
 ---
 
-### 8. We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local
+### 12. We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 50**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Agent、GPT 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 11:21
@@ -164,9 +236,9 @@
 
 ---
 
-### 9. [RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M
+### 13. [RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 45**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 45**
 
 - 为什么值得看：来自技术社区讨论，命中 GPU、release 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 10:52
@@ -182,9 +254,9 @@
 
 ---
 
-### 10. A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat
+### 14. A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 45**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 45**
 
 - 为什么值得看：来自技术社区讨论，命中 funding、open source、OpenAI 等关键词，值得快速浏览。
 - 发布时间：2026-05-02 06:35
@@ -200,66 +272,66 @@
 
 ---
 
-### 11. The agent harness belongs outside the sandbox
+### 15. The agent harness belongs outside the sandbox
 
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 40**
+**判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 87 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 88 分，建议结合原文判断。
 - 发布时间：2026-05-02 21:21
 - 原文链接：https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox
 - 命中关键词：Agent
-- HN 分数：87
+- HN 分数：88
 - 原文摘录：
-  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 87.
+  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 88.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 87 分。
+  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 88 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 12. Open Design: Use Your Coding Agent as a Design Engine
+### 16. Open Design: Use Your Coding Agent as a Design Engine
 
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 40**
+**判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 196 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 197 分，建议结合原文判断。
 - 发布时间：2026-05-02 12:16
 - 原文链接：https://github.com/nexu-io/open-design
 - 命中关键词：Agent
-- HN 分数：196
+- HN 分数：197
 - 原文摘录：
-  > Hacker News discussion: Open Design: Use Your Coding Agent as a Design Engine. HN points: 196.
+  > Hacker News discussion: Open Design: Use Your Coding Agent as a Design Engine. HN points: 197.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Open Design: Use Your Coding Agent as a Design Engine》的讨论，当前热度约 196 分。
+  > Hacker News 上关于《Open Design: Use Your Coding Agent as a Design Engine》的讨论，当前热度约 197 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 13. Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge
+### 17. Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge
 
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
+**判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 121 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 137 分，建议结合原文判断。
 - 发布时间：2026-05-03 04:05
 - 原文链接：https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
 - 命中关键词：Claude、Gemini、GPT、Kimi
-- HN 分数：121
+- HN 分数：137
 - 原文摘录：
-  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 121.
+  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 137.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 121 分。
+  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 137 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 14. CAISI releases evaluation report: DeepSeek V4 becomes the most powerful model in China, but still lags about 8 months behind the US frontier
+### 18. CAISI releases evaluation report: DeepSeek V4 becomes the most powerful model in China, but still lags about 8 months behind the US frontier
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 35**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 DeepSeek 等关键词，值得快速浏览。
 - 发布时间：2026-05-03 03:10
@@ -275,28 +347,28 @@
 
 ---
 
-### 15. Open source does not imply open community
+### 19. Open source does not imply open community
 
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
+**判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 112 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 114 分，建议结合原文判断。
 - 发布时间：2026-05-03 02:36
 - 原文链接：https://blog.feld.me/posts/2026/04/open-source-does-not-imply-open-community
 - 命中关键词：open source
-- HN 分数：112
+- HN 分数：114
 - 原文摘录：
-  > Hacker News discussion: Open source does not imply open community. HN points: 112.
+  > Hacker News discussion: Open source does not imply open community. HN points: 114.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 112 分。
+  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 114 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 16. Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)
+### 20. Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)
 
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 35**
+**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 Gemini、Qwen 等关键词，值得快速浏览。
 - 发布时间：2026-05-03 01:08
@@ -307,80 +379,6 @@
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
   > 规则版大意：Reddit r/LocalLLaMA 的这条信息《Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)》主要涉及 Gemini、Qwen。原文细节较多，建议点开原文确认完整语境。 Key findings: Qwen-Image Lightning (8-step distillation) 在 quality while being 9x faster (10min vs 93min) Flux dev is the best local 模型 for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is ro.. 中超过了 the full 模型。
-
-- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
-
----
-
-### 17. I made a visualizer for Hugging Face models
-
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 35**
-
-- 为什么值得看：来自技术社区讨论，命中 Qwen 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 23:18
-- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t24y4p/i_made_a_visualizer_for_hugging_face_models
-- 命中关键词：Qwen
-- 原文摘录：
-  > I built hfviewer.com , a small tool for visually exploring Hugging Face model architectures. Here is the recent Qwen3.6-27B model as an example: And here is a side-by-side view of the Gemma 4 family: Feel free to try it out and give me feedback on how it can be improved!
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > I built hfviewer.com , a small tool for visually exploring Hugging Face 模型 architectures. 规则版大意：Reddit r/LocalLLaMA 的这条信息《I made a visualizer for Hugging Face models》主要涉及 Qwen。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
-
----
-
-### 18. The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious
-
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
-
-- 为什么值得看：来自技术社区讨论，HN 热度 63 分，建议结合原文判断。
-- 发布时间：2026-05-02 22:44
-- 原文链接：https://www.dailygrail.com/2026/05/the-claude-delusion-richard-dawkins-believes-his-female-ai-chatbot-is-conscious
-- 命中关键词：Claude
-- HN 分数：63
-- 原文摘录：
-  > Hacker News discussion: The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious. HN points: 63.
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious》的讨论，当前热度约 63 分。
-
-- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
-
----
-
-### 19. Qwen/SAE-Res-Qwen3.5-27B-W80K-L0_100 · Hugging Face
-
-**判断：技术社区｜Reddit r/LocalLLaMA｜RSS｜规则分 35**
-
-- 为什么值得看：来自技术社区讨论，命中 Qwen 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 21:45
-- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t22s9l/qwensaeresqwen3527bw80kl0_100_hugging_face
-- 命中关键词：Qwen
-- 原文摘录：
-  > one of my next research steps was going to be on vector based model steering, and look at the gift that qwen gave us. You can learn about this here submitted by /u/FaustAg [link] [comments]
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《Qwen/SAE-Res-Qwen3.5-27B-W80K-L0_100 · Hugging Face》主要涉及 Qwen。原文细节较多，建议点开原文确认完整语境。 You can learn about this here submitted by /u/FaustAg [link] [comments]
-
-- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
-
----
-
-### 20. Clojurists Together – Q2 2026 Open Source Funding Announcement
-
-**判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
-
-- 为什么值得看：来自技术社区讨论，HN 热度 81 分，建议结合原文判断。
-- 发布时间：2026-05-02 21:34
-- 原文链接：https://www.clojuriststogether.org/news/q2-2026-funding-announcement
-- 命中关键词：funding、open source
-- HN 分数：81
-- 原文摘录：
-  > Hacker News discussion: Clojurists Together – Q2 2026 Open Source Funding Announcement. HN points: 81.
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Clojurists Together – Q2 2026 Open Source Funding Announcement》的讨论，当前热度约 81 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 

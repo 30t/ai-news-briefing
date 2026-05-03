@@ -75,7 +75,7 @@ def _call_openai_compatible(item: dict[str, Any], config: dict[str, Any], api_ke
     base_url = str(config.get("base_url") or "https://api.deepseek.com").rstrip("/")
     endpoint = f"{base_url}/chat/completions"
     payload = {
-        "model": config.get("model", "deepseek-chat"),
+        "model": config.get("model", "deepseek-v4-flash"),
         "temperature": float(config.get("temperature", 0.2)),
         "max_tokens": int(config.get("max_output_tokens", 700)),
         "response_format": {"type": "json_object"},

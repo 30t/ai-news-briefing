@@ -2,7 +2,7 @@
 
 ## 当前推荐
 
-第一版 LLM 增强默认使用 DeepSeek `deepseek-chat`。模型只处理规则筛选后的 Top 20，不处理全部抓取结果。
+第一版 LLM 增强默认使用 DeepSeek `deepseek-v4-flash`。模型只处理规则筛选后的 Top 20，不处理全部抓取结果。
 
 选择理由：
 
@@ -13,7 +13,7 @@
 
 ## DeepSeek 价格
 
-按 DeepSeek 官方 API 文档，`deepseek-chat` 价格为：
+按 DeepSeek 官方 API 文档，DeepSeek API 按输入和输出 token 收费。当前配置默认使用 `deepseek-v4-flash`，适合低成本日常早报。
 
 - 输入 cache hit：`$0.07 / 100万 tokens`
 - 输入 cache miss：`$0.27 / 100万 tokens`
@@ -25,13 +25,13 @@
 
 ## 为什么不用 reasoner
 
-`deepseek-reasoner` 更适合复杂推理、数学、代码分析等任务。本项目第一阶段主要做：
+`deepseek-v4-pro` 和 `deepseek-reasoner` 更适合复杂推理、数学、代码分析等任务。本项目第一阶段主要做：
 
 - 中文标题生成
 - 核心内容提炼
 - 为什么值得关注
 
-这些任务用 `deepseek-chat` 更划算。
+这些任务用 `deepseek-v4-flash` 更划算。
 
 ## 国内外模型对比
 

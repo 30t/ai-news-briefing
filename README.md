@@ -12,7 +12,7 @@
 
 ## DeepSeek 成本预估
 
-第一版 LLM 增强默认使用 DeepSeek `deepseek-chat`。按 DeepSeek 官方 API 价格：
+第一版 LLM 增强默认使用 DeepSeek `deepseek-v4-flash`。按 DeepSeek 官方 API 价格：
 
 - 输入 cache hit：`$0.07 / 100万 tokens`
 - 输入 cache miss：`$0.27 / 100万 tokens`
@@ -27,7 +27,7 @@
 - 只对 Top 20 新闻调用模型，不总结全部抓取结果。
 - 每条新闻限制正文片段长度、输入摘要长度和模型输出长度。
 - API 调用失败时自动回退规则版。
-- 第一版使用 `deepseek-chat`，暂不使用更贵的 `deepseek-reasoner`。
+- 第一版使用 `deepseek-v4-flash`，暂不使用更贵的 `deepseek-v4-pro` 或 `deepseek-reasoner`。
 - API Key 只放在 GitHub Secrets 或本地环境变量，不写入代码。
 
 ## 配置新闻来源
@@ -67,7 +67,7 @@
 
 - `enabled`：是否启用模型增强。即使为 `true`，没有 API Key 时也会自动回退规则版。
 - `provider`：默认 `deepseek`。
-- `model`：默认 `deepseek-chat`。
+- `model`：默认 `deepseek-v4-flash`。
 - `base_url`：默认 `https://api.deepseek.com`。
 - `api_key_env`：默认从 `LLM_API_KEY` 读取。
 - `fallback_api_key_env`：默认也支持 `DEEPSEEK_API_KEY`。

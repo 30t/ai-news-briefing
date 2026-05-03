@@ -55,11 +55,37 @@ GLOSSARY = {
 
 
 def _split_sentences(text: str) -> list[str]:
-    cleaned = normalize_space(strip_html(text))
+    cleaned = _clean_excerpt_text(text)
     if not cleaned:
         return []
     chunks = re.split(r"(?<=[.!?。！？])\s+|\n+", cleaned)
-    return [chunk.strip(" -•*") for chunk in chunks if len(chunk.strip()) >= 24]
+    sentences = []
+    for chunk in chunks:
+        sentence = chunk.strip(" -•*")
+        if len(sentence) < 24:
+            continue
+        if sentence.lower().startswith(("comments:", "hn points:")):
+            continue
+        if len(re.findall(r"https?://", sentence)) >= 2:
+            continue
+        sentences.append(sentence)
+    return sentences
+
+
+def _clean_excerpt_text(text: str) -> str:
+    cleaned = strip_html(text)
+    cleaned = re.sub(r"```.*?```", " ", cleaned, flags=re.DOTALL)
+    cleaned = re.sub(r"`([^`]+)`", r"\1", cleaned)
+    cleaned = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", cleaned)
+    cleaned = re.sub(r"https?://\S+", " ", cleaned)
+    cleaned = re.sub(r"\*\*([^*]+)\*\*", r"\1", cleaned)
+    cleaned = re.sub(r"#+\s*", " ", cleaned)
+    cleaned = re.sub(r"\s+[-*]\s+", ". ", cleaned)
+    if "What's Changed" in cleaned:
+        cleaned = cleaned.split("What's Changed", 1)[0]
+    if "macOS/iOS:" in cleaned:
+        cleaned = cleaned.split("macOS/iOS:", 1)[0]
+    return normalize_space(cleaned)
 
 
 def _sentence_score(sentence: str, item: dict[str, Any]) -> int:
@@ -102,6 +128,11 @@ def _sentence_score(sentence: str, item: dict[str, Any]) -> int:
 
 
 def _core_excerpt(item: dict[str, Any], limit: int = 520) -> str:
+    if item.get("source_type") == "hackernews":
+        hn_score = item.get("hn_score")
+        if hn_score is not None:
+            return f"Hacker News discussion: {item.get('title', 'Untitled')}. HN points: {hn_score}."
+        return f"Hacker News discussion: {item.get('title', 'Untitled')}."
     raw = item.get("summary_or_excerpt") or ""
     sentences = _split_sentences(raw)
     if not sentences:
@@ -115,7 +146,7 @@ def _core_excerpt(item: dict[str, Any], limit: int = 520) -> str:
     return selected[: limit - 1].rstrip() + "..."
 
 
-def _rule_based_translation(text: str) -> str:
+def _rule_based_translation(text: str, item: dict[str, Any]) -> str:
     if not text or text == "暂无摘要，请查看原文。":
         return "暂无可翻译摘要，请查看原文。"
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
@@ -123,19 +154,29 @@ def _rule_based_translation(text: str) -> str:
     text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
     translated_sentences = []
     for sentence in _split_sentences(text) or [text]:
-        translated_sentences.append(_translate_sentence(sentence))
+        translated_sentences.append(_translate_sentence(sentence, item))
     return normalize_space(" ".join(translated_sentences))
 
 
-def _translate_sentence(sentence: str) -> str:
+def _translate_sentence(sentence: str, item: dict[str, Any]) -> str:
+    if sentence.startswith("Hacker News discussion:"):
+        title = item.get("title") or sentence.replace("Hacker News discussion:", "").strip()
+        hn_score = item.get("hn_score")
+        if hn_score is not None:
+            return f"Hacker News 上关于《{title}》的讨论，当前热度约 {hn_score} 分。"
+        return f"Hacker News 上关于《{title}》的讨论。"
     patterns = [
         (
             r"Both (?P<a>.+?) and (?P<b>.+?) are supported within the (?P<c>.+?) App\.?$",
             lambda match: f"{match.group('c')} 应用内已经支持 {match.group('a')} 和 {match.group('b')}。",
         ),
         (
-            r"(?P<a>.+?) on the terminal can still be accessed through the CLI with (?P<cmd>.+?)\.?$",
-            lambda match: f"终端里的 {match.group('a')} 仍可通过 CLI 命令 {match.group('cmd')} 访问。",
+            r"(?P<a>.+?) on the terminal can still be accessed through the CLI with:?\s*(?P<cmd>.*?)\.?$",
+            lambda match: f"终端里的 {match.group('a')} 仍可通过 CLI{(' 命令 ' + match.group('cmd')) if match.group('cmd') else ''} 访问。",
+        ),
+        (
+            r"(?P<a>.+?) on the terminal can still be accessed through the CLI\.?$",
+            lambda match: f"终端里的 {match.group('a')} 仍可通过 CLI 访问。",
         ),
         (
             r"(?P<a>.+?) is now supported with (?P<b>.+?)\.?$",
@@ -170,8 +211,17 @@ def _translate_sentence(sentence: str) -> str:
     translated = _apply_glossary(sentence)
     ascii_letters = len(re.findall(r"[A-Za-z]", translated))
     if ascii_letters > max(80, len(translated) * 0.45):
-        return f"规则版暂不能完整翻译这句，请以原文为准：{sentence}"
+        return _fallback_chinese_meaning(sentence, item)
     return translated
+
+
+def _fallback_chinese_meaning(sentence: str, item: dict[str, Any]) -> str:
+    source = item.get("source_name") or "该来源"
+    title = item.get("title") or "这条信息"
+    keywords = "、".join((item.get("matched_keywords") or [])[:5])
+    if keywords:
+        return f"规则版大意：{source} 的这条信息《{title}》主要涉及 {keywords}。原文细节较多，建议点开原文确认完整语境。"
+    return f"规则版大意：{source} 的这条信息《{title}》包含较多细节，建议点开原文确认完整语境。"
 
 
 def _apply_glossary(text: str) -> str:
@@ -257,7 +307,7 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     type_label = TYPE_LABELS.get(source_type, source_type or "未知")
     matched = "、".join(item.get("matched_keywords") or []) or "无"
     core_excerpt = _core_excerpt(item)
-    translated_excerpt = _rule_based_translation(core_excerpt)
+    translated_excerpt = _rule_based_translation(core_excerpt, item)
     lines = [
         f"### {index}. {item.get('title') or '无标题'}",
         "",
@@ -275,7 +325,7 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
             "- 原文摘录：",
             f"  > {core_excerpt}",
             "",
-            "- 中文翻译（规则版，仅供快速理解）：",
+            "- 中文翻译 / 大意（规则版，仅供快速理解）：",
             f"  > {translated_excerpt}",
             "",
             f"- 阅读提醒：{_read_hint(item.get('source_level', 'needs_verification'))}",

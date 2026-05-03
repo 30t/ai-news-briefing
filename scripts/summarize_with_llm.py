@@ -12,7 +12,7 @@ from utils import normalize_space, strip_html
 
 
 SYSTEM_PROMPT = """你是一个严谨的中文 AI 新闻编辑。
-你的任务是根据系统提供的结构化信息，改进中文标题和核心总结。
+你的任务是根据系统提供的结构化信息和可用正文片段，直接写出适合中文读者阅读的新闻标题和核心摘要。
 
 必须遵守：
 1. 只能基于输入内容写作，不得编造原文没有的信息。
@@ -20,7 +20,9 @@ SYSTEM_PROMPT = """你是一个严谨的中文 AI 新闻编辑。
 3. 保留公司名、模型名、项目名、版本号的英文原文。
 4. 不要把发布渠道误写成新闻主体。例如 GitHub Releases 是发布渠道，Ollama 才可能是项目来源。
 5. 来源等级由系统给出，你不能把社区讨论改写成官方确认。
-6. 输出必须是严格 JSON，不要包含 Markdown、解释或代码块。
+6. 中文标题由你直接决定，不要只是机械翻译原始标题；标题必须点出新闻主体和关键变化。
+7. 核心摘要优先基于正文片段，其次才参考 RSS 摘要；如果没有正文片段，必须更保守。
+8. 输出必须是严格 JSON，不要包含 Markdown、解释或代码块。
 """
 
 
@@ -79,7 +81,14 @@ def _call_openai_compatible(item: dict[str, Any], config: dict[str, Any], api_ke
         "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": _build_user_prompt(item, int(config.get("excerpt_input_limit", 1800)))},
+            {
+                "role": "user",
+                "content": _build_user_prompt(
+                    item,
+                    int(config.get("excerpt_input_limit", 1800)),
+                    int(config.get("article_text_limit", 5000)),
+                ),
+            },
         ],
     }
     request = urllib.request.Request(
@@ -108,10 +117,13 @@ def _call_openai_compatible(item: dict[str, Any], config: dict[str, Any], api_ke
         raise ValueError(f"invalid JSON response: {content[:300]}") from exc
 
 
-def _build_user_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
+def _build_user_prompt(item: dict[str, Any], excerpt_limit: int, article_limit: int) -> str:
     excerpt = strip_html(item.get("summary_or_excerpt") or "")
     if len(excerpt) > excerpt_limit:
         excerpt = excerpt[: excerpt_limit - 1].rstrip() + "..."
+    article_text = strip_html(item.get("article_text") or "")
+    if len(article_text) > article_limit:
+        article_text = article_text[: article_limit - 1].rstrip() + "..."
     source_context = {
         "original_title": item.get("title"),
         "url": item.get("url"),
@@ -124,13 +136,13 @@ def _build_user_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
         "hn_score": item.get("hn_score"),
         "release_version": item.get("release_version"),
         "summary_or_excerpt": excerpt,
+        "article_text": article_text,
+        "article_text_source": item.get("article_text_source"),
     }
     schema = {
-        "improved_title_zh": "准确中文标题，尽量不超过 32 个汉字；保留必要英文名和版本号",
-        "core_summary_zh": "1-2 句中文核心总结，说明原文到底说了什么",
+        "final_title_zh": "你直接决定的准确中文标题，尽量不超过 36 个汉字；保留必要英文名和版本号",
+        "core_summary_zh": "2-3 句中文核心摘要，说明原文真正说了什么；不要只复述标题",
         "why_it_matters_zh": "1 句中文，说明为什么值得关注；信息不足则写原文信息不足",
-        "translated_excerpt_zh": "对原文摘录的中文翻译或大意，不超过 160 字",
-        "confidence": "high / medium / low",
     }
     return (
         "请根据下面的新闻信息输出 JSON。\n"
@@ -140,16 +152,11 @@ def _build_user_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
 
 
 def _validate_llm_result(result: dict[str, Any]) -> dict[str, str]:
-    allowed_confidence = {"high", "medium", "low"}
     validated = {
-        "improved_title_zh": _clean_result_text(result.get("improved_title_zh"), 90),
-        "core_summary_zh": _clean_result_text(result.get("core_summary_zh"), 260),
+        "final_title_zh": _clean_result_text(result.get("final_title_zh") or result.get("improved_title_zh"), 100),
+        "core_summary_zh": _clean_result_text(result.get("core_summary_zh"), 360),
         "why_it_matters_zh": _clean_result_text(result.get("why_it_matters_zh"), 180),
-        "translated_excerpt_zh": _clean_result_text(result.get("translated_excerpt_zh"), 240),
-        "confidence": _clean_result_text(result.get("confidence"), 20).lower(),
     }
-    if validated["confidence"] not in allowed_confidence:
-        validated["confidence"] = "medium"
     return {key: value for key, value in validated.items() if value}
 
 

@@ -5,6 +5,7 @@ from pathlib import Path
 
 from fetch_github_releases import fetch_github_releases
 from fetch_hackernews import fetch_hackernews
+from fetch_article_text import enrich_items_with_article_text
 from fetch_rss import fetch_rss_sources
 from generate_markdown import generate_markdown
 from score_items import dedupe_items, filter_by_lookback, rank_items, score_items
@@ -31,6 +32,7 @@ def main() -> None:
     scored_items = score_items(recent_items, keywords_config, scoring_config)
     deduped_items = dedupe_items(scored_items, scoring_config)
     ranked_items = rank_items(deduped_items, max_items)
+    ranked_items = enrich_items_with_article_text(ranked_items, llm_config)
     ranked_items = enhance_items_with_llm(ranked_items, llm_config)
 
     output_path = Path(ROOT / "output" / "daily.md")

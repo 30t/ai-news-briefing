@@ -130,10 +130,20 @@ def _sentence_score(sentence: str, item: dict[str, Any]) -> int:
 def _core_excerpt(item: dict[str, Any], limit: int = 520) -> str:
     if item.get("source_type") == "hackernews":
         hn_score = item.get("hn_score")
+        if item.get("article_text"):
+            raw = item.get("article_text") or ""
+            sentences = _split_sentences(raw)
+            if sentences:
+                ranked = sorted(enumerate(sentences), key=lambda pair: _sentence_score(pair[1], item), reverse=True)
+                selected_indexes = sorted(index for index, _sentence in ranked[:2])
+                selected = normalize_space(" ".join(sentences[index] for index in selected_indexes))
+                if len(selected) <= limit:
+                    return selected
+                return selected[: limit - 1].rstrip() + "..."
         if hn_score is not None:
             return f"Hacker News discussion: {item.get('title', 'Untitled')}. HN points: {hn_score}."
         return f"Hacker News discussion: {item.get('title', 'Untitled')}."
-    raw = item.get("summary_or_excerpt") or ""
+    raw = item.get("article_text") or item.get("summary_or_excerpt") or ""
     sentences = _split_sentences(raw)
     if not sentences:
         return "暂无摘要，请查看原文。"
@@ -308,10 +318,9 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     channel_label = "发布渠道" if source_type == "github_release" else "来源类型"
     matched = "、".join(item.get("matched_keywords") or []) or "无"
     llm = item.get("llm") or {}
-    display_title = llm.get("improved_title_zh") or item.get("title") or "无标题"
+    display_title = llm.get("final_title_zh") or llm.get("improved_title_zh") or item.get("title") or "无标题"
     core_excerpt = _core_excerpt(item)
-    translated_excerpt = llm.get("translated_excerpt_zh") or _rule_based_translation(core_excerpt, item)
-    translation_label = "模型生成，仍以原文为准" if llm else "规则版，仅供快速理解"
+    translated_excerpt = _rule_based_translation(core_excerpt, item)
     lines = [
         f"### {index}. {display_title}",
         "",
@@ -330,14 +339,14 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
         lines.extend(["- 核心总结：", f"  > {llm.get('core_summary_zh')}"])
     if llm.get("why_it_matters_zh"):
         lines.extend(["", "- 模型判断为什么重要：", f"  > {llm.get('why_it_matters_zh')}"])
-    if llm.get("confidence"):
-        lines.append(f"- 模型置信度：{llm.get('confidence')}")
+    if item.get("article_text_source"):
+        lines.append("- 摘录依据：原文正文片段")
     lines.extend(
         [
             "- 原文摘录：",
             f"  > {core_excerpt}",
             "",
-            f"- 中文翻译 / 大意（{translation_label}）：",
+            "- 中文翻译 / 大意（规则版，仅供快速理解）：",
             f"  > {translated_excerpt}",
             "",
             f"- 阅读提醒：{_read_hint(item.get('source_level', 'needs_verification'))}",
@@ -363,7 +372,8 @@ def generate_markdown(items: list[dict[str, Any]], total_count: int, max_items: 
         "- 官方确认：公司官方博客、官方 changelog、论文源或开源项目发布页，可信度较高。",
         "- 技术社区：Hacker News、Reddit、技术博客等，适合看热度和工程讨论。",
         "- 早期信号 / 待验证：适合发现苗头，但需要等待官方或多来源确认。",
-        "- 中文翻译：有模型配置时会优先使用模型生成；没有 API Key 或调用失败时自动回退规则版，准确含义仍以原文为准。",
+        "- 中文标题和核心总结：有模型配置时由模型基于原文正文片段生成；没有 API Key 或正文抓取失败时自动回退规则版。",
+        "- 中文翻译：只做规则版粗略大意，准确含义仍以原文为准。",
         "",
     ]
     if not items:

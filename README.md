@@ -8,7 +8,7 @@
 
 如果配置 DeepSeek API Key，系统会只对规则筛选后的 Top 20 新闻调用模型。进入模型前，系统会尽量抓取原文正文片段；模型直接生成中文标题、核心总结和“为什么重要”。原始标题、来源等级、发布时间、规则分数和原文链接仍会保留。
 
-系统每天会抓取 RSS / Atom、GitHub Releases 和 Hacker News，将新闻统一成标准结构，并生成 `output/daily.md`。
+系统每天会抓取 RSS / Atom、GitHub Releases 和 Hacker News，将新闻统一成标准结构，并生成带日期的 Markdown 简报，例如 `output/2026-05-03.md`。同时也会更新 `output/daily.md`，方便查看最新一份。
 
 ## DeepSeek 成本预估
 
@@ -97,6 +97,12 @@ python scripts/main.py
 open output/daily.md
 ```
 
+历史归档文件会按日期保存，例如：
+
+```bash
+open output/2026-05-03.md
+```
+
 ## GitHub Actions 手动运行
 
 推送到 GitHub 后，进入仓库的 Actions 页面，选择 `Daily AI Briefing`，点击 `Run workflow` 即可手动测试。
@@ -119,7 +125,7 @@ GitHub Actions 使用 UTC 时间。当前配置是 UTC 23:30，对应北京时�
 
 ## 查看每日简报
 
-简报输出到 `output/daily.md`。GitHub Actions 每次运行后会自动提交 `output/` 目录变更。
+简报会输出到当天日期文件，例如 `output/2026-05-03.md`；同时 `output/daily.md` 会保持为最新一份。GitHub Actions 每次运行后会自动提交 `output/` 目录变更。
 
 ## 后续升级方向
 

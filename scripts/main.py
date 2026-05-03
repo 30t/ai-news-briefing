@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from datetime import datetime
 from pathlib import Path
 
 from fetch_github_releases import fetch_github_releases
@@ -35,10 +36,20 @@ def main() -> None:
     ranked_items = enrich_items_with_article_text(ranked_items, llm_config)
     ranked_items = enhance_items_with_llm(ranked_items, llm_config)
 
-    output_path = Path(ROOT / "output" / "daily.md")
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(generate_markdown(ranked_items, total_count, max_items), encoding="utf-8")
-    logging.info("Generated %s with %s ranked items from %s fetched items", output_path, len(ranked_items), total_count)
+    markdown = generate_markdown(ranked_items, total_count, max_items)
+    output_dir = Path(ROOT / "output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    dated_output_path = output_dir / f"{datetime.now().strftime('%Y-%m-%d')}.md"
+    latest_output_path = output_dir / "daily.md"
+    dated_output_path.write_text(markdown, encoding="utf-8")
+    latest_output_path.write_text(markdown, encoding="utf-8")
+    logging.info(
+        "Generated %s and %s with %s ranked items from %s fetched items",
+        dated_output_path,
+        latest_output_path,
+        len(ranked_items),
+        total_count,
+    )
 
 
 if __name__ == "__main__":

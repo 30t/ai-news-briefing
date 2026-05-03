@@ -2,7 +2,7 @@
 
 ## 先说结论
 
-今天自动抓取 1973 条信息，按来源可信度、关键词和规则分数筛出 20 条。
+今天自动抓取 1974 条信息，按来源可信度、关键词和规则分数筛出 20 条。
 阅读顺序建议：先看官方确认和项目发布，再看社区热议，最后把早期信号当作观察线索。
 
 ## 标签说明
@@ -25,10 +25,10 @@
 - 原文链接：https://github.com/ollama/ollama/releases/tag/v0.23.0
 - 命中关键词：Claude、Claude Code、GitHub
 - 原文摘录：
-  > Both Claude Cowork and Claude Code are supported within the Claude Desktop App. ``` ollama launch claude-desktop ``` Claude Code on the terminal can still be accessed through the CLI with: ``` ollama launch claude ``` ## What's Changed * Launch Claude Desktop with `ollama launch claude` * The Ollama app now surfaces featured models from server-driven recommendations * Fixed OpenClaw gateway timeout on Windows by enforcing IPv4 loopback - @UniquePratham * Hardened Metal initialization to gracefully handle ggml kern...
+  > Both Claude Cowork and Claude Code are supported within the Claude Desktop App. Claude Code on the terminal can still be accessed through the CLI with:
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Claude 桌面版 应用内已经支持 Claude Cowork 和 Claude Code 编程工具。 规则版暂不能完整翻译这句，请以原文为准：`` ollama launch claude-desktop ` Claude Code on the terminal can still be accessed through the CLI with: ` ollama launch claude ` ## What's Changed * Launch Claude Desktop with ollama launch claude` * The Ollama app now surfaces featured models from server-driven recommendations * Fixed OpenClaw gateway timeout on Windows by enforcing IPv4 loopback - @UniquePratham * Hardened Metal initialization to gracefully handle ggml kern...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Claude 桌面版 应用内已经支持 Claude Cowork 和 Claude Code 编程工具。 终端里的 Claude Code 编程工具 仍可通过 CLI 访问。
 
 - 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
 
@@ -43,10 +43,10 @@
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9010
 - 命中关键词：CUDA、GitHub、GPU、Llama
 - 原文摘录：
-  > fix: CUDA device PCI bus ID de-dupe OOMing (ignoring other 3 gpus entirely) (#22533) * fix: CUDA device PCI bus ID detection for multi-GPU de-dupe * HIP, MUSA macros --------- Co-authored-by: Johannes Gäßler **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9010/llama-b9010-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9010/llama-b9010-bin-macos-arm64-kleidiai.tar.gz) - [macOS...
+  > fix: CUDA device PCI bus ID de-dupe OOMing (ignoring other 3 gpus entirely) ( 22533). fix: CUDA device PCI bus ID detection for multi-GPU de-dupe.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 修复：CUDA device PCI bus ID de-dupe OOMing (ignoring other 3 GPUs entirely) (#22533) * fix: CUDA device PCI bus ID detection for multi-GPU de-dupe * HIP, MUSA macros --------- Co-authored-by: Johannes Gäßler macOS/iOS: - macOS Apple Silicon (arm64) - macOS Apple Silicon (arm64, KleidiAI enabled) - [macOS...。
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 修复：CUDA device PCI bus ID de-dupe OOMing (ignoring other 3 GPUs entirely) ( 22533).。 修复：CUDA device PCI bus ID detection for multi-GPU de-dupe.。
 
 - 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
 
@@ -65,10 +65,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using
 - 命中关键词：GitHub、GPU、open source、OpenAI、release
 - 原文摘录：
-  > Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Download qwen3.6-windows-server-portable-x64.zip from the Release 2.
+  > Download qwen3.6-windows-server-portable-x64.zip from the Release 2. OpenAI-compatible endpoint at I had to build a patched vLLM fork for Windows to fix a few issues and make this work.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：Not selling or promoting anything: https://github.com/devnen/qwen3.6-windows-server Numbers (RTX 3090, Windows 10): - 72 tok/s short prompt - 64.5 tok/s long prompt (~25k tokens) - 53.4 tok/s at 127k ctx (single GPU) - 160k ctx on PP=2 (2×3090 GPUs) Honestly, these aren't r/LocalLLaMA records. Download qwen3.6-Windows-server-portable-x64.zip from the 发布 2.
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Download qwen3.6-Windows-server-portable-x64.zip from the 发布 2. 规则版大意：Reddit r/LocalLLaMA 的这条信息《Qwen3.6-27B at 72 tok/s on RTX 3090 on Windows using native vLLM (no WSL, no Docker), portable launcher and installer》主要涉及 GitHub、GPU、open source、OpenAI、release。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -83,10 +83,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for
 - 命中关键词：Blackwell、Claude、CUDA、GitHub、Llama、MCP、Qwen、release
 - 原文摘录：
-  > How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. Visit warpdrv on GitHub It's an early-stage alpha release, so expect some minor bugs - I...
+  > Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. Visit warpdrv on GitHub It's an early-stage alpha release, so expect some minor bugs.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：How I use this app I generally run two models in parallel using different Llama backends simultaneously - Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. Visit warpdrv on GitHub It's an early-stage alpha 发布, so expect some minor bugs - I...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Qwen3.6 27b UD-Q6-KXL or NVFP4 on CUDA, and Qwen3.6 35b A3B UD-Q6-KXL on the Strix Halo unified memory. Visit warpdrv on GitHub It's an early-stage alpha 发布, so expect some minor bugs.
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -101,10 +101,10 @@
 - 原文链接：https://www.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p
 - 命中关键词：API、benchmark、Gemini、GitHub、Meta AI
 - 原文摘录：
-  > github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run.
+  > github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：github link : genji970/Scaling-Test-Time-Compute-for-Agentic-Coding-: paper implementation of Meta Ai paper link : https://arxiv.org/abs/2604.16529v1 As far as I know, there is no public implementation of this paper yet, so I built a minimal research implementation of the core PDR+RTV pipeline. 规则版暂不能完整翻译这句，请以原文为准：I made project to run gemini-3.1-pro model and test on SWE benchmark(In paper, there is one more benchmark and used models such as opus and more) Need gemini-api-key to run.
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/MachineLearning 的这条信息《I implemented meta paper [P]》主要涉及 API、benchmark、Gemini、GitHub、Meta AI。原文细节较多，建议点开原文确认完整语境。 规则版大意：Reddit r/MachineLearning 的这条信息《I implemented meta paper [P]》主要涉及 API、benchmark、Gemini、GitHub、Meta AI。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -119,10 +119,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in
 - 命中关键词：Codex、GPT
 - 原文摘录：
-  > https://www.reddit.com/r/LocalLLaMA/comments/1p0lnlo/make_your_ai_talk_like_a_caveman_and_decrease/ In the middle of a project I'm working on, I got this output from GPT 5.5-medium via codex: Implemented the narrower fix in Homm3ImportUnitPreviewModelHook.cs? Use Homm3ImportUnitPreviewModelHook.cs?
+  > In the middle of a project I'm working on, I got this output from GPT 5.5-medium via codex: Implemented the narrower fix in Homm3ImportUnitPreviewModelHook.cs? Use Homm3ImportUnitPreviewModelHook.cs?
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：https://www.reddit.com/r/LocalLLaMA/comments/1p0lnlo/make_your_ai_talk_like_a_caveman_and_decrease/ In the middle of a project I'm working on, I got this output from GPT 5.5-medium via codex: Implemented the narrower fix in Homm3ImportUnitPreviewModelHook.cs? Use Homm3ImportUnitPreview模型Hook.cs?
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《GPT 5.5 just leaked its chain of thought to me in codex, and it looks like an idea from 5 months ago in this sub.》主要涉及 Codex、GPT。原文细节较多，建议点开原文确认完整语境。 Use Homm3ImportUnitPreview模型Hook.cs?
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -139,8 +139,8 @@
 - 原文摘录：
   > I built this feature on my phone using Claude Code for web, as an extension of my beats system for syndicating external content. Tags: blogging , photography , wildlife , ai , inaturalist , generative-ai , llms , ai-assisted-programming , claude-code
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：I built this feature on my phone using Claude Code for web, as an extension of my beats system for syndicating external content. 规则版暂不能完整翻译这句，请以原文为准：Tags: blogging , photography , wildlife , ai , inaturalist , generative-ai , llms , ai-assisted-programming , claude-code
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Simon Willison 的这条信息《Sightings》主要涉及 Claude、Claude Code。原文细节较多，建议点开原文确认完整语境。 规则版大意：Simon Willison 的这条信息《Sightings》主要涉及 Claude、Claude Code。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -157,8 +157,8 @@
 - 原文摘录：
   > Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it generally only underestimates accuracy) Benchmarks (fully local LLM with web search) Model SimpleQA xbench-DeepSearch Qwen3.6-27B 95.7% (287/300) 77.0% (77/100) Qwen3.5-9B 91.2% (182/200) 59.0% (59/100) gpt-oss-20B 85.4% (295/346) – sample size is small, but...
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：Setup RTX 3090, 24GB Ollama backend (qwen3.6:27b) LDR's langgraph_agent strategy — LangChain create_agent() with tool-calling, parallel subtopic decomposition, up to 50 iterations LLM grader: qwen3.6:27b self-graded (I have used opus to review examples and it generally only underestimates accuracy) Benchmarks (fully local LLM with web search) Model SimpleQA xbench-DeepSearch Qwen3.6-27B 95.7% (287/300) 77.0% (77/100) Qwen3.5-9B 91.2% (182/200) 59.0% (59/100) gpt-oss-20B 85.4% (295/346) – sample size is small, but...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《We are finally there: Qwen3.6-27B + agentic search; 95.7% SimpleQA on a single 3090, fully local》主要涉及 Agent、GPT。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -173,10 +173,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out
 - 命中关键词：GPU、release
 - 原文摘录：
-  > I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and...
+  > I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! Link to the HF model: Example result: It speaks english, but it still sounds a bit robotish 😂 You can use if you want.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：I am back with a new model, and it's something special today 😃 It's Flare-TTS 28M, my first text to speech (TTS) model trained completely from scratch on a single A6000 GPU for ~24 hours, ~300 epochs and the full LJSpeech dataset! 规则版暂不能完整翻译这句，请以原文为准：Link to the HF model: https://huggingface.co/LH-Tech-AI/Flare-TTS-28M Example result: https://cdn-uploads.huggingface.co/production/uploads/697f2832c2c5e4daa93cece7/vluuHSnp9Ietk7Uk1-hvG.mpga It speaks english, but it still sounds a bit robotish 😂 You can use if you want - it's free and...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M》主要涉及 GPU、release。原文细节较多，建议点开原文确认完整语境。 规则版大意：Reddit r/LocalLLaMA 的这条信息《[RELEASE] - Finally, my first TTS model is out! 🎙️ Flare-TTS 28M》主要涉及 GPU、release。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -193,8 +193,8 @@
 - 原文摘录：
   > Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China. Need to support who giving us more Open source & weights.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China. Need to support who giving us more 开源 & weights.
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat》主要涉及 funding、open source、OpenAI。原文细节较多，建议点开原文确认完整语境。 Need to support who giving us more 开源 & weights.
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -210,10 +210,10 @@
 - 命中关键词：Agent
 - HN 分数：87
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47990675
+  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 87.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47990675
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 87 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -229,10 +229,10 @@
 - 命中关键词：Agent
 - HN 分数：196
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47985750
+  > Hacker News discussion: Open Design: Use Your Coding Agent as a Design Engine. HN points: 196.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47985750
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《Open Design: Use Your Coding Agent as a Design Engine》的讨论，当前热度约 196 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -242,16 +242,16 @@
 
 **判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 116 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 121 分，建议结合原文判断。
 - 发布时间：2026-05-03 04:05
 - 原文链接：https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
 - 命中关键词：Claude、Gemini、GPT、Kimi
-- HN 分数：116
+- HN 分数：121
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47993235
+  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 121.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47993235
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 121 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -266,10 +266,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t29wx0/caisi_releases_evaluation_report_deepseek_v4
 - 命中关键词：DeepSeek
 - 原文摘录：
-  > https://preview.redd.it/pz8qeln0auyg1.png?width=1400&format=png&auto=webp&s=00ee5218734cfae4783d702411d63e3a4c6bbc60 https://preview.redd.it/hem9mad5auyg1.png?width=1184&format=png&auto=webp&s=2a26fec2b49204e64b44a78b30902ab80f7df53c https://preview.redd.it/s0d8qkd6auyg1.png?width=1400&format=png&auto=webp&s=1db808f9749870c8a06854e555b21259473546a6 https://preview.redd.it/gp6zy6k7auyg1.png?width=1400&format=png&auto=webp&s=094023d03d424808e708a601b61f2ba0343feca6 https://www.nist.gov/news-events/news/2026/05/caisi...
+  > submitted by /u/External_Mood4719 [link] [comments]
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：https://preview.redd.it/pz8qeln0auyg1.png?width=1400&format=png&auto=webp&s=00ee5218734cfae4783d702411d63e3a4c6bbc60 https://preview.redd.it/hem9mad5auyg1.png?width=1184&format=png&auto=webp&s=2a26fec2b49204e64b44a78b30902ab80f7df53c https://preview.redd.it/s0d8qkd6auyg1.png?width=1400&format=png&auto=webp&s=1db808f9749870c8a06854e555b21259473546a6 https://preview.redd.it/gp6zy6k7auyg1.png?width=1400&format=png&auto=webp&s=094023d03d424808e708a601b61f2ba0343feca6 https://www.nist.gov/news-events/news/2026/05/caisi...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > submitted by /u/External_Mood4719 [link] [comments]
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -279,16 +279,16 @@
 
 **判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 110 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 112 分，建议结合原文判断。
 - 发布时间：2026-05-03 02:36
 - 原文链接：https://blog.feld.me/posts/2026/04/open-source-does-not-imply-open-community
 - 命中关键词：open source
-- HN 分数：110
+- HN 分数：112
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47992772
+  > Hacker News discussion: Open source does not imply open community. HN points: 112.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47992772
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 112 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -303,10 +303,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27cf0/local_image_generation_on_mac_10_models_compared
 - 命中关键词：Gemini、Qwen
 - 原文摘录：
-  > Key findings: Qwen-Image Lightning (8-step distillation) beats the full model in quality while being 9x faster (10min vs 93min) Flux dev is the best local model for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is rough The cultural accuracy gap surprised me most. Full comparison with side-by-side images: https://draft-publish.com/articles/local...
+  > Tested 10 image generation models on M1 Max 64GB for photorealism, text rendering, and cultural accuracy (Japanese/Asian content). Key findings: Qwen-Image Lightning (8-step distillation) beats the full model in quality while being 9x faster (10min vs 93min) Flux dev is the best local model for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is ro...
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Key findings: Qwen-Image Lightning (8-step distillation) 在 quality while being 9x faster (10min vs 93min) Flux dev is the best local 模型 for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is rough The cultural accuracy gap surprised me most 中超过了 the full 模型。 Full comparison with side-by-side images: https://draft-publish.com/articles/local...
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)》主要涉及 Gemini、Qwen。原文细节较多，建议点开原文确认完整语境。 Key findings: Qwen-Image Lightning (8-step distillation) 在 quality while being 9x faster (10min vs 93min) Flux dev is the best local 模型 for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is ro.. 中超过了 the full 模型。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -321,10 +321,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t24y4p/i_made_a_visualizer_for_hugging_face_models
 - 命中关键词：Qwen
 - 原文摘录：
-  > I built hfviewer.com , a small tool for visually exploring Hugging Face model architectures. You can paste a Hugging Face URL and get an interactive visualization of the architecture, which can make it easier to understand how different models are structured and compare them at a glance.
+  > I built hfviewer.com , a small tool for visually exploring Hugging Face model architectures. Here is the recent Qwen3.6-27B model as an example: And here is a side-by-side view of the Gemma 4 family: Feel free to try it out and give me feedback on how it can be improved!
 
-- 中文翻译（规则版，仅供快速理解）：
-  > I built hfviewer.com , a small tool for visually exploring Hugging Face 模型 architectures. 规则版暂不能完整翻译这句，请以原文为准：You can paste a Hugging Face URL and get an interactive visualization of the architecture, which can make it easier to understand how different models are structured and compare them at a glance.
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > I built hfviewer.com , a small tool for visually exploring Hugging Face 模型 architectures. 规则版大意：Reddit r/LocalLLaMA 的这条信息《I made a visualizer for Hugging Face models》主要涉及 Qwen。原文细节较多，建议点开原文确认完整语境。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -340,10 +340,10 @@
 - 命中关键词：Claude
 - HN 分数：63
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47991340
+  > Hacker News discussion: The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious. HN points: 63.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47991340
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《The Claude Delusion: Richard Dawkins believes his AI chatbot is conscious》的讨论，当前热度约 63 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -358,10 +358,10 @@
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t22s9l/qwensaeresqwen3527bw80kl0_100_hugging_face
 - 命中关键词：Qwen
 - 原文摘录：
-  > one of my next research steps was going to be on vector based model steering, and look at the gift that qwen gave us. You can learn about this here https://youtu.be/5L_tYKt2ENo submitted by /u/FaustAg [link] [comments]
+  > one of my next research steps was going to be on vector based model steering, and look at the gift that qwen gave us. You can learn about this here submitted by /u/FaustAg [link] [comments]
 
-- 中文翻译（规则版，仅供快速理解）：
-  > 规则版暂不能完整翻译这句，请以原文为准：one of my next research steps was going to be on vector based model steering, and look at the gift that qwen gave us. You can learn about this here https://youtu.be/5L_tYKt2ENo submitted by /u/FaustAg [link] [comments]
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《Qwen/SAE-Res-Qwen3.5-27B-W80K-L0_100 · Hugging Face》主要涉及 Qwen。原文细节较多，建议点开原文确认完整语境。 You can learn about this here submitted by /u/FaustAg [link] [comments]
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -371,16 +371,16 @@
 
 **判断：技术社区｜Hacker News｜Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 80 分，建议结合原文判断。
+- 为什么值得看：来自技术社区讨论，HN 热度 81 分，建议结合原文判断。
 - 发布时间：2026-05-02 21:34
 - 原文链接：https://www.clojuriststogether.org/news/q2-2026-funding-announcement
 - 命中关键词：funding、open source
-- HN 分数：80
+- HN 分数：81
 - 原文摘录：
-  > Comments: https://news.ycombinator.com/item?id=47990789
+  > Hacker News discussion: Clojurists Together – Q2 2026 Open Source Funding Announcement. HN points: 81.
 
-- 中文翻译（规则版，仅供快速理解）：
-  > Comments: https://news.ycombinator.com/item?id=47990789
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《Clojurists Together – Q2 2026 Open Source Funding Announcement》的讨论，当前热度约 81 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 

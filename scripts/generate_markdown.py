@@ -307,10 +307,13 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     type_label = TYPE_LABELS.get(source_type, source_type or "未知")
     channel_label = "发布渠道" if source_type == "github_release" else "来源类型"
     matched = "、".join(item.get("matched_keywords") or []) or "无"
+    llm = item.get("llm") or {}
+    display_title = llm.get("improved_title_zh") or item.get("title") or "无标题"
     core_excerpt = _core_excerpt(item)
-    translated_excerpt = _rule_based_translation(core_excerpt, item)
+    translated_excerpt = llm.get("translated_excerpt_zh") or _rule_based_translation(core_excerpt, item)
+    translation_label = "模型生成，仍以原文为准" if llm else "规则版，仅供快速理解"
     lines = [
-        f"### {index}. {item.get('title') or '无标题'}",
+        f"### {index}. {display_title}",
         "",
         f"**判断：{level_label}｜信息来源：{source_name}｜{channel_label}：{type_label}｜规则分 {item.get('score', 0)}**",
         "",
@@ -321,12 +324,20 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
     ]
     if source_type == "hackernews" and item.get("hn_score") is not None:
         lines.append(f"- HN 分数：{item.get('hn_score')}")
+    if llm and item.get("title") and item.get("title") != display_title:
+        lines.append(f"- 原始标题：{item.get('title')}")
+    if llm.get("core_summary_zh"):
+        lines.extend(["- 核心总结：", f"  > {llm.get('core_summary_zh')}"])
+    if llm.get("why_it_matters_zh"):
+        lines.extend(["", "- 模型判断为什么重要：", f"  > {llm.get('why_it_matters_zh')}"])
+    if llm.get("confidence"):
+        lines.append(f"- 模型置信度：{llm.get('confidence')}")
     lines.extend(
         [
             "- 原文摘录：",
             f"  > {core_excerpt}",
             "",
-            "- 中文翻译 / 大意（规则版，仅供快速理解）：",
+            f"- 中文翻译 / 大意（{translation_label}）：",
             f"  > {translated_excerpt}",
             "",
             f"- 阅读提醒：{_read_hint(item.get('source_level', 'needs_verification'))}",
@@ -352,7 +363,7 @@ def generate_markdown(items: list[dict[str, Any]], total_count: int, max_items: 
         "- 官方确认：公司官方博客、官方 changelog、论文源或开源项目发布页，可信度较高。",
         "- 技术社区：Hacker News、Reddit、技术博客等，适合看热度和工程讨论。",
         "- 早期信号 / 待验证：适合发现苗头，但需要等待官方或多来源确认。",
-        "- 中文翻译：当前为 No API Key 规则版参考翻译，不调用模型 API；准确含义仍以原文为准。",
+        "- 中文翻译：有模型配置时会优先使用模型生成；没有 API Key 或调用失败时自动回退规则版，准确含义仍以原文为准。",
         "",
     ]
     if not items:

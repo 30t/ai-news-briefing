@@ -2,7 +2,7 @@
 
 ## 先说结论
 
-今天自动抓取 1974 条信息，按来源可信度、关键词和规则分数筛出 20 条。
+今天自动抓取 1975 条信息，按来源可信度、关键词和规则分数筛出 20 条。
 阅读顺序建议：先看官方确认和项目发布，再看社区热议，最后把早期信号当作观察线索。
 
 ## 标签说明
@@ -10,7 +10,7 @@
 - 官方确认：公司官方博客、官方 changelog、论文源或开源项目发布页，可信度较高。
 - 技术社区：Hacker News、Reddit、技术博客等，适合看热度和工程讨论。
 - 早期信号 / 待验证：适合发现苗头，但需要等待官方或多来源确认。
-- 中文翻译：当前为 No API Key 规则版参考翻译，不调用模型 API；准确含义仍以原文为准。
+- 中文翻译：有模型配置时会优先使用模型生成；没有 API Key 或调用失败时自动回退规则版，准确含义仍以原文为准。
 
 ## 一、优先看：官方确认与项目发布
 
@@ -21,7 +21,7 @@
 **判断：官方确认｜信息来源：Ollama｜发布渠道：GitHub Releases｜规则分 83**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 Claude、Claude Code、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 03:34
+- 发布时间：2026-05-03 11:34
 - 原文链接：https://github.com/ollama/ollama/releases/tag/v0.23.0
 - 命中关键词：Claude、Claude Code、GitHub
 - 原文摘录：
@@ -39,7 +39,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 CUDA、GitHub、GPU、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 22:08
+- 发布时间：2026-05-03 06:08
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9010
 - 命中关键词：CUDA、GitHub、GPU、Llama
 - 原文摘录：
@@ -57,7 +57,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、GPU、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 08:37
+- 发布时间：2026-05-02 16:37
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9006
 - 命中关键词：GitHub、GPU、Llama
 - 原文摘录：
@@ -75,7 +75,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 16:51
+- 发布时间：2026-05-03 00:51
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9009
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -93,7 +93,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 15:32
+- 发布时间：2026-05-02 23:32
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9008
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -111,7 +111,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 08:24
+- 发布时间：2026-05-02 16:24
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9004
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -133,7 +133,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 65**
 
 - 为什么值得看：来自技术社区讨论，命中 GitHub、GPU、open source、OpenAI 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 08:12
+- 发布时间：2026-05-02 16:12
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using
 - 命中关键词：GitHub、GPU、open source、OpenAI、release
 - 原文摘录：
@@ -151,7 +151,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 58**
 
 - 为什么值得看：来自技术社区讨论，命中 Blackwell、Claude、CUDA、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 17:33
+- 发布时间：2026-05-03 01:33
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for
 - 命中关键词：Blackwell、Claude、CUDA、GitHub、Llama、MCP、Qwen、release
 - 原文摘录：
@@ -169,7 +169,7 @@
 **判断：技术社区｜信息来源：Reddit r/MachineLearning｜来源类型：RSS｜规则分 53**
 
 - 为什么值得看：来自技术社区讨论，命中 API、benchmark、Gemini、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 14:37
+- 发布时间：2026-05-02 22:37
 - 原文链接：https://www.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p
 - 命中关键词：API、benchmark、Gemini、GitHub、Meta AI
 - 原文摘录：
@@ -187,7 +187,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Codex、GPT 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 01:35
+- 发布时间：2026-05-03 09:35
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in
 - 命中关键词：Codex、GPT
 - 原文摘录：
@@ -205,7 +205,7 @@
 **判断：技术社区｜信息来源：Simon Willison｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Claude、Claude Code 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 17:26
+- 发布时间：2026-05-03 01:26
 - 原文链接：https://simonwillison.net/2026/May/2/sightings
 - 命中关键词：Claude、Claude Code
 - 原文摘录：
@@ -223,7 +223,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Agent、GPT 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 11:21
+- 发布时间：2026-05-02 19:21
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957
 - 命中关键词：Agent、GPT
 - 原文摘录：
@@ -241,7 +241,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 45**
 
 - 为什么值得看：来自技术社区讨论，命中 GPU、release 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 10:52
+- 发布时间：2026-05-02 18:52
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out
 - 命中关键词：GPU、release
 - 原文摘录：
@@ -254,87 +254,69 @@
 
 ---
 
-### 14. A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat
-
-**判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 45**
-
-- 为什么值得看：来自技术社区讨论，命中 funding、open source、OpenAI 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 06:35
-- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1i4yg/a_darkmoney_campaign_is_paying_influencers_to
-- 命中关键词：funding、open source、OpenAI
-- 原文摘录：
-  > Build American AI, a nonprofit linked to a super PAC bankrolled by executives at OpenAI and Andreessen Horowitz, is funding a campaign to spread pro-AI messaging and stoke fears about China. Need to support who giving us more Open source & weights.
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：Reddit r/LocalLLaMA 的这条信息《A Dark-Money Campaign Is Paying Influencers to Frame Chinese AI as a Threat》主要涉及 funding、open source、OpenAI。原文细节较多，建议点开原文确认完整语境。 Need to support who giving us more 开源 & weights.
-
-- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
-
----
-
-### 15. The agent harness belongs outside the sandbox
+### 14. The agent harness belongs outside the sandbox
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 88 分，建议结合原文判断。
-- 发布时间：2026-05-02 21:21
+- 为什么值得看：来自技术社区讨论，HN 热度 90 分，建议结合原文判断。
+- 发布时间：2026-05-03 05:21
 - 原文链接：https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox
 - 命中关键词：Agent
-- HN 分数：88
+- HN 分数：90
 - 原文摘录：
-  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 88.
+  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 90.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 88 分。
+  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 90 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 16. Open Design: Use Your Coding Agent as a Design Engine
+### 15. Open Design: Use Your Coding Agent as a Design Engine
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 197 分，建议结合原文判断。
-- 发布时间：2026-05-02 12:16
+- 为什么值得看：来自技术社区讨论，HN 热度 198 分，建议结合原文判断。
+- 发布时间：2026-05-02 20:16
 - 原文链接：https://github.com/nexu-io/open-design
 - 命中关键词：Agent
-- HN 分数：197
+- HN 分数：198
 - 原文摘录：
-  > Hacker News discussion: Open Design: Use Your Coding Agent as a Design Engine. HN points: 197.
+  > Hacker News discussion: Open Design: Use Your Coding Agent as a Design Engine. HN points: 198.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Open Design: Use Your Coding Agent as a Design Engine》的讨论，当前热度约 197 分。
+  > Hacker News 上关于《Open Design: Use Your Coding Agent as a Design Engine》的讨论，当前热度约 198 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 17. Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge
+### 16. Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 137 分，建议结合原文判断。
-- 发布时间：2026-05-03 04:05
+- 为什么值得看：来自技术社区讨论，HN 热度 177 分，建议结合原文判断。
+- 发布时间：2026-05-03 12:05
 - 原文链接：https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
 - 命中关键词：Claude、Gemini、GPT、Kimi
-- HN 分数：137
+- HN 分数：177
 - 原文摘录：
-  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 137.
+  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 177.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 137 分。
+  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 177 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 18. CAISI releases evaluation report: DeepSeek V4 becomes the most powerful model in China, but still lags about 8 months behind the US frontier
+### 17. CAISI releases evaluation report: DeepSeek V4 becomes the most powerful model in China, but still lags about 8 months behind the US frontier
 
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 DeepSeek 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 03:10
+- 发布时间：2026-05-03 11:10
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t29wx0/caisi_releases_evaluation_report_deepseek_v4
 - 命中关键词：DeepSeek
 - 原文摘录：
@@ -347,31 +329,31 @@
 
 ---
 
-### 19. Open source does not imply open community
+### 18. Open source does not imply open community
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 114 分，建议结合原文判断。
-- 发布时间：2026-05-03 02:36
+- 为什么值得看：来自技术社区讨论，HN 热度 121 分，建议结合原文判断。
+- 发布时间：2026-05-03 10:36
 - 原文链接：https://blog.feld.me/posts/2026/04/open-source-does-not-imply-open-community
 - 命中关键词：open source
-- HN 分数：114
+- HN 分数：121
 - 原文摘录：
-  > Hacker News discussion: Open source does not imply open community. HN points: 114.
+  > Hacker News discussion: Open source does not imply open community. HN points: 121.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 114 分。
+  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 121 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
 ---
 
-### 20. Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)
+### 19. Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)
 
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 Gemini、Qwen 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 01:08
+- 发布时间：2026-05-03 09:08
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27cf0/local_image_generation_on_mac_10_models_compared
 - 命中关键词：Gemini、Qwen
 - 原文摘录：
@@ -379,6 +361,25 @@
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
   > 规则版大意：Reddit r/LocalLLaMA 的这条信息《Local image generation on Mac: 10 models compared (SD 1.5 → Flux dev → Qwen-Image → Gemini)》主要涉及 Gemini、Qwen。原文细节较多，建议点开原文确认完整语境。 Key findings: Qwen-Image Lightning (8-step distillation) 在 quality while being 9x faster (10min vs 93min) Flux dev is the best local 模型 for photorealism, but has strong English-centric bias (puts cilantro in ramen, turns izakayas into teahouses) Gemini nails kanji rendering and cultural context, but it's cloud SDXL Turbo generates in 5 seconds but quality is ro.. 中超过了 the full 模型。
+
+- 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
+
+---
+
+### 20. OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors
+
+**判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
+
+- 为什么值得看：来自技术社区讨论，HN 热度 20 分，建议结合原文判断。
+- 发布时间：2026-05-03 08:30
+- 原文链接：https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses
+- 命中关键词：OpenAI
+- HN 分数：20
+- 原文摘录：
+  > Hacker News discussion: OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors. HN points: 20.
+
+- 中文翻译 / 大意（规则版，仅供快速理解）：
+  > Hacker News 上关于《OpenAI's o1 correctly diagnosed 67% of ER patients vs. 50-55% by triage doctors》的讨论，当前热度约 20 分。 50-55% by triage doctors.
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 

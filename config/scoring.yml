@@ -1,0 +1,29 @@
+{
+  "max_items_per_day": 20,
+  "lookback_hours": 24,
+  "title_similarity_threshold": 0.86,
+  "source_level_scores": {
+    "official_confirmed": 50,
+    "tech_community": 25,
+    "early_signal": 10,
+    "needs_verification": 5
+  },
+  "keyword_scores": {
+    "lab_names": {"score": 10, "keywords": ["OpenAI", "Anthropic", "DeepMind", "Meta AI", "xAI"]},
+    "model_names": {"score": 10, "keywords": ["GPT", "Claude", "Gemini", "Llama", "DeepSeek", "Qwen", "Kimi"]},
+    "agents_and_tools": {"score": 15, "keywords": ["Agent", "Codex", "Claude Code", "GitHub Copilot", "Cursor", "MCP"]},
+    "product_signals": {"score": 8, "keywords": ["benchmark", "release", "API", "pricing"]},
+    "open_source": {"score": 10, "keywords": ["GitHub Release", "open source"]},
+    "compute": {"score": 12, "keywords": ["GPU", "NVIDIA", "HBM", "TSMC", "semiconductor", "CoWoS"]},
+    "business_impact": {"score": 8, "keywords": ["enterprise AI", "automation", "productivity"]}
+  },
+  "penalties": {
+    "webinar": -8,
+    "event only": -8,
+    "sponsored": -15,
+    "marketing": -10,
+    "hiring only": -10,
+    "pure funding news": -10,
+    "duplicate url": -30
+  }
+}

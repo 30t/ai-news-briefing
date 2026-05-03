@@ -2,7 +2,7 @@
 
 ## 先说结论
 
-今天自动抓取 1975 条信息，按来源可信度、关键词和规则分数筛出 20 条。
+今天自动抓取 1976 条信息，按来源可信度、关键词和规则分数筛出 20 条。
 阅读顺序建议：先看官方确认和项目发布，再看社区热议，最后把早期信号当作观察线索。
 
 ## 标签说明
@@ -21,7 +21,7 @@
 **判断：官方确认｜信息来源：Ollama｜发布渠道：GitHub Releases｜规则分 83**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 Claude、Claude Code、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 11:34
+- 发布时间：2026-05-03 03:34
 - 原文链接：https://github.com/ollama/ollama/releases/tag/v0.23.0
 - 命中关键词：Claude、Claude Code、GitHub
 - 原文摘录：
@@ -39,7 +39,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 CUDA、GitHub、GPU、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 06:08
+- 发布时间：2026-05-02 22:08
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9010
 - 命中关键词：CUDA、GitHub、GPU、Llama
 - 原文摘录：
@@ -57,7 +57,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 80**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、GPU、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 16:37
+- 发布时间：2026-05-02 08:37
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9006
 - 命中关键词：GitHub、GPU、Llama
 - 原文摘录：
@@ -75,7 +75,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 00:51
+- 发布时间：2026-05-02 16:51
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9009
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -93,7 +93,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 23:32
+- 发布时间：2026-05-02 15:32
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9008
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -111,7 +111,7 @@
 **判断：官方确认｜信息来源：llama.cpp｜发布渠道：GitHub Releases｜规则分 68**
 
 - 为什么值得看：来自官方或项目发布渠道，命中 GitHub、Llama 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 16:24
+- 发布时间：2026-05-02 08:24
 - 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9004
 - 命中关键词：GitHub、Llama
 - 原文摘录：
@@ -133,7 +133,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 65**
 
 - 为什么值得看：来自技术社区讨论，命中 GitHub、GPU、open source、OpenAI 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 16:12
+- 发布时间：2026-05-02 08:12
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1judm/qwen3627b_at_72_toks_on_rtx_3090_on_windows_using
 - 命中关键词：GitHub、GPU、open source、OpenAI、release
 - 原文摘录：
@@ -151,7 +151,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 58**
 
 - 为什么值得看：来自技术社区讨论，命中 Blackwell、Claude、CUDA、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 01:33
+- 发布时间：2026-05-02 17:33
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1w920/warpdrv_my_opensource_llamacpp_launcher_for
 - 命中关键词：Blackwell、Claude、CUDA、GitHub、Llama、MCP、Qwen、release
 - 原文摘录：
@@ -169,7 +169,7 @@
 **判断：技术社区｜信息来源：Reddit r/MachineLearning｜来源类型：RSS｜规则分 53**
 
 - 为什么值得看：来自技术社区讨论，命中 API、benchmark、Gemini、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 22:37
+- 发布时间：2026-05-02 14:37
 - 原文链接：https://www.reddit.com/r/MachineLearning/comments/1t1rni9/i_implemented_meta_paper_p
 - 命中关键词：API、benchmark、Gemini、GitHub、Meta AI
 - 原文摘录：
@@ -187,7 +187,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Codex、GPT 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 09:35
+- 发布时间：2026-05-03 01:35
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27wja/gpt_55_just_leaked_its_chain_of_thought_to_me_in
 - 命中关键词：Codex、GPT
 - 原文摘录：
@@ -205,7 +205,7 @@
 **判断：技术社区｜信息来源：Simon Willison｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Claude、Claude Code 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 01:26
+- 发布时间：2026-05-02 17:26
 - 原文链接：https://simonwillison.net/2026/May/2/sightings
 - 命中关键词：Claude、Claude Code
 - 原文摘录：
@@ -223,7 +223,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 50**
 
 - 为什么值得看：来自技术社区讨论，命中 Agent、GPT 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 19:21
+- 发布时间：2026-05-02 11:21
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1n6o8/we_are_finally_there_qwen3627b_agentic_search_957
 - 命中关键词：Agent、GPT
 - 原文摘录：
@@ -241,7 +241,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 45**
 
 - 为什么值得看：来自技术社区讨论，命中 GPU、release 等关键词，值得快速浏览。
-- 发布时间：2026-05-02 18:52
+- 发布时间：2026-05-02 10:52
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t1mmnd/release_finally_my_first_tts_model_is_out
 - 命中关键词：GPU、release
 - 原文摘录：
@@ -258,16 +258,16 @@
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 90 分，建议结合原文判断。
-- 发布时间：2026-05-03 05:21
+- 为什么值得看：来自技术社区讨论，HN 热度 91 分，建议结合原文判断。
+- 发布时间：2026-05-02 21:21
 - 原文链接：https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox
 - 命中关键词：Agent
-- HN 分数：90
+- HN 分数：91
 - 原文摘录：
-  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 90.
+  > Hacker News discussion: The agent harness belongs outside the sandbox. HN points: 91.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 90 分。
+  > Hacker News 上关于《The agent harness belongs outside the sandbox》的讨论，当前热度约 91 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -278,7 +278,7 @@
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 40**
 
 - 为什么值得看：来自技术社区讨论，HN 热度 198 分，建议结合原文判断。
-- 发布时间：2026-05-02 20:16
+- 发布时间：2026-05-02 12:16
 - 原文链接：https://github.com/nexu-io/open-design
 - 命中关键词：Agent
 - HN 分数：198
@@ -296,16 +296,16 @@
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 177 分，建议结合原文判断。
-- 发布时间：2026-05-03 12:05
+- 为什么值得看：来自技术社区讨论，HN 热度 181 分，建议结合原文判断。
+- 发布时间：2026-05-03 04:05
 - 原文链接：https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge
 - 命中关键词：Claude、Gemini、GPT、Kimi
-- HN 分数：177
+- HN 分数：181
 - 原文摘录：
-  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 177.
+  > Hacker News discussion: Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge. HN points: 181.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 177 分。
+  > Hacker News 上关于《Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge》的讨论，当前热度约 181 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -316,7 +316,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 DeepSeek 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 11:10
+- 发布时间：2026-05-03 03:10
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t29wx0/caisi_releases_evaluation_report_deepseek_v4
 - 命中关键词：DeepSeek
 - 原文摘录：
@@ -333,16 +333,16 @@
 
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
-- 为什么值得看：来自技术社区讨论，HN 热度 121 分，建议结合原文判断。
-- 发布时间：2026-05-03 10:36
+- 为什么值得看：来自技术社区讨论，HN 热度 124 分，建议结合原文判断。
+- 发布时间：2026-05-03 02:36
 - 原文链接：https://blog.feld.me/posts/2026/04/open-source-does-not-imply-open-community
 - 命中关键词：open source
-- HN 分数：121
+- HN 分数：124
 - 原文摘录：
-  > Hacker News discussion: Open source does not imply open community. HN points: 121.
+  > Hacker News discussion: Open source does not imply open community. HN points: 124.
 
 - 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 121 分。
+  > Hacker News 上关于《Open source does not imply open community》的讨论，当前热度约 124 分。
 
 - 阅读提醒：适合观察技术圈关注点，但不等于事实确认，建议结合原文和官方来源判断。
 
@@ -353,7 +353,7 @@
 **判断：技术社区｜信息来源：Reddit r/LocalLLaMA｜来源类型：RSS｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，命中 Gemini、Qwen 等关键词，值得快速浏览。
-- 发布时间：2026-05-03 09:08
+- 发布时间：2026-05-03 01:08
 - 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t27cf0/local_image_generation_on_mac_10_models_compared
 - 命中关键词：Gemini、Qwen
 - 原文摘录：
@@ -371,7 +371,7 @@
 **判断：技术社区｜信息来源：Hacker News｜来源类型：Hacker News｜规则分 35**
 
 - 为什么值得看：来自技术社区讨论，HN 热度 20 分，建议结合原文判断。
-- 发布时间：2026-05-03 08:30
+- 发布时间：2026-05-03 00:30
 - 原文链接：https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses
 - 命中关键词：OpenAI
 - HN 分数：20

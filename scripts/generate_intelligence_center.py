@@ -13,15 +13,15 @@ from utils import format_local_time, normalize_space, strip_html
 
 
 SYSTEM_PROMPT = """你是一名中文 AI 情报主播兼科技解释员。
-请把结构化新闻材料改写成一份“每日 AI 情报中心”，适合阅读，也适合 ChatGPT 语音朗读。
+请把结构化新闻材料改写成一份“每日 AI 情报中心”，风格接近新闻联播 + 白话科技讲解。
 
-要求：
-1. 语言像新闻联播 + 科技解释员：清楚、有节奏、不夸大。
-2. 不要输出冗长原文摘录，不要写“中文翻译 / 大意（规则版）”。
-3. 社区来源必须明确写“社区讨论，不等于官方确认”。
-4. 技术词必须随文白话解释，例如 Agent、function calling、vLLM、Ollama、llama.cpp、GGUF、GPU、VRAM、API、CUDA。
-5. “对我的意义”使用普通 AI 工具使用者、自动化实践者、职业探索者的视角，不要假装知道私人背景。
-6. 模型根据当天新闻本身判断主线和必听内容，不要按固定用户兴趣列表重排。
+写作目标：
+1. 这不是逐字稿，不是短视频脚本，也不是技术 changelog；它应该像有人在认真给用户播报并解释今天 AI 圈发生了什么。
+2. 先总后分，先给今天主线，再按主题合并讲重点新闻，不要机械逐条复述。
+3. 技术词随文解释，解释要白话，例如 Agent、function calling、vLLM、Ollama、llama.cpp、GGUF、GPU、VRAM、API、CUDA。
+4. 可信度要清楚：官方发布可以说可信度较高；Reddit、Hacker News 等社区来源必须写“社区讨论，不等于官方确认”。
+5. “对我的意义”从普通 AI 工具使用者、自动化实践者、职业探索者的视角写，不要假装知道私人背景。
+6. 不要输出冗长原文摘录，不要写“中文翻译 / 大意（规则版）”。
 7. 只基于输入材料写作，不得编造事实。信息不足就保守表达。
 8. 输出必须是严格 JSON，不要包含 Markdown、解释或代码块。
 """
@@ -88,46 +88,29 @@ def render_intelligence_markdown(
     ]
     if skipped_history_count:
         lines.append(f"其中 {skipped_history_count} 条因过去 7 天已出现而跳过。")
-    lines.extend(["", "## 今日一句话", "", _text(result.get("one_sentence"), "今天没有足够信息形成明确主线。"), ""])
+    lines.extend(["", "## 今日开场", "", _text(result.get("opening"), "今天 AI 圈没有足够信息形成明确主线。"), ""])
 
-    lines.extend(["## 今日三条主线", ""])
-    for thread in _list(result.get("main_threads")):
-        related = _join_numbers(thread.get("related_news_numbers"))
-        lines.extend(
-            [
-                f"### {_text(thread.get('title'), '未命名主线')}",
-                "",
-                f"- 发生了什么：{_text(thread.get('what_happened'))}",
-                f"- 相关新闻编号：{related or '无'}",
-                f"- 为什么重要：{_text(thread.get('why_it_matters'))}",
-                f"- 对我的意义：{_text(thread.get('personal_meaning'))}",
-                "",
-            ]
-        )
+    lines.extend(["## 重点播报", ""])
+    for segment in _list(result.get("broadcast_segments")):
+        related_numbers = [_coerce_int(number) for number in _list(segment.get("related_news_numbers"))]
+        related_items = [indexed_items[number] for number in related_numbers if number in indexed_items]
+        links = _segment_links(related_items)
+        title = _text(segment.get("title"), "未命名重点")
+        lines.extend([f"## {title}", ""])
+        for paragraph in _list(segment.get("paragraphs")):
+            lines.extend([_text(paragraph), ""])
+        if segment.get("plain_explainer"):
+            lines.extend([f"白话解释：{_text(segment.get('plain_explainer'))}", ""])
+        if segment.get("why_it_matters"):
+            lines.extend([f"为什么重要：{_text(segment.get('why_it_matters'))}", ""])
+        if segment.get("personal_meaning"):
+            lines.extend([f"对我的意义：{_text(segment.get('personal_meaning'))}", ""])
+        if related_items:
+            lines.extend(["来源与可信度：", *[f"- {_source_label(item)}｜{item.get('url') or '无链接'}" for item in related_items], ""])
+        elif links:
+            lines.extend(["来源与可信度：", *[f"- {link}" for link in links], ""])
 
-    lines.extend(["## 今日必听新闻", ""])
-    for news in _list(result.get("must_listen_news")):
-        number = _coerce_int(news.get("number"))
-        item = indexed_items.get(number)
-        source_label = _source_label(item) if item else _text(news.get("credibility"))
-        link = item.get("url") if item else news.get("url")
-        title = _text(news.get("broadcast_title"), item.get("title") if item else "未命名新闻")
-        lines.extend(
-            [
-                f"### {number or '-'}. {title}",
-                "",
-                f"- 一句话：{_text(news.get('one_liner'))}",
-                f"- 发生了什么：{_text(news.get('what_happened'))}",
-                f"- 名词解释：{_text(news.get('term_explainer'))}",
-                f"- 为什么重要：{_text(news.get('why_it_matters'))}",
-                f"- 对我的意义：{_text(news.get('personal_meaning'))}",
-                f"- 可信度：{source_label}",
-                f"- 原文链接：{link or '无链接'}",
-                "",
-            ]
-        )
-
-    lines.extend(["## 今日一句话带过", ""])
+    lines.extend(["## 其他消息一句话带过", ""])
     for brief in _list(result.get("quick_mentions")):
         number = _coerce_int(brief.get("number"))
         item = indexed_items.get(number)
@@ -136,7 +119,7 @@ def render_intelligence_markdown(
         lines.append(f"{prefix}{_text(brief.get('summary'))}{link}")
     lines.append("")
 
-    lines.extend(["## 今日风险提醒", ""])
+    lines.extend(["## 社区观察与风险提醒", ""])
     risks = _list(result.get("risk_reminders"))
     if risks:
         for risk in risks:
@@ -145,7 +128,9 @@ def render_intelligence_markdown(
         lines.append("- 今天没有明显需要单独标出的高风险消息，但社区讨论仍需结合原文判断。")
     lines.append("")
 
-    lines.extend(["## 今日行动建议", ""])
+    lines.extend(["## 今日总评", "", _text(result.get("daily_review"), "今天的 AI 情报主线尚不明确，建议优先查看官方来源。"), ""])
+
+    lines.extend(["## 给我的重点建议", ""])
     for action in _list(result.get("action_items"))[: int(config.get("action_items_max", 3))]:
         lines.append(f"- {_text(action)}")
     lines.append("")
@@ -213,30 +198,21 @@ def _build_center_prompt(
 ) -> str:
     compact_items = [_compact_item(index + 1, item, int(config.get("center_article_text_limit", 2200))) for index, item in enumerate(items)]
     schema = {
-        "one_sentence": "1-2 句话，总结今天 AI 圈最重要的主线",
-        "main_threads": [
+        "opening": "新闻联播式开场，1-3 段。先总结今天 AI 圈主线，并点出官方发布与社区讨论的可信度差异。",
+        "broadcast_segments": [
             {
-                "title": "主线标题",
-                "what_happened": "发生了什么",
+                "title": "重点播报标题，例如：Ollama 更新：本地模型工具正在和 Claude Code 靠近",
                 "related_news_numbers": [1, 2],
-                "why_it_matters": "为什么重要",
-                "personal_meaning": "对普通 AI 工具使用者、自动化实践者、职业探索者的意义",
+                "paragraphs": ["播报正文。可以合并多条相关新闻讲，不要机械逐条复述。"],
+                "plain_explainer": "随文白话解释关键技术词。",
+                "why_it_matters": "为什么重要。",
+                "personal_meaning": "对普通 AI 工具使用者、自动化实践者、职业探索者的意义。",
             }
         ],
-        "must_listen_news": [
-            {
-                "number": 1,
-                "broadcast_title": "播报标题",
-                "one_liner": "一句话",
-                "what_happened": "发生了什么",
-                "term_explainer": "随文解释关键名词",
-                "why_it_matters": "为什么重要",
-                "personal_meaning": "对我的意义",
-            }
-        ],
-        "quick_mentions": [{"number": 9, "summary": "一句话带过"}],
+        "quick_mentions": [{"number": 9, "summary": "其他消息一句话带过"}],
         "risk_reminders": ["社区讨论，不等于官方确认；说明为什么需要谨慎。"],
-        "action_items": ["最多 3 条具体行动建议"],
+        "daily_review": "今日总评，用 2-4 句话收束今天的趋势判断。",
+        "action_items": ["最多 3 条具体建议，例如值得补课的概念、值得点开的原文、值得尝试的工具。"],
     }
     instructions = {
         "briefing_date": briefing_date.isoformat(),
@@ -247,12 +223,11 @@ def _build_center_prompt(
             "history_skipped_count": skipped_history_count,
         },
         "limits": {
-            "main_threads_min": int(config.get("main_thread_min", 2)),
-            "main_threads_max": int(config.get("main_thread_max", 4)),
-            "must_listen_min": int(config.get("must_listen_min", 6)),
-            "must_listen_max": int(config.get("must_listen_max", 8)),
+            "broadcast_segments_min": int(config.get("broadcast_segments_min", 5)),
+            "broadcast_segments_max": int(config.get("broadcast_segments_max", 8)),
             "action_items_max": int(config.get("action_items_max", 3)),
         },
+        "style_reference": "请更接近这样的节奏：先说今天主线；然后按主题播报，例如 LangChain 连发版本说明 Agent 架构迁移、Ollama 靠近 Claude Code、llama.cpp 是本地模型底层发动机、vLLM 是服务器部署调度器；最后做今日总评和给我的重点建议。",
         "schema": schema,
         "news_items": compact_items,
     }
@@ -285,14 +260,14 @@ def _compact_item(index: int, item: dict[str, Any], text_limit: int) -> dict[str
 
 
 def _validate_center_result(result: dict[str, Any], config: dict[str, Any]) -> None:
-    required = ["one_sentence", "main_threads", "must_listen_news", "quick_mentions", "risk_reminders", "action_items"]
+    required = ["opening", "broadcast_segments", "quick_mentions", "risk_reminders", "daily_review", "action_items"]
     missing = [key for key in required if key not in result]
     if missing:
         raise RuntimeError(f"Intelligence center JSON missing fields: {', '.join(missing)}")
-    must_listen = _list(result.get("must_listen_news"))
-    minimum = int(config.get("must_listen_min", 6))
-    if len(must_listen) < minimum:
-        logging.warning("LLM returned only %s must-listen items; expected at least %s.", len(must_listen), minimum)
+    segments = _list(result.get("broadcast_segments"))
+    minimum = int(config.get("broadcast_segments_min", 5))
+    if len(segments) < minimum:
+        logging.warning("LLM returned only %s broadcast segments; expected at least %s.", len(segments), minimum)
 
 
 def _source_label(item: dict[str, Any] | None) -> str:
@@ -326,3 +301,7 @@ def _coerce_int(value: Any) -> int | None:
 def _join_numbers(value: Any) -> str:
     numbers = [str(number) for number in _list(value)]
     return "、".join(numbers)
+
+
+def _segment_links(items: list[dict[str, Any]]) -> list[str]:
+    return [item.get("url", "") for item in items if item.get("url")]

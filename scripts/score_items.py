@@ -157,8 +157,8 @@ def rank_items(items: list[dict[str, Any]], max_items: int) -> list[dict[str, An
     return sorted(
         items,
         key=lambda item: (
-            LEVEL_PRIORITY.get(item.get("source_level"), 0),
             int(item.get("score", 0)),
+            LEVEL_PRIORITY.get(item.get("source_level"), 0),
             parse_datetime(item.get("published_at")) or utc_now(),
         ),
         reverse=True,

@@ -3,27 +3,78 @@
   "lookback_hours": 24,
   "title_similarity_threshold": 0.86,
   "source_level_scores": {
-    "official_confirmed": 50,
-    "tech_community": 25,
-    "early_signal": 10,
-    "needs_verification": 5
+    "official_confirmed": 45,
+    "tech_community": 22,
+    "early_signal": 12,
+    "needs_verification": 4
   },
   "keyword_scores": {
-    "lab_names": {"score": 10, "keywords": ["OpenAI", "Anthropic", "DeepMind", "Meta AI", "xAI"]},
-    "model_names": {"score": 10, "keywords": ["GPT", "Claude", "Gemini", "Llama", "DeepSeek", "Qwen", "Kimi"]},
-    "agents_and_tools": {"score": 15, "keywords": ["Agent", "Codex", "Claude Code", "GitHub Copilot", "Cursor", "MCP"]},
-    "product_signals": {"score": 8, "keywords": ["benchmark", "release", "API", "pricing"]},
-    "open_source": {"score": 10, "keywords": ["GitHub Release", "open source"]},
-    "compute": {"score": 12, "keywords": ["GPU", "NVIDIA", "HBM", "TSMC", "semiconductor", "CoWoS"]},
-    "business_impact": {"score": 8, "keywords": ["enterprise AI", "automation", "productivity"]}
+    "major_labs": {
+      "score": 10,
+      "keywords": ["OpenAI", "Anthropic", "DeepMind", "Google DeepMind", "Meta AI", "xAI", "Mistral", "DeepSeek", "Qwen", "Kimi"]
+    },
+    "frontier_models": {
+      "score": 10,
+      "keywords": ["GPT", "ChatGPT", "Claude", "Gemini", "Llama", "Grok", "Qwen", "DeepSeek", "Kimi", "GLM", "Doubao"]
+    },
+    "agent_workflows": {
+      "score": 16,
+      "keywords": ["Agent", "AI Agent", "multi-agent", "agentic", "tool use", "function calling", "computer use", "MCP", "LangGraph", "AutoGen", "CrewAI", "Semantic Kernel", "OpenHands"]
+    },
+    "coding_tools": {
+      "score": 15,
+      "keywords": ["Codex", "Claude Code", "GitHub Copilot", "Cursor", "Continue", "Aider", "Windsurf", "code agent", "coding assistant", "IDE"]
+    },
+    "ai_app_platforms": {
+      "score": 13,
+      "keywords": ["n8n", "Dify", "Flowise", "Open WebUI", "Ollama", "LiteLLM", "OpenRouter", "LangChain", "LlamaIndex", "workflow automation", "AI application"]
+    },
+    "rag_and_data": {
+      "score": 10,
+      "keywords": ["RAG", "retrieval", "vector database", "vector search", "embeddings", "reranker", "Qdrant", "Milvus", "Chroma", "Weaviate", "Pinecone", "pgvector"]
+    },
+    "product_release_signals": {
+      "score": 12,
+      "keywords": ["release", "launch", "changelog", "product update", "API", "pricing", "generally available", "public beta", "new feature"]
+    },
+    "open_source_infra": {
+      "score": 9,
+      "keywords": ["GitHub Release", "open source", "inference", "fine-tuning", "serving", "quantization", "model weights", "dataset"]
+    },
+    "compute_and_chips": {
+      "score": 12,
+      "keywords": ["GPU", "NVIDIA", "AMD", "Intel", "HBM", "HBM3E", "TSMC", "ASML", "semiconductor", "CoWoS", "Blackwell", "B200", "AI chip", "AI accelerator", "inference server"]
+    },
+    "business_adoption": {
+      "score": 8,
+      "keywords": ["enterprise AI", "enterprise adoption", "AI adoption", "automation", "productivity", "partnership", "customer", "revenue", "ARR"]
+    },
+    "regulation_and_safety": {
+      "score": 6,
+      "keywords": ["AI safety", "regulation", "policy", "copyright", "privacy", "security", "alignment"]
+    }
   },
   "penalties": {
     "webinar": -8,
     "event only": -8,
+    "conference only": -8,
     "sponsored": -15,
+    "sponsored content": -18,
     "marketing": -10,
-    "hiring only": -10,
+    "hiring only": -12,
+    "job opening": -10,
     "pure funding news": -10,
+    "raised": -6,
+    "funding round": -8,
+    "roundup": -8,
+    "weekly roundup": -10,
+    "newsletter": -6,
+    "podcast": -6,
+    "opinion": -6,
+    "rumor": -10,
+    "deal": -6,
+    "discount": -8,
+    "giveaway": -8,
     "duplicate url": -30
   }
 }

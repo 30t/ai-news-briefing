@@ -11,6 +11,53 @@ from utils import USER_AGENT, build_item
 
 HN_BASE = "https://hacker-news.firebaseio.com/v0"
 
+DEFAULT_TOPIC_KEYWORDS = [
+    "ai",
+    "artificial intelligence",
+    "llm",
+    "large language model",
+    "gpt",
+    "chatgpt",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "deepmind",
+    "llama",
+    "mistral",
+    "qwen",
+    "deepseek",
+    "kimi",
+    "agent",
+    "agents",
+    "agentic",
+    "codex",
+    "copilot",
+    "cursor",
+    "mcp",
+    "rag",
+    "retrieval",
+    "embedding",
+    "embeddings",
+    "vector database",
+    "inference",
+    "fine-tuning",
+    "gpu",
+    "nvidia",
+    "cuda",
+    "h100",
+    "h200",
+    "b200",
+    "blackwell",
+    "tsmc",
+    "hbm",
+]
+
+
+def _matches_topic(title: str, url: str, keywords: list[str]) -> bool:
+    text = f"{title} {url}".lower()
+    return any(keyword.lower() in text for keyword in keywords)
+
 
 def fetch_hackernews(config: dict[str, Any]) -> list[dict[str, Any]]:
     if not config.get("enabled", True):
@@ -19,7 +66,9 @@ def fetch_hackernews(config: dict[str, Any]) -> list[dict[str, Any]]:
     max_stories = int(config.get("max_stories", 100))
     min_points = int(config.get("min_points", 0))
     level = config.get("level", "tech_community")
+    filter_keywords = config.get("filter_keywords") or DEFAULT_TOPIC_KEYWORDS
     items: list[dict[str, Any]] = []
+    skipped_by_topic = 0
 
     try:
         request = urllib.request.Request(f"{HN_BASE}/topstories.json", headers={"User-Agent": USER_AGENT})
@@ -41,6 +90,9 @@ def fetch_hackernews(config: dict[str, Any]) -> list[dict[str, Any]]:
             url = story.get("url") or f"https://news.ycombinator.com/item?id={story_id}"
             if not title:
                 continue
+            if filter_keywords and not _matches_topic(title, url, [str(keyword) for keyword in filter_keywords]):
+                skipped_by_topic += 1
+                continue
             published_at = datetime.fromtimestamp(int(story.get("time") or 0), timezone.utc)
             comments_url = f"https://news.ycombinator.com/item?id={story_id}"
             items.append(
@@ -57,5 +109,5 @@ def fetch_hackernews(config: dict[str, Any]) -> list[dict[str, Any]]:
             )
         except Exception as exc:
             logging.warning("Failed to fetch Hacker News story %s: %s", story_id, exc)
-    logging.info("Fetched %s Hacker News stories", len(items))
+    logging.info("Fetched %s Hacker News stories; skipped %s non-AI stories", len(items), skipped_by_topic)
     return items

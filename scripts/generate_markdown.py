@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
-from utils import format_local_time, normalize_space, strip_html
+from utils import LOCAL_TIMEZONE, format_local_time, normalize_space, strip_html
 
 
 LEVEL_LABELS = {
@@ -26,24 +26,8 @@ def _read_hint(level: str) -> str:
     if level == "tech_community":
         return "来自技术社区，适合观察讨论热度，不等于事实确认。"
     if level == "early_signal":
-        return "属于早期信号，适合收藏观察，不建议直接当成确定结论。"
+        return "属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。"
     return "信息仍需核验，请优先查看原文链接。"
-
-
-def _section_title(levels: tuple[str, ...]) -> str:
-    if levels == ("official_confirmed",):
-        return "官方确认与项目发布"
-    if levels == ("tech_community",):
-        return "技术社区热议"
-    return "早期信号与待验证信息"
-
-
-def _section_intro(levels: tuple[str, ...]) -> str:
-    if levels == ("official_confirmed",):
-        return "这一部分来自官方博客、官方 changelog、arXiv 分类源或开源项目发布页，优先作为事实入口。"
-    if levels == ("tech_community",):
-        return "这一部分来自 Hacker News、Reddit 等社区，用于发现趋势和工程讨论。"
-    return "这一部分只作为线索池，后续需要等待更多来源确认。"
 
 
 def _excerpt(item: dict[str, Any], limit: int = 420) -> str:
@@ -67,7 +51,7 @@ def _why_selected(item: dict[str, Any]) -> str:
     elif level == "tech_community":
         prefix = "社区热度或讨论价值较高"
     elif level == "early_signal":
-        prefix = "可作为趋势线索"
+        prefix = "可作为早期研究或趋势线索"
     else:
         prefix = "需要进一步核验"
     if item.get("source_type") == "hackernews" and item.get("hn_score") is not None:
@@ -112,55 +96,46 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
 
 
 def generate_markdown(items: list[dict[str, Any]], total_count: int, max_items: int) -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d")
+    selected_count = min(max_items, len(items))
     lines = [
         f"# 每日 AI 新闻规则简报｜{today}",
         "",
         "## 今日概况",
         "",
-        f"今天自动抓取 {total_count} 条信息，按来源等级、关键词、规则分数和去重规则筛出 {min(max_items, len(items))} 条。",
+        f"今天自动抓取 {total_count} 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 {selected_count} 条。",
         "本文件不调用任何模型 API，不生成模型总结，只保留规则判断、feed 摘要和原文链接。",
         "",
         "## 判断标签",
         "",
-        "- 官方确认：公司官方博客、官方 changelog、arXiv 分类源或开源项目发布页。",
+        "- 官方确认：公司官方博客、官方 changelog 或开源项目发布页。",
         "- 技术社区：Hacker News、Reddit、技术博客等，适合观察讨论热度。",
-        "- 早期信号 / 待验证：只作为线索，不直接作为事实依据。",
+        "- 早期信号：arXiv 论文、早期研究动态或仍需进一步观察的信息。",
+        "- 待验证：来源不够明确或需要进一步核验的信息。",
         "",
     ]
     if not items:
         lines.extend(
             [
-                "## 今日内容",
+                "## 今日 Top 0",
                 "",
                 "今天没有筛选出符合时间窗口和规则的新闻。请检查来源配置或稍后重新运行。",
                 "",
             ]
         )
-
-    index = 1
-    sections = [
-        ("official_confirmed",),
-        ("tech_community",),
-        ("early_signal", "needs_verification"),
-    ]
-    for section_levels in sections:
-        section_items = [item for item in items if item.get("source_level") in section_levels]
-        if not section_items:
-            continue
-        lines.extend([f"## {_section_title(section_levels)}", "", _section_intro(section_levels), ""])
-        for item in section_items:
+    else:
+        lines.extend([f"## 今日 Top {selected_count}", "", "以下内容按综合规则分数排序展示。", ""])
+        for index, item in enumerate(items, start=1):
             lines.append(_render_item(index, item))
             lines.append("")
-            index += 1
 
     lines.extend(
         [
             "## 本系统的判断原则",
             "",
-            "这份简报只做自动抓取、来源分级、关键词匹配、规则打分、去重和 Markdown 输出。",
+            "这份简报只做自动抓取、来源分级、关键词匹配、规则打分、去重、排序和 Markdown 输出。",
             "它不把自动化摘录当成最终事实，也不把社区讨论当成官方确认。",
-            "重要信息请优先查看原文链接，并结合来源等级判断可信度。",
+            "重要信息请优先查看原文链接，并结合来源等级、命中关键词和规则分数判断可信度与阅读优先级。",
             "",
         ]
     )

@@ -2,341 +2,342 @@
 
 ## 今日概况
 
-今天自动抓取 2999 条信息，按来源等级、关键词、规则分数和去重规则筛出 20 条。
+今天自动抓取 3113 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 20 条。
 本文件不调用任何模型 API，不生成模型总结，只保留规则判断、feed 摘要和原文链接。
 
 ## 判断标签
 
-- 官方确认：公司官方博客、官方 changelog、arXiv 分类源或开源项目发布页。
+- 官方确认：公司官方博客、官方 changelog 或开源项目发布页。
 - 技术社区：Hacker News、Reddit、技术博客等，适合观察讨论热度。
-- 早期信号 / 待验证：只作为线索，不直接作为事实依据。
+- 早期信号：arXiv 论文、早期研究动态或仍需进一步观察的信息。
+- 待验证：来源不够明确或需要进一步核验的信息。
 
-## 官方确认与项目发布
+## 今日 Top 20
 
-这一部分来自官方博客、官方 changelog、arXiv 分类源或开源项目发布页，优先作为事实入口。
+以下内容按综合规则分数排序展示。
 
-### 1. Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use
+### 1. LangGraph langgraph-checkpoint-sqlite==3.1.0a1：Changes since checkpointsqlite==3.0.3
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.LG
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02964
-- 命中关键词：Agent、Anthropic、benchmark、Claude、DeepSeek、OpenAI、tool use
-- 规则分数：93
-- 入选原因：来源可靠性较高，命中 Agent、Anthropic、benchmark、Claude 等关键词。
+- 来源名称：LangGraph
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 03:35
+- 原文链接：https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.0a1
+- 命中关键词：API、LangChain、LangGraph、release
+- 规则分数：92
+- 入选原因：来源可靠性较高，命中 API、LangChain、LangGraph、release 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02964v1 Announce Type: new Abstract: Reinforcement learning (RL) trained language model agents with tool access are increasingly deployed in coding assistants, research tools, and autonomous systems. We introduce the Reward Hacking Benchmark (RHB), a suite of multi-step tasks requiring sequential tool operations with naturalistic shortcut opportunities such as skipping verification steps, inferring answer...
+  > Changes since checkpointsqlite==3.0.3 * feat(checkpoint-sqlite): override get_delta_channel_history with streaming walk (#7702) * release: alpha bump (a4) for langgraph, checkpoint, checkpoint-postgres (#7701) * feat: public get_writes_history saver API + delta cadence rework (#7699) * chore(deps): bump the minor-and-patch group in /libs/checkpoint-sqlite with 2 updates (#7668) * release: alpha bump (a3) for langgra...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 2. NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises
+### 2. Secret scanning with GitHub MCP Server is now generally available
+
+- 来源等级：官方确认
+- 来源名称：GitHub Changelog
+- 来源类型：RSS
+- 发布时间：2026-05-06 06:04
+- 原文链接：https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available
+- 命中关键词：Agent、changelog、GitHub、GitHub Copilot、IDE、MCP、Model Context Protocol
+- 规则分数：88
+- 入选原因：来源可靠性较高，命中 Agent、changelog、GitHub、GitHub Copilot 等关键词。
+- Feed 摘要：
+  > GitHub secret scanning in the GitHub MCP (Model Context Protocol) server is now generally available. When you use an MCP-compatible AI coding agent or IDE (like GitHub Copilot CLI or… The post Secret scanning with GitHub MCP Server is now generally available appeared first on The GitHub Blog .
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 3. LangGraph langgraph-sdk==0.3.14：Changes since sdk==0.3.13
+
+- 来源等级：官方确认
+- 来源名称：LangGraph
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 02:40
+- 原文链接：https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.3.14
+- 命中关键词：LangChain、LangGraph、release
+- 规则分数：86
+- 入选原因：来源可靠性较高，命中 LangChain、LangGraph、release 等关键词。
+- Feed 摘要：
+  > Changes since sdk==0.3.13 * release(sdk-py): 0.3.14 (#7712) * feat(sdk-py): add return_minimal to threads update (#7704) * release: alpha bump (a4) for langgraph, checkpoint, checkpoint-postgres (#7701) * release: alpha bump langgraph 1.2.0a6 (#7697) * release: alpha bump prebuilt 1.1.0a2, langgraph 1.2.0a5 (#7682) * release: alpha bump prebuilt 1.1.0a1, langgraph 1.2.0a4 (#7679) * feat(langgraph): dispatch stream_e...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 4. NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises
 
 - 来源等级：官方确认
 - 来源名称：NVIDIA Blog
 - 来源类型：RSS
 - 发布时间：2026-05-06 01:00
 - 原文链接：https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises
-- 命中关键词：Agent、enterprise AI、NVIDIA
-- 规则分数：85
-- 入选原因：来源可靠性较高，命中 Agent、enterprise AI、NVIDIA 等关键词。
+- 命中关键词：Agent、agents、enterprise AI、NVIDIA
+- 规则分数：81
+- 入选原因：来源可靠性较高，命中 Agent、agents、enterprise AI、NVIDIA 等关键词。
 - Feed 摘要：
   > Enterprise AI has learned to generate. It has learned to reason. Now companies are asking the next question: How should AI act? Early agent systems have shown what’s possible, moving beyond simple prompts to take on more complex tasks. The next step is bringing those capabilities into enterprise environments — where agents must operate with […]
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 3. DiagramNet: An End-to-End Recognition Framework and Dataset for Non-Standard System-Level Diagrams
+### 5. llama.cpp b9041：ggml-cpu: fuse RMS_NORM + MUL on CPU backend (#22423)
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01338
-- 命中关键词：Agent、benchmark、Claude、Gemini、GPT
-- 规则分数：83
-- 入选原因：来源可靠性较高，命中 Agent、benchmark、Claude、Gemini 等关键词。
+- 来源名称：llama.cpp
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 16:31
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9041
+- 命中关键词：GitHub、Intel、Llama、llama.cpp
+- 规则分数：79
+- 入选原因：来源可靠性较高，命中 GitHub、Intel、Llama、llama.cpp 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01338v1 Announce Type: new Abstract: System-level diagrams encode the architectural blueprint of chip design, specifying module functions, dataflows, and interface protocols. However, non-standardized symbols and the scarcity of structured training data hinder existing multimodal large language models (MLLMs) from recognizing these diagrams. To address this gap, we introduce DiagramNet, the first multimod...
+  > ggml-cpu: fuse RMS_NORM + MUL on CPU backend (#22423) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9041/llama-b9041-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9041/llama-b9041-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/rel...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 4. 12 Angry AI Agents: Evaluating Multi-Agent LLM Decision-Making Through Cinematic Jury Deliberation
+### 6. llama.cpp b9038：ggml : use `CL_DEVICE_GLOBAL_MEM_SIZE` as memory estimate for OpenCL --fit (#22688)
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01986
-- 命中关键词：Agent、benchmark、GPT、Llama
-- 规则分数：83
-- 入选原因：来源可靠性较高，命中 Agent、benchmark、GPT、Llama 等关键词。
+- 来源名称：llama.cpp
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 13:58
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9038
+- 命中关键词：GitHub、Intel、Llama、llama.cpp
+- 规则分数：79
+- 入选原因：来源可靠性较高，命中 GitHub、Intel、Llama、llama.cpp 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01986v1 Announce Type: new Abstract: What if the twelve jurors of Sidney Lumet's 12 Angry Men (1957) were not men, but large language models? Would the one juror who disagrees still be able to change everyone's mind? This paper instantiates that scenario as a multi-agent benchmark for LLM deliberation: twelve agents, each conditioned on a film-faithful persona, debate the film's murder case using multi-ag...
+  > ggml : use `CL_DEVICE_GLOBAL_MEM_SIZE` as memory estimate for OpenCL --fit (#22688) * ggml : report estimated OpenCL memory for --fit Signed-off-by: Florian Reinle * ggml : estimated OpenCL memory backend integrated Signed-off-by: Florian Reinle --------- Signed-off-by: Florian Reinle **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9038/llama-b9038-bin-macos-ar...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 5. When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models
+### 7. llama.cpp b9037：Hexagon: Process M-tail rows on HMX instead of HVX (#22724)
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02363
-- 命中关键词：Agent、API、Claude
-- 规则分数：83
-- 入选原因：来源可靠性较高，命中 Agent、API、Claude 等关键词。
+- 来源名称：llama.cpp
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 04:44
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9037
+- 命中关键词：GitHub、Intel、Llama、llama.cpp
+- 规则分数：79
+- 入选原因：来源可靠性较高，命中 GitHub、Intel、Llama、llama.cpp 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02363v1 Announce Type: cross Abstract: Deployed language models must produce outputs that are both correct and format-compliant. We study this structured-output reliability gap using two mathematical benchmarks -- GSM8K and MATH -- as a controlled testbed: ground truth is unambiguous and the output contract is strict (JSON with required fields). We evaluate three 7-9B models under five prompting strategie...
+  > Hexagon: Process M-tail rows on HMX instead of HVX (#22724) * hex-mm: process m-tail rows on HMX instead of HVX * hmx-mm: unroll and optimize padded activation loop --------- Co-authored-by: Max Krasnyansky **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9037/llama-b9037-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.co...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 6. GOAT: A Training Framework for Goal-Oriented Agent with Tools
+### 8. llama.cpp b9033：sync : ggml
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2510.12218
-- 命中关键词：Agent、API、benchmark、fine-tuning、GPT、tool use
-- 规则分数：83
-- 入选原因：来源可靠性较高，命中 Agent、API、benchmark、fine-tuning 等关键词。
+- 来源名称：llama.cpp
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 22:17
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9033
+- 命中关键词：GitHub、Intel、Llama、llama.cpp
+- 规则分数：79
+- 入选原因：来源可靠性较高，命中 GitHub、Intel、Llama、llama.cpp 等关键词。
 - Feed 摘要：
-  > arXiv:2510.12218v2 Announce Type: replace Abstract: Current approaches rely on zero-shot evaluation due to the absence of training data; while proprietary models such as GPT-4 exhibit strong reasoning capabilities, smaller open-source models remain ineffective at complex tool use. To address this limitation, we propose a novel training framework GOAT, that enables fine-tuning LLM agents without human annotation. GOA...
+  > sync : ggml **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9033/llama-b9033-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9033/llama-b9033-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9033/llama-b9033-bin-macos...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 7. Towards Understanding Specification Gaming in Reasoning Models
+### 9. n8n beta：[2.20.0](https://github.com/n8n-io/n8n/compare/n8n@2.19.0...n8n@2.20.0) (2026-05-05)
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02269
-- 命中关键词：Claude、Grok、open source、release
-- 规则分数：78
-- 入选原因：来源可靠性较高，命中 Claude、Grok、open source、release 等关键词。
+- 来源名称：n8n
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 17:41
+- 原文链接：https://github.com/n8n-io/n8n/releases/tag/beta
+- 命中关键词：dataset、GitHub、n8n、workflow
+- 规则分数：79
+- 入选原因：来源可靠性较高，命中 dataset、GitHub、n8n、workflow 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02269v1 Announce Type: new Abstract: Specification gaming is a critical failure mode of LLM agents. Despite this, there has been little systematic research into when it arises and what drives it. To address this, we build and open source a diverse suite of tasks where models can score highly by taking unintended actions. We find that all tested models exploit their specifications at non-negligible rates i...
+  > # [2.20.0](https://github.com/n8n-io/n8n/compare/n8n@2.19.0...n8n@2.20.0) (2026-05-05) ### Bug Fixes * **ai-builder:** Add boundaries on the workflow builder remediation loops ([#29430](https://github.com/n8n-io/n8n/issues/29430)) ([2259f32](https://github.com/n8n-io/n8n/commit/2259f32de88c103b088b450bf46990ad2e939942)) * **ai-builder:** Allow skipping final ask-user question ([#29563](https://github.com/n8n-io/n8n/...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 8. Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study
+### 10. 2.5x faster inference with Qwen 3.6 27B using MTP - Finally a viable option for local agentic coding - 262k context on 48GB - Fixed chat template - Drop-in OpenAI and Anthropic API endpoints
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-06 17:35
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp
+- 命中关键词：agentic、Anthropic、API、inference、Llama、llama.cpp、OpenAI、Qwen、vLLM
+- 规则分数：79
+- 入选原因：社区热度或讨论价值较高，命中 agentic、Anthropic、API、inference 等关键词。
+- Feed 摘要：
+  > In my initial post, I mentioned using turboquants. However, I forgot to include instructions for building llama.cpp with the corresponding PR. The PR is currently too unstable and there are animated discussions around it. I replaced my recommendations with the standard q4_0 KV cache compression, which has some minor loss. WARNING: wait before download from HF: I just realised my upload of the new versions with the a...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 11. Transformers Release 5.8.0：Release v5.8.0
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02520
-- 命中关键词：benchmark、embeddings、GPT、OpenAI、RAG
-- 规则分数：78
-- 入选原因：来源可靠性较高，命中 benchmark、embeddings、GPT、OpenAI 等关键词。
+- 来源名称：Transformers
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 00:52
+- 原文链接：https://github.com/huggingface/transformers/releases/tag/v5.8.0
+- 命中关键词：DeepSeek、GitHub、release、Transformers、weights
+- 规则分数：77
+- 入选原因：来源可靠性较高，命中 DeepSeek、GitHub、release、Transformers 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02520v1 Announce Type: cross Abstract: Retrieval-Augmented Generation (RAG) offers a well-established path to grounding large language model (LLM) outputs in external knowledge, yet the question of which retrieval strategy works best in a high-stakes domain such as biomedicine has not received the controlled, multi-metric treatment it deserves. This paper presents a systematic empirical comparison of five...
+  > # Release v5.8.0 ## New Model additions ### DeepSeek-V4 DeepSeek-V4 is the next-generation MoE (Mixture of Experts) language model from DeepSeek that introduces several architectural innovations over DeepSeek-V3. The architecture replaces Multi-head Latent Attention (MLA) with a hybrid local + long-range attention design, swaps residual connections for Manifold-Constrained Hyper-Connections (mHC), and bootstraps the...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 9. Towards Multi-Agent Autonomous Reasoning in Hydrodynamics
+### 12. Visual graph classification for blockchain security: Experiences fine-tuning Qwen2-VL on AMD MI300X [D]
 
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
+- 来源等级：技术社区
+- 来源名称：Reddit r/MachineLearning
 - 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01102
-- 命中关键词：Agent、Claude、tool use
+- 发布时间：2026-05-05 20:00
+- 原文链接：https://www.reddit.com/r/MachineLearning/comments/1t4dcej/visual_graph_classification_for_blockchain
+- 命中关键词：agentic、AMD、dataset、embeddings、fine-tuning
 - 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、Claude、tool use 等关键词。
+- 入选原因：社区热度或讨论价值较高，命中 agentic、AMD、dataset、embeddings 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01102v1 Announce Type: new Abstract: Single-agent systems (SAS) have become the default pattern for LLM-driven scientific workflows, but routing planning, tool use, and synthesis through a single context window comes with a well-known cost: as tool specifications and observational traces accumulate, the effective context available for each decision shrinks, and end-to-end reliability suffers. We present a...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+  > Hi everyone, I’ve been working on a computer vision approach to a specific security problem in the "Agentic Economy": identifying malicious transaction patterns that are mathematically obfuscated but topologically distinct. The Problem Traditional rule-based security engines and even standard GNNs often struggle with "splitting attacks"—where a high-value transaction is fragmented into thousands of micro-transaction...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
 
 ---
 
-### 10. Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling
+### 13. Dependency scanning with GitHub MCP Server is in public preview
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
+- 来源名称：GitHub Changelog
 - 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.00833
-- 命中关键词：Agent、AI Agent、GPT
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、AI Agent、GPT 等关键词。
-- Feed 摘要：
-  > arXiv:2605.00833v1 Announce Type: cross Abstract: Agentopic is a novel agent-based workflow for explainable topic modeling that leverages the reasoning capabilities of Large Language Models (LLMs). Existing topic modeling approaches such as Latent Dirichlet Allocation (LDA) and BERTopic often lack transparency on how topics are assigned or grouped. Agentopic addresses this by using multiple agents that collaborative...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 11. The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.00914
-- 命中关键词：Agent、Llama
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、Llama 等关键词。
-- Feed 摘要：
-  > arXiv:2605.00914v1 Announce Type: cross Abstract: Multi-agent debate, where teams of LLMs iteratively exchange rationales and vote on answers, is widely deployed under the assumption that peer review filters hallucinations. Yet the failure dynamics of homogeneous debate remain poorly understood, therefore we report findings from a controlled empirical study of teams of $N{=}10$ homogeneous agents (Qwen2.5-7B, Llama-...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 12. When Alignment Isn't Enough: Response-Path Attacks on LLM Agents
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02187
-- 命中关键词：Agent、Claude、Claude Code
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、Claude、Claude Code 等关键词。
-- Feed 摘要：
-  > arXiv:2605.02187v1 Announce Type: cross Abstract: Bring-Your-Own-Key (BYOK) agent architectures let users route LLM traffic through third-party relays, creating a critical integrity gap: a malicious relay can modify an aligned LLM response after generation but before agent execution. We formalize this post-alignment tampering threat and show that, without end-to-end integrity, the relay can observe, suppress, or rep...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 13. Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2604.00555
-- 命中关键词：Agent、Claude、Qwen
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、Claude、Qwen 等关键词。
-- Feed 摘要：
-  > arXiv:2604.00555v3 Announce Type: replace Abstract: Enterprise adoption of Large Language Models (LLMs) is constrained by hallucination, domain drift, and the inability to enforce regulatory compliance at the reasoning level. We present a neurosymbolic architecture implemented within the Foundation AgenticOS (FAOS) platform that addresses these limitations through ontology-constrained neural reasoning. We introduce...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 14. Constraint-Guided Multi-Agent Decompilation for Executable Binary Recovery
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2604.23940
-- 命中关键词：Agent、GPT
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、GPT 等关键词。
-- Feed 摘要：
-  > arXiv:2604.23940v2 Announce Type: replace-cross Abstract: Decompilation -- recovering source code from compiled binaries -- is essential for security analysis, malware reverse engineering, and legacy software maintenance. However, existing decompilers produce code that often fails to compile or execute correctly, limiting their practical utility. We present a multi-agent framework that transforms decompiled code int...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 15. PIIGuard: Mitigating PII Harvesting under Adversarial Sanitization
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.CL
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.03129
-- 命中关键词：Agent、Claude、DeepSeek、GPT
-- 规则分数：75
-- 入选原因：来源可靠性较高，命中 Agent、Claude、DeepSeek、GPT 等关键词。
-- Feed 摘要：
-  > arXiv:2605.03129v1 Announce Type: cross Abstract: Browsing-enabled LLM assistants can fetch webpages and answer contact-seeking queries, creating a practical channel for scraping contact-style personally identifiable information (PII) from public pages. Many prior defenses are deployed at the model, service, or agent layer rather than at the webpage itself, leaving ordinary page owners with limited deployable option...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 16. AI Agents for Sustainable SMEs: A Green ESG Assessment Framework
-
-- 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.00841
-- 命中关键词：Agent、AI Agent、automation
+- 发布时间：2026-05-06 04:45
+- 原文链接：https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview
+- 命中关键词：changelog、GitHub、MCP、pull request
 - 规则分数：73
-- 入选原因：来源可靠性较高，命中 Agent、AI Agent、automation 等关键词。
+- 入选原因：来源可靠性较高，命中 changelog、GitHub、MCP、pull request 等关键词。
 - Feed 摘要：
-  > arXiv:2605.00841v1 Announce Type: new Abstract: This study presents a novel, AI-driven framework for assessing Environmental, Social, and Governance (ESG) performance in European small and medium-sized enterprises (SMEs). An initial phase established expert-validated ESG baseline scores from a subset of the Flash Eurobarometer FL549 survey data. In the second phase, a scalable AI agent system, built on the n8n autom...
+  > The GitHub MCP Server can now scan your code changes for vulnerable dependencies before you commit or open a pull request. You’ll catch known vulnerabilities while you write code with… The post Dependency scanning with GitHub MCP Server is in public preview appeared first on The GitHub Blog .
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 17. MILD: Mediator Agent System with Bidirectional Perception and Multi-Layered Alignment for Human-Vehicle Collaboration
+### 14. n8n n8n@2.19.3：[2.19.3](https://github.com/n8n-io/n8n/compare/n8n@2.19.2...n8n@2.19.3) (2026-05-06)
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01507
-- 命中关键词：Agent、automation
-- 规则分数：73
-- 入选原因：来源可靠性较高，命中 Agent、automation 等关键词。
+- 来源名称：n8n
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 19:00
+- 原文链接：https://github.com/n8n-io/n8n/releases/tag/n8n%402.19.3
+- 命中关键词：GitHub、n8n、workflow
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 GitHub、n8n、workflow 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01507v1 Announce Type: new Abstract: Prior studies report that partial driving automation can increase the cognitive demands on human drivers. This effect largely arises from human drivers' lack of transparent insight into the vehicle's intentions and decision logic, as well as from automated systems' limited awareness of the driver's dynamic state and preferences. This bidirectional misalignment undermin...
+  > ## [2.19.3](https://github.com/n8n-io/n8n/compare/n8n@2.19.2...n8n@2.19.3) (2026-05-06) ### Bug Fixes * **core:** Acquire expression isolate for dynamic node parameter requests ([#29711](https://github.com/n8n-io/n8n/issues/29711)) ([cd4a3f5](https://github.com/n8n-io/n8n/commit/cd4a3f579545736be33921c6f7dd9337165e37dc)) * **core:** Add file path validation to localFile source ([#29789](https://github.com/n8n-io/n8n...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 18. CP-SynC: Multi-Agent Zero-Shot Constraint Modeling in MiniZinc with Synthesized Checkers
+### 15. LiteLLM v1.83.10-stable.patch.1：Verify Docker Image Signature
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01675
-- 命中关键词：Agent、benchmark
-- 规则分数：73
-- 入选原因：来源可靠性较高，命中 Agent、benchmark 等关键词。
+- 来源名称：LiteLLM
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 10:53
+- 原文链接：https://github.com/BerriAI/litellm/releases/tag/v1.83.10-stable.patch.1
+- 命中关键词：GitHub、LiteLLM、release、repository
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 GitHub、LiteLLM、release、repository 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01675v1 Announce Type: new Abstract: Constraint Programming (CP) is a powerful paradigm for solving combinatorial problems, yet translating natural language problem descriptions into executable models remains a significant bottleneck. While Large Language Models (LLMs) show promise in automating this translation, they often struggle with subtle semantic errors in the absence of oracle validation at test t...
+  > ## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way...
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 19. NeuroState-Bench: A Human-Calibrated Benchmark for Commitment Integrity in LLM Agent Profiles
+### 16. LangChain langchain==0.3.29：Changes since langchain==0.3.28
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.01847
-- 命中关键词：Agent、benchmark
-- 规则分数：73
-- 入选原因：来源可靠性较高，命中 Agent、benchmark 等关键词。
+- 来源名称：LangChain
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 05:02
+- 原文链接：https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D0.3.29
+- 命中关键词：LangChain、release
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 LangChain、release 等关键词。
 - Feed 摘要：
-  > arXiv:2605.01847v1 Announce Type: new Abstract: Outcome-only evaluation under-specifies whether an evaluated agent profile preserves the commitments required to solve a multi-turn task coherently. NeuroState-Bench is a human-calibrated benchmark that operationalizes commitment integrity through benchmark-defined side-query probes rather than inferred hidden activations. The released inventory contains 144 determinis...
+  > Changes since langchain==0.3.28 release(langchain): 0.3.29 (#37212) fix(langchain): restrict deserialization in `langchain.storage._lc_store` (#37209) fix(core, langchain): harden `load()` against untrusted manifests (#37201)
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 20. NORA: A Harness-Engineered Autonomous Research Agent for End-to-End Spatial Data Science
+### 17. LangChain langchain-core==1.3.3：Changes since langchain-core==1.3.2
 
 - 来源等级：官方确认
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-06 12:00
-- 原文链接：https://arxiv.org/abs/2605.02092
-- 命中关键词：acquisition、Agent、automation、MCP
-- 规则分数：73
-- 入选原因：来源可靠性较高，命中 acquisition、Agent、automation、MCP 等关键词。
+- 来源名称：LangChain
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 03:02
+- 原文链接：https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.3.3
+- 命中关键词：LangChain、release
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 LangChain、release 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02092v1 Announce Type: new Abstract: The automation of scientific research workflows has emerged as a transformative frontier in artificial intelligence, yet existing autonomous research agents remain largely domain-agnostic, lacking the specialized reasoning, method selection, and data acquisition capabilities required for rigorous spatial data science. This paper introduces NORA (Night Owl Research Agen...
+  > Changes since langchain-core==1.3.2 release(core): 1.3.3 (#37198) fix(core): set deprecation `since` to 1.3.3 to match release (#37200) fix(core, langchain): harden `load()` against untrusted manifests (#37197) chore: bump notebook from 7.5.0 to 7.5.6 in /libs/core (#37109) chore: bump types-pyyaml from 6.0.12.20250915 to 6.0.12.20260408 in /libs/core (#37129) fix(core): preserve structured `inputs` on tool runs in...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 18. Ollama v0.23.1：Gemma 4 MTP (Multi-token Processing) for the MLX runner
+
+- 来源等级：官方确认
+- 来源名称：Ollama
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 01:13
+- 原文链接：https://github.com/ollama/ollama/releases/tag/v0.23.1
+- 命中关键词：changelog、GitHub、Ollama
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 changelog、GitHub、Ollama 等关键词。
+- Feed 摘要：
+  > ## Gemma 4 MTP (Multi-token Processing) for the MLX runner Gemma 4 MTP speculative decoding is now supported on Macs. This can give over a 2x speed increase for the Gemma 4 31B model on coding tasks. ``` ollama run gemma4:31b-coding-mtp-bf16 ``` ## What's Changed * Update MLX and MLX-C with threading fixes by @dhiltgen in https://github.com/ollama/ollama/pull/15845 * go: bump to 1.26 by @ParthSareen in https://githu...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 19. LangChain langchain-fireworks==1.3.1：Changes since langchain-fireworks==1.3.0
+
+- 来源等级：官方确认
+- 来源名称：LangChain
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 23:43
+- 原文链接：https://github.com/langchain-ai/langchain/releases/tag/langchain-fireworks%3D%3D1.3.1
+- 命中关键词：API、LangChain、release
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 API、LangChain、release 等关键词。
+- Feed 摘要：
+  > Changes since langchain-fireworks==1.3.0 fix(fireworks): require `api_key` in `FireworksEmbeddings` (#37193) release(fireworks): 1.3.1 (#37189) fix(fireworks): strip non-wire keys from `ToolMessage` text content blocks (#37187)
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 20. LangChain langchain-mistralai==1.1.4：Changes since langchain-mistralai==1.1.3
+
+- 来源等级：官方确认
+- 来源名称：LangChain
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 23:29
+- 原文链接：https://github.com/langchain-ai/langchain/releases/tag/langchain-mistralai%3D%3D1.1.4
+- 命中关键词：LangChain、release
+- 规则分数：70
+- 入选原因：来源可靠性较高，命中 LangChain、release 等关键词。
+- Feed 摘要：
+  > Changes since langchain-mistralai==1.1.3 release(mistralai): 1.1.4 (#37191) fix(mistralai): strip non-wire keys from `ToolMessage` (#37188)
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
 ## 本系统的判断原则
 
-这份简报只做自动抓取、来源分级、关键词匹配、规则打分、去重和 Markdown 输出。
+这份简报只做自动抓取、来源分级、关键词匹配、规则打分、去重、排序和 Markdown 输出。
 它不把自动化摘录当成最终事实，也不把社区讨论当成官方确认。
-重要信息请优先查看原文链接，并结合来源等级判断可信度。
+重要信息请优先查看原文链接，并结合来源等级、命中关键词和规则分数判断可信度与阅读优先级。

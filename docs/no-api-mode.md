@@ -1,41 +1,53 @@
 # No API Key 模式说明
 
-## 为什么第一版不接 API Key
+`main` 分支固定为 No API Key 模式。
 
-第一版的目标是先把新闻发现、来源分级、规则打分、去重和 Markdown 输出跑稳定。这样可以避免一开始就把模型生成内容当成事实，也避免配置密钥、控制费用和处理模型幻觉带来的额外复杂度。
+它不调用模型 API，不需要配置 `LLM_API_KEY`、`DEEPSEEK_API_KEY`、`OPENAI_API_KEY` 或其他密钥，也不会产生模型 API 费用。
 
-当前系统保留无 Key 运行能力：不配置 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY` 时，不会调用 OpenAI、Anthropic、DeepSeek 或其他模型 API，也不会产生模型费用。
+## 为什么 main 不接 API Key
 
-后续版本已经预留并支持可选 LLM 增强。启用 API Key 后，系统会先对规则 Top 20 尝试抓取原文正文片段，再让模型直接生成中文标题、核心总结和“为什么重要”。模型不替代来源分级、规则打分和原文链接。
+这个分支的目标是把新闻系统的基础链路跑稳定：
+
+- 来源抓取是否稳定；
+- 来源等级是否清楚；
+- 关键词匹配是否可解释；
+- 规则打分是否可调整；
+- 去重是否可靠；
+- Markdown 输出是否稳定；
+- 每条新闻是否保留原始链接。
+
+如果一开始就接入模型，系统会变得更难判断：到底是来源质量有问题、规则有问题，还是模型总结有问题。
+
+所以 `main` 只保留可解释的规则链路。
 
 ## No API Key 模式能做什么
 
-- 抓取 RSS / Atom 来源。
-- 抓取重要开源项目的 GitHub Releases。
-- 抓取 Hacker News 热门故事。
+- 抓取 RSS / Atom。
+- 抓取 GitHub Releases。
+- 抓取 Hacker News。
 - 按来源等级给基础分。
-- 按关键词和规则加分或降权。
-- 对 URL 完全重复和标题高度相似的内容去重。
-- 每天生成带日期的 Markdown 文件，例如 `output/2026-05-03.md`，并同步更新 `output/daily.md` 作为最新入口。
-- 保留每条新闻的原始链接、来源、来源等级、发布时间、命中关键词和规则分数。
-- 在无 API Key 时，用规则版摘录和粗略中文大意生成早报。
+- 按关键词加分。
+- 按营销、活动、招聘、赞助等噪声信号降权。
+- 对 URL 和相似标题去重。
+- 生成 `output/daily.md`。
+- 生成 `output/YYYY-MM-DD.md` 日期归档。
+- 保留每条新闻的来源等级、来源名称、原文链接、发布时间、命中关键词和规则分数。
 
 ## No API Key 模式不能做什么
 
-- 不能稳定理解全文语义，因为不调用模型。
-- 不能判断所有事实是否真实。
-- 不能替代人工阅读原文。
-- 不能生成深度行业分析。
-- 不能保证社区热议就是事实确认。
+- 不会阅读完整正文。
+- 不会生成模型摘要。
+- 不会生成中文深度解读。
+- 不会判断事实真伪。
+- 不会替代人工阅读原文。
+- 不会使用 Agent 自动规划或执行任务。
 
 ## 来源分级逻辑
 
-- `official_confirmed`：官方确认。来自公司官方博客、研究博客、官方 changelog、arXiv 分类源或项目 release。
-- `tech_community`：技术社区。来自 Hacker News、Reddit、技术博客和技术媒体，适合发现讨论热点。
-- `early_signal`：早期信号。通常速度快但噪声更高，例如 X / Telegram / 创始人动态。第一版预留等级，但默认不抓取 X / Telegram。
+- `official_confirmed`：官方确认。公司官方博客、官方 changelog、arXiv 分类源、GitHub Releases。
+- `tech_community`：技术社区。Hacker News、Reddit、技术博客。
+- `early_signal`：早期信号。第一版预留，不默认抓取 X / Telegram。
 - `needs_verification`：待验证。来源不够明确或需要进一步核验。
-
-Markdown 输出会映射为中文标签：官方确认、技术社区、早期信号、待验证。
 
 ## 规则打分逻辑
 
@@ -46,23 +58,26 @@ Markdown 输出会映射为中文标签：官方确认、技术社区、早期�
 - 早期信号：+10
 - 待验证：+5
 
-然后按关键词组加分，例如 Agent、Codex、GitHub Copilot、Cursor、MCP 会提高优先级；GPU、NVIDIA、HBM、TSMC、semiconductor、CoWoS 会提高算力和半导体相关新闻的优先级。
+然后按关键词组加分。
 
-低价值或偏营销类内容会降权，例如 webinar、sponsored、marketing、hiring only、pure funding news。
+例如 Agent、Codex、GitHub Copilot、Cursor、MCP 会提高编程工具与自动化相关新闻优先级；NVIDIA、GPU、HBM、TSMC、CUDA、CoWoS 会提高算力和半导体相关新闻优先级。
+
+低价值内容会降权，例如 webinar、event only、sponsored、marketing、hiring only、pure funding news。
 
 ## 为什么必须保留原文链接
 
-自动化系统只能帮助发现信息和排序，不能替代事实核验。保留原文链接可以让读者回到第一来源，判断发布时间、上下文、发布方身份和原文措辞。
+自动化系统只能帮助发现信息和排序，不能替代事实核验。
 
-尤其是技术社区和早期信号，简报只把它们当作趋势发现入口，不把它们当作事实最终结论。
+保留原文链接可以让读者回到第一来源，确认发布时间、上下文、发布方身份和原始措辞。
 
-## 接入模型 API 的原则
+尤其是技术社区和早期信号，它们只能用于发现趋势，不能直接作为事实结论。
 
-接入模型 API 后，也不应该总结所有新闻。建议只对规则筛选后的 Top 10 或 Top 20 抓正文并调用模型，原因是：
+## 后续模型能力放在哪里
 
-- 降低 API 成本。
-- 减少低质量内容进入总结链路。
-- 让模型聚焦更值得读的内容。
-- 保留规则打分和来源等级作为模型输出前的事实锚点。
+模型总结、人话解读、业务启发、语音友好日报等能力不放在 `main`。
 
-模型总结应该新增在自动化判断之后，而不是替代来源分级、规则打分和原文链接。
+这些能力放在独立分支，例如：
+
+- `feature/practical-ai-toolchain-daily`
+
+这样 `main` 始终保持为可解释、低成本、稳定的规则基础框架。

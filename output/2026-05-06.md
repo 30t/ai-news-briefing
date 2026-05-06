@@ -1,524 +1,342 @@
-# 每日 AI 早报｜2026-05-06
+# 每日 AI 新闻规则简报｜2026-05-06
 
-## 先说结论
+## 今日概况
 
-今天自动抓取 2996 条信息，按来源可信度、关键词和规则分数筛出 20 条。
-阅读顺序建议：先看官方确认和项目发布，再看社区热议，最后把早期信号当作观察线索。
+今天自动抓取 2999 条信息，按来源等级、关键词、规则分数和去重规则筛出 20 条。
+本文件不调用任何模型 API，不生成模型总结，只保留规则判断、feed 摘要和原文链接。
 
-## 标签说明
+## 判断标签
 
-- 官方确认：公司官方博客、官方 changelog、论文源或开源项目发布页，可信度较高。
-- 技术社区：Hacker News、Reddit、技术博客等，适合看热度和工程讨论。
-- 早期信号 / 待验证：适合发现苗头，但需要等待官方或多来源确认。
-- 中文标题和核心总结：有模型配置时由模型基于原文正文片段生成；没有 API Key 或正文抓取失败时自动回退规则版。
-- 中文翻译：只做规则版粗略大意，准确含义仍以原文为准。
+- 官方确认：公司官方博客、官方 changelog、arXiv 分类源或开源项目发布页。
+- 技术社区：Hacker News、Reddit、技术博客等，适合观察讨论热度。
+- 早期信号 / 待验证：只作为线索，不直接作为事实依据。
 
-## 一、优先看：官方确认与项目发布
+## 官方确认与项目发布
 
-这一部分可信度最高，适合先读。仍建议点开原文确认细节和上下文。
+这一部分来自官方博客、官方 changelog、arXiv 分类源或开源项目发布页，优先作为事实入口。
 
-### 1. NVIDIA与ServiceNow合作推出企业级自主AI代理
+### 1. Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use
 
-**判断：官方确认｜信息来源：NVIDIA Blog｜来源类型：RSS｜规则分 85**
+- 来源等级：官方确认
+- 来源名称：arXiv cs.LG
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02964
+- 命中关键词：Agent、Anthropic、benchmark、Claude、DeepSeek、OpenAI、tool use
+- 规则分数：93
+- 入选原因：来源可靠性较高，命中 Agent、Anthropic、benchmark、Claude 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02964v1 Announce Type: new Abstract: Reinforcement learning (RL) trained language model agents with tool access are increasingly deployed in coding assistants, research tools, and autonomous systems. We introduce the Reward Hacking Benchmark (RHB), a suite of multi-step tasks requiring sequential tool operations with naturalistic shortcut opportunities such as skipping verification steps, inferring answer...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、enterprise AI、NVIDIA 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 17:00
+---
+
+### 2. NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises
+
+- 来源等级：官方确认
+- 来源名称：NVIDIA Blog
+- 来源类型：RSS
+- 发布时间：2026-05-06 01:00
 - 原文链接：https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises
 - 命中关键词：Agent、enterprise AI、NVIDIA
-- 原始标题：NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises
-- 核心总结：
-  > 在ServiceNow Knowledge 2026大会上，NVIDIA与ServiceNow宣布深化合作，推出专为企业环境设计的自主AI代理。其中Project Arc是一款可长期运行、自我进化的桌面代理，结合NVIDIA OpenShell安全运行时与ServiceNow的治理框架，实现安全可控的自动化。
-
-- 模型判断为什么重要：
-  > 该合作标志着企业AI从生成与推理迈入自主行动阶段，为大规模部署安全、高效的AI代理奠定基础。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Project Arc uses NVIDIA OpenShell , an open source secure runtime for developing and deploying autonomous agents in sandboxed, policy-governed environments. To support real-world performance that these systems can perform reliably, the companies are also advancing NOWAI-Bench, an open benchmarking suite for enterprise AI agents, integrated with the NVIDIA NeMo Gym library.
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：NVIDIA Blog 的这条信息《NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises》主要涉及 Agent、enterprise AI、NVIDIA。原文细节较多，建议点开原文确认完整语境。 规则版大意：NVIDIA Blog 的这条信息《NVIDIA and ServiceNow Partner on New Autonomous AI Agents for Enterprises》主要涉及 Agent、enterprise AI、NVIDIA。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：85
+- 入选原因：来源可靠性较高，命中 Agent、enterprise AI、NVIDIA 等关键词。
+- Feed 摘要：
+  > Enterprise AI has learned to generate. It has learned to reason. Now companies are asking the next question: How should AI act? Early agent systems have shown what’s possible, moving beyond simple prompts to take on more complex tasks. The next step is bringing those capabilities into enterprise environments — where agents must operate with […]
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 2. AgentFloor基准测试：小开源模型工具使用能力逼近GPT-5
+### 3. DiagramNet: An End-to-End Recognition Framework and Dataset for Non-Standard System-Level Diagrams
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 83**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark、GPT、tool use 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00334
-- 命中关键词：Agent、benchmark、GPT、tool use
-- 原始标题：AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?
-- 核心总结：
-  > arXiv新论文提出AgentFloor基准，包含30项任务、6级能力阶梯，评估16个开源模型（0.27B-32B参数）与GPT-5。结果显示，中小型开源模型在短时结构化工具有用场景中已足够，最强开源模型整体性能匹配GPT-5，且成本更低、速度更快。差距主要体现在需要长期协调和约束跟踪的长周期规划任务上。
-
-- 模型判断为什么重要：
-  > 该研究为实际Agent系统选择模型提供了量化依据，表明许多常见子任务可放心使用小模型以降低成本。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00334: AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go? Computer Science > Artificial Intelligence Title: AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Abstract page for arXiv paper 2605.00334: 智能体Floor: How Far Up the tool use Ladder Can Small Open-Weight 模型 Go? 规则版大意：arXiv cs.AI 的这条信息《AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?》主要涉及 Agent、benchmark、GPT、tool use。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01338
+- 命中关键词：Agent、benchmark、Claude、Gemini、GPT
+- 规则分数：83
+- 入选原因：来源可靠性较高，命中 Agent、benchmark、Claude、Gemini 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01338v1 Announce Type: new Abstract: System-level diagrams encode the architectural blueprint of chip design, specifying module functions, dataflows, and interface protocols. However, non-standardized symbols and the scarcity of structured training data hinder existing multimodal large language models (MLLMs) from recognizing these diagrams. To address this gap, we introduce DiagramNet, the first multimod...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 3. 提升小语言模型结构化输出可靠性：AloLab优化器实现高准确率
+### 4. 12 Angry AI Agents: Evaluating Multi-Agent LLM Decision-Making Through Cinematic Jury Deliberation
 
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 83**
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01986
+- 命中关键词：Agent、benchmark、GPT、Llama
+- 规则分数：83
+- 入选原因：来源可靠性较高，命中 Agent、benchmark、GPT、Llama 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01986v1 Announce Type: new Abstract: What if the twelve jurors of Sidney Lumet's 12 Angry Men (1957) were not men, but large language models? Would the one juror who disagrees still be able to change everyone's mind? This paper instantiates that scenario as a multi-agent benchmark for LLM deliberation: twelve agents, each conditioned on a film-faithful persona, debate the film's murder case using multi-ag...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、API、Claude 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
+---
+
+### 5. When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
 - 原文链接：https://arxiv.org/abs/2605.02363
 - 命中关键词：Agent、API、Claude
-- 原始标题：When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models
-- 核心总结：
-  > 该研究在GSM8K与MATH数学基准上测试了三种7-9B小模型的结构化输出可靠性。发现简单提示（NAIVE/REFERENCE）下输出精度为0%，约束解码虽保证语法正确但带来3.6-8.2倍延迟且可能降低任务性能。研究者提出AloLab迭代系统提示优化器（基于Claude Sonnet 4.5），仅需黑盒API访问即可将输出精度提升至84%以上。
-
-- 模型判断为什么重要：
-  > 确保LLM输出既正确又符合格式是实际部署的关键瓶颈，AloLab提供了一种无需修改模型即可提升结构化输出可靠性的实用方案。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.02363: When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models Computer Science > Computation and Language Title: When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individua...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《When Correct Isn't Usable: Improving Structured Output Reliability in Small Language Models》主要涉及 Agent、API、Claude。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：83
+- 入选原因：来源可靠性较高，命中 Agent、API、Claude 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02363v1 Announce Type: cross Abstract: Deployed language models must produce outputs that are both correct and format-compliant. We study this structured-output reliability gap using two mathematical benchmarks -- GSM8K and MATH -- as a controlled testbed: ground truth is unambiguous and the output contract is strict (JSON with required fields). We evaluate three 7-9B models under five prompting strategie...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 4. 生物医学RAG检索策略基准测试：五种方法的系统比较
+### 6. GOAT: A Training Framework for Goal-Oriented Agent with Tools
 
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 78**
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2510.12218
+- 命中关键词：Agent、API、benchmark、fine-tuning、GPT、tool use
+- 规则分数：83
+- 入选原因：来源可靠性较高，命中 Agent、API、benchmark、fine-tuning 等关键词。
+- Feed 摘要：
+  > arXiv:2510.12218v2 Announce Type: replace Abstract: Current approaches rely on zero-shot evaluation due to the absence of training data; while proprietary models such as GPT-4 exhibit strong reasoning capabilities, smaller open-source models remain ineffective at complex tool use. To address this limitation, we propose a novel training framework GOAT, that enables fine-tuning LLM agents without human annotation. GOA...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
-- 为什么值得看：来自官方或项目发布渠道，命中 benchmark、embeddings、GPT、OpenAI 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
+---
+
+### 7. Towards Understanding Specification Gaming in Reasoning Models
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02269
+- 命中关键词：Claude、Grok、open source、release
+- 规则分数：78
+- 入选原因：来源可靠性较高，命中 Claude、Grok、open source、release 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02269v1 Announce Type: new Abstract: Specification gaming is a critical failure mode of LLM agents. Despite this, there has been little systematic research into when it arises and what drives it. To address this, we build and open source a diverse suite of tasks where models can score highly by taking unintended actions. We find that all tested models exploit their specifications at non-negligible rates i...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 8. Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
 - 原文链接：https://arxiv.org/abs/2605.02520
 - 命中关键词：benchmark、embeddings、GPT、OpenAI、RAG
-- 原始标题：Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study
-- 核心总结：
-  > 该论文在生物医学问答RAG流水线中系统比较了五种检索策略：稠密向量搜索、混合BM25+稠密、交叉编码器重排序、多查询扩展和最大边际相关性。所有策略使用固定的生成模型GPT-4o-mini、ChromaDB向量库和OpenAI的text-embedding-3-small嵌入，在BioASQ基准的250个问答对上评估，确保差异仅来自检索。
-
-- 模型判断为什么重要：
-  > 该研究提供了生物医学高利害场景下RAG检索策略的受控、多指标实证比较，为选择最佳检索方案提供了依据。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.02520: Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study Computer Science > Computation and Language Title: Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features dir...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《Benchmarking Retrieval Strategies for Biomedical Retrieval-Augmented Generation: A Controlled Empirical Study》主要涉及 benchmark、embeddings、GPT、OpenAI、RAG。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：78
+- 入选原因：来源可靠性较高，命中 benchmark、embeddings、GPT、OpenAI 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02520v1 Announce Type: cross Abstract: Retrieval-Augmented Generation (RAG) offers a well-established path to grounding large language model (LLM) outputs in external knowledge, yet the question of which retrieval strategy works best in a high-stakes domain such as biomedicine has not received the controlled, multi-metric treatment it deserves. This paper presents a systematic empirical comparison of five...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 5. SAGA：面向AI Agent推理的工作流原子调度器，在GPU集群上降低延迟1.64倍
+### 9. Towards Multi-Agent Autonomous Reasoning in Hydrodynamics
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 77**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、AI Agent、GPU、inference 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00528
-- 命中关键词：Agent、AI Agent、GPU、inference
-- 原始标题：SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters
-- 核心总结：
-  > arXiv论文SAGA提出一种工作流原子调度方案，将AI Agent的整个工作流（而非单个推理调用）作为可调度单元，通过Agent执行图、会话亲和批处理与工作窃取、及Agent公平共享三种机制，在64-GPU集群上相比vLLM v0.15.1将任务完成时间降低1.64倍。
-
-- 模型判断为什么重要：
-  > 该工作打破了传统请求级调度粒度，为处理大量链式LLM调用的AI Agent推理提供了显著性能提升的新范式。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00528: SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters Computer Science > Distributed, Parallel, and Cluster Computing Title: SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that wi...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters》主要涉及 Agent、AI Agent、GPU、inference。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that wi...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01102
+- 命中关键词：Agent、Claude、tool use
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、Claude、tool use 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01102v1 Announce Type: new Abstract: Single-agent systems (SAS) have become the default pattern for LLM-driven scientific workflows, but routing planning, tool use, and synthesis through a single context window comes with a well-known cost: as tool specifications and observational traces accumulate, the effective context available for each decision shrinks, and end-to-end reliability suffers. We present a...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 6. InfantAgent-Next 多模态通用智能体，OSWorld 准确率超 Claude
+### 10. Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、Claude、GitHub 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2505.10887
-- 命中关键词：Agent、Claude、GitHub
-- 原始标题：InfantAgent-Next: A Multimodal Generalist Agent for Automated Computer Interaction
-- 核心总结：
-  > InfantAgent-Next 是一种集成了工具基和纯视觉智能体的高度模块化多模态通用智能体，能处理文本、图像、音频和视频。在真实世界基准 OSWorld 上达到 7.27% 准确率，超过 Claude-Computer-Use，代码已开源。
-
-- 模型判断为什么重要：
-  > 该研究展示了超越现有商用模型（如 Claude）的自动化计算机交互智能体，为通用 AI 代理的发展提供了新方向。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2505.10887: InfantAgent-Next: A Multimodal Generalist Agent for Automated Computer Interaction Computer Science > Artificial Intelligence Title: InfantAgent-Next: A Multimodal Generalist Agent for Automated Computer Interaction Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that w...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《InfantAgent-Next: A Multimodal Generalist Agent for Automated Computer Interaction》主要涉及 Agent、Claude、GitHub。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that w...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 7. Agent工厂用于高层次综合：通用编码智能体能走多远？
-
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、Claude、Claude Code 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2603.25719
-- 命中关键词：Agent、Claude、Claude Code
-- 原始标题：Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?
-- 核心总结：
-  > 本文研究通用编码智能体（如Claude Code）无硬件专项训练下，能否优化高层次综合（HLS）硬件设计。提出两阶段流水线Agent Factory，从算法规格自动生成并协调多个优化智能体，在12个HLS基准测试中，从1到10个智能体缩放实现平均8.27倍加速。
-
-- 模型判断为什么重要：
-  > 展示了通用AI智能体在硬件设计优化中的潜力，可能降低HLS开发门槛。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2603.25719: Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization? Computer Science > Artificial Intelligence Title: Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?》主要涉及 Agent、Claude、Claude Code。原文细节较多，建议点开原文确认完整语境。 规则版大意：arXiv cs.AI 的这条信息《Agent Factories for High Level Synthesis: How Far Can General-Purpose Coding Agents Go in Hardware Optimization?》主要涉及 Agent、Claude、Claude Code。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 8. 神经符号方法Amortized Intelligence：将法律文本转为DACL图，裁决成本降90%
-
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、Gemini、GPT、inference 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.02472
-- 命中关键词：Agent、Gemini、GPT、inference
-- 原始标题：Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication
-- 核心总结：
-  > 该论文提出Amortized Intelligence，一种将法律文本翻译为确定性自主合约语言（DACL）图表示的神经符号方法。与GPT-5.2和Gemini 3 Pro等基线对比，基于DACL的智能体实现了近乎完美的裁决一致性，规避了概率模型的“推理悬崖”，并在高吞吐场景下降低计算成本超90%。
-
-- 模型判断为什么重要：
-  > 该方法为法律推理提供了高准确性、低成本和结构可审计的解决方案，有望推动AI在法律等高风险领域的可靠应用。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.02472: Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication Computer Science > Computation and Language Title: Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication》主要涉及 Agent、Gemini、GPT、inference。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 9. FlexSQL：灵活探索与执行提升Text-to-SQL Agent性能
-
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、Claude、Claude Code、DeepSeek 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.02815
-- 命中关键词：Agent、Claude、Claude Code、DeepSeek、GPT
-- 原始标题：FlexSQL: Flexible Exploration and Execution Make Better Text-to-SQL Agents
-- 核心总结：
-  > FlexSQL通过在推理过程中任意时刻探索数据库结构、检查数据值并运行验证查询，实现灵活交互。在Spider2-Snow基准上，使用gpt-oss-120b模型达到65.4%的分数，超过使用更强模型（如gpt-o3、DeepSeek-R1）的基线。集成到Claude Code后相对提升超10%。
-
-- 模型判断为什么重要：
-  > FlexSQL通过灵活数据库交互机制显著提升Text-to-SQL在复杂分析场景下的准确率，为开发更强大的数据库辅助Agent提供了新思路。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.02815: FlexSQL: Flexible Exploration and Execution Make Better Text-to-SQL Agents Computer Science > Computation and Language Title: FlexSQL: Flexible Exploration and Execution Make Better Text-to-SQL Agents Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work wit...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《FlexSQL: Flexible Exploration and Execution Make Better Text-to-SQL Agents》主要涉及 Agent、Claude、Claude Code、DeepSeek、GPT。原文细节较多，建议点开原文确认完整语境。 Both individuals and organizations that work wit...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 10. 本体约束神经推理：面向企业智能体系统的神经符号架构
-
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、Claude、Qwen 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2604.00555
-- 命中关键词：Agent、Claude、Qwen
-- 原始标题：Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents
-- 核心总结：
-  > 该论文提出一种在FAOS平台上实现的神经符号架构，通过角色、领域和交互三层本体约束LLM（Claude、Qwen等）在企业的推理过程，并设计了非对称耦合机制。实验表明，该架构在指标准确性和角色一致性上显著优于无约束的基线模型。
-
-- 模型判断为什么重要：
-  > 该研究为企业级AI代理的规范性与可信推理提供了可验证的工程方案，有望解决大模型在企业场景中的幻觉和合规问题。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2604.00555: Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents Computer Science > Artificial Intelligence Title: Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to devel...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents》主要涉及 Agent、Claude、Qwen。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 11. Agentopic：基于生成式AI代理的可解释主题建模工作流
-
-**判断：官方确认｜信息来源：arXiv cs.LG｜来源类型：RSS｜规则分 75**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、AI Agent、GPT 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
 - 原文链接：https://arxiv.org/abs/2605.00833
 - 命中关键词：Agent、AI Agent、GPT
-- 原始标题：Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling
-- 核心总结：
-  > Agentopic 提出一种新的多智能体工作流，利用大语言模型进行主题识别、验证、分层和自然语言解释，在BBC数据集上达到了0.95的F1分数，接近BERTopic的0.98。该方法增强了主题建模的可解释性，允许用户追溯主题分配的推理过程。
-
-- 模型判断为什么重要：
-  > Agentopic 解决了传统主题建模方法缺乏透明性的问题，在保持高准确率的同时显著提升了可解释性。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00833: Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling Computer Science > Machine Learning Title: Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that will add value for arXiv's c...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.LG 的这条信息《Agentopic: A Generative AI Agent Workflow for Explainable Topic Modeling》主要涉及 Agent、AI Agent、GPT。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that will add value for arXiv's c...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、AI Agent、GPT 等关键词。
+- Feed 摘要：
+  > arXiv:2605.00833v1 Announce Type: cross Abstract: Agentopic is a novel agent-based workflow for explainable topic modeling that leverages the reasoning capabilities of Large Language Models (LLMs). Existing topic modeling approaches such as Latent Dirichlet Allocation (LDA) and BERTopic often lack transparency on how topics are assigned or grouped. Agentopic addresses this by using multiple agents that collaborative...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 12. 智能体AI框架提升旅行规划优化，TOP数据集助力客观评估
+### 11. The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.00914
+- 命中关键词：Agent、Llama
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、Llama 等关键词。
+- Feed 摘要：
+  > arXiv:2605.00914v1 Announce Type: cross Abstract: Multi-agent debate, where teams of LLMs iteratively exchange rationales and vote on answers, is widely deployed under the assumption that peer review filters hallucinations. Yet the failure dynamics of homogeneous debate remain poorly understood, therefore we report findings from a controlled empirical study of teams of $N{=}10$ homogeneous agents (Qwen2.5-7B, Llama-...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00276
+---
+
+### 12. When Alignment Isn't Enough: Response-Path Attacks on LLM Agents
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02187
+- 命中关键词：Agent、Claude、Claude Code
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、Claude、Claude Code 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02187v1 Announce Type: cross Abstract: Bring-Your-Own-Key (BYOK) agent architectures let users route LLM traffic through third-party relays, creating a critical integrity gap: a malicious relay can modify an aligned LLM response after generation but before agent execution. We formalize this post-alignment tampering threat and show that, without end-to-end integrity, the relay can observe, suppress, or rep...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 13. Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2604.00555
+- 命中关键词：Agent、Claude、Qwen
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、Claude、Qwen 等关键词。
+- Feed 摘要：
+  > arXiv:2604.00555v3 Announce Type: replace Abstract: Enterprise adoption of Large Language Models (LLMs) is constrained by hallucination, domain drift, and the inability to enforce regulatory compliance at the reasoning level. We present a neurosymbolic architecture implemented within the Foundation AgenticOS (FAOS) platform that addresses these limitations through ontology-constrained neural reasoning. We introduce...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 14. Constraint-Guided Multi-Agent Decompilation for Executable Binary Recovery
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2604.23940
+- 命中关键词：Agent、GPT
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、GPT 等关键词。
+- Feed 摘要：
+  > arXiv:2604.23940v2 Announce Type: replace-cross Abstract: Decompilation -- recovering source code from compiled binaries -- is essential for security analysis, malware reverse engineering, and legacy software maintenance. However, existing decompilers produce code that often fails to compile or execute correctly, limiting their practical utility. We present a multi-agent framework that transforms decompiled code int...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 15. PIIGuard: Mitigating PII Harvesting under Adversarial Sanitization
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.CL
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.03129
+- 命中关键词：Agent、Claude、DeepSeek、GPT
+- 规则分数：75
+- 入选原因：来源可靠性较高，命中 Agent、Claude、DeepSeek、GPT 等关键词。
+- Feed 摘要：
+  > arXiv:2605.03129v1 Announce Type: cross Abstract: Browsing-enabled LLM assistants can fetch webpages and answer contact-seeking queries, creating a practical channel for scraping contact-style personally identifiable information (PII) from public pages. Many prior defenses are deployed at the model, service, or agent layer rather than at the webpage itself, leaving ordinary page owners with limited deployable option...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 16. AI Agents for Sustainable SMEs: A Green ESG Assessment Framework
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.00841
+- 命中关键词：Agent、AI Agent、automation
+- 规则分数：73
+- 入选原因：来源可靠性较高，命中 Agent、AI Agent、automation 等关键词。
+- Feed 摘要：
+  > arXiv:2605.00841v1 Announce Type: new Abstract: This study presents a novel, AI-driven framework for assessing Environmental, Social, and Governance (ESG) performance in European small and medium-sized enterprises (SMEs). An initial phase established expert-validated ESG baseline scores from a subset of the Flash Eurobarometer FL549 survey data. In the second phase, a scalable AI agent system, built on the n8n autom...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 17. MILD: Mediator Agent System with Bidirectional Perception and Multi-Layered Alignment for Human-Vehicle Collaboration
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01507
+- 命中关键词：Agent、automation
+- 规则分数：73
+- 入选原因：来源可靠性较高，命中 Agent、automation 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01507v1 Announce Type: new Abstract: Prior studies report that partial driving automation can increase the cognitive demands on human drivers. This effect largely arises from human drivers' lack of transparent insight into the vehicle's intentions and decision logic, as well as from automated systems' limited awareness of the driver's dynamic state and preferences. This bidirectional misalignment undermin...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 18. CP-SynC: Multi-Agent Zero-Shot Constraint Modeling in MiniZinc with Synthesized Checkers
+
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01675
 - 命中关键词：Agent、benchmark
-- 原始标题：Agentic AI for Trip Planning Optimization Application
-- 核心总结：
-  > 该研究提出一个智能体AI框架，通过编排智能体协调交通、充电、兴趣点等专门智能体实现动态旅行规划优化，并发布TOP数据集提供最优解和类别级任务结构。实验在TOP基准上达到77.4%准确率，显著优于单智能体和基于工作流的多智能体基线。
-
-- 模型判断为什么重要：
-  > 现有旅行规划系统多面向可行性而缺乏优化性能的客观评估，该工作提供了可量化的优化框架和标准数据集，推动智能旅行规划研究。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00276: Agentic AI for Trip Planning Optimization Application Computer Science > Artificial Intelligence Title: Agentic AI for Trip Planning Optimization Application Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that will add value for arXiv's community?
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《Agentic AI for Trip Planning Optimization Application》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that will add value for arXiv's community?
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：73
+- 入选原因：来源可靠性较高，命中 Agent、benchmark 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01675v1 Announce Type: new Abstract: Constraint Programming (CP) is a powerful paradigm for solving combinatorial problems, yet translating natural language problem descriptions into executable models remains a significant bottleneck. While Large Language Models (LLMs) show promise in automating this translation, they often struggle with subtle semantic errors in the absence of oracle validation at test t...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 13. 均值场路径积分扩散：从样本到交互Agent
+### 19. NeuroState-Bench: A Human-Calibrated Benchmark for Commitment Integrity in LLM Agent Profiles
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00007
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.01847
 - 命中关键词：Agent、benchmark
-- 原始标题：Mean-Field Path-Integral Diffusion: From Samples to Interacting Agents
-- 核心总结：
-  > 提出 Mean-Field Path-Integral Diffusion (MF-PID) 框架，将样本提升为交互 Agent，通过自洽人口统计协调质量传输，统一了生成建模与多智能体控制，并在线性二次高斯和混合高斯场景下得到解析解。
-
-- 模型判断为什么重要：
-  > 为生成式 AI 提供了基于多智能体交互的新范式，有望提升样本生成效率与可解释性。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00007: Mean-Field Path-Integral Diffusion: From Samples to Interacting Agents Mathematics > Optimization and Control Title: Mean-Field Path-Integral Diffusion: From Samples to Interacting Agents Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs h...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《Mean-Field Path-Integral Diffusion: From Samples to Interacting Agents》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。 Both individuals and organizations that work with arXivLabs h...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 规则分数：73
+- 入选原因：来源可靠性较高，命中 Agent、benchmark 等关键词。
+- Feed 摘要：
+  > arXiv:2605.01847v1 Announce Type: new Abstract: Outcome-only evaluation under-specifies whether an evaluated agent profile preserves the commitments required to solve a multi-turn task coherently. NeuroState-Bench is a human-calibrated benchmark that operationalizes commitment integrity through benchmark-defined side-query probes rather than inferred hidden activations. The released inventory contains 144 determinis...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 14. LLM生成代码存在社会偏见，新基准SocialBias-Bench及缓解方法研究
+### 20. NORA: A Harness-Engineered Autonomous Research Agent for End-to-End Spatial Data Science
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00382
-- 命中关键词：Agent、benchmark
-- 原始标题：Social Bias in LLM-Generated Code: Benchmark and Mitigation
-- 核心总结：
-  > 论文使用SocialBias-Bench基准（343个真实编码任务）评估了四个主流LLM，发现所有模型均存在严重偏见，Code Bias Score最高达60.58%。标准提示干预如思维链和公平性角色分配反而放大偏见，而结构化多智能体软件流程可有效降低偏见。
-
-- 模型判断为什么重要：
-  > 该研究首次系统量化了LLM生成代码中的社会偏见，为公平性AI部署提供关键警示和缓解思路。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00382: Social Bias in LLM-Generated Code: Benchmark and Mitigation Computer Science > Software Engineering Title: Social Bias in LLM-Generated Code: Benchmark and Mitigation Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and acce...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《Social Bias in LLM-Generated Code: Benchmark and Mitigation》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。 Both individuals and organizations that work with arXivLabs have embraced and acce...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
+- 来源等级：官方确认
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02092
+- 命中关键词：acquisition、Agent、automation、MCP
+- 规则分数：73
+- 入选原因：来源可靠性较高，命中 acquisition、Agent、automation、MCP 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02092v1 Announce Type: new Abstract: The automation of scientific research workflows has emerged as a transformative frontier in artificial intelligence, yet existing autonomous research agents remain largely domain-agnostic, lacking the specialized reasoning, method selection, and data acquisition capabilities required for rigorous spatial data science. This paper introduces NORA (Night Owl Research Agen...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
 
 ---
 
-### 15. A11y-Compressor：压缩GUI Agent观测，token降至22%成功率反升5.1%
+## 本系统的判断原则
 
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00551
-- 命中关键词：Agent、benchmark
-- 原始标题：A11y-Compressor: A Framework for Enhancing the Efficiency of GUI Agent Observations through Visual Context Reconstruction and Redundancy Reduction
-- 核心总结：
-  > arXiv 论文提出 A11y-Compressor 框架，将线性化可访问性树转换为紧凑结构化表示。其实现 Compressed-a11y 通过模态检测、冗余减少和语义结构化，在 OSWorld 基准上使输入 token 降至原来的 22%，任务成功率平均提升 5.1 个百分点。
-
-- 模型判断为什么重要：
-  > 该框架大幅减少输入冗余，同时提升任务成功率，为构建高效可靠的 GUI 智能体提供了重要优化方向。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00551: A11y-Compressor: A Framework for Enhancing the Efficiency of GUI Agent Observations through Visual Context Reconstruction and Redundancy Reduction Computer Science > Computation and Language Title: A11y-Compressor: A Framework for Enhancing the Efficiency of GUI Agent Observations through Visual Context Reconstruction and Redundancy Reduction Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a frame...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《A11y-Compressor: A Framework for Enhancing the Efficiency of GUI Agent Observations through Visual Context Reconstruction and Redundancy Reduction》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 16. AutoMat基准：评估编码代理在计算材料科学中的复现能力
-
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.00803
-- 命中关键词：Agent、benchmark
-- 原始标题：Can Coding Agents Reproduce Findings in Computational Materials Science?
-- 核心总结：
-  > arXiv 新论文提出 AutoMat 基准，用于测试 LLM 编码代理在计算材料科学中复现实论文结果的能力。该基准要求代理处理未明确说明的计算流程、专用工具链，并判断结果是否支持论文主张。初步评估显示，当前模型在该任务上仍有挑战。
-
-- 模型判断为什么重要：
-  > 该研究首次系统评估了编码代理在科学计算领域的真实能力，揭示了当前 LLM 在复杂科研流程中的局限性。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.00803: Can Coding Agents Reproduce Findings in Computational Materials Science? Computer Science > Software Engineering Title: Can Coding Agents Reproduce Findings in Computational Materials Science?
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > Abstract page for arXiv paper 2605.00803: Can 编程 智能体s Reproduce Findings in Computational Materials Science? 规则版大意：arXiv cs.AI 的这条信息《Can Coding Agents Reproduce Findings in Computational Materials Science?》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 17. E-mem：基于多智能体的情景上下文重构框架提升LLM Agent记忆性能
-
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark、embeddings 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2601.21714
-- 命中关键词：Agent、benchmark、embeddings
-- 原始标题：E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory
-- 核心总结：
-  > E-mem提出一种多智能体分层架构，通过保留未压缩记忆上下文并让助手智能体在激活片段内局部推理，实现情景上下文重构。在LoCoMo基准上，E-mem的F1分数超过54%，比当前最优方法GAM高出7.75%，同时降低令牌成本。
-
-- 模型判断为什么重要：
-  > 该框架解决了传统记忆预处理破坏上下文完整性的问题，使LLM Agent能够进行更精确的深层次推理，对提升复杂任务中的系统2推理能力具有重要意义。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2601.21714: E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory Computer Science > Artificial Intelligence Title: E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that will add va...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《E-mem: Multi-agent based Episodic Context Reconstruction for LLM Agent Memory》主要涉及 Agent、benchmark、embeddings。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that will add va...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 18. ExCyTIn-Bench：首个评估LLM Agent的网络威胁调查基准
-
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2507.14201
-- 命中关键词：Agent、benchmark
-- 原始标题：ExCyTIn-Bench: Evaluating LLM agents on Cyber Threat Investigation
-- 核心总结：
-  > ExCyTIn-Bench 是首个专门评估 LLM Agent 在网络安全威胁调查任务中表现的基准。它基于微软 Azure 环境，包含 57 个日志表、7542 个问题，通过威胁调查图自动生成可解释的问答对，支持多跳推理。实验测试了不同模型，旨在推动自动威胁调查的发展。
-
-- 模型判断为什么重要：
-  > 该基准填补了 LLM Agent 在网络安全领域缺乏标准化评估的空白，为自动化威胁调查系统的研发和比较提供了重要基础。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2507.14201: ExCyTIn-Bench: Evaluating LLM agents on Cyber Threat Investigation Computer Science > Cryptography and Security Title: ExCyTIn-Bench: Evaluating LLM agents on Cyber Threat Investigation Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs hav...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《ExCyTIn-Bench: Evaluating LLM agents on Cyber Threat Investigation》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。 Both individuals and organizations that work with arXivLabs hav...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 19. Claw-Eval-Live：面向动态真实工作流的智能体实时基准
-
-**判断：官方确认｜信息来源：arXiv cs.AI｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark、release 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2604.28139
-- 命中关键词：Agent、benchmark、release
-- 原始标题：Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows
-- 核心总结：
-  > Claw-Eval-Live 是一个针对 LLM 工作流智能体的实时基准，它通过可刷新的信号层和可复现的快照层来评估智能体对不断变化的工作流需求。该基准包含 105 个任务，覆盖受控商业服务和本地工作空间修复，并采用确定性检查与结构化 LLM 评判相结合的方式进行评分。
-
-- 模型判断为什么重要：
-  > 该基准解决了现有智能体基准在评估动态工作流需求方面的不足，为衡量智能体在真实世界环境中的执行能力提供了更先进的评测方法。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2604.28139: Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows Computer Science > Software Engineering Title: Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Have an idea for a project that will add value for arXiv...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.AI 的这条信息《Claw-Eval-Live: A Live Agent Benchmark for Evolving Real-World Workflows》主要涉及 Agent、benchmark、release。原文细节较多，建议点开原文确认完整语境。 Have an idea for a project that will add value for arXiv...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-### 20. 基于LLM自适应探索的BIM信息提取方法
-
-**判断：官方确认｜信息来源：arXiv cs.CL｜来源类型：RSS｜规则分 73**
-
-- 为什么值得看：来自官方或项目发布渠道，命中 Agent、benchmark 等关键词，值得快速浏览。
-- 发布时间：2026-05-05 04:00
-- 原文链接：https://arxiv.org/abs/2605.01698
-- 命中关键词：Agent、benchmark
-- 原始标题：BIM Information Extraction Through LLM-based Adaptive Exploration
-- 核心总结：
-  > 该研究提出自适应探索范式，利用LLM代理在运行时通过执行代码动态发现BIM模型结构，而非假设固定数据组织。在同时提出的ifc-bench v2基准测试（含1027个任务、37个IFC模型）上，该方法在所有配置下显著优于静态查询生成，表明应从范式层面解决BIM异构性问题。
-
-- 模型判断为什么重要：
-  > 该研究为BIM信息提取提供了全新范式，有望显著提升建筑领域数据检索的准确性和适应性。
-- 摘录依据：原文正文片段
-- 原文摘录：
-  > Abstract page for arXiv paper 2605.01698: BIM Information Extraction Through LLM-based Adaptive Exploration Computer Science > Computation and Language Title: BIM Information Extraction Through LLM-based Adaptive Exploration Code, Data and Media Associated with this Article arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have e...
-
-- 中文翻译 / 大意（规则版，仅供快速理解）：
-  > 规则版大意：arXiv cs.CL 的这条信息《BIM Information Extraction Through LLM-based Adaptive Exploration》主要涉及 Agent、benchmark。原文细节较多，建议点开原文确认完整语境。 Both individuals and organizations that work with arXivLabs have e...
-
-- 阅读提醒：优先读原文。这类信息来自官方或项目发布页，适合作为事实依据。
-
----
-
-## 阅读原则
-
-这份早报只做自动抓取、分级、打分和排序，不把自动化摘录当成最终事实。
-重要信息请优先查看官方来源和原文链接。
-社区热议和早期信号只用于发现趋势，不直接作为事实依据。
+这份简报只做自动抓取、来源分级、关键词匹配、规则打分、去重和 Markdown 输出。
+它不把自动化摘录当成最终事实，也不把社区讨论当成官方确认。
+重要信息请优先查看原文链接，并结合来源等级判断可信度。

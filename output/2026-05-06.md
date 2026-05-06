@@ -2,7 +2,7 @@
 
 ## 今日概况
 
-今天自动抓取 3114 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 20 条。
+今天自动抓取 3114 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 40 条。
 本文件不调用任何模型 API，不生成模型总结，只保留规则判断、feed 摘要和原文链接。
 
 ## 判断标签
@@ -12,7 +12,7 @@
 - 早期信号：arXiv 论文、早期研究动态或仍需进一步观察的信息。
 - 待验证：来源不够明确或需要进一步核验的信息。
 
-## 今日 Top 20
+## 今日 Top 40
 
 以下内容按综合规则分数排序展示。
 
@@ -333,6 +333,326 @@
 - Feed 摘要：
   > Changes since langchain-mistralai==1.1.3 release(mistralai): 1.1.4 (#37191) fix(mistralai): strip non-wire keys from `ToolMessage` (#37188)
 - 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 21. llama.cpp b9045：mtmd: add granite-speech support (ibm-granite/granite-4.0-1b-speech) (#22101)
+
+- 来源等级：官方确认
+- 来源名称：llama.cpp
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-06 21:33
+- 原文链接：https://github.com/ggml-org/llama.cpp/releases/tag/b9045
+- 命中关键词：Llama、llama.cpp、Transformers
+- 规则分数：67
+- 入选原因：来源可靠性较高，命中 Llama、llama.cpp、Transformers 等关键词。
+- Feed 摘要：
+  > mtmd: add granite-speech support (ibm-granite/granite-4.0-1b-speech) (#22101) * mtmd: add granite-speech support (ibm-granite/granite-4.0-1b-speech) Conformer encoder with Shaw relative position encoding, QFormer projector, log-mel spectrogram with frame stacking. Encoder uses GLU gating, folded batch norm, and SSM depthwise conv. QFormer compresses encoder output via windowed cross-attention (window=15, queries=3)...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 22. Chroma 1.5.9：Version: `1.5.9`
+
+- 来源等级：官方确认
+- 来源名称：Chroma
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 13:55
+- 原文链接：https://github.com/chroma-core/chroma/releases/tag/1.5.9
+- 命中关键词：Chroma、GitHub、workflow
+- 规则分数：67
+- 入选原因：来源可靠性较高，命中 Chroma、GitHub、workflow 等关键词。
+- Feed 摘要：
+  > Version: `1.5.9` Git ref: `refs/tags/1.5.9` Build Date: `2026-05-05T05:55` PIP Package: `chroma-1.5.9.tar.gz` Github Container Registry Image: `:1.5.9` DockerHub Image: `:1.5.9` ## What's Changed * [ENH](frontend): block functions on topology dbs by @rescrv in https://github.com/chroma-core/chroma/pull/6836 * [ENH](faults): Add Tilt fault injection CLI by @rescrv in https://github.com/chroma-core/chroma/pull/6881 *...
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 23. Chroma cli-1.4.4：CLI release.
+
+- 来源等级：官方确认
+- 来源名称：Chroma
+- 发布渠道：GitHub Releases
+- 发布时间：2026-05-05 12:47
+- 原文链接：https://github.com/chroma-core/chroma/releases/tag/cli-1.4.4
+- 命中关键词：Chroma、release
+- 规则分数：67
+- 入选原因：来源可靠性较高，命中 Chroma、release 等关键词。
+- Feed 摘要：
+  > CLI release.
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 24. MTP on strix halo with llama.cpp (PR #22673)
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-06 06:26
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t4uj9h/mtp_on_strix_halo_with_llamacpp_pr_22673
+- 命中关键词：AMD、GitHub、launch、Llama、llama.cpp、Qwen
+- 规则分数：66
+- 入选原因：社区热度或讨论价值较高，命中 AMD、GitHub、launch、Llama 等关键词。
+- Feed 摘要：
+  > I saw a post about incoming MTP support in llama.cpp so i tried it out on a AI max 395 with 128GB DDR5 8000: I rebuilt the radv container from https://github.com/kyuz0/amd-strix-halo-toolboxes with that PR : https://github.com/ggml-org/llama.cpp/pull/22673 I ran that GGUF : https://huggingface.co/am17an/Qwen3.6-35BA3B-MTP-GGUF/tree/main and added --spec-type mtp --spec-draft-n-max 3 Result : between 60 and 80 token/...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 25. GPT-5.5 Instant: smarter, clearer, and more personalized
+
+- 来源等级：官方确认
+- 来源名称：OpenAI News
+- 来源类型：RSS
+- 发布时间：2026-05-05 18:00
+- 原文链接：https://openai.com/index/gpt-5-5-instant
+- 命中关键词：ChatGPT、GPT、OpenAI
+- 规则分数：65
+- 入选原因：来源可靠性较高，命中 ChatGPT、GPT、OpenAI 等关键词。
+- Feed 摘要：
+  > GPT-5.5 Instant updates ChatGPT’s default model with smarter, more accurate answers, reduced hallucinations, and improved personalization controls.
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 26. GPT-5.5 Instant System Card
+
+- 来源等级：官方确认
+- 来源名称：OpenAI News
+- 来源类型：RSS
+- 发布时间：2026-05-05 18:00
+- 原文链接：https://openai.com/index/gpt-5-5-instant-system-card
+- 命中关键词：GPT、OpenAI
+- 规则分数：65
+- 入选原因：来源可靠性较高，命中 GPT、OpenAI 等关键词。
+- Feed 摘要：
+  > 暂无 feed 摘要，请查看原文。
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 27. datasette-referrer-policy 0.1
+
+- 来源等级：技术社区
+- 来源名称：Simon Willison
+- 来源类型：RSS
+- 发布时间：2026-05-06 07:44
+- 原文链接：https://simonwillison.net/2026/May/5/datasette-referrer-policy
+- 命中关键词：Codex、GPT、policy、release
+- 规则分数：65
+- 入选原因：社区热度或讨论价值较高，命中 Codex、GPT、policy、release 等关键词。
+- Feed 摘要：
+  > Release: datasette-referrer-policy 0.1 The OpenStreetMap tiles on the Datasette global-power-plants demo weren't displaying correctly. This turned out to be caused by two bugs. The first is that the CAPTCHA I added to that site a few weeks ago was triggering for the .json fetch requests used by the map plugin, and since those weren't HTML the user was not being asked to solve them. Here's the fix . The second was th...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 28. Conventional Commit Classification using Large Language Models and Prompt Engineering
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02033
+- 命中关键词：automation、changelog、dataset、DeepSeek、fine-tuning、Llama、Mistral、repository
+- 规则分数：61
+- 入选原因：可作为早期研究或趋势线索，命中 automation、changelog、dataset、DeepSeek 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02033v1 Announce Type: cross Abstract: Conventional commits provide a structured format for writing commit messages, which improves readability, software maintenance, and enables automation tools such as changelog generators and semantic versioning systems. Existing approaches to conventional commit classification typically rely on ML/DL models trained on large labeled datasets. In this paper, we investig...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 29. When Alignment Isn't Enough: Response-Path Attacks on LLM Agents
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2605.02187
+- 命中关键词：Agent、agents、Claude、Claude Code
+- 规则分数：59
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、Claude、Claude Code 等关键词。
+- Feed 摘要：
+  > arXiv:2605.02187v1 Announce Type: cross Abstract: Bring-Your-Own-Key (BYOK) agent architectures let users route LLM traffic through third-party relays, creating a critical integrity gap: a malicious relay can modify an aligned LLM response after generation but before agent execution. We formalize this post-alignment tampering threat and show that, without end-to-end integrity, the relay can observe, suppress, or rep...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 30. GOAT: A Training Framework for Goal-Oriented Agent with Tools
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2510.12218
+- 命中关键词：Agent、agents、API、benchmark、fine-tuning、GPT、tool use
+- 规则分数：59
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、API、benchmark 等关键词。
+- Feed 摘要：
+  > arXiv:2510.12218v2 Announce Type: replace Abstract: Current approaches rely on zero-shot evaluation due to the absence of training data; while proprietary models such as GPT-4 exhibit strong reasoning capabilities, smaller open-source models remain ineffective at complex tool use. To address this limitation, we propose a novel training framework GOAT, that enables fine-tuning LLM agents without human annotation. GOA...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 31. What do you use Gemma 4 for?
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-06 09:56
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t4zca8/what_do_you_use_gemma_4_for
+- 命中关键词：agentic、Qwen
+- 规则分数：58
+- 入选原因：社区热度或讨论价值较高，命中 agentic、Qwen 等关键词。
+- Feed 摘要：
+  > Both Gemma 4 and Qwen 3.6 seems to be the hottest local models right now. Looking at the benchmarks and reviews, it seems like it's better in every way: coding, benchmarks, agentic tasks. So is Qwen outright better? In what case would you pick Gemma over Qwen? submitted by /u/HornyGooner4402 [link] [comments]
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 32. NVIDIA Spectrum-X — the Open, AI-Native Ethernet Fabric — Sets the Standard for Gigascale AI, Now With MRC
+
+- 来源等级：官方确认
+- 来源名称：NVIDIA Blog
+- 来源类型：RSS
+- 发布时间：2026-05-06 19:30
+- 原文链接：https://blogs.nvidia.com/blog/spectrum-x-ethernet-mrc
+- 命中关键词：NVIDIA
+- 规则分数：57
+- 入选原因：来源可靠性较高，命中 NVIDIA 等关键词。
+- Feed 摘要：
+  > The race to build the world’s most powerful AI factories demands networking that keeps pace with the ambitions of AI itself. NVIDIA Spectrum-X Ethernet scale-out infrastructure stands at the forefront of that race as the most advanced AI networking technology available today, deployed by industry leaders who can’t afford to compromise on performance, resilience or […]
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 33. Code-to-cloud risk visibility with Microsoft Defender for Cloud is now generally available
+
+- 来源等级：官方确认
+- 来源名称：GitHub Changelog
+- 来源类型：RSS
+- 发布时间：2026-05-05 22:24
+- 原文链接：https://github.blog/changelog/2026-05-05-code-to-cloud-risk-visibility-with-microsoft-defender-for-cloud-is-now-generally-available
+- 命中关键词：changelog、GitHub
+- 规则分数：57
+- 入选原因：来源可靠性较高，命中 changelog、GitHub 等关键词。
+- Feed 摘要：
+  > This integration is now generally available. Since entering public preview, we’ve heard valuable feedback from customers, and we’ve shipped follow-up improvements that bring artifact and runtime context closer to the… The post Code-to-cloud risk visibility with Microsoft Defender for Cloud is now generally available appeared first on The GitHub Blog .
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 34. Deprecation notice: code_scanning_upload field will be removed from rate_limit API endpoint
+
+- 来源等级：官方确认
+- 来源名称：GitHub Changelog
+- 来源类型：RSS
+- 发布时间：2026-05-05 21:14
+- 原文链接：https://github.blog/changelog/2026-05-05-deprecation-notice-code_scanning_upload-field-will-be-removed-from-rate_limit-api-endpoint
+- 命中关键词：API、changelog、GitHub
+- 规则分数：57
+- 入选原因：来源可靠性较高，命中 API、changelog、GitHub 等关键词。
+- Feed 摘要：
+  > On May 19, 2026, we’ll remove the code_scanning_upload field from the rate_limit REST API endpoint response. Why did we make this change? The code_scanning_upload field in the rate_limit response has… The post Deprecation notice: code_scanning_upload field will be removed from rate_limit API endpoint appeared first on The GitHub Blog .
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 35. Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2604.00555
+- 命中关键词：Agent、agentic、agents、Claude、enterprise adoption、Qwen
+- 规则分数：56
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agentic、agents、Claude 等关键词。
+- Feed 摘要：
+  > arXiv:2604.00555v3 Announce Type: replace Abstract: Enterprise adoption of Large Language Models (LLMs) is constrained by hallucination, domain drift, and the inability to enforce regulatory compliance at the reasoning level. We present a neurosymbolic architecture implemented within the Foundation AgenticOS (FAOS) platform that addresses these limitations through ontology-constrained neural reasoning. We introduce...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 36. Unlocking large scale AI training networks with MRC (Multipath Reliable Connection)
+
+- 来源等级：官方确认
+- 来源名称：OpenAI News
+- 来源类型：RSS
+- 发布时间：2026-05-05 18:00
+- 原文链接：https://openai.com/index/mrc-supercomputer-networking
+- 命中关键词：OpenAI
+- 规则分数：55
+- 入选原因：来源可靠性较高，命中 OpenAI 等关键词。
+- Feed 摘要：
+  > OpenAI introduces MRC (Multipath Reliable Connection), a new supercomputer networking protocol released via OCP to improve resilience and performance in large-scale AI training clusters.
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 37. Heretic 1.3 released: Reproducible models, integrated benchmarking system, reduced peak VRAM usage, broader model support, and more
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-05 22:57
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t4hwup/heretic_13_released_reproducible_models
+- 命中关键词：GitHub、GPU、open source、release
+- 规则分数：55
+- 入选原因：社区热度或讨论价值较高，命中 GitHub、GPU、open source、release 等关键词。
+- Feed 摘要：
+  > Dear fellow Llamas, it is my distinct pleasure to announce the immediate availability of version 1.3 of Heretic ( https://github.com/p-e-w/heretic ), the leading software for removing censorship from language models. This was a long and eventful release cycle, during which Heretic became a high-profile open source project with 20,000 GitHub stars and more than 13 million total model downloads (not counting the model...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 38. MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.CL
+- 来源类型：RSS
+- 发布时间：2026-05-06 12:00
+- 原文链接：https://arxiv.org/abs/2603.03756
+- 命中关键词：dataset、GPU、inference、knowledge base、release、retrieval
+- 规则分数：55
+- 入选原因：可作为早期研究或趋势线索，命中 dataset、GPU、inference、knowledge base 等关键词。
+- Feed 摘要：
+  > arXiv:2603.03756v3 Announce Type: replace-cross Abstract: While large language models (LLMs) show promise in scientific discovery, existing research focuses on inference or feedback-driven training, leaving the direct modeling of the generative reasoning process, $P(\text{hypothesis}|\text{background})$ ($P(h|b)$), unexplored. We demonstrate that directly training $P(h|b)$ is mathematically intractable due to the co...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 39. Welcome to Maintainer Month: Celebrating the people behind the code
+
+- 来源等级：官方确认
+- 来源名称：GitHub Blog
+- 来源类型：RSS
+- 发布时间：2026-05-05 22:30
+- 原文链接：https://github.blog/open-source/maintainers/welcome-to-maintainer-month-celebrating-the-people-behind-the-code
+- 命中关键词：GitHub、open source
+- 规则分数：54
+- 入选原因：来源可靠性较高，命中 GitHub、open source 等关键词。
+- Feed 摘要：
+  > What maintainers are telling us, what we've shipped, and how to celebrate the people behind open source. The post Welcome to Maintainer Month: Celebrating the people behind the code appeared first on The GitHub Blog .
+- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
+
+---
+
+### 40. Qwen 3.6 27b Q4.0 MTP GGUF
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-06 11:01
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t50s4i/qwen_36_27b_q40_mtp_gguf
+- 命中关键词：AMD、Llama、Qwen
+- 规则分数：54
+- 入选原因：社区热度或讨论价值较高，命中 AMD、Llama、Qwen 等关键词。
+- Feed 摘要：
+  > Not sure if others have updated but tried the MPT version of LLAMA CPP. It works pretty good. I have a shitty IGPU AMD 64gb unified memory. It's pretty fast. Would say as fast as 9b Qwen 3.5 Q4KM replies. This is pretty cool. submitted by /u/Available_Hornet3538 [link] [comments]
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
 
 ---
 

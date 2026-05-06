@@ -8,12 +8,18 @@ on:
 permissions:
   contents: write
 
+env:
+  BRIEFING_BRANCH: feature/practical-ai-toolchain-daily
+
 jobs:
   build-briefing:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BRIEFING_BRANCH }}
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -36,4 +42,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add output/
           git commit -m "Update daily AI briefing" || echo "No changes to commit"
-          git push
+          git push origin HEAD:${BRIEFING_BRANCH}

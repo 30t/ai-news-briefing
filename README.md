@@ -4,7 +4,7 @@
 
 本项目用于自动采集 AI 相关信息源，并通过可解释的规则流程完成新闻筛选、来源分级、关键词识别、规则打分、去重排序和 Markdown 简报输出。
 
-它不调用大模型 API，不依赖 OpenAI、Anthropic、DeepSeek 或其他模型服务，也不把 AI 总结当作事实来源。它的定位是一个稳定、透明、可检查的新闻筛选底座：先把值得关注的 AI 信息从大量来源中筛出来，再保留原始链接、来源等级、命中关键词和规则分数，方便后续人工阅读、归档或接入更高阶分析流程。
+它不调用大模型 API，不依赖 OpenAI、Anthropic、DeepSeek 或其他模型服务，也不把 AI 总结当作事实来源。它的定位是一个稳定、透明、可检查的新闻筛选底座：先从多个来源抓取候选信息，再通过时间窗口、关键词、来源等级、规则分数和去重逻辑筛出值得优先阅读的 AI 动态。
 
 ---
 
@@ -21,7 +21,7 @@ AI 新闻很多，但质量参差不齐。
 - 根据关键词和来源等级进行规则评分
 - 降低营销、活动、赞助、招聘等低价值信息的权重
 - 对重复链接和相似标题进行去重
-- 生成带有判断依据的 Markdown 简报
+- 按综合规则分数生成每日 Top 简报
 
 它不替你下最终结论，而是帮你建立一个可追溯的 AI 新闻入口。
 
@@ -32,7 +32,7 @@ AI 新闻很多，但质量参差不齐。
 - 多来源新闻抓取
 - RSS / Atom 信息解析
 - GitHub Releases 抓取
-- Hacker News 热点抓取
+- Hacker News AI 主题粗过滤
 - 来源等级标注
 - 关键词匹配
 - 新闻主题标签生成
@@ -102,13 +102,13 @@ AI 新闻很多，但质量参差不齐。
 |---|---|
 | `scripts/fetch_rss.py` | 抓取 RSS / Atom 来源 |
 | `scripts/fetch_github_releases.py` | 抓取 GitHub Releases |
-| `scripts/fetch_hackernews.py` | 抓取 Hacker News 热门内容 |
+| `scripts/fetch_hackernews.py` | 抓取 Hacker News 热门内容，并进行 AI 主题粗过滤 |
 
 ### 来源类型
 
 #### RSS / Atom
 
-用于抓取官方博客、技术博客、arXiv 分类源和社区 RSS。
+用于抓取官方博客、技术博客、arXiv 分类源、社区 RSS 和部分 AI 媒体源。
 
 当前包含：
 
@@ -128,12 +128,20 @@ AI 新闻很多，但质量参差不齐。
 - Simon Willison
 - Latent Space
 - The Batch
+- Ben's Bites
+- Interconnects
+- Import AI
+- InfoQ AI
 - Reddit r/MachineLearning
 - Reddit r/LocalLLaMA
+- TechCrunch AI
+- The Verge AI
+- VentureBeat AI
+- WIRED AI
 
 #### GitHub Releases
 
-用于追踪重点 AI 开源项目的版本更新。
+用于追踪重点 AI 开源项目、Agent 工具、AI 应用平台、RAG / 数据栈和开发工具的版本更新。
 
 当前包含：
 
@@ -141,9 +149,23 @@ AI 新闻很多，但质量参差不齐。
 - vLLM
 - Transformers
 - LangChain
+- LangGraph
+- LlamaIndex
 - Ollama
-- AutoGen
 - Open WebUI
+- LiteLLM
+- Dify
+- n8n
+- Flowise
+- CrewAI
+- AutoGen
+- Semantic Kernel
+- OpenHands
+- Continue
+- ComfyUI
+- Qdrant
+- Milvus
+- Chroma
 
 #### Hacker News
 
@@ -154,14 +176,15 @@ AI 新闻很多，但质量参差不齐。
 ```yaml
 enabled: true
 max_stories: 100
-min_points: 20
+min_points: 30
 ```
 
 含义：
 
 - 开启 Hacker News 抓取
 - 最多读取前 100 条热门内容
-- 只保留分数不低于 20 的内容
+- 只保留分数不低于 30 的内容
+- 只保留标题或 URL 命中 AI / LLM / Agent / RAG / GPU 等主题关键词的内容
 
 ### 输出
 
@@ -179,7 +202,7 @@ min_points: 20
 
 | 脚本 | 作用 |
 |---|---|
-| `scripts/utils.py` | 构建统一 item、清理 HTML、解析时间、标准化 URL |
+| `scripts/utils.py` | 构建统一 item、清理 HTML、解析时间、标准化 URL、固定 UTC+8 时间显示 |
 | `scripts/fetch_rss.py` | 从 RSS 中提取标题、链接、摘要、时间 |
 | `scripts/fetch_github_releases.py` | 从 release 中提取项目名、版本、发布时间和 release 内容 |
 | `scripts/fetch_hackernews.py` | 从 HN 中提取标题、链接、分数、评论链接和发布时间 |
@@ -200,6 +223,8 @@ min_points: 20
 | `matched_keywords` | 命中的关键词 |
 | `tags` | 主题标签 |
 | `score` | 规则分数 |
+
+额外字段只能补充信息，不能覆盖核心字段。
 
 ### 输出
 
@@ -222,12 +247,12 @@ min_points: 20
 ### 使用配置
 
 ```yaml
-lookback_hours: 24
+lookback_hours: 36
 ```
 
 ### 判定条件
 
-只保留最近 24 小时内发布的信息。
+只保留最近 36 小时内发布的信息。
 
 如果某条信息没有可靠发布时间，系统会保留它，避免误删潜在有价值内容。
 
@@ -253,11 +278,14 @@ lookback_hours: 24
 
 | 分类 | 标签 | 关注内容 |
 |---|---|---|
-| 模型与 AI 公司 | `model` | OpenAI、GPT、Claude、Gemini、Llama、DeepSeek、Qwen、Kimi 等 |
-| Agent 与编程工具 | `agent` | Agent、Codex、Claude Code、GitHub Copilot、Cursor、MCP 等 |
-| 开源与工具链 | `open_source` | GitHub、release、benchmark、RAG、embeddings、inference 等 |
-| 算力与半导体 | `semiconductor` | NVIDIA、GPU、HBM、TSMC、CUDA、CoWoS、AI chip 等 |
-| 商业化与职业影响 | `business` | enterprise AI、automation、pricing、API、startup、partnership 等 |
+| 模型与 AI 公司 | `model` | OpenAI、GPT、Claude、Gemini、Llama、DeepSeek、Qwen、Kimi、国内模型等 |
+| Agent 与工作流 | `agent` | Agent、multi-agent、tool use、MCP、LangGraph、AutoGen、CrewAI、OpenHands 等 |
+| 编程工具 | `coding_tool` | Codex、Claude Code、GitHub Copilot、Cursor、Continue、Aider、Windsurf 等 |
+| AI 应用平台 | `ai_app` | n8n、Dify、Flowise、Open WebUI、Ollama、LiteLLM、LangChain、LlamaIndex 等 |
+| RAG 与数据栈 | `rag_data` | RAG、retrieval、embeddings、Qdrant、Milvus、Chroma、Weaviate、pgvector 等 |
+| 开源基础设施 | `open_source` | GitHub、release、inference、fine-tuning、vLLM、Transformers、ComfyUI 等 |
+| 算力与半导体 | `semiconductor` | NVIDIA、GPU、HBM、TSMC、ASML、CoWoS、AI chip、AI accelerator 等 |
+| 商业产品与政策 | `business` | enterprise AI、pricing、API、partnership、regulation、AI safety、privacy 等 |
 
 ### 判定条件
 
@@ -296,10 +324,10 @@ lookback_hours: 24
 
 | 来源等级 | 含义 | 基础分 |
 |---|---|---:|
-| `official_confirmed` | 官方确认 | 50 |
-| `tech_community` | 技术社区 | 25 |
-| `early_signal` | 早期信号 | 10 |
-| `needs_verification` | 待验证 | 5 |
+| `official_confirmed` | 官方确认 | 45 |
+| `tech_community` | 技术社区 | 22 |
+| `early_signal` | 早期信号 | 12 |
+| `needs_verification` | 待验证 | 4 |
 
 ### 关键词加分
 
@@ -309,13 +337,17 @@ lookback_hours: 24
 
 | 方向 | 示例 |
 |---|---|
-| 模型与实验室 | OpenAI、Anthropic、DeepMind、Meta AI、xAI |
-| 模型名称 | GPT、Claude、Gemini、Llama、DeepSeek、Qwen、Kimi |
-| Agent 与工具 | Agent、Codex、Claude Code、GitHub Copilot、Cursor、MCP |
-| 产品信号 | benchmark、release、API、pricing |
-| 开源 | GitHub Release、open source |
-| 算力与半导体 | GPU、NVIDIA、HBM、TSMC、CoWoS |
-| 商业影响 | enterprise AI、automation、productivity |
+| 主要 AI 公司 | OpenAI、Anthropic、DeepMind、Meta AI、xAI、Mistral、DeepSeek、Qwen、Kimi |
+| 前沿模型 | GPT、ChatGPT、Claude、Gemini、Llama、Grok、GLM、Doubao |
+| Agent 工作流 | Agent、multi-agent、tool use、MCP、LangGraph、AutoGen、CrewAI、OpenHands |
+| 编程工具 | Codex、Claude Code、GitHub Copilot、Cursor、Continue、Aider、Windsurf |
+| AI 应用平台 | n8n、Dify、Flowise、Open WebUI、Ollama、LiteLLM、LangChain、LlamaIndex |
+| RAG 与数据 | RAG、retrieval、vector database、embeddings、Qdrant、Milvus、Chroma |
+| 产品发布信号 | release、launch、changelog、product update、API、pricing、new feature |
+| 开源基础设施 | GitHub Release、open source、inference、fine-tuning、serving、quantization |
+| 算力与芯片 | GPU、NVIDIA、AMD、Intel、HBM、TSMC、ASML、CoWoS、Blackwell |
+| 商业采用 | enterprise AI、AI adoption、automation、productivity、partnership、customer |
+| 监管与安全 | AI safety、regulation、policy、copyright、privacy、security、alignment |
 
 ### 降权规则
 
@@ -324,11 +356,14 @@ lookback_hours: 24
 | 降权信号 | 含义 |
 |---|---|
 | `webinar` | 网络研讨会 |
-| `event only` | 纯活动信息 |
-| `sponsored` | 赞助内容 |
+| `event only` / `conference only` | 纯活动信息 |
+| `sponsored` / `sponsored content` | 赞助内容 |
 | `marketing` | 营销内容 |
-| `hiring only` | 纯招聘信息 |
-| `pure funding news` | 单纯融资新闻 |
+| `hiring only` / `job opening` | 纯招聘信息 |
+| `pure funding news` / `funding round` / `raised` | 单纯融资新闻 |
+| `roundup` / `weekly roundup` | 汇总型低密度内容 |
+| `newsletter` / `podcast` / `opinion` / `rumor` | 低确定性或弱信息密度内容 |
+| `deal` / `discount` / `giveaway` | 促销或赠品类内容 |
 | `duplicate url` | 重复链接 |
 
 ### 输出
@@ -385,7 +420,7 @@ title_similarity_threshold: 0.86
 
 ### 作用
 
-将新闻按优先级排序，并选出当天最值得关注的内容。
+将新闻按综合优先级排序，并选出当天最值得关注的内容。
 
 ### 使用脚本
 
@@ -403,11 +438,11 @@ max_items_per_day: 20
 
 排序优先级为：
 
-1. 来源等级
-2. 规则分数
+1. 综合规则分数
+2. 来源等级
 3. 发布时间
 
-也就是说，系统会优先保留更可靠、更相关、更新的信息。
+其中综合规则分数已经包含来源基础分、关键词加分和噪声降权。
 
 ### 输出
 
@@ -419,13 +454,17 @@ max_items_per_day: 20
 
 ### 作用
 
-将筛选后的新闻列表生成可阅读、可归档、可继续分析的 Markdown 文件。
+将筛选后的 Top 新闻列表生成可阅读、可归档、可继续分析的 Markdown 文件。
 
 ### 使用脚本
 
 | 脚本 | 作用 |
 |---|---|
 | `scripts/generate_markdown.py` | 生成每日 Markdown 简报 |
+
+### 输出顺序
+
+Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新分组。
 
 ### 每条新闻包含
 
@@ -435,10 +474,10 @@ max_items_per_day: 20
 | 来源等级 | 官方确认、技术社区、早期信号或待验证 |
 | 来源名称 | 具体来源 |
 | 来源类型 | RSS、GitHub Releases 或 Hacker News |
-| 发布时间 | 新闻发布时间 |
+| 发布时间 | UTC+8 时间 |
 | 原文链接 | 可追溯的原始链接 |
 | 命中关键词 | 触发匹配的关键词 |
-| 规则分数 | 系统计算出的排序分数 |
+| 规则分数 | 系统计算出的综合分数 |
 | 入选原因 | 为什么进入今日列表 |
 | Feed 摘要 | 来源 feed 中提供的摘要 |
 | 阅读提醒 | 根据信息来源给出的阅读提示 |
@@ -462,7 +501,6 @@ max_items_per_day: 20
 
 - 公司官方博客
 - 官方 changelog
-- arXiv 分类源
 - 开源项目 release 页面
 
 这类内容优先作为事实入口，但仍建议查看原文确认细节。
@@ -484,7 +522,11 @@ max_items_per_day: 20
 
 早期信号来源。
 
-用于保留可能有价值但尚未充分确认的信息。
+通常包括：
+
+- arXiv 论文
+- 早期研究动态
+- 尚需观察但可能有价值的信息
 
 这类内容适合收藏观察，不适合直接作为确定结论。
 
@@ -510,7 +552,7 @@ max_items_per_day: 20
 
 系统必须区分官方确认、社区讨论、早期信号和待验证信息。
 
-社区热议不能被当成官方确认。
+社区热议不能被当成官方确认，arXiv 论文也不直接等同于产品或行业事实。
 
 ### 3. 规则透明
 
@@ -557,15 +599,18 @@ max_items_per_day: 20
 
 ## 今日概况
 
-今天自动抓取若干条信息，按来源等级、关键词、规则分数和去重规则筛出 Top 新闻。
+今天自动抓取若干条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 Top 新闻。
 
 ## 判断标签
 
 - 官方确认
 - 技术社区
-- 早期信号 / 待验证
+- 早期信号
+- 待验证
 
-## 官方确认与项目发布
+## 今日 Top 20
+
+以下内容按综合规则分数排序展示。
 
 ### 1. 新闻标题
 

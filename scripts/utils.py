@@ -4,7 +4,7 @@ import html
 import json
 import logging
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Optional, Union
@@ -13,6 +13,19 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "ai-news-briefing-no-api/1.0 (+https://github.com/)"
+LOCAL_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Singapore")
+CORE_ITEM_FIELDS = {
+    "title",
+    "url",
+    "source_name",
+    "source_type",
+    "source_level",
+    "published_at",
+    "summary_or_excerpt",
+    "matched_keywords",
+    "score",
+    "tags",
+}
 
 
 def setup_logging() -> None:
@@ -62,7 +75,7 @@ def format_local_time(value: Optional[str]) -> str:
     parsed = parse_datetime(value)
     if parsed is None:
         return "未知"
-    return parsed.astimezone().strftime("%Y-%m-%d %H:%M")
+    return parsed.astimezone(LOCAL_TIMEZONE).strftime("%Y-%m-%d %H:%M")
 
 
 def datetime_to_iso(value: Optional[datetime]) -> Optional[str]:
@@ -130,5 +143,6 @@ def build_item(
         "tags": [],
     }
     if extra:
-        item.update(extra)
+        metadata = {key: value for key, value in extra.items() if key not in CORE_ITEM_FIELDS}
+        item.update(metadata)
     return item

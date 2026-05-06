@@ -24,8 +24,19 @@ def _contains_keyword(text: str, keyword: str) -> bool:
     return keyword.lower() in text
 
 
+def _item_text(item: dict[str, Any], *, include_source_type: bool = False) -> str:
+    parts = [
+        item.get("title", ""),
+        item.get("summary_or_excerpt", ""),
+        item.get("source_name", ""),
+    ]
+    if include_source_type:
+        parts.append(item.get("source_type", ""))
+    return " ".join(str(part) for part in parts).lower()
+
+
 def _match_keywords(item: dict[str, Any], keywords_config: dict[str, Any]) -> tuple[list[str], list[str]]:
-    text = f"{item.get('title', '')} {item.get('summary_or_excerpt', '')} {item.get('source_name', '')}".lower()
+    text = _item_text(item)
     matched: list[str] = []
     tags: list[str] = []
     for category in keywords_config.get("categories", {}).values():
@@ -41,7 +52,7 @@ def _match_keywords(item: dict[str, Any], keywords_config: dict[str, Any]) -> tu
 
 
 def _keyword_bonus(item: dict[str, Any], scoring_config: dict[str, Any]) -> int:
-    text = f"{item.get('title', '')} {item.get('summary_or_excerpt', '')} {item.get('source_type', '')}".lower()
+    text = _item_text(item, include_source_type=True)
     score = 0
     for rule in scoring_config.get("keyword_scores", {}).values():
         rule_score = int(rule.get("score", 0))

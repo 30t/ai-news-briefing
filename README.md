@@ -572,23 +572,62 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 ## 文件说明
 
+```text
+.
+├── README.md
+├── config
+│   ├── sources.yml
+│   ├── keywords.yml
+│   └── scoring.yml
+├── scripts
+│   ├── main.py
+│   ├── fetch_rss.py
+│   ├── fetch_github_releases.py
+│   ├── fetch_hackernews.py
+│   ├── score_items.py
+│   ├── generate_markdown.py
+│   └── utils.py
+├── output
+│   ├── daily.md
+│   └── YYYY-MM-DD.md
+├── requirements.txt
+└── .gitignore
+```
+
+### 根目录文件
+
 | 文件 | 说明 |
 |---|---|
-| `README.md` | 项目说明文件 |
-| `config/sources.yml` | 新闻来源配置，定义 RSS / Atom、GitHub Releases、Hacker News 等信息来源 |
-| `config/keywords.yml` | 关键词与标签配置，定义模型、Agent、开源、半导体、商业化等关注方向 |
-| `config/scoring.yml` | 评分、过滤、去重和排序规则配置 |
-| `scripts/main.py` | 主流程入口，串联抓取、过滤、关键词匹配、打分、去重、排序和输出 |
-| `scripts/fetch_rss.py` | RSS / Atom 抓取脚本 |
-| `scripts/fetch_github_releases.py` | GitHub Releases 抓取脚本 |
-| `scripts/fetch_hackernews.py` | Hacker News 抓取脚本 |
-| `scripts/score_items.py` | 时间过滤、关键词匹配、打分、去重和排序逻辑 |
-| `scripts/generate_markdown.py` | Markdown 简报生成逻辑 |
-| `scripts/utils.py` | 通用工具函数，包括配置读取、时间解析、HTML 清理、URL 标准化和 item 构建 |
-| `output/daily.md` | 最新生成的每日 AI 新闻简报 |
-| `output/YYYY-MM-DD.md` | 按日期归档的历史简报文件 |
-| `requirements.txt` | 依赖说明；当前无必须第三方依赖 |
-| `.gitignore` | Git 忽略规则 |
+| `README.md` | 项目说明文件，介绍项目定位、系统工作流、判断规则和文件结构。 |
+| `requirements.txt` | 依赖说明；当前版本不需要强制第三方依赖。 |
+| `.gitignore` | Git 忽略规则，用于排除虚拟环境、缓存文件和系统临时文件。 |
+
+### `config/` 配置目录
+
+| 文件 | 说明 |
+|---|---|
+| `config/sources.yml` | 新闻来源配置，定义 RSS / Atom、GitHub Releases、Hacker News 等信息来源。 |
+| `config/keywords.yml` | 关键词与标签配置，定义模型、Agent、编程工具、AI 应用平台、RAG、半导体、商业化等关注方向。 |
+| `config/scoring.yml` | 评分、过滤、去重和排序规则配置，定义时间窗口、来源基础分、关键词加分、降权规则和输出数量。 |
+
+### `scripts/` 脚本目录
+
+| 文件 | 说明 |
+|---|---|
+| `scripts/main.py` | 主流程入口，串联配置读取、信息抓取、时间过滤、关键词匹配、打分、去重、排序和输出。 |
+| `scripts/fetch_rss.py` | RSS / Atom 抓取脚本，用于读取官方博客、技术博客、arXiv、社区 RSS 和媒体 RSS。 |
+| `scripts/fetch_github_releases.py` | GitHub Releases 抓取脚本，用于读取重点开源项目和 AI 工具链项目的版本发布。 |
+| `scripts/fetch_hackernews.py` | Hacker News 抓取脚本，用于读取技术社区热门内容，并先做 AI 主题粗过滤。 |
+| `scripts/score_items.py` | 时间过滤、关键词匹配、规则打分、去重和排序逻辑。 |
+| `scripts/generate_markdown.py` | Markdown 简报生成逻辑，按 Top 排序输出每日简报。 |
+| `scripts/utils.py` | 通用工具函数，包括配置读取、时间解析、UTC+8 时间显示、HTML 清理、URL 标准化和 item 构建。 |
+
+### `output/` 输出目录
+
+| 文件 | 说明 |
+|---|---|
+| `output/daily.md` | 最新生成的每日 AI 新闻简报。 |
+| `output/YYYY-MM-DD.md` | 按日期归档的历史简报文件。 |
 
 ---
 

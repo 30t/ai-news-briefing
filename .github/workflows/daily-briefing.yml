@@ -1,4 +1,4 @@
-name: Daily AI Briefing
+name: Daily AI Rules Briefing
 
 on:
   schedule:
@@ -8,18 +8,12 @@ on:
 permissions:
   contents: write
 
-env:
-  BRIEFING_BRANCH: feature/practical-ai-toolchain-daily
-
 jobs:
   build-briefing:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ env.BRIEFING_BRANCH }}
-          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -30,9 +24,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Generate briefing
-        env:
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
           python scripts/main.py
 
@@ -42,4 +33,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add output/
           git commit -m "Update daily AI briefing" || echo "No changes to commit"
-          git push origin HEAD:${BRIEFING_BRANCH}
+          git push

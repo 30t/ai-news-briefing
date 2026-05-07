@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 import time
 import urllib.error
 import urllib.request
@@ -160,7 +161,7 @@ def _generate_with_llm(items: list[dict[str, Any]], total_count: int, config: di
             content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
             if not content:
                 raise ValueError("empty model daily response")
-            return _ensure_required_sections(content)
+            return _auto_link_source_refs(_ensure_required_sections(content), items)
         except urllib.error.HTTPError as exc:
             body = exc.read().decode("utf-8", errors="replace")
             if attempt >= max_retries:
@@ -244,6 +245,19 @@ def _ensure_required_sections(content: str) -> str:
     if missing:
         raise ValueError(f"model daily response missed required sections: {', '.join(missing)}")
     return cleaned + "\n"
+
+
+def _auto_link_source_refs(content: str, items: list[dict[str, Any]]) -> str:
+    links = {
+        str(index): _markdown_link(index, _display_title(item), item.get("url") or "")
+        for index, item in enumerate(items, 1)
+    }
+
+    def replace(match: re.Match[str]) -> str:
+        index = match.group(1)
+        return links.get(index, match.group(0))
+
+    return re.sub(r"(?<!\])\[(\d+)\](?!\()", replace, content)
 
 
 def _build_stats(items: list[dict[str, Any]], total_count: int) -> dict[str, Any]:

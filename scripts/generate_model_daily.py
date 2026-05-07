@@ -30,19 +30,30 @@ TAG_LABELS = {
     "business": "商业产品与政策",
 }
 
+PRIMARY_SECTION_LABELS = {
+    "top": "今日最重要 5 条",
+    "toolchain": "工具链更新汇总",
+    "agent_coding": "Agent / 编程工具趋势",
+    "open_source": "开源项目 Release 汇总",
+    "business": "企业应用 / 商业化信号",
+    "semiconductor": "算力 / 半导体观察",
+    "research": "前沿研究观察",
+}
+
 SYSTEM_PROMPT = """你是一个中文 AI 新闻主编。
 你的任务是把输入的 Top 候选信息池，整理成一份“可听、可读、可行动”的 AI 新闻模型解读日报。
 
 必须遵守：
 1. 只基于输入内容写作，不编造原文没有的信息。
 2. 不要逐条机械复述所有候选新闻，要综合、分组、统计和提炼。
-3. 所有重要判断必须保留来源索引，例如 [1]、[2]、[7]。
-4. 官方确认、技术社区、早期信号、待验证必须区分清楚。
-5. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
-6. 社区来源必须标注“社区讨论，不等于官方确认”。
-7. GitHub Release 可以归纳成“开源工具链更新”，不需要每条小版本都展开。
-8. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
-9. 输出只能是 Markdown，不要代码块。
+3. 所有重要判断必须保留来源索引和原文链接；正文中提到具体新闻时，优先使用 Markdown 链接，例如：[3. GitHub MCP Server 密钥扫描功能正式上线](https://example.com)。不要只写 [3]。
+4. 每条候选新闻都有 primary_section。除“今日最重要 5 条”外，同一条新闻只在它的 primary_section 里详细展开一次；其他章节如需提到，只能一句话交叉引用，不要重复解释。
+5. 官方确认、技术社区、早期信号、待验证必须区分清楚。
+6. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
+7. 社区来源必须标注“社区讨论，不等于官方确认”。
+8. GitHub Release 可以归纳成“开源工具链更新”，不需要每条小版本都展开。
+9. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
+10. 输出只能是 Markdown，不要代码块。
 """
 
 REQUIRED_SECTIONS = [
@@ -194,9 +205,11 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         + "\n".join(REQUIRED_SECTIONS)
         + "\n\n写作要求：\n"
         "- 不要逐条复述所有 items。\n"
-        "- 今日最重要 5 条必须每条都带来源索引。\n"
-        "- 工具链 / Agent / 开源 release 可以合并同类项。\n"
-        "- 附录要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n"
+        "- 每个 item 已给出 primary_section；除“今日最重要 5 条”外，同一个 item 只在 primary_section 对应章节详细展开一次，避免跨章节重复。\n"
+        "- 今日最重要 5 条必须每条都直接带原文 Markdown 链接，不要只写来源索引。\n"
+        "- 正文任何位置提到具体新闻时，必须使用 item.markdown_link，例如 [3. 标题](url)，不要让读者去附录表格反查。\n"
+        "- 工具链 / Agent / 开源 release 可以合并同类项，但每个合并项至少保留 1-3 个直接原文链接。\n"
+        "- 附录仍要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n"
         "- 对早期信号要写清楚：这是研究或早期线索，不等于已经产品化。\n"
         "- 对技术社区要写清楚：社区讨论，不等于官方确认。\n\n"
         f"输入 JSON：{json.dumps(payload, ensure_ascii=False)}"
@@ -205,10 +218,17 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
 
 def _serialize_item(index: int, item: dict[str, Any]) -> dict[str, Any]:
     llm = item.get("llm") or {}
+    title = _display_title(item)
+    url = item.get("url") or ""
     excerpt = strip_html(item.get("article_text") or item.get("summary_or_excerpt") or "")
+    primary_section = _primary_section(item)
     return {
         "id": index,
         "title": item.get("title"),
+        "display_title": title,
+        "markdown_link": _markdown_link(index, title, url),
+        "primary_section": primary_section,
+        "primary_section_zh": PRIMARY_SECTION_LABELS.get(primary_section, primary_section),
         "llm_title": llm.get("final_title_zh"),
         "llm_summary": llm.get("core_summary_zh"),
         "llm_why_it_matters": llm.get("why_it_matters_zh"),
@@ -217,7 +237,7 @@ def _serialize_item(index: int, item: dict[str, Any]) -> dict[str, Any]:
         "source_level": item.get("source_level"),
         "source_level_zh": LEVEL_LABELS.get(item.get("source_level"), "待验证"),
         "published_at": format_local_time(item.get("published_at")),
-        "url": item.get("url"),
+        "url": url,
         "score": item.get("score"),
         "hn_score": item.get("hn_score"),
         "matched_keywords": item.get("matched_keywords") or [],
@@ -257,33 +277,35 @@ def _generate_rule_based(items: list[dict[str, Any]], total_count: int) -> str:
         lines.extend([
             f"### {index}. {_display_title(item)}",
             "",
-            f"- 来源索引：[{index}]",
+            f"- 原文链接：{_markdown_link(index, _display_title(item), item.get('url') or '')}",
             f"- 来源等级：{LEVEL_LABELS.get(item.get('source_level'), '待验证')}",
             f"- 为什么重要：{_why_it_matters(item)}",
-            f"- 原文链接：{item.get('url')}",
             "",
         ])
+
     section_map = [
-        ("## 工具链更新汇总", {"ai_app", "rag_data"}),
-        ("## Agent / 编程工具趋势", {"agent", "coding_tool"}),
-        ("## 开源项目 Release 汇总", {"open_source"}),
-        ("## 企业应用 / 商业化信号", {"business"}),
-        ("## 算力 / 半导体观察", {"semiconductor"}),
-        ("## 前沿研究观察", set()),
+        ("## 工具链更新汇总", "toolchain"),
+        ("## Agent / 编程工具趋势", "agent_coding"),
+        ("## 开源项目 Release 汇总", "open_source"),
+        ("## 企业应用 / 商业化信号", "business"),
+        ("## 算力 / 半导体观察", "semiconductor"),
+        ("## 前沿研究观察", "research"),
     ]
-    for title, tags in section_map:
+    for title, section_key in section_map:
         lines.extend([title, ""])
-        candidates = [item for item in items if _has_any_tag(item, tags)] if tags else [item for item in items if item.get("source_level") == "early_signal"]
+        candidates = [item for item in items if _primary_section(item) == section_key]
         if not candidates:
             lines.extend(["今天没有足够明确的同类信号。", ""])
             continue
         for item in candidates[:4]:
-            lines.append(f"- [{items.index(item) + 1}] {_display_title(item)}：{_why_it_matters(item)}")
+            index = items.index(item) + 1
+            lines.append(f"- {_markdown_link(index, _display_title(item), item.get('url') or '')}：{_why_it_matters(item)}")
         lines.append("")
+
     lines.extend([
         "## 今日建议动作",
         "",
-        "1. 先打开官方确认来源，核验产品入口、版本号和适用范围。",
+        "1. 先打开正文中的原文链接，核验产品入口、版本号和适用范围。",
         "2. 对 GitHub Release 集中看项目级变化，不必被小版本刷屏牵着走。",
         "3. 对社区与早期研究保持观察，不直接当成事实或可用产品。",
         "",
@@ -294,7 +316,11 @@ def _generate_rule_based(items: list[dict[str, Any]], total_count: int) -> str:
         "",
     ])
     for index, item in enumerate(items, 1):
-        lines.append(f"- [{index}] {_display_title(item)}｜{LEVEL_LABELS.get(item.get('source_level'), '待验证')}｜{item.get('source_name')}｜{item.get('url')}")
+        lines.append(
+            f"- [{index}] {_markdown_link(index, _display_title(item), item.get('url') or '')}｜"
+            f"{LEVEL_LABELS.get(item.get('source_level'), '待验证')}｜{item.get('source_name')}｜"
+            f"主归属：{PRIMARY_SECTION_LABELS.get(_primary_section(item), _primary_section(item))}"
+        )
     lines.append("")
     return "\n".join(lines)
 
@@ -323,6 +349,24 @@ def _has_any_tag(item: dict[str, Any], tags: set[str]) -> bool:
     return bool(set(item.get("tags") or []).intersection(tags))
 
 
+def _primary_section(item: dict[str, Any]) -> str:
+    if item.get("source_level") == "early_signal":
+        return "research"
+    tags = set(item.get("tags") or [])
+    source_type = item.get("source_type")
+    if tags.intersection({"agent", "coding_tool"}):
+        return "agent_coding"
+    if source_type == "github_release" or "open_source" in tags:
+        return "open_source"
+    if tags.intersection({"ai_app", "rag_data", "model"}):
+        return "toolchain"
+    if "business" in tags:
+        return "business"
+    if "semiconductor" in tags:
+        return "semiconductor"
+    return "toolchain"
+
+
 def _display_title(item: dict[str, Any]) -> str:
     llm = item.get("llm") or {}
     return llm.get("final_title_zh") or item.get("title") or "无标题"
@@ -334,3 +378,10 @@ def _why_it_matters(item: dict[str, Any]) -> str:
         return str(llm["why_it_matters_zh"])
     keywords = "、".join((item.get("matched_keywords") or [])[:4]) or "相关方向"
     return f"命中 {keywords}，规则分数 {item.get('score', 0)}。"
+
+
+def _markdown_link(index: int, title: str, url: str) -> str:
+    safe_title = normalize_space(title).replace("[", "【").replace("]", "】")
+    if not url:
+        return f"[{index}. {safe_title}]"
+    return f"[{index}. {safe_title}]({url})"

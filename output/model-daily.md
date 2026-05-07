@@ -2,97 +2,86 @@
 
 ## 今日一句话
 
-AI 编程工具链迎来密集更新：GitHub MCP Server 正式上线秘密扫描并预览依赖扫描，LangChain 和 LangGraph 发布预研版本引入新协议，NVIDIA 与 ServiceNow 联手推出企业级自主代理，同时社区开源了纯 Rust+CUDA 的高性能推理引擎 Atlas。
+AI 编程工具链迎来密集更新：GitHub 为 Copilot 和 MCP 服务器添加了企业级安全与治理能力，社区则在本地推理速度上取得突破——纯 Rust 推理引擎 Atlas 开源、Qwen 3.6 27B 借助 MTP 实现 2.5 倍加速，让本地 Agent 编程更接近实用。
 
 ## 今日最重要 5 条
 
-1. **[GitHub MCP Server 秘密扫描功能正式 GA](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available)** — 开发者可在提交或创建 PR 前，通过 MCP 兼容的 AI 编码代理扫描代码中的暴露密钥，防止凭据泄露。该功能自 3 月公开预览后正式上线，支持 GitHub Secret Protection 仓库。
+1. [GitHub MCP Server 秘密扫描功能正式 GA](https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available) — 在提交代码或创建 PR 前，通过兼容 MCP 的 AI 编码代理扫描暴露的密钥，将安全检测前置到开发流程中，从源头防止凭证泄露。
 
-2. **[NVIDIA 与 ServiceNow 合作推出企业级自主 AI 代理](https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises)** — 双方联合发布 Project Arc，一款基于 NVIDIA OpenShell 安全运行时的长期运行桌面代理，可访问本地文件系统、终端和应用程序，完成复杂多步骤任务。
+2. [GB10 推理引擎 Atlas 开源：纯 Rust+CUDA，Qwen3.5-35B 达 130 tok/s](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the) — 社区项目，完全移除 PyTorch 和 Python 运行时，针对 Blackwell 架构深度优化，推理速度是 vLLM 的 3 倍以上。**社区讨论，不等于官方确认。**
 
-3. **[GB10 Solution Atlas 开源：纯 Rust+CUDA 推理引擎，Qwen3.5-35B 达 102 tok/s](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the)** — 社区讨论，不等于官方确认。该引擎无 PyTorch 或 Python 运行时，镜像仅约 2.5 GB，冷启动不到 2 分钟，在 DGX Spark 上实现稳定 102 tok/s 推理速度。
+3. [Qwen 3.6 27B 借助 MTP 推理速度提升 2.5 倍，48GB 显存可运行 262k 上下文](https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp) — 通过 llama.cpp 的 MTP（多 token 预测）支持，在 M2 Max 上达到 28 tok/s，使本地 Agent 编程成为可行选项。**社区讨论，不等于官方确认。**
 
-4. **[OpenAI B2B Signals 研究：前沿企业如何借助 Codex 构建 AI 优势](https://openai.com/index/introducing-b2b-signals)** — OpenAI 发布研究报告，揭示前沿企业如何深化 AI 采用、利用 Codex 扩展智能体工作流，并建立持久的竞争优势。
+4. [GitHub 博客：用主导性分析为 Copilot 编码代理构建“信任层”](https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic) — 针对 AI 代理的非确定性执行路径，提出关注关键结果而非固定步骤的验证方法，减少 CI 管道中的误报。
 
-5. **[GitHub Copilot 代理模式验证：构建“信任层”应对非确定性行为](https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic)** — 针对 AI 代理行为的多路径和时序变化，提出通过主导性分析（domiratory analysis）关注关键结果而非固定步骤，为可靠部署代理系统提供关键思路。
+5. [OpenAI B2B Signals 研究：前沿企业如何借助 Codex 构建 AI 优势](https://openai.com/index/introducing-b2b-signals) — 官方研究报告，揭示企业如何深化 AI 采用、扩展基于 Codex 的智能体工作流，并构建持久竞争优势。
 
 ## 工具链更新汇总
 
-**GitHub MCP Server 安全能力双升级**：除秘密扫描正式 GA 外，[GitHub MCP Server 依赖扫描功能进入公开预览](https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview)，可在提交前检测代码变更中的已知漏洞，作为 Dependabot 工具集的一部分，面向已启用 Dependabot 警报的仓库开放。
-
-**GitHub Copilot CLI 企业级管理能力增强**：[企业托管插件进入公开预览](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview)，管理员可通过 settings.json 文件配置和分发插件，支持自动安装、自定义代理和技能，适用于 Copilot Business 或 Enterprise 用户。
-
-**LangChain 生态预发布版本更新**：LangChain 发布 [1.3.0a2 初始版本](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2)，引入 stream_events v3 协议并集成到 create_agent 中；LangGraph 同步发布 [checkpoint-sqlite 3.1.0a1](https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.0a1) 和 [SDK 0.3.14](https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.3.14)，分别新增流式遍历 API 和线程更新最小化返回功能。
+- **OpenAI 公布 2026 届 ChatGPT Futures 学生创新者名单** — 26 名学生入选，将利用 ChatGPT 在建设、研究和现实世界影响方面进行探索。[15. OpenAI 公布 2026 届 ChatGPT Futures 学生创新者名单](https://openai.com/index/introducing-chatgpt-futures-class-of-2026)
 
 ## Agent / 编程工具趋势
 
-**企业级 Agent 落地加速**：NVIDIA 与 ServiceNow 的 Project Arc 展示了从“生成”到“行动”的跨越，将 NVIDIA 加速计算与 ServiceNow 工作流治理结合。同时，[Singular Bank 用 ChatGPT 和 Codex 打造内部助手](https://openai.com/index/singular-bank)，银行家每日节省 60-90 分钟，是 LLM 在金融行业的具体落地案例。
+本周 Agent 编程工具的核心趋势是**安全治理前置**与**本地推理实用化**。
 
-**Agent 验证方法论突破**：GitHub 提出的“信任层”方案解决了传统测试方法无法处理代理行为多路径和时序变化的问题，这对 Agent 在 CI/CD 流程中的可靠部署至关重要。
+**安全与治理方面：** GitHub 密集更新了 Copilot 生态的安全能力。除了秘密扫描功能正式 GA 外，[GitHub Copilot CLI 企业托管插件进入公开预览](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview)，企业管理员可统一配置和分发插件，加强安全合规控制。[VS Code 四月更新](https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases)中，Copilot 新增语义搜索、BYOK（自带模型密钥）和远程 CLI 会话监控，从代码补全进化为全工作流代理。此外，[GitHub 仓库安全公告新增搜索与筛选栏](https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories)，帮助开发者更快响应漏洞。
 
-**硬件选型社区热议**：Reddit 用户讨论 [RTX 5090 与 M5 Max 128GB 如何选](https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx)，在运行 Qwen3.6 27B 时，5090 速度约快 3 倍，但 M5 Max 内存多约 4 倍，支持更高量化精度和更大上下文。社区讨论，不等于官方确认。
+**企业落地案例：** [Singular Bank 用 ChatGPT 和 Codex 打造内部助手，银行家每日节省 60-90 分钟](https://openai.com/index/singular-bank) — 这是 OpenAI 官方确认的金融行业 AI 落地案例，表明 ChatGPT 和 Codex 能显著提升银行从业者的工作效率。
+
+**本地推理突破：** 社区在本地 Agent 编程硬件选型上展开热议，[RTX 5090 vs M5 Max 的讨论](https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx)揭示了速度与内存之间的核心权衡。同时，[GB10 推理引擎 Atlas 开源](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the)和 [Qwen 3.6 27B MTP 加速](https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp)两条社区消息表明，通过移除通用框架或利用模型内置的推测解码，本地推理性能正在逼近实用门槛。
 
 ## 开源项目 Release 汇总
 
-**llama.cpp 密集发布**：今日连续发布 4 个版本：
-- [b9049](https://github.com/ggml-org/llama.cpp/releases/tag/b9049)：新增 MiniCPM-V 4.6 多模态模型支持
-- [b9048](https://github.com/ggml-org/llama.cpp/releases/tag/b9048)：修复不支持的架构导致崩溃问题
-- [b9047](https://github.com/ggml-org/llama.cpp/releases/tag/b9047)：修复未知设备内存适配问题
-- [b9041](https://github.com/ggml-org/llama.cpp/releases/tag/b9041)：CPU 后端融合 RMS_NORM 与 MUL 操作，提升推理性能
+- **LangChain 1.3.0a2 预发布版** — 引入 v3 流事件协议和 HITL 中间件的 respond 决策，对构建可观测性和人机协作的 AI Agent 应用有重要影响。[1. LangChain 发布 1.3.0a2 预发布版，引入 v3 流事件与 HITL 中间件](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2)
 
-**其他重要 Release**：
-- [Transformers 5.8.0](https://github.com/huggingface/transformers/releases/tag/v5.8.0)：新增 DeepSeek-V4 模型支持，该模型采用混合局部+长程注意力替代 MLA，并引入流形约束超连接等创新
-- [CrewAI 1.14.5a3](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3)：修复状态端点路径，升级 gitpython 依赖以符合安全要求，CLI 功能提取为独立包
+- **CrewAI 1.14.5a3** — 修复状态端点路径从 `/{kickoff_id}/status` 改为 `/status/{kickoff_id}`，并将 gitpython 依赖升级至 >=3.1.47 以修复安全漏洞。[11. CrewAI 1.14.5a3 发布：修复状态端点路径并提升安全性](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3)
+
+- **llama.cpp 连续发布三个小版本** — b9047 修复未知 GPU 显存适配问题，b9048 修复不支持的架构导致崩溃问题，b9050 修复 ggml_backend_load_all() 调用缺失。均为例行修复更新。[6. llama.cpp b9050](https://github.com/ggml-org/llama.cpp/releases/tag/b9050)、[7. llama.cpp b9048](https://github.com/ggml-org/llama.cpp/releases/tag/b9048)、[8. llama.cpp b9047](https://github.com/ggml-org/llama.cpp/releases/tag/b9047)
 
 ## 企业应用 / 商业化信号
 
-**金融行业 AI 落地案例**：Singular Bank 基于 OpenAI 的 ChatGPT 和 Codex 构建内部助手，银行家每日节省 60-90 分钟，展示了 LLM 在金融行业的具体落地价值。
-
-**企业级 Agent 治理方案**：NVIDIA 与 ServiceNow 的合作不仅推出 Project Arc 桌面代理，还通过 ServiceNow AI Control Tower 提供治理能力，为企业大规模部署自主 AI 代理提供了安全可控的路径。
-
-**GitHub Copilot 企业化管理**：企业托管插件功能使组织能够统一配置 Copilot CLI 扩展，提升开发效率与合规性，标志着 GitHub Copilot 在企业场景下的可管理性迈出重要一步。
+- **Singular Bank 案例**（已在 Agent / 编程工具趋势中详细展开）展示了金融行业 AI 落地的实际效率提升。
+- **GitHub Copilot 企业托管插件**（已在 Agent / 编程工具趋势中详细展开）表明企业级 AI 编程工具的治理需求正在快速增长。
 
 ## 算力 / 半导体观察
 
-**推理引擎突破硬件瓶颈**：GB10 Solution Atlas 开源引擎通过全栈重写（纯 Rust+CUDA），在 DGX Spark 上对 Qwen3.5-35B 实现 102 tok/s，证明了“瓶颈不在硅片，而在软件栈”的观点。
-
-**硬件选型核心矛盾**：社区讨论中 RTX 5090 与 M5 Max 128GB 的对比，反映了本地大模型开发中速度与内存的经典权衡，对开发者购机有参考价值。
-
-**llama.cpp 持续优化 CPU 推理**：b9041 版本在 CPU 后端融合 RMS_NORM 与 MUL 操作，b9047 和 b9048 修复硬件兼容性问题，体现了开源社区对多样化硬件环境的持续适配。
+- **GB10 推理引擎 Atlas 开源**（已在今日最重要 5 条中详细展开）—— 纯 Rust + CUDA 实现，针对 Blackwell 架构深度优化，展示了通过移除通用 Python 框架可大幅提升推理性能。**社区讨论，不等于官方确认。**
+- **llama.cpp 连续修复 GPU 兼容性问题**（已在开源项目 Release 汇总中合并）—— 包括未知 GPU 显存适配、不支持的架构崩溃等，反映了本地推理对异构硬件兼容性的持续需求。
 
 ## 前沿研究观察
 
-**DeepSeek-V4 架构创新**：Transformers 5.8.0 新增对 DeepSeek-V4 的支持，该模型采用混合局部+长程注意力替代 MLA，并引入流形约束超连接。这是 arXiv / 论文 / benchmark 层面的模型架构创新，不等于已产品化事实。
+以下为 arXiv 论文，属于早期研究信号，不等于已产品化。
 
-**Agent 验证方法论**：GitHub 提出的“信任层”方案通过主导性分析关注关键结果而非固定步骤，为 AI 代理的非确定性行为验证提供了新的研究思路。
+- **[MEMTIER：面向长期自主AI Agent的分层记忆架构](https://arxiv.org/abs/2605.03675)** — 提出三层记忆架构解决长期运行 Agent 的记忆一致性问题。在 LongMemEval-S 基准上，使用 Qwen2.5-7B 在 6GB 消费级 GPU 上达到 Acc=0.382，比全上下文基线提升 33 个百分点。该工作首次系统分析了长期 Agent 的记忆瓶颈，并提出了可在消费级硬件上显著提升性能的实用方案。
+
+- **[TSCG：确定性工具模式编译器](https://arxiv.org/abs/2605.04107)** — 提出在 API 边界将 JSON 工具模式转换为 token 高效结构化文本的确定性编译器，无需模型访问、微调或运行时搜索。在 TSCG-Agentic-Bench 基准上，Phi-4 14B 模型在 20 个工具场景下准确率从 0% 恢复至 84.4%。该研究揭示了 JSON 格式与语言模型解释之间的协议不匹配是小型模型工具调用失败的主因。
 
 ## 今日建议动作
 
-1. **开发者**：立即启用 GitHub MCP Server 的秘密扫描和依赖扫描功能，将安全防护嵌入 AI 编码工作流。
-2. **企业 IT 决策者**：关注 NVIDIA 与 ServiceNow 的 Project Arc，评估其作为企业级自主代理治理方案的可行性。
-3. **本地推理用户**：试用 GB10 Solution Atlas 开源引擎，体验纯 Rust+CUDA 的高性能推理，尤其适合 DGX Spark 用户。
-4. **LangChain 生态用户**：关注 stream_events v3 协议和 LangGraph 检查点 API 的预发布版本，为后续稳定版升级做准备。
-5. **硬件采购者**：参考 Reddit 社区讨论，根据自身对速度与内存的需求权衡 RTX 5090 与 M5 Max 的选型。
+1. **启用 GitHub MCP Server 秘密扫描** — 如果你的仓库启用了 GitHub Secret Protection，立即配置 MCP 服务器，将密钥检测前置到开发流程中。
+2. **评估本地推理方案** — 如果你正在使用云 API 进行 Agent 编程，关注 Atlas 和 Qwen 3.6 MTP 的进展，测试本地推理是否能满足你的延迟和成本需求。
+3. **关注 Agent 验证方法** — 阅读 GitHub 关于“主导性分析”的博客，评估是否可以将该信任层方法引入你的 CI 管道，减少代理行为的误报。
+4. **跟进 TSCG 论文** — 如果你在生产中遇到小模型工具调用失败的问题，TSCG 的确定性编译器思路值得关注，可能无需更换模型即可大幅提升准确率。
 
 ## 附录：候选来源索引
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | LangChain 发布 1.3.0a2 初始版本，引入 stream_events v3 协议 | 官方确认 | LangChain | https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2 |
+| 1 | LangChain 发布 1.3.0a2 预发布版，引入 v3 流事件与 HITL 中间件 | 官方确认 | LangChain | https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2 |
 | 2 | OpenAI B2B Signals 研究：前沿企业如何借助 Codex 构建 AI 优势 | 官方确认 | OpenAI News | https://openai.com/index/introducing-b2b-signals |
-| 3 | GB10 Solution Atlas 开源：纯 Rust+CUDA 推理引擎，Qwen3.5-35B 达 102 tok/s | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the |
+| 3 | GB10 推理引擎 Atlas 开源：纯 Rust+CUDA，Qwen3.5-35B 达 130 tok/s | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the |
 | 4 | GitHub MCP Server 秘密扫描功能正式 GA | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available |
-| 5 | NVIDIA 与 ServiceNow 合作推出企业级自主 AI 代理 | 官方确认 | NVIDIA Blog | https://blogs.nvidia.com/blog/servicenow-autonomous-ai-agents-enterprises |
-| 6 | LangGraph 发布 langgraph-checkpoint-sqlite 3.1.0a1，新增流式遍历与公共 API | 官方确认 | LangGraph | https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.0a1 |
-| 7 | LangGraph SDK 0.3.14 发布：新增线程更新最小化返回功能 | 官方确认 | LangGraph | https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.3.14 |
-| 8 | llama.cpp b9048：修复不支持的架构导致崩溃问题 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9048 |
-| 9 | CrewAI 1.14.5a3 发布：修复状态端点路径并提升安全性 | 官方确认 | CrewAI | https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3 |
-| 10 | llama.cpp b9047 更新：修复未知设备内存适配问题 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9047 |
-| 11 | Singular Bank 用 ChatGPT 和 Codex 打造内部助手，银行家每日节省 60-90 分钟 | 官方确认 | OpenAI News | https://openai.com/index/singular-bank |
-| 12 | llama.cpp b9041：CPU 后端融合 RMS_NORM 与 MUL 操作 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9041 |
-| 13 | Transformers 5.8.0 发布：新增 DeepSeek-V4 模型支持 | 官方确认 | Transformers | https://github.com/huggingface/transformers/releases/tag/v5.8.0 |
-| 14 | GitHub Copilot 代理模式验证：构建“信任层”应对非确定性行为 | 官方确认 | GitHub Blog | https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic |
-| 15 | llama.cpp b9049 发布：新增 MiniCPM-V 4.6 多模态模型支持 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9049 |
-| 16 | GitHub MCP Server 依赖扫描功能进入公开预览 | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-05-dependency-scanning-with-github-mcp-server-is-in-public-preview |
-| 17 | Reddit 热议：RTX 5090 与 M5 Max 128GB 如何选？Qwen3.6 27B 开发场景速度与内存权衡 | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx |
-| 18 | GitHub Copilot CLI 企业托管插件进入公开预览 | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview |
+| 5 | Singular Bank 用 ChatGPT 和 Codex 打造内部助手，银行家每日节省 60-90 分钟 | 官方确认 | OpenAI News | https://openai.com/index/singular-bank |
+| 6 | llama.cpp b9050 发布：修复 ggml_backend_load_all() 调用缺失 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9050 |
+| 7 | llama.cpp b9048 发布：修复不支持的架构导致崩溃问题 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9048 |
+| 8 | llama.cpp b9047 发布：修复未知 GPU 显存适配问题 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9047 |
+| 9 | RTX 5090 vs M5 Max：AI 编程硬件选型社区热议 | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx |
+| 10 | Qwen 3.6 27B 借助 MTP 推理速度提升 2.5 倍，48GB 显存可运行 262k 上下文 | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp |
+| 11 | CrewAI 1.14.5a3 发布：修复状态端点路径并提升安全性 | 官方确认 | CrewAI | https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3 |
+| 12 | GitHub 博客：用主导性分析为 Copilot 编码代理构建“信任层” | 官方确认 | GitHub Blog | https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic |
+| 13 | GitHub Copilot CLI 企业托管插件进入公开预览 | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview |
+| 14 | VS Code 四月更新：Copilot 支持语义搜索、BYOK 和远程 CLI 会话 | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases |
+| 15 | OpenAI 公布 2026 届 ChatGPT Futures 学生创新者名单 | 官方确认 | OpenAI News | https://openai.com/index/introducing-chatgpt-futures-class-of-2026 |
+| 16 | GitHub 仓库安全公告新增搜索与筛选栏 | 官方确认 | GitHub Changelog | https://github.blog/changelog/2026-05-06-search-and-filter-bar-for-repository-security-advisories |
+| 17 | MEMTIER：面向长期自主AI Agent的分层记忆架构，在6GB GPU上提升33个百分点 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03675 |
+| 18 | TSCG：确定性工具模式编译器，将小模型工具调用准确率从0%提升至84% | 早期信号 | arXiv cs.CL | https://arxiv.org/abs/2605.04107 |

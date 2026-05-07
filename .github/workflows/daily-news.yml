@@ -2,16 +2,6 @@ name: Generate Daily AI News Briefing
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
-  push:
-    branches:
-      - main
-      - feature/model-integration-base-framework
-    paths:
-      - ".github/workflows/daily-news.yml"
-      - "config/**"
-      - "scripts/**"
 
 permissions:
   contents: write
@@ -50,3 +40,6 @@ jobs:
             git commit -m "Generate daily AI news briefing"
             git push
           fi
+
+# Manual test workflow for the model integration branch.
+# Daily scheduled runs are triggered by the main branch workflow and committed back to this branch.

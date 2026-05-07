@@ -4,6 +4,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+from backlog import load_backlog, merge_backlog_with_today, update_backlog_after_model_selection
 from fetch_article_text import enrich_items_with_article_text
 from fetch_github_releases import fetch_github_releases
 from fetch_hackernews import fetch_hackernews
@@ -45,7 +46,15 @@ def main() -> None:
     dated_output_path.write_text(markdown, encoding="utf-8")
     latest_output_path.write_text(markdown, encoding="utf-8")
 
-    model_markdown = _try_generate_model_daily(ranked_items, total_count, scoring_config, llm_config)
+    previous_backlog = load_backlog(output_dir)
+    model_markdown, selected_model_items = _try_generate_model_daily(
+        ranked_items,
+        previous_backlog,
+        output_dir,
+        total_count,
+        scoring_config,
+        llm_config,
+    )
     if model_markdown:
         model_output_path.write_text(model_markdown, encoding="utf-8")
         _remove_if_exists(model_failed_path)
@@ -54,6 +63,14 @@ def main() -> None:
         _remove_if_exists(model_output_path)
         model_failed_path.write_text(_build_failure_markdown(llm_config), encoding="utf-8")
         logging.warning("Model daily was not generated; wrote %s", model_failed_path)
+
+    new_backlog = update_backlog_after_model_selection(
+        output_dir=output_dir,
+        previous_backlog=previous_backlog,
+        ranked_items=ranked_items,
+        selected_model_items=selected_model_items,
+    )
+    logging.info("Backlog now contains %s carried candidate items", len(new_backlog))
 
     logging.info(
         "Generated %s and %s with %s ranked items from %s fetched items",
@@ -72,21 +89,30 @@ def _load_optional_config(path: Path) -> dict:
 
 def _try_generate_model_daily(
     ranked_items: list[dict],
+    previous_backlog: list[dict],
+    output_dir: Path,
     total_count: int,
     scoring_config: dict,
     llm_config: dict,
-) -> str | None:
+) -> tuple[str | None, list[dict]]:
     if not llm_config.get("enabled", False):
         logging.info("Model daily skipped: LLM disabled.")
-        return None
+        return None, []
     if not get_api_key(llm_config):
         logging.warning("Model daily skipped: missing LLM API key secret.")
-        return None
+        return None, []
 
-    model_candidates = select_items_for_model_daily(ranked_items, scoring_config, llm_config)
+    merged_candidates = merge_backlog_with_today(ranked_items, previous_backlog)
+    logging.info(
+        "Model candidate pool merged %s today items with %s backlog items into %s items",
+        len(ranked_items),
+        len(previous_backlog),
+        len(merged_candidates),
+    )
+    model_candidates = select_items_for_model_daily(merged_candidates, scoring_config, llm_config)
     model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
     model_candidates = enhance_items_with_llm(model_candidates, llm_config)
-    return generate_model_daily(model_candidates, total_count, scoring_config, llm_config)
+    return generate_model_daily(model_candidates, total_count, scoring_config, llm_config), model_candidates
 
 
 def _build_failure_markdown(llm_config: dict) -> str:

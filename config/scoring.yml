@@ -3,12 +3,20 @@
   "lookback_hours": 36,
   "title_similarity_threshold": 0.86,
   "source_level_scores": {
-    "official_confirmed": 30,
-    "tech_community": 22,
-    "early_signal": 16,
-    "needs_verification": 10
+    "official_confirmed": 18,
+    "tech_community": 14,
+    "early_signal": 10,
+    "needs_verification": 6
   },
   "keyword_scores": {
+    "major_news_impact": {
+      "score": 28,
+      "keywords": ["launch", "launched", "release", "released", "unveils", "announces", "introduces", "generally available", "public beta", "major update", "new model", "new chip", "new product", "open-sources", "open source release", "production", "mass production", "shipping", "rollout", "breakthrough", "state-of-the-art", "SOTA", "benchmark", "beats", "outperforms"]
+    },
+    "business_or_platform_shift": {
+      "score": 22,
+      "keywords": ["pricing", "price cut", "subscription", "API", "partnership", "acquisition", "merger", "customer", "enterprise", "revenue", "ARR", "cloud", "market share", "regulation", "ban", "lawsuit", "copyright", "privacy", "security", "vulnerability"]
+    },
     "major_labs": {
       "score": 10,
       "keywords": ["OpenAI", "Anthropic", "DeepMind", "Google DeepMind", "Meta AI", "xAI", "Mistral", "DeepSeek", "Qwen", "Kimi"]
@@ -35,7 +43,7 @@
     },
     "product_release_signals": {
       "score": 12,
-      "keywords": ["release", "launch", "changelog", "product update", "API", "pricing", "generally available", "public beta", "new feature"]
+      "keywords": ["changelog", "product update", "new feature", "feature update", "preview", "developer preview", "stable release", "version", "v1", "v2", "GA"]
     },
     "open_source_infra": {
       "score": 9,
@@ -59,7 +67,7 @@
     },
     "regulation_and_safety": {
       "score": 6,
-      "keywords": ["AI safety", "regulation", "policy", "copyright", "privacy", "security", "alignment"]
+      "keywords": ["AI safety", "policy", "alignment"]
     }
   },
   "penalties": {

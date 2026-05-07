@@ -2,6 +2,11 @@ name: Generate Daily AI News Briefing
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feature/model-integration-base-framework
+    paths:
+      - .github/full-refresh-trigger.txt
 
 permissions:
   contents: write
@@ -42,4 +47,5 @@ jobs:
           fi
 
 # Manual test workflow for the model integration branch.
-# Daily scheduled runs are triggered by the main branch workflow and committed back to this branch.
+# workflow_dispatch runs the full pipeline.
+# Updating .github/full-refresh-trigger.txt also triggers the full pipeline on this branch.

@@ -31,7 +31,6 @@ TAG_LABELS = {
 }
 
 PRIMARY_SECTION_LABELS = {
-    "top": "今日最重要 5 条",
     "toolchain": "工具链更新汇总",
     "agent_coding": "Agent / 编程工具趋势",
     "open_source": "开源项目 Release 汇总",
@@ -92,9 +91,7 @@ def generate_model_daily(
     try:
         return _generate_with_llm(selected, total_count, llm_config, api_key)
     except Exception as exc:  # noqa: BLE001 - raw daily should still be produced.
-        logging.warning("Model daily generation fell back to rule renderer: %s", exc)
-        if llm_config.get("fallback_on_error", True):
-            return _generate_rule_based(selected, total_count)
+        logging.warning("Model daily generation failed: %s", exc)
         return None
 
 
@@ -122,24 +119,14 @@ def select_items_for_model_daily(
             seen.add(key)
             added += 1
 
-    official = [item for item in pool if item.get("source_level") == "official_confirmed"]
-    community = [item for item in pool if item.get("source_level") == "tech_community"]
-    early = [item for item in pool if item.get("source_level") == "early_signal"]
-    needs_check = [item for item in pool if item.get("source_level") == "needs_verification"]
-
-    agent_or_coding = [item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})]
-    app_or_rag = [item for item in pool if _has_any_tag(item, {"ai_app", "rag_data", "open_source"})]
-    business_or_chip = [item for item in pool if _has_any_tag(item, {"business", "semiconductor"})]
-
-    add(agent_or_coding, 5)
-    add(app_or_rag, 5)
-    add(official, 6)
-    add(business_or_chip, 4)
-    add(community, 3)
-    add(early, 2)
-    add(needs_check, 1)
+    add([item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})], 5)
+    add([item for item in pool if _has_any_tag(item, {"ai_app", "rag_data", "open_source"})], 5)
+    add([item for item in pool if item.get("source_level") == "official_confirmed"], 6)
+    add([item for item in pool if _has_any_tag(item, {"business", "semiconductor"})], 4)
+    add([item for item in pool if item.get("source_level") == "tech_community"], 3)
+    add([item for item in pool if item.get("source_level") == "early_signal"], 2)
+    add([item for item in pool if item.get("source_level") == "needs_verification"], 1)
     add(pool, max_items - len(selected))
-
     return selected[:max_items]
 
 
@@ -173,7 +160,7 @@ def _generate_with_llm(items: list[dict[str, Any]], total_count: int, config: di
             content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
             if not content:
                 raise ValueError("empty model daily response")
-            return _ensure_required_sections(content, items, total_count)
+            return _ensure_required_sections(content)
         except urllib.error.HTTPError as exc:
             body = exc.read().decode("utf-8", errors="replace")
             if attempt >= max_retries:
@@ -247,7 +234,7 @@ def _serialize_item(index: int, item: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _ensure_required_sections(content: str, items: list[dict[str, Any]], total_count: int) -> str:
+def _ensure_required_sections(content: str) -> str:
     today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d")
     cleaned = content.strip()
     cleaned = cleaned.removeprefix("```markdown").removeprefix("```").removesuffix("```").strip()
@@ -255,74 +242,8 @@ def _ensure_required_sections(content: str, items: list[dict[str, Any]], total_c
         cleaned = f"# AI 新闻模型解读日报｜{today}\n\n{cleaned}"
     missing = [section for section in REQUIRED_SECTIONS if section not in cleaned]
     if missing:
-        logging.warning("Model daily response missed sections: %s", ", ".join(missing))
-        return _generate_rule_based(items, total_count)
+        raise ValueError(f"model daily response missed required sections: {', '.join(missing)}")
     return cleaned + "\n"
-
-
-def _generate_rule_based(items: list[dict[str, Any]], total_count: int) -> str:
-    today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d")
-    stats = _build_stats(items, total_count)
-    lines = [
-        f"# AI 新闻模型解读日报｜{today}",
-        "",
-        "## 今日一句话",
-        "",
-        f"今天规则层共抓取 {total_count} 条信息，模型层选取 {len(items)} 条高价值候选信息做综合整理。",
-        "",
-        "## 今日最重要 5 条",
-        "",
-    ]
-    for index, item in enumerate(items[:5], 1):
-        lines.extend([
-            f"### {index}. {_display_title(item)}",
-            "",
-            f"- 原文链接：{_markdown_link(index, _display_title(item), item.get('url') or '')}",
-            f"- 来源等级：{LEVEL_LABELS.get(item.get('source_level'), '待验证')}",
-            f"- 为什么重要：{_why_it_matters(item)}",
-            "",
-        ])
-
-    section_map = [
-        ("## 工具链更新汇总", "toolchain"),
-        ("## Agent / 编程工具趋势", "agent_coding"),
-        ("## 开源项目 Release 汇总", "open_source"),
-        ("## 企业应用 / 商业化信号", "business"),
-        ("## 算力 / 半导体观察", "semiconductor"),
-        ("## 前沿研究观察", "research"),
-    ]
-    for title, section_key in section_map:
-        lines.extend([title, ""])
-        candidates = [item for item in items if _primary_section(item) == section_key]
-        if not candidates:
-            lines.extend(["今天没有足够明确的同类信号。", ""])
-            continue
-        for item in candidates[:4]:
-            index = items.index(item) + 1
-            lines.append(f"- {_markdown_link(index, _display_title(item), item.get('url') or '')}：{_why_it_matters(item)}")
-        lines.append("")
-
-    lines.extend([
-        "## 今日建议动作",
-        "",
-        "1. 先打开正文中的原文链接，核验产品入口、版本号和适用范围。",
-        "2. 对 GitHub Release 集中看项目级变化，不必被小版本刷屏牵着走。",
-        "3. 对社区与早期研究保持观察，不直接当成事实或可用产品。",
-        "",
-        "## 附录：候选来源索引",
-        "",
-        f"- 来源等级统计：{stats['source_level_stats']}",
-        f"- 标签统计：{stats['tag_stats']}",
-        "",
-    ])
-    for index, item in enumerate(items, 1):
-        lines.append(
-            f"- [{index}] {_markdown_link(index, _display_title(item), item.get('url') or '')}｜"
-            f"{LEVEL_LABELS.get(item.get('source_level'), '待验证')}｜{item.get('source_name')}｜"
-            f"主归属：{PRIMARY_SECTION_LABELS.get(_primary_section(item), _primary_section(item))}"
-        )
-    lines.append("")
-    return "\n".join(lines)
 
 
 def _build_stats(items: list[dict[str, Any]], total_count: int) -> dict[str, Any]:
@@ -370,14 +291,6 @@ def _primary_section(item: dict[str, Any]) -> str:
 def _display_title(item: dict[str, Any]) -> str:
     llm = item.get("llm") or {}
     return llm.get("final_title_zh") or item.get("title") or "无标题"
-
-
-def _why_it_matters(item: dict[str, Any]) -> str:
-    llm = item.get("llm") or {}
-    if llm.get("why_it_matters_zh"):
-        return str(llm["why_it_matters_zh"])
-    keywords = "、".join((item.get("matched_keywords") or [])[:4]) or "相关方向"
-    return f"命中 {keywords}，规则分数 {item.get('score', 0)}。"
 
 
 def _markdown_link(index: int, title: str, url: str) -> str:

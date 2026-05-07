@@ -28,6 +28,7 @@ TAG_LABELS = {
     "rag_data": "RAG 与数据栈",
     "open_source": "开源基础设施",
     "semiconductor": "算力与半导体",
+    "riscv_stack": "RISC-V / OS / 端侧芯片",
     "business": "商业产品与政策",
 }
 
@@ -52,8 +53,9 @@ SYSTEM_PROMPT = """你是一个中文 AI 新闻主编。
 6. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
 7. 社区来源必须标注“社区讨论，不等于官方确认”。
 8. GitHub Release、工具版本更新、插件更新、小版本更新必须合并成“工具更新速览”或“开源工具链更新”，不要逐条展开，不要让小版本更新占据今日最重要 5 条；只有重大版本、破坏性变更、安全风险、价格 / 商业模式变化才可以单独展开。
-9. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
-10. 输出只能是 Markdown，不要代码块。
+9. RISC-V、OpenSBI、Linux-capable SoC、AI CPU、端侧 AI 芯片、开源 EDA、OS 移植等内容，要放在“算力 / 半导体观察”中，强调它是 AI 从应用层下沉到 OS、指令集、芯片和端侧算力的趋势信号；社区或论文来源必须保持保守，不要写成已经量产或商业落地。
+10. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
+11. 输出只能是 Markdown，不要代码块。
 """
 
 REQUIRED_SECTIONS = [
@@ -132,7 +134,7 @@ def select_items_for_model_daily(
     add([item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})], 5)
     add([item for item in pool if _has_any_tag(item, {"ai_app", "rag_data", "open_source"})], 5)
     add([item for item in pool if item.get("source_level") == "official_confirmed"], 6)
-    add([item for item in pool if _has_any_tag(item, {"business", "semiconductor"})], 4)
+    add([item for item in pool if _has_any_tag(item, {"business", "semiconductor", "riscv_stack"})], 5)
     add([item for item in pool if item.get("source_level") == "tech_community"], 3)
     add([item for item in pool if item.get("source_level") == "early_signal"], 2)
     add([item for item in pool if item.get("source_level") == "needs_verification"], 1)
@@ -208,6 +210,7 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         "- 正文任何位置提到具体新闻时，必须使用 item.markdown_link，例如 [3. 标题](url)，不要让读者去附录表格反查。\n"
         "- 工具链 / Agent / 开源 release 必须先判断是否只是小版本、补丁、例行更新；这类内容必须合并成一条“工具更新速览”，不要逐条展开。\n"
         "- source_type 为 github_release 或 content_handling 为 tool_update_digest 的条目，默认只进入“开源项目 Release 汇总”或“工具链更新汇总”，不要进入“今日最重要 5 条”，除非它明确涉及重大版本、破坏性变更、安全风险、价格变化或商业模式变化。\n"
+        "- tags 包含 riscv_stack 的条目，优先进入“算力 / 半导体观察”，重点解释其对端侧 AI、OS、指令集、AI CPU、开源芯片生态的趋势意义；如果来源是论文、社区或待验证渠道，必须明确写成早期信号。\n"
         "- 工具更新速览可以用 3-6 个项目符号合并多条 Release，每个项目符号只写项目名 + 关键变化 + 原文链接，不要长篇解释。\n"
         "- 附录仍要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n"
         "- 对早期信号要写清楚：这是研究或早期线索，不等于已经产品化。\n"
@@ -297,7 +300,7 @@ def _is_meaningful_for_model_daily(item: dict[str, Any]) -> bool:
     if item.get("source_level") in {"official_confirmed", "tech_community"}:
         return True
     if item.get("source_level") == "early_signal":
-        return _has_any_tag(item, {"agent", "coding_tool", "ai_app", "rag_data", "open_source", "semiconductor"})
+        return _has_any_tag(item, {"agent", "coding_tool", "ai_app", "rag_data", "open_source", "semiconductor", "riscv_stack"})
     return bool(item.get("matched_keywords"))
 
 
@@ -316,12 +319,12 @@ def _primary_section(item: dict[str, Any]) -> str:
         return "agent_coding"
     if "open_source" in tags:
         return "open_source"
+    if "riscv_stack" in tags or "semiconductor" in tags:
+        return "semiconductor"
     if tags.intersection({"ai_app", "rag_data", "model"}):
         return "toolchain"
     if "business" in tags:
         return "business"
-    if "semiconductor" in tags:
-        return "semiconductor"
     return "toolchain"
 
 

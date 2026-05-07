@@ -12,7 +12,7 @@ from generate_markdown import generate_markdown
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
 from score_items import dedupe_items, filter_by_lookback, rank_items, score_items
 from summarize_with_llm import enhance_items_with_llm, get_api_key
-from utils import ROOT, load_yaml, setup_logging
+from utils import LOCAL_TIMEZONE, ROOT, load_yaml, setup_logging
 
 
 def main() -> None:
@@ -38,16 +38,22 @@ def main() -> None:
     markdown = generate_markdown(ranked_items, total_count, max_items)
     output_dir = Path(ROOT / "output")
     output_dir.mkdir(parents=True, exist_ok=True)
-    dated_output_path = output_dir / f"{datetime.now().strftime('%Y-%m-%d')}.md"
+    dated_output_path = output_dir / f"{datetime.now(LOCAL_TIMEZONE).strftime('%Y-%m-%d')}.md"
     latest_output_path = output_dir / "daily.md"
     model_output_path = output_dir / "model-daily.md"
+    model_failed_path = output_dir / "model-daily-failed.md"
     dated_output_path.write_text(markdown, encoding="utf-8")
     latest_output_path.write_text(markdown, encoding="utf-8")
 
     model_markdown = _try_generate_model_daily(ranked_items, total_count, scoring_config, llm_config)
     if model_markdown:
         model_output_path.write_text(model_markdown, encoding="utf-8")
+        _remove_if_exists(model_failed_path)
         logging.info("Generated %s with model summary layer", model_output_path)
+    elif llm_config.get("write_failure_file", True):
+        _remove_if_exists(model_output_path)
+        model_failed_path.write_text(_build_failure_markdown(llm_config), encoding="utf-8")
+        logging.warning("Model daily was not generated; wrote %s", model_failed_path)
 
     logging.info(
         "Generated %s and %s with %s ranked items from %s fetched items",
@@ -81,6 +87,42 @@ def _try_generate_model_daily(
     model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
     model_candidates = enhance_items_with_llm(model_candidates, llm_config)
     return generate_model_daily(model_candidates, total_count, scoring_config, llm_config)
+
+
+def _build_failure_markdown(llm_config: dict) -> str:
+    today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d %H:%M")
+    primary = llm_config.get("api_key_env", "LLM_API_KEY")
+    fallback = llm_config.get("fallback_api_key_env", "DEEPSEEK_API_KEY")
+    return "\n".join(
+        [
+            f"# AI 新闻模型日报生成失败｜{today}",
+            "",
+            "模型版日报没有成功生成。",
+            "",
+            "基础规则版日报仍然可用：",
+            "",
+            "- `output/daily.md`",
+            "- `output/YYYY-MM-DD.md`",
+            "",
+            "可能原因：",
+            "",
+            f"- 缺少 `{primary}` 或 `{fallback}` Secret",
+            "- 模型 API 超时、限流或返回错误",
+            "- 模型输出缺少必需章节，被系统判定为失败",
+            "",
+            "处理原则：",
+            "",
+            "- 不生成伪模型日报",
+            "- 不用规则兜底内容冒充模型日报",
+            "- 需要继续排查时，请查看 GitHub Actions 日志",
+            "",
+        ]
+    )
+
+
+def _remove_if_exists(path: Path) -> None:
+    if path.exists():
+        path.unlink()
 
 
 if __name__ == "__main__":

@@ -1,52 +1,61 @@
-# AI News Briefing
+# AI News Briefing｜规则筛选 + 模型解读框架
 
-一个无 API Key 的 AI 新闻规则简报系统。
+一个面向 AI 动态追踪的每日新闻简报系统。
 
-本项目用于自动采集 AI 相关信息源，并通过可解释的规则流程完成新闻筛选、来源分级、关键词识别、规则打分、去重排序和 Markdown 简报输出。
+本项目先用规则系统自动抓取、筛选、分级、打分、去重并生成可追溯的 Markdown 候选信息池；在此基础上，再可选接入 DeepSeek / OpenAI 兼容接口，对高价值候选新闻进行中文标题优化、核心摘要提炼、重要性判断和模型解读日报生成。
 
-它不调用大模型 API，不依赖 OpenAI、Anthropic、DeepSeek 或其他模型服务，也不把 AI 总结当作事实来源。它的定位是一个稳定、透明、可检查的新闻筛选底座：先从多个来源抓取候选信息，再通过时间窗口、关键词、来源等级、规则分数和去重逻辑筛出值得优先阅读的 AI 动态。
+它不是“让模型直接替你总结互联网新闻”的项目，而是一个分层的信息处理框架：
+
+1. 规则层负责事实入口、来源分级、关键词命中、规则打分和候选池输出。
+2. 模型层只处理规则层筛出的高价值候选内容，并保留原始链接、来源等级、规则分数和判断依据。
+3. 如果模型不可用，系统不会伪造模型日报，也不会用规则版内容冒充模型总结。
 
 ---
 
 ## 项目定位
 
-AI 新闻很多，但质量参差不齐。
+AI 新闻每天很多，但直接阅读会遇到几个问题：
 
-有些来自官方博客，有些来自技术社区，有些只是营销活动、赞助内容、招聘信息或重复传播。直接让模型总结新闻，很容易把来源可靠性、原文链接和判断依据混在一起，最后看似有结论，实际不好验证。
+- 来源混杂：官方博客、社区讨论、论文、媒体报道、营销内容混在一起。
+- 信息重复：同一事件可能被多个渠道重复传播。
+- 价值不均：有些是产品发布，有些只是活动、招聘、赞助或低密度汇总。
+- 模型总结容易失真：如果直接把抓到的内容丢给模型，很容易丢失原文链接、来源等级和判断依据。
 
-本项目解决的是前置筛选问题：
+本项目解决的是“先筛选，再解读”的问题：
 
-- 自动抓取 AI 相关信息
-- 区分官方来源、社区讨论、早期信号和待验证信息
-- 根据关键词和来源等级进行规则评分
-- 降低营销、活动、赞助、招聘等低价值信息的权重
-- 对重复链接和相似标题进行去重
-- 按综合规则分数生成每日 Top 简报
+- 先用规则系统建立可信、透明、可检查的 AI 新闻候选池。
+- 再把候选池交给模型做结构化中文解读。
+- 任何模型输出都必须回到原始链接和来源等级，不允许脱离来源自行判断事实。
 
-它不替你下最终结论，而是帮你建立一个可追溯的 AI 新闻入口。
+因此，它更像一个 AI 新闻处理流水线，而不是单纯的新闻爬虫或单纯的模型总结器。
 
 ---
 
 ## 核心能力
 
-- 多来源新闻抓取
+- 多来源 AI 新闻抓取
 - RSS / Atom 信息解析
 - GitHub Releases 抓取
 - Hacker News AI 主题粗过滤
+- 统一新闻 item 结构
 - 来源等级标注
 - 关键词匹配
 - 新闻主题标签生成
 - 规则打分
-- 噪声内容降权
+- 低价值内容降权
 - URL 去重
 - 相似标题去重
-- Top 新闻排序
-- Markdown 简报生成
+- Top 候选池排序
+- 规则版 Markdown 简报输出
+- 可选原文正文片段抓取
+- 可选单条新闻 LLM 增强
+- 可选模型版中文解读日报
+- 模型日报失败显式记录
 - 日期归档输出
 
 ---
 
-## 系统工作流
+## 系统总工作流
 
 ```text
 读取配置
@@ -65,7 +74,20 @@ AI 新闻很多，但质量参差不齐。
   ↓
 排序
   ↓
-生成 Markdown 简报
+生成规则版 Markdown 简报
+  ↓
+判断是否启用模型层
+  ├─ 未启用 / 无 API Key → 只保留规则版日报
+  ↓
+选择模型日报候选池
+  ↓
+抓取原文正文片段
+  ↓
+单条新闻 LLM 增强
+  ↓
+生成模型解读日报
+  ├─ 成功 → 输出 model-daily.md
+  └─ 失败 → 输出 model-daily-failed.md
 ```
 
 ---
@@ -74,19 +96,26 @@ AI 新闻很多，但质量参差不齐。
 
 ### 作用
 
-加载新闻来源、关键词体系和评分规则。
+加载新闻来源、关键词体系、评分规则和模型层配置。
 
 ### 使用文件
 
 | 文件 | 作用 |
 |---|---|
-| `config/sources.yml` | 定义新闻来源 |
-| `config/keywords.yml` | 定义关键词和主题标签 |
-| `config/scoring.yml` | 定义时间窗口、评分规则、降权规则和排序参数 |
+| `config/sources.yml` | 定义 RSS、GitHub Releases、Hacker News 等新闻来源 |
+| `config/keywords.yml` | 定义关键词分类和主题标签 |
+| `config/scoring.yml` | 定义时间窗口、评分规则、降权规则、去重阈值和输出数量 |
+| `config/llm.yml` | 定义模型增强、模型日报、正文抓取和失败处理策略 |
+
+### 判定条件
+
+- 如果 `config/llm.yml` 不存在，模型层视为未启用。
+- 如果 `config/llm.yml` 中 `enabled` 为 `false`，模型层跳过。
+- 如果未读取到 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY`，模型层跳过，但规则版日报仍正常输出。
 
 ### 输出
 
-输出后续流程需要使用的配置对象。
+输出后续流程使用的配置对象。
 
 ---
 
@@ -110,7 +139,7 @@ AI 新闻很多，但质量参差不齐。
 
 用于抓取官方博客、技术博客、arXiv 分类源、社区 RSS 和部分 AI 媒体源。
 
-当前包含：
+当前来源包括：
 
 - OpenAI News
 - Anthropic News
@@ -143,7 +172,7 @@ AI 新闻很多，但质量参差不齐。
 
 用于追踪重点 AI 开源项目、Agent 工具、AI 应用平台、RAG / 数据栈和开发工具的版本更新。
 
-当前包含：
+当前项目包括：
 
 - llama.cpp
 - vLLM
@@ -181,14 +210,14 @@ min_points: 30
 
 含义：
 
-- 开启 Hacker News 抓取
-- 最多读取前 100 条热门内容
-- 只保留分数不低于 30 的内容
-- 只保留标题或 URL 命中 AI / LLM / Agent / RAG / GPU 等主题关键词的内容
+- 开启 Hacker News 抓取。
+- 最多读取前 100 条热门内容。
+- 只保留分数不低于 30 的内容。
+- 只保留标题或 URL 命中 AI / LLM / Agent / RAG / GPU 等主题关键词的内容。
 
 ### 输出
 
-输出原始新闻列表，进入后续标准化流程。
+输出原始新闻列表，进入标准化流程。
 
 ---
 
@@ -196,15 +225,15 @@ min_points: 30
 
 ### 作用
 
-不同来源返回的数据格式并不一致。系统会把 RSS、GitHub Releases 和 Hacker News 的信息整理成统一结构，方便后续过滤、打分和输出。
+不同来源返回的数据格式不一致。系统会把 RSS、GitHub Releases 和 Hacker News 的信息整理成统一结构，方便后续过滤、打分、去重、模型增强和输出。
 
 ### 使用脚本
 
 | 脚本 | 作用 |
 |---|---|
 | `scripts/utils.py` | 构建统一 item、清理 HTML、解析时间、标准化 URL、固定 UTC+8 时间显示 |
-| `scripts/fetch_rss.py` | 从 RSS 中提取标题、链接、摘要、时间 |
-| `scripts/fetch_github_releases.py` | 从 release 中提取项目名、版本、发布时间和 release 内容 |
+| `scripts/fetch_rss.py` | 从 RSS 中提取标题、链接、摘要、发布时间 |
+| `scripts/fetch_github_releases.py` | 从 Release 中提取项目名、版本、发布时间和发布内容 |
 | `scripts/fetch_hackernews.py` | 从 HN 中提取标题、链接、分数、评论链接和发布时间 |
 
 ### 统一字段
@@ -223,8 +252,10 @@ min_points: 30
 | `matched_keywords` | 命中的关键词 |
 | `tags` | 主题标签 |
 | `score` | 规则分数 |
-
-额外字段只能补充信息，不能覆盖核心字段。
+| `hn_score` | Hacker News 分数，仅 HN 来源使用 |
+| `release_version` | Release 版本号，仅 GitHub Release 来源使用 |
+| `article_text` | 模型层可选抓取的原文正文片段 |
+| `llm` | 模型层生成的中文标题、核心摘要和重要性判断 |
 
 ### 输出
 
@@ -252,9 +283,8 @@ lookback_hours: 36
 
 ### 判定条件
 
-只保留最近 36 小时内发布的信息。
-
-如果某条信息没有可靠发布时间，系统会保留它，避免误删潜在有价值内容。
+- 只保留最近 36 小时内发布的信息。
+- 如果某条信息没有可靠发布时间，系统会保留它，避免误删潜在有价值内容。
 
 ### 输出
 
@@ -329,11 +359,7 @@ lookback_hours: 36
 | `early_signal` | 早期信号 | 12 |
 | `needs_verification` | 待验证 | 4 |
 
-### 关键词加分
-
-系统会根据不同关键词方向加分。
-
-当前加分方向包括：
+### 关键词加分方向
 
 | 方向 | 示例 |
 |---|---|
@@ -392,9 +418,9 @@ lookback_hours: 36
 
 优先级判断：
 
-1. 来源等级更高
-2. 规则分数更高
-3. 发布时间更新
+1. 来源等级更高。
+2. 规则分数更高。
+3. 发布时间更新。
 
 #### 2. 标题相似度去重
 
@@ -406,9 +432,7 @@ lookback_hours: 36
 title_similarity_threshold: 0.86
 ```
 
-含义：
-
-当两条新闻标题相似度达到 0.86 或以上时，系统会认为它们可能是同一事件的重复传播。
+含义：当两条新闻标题相似度达到 0.86 或以上时，系统会认为它们可能是同一事件的重复传播。
 
 ### 输出
 
@@ -416,7 +440,7 @@ title_similarity_threshold: 0.86
 
 ---
 
-## 工作流 8：排序与 Top 列表
+## 工作流 8：排序与 Top 候选池
 
 ### 作用
 
@@ -438,19 +462,19 @@ max_items_per_day: 40
 
 排序优先级为：
 
-1. 综合规则分数
-2. 来源等级
-3. 发布时间
+1. 综合规则分数。
+2. 来源等级。
+3. 发布时间。
 
 其中综合规则分数已经包含来源基础分、关键词加分和噪声降权。
 
 ### 输出
 
-输出每日 Top 候选信息池。当前保留 40 条，目的是为后续模型总结、分组统计和精炼播报保留更多原始依据，而不是直接把每条都当成最终播报内容。
+输出每日 Top 40 候选信息池。这个候选池是后续模型解读层的输入基础，不等同于最终判断结论。
 
 ---
 
-## 工作流 9：生成 Markdown 简报
+## 工作流 9：生成规则版 Markdown 简报
 
 ### 作用
 
@@ -460,11 +484,7 @@ max_items_per_day: 40
 
 | 脚本 | 作用 |
 |---|---|
-| `scripts/generate_markdown.py` | 生成每日 Markdown 简报 |
-
-### 输出顺序
-
-Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新分组。
+| `scripts/generate_markdown.py` | 生成每日规则版 Markdown 简报 |
 
 ### 每条新闻包含
 
@@ -473,11 +493,12 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 | 标题 | 新闻标题 |
 | 来源等级 | 官方确认、技术社区、早期信号或待验证 |
 | 来源名称 | 具体来源 |
-| 来源类型 | RSS、GitHub Releases 或 Hacker News |
+| 来源类型 / 发布渠道 | RSS、GitHub Releases 或 Hacker News |
 | 发布时间 | UTC+8 时间 |
 | 原文链接 | 可追溯的原始链接 |
 | 命中关键词 | 触发匹配的关键词 |
 | 规则分数 | 系统计算出的综合分数 |
+| HN 分数 | Hacker News 来源的社区分数 |
 | 入选原因 | 为什么进入今日列表 |
 | Feed 摘要 | 来源 feed 中提供的摘要 |
 | 阅读提醒 | 根据信息来源给出的阅读提示 |
@@ -486,8 +507,290 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 | 文件 | 作用 |
 |---|---|
-| `output/daily.md` | 最新一份每日 AI 新闻候选信息池，用于人工阅读、归档或后续模型总结。 |
-| `output/YYYY-MM-DD.md` | 按日期归档的历史候选信息池文件。 |
+| `output/daily.md` | 最新一份规则版每日 AI 新闻候选信息池 |
+| `output/YYYY-MM-DD.md` | 按日期归档的历史规则版候选信息池文件 |
+
+---
+
+## 工作流 10：判断是否启用模型层
+
+### 作用
+
+决定是否在规则版候选池之后继续生成模型解读日报。
+
+### 使用文件
+
+| 文件 | 作用 |
+|---|---|
+| `config/llm.yml` | 模型层总配置 |
+| `scripts/main.py` | 在主流程中判断模型层是否执行 |
+| `scripts/summarize_with_llm.py` | 读取 API Key 并调用模型接口 |
+
+### 当前模型配置
+
+```yaml
+enabled: true
+provider: deepseek
+model: deepseek-chat
+base_url: https://api.deepseek.com
+api_key_env: LLM_API_KEY
+fallback_api_key_env: DEEPSEEK_API_KEY
+fallback_on_error: false
+write_failure_file: true
+```
+
+### 判定条件
+
+模型层必须同时满足：
+
+1. `config/llm.yml` 存在。
+2. `enabled` 为 `true`。
+3. 环境变量或 GitHub Secrets 中存在 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY`。
+
+如果条件不满足：
+
+- 规则版 `output/daily.md` 仍然生成。
+- 模型版 `output/model-daily.md` 不生成。
+- 系统不会把规则版日报伪装成模型日报。
+
+### 输出
+
+输出“是否进入模型层”的判断结果。
+
+---
+
+## 工作流 11：选择模型日报候选池
+
+### 作用
+
+从规则版 Top 候选池中挑选更适合模型综合解读的内容，避免把全部抓取结果都交给模型。
+
+### 使用脚本
+
+| 脚本 | 作用 |
+|---|---|
+| `scripts/generate_model_daily.py` | 选择模型日报候选池，并定义模型日报结构 |
+
+### 使用配置
+
+```yaml
+model_daily_candidate_pool_size: 40
+model_daily_max_items: 18
+```
+
+### 判定条件
+
+模型日报候选池优先选择：
+
+1. Agent 与编程工具相关内容。
+2. AI 应用平台、RAG、数据栈和开源基础设施相关内容。
+3. 官方确认来源。
+4. 商业化与半导体相关内容。
+5. 技术社区讨论。
+6. 早期研究信号。
+7. 仍需验证但命中关键词的内容。
+
+系统会去掉 URL 或标题重复的候选项，并控制最终进入模型日报的数量。
+
+### 输出
+
+输出最多 18 条模型日报候选新闻。
+
+---
+
+## 工作流 12：抓取原文正文片段
+
+### 作用
+
+在进入模型前，尽量从原始 URL 抓取正文片段，让模型不只依赖 RSS 摘要或标题。
+
+### 使用脚本
+
+| 脚本 | 作用 |
+|---|---|
+| `scripts/fetch_article_text.py` | 抓取原文 HTML，提取 meta description、段落、标题和列表文本 |
+
+### 使用配置
+
+```yaml
+fetch_article_text: true
+article_fetch_timeout_seconds: 12
+article_text_limit: 5000
+```
+
+### 判定条件
+
+系统只会抓取适合正文解析的链接：
+
+- 只处理 `http://` 或 `https://` 链接。
+- 跳过 GitHub Release 页面，避免把发布页 HTML 噪声送入模型。
+- 跳过 PDF、压缩包、图片等非 HTML 文件。
+- 跳过 `script`、`style`、`nav`、`footer`、`header` 等页面噪声。
+- 过滤 cookie、sign up、subscribe、advertisement 等低价值文本块。
+
+如果正文抓取失败：
+
+- 不阻塞整个日报流程。
+- 对应新闻仍可继续使用 feed 摘要进入模型。
+
+### 输出
+
+为候选新闻补充 `article_text` 和 `article_text_source` 字段。
+
+---
+
+## 工作流 13：单条新闻 LLM 增强
+
+### 作用
+
+对模型日报候选新闻逐条生成更适合中文读者阅读的标题、核心摘要和重要性判断。
+
+### 使用脚本
+
+| 脚本 | 作用 |
+|---|---|
+| `scripts/summarize_with_llm.py` | 调用 OpenAI 兼容 Chat Completions 接口，对单条新闻做结构化增强 |
+
+### 使用配置
+
+```yaml
+max_items_for_llm: 20
+max_output_tokens: 700
+excerpt_input_limit: 1800
+article_text_limit: 5000
+timeout_seconds: 45
+max_retries: 1
+temperature: 0.2
+```
+
+### 模型输入
+
+每条新闻会向模型提供：
+
+- 原始标题
+- 原文链接
+- 来源名称
+- 来源类型
+- 来源等级
+- 发布时间
+- 命中关键词
+- 主题标签
+- 规则分数
+- HN 分数
+- Release 版本号
+- Feed 摘要
+- 原文正文片段
+
+### 模型输出字段
+
+模型必须输出严格 JSON：
+
+| 字段 | 含义 |
+|---|---|
+| `final_title_zh` | 中文标题，保留必要英文名、模型名、项目名和版本号 |
+| `core_summary_zh` | 2-3 句核心摘要，说明原文真正说了什么 |
+| `why_it_matters_zh` | 1 句重要性判断，信息不足时必须保守说明 |
+
+### 判定条件
+
+模型层必须遵守：
+
+- 只能基于输入内容写作。
+- 信息不足时写“原文信息不足”。
+- 不得把社区讨论改写成官方确认。
+- 不得把 arXiv / 论文 / benchmark 写成已经产品化的事实。
+- 不得把 GitHub Releases 误写成新闻主体。
+
+如果某条新闻增强失败：
+
+- 只跳过该条的模型增强。
+- 不影响其他新闻。
+- 不影响规则版日报。
+
+### 输出
+
+为新闻补充 `llm.final_title_zh`、`llm.core_summary_zh`、`llm.why_it_matters_zh`。
+
+---
+
+## 工作流 14：生成模型解读日报
+
+### 作用
+
+把模型增强后的候选新闻整理成一份适合中文阅读、播报和复盘的 AI 新闻模型日报。
+
+### 使用脚本
+
+| 脚本 | 作用 |
+|---|---|
+| `scripts/generate_model_daily.py` | 生成模型解读日报，控制固定章节、来源索引、链接和失败校验 |
+
+### 必须包含的章节
+
+模型日报必须包含：
+
+- `## 今日一句话`
+- `## 今日最重要 5 条`
+- `## 工具链更新汇总`
+- `## Agent / 编程工具趋势`
+- `## 开源项目 Release 汇总`
+- `## 企业应用 / 商业化信号`
+- `## 算力 / 半导体观察`
+- `## 前沿研究观察`
+- `## 今日建议动作`
+- `## 附录：候选来源索引`
+
+### 写作规则
+
+- 不逐条机械复述所有候选新闻。
+- 按主题综合、分组、统计和提炼。
+- 正文中提到具体新闻时，必须直接带 Markdown 原文链接。
+- 除“今日最重要 5 条”外，同一条新闻只在它的主章节里详细展开一次。
+- GitHub Release 可以合并成“开源工具链更新”，但必须保留原始链接。
+- 官方确认、技术社区、早期信号、待验证必须区分清楚。
+- 社区来源必须标明不等于官方确认。
+- 早期研究必须标明不等于已经产品化。
+
+### 使用配置
+
+```yaml
+model_daily_max_output_tokens: 6200
+model_daily_timeout_seconds: 80
+model_daily_temperature: 0.25
+model_daily_max_retries: 1
+```
+
+### 输出文件
+
+| 文件 | 作用 |
+|---|---|
+| `output/model-daily.md` | 模型版 AI 新闻解读日报 |
+| `output/model-daily-failed.md` | 模型日报失败说明文件 |
+
+---
+
+## 工作流 15：基于已有规则日报单独生成模型日报
+
+### 作用
+
+在已经存在 `output/daily.md` 的情况下，不重新抓取新闻，只解析已有规则候选池并尝试生成模型日报。
+
+### 使用脚本
+
+| 脚本 | 作用 |
+|---|---|
+| `scripts/generate_model_from_daily.py` | 解析 `output/daily.md`，恢复候选 item，再执行模型日报生成流程 |
+
+### 判定条件
+
+- 如果找不到 `output/daily.md`，写入失败说明。
+- 如果无法解析候选新闻条目，写入失败说明。
+- 如果缺少模型 API Key，写入失败说明。
+- 如果模型日报生成失败，删除旧的 `model-daily.md`，写入 `model-daily-failed.md`。
+
+### 输出
+
+在不重新抓取新闻的前提下，生成或刷新模型日报文件。
 
 ---
 
@@ -556,17 +859,21 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 ### 3. 规则透明
 
-每条新闻为什么被选中，应该能通过来源等级、关键词、分数和降权规则解释。
+每条新闻为什么被选中，应该能通过来源等级、关键词、规则分数和降权规则解释。
 
 ### 4. 模型不替代事实来源
 
-即使后续接入大模型总结，也应该先保留原文链接、来源等级和规则分数。
+模型可以帮助改写标题、提炼摘要、组织日报和给出阅读建议，但不能替代来源核验。
 
-模型可以帮助阅读，但不能替代来源核验。
+模型输出必须保留原始链接、来源等级和候选来源索引。
 
-### 5. 先筛选，再分析
+### 5. 失败显式化
 
-系统先用规则筛出较大的高价值候选信息池，再交给人工或模型做分组、统计、归纳和精炼播报。
+模型日报失败时，系统必须明确输出失败说明，而不是静默失败，也不是用规则日报冒充模型日报。
+
+### 6. 先筛选，再解读
+
+系统先用规则筛出较大的高价值候选信息池，再交给模型做分组、统计、归纳和精炼播报。
 
 ---
 
@@ -578,18 +885,28 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 ├── config
 │   ├── sources.yml
 │   ├── keywords.yml
-│   └── scoring.yml
+│   ├── scoring.yml
+│   └── llm.yml
 ├── scripts
 │   ├── main.py
 │   ├── fetch_rss.py
 │   ├── fetch_github_releases.py
 │   ├── fetch_hackernews.py
+│   ├── fetch_article_text.py
 │   ├── score_items.py
 │   ├── generate_markdown.py
+│   ├── summarize_with_llm.py
+│   ├── generate_model_daily.py
+│   ├── generate_model_from_daily.py
 │   └── utils.py
 ├── output
 │   ├── daily.md
-│   └── YYYY-MM-DD.md
+│   ├── YYYY-MM-DD.md
+│   ├── model-daily.md
+│   └── model-daily-failed.md
+├── .github
+│   └── workflows
+│       └── daily-news.yml
 ├── requirements.txt
 └── .gitignore
 ```
@@ -598,40 +915,55 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 | 文件 | 说明 |
 |---|---|
-| `README.md` | 项目说明文件，介绍项目定位、系统工作流、判断规则和文件结构。 |
-| `requirements.txt` | 依赖说明；当前版本不需要强制第三方依赖。 |
-| `.gitignore` | Git 忽略规则，用于排除虚拟环境、缓存文件和系统临时文件。 |
+| `README.md` | 项目说明文件，介绍项目定位、系统工作流、判断规则、模型层逻辑和文件结构 |
+| `requirements.txt` | 依赖说明；当前规则版不需要强制第三方依赖 |
+| `.gitignore` | Git 忽略规则，用于排除虚拟环境、缓存文件和系统临时文件 |
 
 ### `config/` 配置目录
 
 | 文件 | 说明 |
 |---|---|
-| `config/sources.yml` | 新闻来源配置，定义 RSS / Atom、GitHub Releases、Hacker News 等信息来源。 |
-| `config/keywords.yml` | 关键词与标签配置，定义模型、Agent、编程工具、AI 应用平台、RAG、半导体、商业化等关注方向。 |
-| `config/scoring.yml` | 评分、过滤、去重和排序规则配置，定义时间窗口、来源基础分、关键词加分、降权规则和输出数量。 |
+| `config/sources.yml` | 新闻来源配置，定义 RSS / Atom、GitHub Releases、Hacker News 等信息来源 |
+| `config/keywords.yml` | 关键词与标签配置，定义模型、Agent、编程工具、AI 应用平台、RAG、半导体、商业化等关注方向 |
+| `config/scoring.yml` | 评分、过滤、去重和排序规则配置，定义时间窗口、来源基础分、关键词加分、降权规则和输出数量 |
+| `config/llm.yml` | 模型层配置，定义 DeepSeek / OpenAI 兼容接口、API Key 环境变量、正文抓取、模型日报候选池和失败处理策略 |
 
 ### `scripts/` 脚本目录
 
 | 文件 | 说明 |
 |---|---|
-| `scripts/main.py` | 主流程入口，串联配置读取、信息抓取、时间过滤、关键词匹配、打分、去重、排序和输出。 |
-| `scripts/fetch_rss.py` | RSS / Atom 抓取脚本，用于读取官方博客、技术博客、arXiv、社区 RSS 和媒体 RSS。 |
-| `scripts/fetch_github_releases.py` | GitHub Releases 抓取脚本，用于读取重点开源项目和 AI 工具链项目的版本发布。 |
-| `scripts/fetch_hackernews.py` | Hacker News 抓取脚本，用于读取技术社区热门内容，并先做 AI 主题粗过滤。 |
-| `scripts/score_items.py` | 时间过滤、关键词匹配、规则打分、去重和排序逻辑。 |
-| `scripts/generate_markdown.py` | Markdown 简报生成逻辑，按 Top 排序输出每日简报。 |
-| `scripts/utils.py` | 通用工具函数，包括配置读取、时间解析、UTC+8 时间显示、HTML 清理、URL 标准化和 item 构建。 |
+| `scripts/main.py` | 主流程入口，串联配置读取、信息抓取、规则筛选、规则日报输出和模型日报输出 |
+| `scripts/fetch_rss.py` | RSS / Atom 抓取脚本，用于读取官方博客、技术博客、arXiv、社区 RSS 和媒体 RSS |
+| `scripts/fetch_github_releases.py` | GitHub Releases 抓取脚本，用于读取重点开源项目和 AI 工具链项目的版本发布 |
+| `scripts/fetch_hackernews.py` | Hacker News 抓取脚本，用于读取技术社区热门内容，并先做 AI 主题粗过滤 |
+| `scripts/fetch_article_text.py` | 原文正文抓取脚本，用于在模型增强前补充正文片段 |
+| `scripts/score_items.py` | 时间过滤、关键词匹配、规则打分、去重和排序逻辑 |
+| `scripts/generate_markdown.py` | 规则版 Markdown 简报生成逻辑，按 Top 排序输出每日候选池 |
+| `scripts/summarize_with_llm.py` | 单条新闻模型增强逻辑，生成中文标题、核心摘要和重要性判断 |
+| `scripts/generate_model_daily.py` | 模型解读日报生成逻辑，负责候选池选择、章节结构、来源索引和模型日报校验 |
+| `scripts/generate_model_from_daily.py` | 从已有 `output/daily.md` 解析候选新闻，并单独生成模型日报 |
+| `scripts/utils.py` | 通用工具函数，包括配置读取、时间解析、UTC+8 时间显示、HTML 清理、URL 标准化和 item 构建 |
 
 ### `output/` 输出目录
 
 | 文件 | 说明 |
 |---|---|
-| `output/daily.md` | 最新生成的每日 AI 新闻候选信息池。 |
-| `output/YYYY-MM-DD.md` | 按日期归档的历史候选信息池文件。 |
+| `output/daily.md` | 最新生成的规则版每日 AI 新闻候选信息池 |
+| `output/YYYY-MM-DD.md` | 按日期归档的历史规则版候选信息池文件 |
+| `output/model-daily.md` | 模型生成的中文 AI 新闻解读日报 |
+| `output/model-daily-failed.md` | 模型日报未成功生成时的失败说明文件 |
+
+### `.github/workflows/` 工作流目录
+
+| 文件 | 说明 |
+|---|---|
+| `.github/workflows/daily-news.yml` | GitHub Actions 工作流，用于执行每日新闻生成流程并提交 `output/` 目录变化 |
 
 ---
 
 ## 输出示例结构
+
+### 规则版日报
 
 ```markdown
 # 每日 AI 新闻规则简报｜YYYY-MM-DD
@@ -649,13 +981,11 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 ## 今日 Top 40
 
-以下内容按综合规则分数排序展示。
-
 ### 1. 新闻标题
 
 - 来源等级
 - 来源名称
-- 来源类型
+- 来源类型 / 发布渠道
 - 发布时间
 - 原文链接
 - 命中关键词
@@ -665,28 +995,55 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 - 阅读提醒
 ```
 
+### 模型版日报
+
+```markdown
+# AI 新闻模型解读日报｜YYYY-MM-DD
+
+## 今日一句话
+
+## 今日最重要 5 条
+
+## 工具链更新汇总
+
+## Agent / 编程工具趋势
+
+## 开源项目 Release 汇总
+
+## 企业应用 / 商业化信号
+
+## 算力 / 半导体观察
+
+## 前沿研究观察
+
+## 今日建议动作
+
+## 附录：候选来源索引
+```
+
 ---
 
 ## 项目边界
 
-本项目当前只做规则层面的新闻筛选和 Markdown 输出。
+本项目负责：
 
-它不负责：
-
-- 生成模型总结
-- 判断新闻最终真伪
-- 替代人工阅读原文
-- 调用大模型 API
-- 生成投资、商业或技术决策结论
-
-它负责：
-
-- 抓取信息
-- 标注来源
+- 抓取 AI 相关信息
+- 标注来源等级
 - 匹配关键词
 - 计算规则分数
 - 去除重复内容
-- 输出可追溯的候选信息池
+- 输出规则版候选信息池
+- 在配置 API Key 后生成模型版中文解读日报
+- 保留原文链接和来源索引
+
+本项目不负责：
+
+- 判断新闻最终真伪
+- 替代人工阅读原文
+- 把社区讨论包装成官方事实
+- 把论文或 benchmark 包装成产品落地结论
+- 生成投资、商业或技术决策结论
+- 在模型失败时伪造模型日报
 
 ---
 
@@ -694,8 +1051,10 @@ Markdown 按工作流 8 的 Top 排序直接展示，不再按来源等级重新
 
 - 每日 AI 新闻收集
 - AI 工具链动态追踪
-- 开源项目 release 监控
+- 开源项目 Release 监控
 - Agent / 编程工具趋势观察
+- RAG / 数据栈 / AI 应用平台观察
 - 算力与半导体相关新闻筛选
-- 后续接入模型总结前的规则筛选层
-- 个人知识库或第二大脑的信息入口
+- 后续接入 Notion、Obsidian、飞书或邮件前的信息入口
+- 个人知识库或第二大脑的 AI 新闻输入层
+- “规则筛选 + 模型解读”的自动化工作流样板

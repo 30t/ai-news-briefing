@@ -48,22 +48,23 @@ SYSTEM_PROMPT = """你是一个中文 AI 新闻主编。
 
 必须遵守：
 1. 只基于输入内容写作，不编造原文没有的信息。
-2. 不要逐条机械复述所有候选新闻，要综合、分组、统计和提炼。
-3. 所有重要判断必须保留来源索引和原文链接；正文中提到具体新闻时，优先使用 Markdown 链接，例如：[3. GitHub MCP Server 密钥扫描功能正式上线](https://example.com)。不要只写 [3]。
-4. 每条候选新闻都有 primary_section。除“今日最重要 5 条”外，同一条新闻只在它的 primary_section 里详细展开一次；其他章节如需提到，只能一句话交叉引用，不要重复解释。
-5. 官方确认、技术社区、早期信号、待验证必须区分清楚。
-6. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
-7. 社区来源必须标注“社区讨论，不等于官方确认”。
-8. GitHub Release、工具版本更新、插件更新、小版本更新必须合并成“工具更新速览”或“开源工具链更新”，不要逐条展开，不要让小版本更新占据今日最重要 5 条；只有重大版本、破坏性变更、安全风险、价格 / 商业模式变化才可以单独展开。
-9. RISC-V、OpenSBI、Linux-capable SoC、AI CPU、端侧 AI 芯片、开源 EDA、OS 移植等内容，要放在“算力 / 半导体观察”中，强调它是 AI 从应用层下沉到 OS、指令集、芯片和端侧算力的趋势信号；社区或论文来源必须保持保守，不要写成已经量产或商业落地。
-10. TinyML、Embedded AI、Edge AI、AIoT、MCU、Cortex-M、ESP32、STM32、TFLite Micro、CMSIS-NN、Edge Impulse、传感器 AI、低功耗推理、工业物联网等内容，要放在“嵌入式 AI / 物联网 / Edge AI”中，重点解释它对端侧设备、传感器、低功耗场景和实际可落地项目的意义。
-11. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
-12. 输出只能是 Markdown，不要代码块。
+2. 不要做独立的“今日最重要 5 条”。重要内容要自然分流到各个主题板块里，由每个板块内部突出重点。
+3. 不要逐条机械复述所有候选新闻，要综合、分组、统计和提炼。
+4. 所有重要判断必须保留来源索引和原文链接；正文中提到具体新闻时，优先使用 Markdown 链接，例如：[3. GitHub MCP Server 密钥扫描功能正式上线](https://example.com)。不要只写 [3]。
+5. 每条候选新闻都有 primary_section。同一条新闻只在它的 primary_section 里详细展开一次；其他章节如需提到，只能一句话交叉引用，不要重复解释。
+6. 官方确认、技术社区、早期信号、待验证必须区分清楚。
+7. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
+8. 社区来源必须标注“社区讨论，不等于官方确认”。
+9. GitHub Release、工具版本更新、插件更新、小版本更新必须合并成“工具更新速览”或“开源工具链更新”，不要逐条展开；只有重大版本、破坏性变更、安全风险、价格 / 商业模式变化才可以单独展开。
+10. 企业采用、客户落地、商业化、价格、API、订阅、合作、收入、ROI、行业采用等内容，要优先放在“企业应用 / 商业化信号”中，解释其对真实业务落地、销售、市场和职业机会的意义。
+11. RISC-V、OpenSBI、Linux-capable SoC、AI CPU、端侧 AI 芯片、开源 EDA、OS 移植等内容，要放在“算力 / 半导体观察”中，强调它是 AI 从应用层下沉到 OS、指令集、芯片和端侧算力的趋势信号；社区或论文来源必须保持保守，不要写成已经量产或商业落地。
+12. TinyML、Embedded AI、Edge AI、AIoT、MCU、Cortex-M、ESP32、STM32、TFLite Micro、CMSIS-NN、Edge Impulse、传感器 AI、低功耗推理、工业物联网等内容，要放在“嵌入式 AI / 物联网 / Edge AI”中，重点解释它对端侧设备、传感器、低功耗场景和实际可落地项目的意义。
+13. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
+14. 输出只能是 Markdown，不要代码块。
 """
 
 REQUIRED_SECTIONS = [
     "## 今日一句话",
-    "## 今日最重要 5 条",
     "## 工具链更新汇总",
     "## Agent / 编程工具趋势",
     "## 开源项目 Release 汇总",
@@ -135,11 +136,12 @@ def select_items_for_model_daily(
             if _is_release_update(item):
                 selected_release_count += 1
 
+    add([item for item in pool if _has_any_tag(item, {"business"})], 5)
     add([item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})], 5)
     add([item for item in pool if _has_any_tag(item, {"embedded_edge_ai"})], 4)
     add([item for item in pool if _has_any_tag(item, {"ai_app", "rag_data", "open_source"})], 5)
     add([item for item in pool if item.get("source_level") == "official_confirmed"], 6)
-    add([item for item in pool if _has_any_tag(item, {"business", "semiconductor", "riscv_stack"})], 5)
+    add([item for item in pool if _has_any_tag(item, {"semiconductor", "riscv_stack"})], 5)
     add([item for item in pool if item.get("source_level") == "tech_community"], 3)
     add([item for item in pool if item.get("source_level") == "early_signal"], 2)
     add([item for item in pool if item.get("source_level") == "needs_verification"], 1)
@@ -209,12 +211,14 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         "# AI 新闻模型解读日报｜YYYY-MM-DD\n"
         + "\n".join(REQUIRED_SECTIONS)
         + "\n\n写作要求：\n"
+        "- 不要写独立的“今日最重要 5 条”。重要新闻要进入各自主题板块，不要单独抽出来。\n"
         "- 不要逐条复述所有 items。\n"
-        "- 每个 item 已给出 primary_section；除“今日最重要 5 条”外，同一个 item 只在 primary_section 对应章节详细展开一次，避免跨章节重复。\n"
-        "- 今日最重要 5 条必须每条都直接带原文 Markdown 链接，不要只写来源索引。\n"
+        "- 每个 item 已给出 primary_section；同一个 item 只在 primary_section 对应章节详细展开一次，避免跨章节重复。\n"
+        "- 每个板块内部先写最重要、变化量最大的 1-2 条，再写次要补充。\n"
         "- 正文任何位置提到具体新闻时，必须使用 item.markdown_link，例如 [3. 标题](url)，不要让读者去附录表格反查。\n"
+        "- 企业应用 / 商业化信号要提高权重；客户采用、商业落地、价格、API、订阅、合作、收入、ROI、行业采用都要优先解释。\n"
         "- 工具链 / Agent / 开源 release 必须先判断是否只是小版本、补丁、例行更新；这类内容必须合并成一条“工具更新速览”，不要逐条展开。\n"
-        "- source_type 为 github_release 或 content_handling 为 tool_update_digest 的条目，默认只进入“开源项目 Release 汇总”或“工具链更新汇总”，不要进入“今日最重要 5 条”，除非它明确涉及重大版本、破坏性变更、安全风险、价格变化或商业模式变化。\n"
+        "- source_type 为 github_release 或 content_handling 为 tool_update_digest 的条目，默认只进入“开源项目 Release 汇总”或“工具链更新汇总”，除非它明确涉及重大版本、破坏性变更、价格变化或商业模式变化。\n"
         "- tags 包含 riscv_stack 的条目，优先进入“算力 / 半导体观察”，重点解释其对端侧 AI、OS、指令集、AI CPU、开源芯片生态的趋势意义；如果来源是论文、社区或待验证渠道，必须明确写成早期信号。\n"
         "- tags 包含 embedded_edge_ai 的条目，优先进入“嵌入式 AI / 物联网 / Edge AI”，重点解释 TinyML、MCU、传感器、低功耗推理、ESP32 / STM32 / Cortex-M、TFLite Micro、CMSIS-NN、Edge Impulse 等对真实设备落地的意义。\n"
         "- 工具更新速览可以用 3-6 个项目符号合并多条 Release，每个项目符号只写项目名 + 关键变化 + 原文链接，不要长篇解释。\n"
@@ -321,6 +325,8 @@ def _primary_section(item: dict[str, Any]) -> str:
     source_type = item.get("source_type")
     if source_type == "github_release":
         return "open_source"
+    if "business" in tags:
+        return "business"
     if tags.intersection({"agent", "coding_tool"}):
         return "agent_coding"
     if "embedded_edge_ai" in tags:
@@ -331,8 +337,6 @@ def _primary_section(item: dict[str, Any]) -> str:
         return "semiconductor"
     if tags.intersection({"ai_app", "rag_data", "model"}):
         return "toolchain"
-    if "business" in tags:
-        return "business"
     return "toolchain"
 
 

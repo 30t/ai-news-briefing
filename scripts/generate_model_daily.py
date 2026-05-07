@@ -51,7 +51,7 @@ SYSTEM_PROMPT = """你是一个中文 AI 新闻主编。
 5. 官方确认、技术社区、早期信号、待验证必须区分清楚。
 6. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
 7. 社区来源必须标注“社区讨论，不等于官方确认”。
-8. GitHub Release 可以归纳成“开源工具链更新”，不需要每条小版本都展开。
+8. GitHub Release、工具版本更新、插件更新、小版本更新必须合并成“工具更新速览”或“开源工具链更新”，不要逐条展开，不要让小版本更新占据今日最重要 5 条；只有重大版本、破坏性变更、安全风险、价格 / 商业模式变化才可以单独展开。
 9. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
 10. 输出只能是 Markdown，不要代码块。
 """
@@ -103,12 +103,16 @@ def select_items_for_model_daily(
 ) -> list[dict[str, Any]]:
     pool_size = int(llm_config.get("model_daily_candidate_pool_size", scoring_config.get("max_items_per_day", 40)))
     max_items = int(llm_config.get("model_daily_max_items", 18))
+    max_release_items = int(llm_config.get("model_daily_max_release_items", 5))
     pool = [item for item in items[:pool_size] if _is_meaningful_for_model_daily(item)]
 
     selected: list[dict[str, Any]] = []
     seen: set[str] = set()
+    selected_release_count = 0
 
     def add(candidates: list[dict[str, Any]], limit: int) -> None:
+        nonlocal selected_release_count
+
         added = 0
         for item in candidates:
             if len(selected) >= max_items or added >= limit:
@@ -116,9 +120,14 @@ def select_items_for_model_daily(
             key = item.get("url") or item.get("title") or ""
             if not key or key in seen:
                 continue
+            if _is_release_update(item) and selected_release_count >= max_release_items:
+                continue
+
             selected.append(item)
             seen.add(key)
             added += 1
+            if _is_release_update(item):
+                selected_release_count += 1
 
     add([item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})], 5)
     add([item for item in pool if _has_any_tag(item, {"ai_app", "rag_data", "open_source"})], 5)
@@ -184,6 +193,7 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         "required_sections": REQUIRED_SECTIONS,
         "source_level_stats": stats["source_level_stats"],
         "tag_stats": stats["tag_stats"],
+        "release_update_count": stats["release_update_count"],
         "items": [_serialize_item(index, item) for index, item in enumerate(items, 1)],
     }
     return (
@@ -196,7 +206,9 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         "- 每个 item 已给出 primary_section；除“今日最重要 5 条”外，同一个 item 只在 primary_section 对应章节详细展开一次，避免跨章节重复。\n"
         "- 今日最重要 5 条必须每条都直接带原文 Markdown 链接，不要只写来源索引。\n"
         "- 正文任何位置提到具体新闻时，必须使用 item.markdown_link，例如 [3. 标题](url)，不要让读者去附录表格反查。\n"
-        "- 工具链 / Agent / 开源 release 可以合并同类项，但每个合并项至少保留 1-3 个直接原文链接。\n"
+        "- 工具链 / Agent / 开源 release 必须先判断是否只是小版本、补丁、例行更新；这类内容必须合并成一条“工具更新速览”，不要逐条展开。\n"
+        "- source_type 为 github_release 或 content_handling 为 tool_update_digest 的条目，默认只进入“开源项目 Release 汇总”或“工具链更新汇总”，不要进入“今日最重要 5 条”，除非它明确涉及重大版本、破坏性变更、安全风险、价格变化或商业模式变化。\n"
+        "- 工具更新速览可以用 3-6 个项目符号合并多条 Release，每个项目符号只写项目名 + 关键变化 + 原文链接，不要长篇解释。\n"
         "- 附录仍要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n"
         "- 对早期信号要写清楚：这是研究或早期线索，不等于已经产品化。\n"
         "- 对技术社区要写清楚：社区讨论，不等于官方确认。\n\n"
@@ -217,6 +229,7 @@ def _serialize_item(index: int, item: dict[str, Any]) -> dict[str, Any]:
         "markdown_link": _markdown_link(index, title, url),
         "primary_section": primary_section,
         "primary_section_zh": PRIMARY_SECTION_LABELS.get(primary_section, primary_section),
+        "content_handling": _content_handling(item),
         "llm_title": llm.get("final_title_zh"),
         "llm_summary": llm.get("core_summary_zh"),
         "llm_why_it_matters": llm.get("why_it_matters_zh"),
@@ -263,13 +276,21 @@ def _auto_link_source_refs(content: str, items: list[dict[str, Any]]) -> str:
 def _build_stats(items: list[dict[str, Any]], total_count: int) -> dict[str, Any]:
     source_level_stats: dict[str, int] = {}
     tag_stats: dict[str, int] = {}
+    release_update_count = 0
     for item in items:
         level = str(item.get("source_level") or "needs_verification")
         source_level_stats[LEVEL_LABELS.get(level, level)] = source_level_stats.get(LEVEL_LABELS.get(level, level), 0) + 1
+        if _is_release_update(item):
+            release_update_count += 1
         for tag in item.get("tags") or []:
             label = TAG_LABELS.get(tag, str(tag))
             tag_stats[label] = tag_stats.get(label, 0) + 1
-    return {"total_fetched": total_count, "source_level_stats": source_level_stats, "tag_stats": tag_stats}
+    return {
+        "total_fetched": total_count,
+        "source_level_stats": source_level_stats,
+        "tag_stats": tag_stats,
+        "release_update_count": release_update_count,
+    }
 
 
 def _is_meaningful_for_model_daily(item: dict[str, Any]) -> bool:
@@ -289,9 +310,11 @@ def _primary_section(item: dict[str, Any]) -> str:
         return "research"
     tags = set(item.get("tags") or [])
     source_type = item.get("source_type")
+    if source_type == "github_release":
+        return "open_source"
     if tags.intersection({"agent", "coding_tool"}):
         return "agent_coding"
-    if source_type == "github_release" or "open_source" in tags:
+    if "open_source" in tags:
         return "open_source"
     if tags.intersection({"ai_app", "rag_data", "model"}):
         return "toolchain"
@@ -300,6 +323,16 @@ def _primary_section(item: dict[str, Any]) -> str:
     if "semiconductor" in tags:
         return "semiconductor"
     return "toolchain"
+
+
+def _content_handling(item: dict[str, Any]) -> str:
+    if _is_release_update(item):
+        return "tool_update_digest"
+    return "normal"
+
+
+def _is_release_update(item: dict[str, Any]) -> bool:
+    return item.get("source_type") == "github_release"
 
 
 def _display_title(item: dict[str, Any]) -> str:

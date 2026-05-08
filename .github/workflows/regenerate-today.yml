@@ -1,0 +1,36 @@
+name: Regenerate today briefing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/regenerate-today.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    env:
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run daily briefing pipeline
+        run: python scripts/main.py
+
+      - name: Commit regenerated outputs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Regenerate today AI briefing
+          file_pattern: output/*.md output/backlog.json

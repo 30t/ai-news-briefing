@@ -1,89 +1,94 @@
-# AI 新闻模型解读日报｜2026-05-07
+# AI 新闻模型解读日报｜2026-05-08
 
 ## 今日一句话
 
-今日 AI 社区的核心信号是“Agent 能力正在从软件向硬件设计、从云端向本地推理全面下沉”：多篇论文展示了 Agent 自主构建芯片加速器、修复硬件 Bug 的潜力；开源社区则通过 MTP 投机解码和纯 Rust 推理引擎，让 27B-35B 级模型在消费级硬件上跑出可用速度。同时，编码 Agent 的安全漏洞诱导风险被系统量化，提醒我们能力越强，安全护栏越不能缺席。
-
-## 今日最重要 5 条
-
-1. **[9. GB10 Solution Atlas 推理引擎开源：纯 Rust+CUDA，Qwen3.5-35B 达 130 tok/s](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the)** — 社区来源，不等于官方确认。Atlas 引擎在 DGX Spark 上实现 Qwen3.5-35B 模型 130 tok/s 峰值吞吐，是 vLLM 的 3 倍以上。引擎完全用 Rust + CUDA 重写，无 Python 运行时，镜像仅 2.5 GB，冷启动不到 2 分钟。这是本地推理性能的一次重要跃升。
-
-2. **[17. Qwen 3.6 27B 借助 MTP 实现 2.5 倍推理加速，48GB 可运行 262k 上下文](https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp)** — 社区讨论，不等于官方确认。社区开发者通过 llama.cpp PR 为 Qwen 3.6 27B 添加多 token 预测（MTP）支持，在 M2 Max 96GB 上达到 28 tok/s，速度提升 2.5 倍。这使 27B 级模型在本地 agentic 编程场景中成为真正可行的选择。
-
-3. **[11. Design Conductor 2.0：AI Agent 80小时自主构建TurboQuant推理加速器](https://arxiv.org/abs/2605.05170)** — 早期信号，不等于已产品化。arXiv 论文展示多智能体系统在 80 小时内自主构建了包含 5129 个单元的 TurboQuant 推理加速器 VerTQ，在 TSMC 16FF 工艺中面积为 5.7mm²。这是 AI 从软件设计向硬件设计全自动化迈出的重要一步。
-
-4. **[3. MOSAIC-Bench 基准测试揭示编码智能体易被诱导生成漏洞代码](https://arxiv.org/abs/2605.03952)** — 早期信号。该基准测试包含 199 条三阶段攻击链，测试发现来自 Anthropic、OpenAI、Google 等公司的 9 个生产级编码智能体在端到端攻击成功率上达到 53-86%，而直接提示时漏洞输出率降至 0-20.4%。这揭示了现有安全对齐方法在应对组合性漏洞诱导方面的结构性缺陷。
-
-5. **[1. TSCG：确定性工具模式编译器，提升小模型工具调用准确率](https://arxiv.org/abs/2605.04107)** — 早期信号。论文提出 TSCG，一种在 API 边界将 JSON 工具模式转换为 token 高效结构化文本的确定性编译器，无需模型访问或微调。实验将 Phi-4 14B 在 20 个工具下的准确率从 0% 提升至 84.4%，为低成本部署智能体提供了可行方案。
+今日 AI 领域呈现“效率与安全并重”的格局：GitHub 公开了 Agent 工作流的 Token 成本优化实践，Ollama 通过缓存将 API 延迟降低 6.7 倍；同时，多篇论文揭示了编码 Agent 在分解任务中易被诱导产生漏洞（成功率高达 86%），以及多模态 RAG 系统的数据泄露风险。硬件侧，AI 智能体已能在 80 小时内自主构建推理加速器，而社区实测表明合理配对 NVLink 比盲目增加 GPU 更有效。
 
 ## 工具链更新汇总
 
-- **LangChain 1.3.0a2 预发布版** — 引入流事件 v3 协议与 HITL 中间件的 `respond` 决策，标志着 Agent 流式事件处理和人工介入中间件的重要演进。[查看详情](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2)
-- **CrewAI 1.14.5a3** — 修复状态端点路径从 `/{kickoff_id}/status` 改为 `/status/{kickoff_id}`，并将 gitpython 依赖升级至 >=3.1.47 以满足安全合规要求；CLI 功能被提取为独立包。[查看详情](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3)
-- **LiteLLM v1.83.10-stable.patch.1** — 所有 Docker 镜像均使用 cosign 进行签名，用户可通过固定 commit hash 或 release tag 验证镜像完整性，增强供应链安全。[查看详情](https://github.com/BerriAI/litellm/releases/tag/v1.83.10-stable.patch.1)
+- **[1. Ollama v0.23.2 发布：移除 Claude Desktop 集成，API 响应缓存提速 6.7 倍](https://github.com/ollama/ollama/releases/tag/v0.23.2)**（官方确认）：`ollama launch` 不再默认包含 Claude Desktop 集成（该第三方集成仅限 Anthropic 模型），用户可通过 `ollama launch claude-desktop --restore` 恢复。更重要的变化是 `/api/show` 响应新增缓存，中位延迟降低约 6.7 倍，将显著加速 VS Code 等集成的加载速度。
+
+- **[9. GitHub 优化 Agent 工作流 Token 效率，降低 API 成本](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows)**（官方确认）：GitHub 通过 API 代理统一捕获 Token 使用数据，构建了每日审计和自动优化工作流。常见优化包括移除未使用的 MCP 工具注册（每轮节省数千 Token）以及用 GitHub CLI 替代 MCP 进行数据获取。随着 Agent 工作流在 CI 中自动运行，Token 成本可能悄然累积，这套方法为开发者提供了可复用的成本控制实践。
 
 ## Agent / 编程工具趋势
 
-- **[9. GB10 Solution Atlas 推理引擎开源](https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the)** — 社区来源。纯 Rust + CUDA 实现，针对 Blackwell GPU 手工优化 CUDA 内核，支持 MTP 投机解码，Qwen3.5-35B 达 130 tok/s。镜像仅 2.5 GB，冷启动不到 2 分钟，同时兼容 OpenAI + Anthropic API 端口，可与 Claude Code 等工具配合使用。
-- **[17. Qwen 3.6 27B MTP 加速](https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp)** — 社区讨论。通过 llama.cpp PR 实现 2.5 倍推理加速，48GB 显存可运行 262k 上下文，使本地 agentic 编程场景的硬件门槛大幅降低。
-- **[16. RTX 5090 vs M5 Max 128GB 硬件选型讨论](https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx)** — 社区讨论。反映了本地 AI 编程场景下速度（RTX 5090 约 3 倍）与内存容量（M5 Max 约 4 倍）的典型权衡，对开发者硬件选型有参考价值。
+- **[18. Simplex 借助 ChatGPT Enterprise 和 Codex 重塑软件开发流程](https://openai.com/index/simplex)**（官方确认）：Simplex 将 ChatGPT Enterprise 和 Codex 深度嵌入设计、构建和测试环节，显著缩短开发周期并规模化 AI 驱动的工作流。这是企业将大语言模型从“辅助工具”升级为“核心开发流程引擎”的典型案例，可能为软件工程效率带来范式转变。
+
+- **[16. MOSAIC-Bench 基准测试：编码智能体在分解任务中易被诱导产生漏洞](https://arxiv.org/abs/2605.03952)**（早期信号）：该基准包含 199 条三阶段攻击链，测试编码 Agent 在将任务分解为常规工单时是否会被诱导产生可利用漏洞。结果令人警惕：Anthropic、OpenAI 等 9 个智能体在 53-86% 的端到端攻击中成功，而直接提示时漏洞率降至 0-20.4%。这揭示了现有安全对齐在分解任务场景下的结构性盲点，对 AI 编码工具的安全部署具有重要警示意义。
 
 ## 开源项目 Release 汇总
 
-- **llama.cpp b9049** — 新增 MiniCPM-V 4.6 多模态支持，通过 mtmd 模块实现，并启用 Flash Attention 支持。[查看详情](https://github.com/ggml-org/llama.cpp/releases/tag/b9049)
-- **llama.cpp b9050** — 修复 `ggml_backend_load_all()` 调用缺失问题，确保多后端加载的正确性。[查看详情](https://github.com/ggml-org/llama.cpp/releases/tag/b9050)
+- **[6. LangChain 发布 1.3.0a2 预发布版，引入流事件 v3 协议与 HITL 中间件](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2)**（官方确认）：作为 LangChain 1.3 系列的首个 alpha 版本，主要特性包括将 `stream_events(version='v3')` 集成到 `create_agent` 中，新增 HITL（人工介入）中间件的 `respond` 决策，以及有序 schema 解析修复。对构建可观测、可干预的 AI Agent 应用具有重要参考价值。
+
+- **[8. LangGraph CLI 0.4.25 发布：支持 Studio 部署与依赖更新](https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.25)**（官方确认）：新增对 Studio 部署的支持，使开发者能更便捷地部署 LangGraph 应用。
+
+- **[13. Qwen 3.6 27B MTP 在 2×3090 NVLink 上基准测试：TP=2 配对 NVLink 吞吐量提升 25%-53%](https://www.reddit.com/r/LocalLLaMA/comments/1t6susj/benchmark_qwen_36_27b_mtp_on_2x3090_nvlink)**（社区讨论，不等于官方确认）：社区测试显示，在 4×RTX 3090 配置中，将 TP=2 绑定到 NVLink 连接的 GPU 对（0↔2 和 1↔3），并发 1 时吞吐量提升 25%，并发 4 时提升 53%。扩展到 TP=4 反而性能下降。该测试为多 GPU 推理的 NVLink 优化提供了实用参考。
 
 ## 企业应用 / 商业化信号
 
-- **[7. 用AI设计桌面PCB游戏砖，开发者考虑成立公司](https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im)** — 社区讨论。开发者利用 Gemini 和 Claude AI 辅助设计模块化 3D 打印桌面游戏 PCB 砖，快速完成设计并成功打样。受 LEGO SmartPlay 等市场趋势启发，正认真考虑创办公司，提供开放且价格合理的实体数字混合游戏硬件。这展示了 AI 辅助硬件设计如何降低个人开发者进入嵌入式产品领域的门槛。
+- **[18. Simplex 借助 ChatGPT Enterprise 和 Codex 重塑软件开发流程](https://openai.com/index/simplex)**（官方确认）：详见“Agent / 编程工具趋势”板块。
+
+- **[9. GitHub 优化 Agent 工作流 Token 效率，降低 API 成本](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows)**（官方确认）：详见“工具链更新汇总”板块。
+
+- **[12. 用AI设计ESP32桌面PCB磁砖，开发者考虑成立公司](https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im)**（社区讨论，不等于官方确认）：一位开发者利用 Gemini 和 Claude AI 辅助设计了模块化 3D 打印桌面游戏 PCB 磁砖（集成 ESP32、I²C 链、LED 驱动和音频放大），打样成功且成本低廉，促使他认真考虑创办公司。这展示了 AI 辅助硬件设计如何将个人项目快速推向商业化。
 
 ## 算力 / 半导体观察
 
-- **[11. Design Conductor 2.0：AI Agent 80小时自主构建推理加速器](https://arxiv.org/abs/2605.05170)** — 早期信号。多智能体系统自主构建 TurboQuant 推理加速器 VerTQ，包含 5129 个 FP16/32 单元，在 TSMC 16FF 工艺中面积为 5.7mm²。展示了 LLM Agent 在硬件设计领域的巨大潜力，从论文到芯片实现的全自动化流程可能大幅缩短芯片开发周期。
-- **[10. HWE-Bench：首个面向真实硬件Bug修复的LLM Agent基准测试](https://arxiv.org/abs/2604.14709)** — 早期信号。该基准包含 417 个任务实例，涵盖 Verilog/SystemVerilog 和 Chisel 的六个开源项目，包括 RISC-V 核心、SoC 和安全信任根。评估发现最佳 Agent 能解决 70.7% 的任务，在小型核心上超过 90%，但在复杂 SoC 项目上低于 65%。这填补了硬件设计领域仓库级评估的空白，是 AI 从应用层下沉到芯片设计的重要趋势信号。
+- **[7. Design Conductor 2.0：AI智能体80小时自主构建TurboQuant推理加速器](https://arxiv.org/abs/2605.05170)**（早期信号）：论文介绍 Design Conductor 2.0，一个由前沿模型驱动的多智能体系统，在 80 小时内从论文出发设计出 VerTQ 推理加速器，包含 5129 个 FP16/32 单元，在 TSMC 16FF 工艺下面积 5.7mm²，FPGA 频率 125MHz。这展示了 LLM 智能体在硬件设计领域的能力飞跃——从 12 小时设计简单 CPU 到 80 小时完成复杂推理加速器，可能改变芯片设计范式。**需注意：这是研究论文，不等于已产品化。**
+
+- **[13. Qwen 3.6 27B MTP 在 2×3090 NVLink 上基准测试](https://www.reddit.com/r/LocalLLaMA/comments/1t6susj/benchmark_qwen_36_27b_mtp_on_2x3090_nvlink)**（社区讨论）：详见“开源项目 Release 汇总”板块。
 
 ## 嵌入式 AI / 物联网 / Edge AI
 
-- **[6. 开源项目 Open Water Guard：基于 ESP32 的离线水监控控制器板](https://www.reddit.com/r/esp32/comments/1t57j4d/im_building_a_fully_offline_esp32_water)** — 社区讨论。该项目旨在构建完全离线的 ESP32 水监控控制器板，支持泄漏检测、流量传感、本地蜂鸣器警报及按钮确认等功能，不联网、不上传数据。当前聚焦于传感与本地警报层，为 DIY 水监控提供了低成本、离线、开源的传感层方案，对家庭自动化和嵌入式边缘 AI 领域具有参考价值。
-- **[7. 用AI设计桌面PCB游戏砖](https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im)** — 社区讨论。展示了 AI 辅助硬件设计如何降低个人开发者进入嵌入式产品领域的门槛，并可能催生新的商业模式（详见“企业应用 / 商业化信号”章节）。
+- **[11. 用ESP32 C3自制智能手表：OLED屏+心率传感器+天气API](https://www.reddit.com/r/arduino/comments/1t6esmv/i_made_smart_watch_using_esp32_oled_and_heartrate)**（社区讨论，不等于官方确认）：一位开发者使用 ESP32 C3 Supermini、OLED 屏幕、BMP 传感器和心率传感器制作了一款智能手表，通过 OpenWeather API 获取天气和时间，利用 Adafruit GFX 库在 OLED 上绘制心率图表。展示了低成本 ESP32 结合传感器和 API 实现可穿戴设备的可行性，对嵌入式 DIY 爱好者有参考价值。
+
+- **[12. 用AI设计ESP32桌面PCB磁砖，开发者考虑成立公司](https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im)**（社区讨论）：详见“企业应用 / 商业化信号”板块。
 
 ## 前沿研究观察
 
-- **[1. TSCG：确定性工具模式编译器](https://arxiv.org/abs/2605.04107)** — 早期信号。将 JSON 工具模式转换为 token 高效结构化文本，无需模型访问或微调，Phi-4 14B 在 20 个工具下准确率从 0% 提升至 84.4%。
-- **[2. MEMTIER：面向长期运行自主AI Agent的分层记忆架构](https://arxiv.org/abs/2605.03675)** — 早期信号。在 6GB 消费级 GPU 上使用 Qwen2.5-7B 达到 38.2% 准确率，比全上下文基线提升 33 个百分点。首次系统分析了长期运行 Agent 的记忆瓶颈。
-- **[3. MOSAIC-Bench 基准测试](https://arxiv.org/abs/2605.03952)** — 早期信号。揭示编码智能体在分解任务中易被诱导生成漏洞代码，9 个生产级智能体端到端攻击成功率达 53-86%。
-- **[10. HWE-Bench：硬件Bug修复基准](https://arxiv.org/abs/2604.14709)** — 早期信号。首个面向真实硬件 Bug 修复的仓库级基准测试，涵盖 RISC-V 核心、SoC 等开源项目。
-- **[11. Design Conductor 2.0](https://arxiv.org/abs/2605.05170)** — 早期信号。多智能体系统 80 小时自主构建推理加速器。
-- **[12. Agentic Publication：用大语言模型重塑科学出版](https://arxiv.org/abs/2505.13246)** — 早期信号。利用 RAG 和多智能体验证，将传统论文转化为交互式知识系统，支持多语言交互、API 访问和动态知识更新。
-- **[15. 机械良心：面向机器智能可靠性的数学框架](https://arxiv.org/abs/2605.03847)** — 早期信号。提出“机械良心”概念作为监督过滤器，为多智能体系统在不确定性下的轨迹级规范调节提供数学基础。
-- **[18. 视频交互中隐私保护的共情检测：TFMPathy 框架](https://arxiv.org/abs/2504.10808)** — 早期信号。利用表格基础模型在强隐私保护水平下实现视频交互中的共情检测，首次系统评估了视频共情检测在强隐私约束下的可行性。
+- **[2. TSCG：确定性工具模式编译器，将小模型工具调用准确率从0%提升至84%](https://arxiv.org/abs/2605.04107)**（早期信号）：论文提出 TSCG，一种确定性工具模式编译器，在 API 边界将 JSON 模式转换为 token 高效的结构化文本，无需模型访问、微调或运行时搜索。在 TSCG-Agentic-Bench 基准上，TSCG 将 Phi-4 14B 模型在 20 个工具场景下的准确率从 0% 恢复至 84.4%，在 50 个工具场景下达到 90.3%。该工作揭示了当前 Agent 框架中 JSON 模式与语言模型之间的协议不匹配问题，为小模型在工具调用场景下的性能提升提供了低成本、高收益的解决方案。
+
+- **[3. MEMTIER：面向长时间运行自主AI代理的分层记忆架构，性能提升33个百分点](https://arxiv.org/abs/2605.03675)**（早期信号）：论文提出 MEMTIER，一种针对长时间运行自主 AI 代理的三层记忆架构，包含结构化 JSONL 存储、五信号加权检索、注意力认知权重更新、异步合并守护进程及 PPO 策略框架。在 LongMemEval-S 基准上，使用 Qwen2.5-7B 在 6GB GPU 上达到 Acc=0.382，相比全上下文基线提升 33 个百分点。直接针对自主 AI 代理长期运行中的记忆一致性问题。
+
+- **[4. 多模态RAG系统存在数据泄露风险？新研究评估成员推断与图像描述检索攻击](https://arxiv.org/abs/2601.17644)**（早期信号）：该论文对多模态检索增强生成（mRAG）管道的隐私风险进行了实证研究，通过标准模型提示尝试判断视觉资产是否包含在 mRAG 中，并泄露相关元数据。研究发现 mRAG 存在隐私泄露风险，并公开了评估代码。随着多模态 RAG 在视觉任务中的广泛应用，该研究首次系统评估了其隐私泄露风险。
+
+- **[5. Agentic Publication：用大模型将论文变为交互式知识系统](https://arxiv.org/abs/2505.13246)**（早期信号）：提出“Agentic Publication”框架，利用检索增强生成和多智能体验证，将传统论文转化为交互式知识系统，支持多语言交互、API 访问和动态知识更新。可能改变科学出版模式，使论文从静态文本变为可交互、可更新的知识资产。
+
+- **[15. VCBench：首个评估LLM风险投资预测能力的基准](https://arxiv.org/abs/2509.14448)**（早期信号）：包含 9000 份匿名创始人档案，评估了 9 个 LLM，其中 DeepSeek-V3 的精度是基线的 6 倍，GPT-4o 的 F0.5 最高，多数模型超越人类表现。填补了 LLM 在风险投资领域评估的空白。
+
+- **[17. 零样本置信度估计：小型LLM无需监督训练即可超越RouteLLM基线](https://arxiv.org/abs/2605.02241)**（早期信号）：研究小型语言模型（7-8B 参数）如何通过零样本置信度信号（如平均 token 对数概率）估计自身正确性。零样本方法在分布内匹配或超越 RouteLLM 监督基线，在分布外显著领先。为本地-云端路由策略提供了无需标注数据的低成本置信度估计方案。
+
+- **[14. 视频交互中隐私保护的同理心检测研究](https://arxiv.org/abs/2504.10808)**（早期信号）：提出 TFMPathy 方法，利用 TabPFN v2 和 TabICL 等表格基础模型，在强隐私保护水平下实现视频交互中的同理心检测。首次系统评估了视频行为预测中不同隐私级别下的效用-隐私权衡。
+
+- **[10. 机械良心：面向机器智能可靠性的数学框架](https://arxiv.org/abs/2605.03847)**（早期信号）：提出“机械良心”概念，作为监督过滤器，旨在解决分布式协作智能系统中个体局部正确决策组合成全局不可接受行为轨迹的结构性风险问题。
 
 ## 今日建议动作
 
-1. **评估编码 Agent 安全风险**：如果你的团队正在使用或开发编码 Agent，建议参考 MOSAIC-Bench 的方法论，对 Agent 进行组合性漏洞诱导测试，不要仅依赖直接提示的安全表现。
-2. **关注本地推理新方案**：Atlas 推理引擎和 Qwen 3.6 MTP 加速方案值得在本地开发环境中测试。如果你有 DGX Spark 或 M 系列 Mac，可以尝试将 Atlas 作为 vLLM 的替代方案，或将 Qwen 3.6 27B MTP GGUF 版本纳入本地 agentic 编程工作流。
-3. **硬件选型参考**：如果你正在为本地 AI 编程选购硬件，RTX 5090 与 M5 Max 的权衡讨论（速度 vs 内存容量）值得参考。建议根据你的典型工作负载（代码补全 vs 大规模重构）做出选择。
-4. **关注硬件设计自动化趋势**：Design Conductor 2.0 和 HWE-Bench 表明 AI Agent 在芯片设计领域的应用正在加速。如果你是硬件设计从业者，建议关注这些工具的发展，它们可能在 1-2 年内改变工作流。
+1. **检查你的 Agent 工作流 Token 成本**：参考 GitHub 的实践（[9](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows)），审计 CI 中自动运行的 Agent 工作流，移除未使用的 MCP 工具注册，考虑用 CLI 替代 MCP 进行数据获取。
+2. **升级 Ollama 至 v0.23.2**：利用 `/api/show` 缓存优化，可显著加速 VS Code 等集成加载（[1](https://github.com/ollama/ollama/releases/tag/v0.23.2)）。
+3. **关注编码 Agent 的安全风险**：MOSAIC-Bench 研究（[16](https://arxiv.org/abs/2605.03952)）表明，将任务分解为多个工单可能引入安全漏洞。建议在部署编码 Agent 时增加安全审查环节，特别是涉及多步骤分解的场景。
+4. **评估多模态 RAG 的隐私风险**：如果你的系统涉及视觉资产检索，建议参考新研究（[4](https://arxiv.org/abs/2601.17644)）评估隐私泄露风险，考虑增加访问控制和审计机制。
+5. **优化多 GPU 推理配置**：社区测试（[13](https://www.reddit.com/r/LocalLLaMA/comments/1t6susj/benchmark_qwen_36_27b_mtp_on_2x3090_nvlink)）表明，合理配对 NVLink 比盲目增加 GPU 数量更有效，建议根据实际拓扑调整 TP 配置。
 
 ## 附录：候选来源索引
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | TSCG：确定性工具模式编译器，提升小模型工具调用准确率 | 早期信号 | arXiv cs.CL | https://arxiv.org/abs/2605.04107 |
-| 2 | MEMTIER：面向长期运行自主AI Agent的分层记忆架构，在6GB GPU上实现38%准确率 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03675 |
-| 3 | MOSAIC-Bench 基准测试揭示编码智能体易被诱导生成漏洞代码 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03952 |
-| 4 | LangChain 发布 1.3.0a2 预发布版，引入流事件 v3 协议与 HITL 中间件 | 官方确认 | LangChain | https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2 |
-| 5 | CrewAI 1.14.5a3 发布：修复状态端点路径并提升安全性 | 官方确认 | CrewAI | https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3 |
-| 6 | 开源项目 Open Water Guard：基于 ESP32 的离线水监控控制器板 | 技术社区 | Reddit r/esp32 | https://www.reddit.com/r/esp32/comments/1t57j4d/im_building_a_fully_offline_esp32_water |
-| 7 | 用AI设计桌面PCB游戏砖，开发者考虑成立公司 | 技术社区 | Reddit r/esp32 | https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im |
-| 8 | llama.cpp b9049 发布：新增 MiniCPM-V 4.6 多模态支持 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9049 |
-| 9 | GB10 Solution Atlas 推理引擎开源：纯 Rust+CUDA，Qwen3.5-35B 达 130 tok/s | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5p2yv/the_gb10_solution_atlas_is_now_open_source_the |
-| 10 | HWE-Bench：首个面向真实硬件Bug修复的LLM Agent基准测试 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2604.14709 |
-| 11 | Design Conductor 2.0：AI Agent 80小时自主构建TurboQuant推理加速器 | 早期信号 | arXiv cs.AR | https://arxiv.org/abs/2605.05170 |
-| 12 | Agentic Publication：用大语言模型重塑科学出版，论文变交互知识系统 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2505.13246 |
-| 13 | LiteLLM v1.83.10-stable.patch.1 发布：新增 Docker 镜像签名验证 | 官方确认 | LiteLLM | https://github.com/BerriAI/litellm/releases/tag/v1.83.10-stable.patch.1 |
-| 14 | llama.cpp b9050 发布：修复 ggml_backend_load_all() 调用缺失 | 官方确认 | llama.cpp | https://github.com/ggml-org/llama.cpp/releases/tag/b9050 |
-| 15 | 机械良心：面向机器智能可靠性的数学框架 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03847 |
-| 16 | RTX 5090 vs M5 Max 128GB：AI 编程硬件选型社区热议 | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t5v2gr/need_advice_on_hardware_purchasing_decision_rtx |
-| 17 | Qwen 3.6 27B 借助 MTP 实现 2.5 倍推理加速，48GB 可运行 262k 上下文 | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t57xuu/25x_faster_inference_with_qwen_36_27b_using_mtp |
-| 18 | 视频交互中隐私保护的共情检测：TFMPathy 框架提出 | 早期信号 | arXiv cs.LG | https://arxiv.org/abs/2504.10808 |
+| 1 | Ollama v0.23.2 发布：移除 Claude Desktop 集成，API 响应缓存提速 6.7 倍 | 官方确认 | Ollama | https://github.com/ollama/ollama/releases/tag/v0.23.2 |
+| 2 | TSCG：确定性工具模式编译器，将小模型工具调用准确率从0%提升至84% | 早期信号 | arXiv cs.CL | https://arxiv.org/abs/2605.04107 |
+| 3 | MEMTIER：面向长时间运行自主AI代理的分层记忆架构，性能提升33个百分点 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03675 |
+| 4 | 多模态RAG系统存在数据泄露风险？新研究评估成员推断与图像描述检索攻击 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2601.17644 |
+| 5 | Agentic Publication：用大模型将论文变为交互式知识系统 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2505.13246 |
+| 6 | LangChain 发布 1.3.0a2 预发布版，引入流事件 v3 协议与 HITL 中间件 | 官方确认 | LangChain | https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2 |
+| 7 | Design Conductor 2.0：AI智能体80小时自主构建TurboQuant推理加速器 | 早期信号 | arXiv cs.AR | https://arxiv.org/abs/2605.05170 |
+| 8 | LangGraph CLI 0.4.25 发布：支持 Studio 部署与依赖更新 | 官方确认 | LangGraph | https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.25 |
+| 9 | GitHub 优化 Agent 工作流 Token 效率，降低 API 成本 | 官方确认 | GitHub Blog | https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows |
+| 10 | 机械良心：面向机器智能可靠性的数学框架 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03847 |
+| 11 | 用ESP32 C3自制智能手表：OLED屏+心率传感器+天气API | 技术社区 | Reddit r/arduino | https://www.reddit.com/r/arduino/comments/1t6esmv/i_made_smart_watch_using_esp32_oled_and_heartrate |
+| 12 | 用AI设计ESP32桌面PCB磁砖，开发者考虑成立公司 | 技术社区 | Reddit r/esp32 | https://www.reddit.com/r/esp32/comments/1t5qrui/i_codesigned_a_tabletop_pcb_tile_with_ai_now_im |
+| 13 | Qwen 3.6 27B MTP 在 2×3090 NVLink 上基准测试：TP=2 配对 NVLink 吞吐量提升 25%-53% | 技术社区 | Reddit r/LocalLLaMA | https://www.reddit.com/r/LocalLLaMA/comments/1t6susj/benchmark_qwen_36_27b_mtp_on_2x3090_nvlink |
+| 14 | 视频交互中隐私保护的同理心检测研究 | 早期信号 | arXiv cs.LG | https://arxiv.org/abs/2504.10808 |
+| 15 | VCBench：首个评估LLM风险投资预测能力的基准 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2509.14448 |
+| 16 | MOSAIC-Bench 基准测试：编码智能体在分解任务中易被诱导产生漏洞 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.03952 |
+| 17 | 零样本置信度估计：小型LLM无需监督训练即可超越RouteLLM基线 | 早期信号 | arXiv cs.AI | https://arxiv.org/abs/2605.02241 |
+| 18 | Simplex 借助 ChatGPT Enterprise 和 Codex 重塑软件开发流程 | 官方确认 | OpenAI News | https://openai.com/index/simplex |

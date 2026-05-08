@@ -43,24 +43,49 @@ PRIMARY_SECTION_LABELS = {
     "research": "前沿研究观察",
 }
 
-SYSTEM_PROMPT = """你是一个中文 AI 新闻主编。
-你的任务是把输入的 Top 候选信息池，整理成一份“可听、可读、可行动”的 AI 新闻模型解读日报。
+SYSTEM_PROMPT = """你是一个中文 AI 新闻解释型主编。
+你的任务不是把新闻压缩成标题摘要，而是把输入的 Top 候选信息池整理成一份“有背景、能看懂、可判断、可行动”的 AI 技术情报日报。
+
+总原则：先讲背景，再讲新闻；先解释对象，再解释变化；先说明证据，再给判断。
 
 必须遵守：
-1. 只基于输入内容写作，不编造原文没有的信息。
-2. 不要做独立的“今日最重要 5 条”。重要内容要自然分流到各个主题板块里，由每个板块内部突出重点。
-3. 不要逐条机械复述所有候选新闻，要综合、分组、统计和提炼。
-4. 所有重要判断必须保留来源索引和原文链接；正文中提到具体新闻时，优先使用 Markdown 链接，例如：[3. GitHub MCP Server 密钥扫描功能正式上线](https://example.com)。不要只写 [3]。
+1. 只基于输入内容写作，不编造原文没有的信息；信息不足时写“原文信息不足，无法判断”。
+2. 不要做独立的“今日最重要 5 条”。重要内容要进入各自主题板块，由每个板块内部突出重点。
+3. 不要机械复述所有候选新闻，但被选入正文的重要新闻都要交代背景，不能只写“发布、优化、提升、支持、增强”。
+4. 所有重要判断必须保留来源索引和原文链接；正文中提到具体新闻时，优先使用 Markdown 链接，例如：[3. 标题](https://example.com)。不要只写 [3]。
 5. 每条候选新闻都有 primary_section。同一条新闻只在它的 primary_section 里详细展开一次；其他章节如需提到，只能一句话交叉引用，不要重复解释。
-6. 官方确认、技术社区、早期信号、待验证必须区分清楚。
-7. arXiv / 论文 / benchmark 只能作为“前沿研究观察”，不许写成已产品化事实。
-8. 社区来源必须标注“社区讨论，不等于官方确认”。
-9. GitHub Release、工具版本更新、插件更新、小版本更新必须合并成“工具更新速览”或“开源工具链更新”，不要逐条展开；只有重大版本、破坏性变更、安全风险、价格 / 商业模式变化才可以单独展开。
-10. 企业采用、客户落地、商业化、价格、API、订阅、合作、收入、ROI、行业采用等内容，要优先放在“企业应用 / 商业化信号”中，解释其对真实业务落地、销售、市场和职业机会的意义。
-11. RISC-V、OpenSBI、Linux-capable SoC、AI CPU、端侧 AI 芯片、开源 EDA、OS 移植等内容，要放在“算力 / 半导体观察”中，强调它是 AI 从应用层下沉到 OS、指令集、芯片和端侧算力的趋势信号；社区或论文来源必须保持保守，不要写成已经量产或商业落地。
-12. TinyML、Embedded AI、Edge AI、AIoT、MCU、Cortex-M、ESP32、STM32、TFLite Micro、CMSIS-NN、Edge Impulse、传感器 AI、低功耗推理、工业物联网等内容，要放在“嵌入式 AI / 物联网 / Edge AI”中，重点解释它对端侧设备、传感器、低功耗场景和实际可落地项目的意义。
-13. 语言要清楚、干练，像“新闻播报 + 科技解释员”，不要论文腔，不要营销夸张。
-14. 输出只能是 Markdown，不要代码块。
+6. 官方确认、技术社区、早期信号、待验证必须区分清楚。技术社区必须标注“社区讨论，不等于官方确认”；arXiv / 论文 / benchmark 必须标注“不等于已经产品化”。
+7. 语言要像“新闻播报 + 科技解释员”，面向非专家读者，不要论文腔，不要营销夸张，不要堆英文术语。
+
+全局背景解释规则：
+- 每条重点新闻必须尽量回答：这是什么、处在哪个领域、原来有什么问题、这次发生了什么、具体变化在哪里、有没有结果或证据、为什么重要、建议读者做什么。
+- 如果是版本更新，必须说明本次更新的是主项目、子项目、CLI、SDK、插件还是平台；如果原文没有说明上一个版本，写“原文未明确说明从哪个版本升级而来”。
+- 如果是论文 / benchmark，必须说明研究问题、方法、实验对象、结果数字、局限，并提醒“研究信号不等于产品落地”。
+- 如果是公司产品 / 官方公告，必须说明公司或产品是什么、面向谁、原来有什么能力、这次新增或改变了什么、对用户或行业有什么影响。
+- 如果是社区讨论 / Reddit / Hacker News，必须说明测试条件和样本局限，不要把社区结论写成官方事实。
+- 如果是半导体 / 算力 / 硬件，必须说明它位于训练、推理、存储、互联、封装、能效或端侧算力的哪一环。
+
+英文名词背景括号规则：
+- 不是所有英文都翻译。AI、GPT、ChatGPT、OpenAI、GitHub、Google、Microsoft、API、GPU、CPU 这类高频词可不强制解释。
+- 对理解新闻必须知道、但普通读者可能不熟的英文名词，第一次出现时必须用中文括号补充“它是什么 / 干什么 / 属于哪类技术或公司”。括号不是机械翻译，而是功能解释。
+- 示例：NVLink（NVIDIA 的 GPU 高速互联技术，用于多卡之间高速交换数据）；MCP（让 Agent 连接外部工具和数据源的协议）；CLI（命令行工具，适合开发者在终端中运行和自动化脚本调用）；HITL（人在回路中，指 Agent 执行关键动作前需要人确认）；RAG（检索增强生成，让模型先查资料再回答）；benchmark（用于测试模型或系统能力的标准化评测）。
+- 公司名、项目名如果不是大众熟悉对象，第一次出现要说明它是干什么的。例如 LangChain（构建 LLM 应用和 Agent 工作流的开源开发框架）、Ollama（本地运行大模型的开源工具）、vLLM（高性能大模型推理服务框架）。
+
+重点新闻写作结构：
+对各章节中的重点新闻，优先用 5-7 句话写清楚：背景 → 原来的问题 → 这次发生了什么 → 具体变化 → 结果 / 证据 → 为什么重要 → 建议动作。
+小版本 Release 可以更简洁，但仍至少说明：这是什么项目、本次改了什么、原文是否给出量化结果、读者是否需要关注。
+
+章节要求：
+1. “工具链更新汇总”：解释工具链项目的用途、更新对象、解决的问题和是否值得试用。
+2. “Agent / 编程工具趋势”：重点解释 Agent 工作流、CLI、MCP、HITL、Token 成本、安全风险和开发效率的背景。
+3. “开源项目 Release 汇总”：不要只列版本号；要说明项目背景、版本对象、关键变化和升级建议。
+4. “企业应用 / 商业化信号”：解释真实业务落地、客户采用、价格、API、订阅、合作、ROI、职业机会等意义。
+5. “算力 / 半导体观察”：解释 GPU、HBM、NVLink、CoWoS、推理、训练、先进封装、端侧芯片等在产业链的位置。
+6. “嵌入式 AI / 物联网 / Edge AI”：解释 TinyML、MCU、传感器、低功耗推理、ESP32 / STM32 / Cortex-M、TFLite Micro、CMSIS-NN、Edge Impulse 等对真实设备落地的意义。
+7. “前沿研究观察”：明确论文、arXiv、benchmark 的研究属性，不能写成已经产品化。
+8. “今日建议动作”：必须具体到“检查什么、试用什么、归档什么、继续观察什么、暂时忽略什么”。
+
+输出只能是 Markdown，不要代码块。
 """
 
 REQUIRED_SECTIONS = [
@@ -110,7 +135,7 @@ def select_items_for_model_daily(
 ) -> list[dict[str, Any]]:
     pool_size = int(llm_config.get("model_daily_candidate_pool_size", scoring_config.get("max_items_per_day", 40)))
     max_items = int(llm_config.get("model_daily_max_items", 18))
-    max_release_items = int(llm_config.get("model_daily_max_release_items", 5))
+    max_release_items = int(llm_config.get("model_daily_max_release_items", 6))
     pool = [item for item in items[:pool_size] if _is_meaningful_for_model_daily(item)]
 
     selected: list[dict[str, Any]] = []
@@ -143,7 +168,7 @@ def select_items_for_model_daily(
     add([item for item in pool if item.get("source_level") == "official_confirmed"], 6)
     add([item for item in pool if _has_any_tag(item, {"semiconductor", "riscv_stack"})], 5)
     add([item for item in pool if item.get("source_level") == "tech_community"], 3)
-    add([item for item in pool if item.get("source_level") == "early_signal"], 2)
+    add([item for item in pool if item.get("source_level") == "early_signal"], 3)
     add([item for item in pool if item.get("source_level") == "needs_verification"], 1)
     add(pool, max_items - len(selected))
     return selected[:max_items]
@@ -153,8 +178,8 @@ def _generate_with_llm(items: list[dict[str, Any]], total_count: int, config: di
     base_url = str(config.get("base_url") or "https://api.deepseek.com").rstrip("/")
     payload = {
         "model": config.get("model", "deepseek-chat"),
-        "temperature": float(config.get("model_daily_temperature", 0.25)),
-        "max_tokens": int(config.get("model_daily_max_output_tokens", 6200)),
+        "temperature": float(config.get("model_daily_temperature", 0.2)),
+        "max_tokens": int(config.get("model_daily_max_output_tokens", 9000)),
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": _build_prompt(items, total_count)},
@@ -170,7 +195,7 @@ def _generate_with_llm(items: list[dict[str, Any]], total_count: int, config: di
         },
         method="POST",
     )
-    timeout = int(config.get("model_daily_timeout_seconds", 80))
+    timeout = int(config.get("model_daily_timeout_seconds", 100))
     max_retries = int(config.get("model_daily_max_retries", 1))
     for attempt in range(max_retries + 1):
         try:
@@ -211,20 +236,25 @@ def _build_prompt(items: list[dict[str, Any]], total_count: int) -> str:
         "# AI 新闻模型解读日报｜YYYY-MM-DD\n"
         + "\n".join(REQUIRED_SECTIONS)
         + "\n\n写作要求：\n"
+        "- 这份日报的目标读者不是领域专家，而是正在建立 AI / Agent / 工具链 / 半导体认知框架的中文读者。\n"
+        "- 每条重点新闻先讲背景，再讲结论。不要只写“发布、优化、提升、支持、增强”，必须解释优化的是哪一步、解决了什么问题、通过什么动作实现。\n"
         "- 不要写独立的“今日最重要 5 条”。重要新闻要进入各自主题板块，不要单独抽出来。\n"
-        "- 不要逐条复述所有 items。\n"
+        "- 不要逐条机械复述所有 items；但凡进入正文的新闻，都要至少说明“这是什么 + 这次改了什么 + 为什么值得关注”。\n"
         "- 每个 item 已给出 primary_section；同一个 item 只在 primary_section 对应章节详细展开一次，避免跨章节重复。\n"
-        "- 每个板块内部先写最重要、变化量最大的 1-2 条，再写次要补充。\n"
         "- 正文任何位置提到具体新闻时，必须使用 item.markdown_link，例如 [3. 标题](url)，不要让读者去附录表格反查。\n"
-        "- 企业应用 / 商业化信号要提高权重；客户采用、商业落地、价格、API、订阅、合作、收入、ROI、行业采用都要优先解释。\n"
-        "- 工具链 / Agent / 开源 release 必须先判断是否只是小版本、补丁、例行更新；这类内容必须合并成一条“工具更新速览”，不要逐条展开。\n"
-        "- source_type 为 github_release 或 content_handling 为 tool_update_digest 的条目，默认只进入“开源项目 Release 汇总”或“工具链更新汇总”，除非它明确涉及重大版本、破坏性变更、价格变化或商业模式变化。\n"
-        "- tags 包含 riscv_stack 的条目，优先进入“算力 / 半导体观察”，重点解释其对端侧 AI、OS、指令集、AI CPU、开源芯片生态的趋势意义；如果来源是论文、社区或待验证渠道，必须明确写成早期信号。\n"
-        "- tags 包含 embedded_edge_ai 的条目，优先进入“嵌入式 AI / 物联网 / Edge AI”，重点解释 TinyML、MCU、传感器、低功耗推理、ESP32 / STM32 / Cortex-M、TFLite Micro、CMSIS-NN、Edge Impulse 等对真实设备落地的意义。\n"
-        "- 工具更新速览可以用 3-6 个项目符号合并多条 Release，每个项目符号只写项目名 + 关键变化 + 原文链接，不要长篇解释。\n"
-        "- 附录仍要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n"
+        "- 重点新闻建议按“背景 / 原来的问题 / 这次发生了什么 / 具体变化 / 结果或证据 / 为什么重要 / 建议动作”的顺序写成 5-7 句话。\n"
+        "- 普通小版本 Release 可以较短，但也必须写清楚项目背景、更新对象、关键变化和是否值得普通读者关注。\n"
+        "- 如果是版本新闻，要明确本次更新的是主项目、子项目、CLI、SDK、插件还是平台；如果原文未提供上一版本，必须写“原文未明确说明从哪个版本升级而来”。\n"
+        "- 如果是 alpha、beta、rc、pre-release 等预发布版本，必须提醒“更适合开发者测试，不一定适合生产环境”。\n"
+        "- 如果原文没有明确量化结果，必须写“原文未给出明确量化结果”，禁止编造。\n"
+        "- 英文名词第一次出现时按需加中文背景括号。不要机械翻译，要解释它在新闻里的作用。例如 NVLink（NVIDIA 的 GPU 高速互联技术，用于多卡之间高速交换数据）、MCP（让 Agent 连接外部工具和数据源的协议）、CLI（命令行工具，适合开发者在终端中运行和自动化脚本调用）。\n"
+        "- 高频词 AI、GPT、ChatGPT、OpenAI、GitHub、Google、Microsoft、API、GPU、CPU 可不强制解释；但如果该词是理解新闻的关键，也可以简短解释。\n"
+        "- 企业应用 / 商业化信号要解释真实业务落地、客户采用、价格、API、订阅、合作、收入、ROI、行业采用对销售、市场、职业机会的意义。\n"
+        "- tags 包含 riscv_stack 或 semiconductor 的条目，优先解释其在训练、推理、存储、互联、封装、能效或端侧算力链条中的位置。\n"
+        "- tags 包含 embedded_edge_ai 的条目，优先解释 TinyML、MCU、传感器、低功耗推理、ESP32 / STM32 / Cortex-M、TFLite Micro、CMSIS-NN、Edge Impulse 等对真实设备落地的意义。\n"
         "- 对早期信号要写清楚：这是研究或早期线索，不等于已经产品化。\n"
-        "- 对技术社区要写清楚：社区讨论，不等于官方确认。\n\n"
+        "- 对技术社区要写清楚：社区讨论，不等于官方确认，结果可能受测试条件、样本和硬件环境影响。\n"
+        "- 附录仍要列出候选来源索引，包含编号、标题、来源等级、来源名称和链接。\n\n"
         f"输入 JSON：{json.dumps(payload, ensure_ascii=False)}"
     )
 
@@ -257,7 +287,8 @@ def _serialize_item(index: int, item: dict[str, Any]) -> dict[str, Any]:
         "matched_keywords": item.get("matched_keywords") or [],
         "tags": item.get("tags") or [],
         "tags_zh": [TAG_LABELS.get(tag, tag) for tag in item.get("tags") or []],
-        "excerpt": excerpt[:1200],
+        "release_version": item.get("release_version"),
+        "excerpt": excerpt[:1600],
     }
 
 
@@ -342,8 +373,8 @@ def _primary_section(item: dict[str, Any]) -> str:
 
 def _content_handling(item: dict[str, Any]) -> str:
     if _is_release_update(item):
-        return "tool_update_digest"
-    return "normal"
+        return "background_release_update"
+    return "background_explainer"
 
 
 def _is_release_update(item: dict[str, Any]) -> bool:

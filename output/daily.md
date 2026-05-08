@@ -2,7 +2,7 @@
 
 ## 今日概况
 
-今天自动抓取 3126 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 40 条。
+今天自动抓取 3616 条信息，系统先按时间窗口保留候选信息，再根据关键词命中、来源等级、规则分数和去重规则筛出 40 条。
 本文件不调用任何模型 API，不生成模型总结，只保留规则判断、feed 摘要和原文链接。
 
 ## 判断标签
@@ -32,87 +32,135 @@
 
 ---
 
-### 2. TSCG: Deterministic Tool-Schema Compilation for Agentic LLM Deployments
+### 2. You can now read Gemma 3's mind
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/LocalLLaMA
+- 来源类型：RSS
+- 发布时间：2026-05-08 09:44
+- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t6u1os/you_can_now_read_gemma_3s_mind
+- 命中关键词：Anthropic、partnership、weights
+- 规则分数：111
+- 入选原因：社区热度或讨论价值较高，命中 Anthropic、partnership、weights 等关键词。
+- Feed 摘要：
+  > Anthropic has released new research to show what an LLM is thinking when generating next token using NLA or "Natural Language Autoencoders", the NLAs are a pair of LLMs that can translate internal thoughts of LLM for any specific token. Neuronpedia in partnership with Anthropic have also released NLA model weights for Gemma 3 27b instruct at: - Auto Verbalizer (AV): https://huggingface.co/kitft/nla-gemma3-27b-L41-av...
+- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
+
+---
+
+### 3. Who Prices Cognitive Labor in the Age of Agents? A Position on Compute-Anchored Wages
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05558
+- 命中关键词：Agent、agents、policy、pricing、productivity
+- 规则分数：98
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、policy、pricing 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05558v1 Announce Type: new Abstract: A natural intuition about the economics of AI agents is that, because agents can be replicated at near-zero marginal cost, they constitute a labor input in infinitely elastic supply, and therefore drive cognitive-labor wages to zero. We argue this framing is wrong in mechanism but partially correct in conclusion, and that the correction matters for both theory and poli...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 4. Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.CL
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.04107
-- 命中关键词：Agent、agentic、Anthropic、API、fine-tuning、function calling、GPT、MCP、OpenAI、tool use
-- 规则分数：105
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agentic、Anthropic、API 等关键词。
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2604.17338
+- 命中关键词：agentic、benchmark、Codex、dataset、DeepSeek、GPT、release
+- 规则分数：98
+- 入选原因：可作为早期研究或趋势线索，命中 agentic、benchmark、Codex、dataset 等关键词。
 - Feed 摘要：
-  > arXiv:2605.04107v1 Announce Type: cross Abstract: Production agent frameworks (OpenAI Function Calling, Anthropic Tool Use, MCP) transmit tool schemas as JSON, a format designed for machine parsing, not for interpretation by language models. For small models (4B-14B), this protocol mismatch accounts for the majority of tool-use failure at production catalog sizes. We present TSCG, a deterministic tool-schema compile...
+  > arXiv:2604.17338v3 Announce Type: replace-cross Abstract: Unlike code completion, debugging requires localizing faults and applying targeted edits. We observe that frontier LLMs often regenerate correct but over-edited solutions during debugging. To evaluate how far LLMs are from precise debugging, we introduce the Precise Debugging Benchmark (PDB) framework, which automatically converts any coding dataset into a de...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 3. MEMTIER: Tiered Memory Architecture and Retrieval Bottleneck Analysis for Long-Running Autonomous AI Agents
+### 5. Two Steps Are All You Need: Efficient 3D Point Cloud Anomaly Detection with Consistency Models
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.03675
-- 命中关键词：Agent、agents、benchmark、DeepSeek、GPT、GPU、policy、RAG、retrieval、weights
-- 规则分数：102
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、benchmark、DeepSeek 等关键词。
-- Feed 摘要：
-  > arXiv:2605.03675v1 Announce Type: new Abstract: Long-running autonomous AI agents suffer from a well-documented memory coherence problem: tool-execution success rates degrade 14 percentage points over 72-hour operation windows due to four compounding failure modes in existing flat-file memory systems. We present MEMTIER, a tripartite memory architecture for the OpenClaw agent runtime that introduces a structured epi...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 4. LangChain langchain==1.3.0a2：Initial release
-
-- 来源等级：官方确认
-- 来源名称：LangChain
-- 发布渠道：GitHub Releases
-- 发布时间：2026-05-07 02:54
-- 原文链接：https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.0a2
-- 命中关键词：Agent、Anthropic、LangChain、OpenAI、release
-- 规则分数：97
-- 入选原因：来源可靠性较高，命中 Agent、Anthropic、LangChain、OpenAI 等关键词。
-- Feed 摘要：
-  > Initial release release(langchain): 1.3.0a2 (#37225) release(langchain): 1.3.0a2 (#37224) fix(langchain): ordered schema resolution — list replaces set so state_schema wins (#37223) release(langchain): 1.3.0a1 (#37140) feat(langchain): wire stream_events(version='v3') into create_agent (#37136) Merge remote-tracking branch 'origin/master' into v1.4 feat(core): stream_events(version='v3') protocol (#37111) release(fi...
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 5. Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2601.17644
-- 命中关键词：GitHub、inference、privacy、RAG、retrieval
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05372
+- 命中关键词：anomaly detection、GPU、inference
 - 规则分数：95
-- 入选原因：可作为早期研究或趋势线索，命中 GitHub、inference、privacy、RAG 等关键词。
+- 入选原因：可作为早期研究或趋势线索，命中 anomaly detection、GPU、inference 等关键词。
 - Feed 摘要：
-  > arXiv:2601.17644v3 Announce Type: replace-cross Abstract: The growing adoption of multimodal Retrieval-Augmented Generation (mRAG) pipelines for vision-centric tasks (e.g., visual QA) introduces important privacy challenges. In particular, while mRAG provides a practical capability to connect private datasets and improve model performance, it risks the leakage of private information from these datasets. In this pape...
+  > arXiv:2605.05372v1 Announce Type: cross Abstract: Diffusion models are rapidly redefining 3D anomaly detection in point cloud data. As 3D sensing becomes integral to modern manufacturing, reliable anomaly detection is essential for high-throughput quality assurance and process control. Yet practical deployment on resource-constrained, latency-critical systems remains limited. Existing methods are often computational...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 6. Design Conductor 2.0: An agent builds a TurboQuant inference accelerator in 80 hours
+### 6. LCC-LLM: Leveraging Code-Centric Large Language Models for Malware Attribution
 
 - 来源等级：早期信号
-- 来源名称：arXiv cs.AR
+- 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.05170
-- 命中关键词：Agent、agents、inference、multi-agent、RISC-V、TSMC
-- 规则分数：89
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、inference、multi-agent 等关键词。
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05807
+- 命中关键词：API、benchmark、dataset、LangGraph、retrieval
+- 规则分数：95
+- 入选原因：可作为早期研究或趋势线索，命中 API、benchmark、dataset、LangGraph 等关键词。
 - Feed 摘要：
-  > arXiv:2605.05170v1 Announce Type: new Abstract: Driven by a rapid co-evolution of both harness and underlying models, LLM agents are improving at a dizzying pace. In our prior work (performed in Dec. 2025), we introduced "Design Conductor" (or just "Conductor"), a system capable of building a 5-stage Linux-capable RISC-V CPU in 12 hours. In this work, we introduce an updated multi-agent harness powered by frontier m...
+  > arXiv:2605.05807v1 Announce Type: cross Abstract: LLMs are increasingly explored for malware analysis; however, current LLM-based malware attribution remains limited by unsupported indicators and insufficient code-level grounding for identifying malicious and vulnerable code segments. To address these limitations, this research introduces LCC-LLM, a code-centric benchmark dataset and evidence-grounded framework for...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 7. LangGraph langgraph-cli==0.4.25：Changes since cli==0.4.24
+### 7. Partial Evidence Bench: Benchmarking Authorization-Limited Evidence in Agentic Systems
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05379
+- 命中关键词：agentic、agents、benchmark、policy、retrieval
+- 规则分数：92
+- 入选原因：可作为早期研究或趋势线索，命中 agentic、agents、benchmark、policy 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05379v1 Announce Type: new Abstract: Enterprise agents increasingly operate inside scoped retrieval systems, delegated workflows, and policy-constrained evidence environments. In these settings, access control can be enforced correctly while the system still produces an answer that appears complete even though material evidence lies outside the caller's authorization boundary. This paper introduces Partia...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 8. Securing the Agent: Vendor-Neutral, Multitenant Enterprise Retrieval and Tool Use
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05287
+- 命中关键词：Agent、agentic、enterprise AI、inference、orchestration、policy、RAG、retrieval、tool use
+- 规则分数：89
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agentic、enterprise AI、inference 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05287v1 Announce Type: cross Abstract: Retrieval-Augmented Generation (RAG) and agentic AI systems are increasingly prevalent in enterprise AI deployments. However, real enterprise environments introduce challenges largely absent from academic treatments and consumer-facing APIs: multiple tenants with heterogeneous data, strict access-control requirements, regulatory compliance, and cost pressures that de...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 9. Measuring Evaluation-Context Divergence in Open-Weight LLMs: A Paired-Prompt Protocol with Pilot Evidence of Alignment-Pipeline-Specific Heterogeneity
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.06327
+- 命中关键词：benchmark、inference、Llama、Mistral
+- 规则分数：89
+- 入选原因：可作为早期研究或趋势线索，命中 benchmark、inference、Llama、Mistral 等关键词。
+- Feed 摘要：
+  > arXiv:2605.06327v1 Announce Type: cross Abstract: Safety benchmarks are routinely treated as evidence about how a language model will behave once deployed, but this inference is fragile if behavior depends on whether a prompt looks like an evaluation. We define evaluation-context divergence as an observable within-item change in behavior induced by framing a fixed task as an evaluation, a live deployment interaction...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 10. LangGraph langgraph-cli==0.4.25：Changes since cli==0.4.24
 
 - 来源等级：官方确认
 - 来源名称：LangGraph
@@ -128,23 +176,7 @@
 
 ---
 
-### 8. Agentic publications: redesigning scientific publishing in the age of thinking large language models
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2505.13246
-- 命中关键词：Agent、agentic、agents、API、multi-agent、retrieval、semantic search
-- 规则分数：86
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agentic、agents、API 等关键词。
-- Feed 摘要：
-  > arXiv:2505.13246v2 Announce Type: replace Abstract: Purpose: This paper introduces the concept of "Agentic Publication," a novel LLM-driven framework designed to complement traditional scientific publishing by transforming papers into interactive knowledge systems that address challenges created by exponential growth in scientific literature. Design/methodology/approach: Our architecture integrates structured data (...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 9. Improving token efficiency in GitHub Agentic Workflows
+### 11. Improving token efficiency in GitHub Agentic Workflows
 
 - 来源等级：官方确认
 - 来源名称：GitHub Blog
@@ -160,7 +192,7 @@
 
 ---
 
-### 10. Benchmark Qwen 3.6 27B MTP on 2x3090 NVLINK
+### 12. Benchmark Qwen 3.6 27B MTP on 2x3090 NVLINK
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/LocalLLaMA
@@ -176,103 +208,87 @@
 
 ---
 
-### 11. Mechanical Conscience: A Mathematical Framework for Dependability of Machine Intelligenc
+### 13. AceGRPO: Adaptive Curriculum Enhanced Group Relative Policy Optimization for Autonomous Machine Learning Engineering
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.03847
-- 命中关键词：Agent、agents、policy、regulation
-- 规则分数：82
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、policy、regulation 等关键词。
-- Feed 摘要：
-  > arXiv:2605.03847v1 Announce Type: new Abstract: Distributed collaborative intelligence (DCI), encompassing edge-to-edge architectures, federated learning, transfer learning, and swarm systems, creates environments in which emergent risk is structurally unavoidable: locally correct decisions by individual agents compose into globally unacceptable behavioral trajectories under uncertainty. Existing approaches such as...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 12. Privacy-Preserving Empathy Detection in Video Interactions
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.LG
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2504.10808
-- 命中关键词：benchmark、fine-tuning、privacy
-- 规则分数：81
-- 入选原因：可作为早期研究或趋势线索，命中 benchmark、fine-tuning、privacy 等关键词。
-- Feed 摘要：
-  > arXiv:2504.10808v3 Announce Type: replace-cross Abstract: Detecting empathy from video interactions has emerging applications, yet raw videos that could be used for training AI models are rarely available due to privacy and ethical constraints. Public benchmarks are consequently released only as pre-extracted features, creating a privacy-constrained learning regime whose privacy-utility trade-off is poorly character...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 13. VCBench: Benchmarking LLMs in Venture Capital
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2509.14448
-- 命中关键词：benchmark、DeepSeek、GPT、privacy
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2602.07906
+- 命中关键词：Agent、agents、DeepSeek、GitHub、policy
 - 规则分数：80
-- 入选原因：可作为早期研究或趋势线索，命中 benchmark、DeepSeek、GPT、privacy 等关键词。
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、DeepSeek、GitHub 等关键词。
 - Feed 摘要：
-  > arXiv:2509.14448v2 Announce Type: replace Abstract: Benchmarks such as SWE-bench and ARC-AGI demonstrate how shared datasets accelerate progress toward artificial general intelligence (AGI). We introduce VCBench, the first benchmark for predicting founder success in venture capital (VC), a domain where signals are sparse, outcomes are uncertain, and even top investors perform modestly. At inception, the market index...
+  > arXiv:2602.07906v5 Announce Type: replace-cross Abstract: Autonomous Machine Learning Engineering (MLE) requires agents to perform sustained, iterative optimization over long horizons. While recent LLM-based agents show promise, current prompt-based agents for MLE suffer from behavioral stagnation due to frozen parameters. Although Reinforcement Learning (RL) offers a remedy, applying it to MLE is hindered by prohib...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 14. MOSAIC-Bench: Measuring Compositional Vulnerability Induction in Coding Agents
+### 14. Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.03952
-- 命中关键词：agents、Anthropic、benchmark、Claude、Codex、MiniMax、Moonshot、OpenAI、Zhipu
-- 规则分数：79
-- 入选原因：可作为早期研究或趋势线索，命中 agents、Anthropic、benchmark、Claude 等关键词。
-- Feed 摘要：
-  > arXiv:2605.03952v1 Announce Type: cross Abstract: Coding agents often pass per-prompt safety review yet ship exploitable code when their tasks are decomposed into routine engineering tickets. The challenge is structural: existing safety alignment evaluates overt requests in isolation, leaving models blind to malicious end-states that emerge from sequenced compliance with innocuous-looking requests. We introduce MOSA...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 15. Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
+- 发布时间：2026-05-08 12:00
 - 原文链接：https://arxiv.org/abs/2605.02241
 - 命中关键词：inference、retrieval
 - 规则分数：79
 - 入选原因：可作为早期研究或趋势线索，命中 inference、retrieval 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02241v2 Announce Type: replace Abstract: How reliably can a small language model estimate its own correctness? The answer determines whether local-to-cloud routing-escalating queries a cheap local model cannot handle-can work without supervised training data. As inference costs dominate large language model (LLM) deployment budgets, routing most queries to a cheap local model while reserving expensive clo...
+  > arXiv:2605.02241v3 Announce Type: replace Abstract: How reliably can a small language model estimate its own correctness? The answer determines whether local-to-cloud routing-escalating queries a cheap local model cannot handle-can work without supervised training data. As inference costs dominate large language model (LLM) deployment budgets, routing most queries to a cheap local model while reserving expensive clo...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 16. Designing a double deep reinforcement learning selection tool for resilient demand prediction
+### 15. Enabling Federated Inference via Unsupervised Consensus Embedding
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.LG
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.04068
-- 命中关键词：Agent、dataset
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05718
+- 命中关键词：embeddings、inference、privacy
 - 规则分数：79
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、dataset 等关键词。
+- 入选原因：可作为早期研究或趋势线索，命中 embeddings、inference、privacy 等关键词。
 - Feed 摘要：
-  > arXiv:2605.04068v1 Announce Type: new Abstract: The use of artificial intelligence in supply chain forecasting has attracted many scientific studies for several decades. However, the process of selecting an appropriate forecasting solution becomes a daunting task. This complexity arises due to the distinct features inherent to each dataset. Research to tackle this issue has been performed since the eighties but rece...
+  > arXiv:2605.05718v1 Announce Type: new Abstract: Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 17. I made smart watch using esp32 oled and heartrate sensor
+### 16. Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.LG
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05459
+- 命中关键词：dataset、privacy、RAG、retrieval
+- 规则分数：79
+- 入选原因：可作为早期研究或趋势线索，命中 dataset、privacy、RAG、retrieval 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05459v1 Announce Type: cross Abstract: This work introduces PAS -- Privacy Anchor Substitution, a structured mechanism for enabling user location privacy in spatial retrieval-augmented generation (RAG) systems. Unlike conventional differential privacy methods that directly perturb user locations, PAS represents location with relative anchor encoding consisting of an anchor, direction bin, and distance bin...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 17. Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AR
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05628
+- 命中关键词：GPU、inference、ISA
+- 规则分数：79
+- 入选原因：可作为早期研究或趋势线索，命中 GPU、inference、ISA 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05628v1 Announce Type: new Abstract: Tensor parallelism (TP) in large-scale LLM inference and training introduces frequent collective operations that dominate inter-GPU communication. While in-switch computing, exemplified by NVLink SHARP (NVLS), accelerates collective operations by reducing redundant data transfer, its communication-centric design philosophy introduces the mismatch between its communicat...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 18. I made smart watch using esp32 oled and heartrate sensor
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/arduino
@@ -288,7 +304,7 @@
 
 ---
 
-### 18. AMD to release slottable GPU
+### 19. AMD to release slottable GPU
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/LocalLLaMA
@@ -304,50 +320,34 @@
 
 ---
 
-### 19. Less Is More: Engineering Challenges of On-Device Small Language Model Integration in a Mobile Application
+### 20. Constraint Decay: The Fragility of LLM Agents in Backend Code Generation
 
 - 来源等级：早期信号
-- 来源名称：arXiv cs.CL
+- 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2604.24636
-- 命中关键词：无
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.06445
+- 命中关键词：Agent、agents、API
 - 规则分数：76
-- 入选原因：可作为早期研究或趋势线索，由规则分数进入今日列表。
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、API 等关键词。
 - Feed 摘要：
-  > arXiv:2604.24636v2 Announce Type: replace-cross Abstract: On-device Small Language Models (SLMs) promise fully offline, private AI experiences for mobile users (no cloud dependency, no data leaving the device). But is this promise achievable in practice? This paper presents a longitudinal practitioner case study documenting the engineering challenges of integrating SLMs (Gemma 4 E2B, 2.6B parameters; Qwen3 0.6B, 600...
+  > arXiv:2605.06445v1 Announce Type: cross Abstract: Large Language Model (LLM) agents demonstrate strong performance in autonomous code generation under loose specifications. However, production-grade software requires strict adherence to structural constraints, such as architectural patterns, databases, and object-relational mappings. Existing benchmarks often overlook these non-functional requirements, rewarding fun...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 20. Regime-Conditioned Evaluation in Multi-Context Bayesian Optimization
+### 21. AGMARL-DKS: An Adaptive Graph-Enhanced Multi-Agent Reinforcement Learning for Dynamic Kubernetes Scheduling
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.LG
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.04895
-- 命中关键词：acquisition、benchmark
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2603.12031
+- 命中关键词：Agent、agents、multi-agent
 - 规则分数：76
-- 入选原因：可作为早期研究或趋势线索，命中 acquisition、benchmark 等关键词。
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、multi-agent 等关键词。
 - Feed 摘要：
-  > arXiv:2605.04895v1 Announce Type: new Abstract: Published transfer-BO comparisons often estimate an average treatment effect of acquisition choice over hidden regime variables, while practitioners need the conditional effect for their specific prior quality, budget ratio, and metric. An audit of 40 transfer-BO papers from NeurIPS, ICML, ICLR, AISTATS, UAI, TMLR, JMLR, and AutoML-Conf (2022-2025) finds that 98% never...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 21. Gated Multimodal Learning for Interpretable Property Energy Performance Prediction and Retrofit Scenario Analysis
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.LG
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.05088
-- 命中关键词：regulation、weights
-- 规则分数：76
-- 入选原因：可作为早期研究或趋势线索，命中 regulation、weights 等关键词。
-- Feed 摘要：
-  > arXiv:2605.05088v1 Announce Type: new Abstract: Achieving resilient and sustainable cities requires scalable approaches to decarbonising residential buildings, which account for about 20% of UK greenhouse gas emissions and 25% of energy-related emissions in the European Union. Energy Performance Certificates (EPCs) support regulation and retrofit planning, but their reliance on on-site inspections limits timely city...
+  > arXiv:2603.12031v2 Announce Type: replace-cross Abstract: State-of-the-art cloud-native applications require intelligent schedulers that can effectively balance system stability, resource utilisation, and associated costs. While Kubernetes provides feasibility-based placement by default, recent research efforts have explored the use of reinforcement learning (RL) for more intelligent scheduling decisions. However, c...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
@@ -368,23 +368,7 @@
 
 ---
 
-### 23. CrewAI 1.14.5a3：Bug Fixes
-
-- 来源等级：官方确认
-- 来源名称：CrewAI
-- 发布渠道：GitHub Releases
-- 发布时间：2026-05-07 01:58
-- 原文链接：https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3
-- 命中关键词：changelog、CrewAI
-- 规则分数：74
-- 入选原因：来源可靠性较高，命中 changelog、CrewAI 等关键词。
-- Feed 摘要：
-  > ## What's Changed ### Bug Fixes - Fix status endpoint path from /{kickoff_id}/status to /status/{kickoff_id} - Bump gitpython dependency to version >=3.1.47 for security compliance ### Refactoring - Extract CLI into standalone crewai-cli package ### Documentation - Update changelog and version for v1.14.5a2 ## Contributors @greysonlalonde, @iris-clawd
-- 阅读提醒：来自官方或项目发布渠道，可信度较高，但仍建议查看原文确认细节。
-
----
-
-### 24. Are local models becoming “good enough” faster than expected?
+### 23. Are local models becoming “good enough” faster than expected?
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/LocalLLaMA
@@ -400,103 +384,39 @@
 
 ---
 
-### 25. Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use
+### 24. More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.02964
-- 命中关键词：Agent、agents、Anthropic、benchmark、Claude、DeepSeek、OpenAI、tool use
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05716
+- 命中关键词：Agent、Llama、retrieval、tool use
 - 规则分数：74
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、Anthropic、benchmark 等关键词。
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、Llama、retrieval、tool use 等关键词。
 - Feed 摘要：
-  > arXiv:2605.02964v1 Announce Type: cross Abstract: Reinforcement learning (RL) trained language model agents with tool access are increasingly deployed in coding assistants, research tools, and autonomous systems. We introduce the Reward Hacking Benchmark (RHB), a suite of multi-step tasks requiring sequential tool operations with naturalistic shortcut opportunities such as skipping verification steps, inferring answ...
+  > arXiv:2605.05716v1 Announce Type: new Abstract: LLM agent systems are built by stacking scaffolding components (planning, tools, memory, self-reflection, retrieval) assuming more is better. We study cross-component interference (CCI): degradation when components interact destructively. We run a full factorial experiment over all 2^5=32 subsets of five components on HotpotQA and GSM8K with Llama-3.1-8B/70B (96 condit...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 26. Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios
+### 25. MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.03242
-- 命中关键词：Agent、benchmark、inference、multi-agent、retrieval
-- 规则分数：73
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、benchmark、inference、multi-agent 等关键词。
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05949
+- 命中关键词：Agent、agents、benchmark、multi-agent、Qwen、workflow
+- 规则分数：74
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、benchmark、multi-agent 等关键词。
 - Feed 摘要：
-  > arXiv:2605.03242v1 Announce Type: new Abstract: Tool-using agent systems powered by large language models (LLMs) are increasingly deployed across web, app, operating-system, and transactional environments. Yet existing safety benchmarks still emphasize explicit risks, potentially overstating a model's ability to judge deceptive or ambiguous trajectories. To address this gap, we introduce ROME (Red-team Orchestrated...
+  > arXiv:2605.05949v1 Announce Type: new Abstract: Algorithmic problem solving serves as a rigorous testbed for evaluating structured reasoning in AI coding systems, as it directly reflects a model's ability to perform structured reasoning in complex scenarios.Existing approaches predominantly rely on model-centric strategies, such as architectural modifications and data scaling, which are costly and offer limited inte...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---
 
-### 27. Safety and accuracy follow different scaling laws in clinical large language models
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.04039
-- 命中关键词：agentic、benchmark、inference、RAG、retrieval
-- 规则分数：73
-- 入选原因：可作为早期研究或趋势线索，命中 agentic、benchmark、inference、RAG 等关键词。
-- Feed 摘要：
-  > arXiv:2605.04039v1 Announce Type: cross Abstract: Clinical LLMs are often scaled by increasing model size, context length, retrieval complexity, or inference-time compute, with the implicit expectation that higher accuracy implies safer behavior. This assumption is incomplete in medicine, where a few confident, high-risk, or evidence-contradicting errors can matter more than average benchmark performance. We introdu...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 28. Can LLMs Make (Personalized) Access Control Decisions?
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.AI
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2511.20284
-- 命中关键词：Agent、automation、dataset、privacy
-- 规则分数：73
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、automation、dataset、privacy 等关键词。
-- Feed 摘要：
-  > arXiv:2511.20284v2 Announce Type: replace-cross Abstract: Precise access control decisions are crucial for the security of both traditional applications and emerging agent-based systems. Typically, these decisions are made by users during app installation or at runtime. However, due to the increasing complexity and automation of systems, making access control decisions can impose a significant cognitive burden on us...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 29. ContextPilot: Fast Long-Context Inference via Context Reuse
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.LG
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2511.03475
-- 命中关键词：Agent、inference、multi-agent、orchestration、retrieval
-- 规则分数：73
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、inference、multi-agent、orchestration 等关键词。
-- Feed 摘要：
-  > arXiv:2511.03475v4 Announce Type: replace Abstract: AI applications increasingly depend on long-context inference, where LLMs consume substantial context to support stronger reasoning. Common examples include retrieval-augmented generation, agent memory layers, and multi-agent orchestration. As input contexts get longer, prefill latency becomes the main bottleneck. Yet today's prefill acceleration techniques face a...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 30. AgenTEE: Confidential LLM Agent Execution on Edge Devices
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.OS
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2604.18231
-- 命中关键词：Agent、agents、automation、inference、privacy、weights
-- 规则分数：73
-- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、automation、inference 等关键词。
-- Feed 摘要：
-  > arXiv:2604.18231v2 Announce Type: replace-cross Abstract: Large Language Model (LLM) agents provide powerful automation capabilities, but they also create a substantially broader attack surface than traditional applications due to their tight integration with non-deterministic models and third-party services. While current deployments primarily rely on cloud-hosted services, emerging designs increasingly execute age...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 31. I co-designed a TableTop PCB Tile with AI, now I'm considering turning it into a company
+### 26. I co-designed a TableTop PCB Tile with AI, now I'm considering turning it into a company
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/esp32
@@ -512,7 +432,7 @@
 
 ---
 
-### 32. Upcoming deprecation of GPT-4.1
+### 27. Upcoming deprecation of GPT-4.1
 
 - 来源等级：官方确认
 - 来源名称：GitHub Changelog
@@ -528,7 +448,7 @@
 
 ---
 
-### 33. LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature
+### 28. LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature
 
 - 来源等级：官方确认
 - 来源名称：LiteLLM
@@ -544,7 +464,7 @@
 
 ---
 
-### 34. Claude Sonnet 4 deprecated
+### 29. Claude Sonnet 4 deprecated
 
 - 来源等级：官方确认
 - 来源名称：GitHub Changelog
@@ -560,7 +480,7 @@
 
 ---
 
-### 35. Rubber Duck in GitHub Copilot CLI now supports more models
+### 30. Rubber Duck in GitHub Copilot CLI now supports more models
 
 - 来源等级：官方确认
 - 来源名称：GitHub Changelog
@@ -576,39 +496,7 @@
 
 ---
 
-### 36. Qwen/WebWorld 32B/14B/8B (Qwen3 finetune)
-
-- 来源等级：技术社区
-- 来源名称：Reddit r/LocalLLaMA
-- 来源类型：RSS
-- 发布时间：2026-05-07 22:28
-- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t6c6vs/qwenwebworld_32b14b8b_qwen3_finetune
-- 命中关键词：agents、GPT、inference、Qwen
-- 规则分数：71
-- 入选原因：社区热度或讨论价值较高，命中 agents、GPT、inference、Qwen 等关键词。
-- Feed 摘要：
-  > WebWorld is a large-scale open-web world model series for training and evaluating web agents. It is trained on 1M+ real-world web interaction trajectories via a scalable hierarchical data pipeline, supporting: Long-horizon simulation (30+ steps) Multi-format state representations : A11y Tree, HTML, XML, Markdown, and natural language CoT-activated reasoning for transition prediction Cross-domain generalization to co...
-- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
-
----
-
-### 37. I've created the fastest local AI engine for Apple Silicon. Optimised for agentic use.
-
-- 来源等级：技术社区
-- 来源名称：Reddit r/LocalLLaMA
-- 来源类型：RSS
-- 发布时间：2026-05-08 10:27
-- 原文链接：https://www.reddit.com/r/LocalLLaMA/comments/1t6uzdk/ive_created_the_fastest_local_ai_engine_for_apple
-- 命中关键词：agentic、agents、benchmark、GitHub
-- 规则分数：70
-- 入选原因：社区热度或讨论价值较高，命中 agentic、agents、benchmark、GitHub 等关键词。
-- Feed 摘要：
-  > https://preview.redd.it/p0rqofxvrtzg1.png?width=1460&format=png&auto=webp&s=8ce5b18b4ddaad9b71f71fd8eb623839fc9c6c8b For weeks I've been working on creating the fastest local AI engine for Apple Silicon... And I finally did! It's optimized for agentic use. focused specifically on coding agents, tool calling, and short-turn workflows. Repo: https://github.com/samuelfaj/lightning-mlx A few results from my Macbook Max...
-- 阅读提醒：来自技术社区，适合观察讨论热度，不等于事实确认。
-
----
-
-### 38. DIY market declining amid high RAM prices
+### 31. DIY market declining amid high RAM prices
 
 - 来源等级：技术社区
 - 来源名称：Reddit r/LocalLLaMA
@@ -624,34 +512,146 @@
 
 ---
 
-### 39. Telegraph English: Semantic Prompt Compression via Structured Symbolic Rewriting
-
-- 来源等级：早期信号
-- 来源名称：arXiv cs.CL
-- 来源类型：RSS
-- 发布时间：2026-05-07 12:00
-- 原文链接：https://arxiv.org/abs/2605.04426
-- 命中关键词：GPT、OpenAI
-- 规则分数：70
-- 入选原因：可作为早期研究或趋势线索，命中 GPT、OpenAI 等关键词。
-- Feed 摘要：
-  > arXiv:2605.04426v1 Announce Type: new Abstract: We introduce Telegraph English (TE), a prompt-compression protocol that rewrites natural language into a symbol-rich, formally-structured dialect. Where token-deletion methods such as LLMLingua-2 train a classifier to delete low-importance tokens at a fixed ratio, TE performs a full semantic rewrite: it decomposes the input into atomic fact lines, substitutes verbose p...
-- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
-
----
-
-### 40. When Agents Handle Secrets: A Survey of Confidential Computing for Agentic AI
+### 32. Agentic, Context-Aware Risk Intelligence in the Internet of Value
 
 - 来源等级：早期信号
 - 来源名称：arXiv cs.AI
 - 来源类型：RSS
-- 发布时间：2026-05-07 12:00
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05878
+- 命中关键词：agentic、API、policy
+- 规则分数：70
+- 入选原因：可作为早期研究或趋势线索，命中 agentic、API、policy 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05878v1 Announce Type: new Abstract: The Internet of Value (IoV) is a heterogeneous, partially-trusted network in which the dominant marginal risk is composite (route, sentiment, liquidity, and the policy a system is willing to commit to) rather than a property of any single chain. We argue that a risk primitive adequate for this regime is a composition of five engines: a prediction engine over price, liq...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 33. Market-Alignment Risk in Pricing Agents: Trace Diagnostics and Trace-Prior RL under Hidden Competitor State
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.06529
+- 命中关键词：Agent、agents、policy、pricing、revenue
+- 规则分数：70
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents、policy、pricing 等关键词。
+- Feed 摘要：
+  > arXiv:2605.06529v1 Announce Type: new Abstract: Outcome metrics can certify the wrong behavior. We study this failure in a two-hotel revenue-management simulator where Hotel A trains an agent against a fixed rule-based revenue-management competitor, Hotel B. A standard learning agent can obtain near-reference revenue per available room (RevPAR) while failing to learn market-like yield management: it sells too aggres...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 34. Decision-aware User Simulation Agent for Evaluating Conversational Recommender Systems
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.05250
+- 命中关键词：Agent、agents
+- 规则分数：70
+- 入选原因：可作为早期研究或趋势线索，命中 Agent、agents 等关键词。
+- Feed 摘要：
+  > arXiv:2605.05250v1 Announce Type: cross Abstract: Conversational recommender systems (CRS) increasingly rely on user simulators for automated evaluation of sales agents. A key requirement for such simulators is the ability to model human decision-making. However, most existing simulation frameworks do not explicitly model the internal decision process, and LLM-based simulators often exhibit unrealistically strong in...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 35. PRAISE: Prefix-Based Rollout Reuse in Agentic Search Training
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.CL
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2604.03675
+- 命中关键词：agentic、policy、retrieval
+- 规则分数：70
+- 入选原因：可作为早期研究或趋势线索，命中 agentic、policy、retrieval 等关键词。
+- Feed 摘要：
+  > arXiv:2604.03675v1 Announce Type: cross Abstract: In agentic search, large language models (LLMs) are trained to perform multi-turn retrieval and reasoning for complex tasks such as multi-hop question answering (QA). However, current search-based Reinforcement Learning (RL) methods suffer from two core limitations: expensive long-horizon rollouts are under-utilized during training, and supervision is typically avail...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 36. Contrastive Image-Metadata Pre-Training for Materials Transmission Electron Microscopy
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.LG
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2604.24909
+- 命中关键词：acquisition、release、retrieval
+- 规则分数：70
+- 入选原因：可作为早期研究或趋势线索，命中 acquisition、release、retrieval 等关键词。
+- Feed 摘要：
+  > arXiv:2604.24909v2 Announce Type: replace Abstract: The transmission electron microscope facilitates the highest-resolution imaging of any instrument ever created, and its limiting factor is no longer spatial resolution but dose efficiency. Low electron doses avoid sample damage but produce noisy images for which, unlike in classical computer vision, there is no ground truth. Autonomous materials experimentation pos...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 37. PACZero: PAC-Private Fine-Tuning of Language Models via Sign Quantization
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.06505
+- 命中关键词：fine-tuning、inference、privacy、quantization、release
+- 规则分数：69
+- 入选原因：可作为早期研究或趋势线索，命中 fine-tuning、inference、privacy、quantization 等关键词。
+- Feed 摘要：
+  > arXiv:2605.06505v1 Announce Type: cross Abstract: We introduce PACZero, a family of PAC-private zeroth-order mechanisms for fine-tuning large language models that delivers usable utility at $I(S^*; Y_{1:T})=0$. This privacy regime bounds the membership-inference attack (MIA) posterior success rate at the prior, an MIA-resistance level the DP framework matches only at $\varepsilon=0$ and infinite noise. All DP-ZO com...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 38. SynBench: A Benchmark for Differentially Private Text Generation
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2509.14594
+- 命中关键词：benchmark、inference、privacy
+- 规则分数：69
+- 入选原因：可作为早期研究或趋势线索，命中 benchmark、inference、privacy 等关键词。
+- Feed 摘要：
+  > arXiv:2509.14594v2 Announce Type: replace Abstract: Synthetic text generation with Differential Privacy (DP) guarantees emerges as a principled approach that can enable the sharing of sensitive datasets across institutional and regulatory boundaries, while bounding the risks of re-identification and membership inference. LLM-based methods deliver promising results; however, comparisons are exacerbated by differing e...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 39. When Agents Handle Secrets: A Survey of Confidential Computing for Agentic AI
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.AI
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
 - 原文链接：https://arxiv.org/abs/2605.03213
 - 命中关键词：Agent、agentic、agents、AMD、H100、inference、Intel、MCP、NVIDIA
 - 规则分数：69
 - 入选原因：可作为早期研究或趋势线索，命中 Agent、agentic、agents、AMD 等关键词。
 - Feed 摘要：
-  > arXiv:2605.03213v1 Announce Type: cross Abstract: Agentic AI systems, specifically LLM-driven agents that plan, invoke tools, maintain persistent memory, and delegate tasks to peer agents via protocols such as MCP and A2A, introduce a threat surface that differs materially from standalone model inference. Agents accumulate sensitive context, hold credentials, and operate across pipelines no single party fully contro...
+  > arXiv:2605.03213v2 Announce Type: replace-cross Abstract: Agentic AI systems, specifically LLM-driven agents that plan, invoke tools, maintain persistent memory, and delegate tasks to peer agents via protocols such as MCP and A2A, introduce a threat surface that differs materially from standalone model inference. Agents accumulate sensitive context, hold credentials, and operate across pipelines no single party full...
+- 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
+
+---
+
+### 40. Order-Agnostic Autoregressive Modelling with Missing Data
+
+- 来源等级：早期信号
+- 来源名称：arXiv cs.LG
+- 来源类型：RSS
+- 发布时间：2026-05-08 12:00
+- 原文链接：https://arxiv.org/abs/2605.06355
+- 命中关键词：acquisition、inference
+- 规则分数：69
+- 入选原因：可作为早期研究或趋势线索，命中 acquisition、inference 等关键词。
+- Feed 摘要：
+  > arXiv:2605.06355v1 Announce Type: new Abstract: Order-Agnostic autoregressive models have demonstrated strong performance in deep generative modeling, yet their use in settings with incomplete data remains largely unexplored. In this work, we reinterpret them through the lens of missing data. First, we show that their standard training procedure on fully observed data implicitly performs imputation under a missing c...
 - 阅读提醒：属于早期研究或趋势信号，适合收藏观察，不建议直接当成确定结论。
 
 ---

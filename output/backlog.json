@@ -1,23 +1,96 @@
 [
   {
-    "title": "Designing a double deep reinforcement learning selection tool for resilient demand prediction",
-    "url": "https://arxiv.org/abs/2605.04068",
+    "title": "Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training",
+    "url": "https://arxiv.org/abs/2605.02241",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.02241v3 Announce Type: replace Abstract: How reliably can a small language model estimate its own correctness? The answer determines whether local-to-cloud routing-escalating queries a cheap local model cannot handle-can work without supervised training data. As inference costs dominate large language model (LLM) deployment budgets, routing most queries to a cheap local model while reserving expensive cloud calls for hard cases is an increasingly common cost-control strategy. We compare zero-shot confidence signals against RouteLLM-style supervised baselines across three 7-8B model families and two datasets (1,000 and 500 queries per model, respectively). Average token log-probability, which requires no training data, matches or exceeds supervised baselines in-distribution (Area Under the Receiver Operating Characteristic curve (AUROC) 0.650-0.714 vs. 0.644-0.676) and substantially outperforms them out-of-distribution (0.717-0.833 vs. 0.512-0.564), because it measures a property of the model's generation rather than the query distribution. This paper further proposes retrieval-conditional self-assessment, a pre-generation signal that selectively injects retrieved knowle...",
+    "matched_keywords": [
+      "inference",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 79,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Enabling Federated Inference via Unsupervised Consensus Embedding",
+    "url": "https://arxiv.org/abs/2605.05718",
     "source_name": "arXiv cs.LG",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.04068v1 Announce Type: new Abstract: The use of artificial intelligence in supply chain forecasting has attracted many scientific studies for several decades. However, the process of selecting an appropriate forecasting solution becomes a daunting task. This complexity arises due to the distinct features inherent to each dataset. Research to tackle this issue has been performed since the eighties but recent development of demand forecasting has opened new perspectives. This research aims to enhance automatic forecasting model selection by proposing a novel architecture that acts as a double deep reinforcement learning agent, selecting automatically a forecasting model from the forecasting committee at the time of prediction. Moreover, a novel early-stopping approach based on average reward convergence has been introduced to expedite training time. To evaluate the model's performance, an empirical study was conducted utilizing grocery sales datasets and snack demands datasets. The experimental results demonstrate the robustness of the proposed approach when compared to state-of-the-art methods.",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05718v1 Announce Type: new Abstract: Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits their applicability in privacy-sensitive or cross-organizational settings. To address this challenge, we propose Consensus Embedding-based Federated Inference (CE-FI), a framework that enables pretrained models to cooperate at inference time without sharing model parameters or raw inputs and without assuming a common encoder. CE-FI introduces two components: a Consensus Embedding (CE) layer that maps heterogeneous intermediate representations into a common embedding space, and a Cooperative Output (CO) layer that produces predictions from these embeddings. Both layers are trained using shared unlabeled data only, so the cooperative stage does not require additional labeled data. Experiments on image classification benchmarks -- CIFAR-10 and CIFAR-100 -- under diverse n...",
     "matched_keywords": [
-      "Agent",
-      "dataset"
+      "embeddings",
+      "inference",
+      "privacy"
     ],
     "tags": [
-      "agent",
-      "open_source"
+      "business",
+      "open_source",
+      "rag_data"
     ],
     "score": 79,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs",
+    "url": "https://arxiv.org/abs/2605.05459",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05459v1 Announce Type: cross Abstract: This work introduces PAS -- Privacy Anchor Substitution, a structured mechanism for enabling user location privacy in spatial retrieval-augmented generation (RAG) systems. Unlike conventional differential privacy methods that directly perturb user locations, PAS represents location with relative anchor encoding consisting of an anchor, direction bin, and distance bin, allowing seamless integration with modern RAG pipelines. We evaluate PAS on a synthetic urban dataset and show that it achieves impressive coarse privacy guarantees, with approximately 370-400m adversarial location error, while retaining more than half of the baseline retrieval performance. Despite the slight drop in retrieval performance, the downstream generation quality under PAS remains comparatively robust, indicating that large language models can compensate for imperfect spatial retrieval. Furthermore, we provide empirical analysis showing that PAS exhibits non-monotonic privacy-utility relationship with respect to privacy parameters. We attribute this to geometric bias induced by anchor discretization, making it different from continuous noise mechanisms such...",
+    "matched_keywords": [
+      "dataset",
+      "privacy",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 79,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems",
+    "url": "https://arxiv.org/abs/2605.05628",
+    "source_name": "arXiv cs.AR",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05628v1 Announce Type: new Abstract: Tensor parallelism (TP) in large-scale LLM inference and training introduces frequent collective operations that dominate inter-GPU communication. While in-switch computing, exemplified by NVLink SHARP (NVLS), accelerates collective operations by reducing redundant data transfer, its communication-centric design philosophy introduces the mismatch between its communication mode and the memory semantic requirement of LLM's computation kernel. Such a mismatch isolates the compute and communication phases, resulting in underutilized resources and limited overlap in multi-GPU systems. To address the limitation, we propose CAIS, the first Compute-Aware In-Switch computing framework that aligns communication modes with computation's memory semantics requirement. CAIS consists of three integral techniques: (1) compute-aware ISA and microarchitecture extension to enable compute-aware in-switch computing. (2) merging-aware TB (Thread Block) coordination to improve the temporal alignment for efficient request merging. (3) graph-level dataflow optimizer to achieve a tight cross-kernel overlap. Evaluations on LLM workloads show that CAIS achieves...",
+    "matched_keywords": [
+      "GPU",
+      "inference",
+      "ISA"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack",
+      "semiconductor"
+    ],
+    "score": 79,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -39,8 +112,53 @@
       "semiconductor"
     ],
     "score": 76,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation",
+    "url": "https://arxiv.org/abs/2605.06445",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.06445v1 Announce Type: cross Abstract: Large Language Model (LLM) agents demonstrate strong performance in autonomous code generation under loose specifications. However, production-grade software requires strict adherence to structural constraints, such as architectural patterns, databases, and object-relational mappings. Existing benchmarks often overlook these non-functional requirements, rewarding functionally correct but structurally arbitrary solutions. We present a systematic study evaluating how well agents handle structural constraints in multi-file backend generation. By fixing a unified API contract across 80 greenfield generation tasks and 20 feature-implementation tasks spanning eight web frameworks, we isolate the effect of structural complexity using a dual evaluation with end-to-end behavioral tests and static verifiers. Our findings reveal a phenomenon of constraint decay: as structural requirements accumulate, agent performance exhibits a substantial decline. Capable configurations lose 30 points on average in assertion pass rates from baseline to fully specified tasks, while some weaker configurations approach zero. Framework sensitivity analysis expo...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 76,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AGMARL-DKS: An Adaptive Graph-Enhanced Multi-Agent Reinforcement Learning for Dynamic Kubernetes Scheduling",
+    "url": "https://arxiv.org/abs/2603.12031",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2603.12031v2 Announce Type: replace-cross Abstract: State-of-the-art cloud-native applications require intelligent schedulers that can effectively balance system stability, resource utilisation, and associated costs. While Kubernetes provides feasibility-based placement by default, recent research efforts have explored the use of reinforcement learning (RL) for more intelligent scheduling decisions. However, current RL-based schedulers have three major limitations. First, most of these schedulers use monolithic centralised agents, which are non-scalable for large heterogeneous clusters. Second, the ones that use multi-objective reward functions assume simple, static, linear combinations of the objectives. Third, no previous work has produced a stress-aware scheduler that can react adaptively to dynamic conditions. To address these gaps in current research, we propose the Adaptive Graph-enhanced Multi-Agent Reinforcement Learning Dynamic Kubernetes Scheduler (AGMARL-DKS). AGMARL-DKS addresses these gaps by introducing three major innovations. First, we construct a scalable solution by treating the scheduling challenge as a cooperative multi-agent problem, where every cluster...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 76,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -56,74 +174,30 @@
     "tags": [],
     "score": 76,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Regime-Conditioned Evaluation in Multi-Context Bayesian Optimization",
-    "url": "https://arxiv.org/abs/2605.04895",
-    "source_name": "arXiv cs.LG",
+    "title": "Simplex rethinks software development with Codex",
+    "url": "https://openai.com/index/simplex",
+    "source_name": "OpenAI News",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.04895v1 Announce Type: new Abstract: Published transfer-BO comparisons often estimate an average treatment effect of acquisition choice over hidden regime variables, while practitioners need the conditional effect for their specific prior quality, budget ratio, and metric. An audit of 40 transfer-BO papers from NeurIPS, ICML, ICLR, AISTATS, UAI, TMLR, JMLR, and AutoML-Conf (2022-2025) finds that 98% never vary B/|A| as a controlled axis. On the same GDSC2 benchmark, changing only the budget reverses the ranking: at B=50, Greedy outperforms UCB by 0.050 Hit@1, while at B=100, UCB outperforms Greedy by 0.035. We capture this transition with the Portable Regime Score PRS=(B/|A|)(1-rho), where rho is the prior rank correlation and can be estimated from pilot contexts before the main comparison. Across 79 conditions spanning chemistry, drug-response biology, and HPO, a hierarchical model gives beta=0.50 (p=1.1e-9), and 19% of conditions fall in an equivalence zone where |advantage|<0.01 Hit@1. In five published reversal cases, PRS predicts the winner from pre-comparison observables. A No-Free-Leaderboard proposition explains why unconditional rankings are unstable: when CATE...",
-    "matched_keywords": [
-      "acquisition",
-      "benchmark"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 76,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Gated Multimodal Learning for Interpretable Property Energy Performance Prediction and Retrofit Scenario Analysis",
-    "url": "https://arxiv.org/abs/2605.05088",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05088v1 Announce Type: new Abstract: Achieving resilient and sustainable cities requires scalable approaches to decarbonising residential buildings, which account for about 20% of UK greenhouse gas emissions and 25% of energy-related emissions in the European Union. Energy Performance Certificates (EPCs) support regulation and retrofit planning, but their reliance on on-site inspections limits timely city-scale assessment. This study introduces a gated multimodal model to predict Standard Assessment Procedure (SAP) energy efficiency and Environmental Impact (EI) scores by integrating EPC tabular variables, assessor-written free text, and Geographic Information System (GIS)-derived spatial features describing footprint geometry, height, area, and orientation. Sample-wise gating learns property-specific modality weights, while an auxiliary band classification head stabilises training. In a Westminster, London case study, the model predicts SAP and EI scores with MAEs of 4.03 and 4.76 points and R2 values of 0.757 and 0.748, respectively, achieving a mean MAE of 4.39. Ablation results show that full multimodal fusion outperforms unimodal and bimodal baselines for both scor...",
-    "matched_keywords": [
-      "regulation",
-      "weights"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 76,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.14.5a3：Bug Fixes",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-05-06T17:58:37+00:00",
-    "summary_or_excerpt": "## What's Changed ### Bug Fixes - Fix status endpoint path from /{kickoff_id}/status to /status/{kickoff_id} - Bump gitpython dependency to version >=3.1.47 for security compliance ### Refactoring - Extract CLI into standalone crewai-cli package ### Documentation - Update changelog and version for v1.14.5a2 ## Contributors @greysonlalonde, @iris-clawd",
+    "published_at": "2026-05-07T00:00:00+00:00",
+    "summary_or_excerpt": "Simplex boosts software development with ChatGPT Enterprise and Codex, reducing design, build, and testing time while scaling AI-driven workflows.",
     "matched_keywords": [
-      "changelog",
-      "CrewAI"
+      "ChatGPT",
+      "Codex",
+      "OpenAI"
     ],
     "tags": [
-      "agent",
-      "business"
+      "coding_tool",
+      "model"
     ],
-    "score": 74,
-    "release_version": "1.14.5a3",
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "score": 75,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -146,9 +220,85 @@
       "rag_data"
     ],
     "score": 74,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding",
+    "url": "https://arxiv.org/abs/2605.05716",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05716v1 Announce Type: new Abstract: LLM agent systems are built by stacking scaffolding components (planning, tools, memory, self-reflection, retrieval) assuming more is better. We study cross-component interference (CCI): degradation when components interact destructively. We run a full factorial experiment over all 2^5=32 subsets of five components on HotpotQA and GSM8K with Llama-3.1-8B/70B (96 conditions, up to 10 seeds). The All-In system is consistently suboptimal: on HotpotQA, a single-tool agent surpasses All-In by 32% (F1 0.233 vs 0.177, p=0.023); on GSM8K, a 3-component subset beats All-In by 79% (0.43 vs 0.24, p=0.010). Optimal component count is task-dependent (k*=1-4) and scale-sensitive: at 70B, combinations that hurt at 8B provide gains, though All-In still trails the best subset. We fit a main-effects regression (R^2=0.916, adj-R^2=0.899, LOOCV=0.872), compute exact Shapley values, and find 183/325 submodularity violations (56.3%), showing greedy selection is unreliable. A three-body synergy among Tool Use, Self-Reflection, and Retrieval (INT_3=+0.175, 95% CI [+0.003,+0.351]) is reported as exploratory. CCI replicates across model families (Qwen2.5) and...",
+    "matched_keywords": [
+      "Agent",
+      "Llama",
+      "retrieval",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "rag_data"
+    ],
+    "score": 74,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System",
+    "url": "https://arxiv.org/abs/2605.05949",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05949v1 Announce Type: new Abstract: Algorithmic problem solving serves as a rigorous testbed for evaluating structured reasoning in AI coding systems, as it directly reflects a model's ability to perform structured reasoning in complex scenarios.Existing approaches predominantly rely on model-centric strategies, such as architectural modifications and data scaling, which are costly and offer limited interpretability. Alternative methods leveraging external tools or prompting techniques (e.g., chain-of-thought) are often fragmented and lack a unified framework. In this paper, we propose MAS-Algorithm, a systematic multi-agent workflow for algorithmic problem solving inspired by the practices of competitive programmers and algorithm engineers. Our framework decomposes the end-to-end solving process into modular stages, enabling structured reasoning, tool integration, and flexible coordination among agents. The design emphasizes both rigor and extensibility, allowing it to generalize across diverse problem types.Experimental results on a self-constructed benchmark demonstrate consistent improvements across multiple Qwen series models, achieving an average gain of 6.48% in...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent",
+      "Qwen",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 74,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.14.5a3：Bug Fixes",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-06T17:58:37+00:00",
+    "summary_or_excerpt": "## What's Changed ### Bug Fixes - Fix status endpoint path from /{kickoff_id}/status to /status/{kickoff_id} - Bump gitpython dependency to version >=3.1.47 for security compliance ### Refactoring - Extract CLI into standalone crewai-cli package ### Documentation - Update changelog and version for v1.14.5a2 ## Contributors @greysonlalonde, @iris-clawd",
+    "matched_keywords": [
+      "changelog",
+      "CrewAI"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 74,
+    "release_version": "1.14.5a3",
+    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -176,8 +326,8 @@
     ],
     "score": 74,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -202,8 +352,8 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -228,8 +378,8 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -254,8 +404,8 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -280,8 +430,8 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -308,8 +458,8 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -335,8 +485,8 @@
       "open_source"
     ],
     "score": 71,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -361,8 +511,8 @@
     ],
     "score": 71,
     "release_version": "v1.83.14-stable.patch.3",
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -389,8 +539,8 @@
       "open_source"
     ],
     "score": 71,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -418,8 +568,8 @@
       "open_source"
     ],
     "score": 71,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -444,7 +594,145 @@
     ],
     "score": 71,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DIY market declining amid high RAM prices",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6gmcn/diy_market_declining_amid_high_ram_prices",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-07T17:03:58+00:00",
+    "summary_or_excerpt": "Asus shipped 15 million motherboards in 2025. Only expected to ship 10 million in 2026. CPU prices are also rising. https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&Cat=40&id=0000754394_2M94CB7W8M7OAA5Z4THE5 DIY = Do it yourself, build your own PC. Excerpt: NVIDIA GPU upgrade slowdown coupled with CPU and memory shortages causes PC motherboard manufacturers' shipment targets to collapse across the board. NVIDIA GPU updates are slowing down, and both CPUs and memory are experiencing shortages and price increases. PC motherboard manufacturers are also lowering shipment forecasts across the board for 2026. (Photo by Li Jianliang) The surge in AI demand has led to a squeeze on chip production capacity, resulting in severe shortages and price increases for memory and central processing units (CPUs). Sales of branded notebook and desktop (DT) products have declined, and the PC DIY market is in dire straits. PC supply chain sources revealed that the four major Taiwanese motherboard manufacturers have all lowered their 2026 shipment targets set at the end of 2025, and almost all of them have experienced a \"collapse.\" The situation is worse than during previous financial crises an...",
+    "matched_keywords": [
+      "GPU",
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agentic, Context-Aware Risk Intelligence in the Internet of Value",
+    "url": "https://arxiv.org/abs/2605.05878",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05878v1 Announce Type: new Abstract: The Internet of Value (IoV) is a heterogeneous, partially-trusted network in which the dominant marginal risk is composite (route, sentiment, liquidity, and the policy a system is willing to commit to) rather than a property of any single chain. We argue that a risk primitive adequate for this regime is a composition of five engines: a prediction engine over price, liquidity, volatility, and route health; a Bittensor verification subnet that decentralises and economically scores prediction outputs; a sentiment-fusion engine over text, on-chain flow, and grey-literature feeds; an agentic engine under constitutional, role-bound action constraints; and an API-risk and scenario engine that converts forecasts into pre-committed action programs in the sense of Monte-Carlo scenario generation. We anchor the architecture in two empirical artefacts: a 27-hour policy-constrained liquidity stress-response experiment on Solana, and a 168-hour prediction-router calibration arc reported with explicit class-imbalance honesty. The case study supports deployability; the validator-loss decomposition is stated formally and is falsifiable.",
+    "matched_keywords": [
+      "agentic",
+      "API",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Market-Alignment Risk in Pricing Agents: Trace Diagnostics and Trace-Prior RL under Hidden Competitor State",
+    "url": "https://arxiv.org/abs/2605.06529",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.06529v1 Announce Type: new Abstract: Outcome metrics can certify the wrong behavior. We study this failure in a two-hotel revenue-management simulator where Hotel A trains an agent against a fixed rule-based revenue-management competitor, Hotel B. A standard learning agent can obtain near-reference revenue per available room (RevPAR) while failing to learn market-like yield management: it sells too aggressively, undercuts, or collapses to modal price buckets. We diagnose this as a Goodhart-style failure under partial observability. Hotel A cannot observe the competitor's remaining inventory, booking curve, or pricing rule, so the same Hotel A-visible state maps to multiple plausible Hotel B prices. Deterministic value-based RL and deterministic copying collapse this unresolved uncertainty into shortcut behavior. We introduce a trace-level diagnostic protocol using RevPAR, occupancy, ADR, full price-bucket distributions, L1/JS distances, and seed-level confidence intervals. The verified repair is Trace-Prior RL: learn a distributional market prior from lagged market traces, then train a stochastic pricing policy with a RevPAR reward and a KL penalty to the learned prior....",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "policy",
+      "pricing",
+      "revenue"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Decision-aware User Simulation Agent for Evaluating Conversational Recommender Systems",
+    "url": "https://arxiv.org/abs/2605.05250",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.05250v1 Announce Type: cross Abstract: Conversational recommender systems (CRS) increasingly rely on user simulators for automated evaluation of sales agents. A key requirement for such simulators is the ability to model human decision-making. However, most existing simulation frameworks do not explicitly model the internal decision process, and LLM-based simulators often exhibit unrealistically strong information-processing capabilities, rarely exhibit the hesitation or decision deferral commonly observed in real consumer behavior, resulting in overly high acceptance probabilities. To address this limitation, we propose Hesitator, a theory-grounded user simulation framework that explicitly models human decision-making under choice overload. The framework introduces a modular Decision Module that separates utility-based item selection from overload-aware commitment decisions. Experiments across multiple user simulation frameworks, domains, sales modes, and LLM backbones show that integrating our module consistently mitigates unrealistic behaviors under increasing overload conditions. Furthermore, Hesitator reproduces established behavioral patterns from psychological ec...",
+    "matched_keywords": [
+      "Agent",
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PRAISE: Prefix-Based Rollout Reuse in Agentic Search Training",
+    "url": "https://arxiv.org/abs/2604.03675",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.03675v1 Announce Type: cross Abstract: In agentic search, large language models (LLMs) are trained to perform multi-turn retrieval and reasoning for complex tasks such as multi-hop question answering (QA). However, current search-based Reinforcement Learning (RL) methods suffer from two core limitations: expensive long-horizon rollouts are under-utilized during training, and supervision is typically available only at the final answer, resulting in severe reward sparsity. We present Prefix-based Rollout reuse for Agentic search with Intermediate Step rEwards (PRAISE), a framework for improving both data efficiency and credit assignment in agentic search training. Given a complete search trajectory, PRAISE extracts prefix states at different search turns, elicits intermediate answers from them, and uses these prefixes both to construct additional training trajectories and to derive step-level rewards from performance differences across prefixes. Our method uses a single shared model for both search policy learning and prefix answer evaluation, enabling joint optimization without extra human annotations or a separate reward model. Experiments on multi-hop QA benchmarks sho...",
+    "matched_keywords": [
+      "agentic",
+      "policy",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "rag_data"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Contrastive Image-Metadata Pre-Training for Materials Transmission Electron Microscopy",
+    "url": "https://arxiv.org/abs/2604.24909",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.24909v2 Announce Type: replace Abstract: The transmission electron microscope facilitates the highest-resolution imaging of any instrument ever created, and its limiting factor is no longer spatial resolution but dose efficiency. Low electron doses avoid sample damage but produce noisy images for which, unlike in classical computer vision, there is no ground truth. Autonomous materials experimentation poses a related problem, since closed-loop instruments need representations grounded in the microscope state at acquisition. Both demand representations grounded in how an image was acquired. We release 7,330 paired high-angle annular dark-field scanning-TEM (HAADF-STEM) images and their seven-dimensional acquisition metadata, and propose Contrastive Image-Metadata Pre-training (CIMP), a CLIP-style encoder that aligns the two modalities and reaches 84.4% Top-1 cross-modal retrieval on a held-out split. All seven parameters are individually recoverable from the frozen visual embedding through a linear probe, and we use the embedding to condition a metadata-conditioned style-transfer model that re-renders experimental images under different acquisition parameters. Virtually...",
+    "matched_keywords": [
+      "acquisition",
+      "release",
+      "retrieval"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 70,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -468,29 +756,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DIY market declining amid high RAM prices",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6gmcn/diy_market_declining_amid_high_ram_prices",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-07T17:03:58+00:00",
-    "summary_or_excerpt": "Asus shipped 15 million motherboards in 2025. Only expected to ship 10 million in 2026. CPU prices are also rising. https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&Cat=40&id=0000754394_2M94CB7W8M7OAA5Z4THE5 DIY = Do it yourself, build your own PC. Excerpt: NVIDIA GPU upgrade slowdown coupled with CPU and memory shortages causes PC motherboard manufacturers' shipment targets to collapse across the board. NVIDIA GPU updates are slowing down, and both CPUs and memory are experiencing shortages and price increases. PC motherboard manufacturers are also lowering shipment forecasts across the board for 2026. (Photo by Li Jianliang) The surge in AI demand has led to a squeeze on chip production capacity, resulting in severe shortages and price increases for memory and central processing units (CPUs). Sales of branded notebook and desktop (DT) products have declined, and the PC DIY market is in dire straits. PC supply chain sources revealed that the four major Taiwanese motherboard manufacturers have all lowered their 2026 shipment targets set at the end of 2025, and almost all of them have experienced a \"collapse.\" The situation is worse than during previous financial crises an...",
-    "matched_keywords": [
-      "GPU",
-      "NVIDIA"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 70,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -510,8 +777,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -520,8 +787,8 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.03213v1 Announce Type: cross Abstract: Agentic AI systems, specifically LLM-driven agents that plan, invoke tools, maintain persistent memory, and delegate tasks to peer agents via protocols such as MCP and A2A, introduce a threat surface that differs materially from standalone model inference. Agents accumulate sensitive context, hold credentials, and operate across pipelines no single party fully controls, enabling prompt injection, context exfiltration, credential theft, and inter-agent message poisoning. Current defenses operate entirely within the software stack and can be silently bypassed by a sufficiently privileged adversary such as a compromised cloud operator. Confidential computing (CC) offers a hardware-rooted alternative: Trusted Execution Environments (TEEs) isolate agent code and data from privileged system software, while remote attestation enables verifiable trust across distributed deployments. This survey synthesizes the design space in four parts: (i) a unified taxonomy of six TEE platforms (Intel SGX, Intel TDX, AMD SEV-SNP, ARM TrustZone, ARM CCA, and NVIDIA H100 CC) covering deployment roles and performance tradeoffs; (ii) an agent-centric threat...",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.03213v2 Announce Type: replace-cross Abstract: Agentic AI systems, specifically LLM-driven agents that plan, invoke tools, maintain persistent memory, and delegate tasks to peer agents via protocols such as MCP and A2A, introduce a threat surface that differs materially from standalone model inference. Agents accumulate sensitive context, hold credentials, and operate across pipelines no single party fully controls, enabling prompt injection, context exfiltration, credential theft, and inter-agent message poisoning. Current defenses operate entirely within the software stack and can be silently bypassed by a sufficiently privileged adversary such as a compromised cloud operator. Confidential computing (CC) offers a hardware-rooted alternative: Trusted Execution Environments (TEEs) isolate agent code and data from privileged system software, while remote attestation enables verifiable trust across distributed deployments. This survey synthesizes the design space in four parts: (i) a unified taxonomy of six TEE platforms (Intel SGX, Intel TDX, AMD SEV-SNP, ARM TrustZone, ARM CCA, and NVIDIA H100 CC) covering deployment roles and performance tradeoffs; (ii) an agent-centri...",
     "matched_keywords": [
       "Agent",
       "agentic",
@@ -539,8 +806,78 @@
       "semiconductor"
     ],
     "score": 69,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-08T10:47:22.631600+08:00",
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PACZero: PAC-Private Fine-Tuning of Language Models via Sign Quantization",
+    "url": "https://arxiv.org/abs/2605.06505",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.06505v1 Announce Type: cross Abstract: We introduce PACZero, a family of PAC-private zeroth-order mechanisms for fine-tuning large language models that delivers usable utility at $I(S^*; Y_{1:T})=0$. This privacy regime bounds the membership-inference attack (MIA) posterior success rate at the prior, an MIA-resistance level the DP framework matches only at $\\varepsilon=0$ and infinite noise. All DP-ZO comparisons below are matched at the MIA posterior level. The key insight is that PAC Privacy charges mutual information only when the release depends on which candidate subset is the secret. Sign-quantizing subset-aggregated zeroth-order gradients creates frequent unanimity, steps at which every candidate subset agrees on the update direction; at these steps the released sign costs zero conditional mutual information. We propose two variants that span the privacy-utility trade-off: PACZero-MI (budgeted MI via exact calibration on the binary release) and PACZero-ZPL ($I=0$ via a uniform coin flip on disagreement steps). We evaluate on SST-2 and SQuAD with OPT-1.3B and OPT-6.7B in both LoRA and full-parameter tracks. On SST-2 OPT-1.3B full fine-tuning at $I=0$, PACZero-ZPL...",
+    "matched_keywords": [
+      "fine-tuning",
+      "inference",
+      "privacy",
+      "quantization",
+      "release"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 69,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SynBench: A Benchmark for Differentially Private Text Generation",
+    "url": "https://arxiv.org/abs/2509.14594",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2509.14594v2 Announce Type: replace Abstract: Synthetic text generation with Differential Privacy (DP) guarantees emerges as a principled approach that can enable the sharing of sensitive datasets across institutional and regulatory boundaries, while bounding the risks of re-identification and membership inference. LLM-based methods deliver promising results; however, comparisons are exacerbated by differing evaluation setups and \"private\" datasets, potential pre-training contamination is not considered and guarantees are not verified with DP audits. To advance this field, we introduce a unified evaluation framework with standardised utility and fidelity metrics and privacy audits, encompassing nine curated datasets that capture domain-specific complexities such as technical jargon, long-context dependencies, and specialised document structures. In a large-scale empirical study, we benchmark LLM-based state-of-the-art DP text generators of varying sizes (between 1--8B). Our results indicate that DP synthetic text generation remains an unsolved challenge, with quality deteriorating more as the private datasets deviate further from the generators' pre-training corpora. Our nov...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "privacy"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 69,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Order-Agnostic Autoregressive Modelling with Missing Data",
+    "url": "https://arxiv.org/abs/2605.06355",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-05-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.06355v1 Announce Type: new Abstract: Order-Agnostic autoregressive models have demonstrated strong performance in deep generative modeling, yet their use in settings with incomplete data remains largely unexplored. In this work, we reinterpret them through the lens of missing data. First, we show that their standard training procedure on fully observed data implicitly performs imputation under a missing completely at random mechanism, resulting in robust out-of-sample imputation performance in settings with high missingness. Second, we introduce the first principled framework for training them directly on incomplete datasets under general missingness mechanisms. Third, we leverage their amortized conditional density estimation to perform active information acquisition, i.e., sequentially selecting the most informative missing variables for downstream prediction or inference. Across a suite of real-world benchmarks, our Missingness-Aware Order-Agnostic Autoregressive Model (MO-ARM) consistently outperforms established imputation baselines.",
+    "matched_keywords": [
+      "acquisition",
+      "inference"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 69,
+    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
+    "last_seen_at": "2026-05-08T16:41:46.204942+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   }

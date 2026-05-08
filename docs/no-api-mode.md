@@ -1,26 +1,15 @@
-# No API Key 模式说明
+# 规则候选层与模型解读层
 
-`main` 分支固定为 No API Key 模式。
+当前 `main` 已经合并为一条完整日报流程，但仍保留两层边界：
 
-它不调用模型 API，不需要配置 `LLM_API_KEY`、`DEEPSEEK_API_KEY`、`OPENAI_API_KEY` 或其他密钥，也不会产生模型 API 费用。
+- `output/daily.md`：规则候选层。
+- `output/model-daily.md`：模型解读层。
 
-## 为什么 main 不接 API Key
+这两个文件承担不同职责，不能混在一起理解。
 
-这个分支的目标是把新闻系统的基础链路跑稳定：
+## 规则候选层做什么
 
-- 来源抓取是否稳定；
-- 来源等级是否清楚；
-- 关键词匹配是否可解释；
-- 规则打分是否可调整；
-- 去重是否可靠；
-- Markdown 输出是否稳定；
-- 每条新闻是否保留原始链接。
-
-如果一开始就接入模型，系统会变得更难判断：到底是来源质量有问题、规则有问题，还是模型总结有问题。
-
-所以 `main` 只保留可解释的规则链路。
-
-## No API Key 模式能做什么
+规则候选层不调用模型，只负责把新闻候选池整理清楚：
 
 - 抓取 RSS / Atom。
 - 抓取 GitHub Releases。
@@ -31,22 +20,38 @@
 - 对 URL 和相似标题去重。
 - 生成 `output/daily.md`。
 - 生成 `output/YYYY-MM-DD.md` 日期归档。
-- 保留每条新闻的来源等级、来源名称、原文链接、发布时间、命中关键词和规则分数。
 
-## No API Key 模式不能做什么
+每条新闻必须保留：
 
-- 不会阅读完整正文。
-- 不会生成模型摘要。
-- 不会生成中文深度解读。
-- 不会判断事实真伪。
-- 不会替代人工阅读原文。
-- 不会使用 Agent 自动规划或执行任务。
+- 来源等级
+- 来源名称
+- 原文链接
+- 发布时间
+- 命中关键词
+- 规则分数
+
+## 模型解读层做什么
+
+模型解读层只在规则候选池之后运行。
+
+它读取规则筛出的候选新闻，抓取必要正文片段，然后生成：
+
+- `output/model-daily.md`
+
+模型层可以做人话解读、主题归纳、业务启发和行动建议，但不能替代：
+
+- 来源分级
+- 规则打分
+- 原文链接
+- 人工事实核验
+
+如果缺少 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY`，系统不会伪造模型日报，而是写入失败说明文件。
 
 ## 来源分级逻辑
 
 - `official_confirmed`：官方确认。公司官方博客、官方 changelog、arXiv 分类源、GitHub Releases。
 - `tech_community`：技术社区。Hacker News、Reddit、技术博客。
-- `early_signal`：早期信号。第一版预留，不默认抓取 X / Telegram。
+- `early_signal`：早期信号。速度快但噪声高。
 - `needs_verification`：待验证。来源不够明确或需要进一步核验。
 
 ## 规则打分逻辑
@@ -72,12 +77,7 @@
 
 尤其是技术社区和早期信号，它们只能用于发现趋势，不能直接作为事实结论。
 
-## 后续模型能力放在哪里
+## 当前 workflow
 
-模型总结、人话解读、业务启发、语音友好日报等能力不放在 `main`。
-
-这些能力放在独立分支，例如：
-
-- `feature/practical-ai-toolchain-daily`
-
-这样 `main` 始终保持为可解释、低成本、稳定的规则基础框架。
+- `Generate Daily AI News Briefing`：完整流程，每天北京时间 / 新加坡时间 07:30 自动运行，也可以手动运行。
+- `Refresh Model AI News Briefing`：只手动运行，只基于现有 `output/daily.md` 重新生成 `output/model-daily.md`。

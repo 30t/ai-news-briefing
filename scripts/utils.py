@@ -12,7 +12,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
-USER_AGENT = "ai-news-briefing-no-api/1.0 (+https://github.com/)"
+USER_AGENT = "ai-intelligence-briefing/2.0 (+https://github.com/)"
 LOCAL_TIMEZONE = timezone(timedelta(hours=8), name="Asia/Singapore")
 CORE_ITEM_FIELDS = {
     "title",
@@ -25,6 +25,13 @@ CORE_ITEM_FIELDS = {
     "matched_keywords",
     "score",
     "tags",
+    "source_trust_score",
+    "keyword_relevance_score",
+    "rule_relevance_score",
+    "rule_penalty",
+    "editorial",
+    "editorial_score",
+    "llm",
 }
 
 

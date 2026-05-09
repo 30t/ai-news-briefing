@@ -23,6 +23,7 @@ def main() -> None:
     keywords_config = load_yaml(ROOT / "config" / "keywords.yml")
     scoring_config = load_yaml(ROOT / "config" / "scoring.yml")
     llm_config = _load_required_config(ROOT / "config" / "llm.yml")
+    editorial_policy = _load_required_config(ROOT / "config" / "editorial_policy.yml")
     require_llm_api_key(llm_config)
 
     items = []
@@ -39,7 +40,7 @@ def main() -> None:
     scored_items = score_items(recent_items, keywords_config, scoring_config)
     deduped_items = dedupe_items(scored_items, scoring_config)
     rule_candidates = rank_items(deduped_items, candidate_pool_size)
-    judged_candidates = judge_candidates_with_llm(rule_candidates, llm_config)
+    judged_candidates = judge_candidates_with_llm(rule_candidates, llm_config, editorial_policy)
     ranked_items = rank_items(judged_candidates, max_items)
 
     markdown = generate_markdown(ranked_items, total_count, max_items)
@@ -83,7 +84,7 @@ def main() -> None:
 
 def _load_required_config(path: Path) -> dict:
     if not path.exists():
-        raise RuntimeError("LLM layer is required, but config/llm.yml does not exist.")
+        raise RuntimeError(f"Required config file does not exist: {path}")
     return load_yaml(path)
 
 

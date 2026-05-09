@@ -91,6 +91,24 @@ def _render_editorial_fields(item: dict[str, Any]) -> list[str]:
     ]
 
 
+def _render_reusable_llm_fields(item: dict[str, Any]) -> list[str]:
+    llm = item.get("llm") or {}
+    fields = [
+        ("模型中文标题", llm.get("final_title_zh")),
+        ("模型背景", llm.get("background_zh")),
+        ("模型核心摘要", llm.get("core_summary_zh")),
+        ("模型证据说明", llm.get("evidence_or_result_zh")),
+        ("模型重要性", llm.get("why_it_matters_zh")),
+        ("模型建议动作", llm.get("reader_action_zh")),
+    ]
+    lines: list[str] = []
+    for label, value in fields:
+        text = normalize_space(str(value or ""))
+        if text:
+            lines.append(f"- {label}：{text}")
+    return lines
+
+
 def _render_item(index: int, item: dict[str, Any]) -> str:
     source_type = item.get("source_type", "")
     level_label = LEVEL_LABELS.get(item.get("source_level"), "待验证")
@@ -113,6 +131,7 @@ def _render_item(index: int, item: dict[str, Any]) -> str:
         f"- 规则召回分：{item.get('rule_relevance_score', item.get('score', 0))}",
     ]
     lines.extend(_render_editorial_fields(item))
+    lines.extend(_render_reusable_llm_fields(item))
     if source_type == "hackernews" and item.get("hn_score") is not None:
         lines.append(f"- HN 分数：{item.get('hn_score')}")
     lines.extend(
@@ -137,7 +156,7 @@ def generate_markdown(items: list[dict[str, Any]], total_count: int, max_items: 
         "## 今日概况",
         "",
         f"今天自动抓取 {total_count} 条信息，系统先按时间窗口过滤，再用来源等级、关键词和噪声规则形成候选池，最后由模型编辑评审排序出 {selected_count} 条。",
-        "本文件保留原文链接、来源等级、关键词召回信息、模型编辑分和模型入选理由。关键词只负责召回，不代表新闻价值。",
+        "本文件保留原文链接、来源等级、关键词召回信息、模型编辑分、模型入选理由和模型单条解释字段。关键词只负责召回，不代表新闻价值。",
         "",
         "## 判断标签",
         "",

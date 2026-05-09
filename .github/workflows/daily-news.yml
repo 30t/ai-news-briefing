@@ -1,4 +1,4 @@
-name: Generate Daily AI News Briefing
+name: Generate Daily AI Intelligence Briefing
 
 on:
   schedule:
@@ -28,8 +28,11 @@ jobs:
           python -m pip install --upgrade pip
           if [ -s requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Generate briefing
-        run: python scripts/main.py
+      - name: Run two-stage intelligence pipeline
+        run: |
+          echo "Stage 1: rule-based collection and candidate recall"
+          echo "Stage 2: LLM editorial review and daily synthesis"
+          python scripts/main.py
 
       - name: Commit generated output
         run: |
@@ -39,6 +42,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No output changes to commit."
           else
-            git commit -m "Generate daily AI news briefing"
+            git commit -m "Generate daily AI intelligence briefing"
             git push
           fi

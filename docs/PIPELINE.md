@@ -2,9 +2,18 @@
 
 This project is no longer a rule-only or no-API-key news crawler.
 
-It is a personal AI intelligence pipeline. The system uses deterministic rules for recall and traceability, then uses an LLM editorial judge to decide which items are truly worth reading, and finally uses an LLM synthesis step to generate the daily briefing.
+It is a personal AI intelligence pipeline. The system is intentionally described as a two-stage workflow:
 
-## Current pipeline
+```text
+Stage 1: rule-based collection and candidate recall
+Stage 2: LLM editorial review and daily synthesis
+```
+
+Stage 1 does not judge final news value. It only builds a traceable candidate pool. Stage 2 is required and handles editorial judgment, ranking, reusable per-item explanations, and the final model-synthesized daily briefing.
+
+## Two-stage workflow
+
+### Stage 1: rule-based collection and candidate recall
 
 ```text
 1. Load configuration
@@ -15,26 +24,44 @@ It is a personal AI intelligence pipeline. The system uses deterministic rules f
    ↓
 4. Time-window filter
    ↓
-5. Rule-based recall scoring
+5. Keyword matching
    ↓
-6. Deduplicate by URL and title similarity
+6. Source trust scoring
    ↓
-7. Select rule candidate pool
+7. Keyword recall scoring
    ↓
-8. LLM editorial review
+8. Noise penalty
    ↓
-9. Rank by editorial score
+9. Deduplicate by URL and title similarity
    ↓
-10. Write daily candidate pool
-   ↓
-11. Merge backlog
-   ↓
-12. Select model-daily items
-   ↓
-13. Optionally enrich article text
-   ↓
-14. Generate model daily synthesis
+10. Select rule candidate pool
 ```
+
+Stage 1 output is not the final briefing. It is only the limited candidate pool that should be reviewed by the model.
+
+### Stage 2: LLM editorial review and daily synthesis
+
+```text
+11. Require LLM API key
+   ↓
+12. Load editorial policy
+   ↓
+13. LLM editorial review
+   ↓
+14. Rank by editorial score
+   ↓
+15. Write daily candidate pool
+   ↓
+16. Merge backlog
+   ↓
+17. Select model-daily items
+   ↓
+18. Optionally enrich article text
+   ↓
+19. Generate model daily synthesis
+```
+
+Stage 2 is mandatory. If the model API key is missing or model generation fails, the workflow fails instead of producing a rule-only substitute.
 
 ## Stage ownership
 
@@ -98,7 +125,7 @@ There is no rule-only fallback daily briefing.
 
 | File | Role |
 |---|---|
-| `scripts/main.py` | Orchestrates the end-to-end pipeline |
+| `scripts/main.py` | Orchestrates the two-stage pipeline |
 | `scripts/score_items.py` | Keyword matching, source trust score, rule recall score, deduplication and ranking helper |
 | `scripts/judge_candidates_with_llm.py` | LLM editorial review and reusable single-item explanation generation |
 | `scripts/generate_markdown.py` | Writes traceable daily candidate pool with editorial scores and reasons |
@@ -120,18 +147,16 @@ source score + keyword score + penalty = final ranking
 
 That is no longer the correct interpretation.
 
-The current mental model is:
+The current two-stage mental model is:
 
 ```text
-rules find candidates
-LLM judges value
-rules sort and preserve traceability
-LLM synthesizes the final daily briefing
+Stage 1: rules collect and recall candidates
+Stage 2: LLM judges value and synthesizes the briefing
 ```
 
 ## Current model-call structure
 
-There are now two LLM stages:
+There are two LLM calls in Stage 2:
 
 ```text
 1. Per-item editorial review

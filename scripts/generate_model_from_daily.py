@@ -2,19 +2,25 @@ from __future__ import annotations
 
 import logging
 import re
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from fetch_article_text import enrich_items_with_article_text
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
-from summarize_with_llm import enhance_items_with_llm, get_api_key
-from utils import LOCAL_TIMEZONE, ROOT, load_yaml, setup_logging
+from judge_candidates_with_llm import require_llm_api_key
+from utils import ROOT, load_yaml, setup_logging
 
 
 LEVEL_MAP = {
     "官方确认": "official_confirmed",
     "技术社区": "tech_community",
+    "早期信号": "early_signal",
+    "待验证": "needs_verification",
+}
+
+RISK_MAP = {
+    "官方确认": "official_confirmed",
+    "社区讨论": "community_discussed",
     "早期信号": "early_signal",
     "待验证": "needs_verification",
 }
@@ -33,29 +39,26 @@ def main() -> None:
     model_output_path = output_dir / "model-daily.md"
     model_failed_path = output_dir / "model-daily-failed.md"
 
-    llm_config = _load_optional_config(ROOT / "config" / "llm.yml")
-    scoring_config = _load_optional_config(ROOT / "config" / "scoring.yml")
+    llm_config = _load_required_config(ROOT / "config" / "llm.yml")
+    scoring_config = _load_required_config(ROOT / "config" / "scoring.yml")
+    require_llm_api_key(llm_config)
 
     if not daily_path.exists():
-        _write_failure(model_failed_path, "找不到 output/daily.md，无法只针对现有候选池生成模型日报。")
-        _remove_if_exists(model_output_path)
-        return
+        raise RuntimeError("Missing output/daily.md. Run the full daily pipeline before model-only refresh.")
 
     total_count, ranked_items = parse_daily_markdown(daily_path.read_text(encoding="utf-8"))
     if not ranked_items:
-        _write_failure(model_failed_path, "output/daily.md 中没有解析到候选新闻条目。")
-        _remove_if_exists(model_output_path)
-        return
+        raise RuntimeError("No candidate items could be parsed from output/daily.md.")
 
-    model_markdown = _try_generate_model_daily_from_items(ranked_items, total_count, scoring_config, llm_config)
-    if model_markdown:
-        model_output_path.write_text(model_markdown, encoding="utf-8")
-        _remove_if_exists(model_failed_path)
-        logging.info("Generated %s from existing %s", model_output_path, daily_path)
-        return
+    model_candidates = select_items_for_model_daily(ranked_items, scoring_config, llm_config)
+    model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
+    model_markdown = generate_model_daily(model_candidates, total_count, scoring_config, llm_config)
+    if not model_markdown:
+        raise RuntimeError("Model daily generation failed. No rule-only fallback is allowed.")
 
-    _remove_if_exists(model_output_path)
-    _write_failure(model_failed_path, "模型日报没有成功生成。基础候选池未重新抓取，仍可查看 output/daily.md。")
+    model_output_path.write_text(model_markdown, encoding="utf-8")
+    _remove_if_exists(model_failed_path)
+    logging.info("Generated %s from existing %s", model_output_path, daily_path)
 
 
 def parse_daily_markdown(content: str) -> tuple[int, list[dict[str, Any]]]:
@@ -78,8 +81,12 @@ def _parse_item_chunk(index: int, title: str, chunk: str) -> dict[str, Any] | No
         return None
     source_type = _field(chunk, "来源类型") or _field(chunk, "发布渠道")
     keywords = _field(chunk, "命中关键词")
-    score = _field(chunk, "规则分数")
     excerpt = _blockquote_after(chunk, "Feed 摘要")
+    editorial = _parse_editorial(chunk)
+    editorial_score = _parse_int(_field(chunk, "模型编辑分"))
+    rule_relevance_score = _parse_int(_field(chunk, "规则召回分"))
+    source_trust_score = _parse_int(_field(chunk, "来源可信分"))
+    keyword_relevance_score = _parse_int(_field(chunk, "关键词召回分"))
     return {
         "title": title,
         "url": url,
@@ -90,9 +97,56 @@ def _parse_item_chunk(index: int, title: str, chunk: str) -> dict[str, Any] | No
         "summary_or_excerpt": excerpt,
         "matched_keywords": _split_keywords(keywords),
         "tags": _infer_tags(title, keywords, source_type),
-        "score": _parse_int(score),
+        "source_trust_score": source_trust_score,
+        "keyword_relevance_score": keyword_relevance_score,
+        "rule_relevance_score": rule_relevance_score,
+        "editorial": editorial,
+        "editorial_score": editorial_score or rule_relevance_score,
+        "score": editorial_score or rule_relevance_score,
+        "llm": _parse_reusable_llm_fields(chunk),
         "daily_index": index,
     }
+
+
+def _parse_editorial(chunk: str) -> dict[str, Any]:
+    scores = _parse_model_score_line(_field(chunk, "模型分项"))
+    risk = _field(chunk, "风险等级")
+    return {
+        "newsworthiness_score": scores.get("newsworthiness_score", 1),
+        "personal_relevance_score": scores.get("personal_relevance_score", 1),
+        "actionability_score": scores.get("actionability_score", 1),
+        "confidence_score": scores.get("confidence_score", 1),
+        "content_type": _field(chunk, "内容类型") or "other",
+        "risk_level": RISK_MAP.get(risk, "needs_verification"),
+        "decision": _field(chunk, "编辑决策") or "maybe",
+        "reason_zh": _field(chunk, "入选原因"),
+    }
+
+
+def _parse_reusable_llm_fields(chunk: str) -> dict[str, str]:
+    return {
+        "final_title_zh": _field(chunk, "模型中文标题"),
+        "background_zh": _field(chunk, "模型背景"),
+        "core_summary_zh": _field(chunk, "模型核心摘要"),
+        "evidence_or_result_zh": _field(chunk, "模型证据说明"),
+        "why_it_matters_zh": _field(chunk, "模型重要性"),
+        "reader_action_zh": _field(chunk, "模型建议动作"),
+    }
+
+
+def _parse_model_score_line(text: str) -> dict[str, int]:
+    mapping = {
+        "新闻价值": "newsworthiness_score",
+        "个人相关性": "personal_relevance_score",
+        "可行动性": "actionability_score",
+        "判断信心": "confidence_score",
+    }
+    result: dict[str, int] = {}
+    for label, key in mapping.items():
+        match = re.search(rf"{label}\s*(\d+)\s*/\s*10", text or "")
+        if match:
+            result[key] = max(1, min(10, int(match.group(1))))
+    return result
 
 
 def _field(chunk: str, name: str) -> str:
@@ -146,6 +200,10 @@ def _infer_tags(title: str, keywords: str, source_type: str) -> list[str]:
         tags.add("open_source")
     if any(word in text for word in ["nvidia", "gpu", "blackwell", "cuda", "hbm", "tsmc", "semiconductor", "rtx"]):
         tags.add("semiconductor")
+    if any(word in text for word in ["risc-v", "riscv", "opensbi", "qemu", "zephyr", "rt-thread", "plct", "xiangshan"]):
+        tags.add("riscv_stack")
+    if any(word in text for word in ["tinyml", "edge ai", "esp32", "arduino", "raspberry pi", "tflite micro", "cmsis-nn", "mcu"]):
+        tags.add("embedded_edge_ai")
     if any(word in text for word in ["enterprise", "business", "adoption", "bank", "servicenow", "pricing", "customer"]):
         tags.add("business")
     if any(word in text for word in ["gpt", "claude", "gemini", "llama", "qwen", "deepseek", "model"]):
@@ -153,49 +211,10 @@ def _infer_tags(title: str, keywords: str, source_type: str) -> list[str]:
     return sorted(tags)
 
 
-def _try_generate_model_daily_from_items(
-    ranked_items: list[dict[str, Any]],
-    total_count: int,
-    scoring_config: dict[str, Any],
-    llm_config: dict[str, Any],
-) -> str | None:
-    if not llm_config.get("enabled", False):
-        logging.warning("Model-only generation skipped: LLM disabled.")
-        return None
-    if not get_api_key(llm_config):
-        logging.warning("Model-only generation skipped: missing LLM API key secret.")
-        return None
-
-    model_candidates = select_items_for_model_daily(ranked_items, scoring_config, llm_config)
-    model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
-    model_candidates = enhance_items_with_llm(model_candidates, llm_config)
-    return generate_model_daily(model_candidates, total_count, scoring_config, llm_config)
-
-
-def _load_optional_config(path: Path) -> dict[str, Any]:
+def _load_required_config(path: Path) -> dict[str, Any]:
     if not path.exists():
-        return {"enabled": False}
+        raise RuntimeError(f"Required config file does not exist: {path}")
     return load_yaml(path)
-
-
-def _write_failure(path: Path, reason: str) -> None:
-    today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d %H:%M")
-    path.write_text(
-        "\n".join(
-            [
-                f"# AI 新闻模型日报生成失败｜{today}",
-                "",
-                reason,
-                "",
-                "基础规则版日报仍然可用：",
-                "",
-                "- `output/daily.md`",
-                "- `output/YYYY-MM-DD.md`",
-                "",
-            ]
-        ),
-        encoding="utf-8",
-    )
 
 
 def _remove_if_exists(path: Path) -> None:

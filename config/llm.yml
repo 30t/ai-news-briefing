@@ -6,7 +6,7 @@
   "api_key_env": "LLM_API_KEY",
   "fallback_api_key_env": "DEEPSEEK_API_KEY",
   "fallback_on_error": false,
-  "write_failure_file": true,
+  "write_failure_file": false,
   "timeout_seconds": 55,
   "max_retries": 1,
   "temperature": 0.15,
@@ -16,6 +16,13 @@
   "fetch_article_text": true,
   "article_fetch_timeout_seconds": 12,
   "article_text_limit": 5000,
+  "editorial_candidate_pool_size": 120,
+  "editorial_judge_max_items": 120,
+  "editorial_judge_temperature": 0.1,
+  "editorial_judge_max_output_tokens": 800,
+  "editorial_judge_timeout_seconds": 55,
+  "editorial_judge_max_retries": 1,
+  "editorial_judge_excerpt_limit": 1800,
   "model_daily_candidate_pool_size": 40,
   "model_daily_max_items": 18,
   "model_daily_max_release_items": 6,
@@ -26,6 +33,7 @@
   "cost_note": {
     "api_key_location": "Use GitHub Actions Secrets or local environment variables. Do not commit API keys.",
     "primary_secret": "LLM_API_KEY",
-    "fallback_secret": "DEEPSEEK_API_KEY"
+    "fallback_secret": "DEEPSEEK_API_KEY",
+    "required": "This project now requires an LLM API key. No rule-only fallback daily briefing is generated."
   }
 }

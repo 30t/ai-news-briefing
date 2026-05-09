@@ -12,7 +12,10 @@ from utils import normalize_space, strip_html
 
 
 SYSTEM_PROMPT = """你是一个严格的中文 AI 情报编辑。
-你的任务不是写新闻摘要，而是根据编辑政策判断一条候选信息是否值得进入当天日报。
+你的任务不是单纯写新闻摘要，而是根据编辑政策完成“一次逐条编辑评审”：
+1. 判断候选信息是否值得进入当天日报。
+2. 给出可排序的编辑评分。
+3. 如果值得保留，顺手生成后续日报可复用的中文标题、背景、摘要、重要性和建议动作。
 
 必须遵守：
 1. 只能基于输入信息和编辑政策判断，不得补充输入中没有的事实。
@@ -66,6 +69,7 @@ def _judge_one_item(
             editorial = _validate_result(result)
             updated = dict(item)
             updated["editorial"] = editorial
+            updated["llm"] = _build_reusable_llm_fields(editorial)
             updated["editorial_score"] = _calculate_editorial_score(updated)
             updated["score"] = updated["editorial_score"]
             return updated
@@ -86,7 +90,7 @@ def _call_llm(
     payload = {
         "model": config.get("model", "deepseek-chat"),
         "temperature": float(config.get("editorial_judge_temperature", 0.1)),
-        "max_tokens": int(config.get("editorial_judge_max_output_tokens", 800)),
+        "max_tokens": int(config.get("editorial_judge_max_output_tokens", 1000)),
         "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -156,11 +160,18 @@ def _build_prompt(item: dict[str, Any], editorial_policy: dict[str, Any], excerp
         "content_type": "major_release / minor_release / research / benchmark / community_discussion / funding_rumor / business_signal / tutorial / marketing / event / other",
         "risk_level": "official_confirmed / community_discussed / early_signal / needs_verification",
         "decision": "include / maybe / exclude",
-        "reason_zh": "用 1-2 句中文说明为什么值得或不值得进入日报。"
+        "reason_zh": "用 1-2 句中文说明为什么值得或不值得进入日报。",
+        "final_title_zh": "中文标题，保留必要英文名、项目名、模型名和版本号，点出新闻主体和关键变化。",
+        "background_zh": "1-2 句中文背景，说明对象是什么、属于什么领域、为什么读者需要知道。",
+        "core_summary_zh": "2-3 句中文核心摘要，说明原文具体发生了什么；信息不足要保守说明。",
+        "evidence_or_result_zh": "1 句中文说明原文是否给出量化结果、版本关系、测试条件或证据；没有就写原文未给出明确量化结果/版本关系。",
+        "why_it_matters_zh": "1 句中文说明为什么值得关注；信息不足则保守说明。",
+        "reader_action_zh": "1 句中文说明应该试用、归档、跟踪、深入研究或暂时忽略。"
     }
     return (
         "请根据编辑政策评审下面这条候选信息是否值得进入今天的 AI 情报日报。\n"
         "注意：关键词只代表召回，不代表价值；请重点判断新闻价值、个人相关性、可行动性和可信风险。\n"
+        "同时生成后续日报可复用的单条解释字段，避免后续再次逐条调用模型。\n"
         f"编辑政策：{json.dumps(editorial_policy, ensure_ascii=False)}\n"
         f"目标 JSON 字段：{json.dumps(schema, ensure_ascii=False)}\n"
         f"候选信息：{json.dumps(payload, ensure_ascii=False)}"
@@ -186,10 +197,35 @@ def _validate_result(result: dict[str, Any]) -> dict[str, Any]:
         "personal_relevance_score": score("personal_relevance_score"),
         "actionability_score": score("actionability_score"),
         "confidence_score": score("confidence_score"),
-        "content_type": normalize_space(str(result.get("content_type") or "other"))[:80],
+        "content_type": _clean_text(result.get("content_type") or "other", 80),
         "risk_level": risk_level,
         "decision": decision,
-        "reason_zh": normalize_space(str(result.get("reason_zh") or "模型未给出明确理由"))[:260],
+        "reason_zh": _clean_text(result.get("reason_zh") or "模型未给出明确理由", 260),
+        "final_title_zh": _clean_text(result.get("final_title_zh"), 120),
+        "background_zh": _clean_text(result.get("background_zh"), 520),
+        "core_summary_zh": _clean_text(result.get("core_summary_zh"), 760),
+        "evidence_or_result_zh": _clean_text(result.get("evidence_or_result_zh"), 360),
+        "why_it_matters_zh": _clean_text(result.get("why_it_matters_zh"), 360),
+        "reader_action_zh": _clean_text(result.get("reader_action_zh"), 260),
+    }
+
+
+def _clean_text(value: Any, limit: int) -> str:
+    text = normalize_space(str(value or ""))
+    text = text.strip("` \n\t")
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "..."
+
+
+def _build_reusable_llm_fields(editorial: dict[str, Any]) -> dict[str, str]:
+    return {
+        "final_title_zh": editorial.get("final_title_zh") or "",
+        "background_zh": editorial.get("background_zh") or "",
+        "core_summary_zh": editorial.get("core_summary_zh") or "",
+        "evidence_or_result_zh": editorial.get("evidence_or_result_zh") or "",
+        "why_it_matters_zh": editorial.get("why_it_matters_zh") or "",
+        "reader_action_zh": editorial.get("reader_action_zh") or "",
     }
 
 

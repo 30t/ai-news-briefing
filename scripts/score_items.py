@@ -51,14 +51,15 @@ def _match_keywords(item: dict[str, Any], keywords_config: dict[str, Any]) -> tu
     return sorted(set(matched), key=str.lower), sorted(set(tags))
 
 
-def _keyword_bonus(item: dict[str, Any], scoring_config: dict[str, Any]) -> int:
+def _keyword_relevance(item: dict[str, Any], scoring_config: dict[str, Any]) -> int:
+    """Estimate recall relevance only. This is not treated as editorial value."""
     text = _item_text(item, include_source_type=True)
     score = 0
     for rule in scoring_config.get("keyword_scores", {}).values():
         rule_score = int(rule.get("score", 0))
         for keyword in rule.get("keywords", []):
             if _contains_keyword(text, str(keyword)):
-                score += rule_score
+                score += min(rule_score, 12)
                 break
     return score
 
@@ -82,10 +83,16 @@ def score_items(
     scored: list[dict[str, Any]] = []
     for item in items:
         matched, tags = _match_keywords(item, keywords_config)
-        base = int(scoring_config.get("source_level_scores", {}).get(item.get("source_level"), 0))
+        source_trust = int(scoring_config.get("source_level_scores", {}).get(item.get("source_level"), 0))
+        keyword_relevance = _keyword_relevance(item, scoring_config)
+        penalty = _penalty(item, scoring_config)
         item["matched_keywords"] = matched
         item["tags"] = tags
-        item["score"] = base + _keyword_bonus(item, scoring_config) + _penalty(item, scoring_config)
+        item["source_trust_score"] = source_trust
+        item["keyword_relevance_score"] = keyword_relevance
+        item["rule_penalty"] = penalty
+        item["rule_relevance_score"] = source_trust + keyword_relevance + penalty
+        item["score"] = item["rule_relevance_score"]
         scored.append(item)
     return scored
 
@@ -104,13 +111,17 @@ def _title_similarity(left: str, right: str) -> float:
     return SequenceMatcher(None, left.lower().strip(), right.lower().strip()).ratio()
 
 
+def _item_score(item: dict[str, Any]) -> int:
+    return int(item.get("editorial_score", item.get("score", 0)))
+
+
 def _is_better(candidate: dict[str, Any], current: dict[str, Any]) -> bool:
     candidate_level = LEVEL_PRIORITY.get(candidate.get("source_level"), 0)
     current_level = LEVEL_PRIORITY.get(current.get("source_level"), 0)
     if candidate_level != current_level:
         return candidate_level > current_level
-    if int(candidate.get("score", 0)) != int(current.get("score", 0)):
-        return int(candidate.get("score", 0)) > int(current.get("score", 0))
+    if _item_score(candidate) != _item_score(current):
+        return _item_score(candidate) > _item_score(current)
     candidate_time = parse_datetime(candidate.get("published_at"))
     current_time = parse_datetime(current.get("published_at"))
     if candidate_time and current_time:
@@ -132,12 +143,14 @@ def dedupe_items(items: list[dict[str, Any]], scoring_config: dict[str, Any]) ->
             continue
         lower_score_item = existing if _is_better(item, existing) else item
         lower_score_item["score"] = int(lower_score_item.get("score", 0)) + duplicate_penalty
+        if "editorial_score" in lower_score_item:
+            lower_score_item["editorial_score"] = int(lower_score_item.get("editorial_score", 0)) + duplicate_penalty
         if _is_better(item, existing):
             by_url[url] = item
 
     threshold = float(scoring_config.get("title_similarity_threshold", 0.86))
     deduped: list[dict[str, Any]] = []
-    for item in sorted(by_url.values(), key=lambda entry: int(entry.get("score", 0)), reverse=True):
+    for item in sorted(by_url.values(), key=_item_score, reverse=True):
         duplicate_index = None
         for index, kept in enumerate(deduped):
             if _title_similarity(item.get("title", ""), kept.get("title", "")) >= threshold:
@@ -157,7 +170,7 @@ def rank_items(items: list[dict[str, Any]], max_items: int) -> list[dict[str, An
     return sorted(
         items,
         key=lambda item: (
-            int(item.get("score", 0)),
+            _item_score(item),
             LEVEL_PRIORITY.get(item.get("source_level"), 0),
             parse_datetime(item.get("published_at")) or utc_now(),
         ),

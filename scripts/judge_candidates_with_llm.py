@@ -12,16 +12,16 @@ from utils import normalize_space, strip_html
 
 
 SYSTEM_PROMPT = """你是一个严格的中文 AI 情报编辑。
-你的任务不是写新闻摘要，而是判断一条候选信息是否值得进入当天日报。
+你的任务不是写新闻摘要，而是根据编辑政策判断一条候选信息是否值得进入当天日报。
 
 必须遵守：
-1. 只能基于输入信息判断，不得补充输入中没有的事实。
+1. 只能基于输入信息和编辑政策判断，不得补充输入中没有的事实。
 2. 关键词命中只代表相关，不代表重要。
-3. 官方来源通常可信度更高，但小版本、纯营销、活动信息仍可能不重要。
-4. 社区、Reddit、Hacker News 可以有早期价值，但必须降低事实确认权重。
-5. arXiv / benchmark / 论文属于早期信号，不等于产品落地。
-6. 评分要保守。普通版本更新、低密度博客、纯活动、纯招聘、纯融资传言不要给高分。
-7. 优先选择对 AI / Agent / 编程工具 / AI 应用平台 / RAG / 开源基础设施 / 算力半导体 / RISC-V / 端侧智能 有真实信息增量的内容。
+3. 来源等级只是可信度底座，不代表自动重要。
+4. 官方来源通常可信度更高，但小版本、纯营销、活动信息仍可能不重要。
+5. 社区、Reddit、Hacker News 可以有早期价值，但必须降低事实确认权重。
+6. arXiv / benchmark / 论文属于早期信号，不等于产品落地。
+7. 评分要保守。普通版本更新、低密度博客、纯活动、纯招聘、纯融资传言不要给高分。
 8. 输出必须是严格 JSON，不要 Markdown，不要代码块。
 """
 
@@ -37,22 +37,32 @@ def require_llm_api_key(config: dict[str, Any]) -> str:
     return api_key
 
 
-def judge_candidates_with_llm(items: list[dict[str, Any]], config: dict[str, Any]) -> list[dict[str, Any]]:
+def judge_candidates_with_llm(
+    items: list[dict[str, Any]],
+    config: dict[str, Any],
+    editorial_policy: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
     api_key = require_llm_api_key(config)
     max_items = int(config.get("editorial_judge_max_items", config.get("editorial_candidate_pool_size", 120)))
     judged: list[dict[str, Any]] = []
     for index, item in enumerate(items[:max_items]):
-        judged.append(_judge_one_item(index + 1, item, config, api_key))
+        judged.append(_judge_one_item(index + 1, item, config, api_key, editorial_policy or {}))
     if len(items) > max_items:
         logging.info("Skipped %s items beyond editorial_judge_max_items=%s", len(items) - max_items, max_items)
     return judged
 
 
-def _judge_one_item(index: int, item: dict[str, Any], config: dict[str, Any], api_key: str) -> dict[str, Any]:
+def _judge_one_item(
+    index: int,
+    item: dict[str, Any],
+    config: dict[str, Any],
+    api_key: str,
+    editorial_policy: dict[str, Any],
+) -> dict[str, Any]:
     max_retries = int(config.get("editorial_judge_max_retries", config.get("max_retries", 1)))
     for attempt in range(max_retries + 1):
         try:
-            result = _call_llm(item, config, api_key)
+            result = _call_llm(item, config, api_key, editorial_policy)
             editorial = _validate_result(result)
             updated = dict(item)
             updated["editorial"] = editorial
@@ -66,7 +76,12 @@ def _judge_one_item(index: int, item: dict[str, Any], config: dict[str, Any], ap
     raise RuntimeError("Editorial judge failed unexpectedly")
 
 
-def _call_llm(item: dict[str, Any], config: dict[str, Any], api_key: str) -> dict[str, Any]:
+def _call_llm(
+    item: dict[str, Any],
+    config: dict[str, Any],
+    api_key: str,
+    editorial_policy: dict[str, Any],
+) -> dict[str, Any]:
     base_url = str(config.get("base_url") or "https://api.deepseek.com").rstrip("/")
     payload = {
         "model": config.get("model", "deepseek-chat"),
@@ -75,7 +90,14 @@ def _call_llm(item: dict[str, Any], config: dict[str, Any], api_key: str) -> dic
         "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": _build_prompt(item, int(config.get("editorial_judge_excerpt_limit", 1800)))},
+            {
+                "role": "user",
+                "content": _build_prompt(
+                    item,
+                    editorial_policy,
+                    int(config.get("editorial_judge_excerpt_limit", 1800)),
+                ),
+            },
         ],
     }
     request = urllib.request.Request(
@@ -104,7 +126,7 @@ def _call_llm(item: dict[str, Any], config: dict[str, Any], api_key: str) -> dic
         raise ValueError(f"invalid JSON response: {content[:300]}") from exc
 
 
-def _build_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
+def _build_prompt(item: dict[str, Any], editorial_policy: dict[str, Any], excerpt_limit: int) -> str:
     excerpt = strip_html(item.get("summary_or_excerpt") or "")
     excerpt = normalize_space(excerpt)
     if len(excerpt) > excerpt_limit:
@@ -119,7 +141,9 @@ def _build_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
         "matched_keywords": item.get("matched_keywords") or [],
         "tags": item.get("tags") or [],
         "rule_relevance_score": item.get("rule_relevance_score", item.get("score", 0)),
+        "keyword_relevance_score": item.get("keyword_relevance_score", 0),
         "source_trust_score": item.get("source_trust_score", 0),
+        "rule_penalty": item.get("rule_penalty", 0),
         "hn_score": item.get("hn_score"),
         "release_version": item.get("release_version"),
         "summary_or_excerpt": excerpt,
@@ -135,8 +159,9 @@ def _build_prompt(item: dict[str, Any], excerpt_limit: int) -> str:
         "reason_zh": "用 1-2 句中文说明为什么值得或不值得进入日报。"
     }
     return (
-        "请评审下面这条候选信息是否值得进入今天的 AI 情报日报。\n"
+        "请根据编辑政策评审下面这条候选信息是否值得进入今天的 AI 情报日报。\n"
         "注意：关键词只代表召回，不代表价值；请重点判断新闻价值、个人相关性、可行动性和可信风险。\n"
+        f"编辑政策：{json.dumps(editorial_policy, ensure_ascii=False)}\n"
         f"目标 JSON 字段：{json.dumps(schema, ensure_ascii=False)}\n"
         f"候选信息：{json.dumps(payload, ensure_ascii=False)}"
     )

@@ -13,7 +13,6 @@ from generate_markdown import generate_markdown
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
 from judge_candidates_with_llm import judge_candidates_with_llm, require_llm_api_key
 from score_items import dedupe_items, filter_by_lookback, rank_items, score_items
-from summarize_with_llm import enhance_items_with_llm
 from utils import LOCAL_TIMEZONE, ROOT, load_yaml, setup_logging
 
 
@@ -104,7 +103,6 @@ def _generate_model_daily_required(
     )
     model_candidates = select_items_for_model_daily(merged_candidates, scoring_config, llm_config)
     model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
-    model_candidates = enhance_items_with_llm(model_candidates, llm_config)
     model_markdown = generate_model_daily(model_candidates, total_count, scoring_config, llm_config)
     if not model_markdown:
         raise RuntimeError("Model daily generation failed. No rule-only fallback is allowed.")

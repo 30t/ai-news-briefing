@@ -1,4 +1,4 @@
-name: Refresh Model AI News Briefing
+name: Refresh Model AI Intelligence Briefing
 
 on:
   workflow_dispatch:
@@ -26,17 +26,20 @@ jobs:
           python -m pip install --upgrade pip
           if [ -s requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Generate model briefing from existing daily.md
-        run: python scripts/generate_model_from_daily.py
+      - name: Refresh model daily from existing editorial candidate pool
+        run: |
+          echo "Stage 2 only: reuse existing output/daily.md"
+          echo "Skip source collection and rule-based candidate recall"
+          python scripts/generate_model_from_daily.py
 
-      - name: Commit model output
+      - name: Commit refreshed model output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/model-daily.md output/model-daily-failed.md || true
+          git add output/model-daily.md
           if git diff --cached --quiet; then
             echo "No model output changes to commit."
           else
-            git commit -m "Refresh model AI news briefing"
+            git commit -m "Refresh model AI intelligence briefing"
             git push
           fi

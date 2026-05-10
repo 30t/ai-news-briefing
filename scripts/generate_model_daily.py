@@ -136,14 +136,17 @@ def select_items_for_model_daily(
     pool_size = int(llm_config.get("model_daily_candidate_pool_size", scoring_config.get("max_items_per_day", 40)))
     max_items = int(llm_config.get("model_daily_max_items", 18))
     max_release_items = int(llm_config.get("model_daily_max_release_items", 6))
+    max_early_signal_items = int(llm_config.get("model_daily_max_early_signal_items", 2))
+    min_early_signal_score = int(llm_config.get("model_daily_min_early_signal_score", 68))
     pool = [item for item in items[:pool_size] if _is_meaningful_for_model_daily(item)]
 
     selected: list[dict[str, Any]] = []
     seen: set[str] = set()
     selected_release_count = 0
+    selected_early_signal_count = 0
 
     def add(candidates: list[dict[str, Any]], limit: int) -> None:
-        nonlocal selected_release_count
+        nonlocal selected_release_count, selected_early_signal_count
 
         added = 0
         for item in candidates:
@@ -154,12 +157,19 @@ def select_items_for_model_daily(
                 continue
             if _is_release_update(item) and selected_release_count >= max_release_items:
                 continue
+            if item.get("source_level") == "early_signal":
+                if selected_early_signal_count >= max_early_signal_items:
+                    continue
+                if _item_score(item) < min_early_signal_score:
+                    continue
 
             selected.append(item)
             seen.add(key)
             added += 1
             if _is_release_update(item):
                 selected_release_count += 1
+            if item.get("source_level") == "early_signal":
+                selected_early_signal_count += 1
 
     add([item for item in pool if _has_any_tag(item, {"business"})], 5)
     add([item for item in pool if _has_any_tag(item, {"agent", "coding_tool"})], 5)
@@ -379,6 +389,10 @@ def _content_handling(item: dict[str, Any]) -> str:
 
 def _is_release_update(item: dict[str, Any]) -> bool:
     return item.get("source_type") == "github_release"
+
+
+def _item_score(item: dict[str, Any]) -> int:
+    return int(item.get("editorial_score", item.get("score", 0)))
 
 
 def _display_title(item: dict[str, Any]) -> str:

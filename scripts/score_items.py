@@ -59,7 +59,7 @@ def _keyword_relevance(item: dict[str, Any], scoring_config: dict[str, Any]) -> 
         rule_score = int(rule.get("score", 0))
         for keyword in rule.get("keywords", []):
             if _contains_keyword(text, str(keyword)):
-                score += min(rule_score, 12)
+                score = max(score, rule_score)
                 break
     return score
 

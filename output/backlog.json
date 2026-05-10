@@ -1,145 +1,5 @@
 [
   {
-    "title": "Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training",
-    "url": "https://arxiv.org/abs/2605.02241",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.02241v3 Announce Type: replace Abstract: How reliably can a small language model estimate its own correctness? The answer determines whether local-to-cloud routing-escalating queries a cheap local model cannot handle-can work without supervised training data. As inference costs dominate large language model (LLM) deployment budgets, routing most queries to a cheap local model while reserving expensive cloud calls for hard cases is an increasingly common cost-control strategy. We compare zero-shot confidence signals against RouteLLM-style supervised baselines across three 7-8B model families and two datasets (1,000 and 500 queries per model, respectively). Average token log-probability, which requires no training data, matches or exceeds supervised baselines in-distribution (Area Under the Receiver Operating Characteristic curve (AUROC) 0.650-0.714 vs. 0.644-0.676) and substantially outperforms them out-of-distribution (0.717-0.833 vs. 0.512-0.564), because it measures a property of the model's generation rather than the query distribution. This paper further proposes retrieval-conditional self-assessment, a pre-generation signal that selectively injects retrieved knowle...",
-    "matched_keywords": [
-      "inference",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 79,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enabling Federated Inference via Unsupervised Consensus Embedding",
-    "url": "https://arxiv.org/abs/2605.05718",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05718v1 Announce Type: new Abstract: Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits their applicability in privacy-sensitive or cross-organizational settings. To address this challenge, we propose Consensus Embedding-based Federated Inference (CE-FI), a framework that enables pretrained models to cooperate at inference time without sharing model parameters or raw inputs and without assuming a common encoder. CE-FI introduces two components: a Consensus Embedding (CE) layer that maps heterogeneous intermediate representations into a common embedding space, and a Cooperative Output (CO) layer that produces predictions from these embeddings. Both layers are trained using shared unlabeled data only, so the cooperative stage does not require additional labeled data. Experiments on image classification benchmarks -- CIFAR-10 and CIFAR-100 -- under diverse n...",
-    "matched_keywords": [
-      "embeddings",
-      "inference",
-      "privacy"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 79,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs",
-    "url": "https://arxiv.org/abs/2605.05459",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05459v1 Announce Type: cross Abstract: This work introduces PAS -- Privacy Anchor Substitution, a structured mechanism for enabling user location privacy in spatial retrieval-augmented generation (RAG) systems. Unlike conventional differential privacy methods that directly perturb user locations, PAS represents location with relative anchor encoding consisting of an anchor, direction bin, and distance bin, allowing seamless integration with modern RAG pipelines. We evaluate PAS on a synthetic urban dataset and show that it achieves impressive coarse privacy guarantees, with approximately 370-400m adversarial location error, while retaining more than half of the baseline retrieval performance. Despite the slight drop in retrieval performance, the downstream generation quality under PAS remains comparatively robust, indicating that large language models can compensate for imperfect spatial retrieval. Furthermore, we provide empirical analysis showing that PAS exhibits non-monotonic privacy-utility relationship with respect to privacy parameters. We attribute this to geometric bias induced by anchor discretization, making it different from continuous noise mechanisms such...",
-    "matched_keywords": [
-      "dataset",
-      "privacy",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 79,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems",
-    "url": "https://arxiv.org/abs/2605.05628",
-    "source_name": "arXiv cs.AR",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05628v1 Announce Type: new Abstract: Tensor parallelism (TP) in large-scale LLM inference and training introduces frequent collective operations that dominate inter-GPU communication. While in-switch computing, exemplified by NVLink SHARP (NVLS), accelerates collective operations by reducing redundant data transfer, its communication-centric design philosophy introduces the mismatch between its communication mode and the memory semantic requirement of LLM's computation kernel. Such a mismatch isolates the compute and communication phases, resulting in underutilized resources and limited overlap in multi-GPU systems. To address the limitation, we propose CAIS, the first Compute-Aware In-Switch computing framework that aligns communication modes with computation's memory semantics requirement. CAIS consists of three integral techniques: (1) compute-aware ISA and microarchitecture extension to enable compute-aware in-switch computing. (2) merging-aware TB (Thread Block) coordination to improve the temporal alignment for efficient request merging. (3) graph-level dataflow optimizer to achieve a tight cross-kernel overlap. Evaluations on LLM workloads show that CAIS achieves...",
-    "matched_keywords": [
-      "GPU",
-      "inference",
-      "ISA"
-    ],
-    "tags": [
-      "open_source",
-      "riscv_stack",
-      "semiconductor"
-    ],
-    "score": 79,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Constraint Decay: The Fragility of LLM Agents in Backend Code Generation",
-    "url": "https://arxiv.org/abs/2605.06445",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.06445v1 Announce Type: cross Abstract: Large Language Model (LLM) agents demonstrate strong performance in autonomous code generation under loose specifications. However, production-grade software requires strict adherence to structural constraints, such as architectural patterns, databases, and object-relational mappings. Existing benchmarks often overlook these non-functional requirements, rewarding functionally correct but structurally arbitrary solutions. We present a systematic study evaluating how well agents handle structural constraints in multi-file backend generation. By fixing a unified API contract across 80 greenfield generation tasks and 20 feature-implementation tasks spanning eight web frameworks, we isolate the effect of structural complexity using a dual evaluation with end-to-end behavioral tests and static verifiers. Our findings reveal a phenomenon of constraint decay: as structural requirements accumulate, agent performance exhibits a substantial decline. Capable configurations lose 30 points on average in assertion pass rates from baseline to fully specified tasks, while some weaker configurations approach zero. Framework sensitivity analysis expo...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "API"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 76,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AGMARL-DKS: An Adaptive Graph-Enhanced Multi-Agent Reinforcement Learning for Dynamic Kubernetes Scheduling",
-    "url": "https://arxiv.org/abs/2603.12031",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.12031v2 Announce Type: replace-cross Abstract: State-of-the-art cloud-native applications require intelligent schedulers that can effectively balance system stability, resource utilisation, and associated costs. While Kubernetes provides feasibility-based placement by default, recent research efforts have explored the use of reinforcement learning (RL) for more intelligent scheduling decisions. However, current RL-based schedulers have three major limitations. First, most of these schedulers use monolithic centralised agents, which are non-scalable for large heterogeneous clusters. Second, the ones that use multi-objective reward functions assume simple, static, linear combinations of the objectives. Third, no previous work has produced a stress-aware scheduler that can react adaptively to dynamic conditions. To address these gaps in current research, we propose the Adaptive Graph-enhanced Multi-Agent Reinforcement Learning Dynamic Kubernetes Scheduler (AGMARL-DKS). AGMARL-DKS addresses these gaps by introducing three major innovations. First, we construct a scalable solution by treating the scheduling challenge as a cooperative multi-agent problem, where every cluster...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 76,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "Less Is More: Engineering Challenges of On-Device Small Language Model Integration in a Mobile Application",
     "url": "https://arxiv.org/abs/2604.24636",
     "source_name": "arXiv cs.CL",
@@ -151,109 +11,8 @@
     "tags": [],
     "score": 76,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LangChain langchain==1.2.18：Changes since langchain==1.2.17",
-    "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.2.18",
-    "source_name": "LangChain",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-08T13:59:43+00:00",
-    "summary_or_excerpt": "Changes since langchain==1.2.17 release(langchain): 1.2.18 (#37250) revert: feat(langchain): ls_agent_type tag on create_agent calls (#37249) chore(langchain-classic): deprecate hub, limit loads/dumps (#37234) refactor(langchain-classic): retarget deprecations to `create_agent`, other chores (#37164) chore(langchain,langchain-classic): uncomment optional deps (#37163) release(fireworks): 1.2.1 (#37113)",
-    "matched_keywords": [
-      "Agent",
-      "LangChain",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 75,
-    "release_version": "langchain==1.2.18",
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding",
-    "url": "https://arxiv.org/abs/2605.05716",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05716v1 Announce Type: new Abstract: LLM agent systems are built by stacking scaffolding components (planning, tools, memory, self-reflection, retrieval) assuming more is better. We study cross-component interference (CCI): degradation when components interact destructively. We run a full factorial experiment over all 2^5=32 subsets of five components on HotpotQA and GSM8K with Llama-3.1-8B/70B (96 conditions, up to 10 seeds). The All-In system is consistently suboptimal: on HotpotQA, a single-tool agent surpasses All-In by 32% (F1 0.233 vs 0.177, p=0.023); on GSM8K, a 3-component subset beats All-In by 79% (0.43 vs 0.24, p=0.010). Optimal component count is task-dependent (k*=1-4) and scale-sensitive: at 70B, combinations that hurt at 8B provide gains, though All-In still trails the best subset. We fit a main-effects regression (R^2=0.916, adj-R^2=0.899, LOOCV=0.872), compute exact Shapley values, and find 183/325 submodularity violations (56.3%), showing greedy selection is unreliable. A three-body synergy among Tool Use, Self-Reflection, and Retrieval (INT_3=+0.175, 95% CI [+0.003,+0.351]) is reported as exploratory. CCI replicates across model families (Qwen2.5) and...",
-    "matched_keywords": [
-      "Agent",
-      "Llama",
-      "retrieval",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "rag_data"
-    ],
-    "score": 74,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System",
-    "url": "https://arxiv.org/abs/2605.05949",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.05949v1 Announce Type: new Abstract: Algorithmic problem solving serves as a rigorous testbed for evaluating structured reasoning in AI coding systems, as it directly reflects a model's ability to perform structured reasoning in complex scenarios.Existing approaches predominantly rely on model-centric strategies, such as architectural modifications and data scaling, which are costly and offer limited interpretability. Alternative methods leveraging external tools or prompting techniques (e.g., chain-of-thought) are often fragmented and lack a unified framework. In this paper, we propose MAS-Algorithm, a systematic multi-agent workflow for algorithmic problem solving inspired by the practices of competitive programmers and algorithm engineers. Our framework decomposes the end-to-end solving process into modular stages, enabling structured reasoning, tool integration, and flexible coordination among agents. The design emphasizes both rigor and extensibility, allowing it to generalize across diverse problem types.Experimental results on a self-constructed benchmark demonstrate consistent improvements across multiple Qwen series models, achieving an average gain of 6.48% in...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "multi-agent",
-      "Qwen",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "model",
-      "open_source"
-    ],
-    "score": 74,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.14.5a4：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a4",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-08T19:14:39+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Update LLM listings ### Bug Fixes - Fix dependency issue by moving `textual` to `crewai-cli` and adding `certifi` ### Documentation - Update changelog and version for v1.14.5a3 ## Contributors @cgoeppinger, @greysonlalonde",
-    "matched_keywords": [
-      "changelog",
-      "CrewAI"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 74,
-    "release_version": "1.14.5a4",
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -272,135 +31,7 @@
     ],
     "score": 74,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Are local models becoming “good enough” faster than expected?",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6p0zk/are_local_models_becoming_good_enough_faster_than",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-07T22:04:25+00:00",
-    "summary_or_excerpt": "One thing we’ve been noticing lately is that a surprisingly large percentage of day-to-day AI workflows no longer seem to require frontier-scale cloud models 24/7. For a lot of practical tasks: code explanation structured edits summarization retrieval-heavy workflows boilerplate generation lightweight agents …smaller/local models are getting close enough that the economics start looking very different. The interesting part isn’t necessarily “local beats cloud.” It’s that more people seem to be moving toward workload-aware setups: local models for fast/repetitive tasks cloud reasoning only when needed dynamic routing between models optimizing for latency + cost, not just benchmark scores Feels like the conversation is shifting from: “Which single model is best?” to: “What’s the smartest architecture for the workload?” Curious how others here are thinking about this. Are local models already good enough for most of your daily workflows, or are frontier cloud models still doing the heavy lifting? submitted by /u/qubridInc [link] [comments]",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 74,
-    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.14.5a3：Bug Fixes",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-06T17:58:37+00:00",
-    "summary_or_excerpt": "## What's Changed ### Bug Fixes - Fix status endpoint path from /{kickoff_id}/status to /status/{kickoff_id} - Bump gitpython dependency to version >=3.1.47 for security compliance ### Refactoring - Extract CLI into standalone crewai-cli package ### Documentation - Update changelog and version for v1.14.5a2 ## Contributors @greysonlalonde, @iris-clawd",
-    "matched_keywords": [
-      "changelog",
-      "CrewAI"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 74,
-    "release_version": "1.14.5a3",
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use",
-    "url": "https://arxiv.org/abs/2605.02964",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.02964v1 Announce Type: cross Abstract: Reinforcement learning (RL) trained language model agents with tool access are increasingly deployed in coding assistants, research tools, and autonomous systems. We introduce the Reward Hacking Benchmark (RHB), a suite of multi-step tasks requiring sequential tool operations with naturalistic shortcut opportunities such as skipping verification steps, inferring answers from task-adjacent metadata, or tampering with evaluation-relevant functions. RHB supports independent and chained task regimes, where chain length acts as a proxy for longer-horizon agent behavior. We evaluate 13 frontier models from OpenAI, Anthropic, Google, and DeepSeek. Exploit rates range from 0% (Claude Sonnet 4.5) to 13.9% (DeepSeek-R1-Zero), varying sharply by post-training style. A controlled sibling comparison (DeepSeek-V3 vs. DeepSeek-R1-Zero) shows RL post-training is associated with substantially higher reward hacking (0.6% vs. 13.9%), with consistent gaps across all four task families. We identify six exploit categories and find that 72% of reward hacking episodes include explicit chain-of-thought rationale, suggesting models often frame exploits as l...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "Anthropic",
-      "benchmark",
-      "Claude",
-      "DeepSeek",
-      "OpenAI",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 74,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios",
-    "url": "https://arxiv.org/abs/2605.03242",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.03242v1 Announce Type: new Abstract: Tool-using agent systems powered by large language models (LLMs) are increasingly deployed across web, app, operating-system, and transactional environments. Yet existing safety benchmarks still emphasize explicit risks, potentially overstating a model's ability to judge deceptive or ambiguous trajectories. To address this gap, we introduce ROME (Red-team Orchestrated Multi-agent Evolution), a controlled benchmark-construction pipeline that rewrites known unsafe trajectories into more deceptive evaluation instances while preserving their underlying risk labels. Starting from 100 unsafe source trajectories, ROME produces 300 challenge instances spanning contextual ambiguity, implicit risks, and shortcut decision-making. Experiments show that these challenge sets substantially degrade safety-judgment performance, with hidden-risk cases remaining particularly non-trivial even for recent frontier models. We further study ARISE (Analogical Reasoning for Inference-time Safety Enhancement), a retrieval-guided inference-time enhancement that retrieves ReAct-style analogical safety trajectories from an external analogical base and injects the...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "inference",
-      "multi-agent",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 73,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Safety and accuracy follow different scaling laws in clinical large language models",
-    "url": "https://arxiv.org/abs/2605.04039",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.04039v1 Announce Type: cross Abstract: Clinical LLMs are often scaled by increasing model size, context length, retrieval complexity, or inference-time compute, with the implicit expectation that higher accuracy implies safer behavior. This assumption is incomplete in medicine, where a few confident, high-risk, or evidence-contradicting errors can matter more than average benchmark performance. We introduce SaFE-Scale, a framework for measuring how clinical LLM safety changes across model scale, evidence quality, retrieval strategy, context exposure, and inference-time compute. To instantiate this framework, we introduce RadSaFE-200, a Radiology Safety-Focused Evaluation benchmark of 200 multiple-choice questions with clinician-defined clean evidence, conflict evidence, and option-level labels for high-risk error, unsafe answer, and evidence contradiction. We evaluated 34 locally deployed LLMs across six deployment conditions: closed-book prompting (zero-shot), clean evidence, conflict evidence, standard RAG, agentic RAG, and max-context prompting. Clean evidence produced the strongest improvement, increasing mean accuracy from 73.5% to 94.1%, while reducing high-risk e...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark",
-      "inference",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 73,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -426,7 +57,7 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -452,7 +83,7 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -480,89 +111,33 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Upcoming deprecation of GPT-4.1",
-    "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
-    "source_name": "GitHub Changelog",
+    "title": "DeepSeek V4 paper full version is out, FP4 QAT details and stability tricks [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1t7yrvr/deepseek_v4_paper_full_version_is_out_fp4_qat",
+    "source_name": "Reddit r/MachineLearning",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-08T00:22:08+00:00",
-    "summary_or_excerpt": "We will deprecate the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on 6/1/2026: Model Deprecation date Suggested alternative… The post Upcoming deprecation of GPT-4.1 appeared first on The GitHub Blog .",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T08:10:03+00:00",
+    "summary_or_excerpt": "DeepSeek dropped the full V4 paper this week. preview from april was 58 pages, this version adds a lot of technical depth. What stood out for me. FP4 quantization aware training. theyre running FP4 QAT directly in late stage training. MoE expert weights quantized to FP4 (the main gpu memory consumer). QK path in the CSA indexer uses FP4 activations. 2x speedup on QK selector with 99.7% recall preserved. inference runs directly on the FP4 weights. Efficiency table is striking: Model 1M context FLOPs KV cache V3.2 baseline baseline V4-Pro 27% of baseline 10% of baseline V4-Flash 10% of baseline 7% of baseline Training stability, two mechanisms. Trillion parameter MoE has the loss spike problem, divergence, unpredictable failures. they documented two fixes. Anticipatory routing. they deliberately desync main model and router updates. current step uses latest params for features, but routing uses cached older params. breaks the feedback loop that amplifies anomalies. 20% overhead but only kicks in during loss spikes. SwiGLU clamping. hard limits on the SwiGLU linear path (-10 to 10) and gate path (max 10). suppresses extreme values that would cascade. Generative reward model. instead...",
     "matched_keywords": [
-      "Agent",
-      "changelog",
-      "GitHub",
-      "GitHub Copilot",
-      "GPT"
+      "DeepSeek",
+      "GPU",
+      "inference",
+      "quantization",
+      "weights"
     ],
     "tags": [
-      "agent",
-      "business",
-      "coding_tool",
       "model",
-      "open_source"
+      "open_source",
+      "semiconductor"
     ],
-    "score": 71,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.83.14-stable.patch.3",
-    "source_name": "LiteLLM",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-07T23:42:51+00:00",
-    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.83.14-stable.patch.3 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.83.14-stable.patch.3/cosign.pub \\ ghcr.io/berriai/litellm:v1.83.14-stable.patch.3 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- *...",
-    "matched_keywords": [
-      "GitHub",
-      "LiteLLM",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "ai_app",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 71,
-    "release_version": "v1.83.14-stable.patch.3",
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Claude Sonnet 4 deprecated",
-    "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-07T22:30:23+00:00",
-    "summary_or_excerpt": "We have deprecated the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 6, 2026. Model Deprecation date… The post Claude Sonnet 4 deprecated appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "Claude",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 71,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "score": 72,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -591,8 +166,8 @@
     ],
     "score": 71,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -619,8 +194,8 @@
     ],
     "score": 71,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -644,7 +219,7 @@
     ],
     "score": 71,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -667,8 +242,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -692,8 +267,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -713,8 +288,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -737,8 +312,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -761,8 +336,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -786,8 +361,8 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -807,7 +382,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -831,7 +406,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -852,7 +427,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -877,8 +452,8 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -900,8 +475,8 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -930,7 +505,7 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -952,8 +527,748 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-09T08:20:16.695831+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Running Codex safely at OpenAI",
+    "url": "https://openai.com/index/running-codex-safely",
+    "source_name": "OpenAI News",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-08T12:30:00+00:00",
+    "summary_or_excerpt": "How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.",
+    "matched_keywords": [
+      "Agent",
+      "Codex",
+      "OpenAI"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "model: add sarvam_moe architecture support by sumitchatterjee13 · Pull Request #20275 · ggml-org/llama.cpp",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T18:46:11+00:00",
+    "summary_or_excerpt": "Sarvam-30B is an advanced Mixture-of-Experts (MoE) model with 2.4B non-embedding active parameters, designed primarily for practical deployment. It combines strong reasoning, reliable coding ability, and best-in-class conversational quality across Indian languages. Sarvam-30B is built to run reliably in resource-constrained environments and can handle multilingual voice calls while performing tool calls. Sarvam-105B is an advanced Mixture-of-Experts (MoE) model with 10.3B active parameters, designed for superior performance across a wide range of complex tasks. It is highly optimized for complex reasoning, with particular strength in agentic tasks, mathematics, and coding. Sarvam-105B is a top-tier performer, consistently matching or surpassing several major closed-source models and staying within a narrow margin of frontier models across diverse reasoning and agentic benchmarks. It demonstrates exceptional agentic and reasoning capabilities in real-world applications such as web search and technical troubleshooting. A major focus during training was the Indian context and languages, resulting in state-of-the-art performance across 22 Indian languages for its model size. submitted...",
+    "matched_keywords": [
+      "agentic",
+      "Llama",
+      "llama.cpp",
+      "pull request"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Hand-written OpenCL kernels for LLM inference on Adreno 6xx — running 6 small language models on a 2020 mid-range Android phone",
+    "url": "https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on",
+    "source_name": "Reddit r/embedded",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T12:37:15+00:00",
+    "summary_or_excerpt": "Mid-range Android GPUs (Adreno 6xx class — Snapdragon 6/7-series phones) sit in a weird hardware gap for ML inference: too old for vendor NPU SDKs, the open-source frameworks (llama.cpp, MLC, MNN) either don't support them or fall back to CPU. llama.cpp's own docs say \"A6x GPUs in phones are likely not supported due to the outdated driver and compiler.\" Decode tokens/sec on six small language models, fp16, greedy, 5-run warm median: SmolLM2-135M-Instruct 23.65 Mamba2-130M 23.18 Mamba-130M 22.15 OpenELM-270M 14.81 LFM2.5-350M 11.51 Qwen2.5-0.5B 10.41 Repo: https://github.com/a8nova/adreno-llms submitted by /u/Objective_Spot7997 [link] [comments]",
+    "matched_keywords": [
+      "GitHub",
+      "inference",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "80 tok/sec and 128K context on 12GB VRAM with Qwen3.6 35B A3B and llama.cpp MTP",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T11:57:52+00:00",
+    "summary_or_excerpt": "Just wanted to share my config in hopes of helping other 12GB GPU owners achieve what I see as very respectable token generation speeds with modest VRAM. Using the latest llama.cpp build + MTP PR, I got over 80 tok/sec with 80%+ draft acceptance rate on the benchmark found here: https://gist.githubusercontent.com/am17an/228edfb84ed082aa88e3865d6fa27090/raw/7a2cee40ee1e2ca5365f4cef93632193d7ad852a/mtp-bench.py Here's my PC specs: OS: CachyOS (HIGHLY recommended) CPU: AMD Ryzen 7 9700X RAM: 48GB DDR5-6000 EXPO I GPU: RTX 4070 Super 12GB Results with other hardware may vary. To run llama.cpp with MTP support, you need to build it from source and add a draft PR that hasn't yet been merged with the master branch. You can find a very nice guide on how to do that here and also download the Qwen3.6 MTP GGUF: https://huggingface.co/havenoammo/Qwen3.6-35B-A3B-MTP-GGUF - Thanks u/havenoammo ! llama.cpp command: llama-server \\ -m Qwen3.6-35B-A3B-MTP-UD-Q4_K_XL.gguf \\ -fitt 1536 \\ -c 131072 \\ -n 32768 \\ -fa on \\ -np 1 \\ -ctk q8_0 \\ -ctv q8_0 \\ -ctkd q8_0 \\ -ctvd q8_0 \\ -ctxcp 64 \\ --no-mmap \\ --mlock \\ --no-warmup \\ --spec-type mtp \\ --spec-draft-n-max 2 \\ --chat-template-kwargs '{\"preserve_th...",
+    "matched_keywords": [
+      "AMD",
+      "benchmark",
+      "GPU",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "BeeLlama.cpp: advanced DFlash & TurboQuant with support of reasoning and vision. Qwen 3.6 27B Q5 with 200k context on 3090, 2-3x faster than baseline (peak 135 tps!)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T16:05:05+00:00",
+    "summary_or_excerpt": "TL;DR New llama.cpp fork! I wanted a Windows-friendly inference to run Qwen 3.6 27B Q5 on a single RTX 3090 with speculative decoding, high context without excess quantization, and vision enabled. No option did this out of the box for me without VRAM and/or tooling issues (this was before MTP PR for llama.cpp surfaced there). So I pulled out an old trick: stay up to 4 a.m. one too many times to do month+ work in a week or two. I probably lost a decent amount of hair while trying to make this all work, but now I have what seems to be a proper solution and don't mind to share. Anbeeld's BeeLlama.cpp https://preview.redd.it/lqjgiw1bx40h1.jpg?width=1800&format=pjpg&auto=webp&s=3b68c16e78d36a1089a14f31b338aa78b8a1c073 GitHub repo: https://github.com/Anbeeld/beellama.cpp BeeLlama.cpp (or just Bee) is a performance-focused llama.cpp fork for squeezing more speed and context out of local GGUF inference. It keeps the familiar llama.cpp tools and server flow, then adds DFlash speculative decoding, adaptive draft control, TurboQuant/TCQ KV-cache compression, and reasoning-loop protection, with full multimodal support. Not quite a pegasus, but close enough. Here's a plug-and-play Qwen 3.6 27B...",
+    "matched_keywords": [
+      "GitHub",
+      "inference",
+      "Llama",
+      "llama.cpp",
+      "quantization",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Nvidia has already committed $40B to equity AI deals this year",
+    "url": "https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-09T14:43:30+00:00",
+    "summary_or_excerpt": "Nvidia continues to be a big investor in the AI ecosystem.",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Open WebUI v0.9.3：Added",
+    "url": "https://github.com/open-webui/open-webui/releases/tag/v0.9.3",
+    "source_name": "Open WebUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-09T07:17:19+00:00",
+    "summary_or_excerpt": "### Added - 🔇 **Voice Mode mute control.** Voice Mode now includes a dedicated mute toggle with an \"M\" shortcut and auto-unmute after assistant playback, so you can prevent accidental interruptions from background noise without leaving the call overlay. [Commit](https://github.com/open-webui/open-webui/commit/072d2000f35a9f7b96342fa9bb28f925a92e7b4c), [#23832](https://github.com/open-webui/open-webui/issues/23832) - 🚀 **Faster prompt list loading.** Prompt and prompt-tag pages now load much faster for non-admin users, even with large prompt libraries, because accessible prompts are filtered efficiently in a single database query. [#24288](https://github.com/open-webui/open-webui/pull/24288), [#24258](https://github.com/open-webui/open-webui/discussions/24258) - ⚡ **Faster chat history loading.** Chat history maps now load from normalized message records when available, reducing overhead for large conversations while preserving fallback behavior for legacy chats. [Commit](https://github.com/open-webui/open-webui/commit/485d689cfd1ef8b9e7f77cd7b535b8b8747dff1f), [#23159](https://github.com/open-webui/open-webui/pull/23159) - 🗑️ **Delete from conversation menu.** You can now delete t...",
+    "matched_keywords": [
+      "GitHub",
+      "Open WebUI"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 60,
+    "release_version": "v0.9.3",
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Qwen 35B-A3B is very usable with 12GB of VRAM",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7l56a/qwen_35ba3b_is_very_usable_with_12gb_of_vram",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-08T21:22:55+00:00",
+    "summary_or_excerpt": "Hardware: RTX 3060 12GB 32GB DDR4-3200 Windows CUDA 13.x Model: Qwen3.6-35B-A3B-MTP-IQ4_XS.gguf The model is a 35B MoE, so -ncmoe matters a lot. Lower -ncmoe means more MoE blocks stay on GPU. Main takeaway 12GB VRAM feels like a very practical size for this model. It lets you keep enough MoE blocks on GPU that plain decoding becomes quite strong, while still leaving room for useful context sizes like 16k/32k. For prompt processing / prefill, I trust the llama-bench numbers more than llama-cli ’s interactive Prompt: line, because llama-bench gives a cleaner pp512 measurement. Best plain llama-bench result: -ncmoe 18 -t 9 -ctk q8_0 -ctv q8_0 pp512: ~914 t/s tg128: ~46.8 t/s So raw prefill is very fast on this setup. Best practical coding profile For daily coding, I would use this: llama-cli.exe ^ -m \"Qwen3.6-35B-A3B-MTP-IQ4_XS.gguf\" ^ -p \"...\" ^ -n 512 ^ -c 32768 ^ --temp 0 --top-k 1 ^ -ngl 999 -ncmoe 20 ^ -fa on ^ -ctk q8_0 -ctv q8_0 ^ --no-mmap ^ --no-jinja ^ -t 9 ^ --perf Result: Context: 32k Prompt: ~88.9 t/s in llama-cli Generation: ~43.4 t/s VRAM free: ~273 MiB This is a nice balance: large enough context for coding, still fast, and not completely out of VRAM. Faster 16k prof...",
+    "matched_keywords": [
+      "CUDA",
+      "GPU",
+      "Llama",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 59,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "NVIDIA Releases CUDA-Oxide 0.1 For Experimental Rust-To-CUDA Compiler",
+    "url": "https://www.phoronix.com/news/NVIDIA-CUDA-Oxide-0.1",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-08T14:17:15+00:00",
+    "summary_or_excerpt": "A new NVIDIA Labs project is greatly improving the capabilities of using the Rust programming language for developing CUDA kernels for NVIDIA GPUs...",
+    "matched_keywords": [
+      "CUDA",
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 59,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Using Claude Code: The Unreasonable Effectiveness of HTML",
+    "url": "https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-08T21:00:11+00:00",
+    "summary_or_excerpt": "Using Claude Code: The Unreasonable Effectiveness of HTML Thought-provoking piece by Thariq Shihipar (on the Claude Code team at Anthropic) advocating for HTML over Markdown as an output format to request from Claude. The article is crammed with interesting examples (collected on this site ) and prompt suggestions like this one: Help me review this PR by creating an HTML artifact that describes it. I'm not very familiar with the streaming/backpressure logic so focus on that. Render the actual diff with inline margin annotations, color-code findings by severity and whatever else might be needed to convey the concept well. I've been defaulting to asking for most things in Markdown since the GPT-4 days, when the 8,192 token limit meant that Markdown's token-efficiency over HTML was extremely worthwhile. Thariq's piece here has caused me to reconsider that, especially for output. Asking Claude for an explanation in HTML means it can drop in SVG diagrams, interactive widgets, in-page navigation and all sorts of other neat ways of making the information more pleasant to navigate. I wrote about Useful patterns for building HTML tools last December, but that was focused very much on inter...",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Claude Code",
+      "GPT"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9093：model : add sarvam_moe architecture support (#20275)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9093",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-09T21:02:12+00:00",
+    "summary_or_excerpt": "model : add sarvam_moe architecture support (#20275) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9093/llama-b9093-bin-ubuntu-vul...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 57,
+    "release_version": "b9093",
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Cloudflare says AI made 1,100 jobs obsolete, even as revenue hit a record high",
+    "url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-08T18:33:21+00:00",
+    "summary_or_excerpt": "Cloudflare announced its first large-scale layoff. CEO Matthew Prince says because of AI efficiency gains, the company doesn't need as many support roles.",
+    "matched_keywords": [
+      "revenue"
+    ],
+    "tags": [
+      "business"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Teaching Claude Why",
+    "url": "https://www.anthropic.com/research/teaching-claude-why",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-05-08T17:59:41+00:00",
+    "summary_or_excerpt": "HN points: 246. Comments: https://news.ycombinator.com/item?id=48066592",
+    "matched_keywords": [
+      "Claude"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 50,
+    "hn_score": 246,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "vLLM ROCm has been added to Lemonade as an experimental backend",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7g70j/vllm_rocm_has_been_added_to_lemonade_as_an",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-08T18:21:15+00:00",
+    "summary_or_excerpt": "vLLM has the ability to run .safetensors LLMs before they are converted to GGUF and represents a new engine to explore. I personally had never tried it out until u/krishna2910-amd/ u/mikkoph and u/sa1sr1 made it as easy as running llama.cpp in Lemonade: lemonade backends install vllm:rocm lemonade run Qwen3.5-0.8B-vLLM This is an experimental backend for us in the sense that the essentials are implemented, but there are known rough edges. We want the community's feedback to see where and how far we should take this. If you find it interesting, please let us know your thoughts! Quick start guide: https://lemonade-server.ai/news/vllm-rocm.html GitHub: https://github.com/lemonade-sdk/lemonade Discord: https://discord.gg/5xXzkMu8Zk submitted by /u/jfowers_amd [link] [comments]",
+    "matched_keywords": [
+      "AMD",
+      "GitHub",
+      "Llama",
+      "llama.cpp",
+      "vLLM"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 47,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9088：[SYCL] Add BF16 support to GET_ROWS operation (#21391)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9088",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-09T10:42:53+00:00",
+    "summary_or_excerpt": "[SYCL] Add BF16 support to GET_ROWS operation (#21391) Add GGML_TYPE_BF16 to the SYCL backend's GET_ROWS operation, both in supports_op and in the kernel dispatch. This fixes a performance regression where models using BF16 embedding tensors (e.g., Gemma4's per_layer_token_embd.weight) fall back to CPU for the GET_ROWS op, causing a full GPU-to-CPU tensor transfer every token. The fix reuses the existing get_rows_sycl_float template with sycl::ext::oneapi::bfloat16, matching the pattern already used for sycl::half (F16) and float (F32). **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9088/llama-b9088-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9088/llama-b9088-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9088/llama-b9088-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9088/llama-b9088-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9088/llama-b9088-bin-ubuntu-x64.tar....",
+    "matched_keywords": [
+      "GitHub",
+      "GPU",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 46,
+    "release_version": "b9088",
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EMO: Pretraining mixture of experts for emergent modularity",
+    "url": "https://huggingface.co/blog/allenai/emo",
+    "source_name": "Hugging Face Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-08T16:03:50+00:00",
+    "summary_or_excerpt": "",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 46,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "More flexible secrets and variables for Copilot cloud agent",
+    "url": "https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-08T12:52:23+00:00",
+    "summary_or_excerpt": "When you delegate a task to Copilot cloud agent, it works in the background in its own development environment powered by GitHub Actions. You can pass secrets and variables to… The post More flexible secrets and variables for Copilot cloud agent appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "Agent",
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Running Minimax 2.7 at 100k context on strix halo",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t8k6fg/running_minimax_27_at_100k_context_on_strix_halo",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T20:21:11+00:00",
+    "summary_or_excerpt": "Just wanted to share because it took me a lot of tweaking to get here: llama-server -hf unsloth/MiniMax-M2.7-GGUF:UD-IQ3_XXS --temp 1.0 --top-k 40 --top-p 0.95 --host 0.0.0.0 --port 8080 -c 100000 -fa on -ngl 999 --no-context-shift -fit off --no-mmap -np 2 --kv-unified --cache-ram 0 -b 1024 -ub 1024 --cache-reuse 256 Reasoning behind the various options --no-context-shift I want to know when I run out of context instead of silently corrupting stuff --no-mmap Recommended by Donato -np 2 Retain context for up to two concurrent sessions --kv-unified Make the two session share the same cache to save vram --cache-ram 0 Do not swap cache to ram, stays in vram instead. This solved a lot of OOMs for me. -b 1024 -ub 1024 Improve prefill performance. --cache-reuse 256 Attempt to reuse cache \"smartly\". This sometimes helps avoid having to reprocess cache but also sometimes hurts, so use at your own discretion. Additional setup Headless Fedora Linux according to Donato's setup guides (but sans-toolbox). I also recommend increasing your swap size and setting OOMScoreAdjust=500 in your systemd service file, otherwise, you risk the oom killer killing important things if you do run out of ram. In...",
+    "matched_keywords": [
+      "Llama",
+      "MiniMax"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Copilot code review comment types now in usage metrics API",
+    "url": "https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-08T18:57:13+00:00",
+    "summary_or_excerpt": "To help you understand the activity generated by Copilot code review users, the Copilot usage metrics API now breaks down Copilot code review suggestions by comment type. A new copilot_suggestions_by_comment_type… The post Copilot code review comment types now in usage metrics API appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "API",
+      "changelog",
+      "code review",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "More Qwen3.6-27B MTP success but on dual Mi50s",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t86j45/more_qwen3627b_mtp_success_but_on_dual_mi50s",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T14:29:36+00:00",
+    "summary_or_excerpt": "TLDR: The hype is real! 1.5x speedup. Up to 2x speedup with tensor parallelism! After reading the PR I immediately hunted for MTP-compatible Q4_1 quants (they offer a small speedup on these compute-lacking older cards) but couldn't find any. Luckily I came across this post which highlighted how to transplant MTP grafting onto your own quants, and thus attached it to Bartowski's quant I already had. Setup CachyOS (Arch Linux) ROCm 7.2 Built the llama.cpp fork https://github.com/skyne98/llama.cpp-gfx906 with https://github.com/ggml-org/llama.cpp/pull/22673 and ran the following command with the included PR benchmark script: llama-server -m ~/models/Qwen3.6-27B-MTP-Q4_1.gguf \\ --temp 1.0 --min-p 0.0 --top-k 20 --top-p 0.95 \\ --jinja --presence-penalty 1.5 \\ --chat-template-kwargs '{\"preserve_thinking\": true}' \\ -ub 2048 -b 2048 \\ -fa 1 -np 1 \\ --no-mmap --no-warmup \\ -dev ROCm0,ROCm1 --fit on -fitt 256 Script Benchmark Stock: code_python pred= 192 draft= 0 acc= 0 rate=n/a tok/s=26.2 code_cpp pred= 192 draft= 0 acc= 0 rate=n/a tok/s=26.2 explain_concept pred= 192 draft= 0 acc= 0 rate=n/a tok/s=26.3 summarize pred= 192 draft= 0 acc= 0 rate=n/a tok/s=26.4 qa_factual pred= 192 draft= 0 a...",
+    "matched_keywords": [
+      "benchmark",
+      "GitHub",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DeepSeek Rejects Alibaba: Prioritizing Corporate Independence Over Big Tech Ecosystems",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t81u76/deepseek_rejects_alibaba_prioritizing_corporate",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T10:59:18+00:00",
+    "summary_or_excerpt": "In April, DeepSeek launched a rare, massive financing plan that attracted interest from two of China’s largest tech giants: Tencent and Alibaba. However, we have exclusively learned that recent negotiations between Alibaba and DeepSeek have fallen through. A source close to DeepSeek informed us that the two parties failed to reach an agreement on specific investment terms. On one hand, Alibaba’s internal ecosystem was not considered a high-priority fit for DeepSeek; on the other, DeepSeek is not short on alternative investors and seeks to minimize restrictive clauses in its agreements. In other words, a fundamental conflict exists between Alibaba’s strong desire for an integrated AI ecosystem and DeepSeek’s positioning as an independent model company. Several sources close to the deal echoed this sentiment. Alibaba’s Integrated AI Ambition Since the beginning of this year, Alibaba has attempted to fully integrate its own ecosystem within the AI sector. In March, it established the Alibaba Token Hub, which houses five major departments including Tongyi Lab, the Qwen Division, and the Wukong Division. This covers the entire pipeline from foundation model R&D to B2B and B2C AI applic...",
+    "matched_keywords": [
+      "DeepSeek",
+      "Qwen"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "UEFI Firmware Support for RK3576 devices",
+    "url": "https://www.reddit.com/r/embedded/comments/1t7x293/uefi_firmware_support_for_rk3576_devices",
+    "source_name": "Reddit r/embedded",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T06:34:54+00:00",
+    "summary_or_excerpt": "Hi, I’ve been working on bringing EDK2/UEFI up on RK3576 and recently got it running on the ROCK 4D. Basic things like USB boot, Ethernet, ACPI, and a simple UEFI setup menu are working already. The idea is to have a more standard boot flow instead of relying on vendor U-Boot + DTB, so it’s easier to try mainline Linux or other OSes without juggling multiple setups. It’s still early and a lot of things (like NVMe, HDMI, etc.) need more work, but it’s usable enough for testing. If anyone is interested in trying it or contributing, repo is here: GitHub - gahingwoo/edk2-rk3576: UEFI firmware for RK3576 devices · GitHub submitted by /u/gahingwoo [link] [comments]",
+    "matched_keywords": [
+      "GitHub",
+      "U-Boot"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Linux Enables Auto Counter Reload \"ACR\" For Intel Xeon Diamond Rapids",
+    "url": "https://www.phoronix.com/news/Intel-DMR-ACR-Linux-Enable",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-09T10:12:45+00:00",
+    "summary_or_excerpt": "Merged as part of the perf subsystem fixes overnight is enabling Auto Counter Reload (ACR) functionality for upcoming Intel Xeon Diamond Rapids processors. This ACR enabling for Diamond Rapids \"DMR\" is happening in time for Linux 7.1-rc3 on Sunday while the work is also marked for back-porting to existing stable kernels...",
+    "matched_keywords": [
+      "Intel"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 41,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "openRuyi 2026.04 Released",
+    "url": "https://www.reddit.com/r/RISCV/comments/1t7sgzq/openruyi_202604_released",
+    "source_name": "Reddit r/RISCV",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T02:41:43+00:00",
+    "summary_or_excerpt": "openRuyi is an open source, rolling-release Linux distribution for RISC-V. openruyi.cn/news/releases/2026-04 submitted by /u/JoannaNovaX [link] [comments]",
+    "matched_keywords": [
+      "open source",
+      "release",
+      "RISC-V"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Dabao SDK: A bare metal C SDK for the Baochip-1x RISC-V SoC",
+    "url": "https://www.reddit.com/r/embedded/comments/1t7rne5/dabao_sdk_a_bare_metal_c_sdk_for_the_baochip1x",
+    "source_name": "Reddit r/embedded",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T02:03:00+00:00",
+    "summary_or_excerpt": "The Dabao board featuring the Baochip-1x designed by legendary hardware hacker bunnie Huang had its crowd supply run and boards are due to ship later this year..I had the pleasure over the past month or so of writing a bare metal C SDK for the board before it ships put and production ramps up later this year... The SDK is similar to how the PICO does stuff and there is no FFI layer or dependencies beyond a standard RISC-V GCC cross compiler.... It's Apache 2.0 and has peripheral drivers and examples that cover almost eveeything you can use on the Dabao board...ofc the UDMA architecture means all peripherlas use the UDMA DMA engine for data transfers and I have borh blocking and non-blocking APIs for comms though it wont be needed as this thing has a 700 MHz BIO coprocessor that can blaze any protocol fro high speed independent bit-banging... I tried to make the API intebtionally PICO style, so that anyone who's written C for the PICO will feel at home.... Register defintion headers are included so you can drop down to raw hardware access when you need too, my aim was to have a simple but powerful SDK, high level enough for rapid development but low level enough that hardware is ne...",
+    "matched_keywords": [
+      "Apache 2.0",
+      "API",
+      "RISC-V",
+      "SoC"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LLM rankings are not a ladder: experimental results from a transitive benchmark graph [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1t8f61o/llm_rankings_are_not_a_ladder_experimental",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T19:16:19+00:00",
+    "summary_or_excerpt": "I built a small website called LLM Win : https://llm-win.com It turns LLM benchmark results into a directed graph: text If model A beats model B on benchmark X, add an edge A -> B. Then it searches for the shortest transitive chain between two models. The meme version is: text Can LLaMA 2 7B beat Claude Opus 4.7? In an absurd transitive benchmark sense, sometimes yes. But I added a Report tab because the structure itself seems useful for model evaluation. Some experimental findings from the current Artificial Analysis data snapshot: Weak-to-strong reachability is high. I checked 126,937 pairs where the source model has lower Intelligence Index than the target model. 119,514 of them are reachable through benchmark win chains, for a reachable rate of 94.2% . Most paths are short. Among reachable weak-to-strong pairs: 2-3 hop paths account for 91.4% . So this is not mostly long-chain cherry-picking. Direct reversal triples are abundant. After treating non-positive benchmark values as missing, there are still about 119k direct weak-over-strong triples of the form: (source model, target model, benchmark) , where the source has lower Intelligence Index but higher score on that benchmark...",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Llama"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 39,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9089：SYCL: reduce allocation overhead during flash attention (#22732)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9089",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-09T11:03:51+00:00",
+    "summary_or_excerpt": "SYCL: reduce allocation overhead during flash attention (#22732) * SYCL: reduce allocation overhead during flash attention * tidy up whitespace * add a note about the flag * move ggml_sycl_fattn_* into fattn-buffers.hpp * refactor implementation into fattn-buffers.cpp * move new_fattn_kv_buffers back into ggml-sycl.cpp **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9089/llama-b9089...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b9089",
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Testing MiMo-V2.5-IQ3_S with 1'048'576 context",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7zto6/testing_mimov25iq3_s_with_1048576_context",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T09:10:37+00:00",
+    "summary_or_excerpt": "llama-server.exe --model \"H:\\gptmodel\\AesSedai\\MiMo-V2.5-GGUF\\MiMo-V2.5-IQ3_S-00001-of-00004.gguf\" --ctx-size 1048576 --threads 16 --host 127.0.0.1 --no-mmap --jinja --fit on --flash-attn on -sm layer --n-cpu-moe 0 --threads 16 --parallel 1 --temp 0.2 load_tensors: offloaded 49/49 layers to GPU load_tensors: Vulkan0 model buffer size = 72842.29 MiB load_tensors: Vulkan1 model buffer size = 34524.53 MiB load_tensors: Vulkan_Host model buffer size = 488.91 MiB RTX 6000 96gb+ W7800 48gb I started testing with the IQ3 version because the second w7800 is on another machine. What's impressed me so far is the processing speed, both on llamaserver and vscode+kilocode. While minimax drops very quickly in processing and prefill t/sec at 50k context, mimo is faster and more stable. It's still early to give an overall assessment. It tends to loop. With repetition penalty at 1.1 and temp at 0.2, the code seems to improve. Also, if it loops, stopping and restarting doesn't do it again. Perhaps it's better to use a fixed seed. This is the main problem I've encountered. I'll let you know how it goes when I break 300k context. ______________ EDIT: 346'733/1'048'576 (33%) Context ---> all good. Cod...",
+    "matched_keywords": [
+      "GPU",
+      "Llama",
+      "MiniMax"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Pi and Qwen3.6 27B make setting up Archlinux really easy.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t81dq7/pi_and_qwen36_27b_make_setting_up_archlinux",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T10:34:31+00:00",
+    "summary_or_excerpt": "Just thought I'd share this use case. I was setting up a miniPC as a home theatre with Archlinux (It's the OS I'm most familiar with). I needed to twiddle some things and am not yet familiar with wayland (I'm trying our hyprland, but normally rock i3). So, I installed pi coding agent, pointed it at my desktop/AI server thing with Qwen, and then ... just told it what I wanted. Setting up bluetooth became \"Can you connect to my bluetooth speaker. It's a panasonic soundbar\". Changing HDPI scaling became \"Can you fix the screen resolution\" and then it just did it, occasionally telling me to run a sudo command to install something. I wasn't quite brave enough to give it root/sudo directly, but I really don't know why. It's not like there was any private data or keys on that machine, it was the very freshest of installs. I'm now considering putting hermes on the machine with full root access and some sort of voice input. I mean, why not? This experience definitely raised questions on the future of computers for me - and what interfaces we will use in 5 years time. I don't know what it'll will look like in 5 years, but yolo mode with agents on your local hardware are epic! --- edit --- T...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Qwen"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 37,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9087：sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path (#22152)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9087",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-09T10:18:13+00:00",
+    "summary_or_excerpt": "sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path (#22152) * sycl: Q5_K reorder MMVQ/dequant + Q8_0 reorder MMVQ path Signed-off-by: Chun Tao * Remove duplicate definitions --------- Signed-off-by: Chun Tao Co-authored-by: Chun Tao Co-authored-by: Todd Malsbary **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9087/llama-b9087-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](ht...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 35,
+    "release_version": "b9087",
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Qwen3.6 35B A3B uncensored heretic Native MTP Preserved is Out Now With KLD 0.0015, 10/100 Refusals and the Full 19 MTPs Preserved and Retained, Available in Safetensors, GGUFs. NVFP4, NVFP4 GGUFs and GPTQ-Int4 Formats",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7qfaq/qwen36_35b_a3b_uncensored_heretic_native_mtp",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T01:06:22+00:00",
+    "summary_or_excerpt": "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved: https://huggingface.co/llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF: https://huggingface.co/llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-NVFP4-Experts-Only: https://huggingface.co/llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-NVFP4-Experts-Only llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-NVFP4-Experts-Only-GGUF: https://huggingface.co/llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-NVFP4-Experts-Only-GGUF llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GPTQ-Int4: https://huggingface.co/llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GPTQ-Int4 People asked for it, so here it is, all realeases are confirmed to have their full MTP count* retained and preserved. Comes with benchmark too. Find all my models here: HuggingFace-LLMFan46 *All releases have been verified to retain the full MTP tensors. In safetensors format, the Qwen3.6-35B-A3B MTP tensors app...",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 35,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Quoting Luke Curley",
+    "url": "https://simonwillison.net/2026/May/9/luke-curley",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T01:03:58+00:00",
+    "summary_or_excerpt": "WebRTC is designed to degrade and drop my prompt during poor network conditions. wtf my dude WebRTC aggressively drops audio packets to keep latency low. If you’ve ever heard distorted audio on a conference call, that’s WebRTC baybee. The idea is that conference calls depend on rapid back-and-forth, so pausing to wait for audio is unacceptable. …but as a user, I would much rather wait an extra 200ms for my slow/expensive prompt to be accurate. After all, I’m paying good money to boil the ocean, and a garbage prompt means a garbage response. It’s not like LLMs are particularly responsive anyway. But I’m not allowed to wait . It’s impossible to even retransmit a WebRTC audio packet within a browser; we tried at Discord. The implementation is hard-coded for real-time latency or else . — Luke Curley , OpenAI’s WebRTC Problem, in response to How OpenAI delivers low-latency voice AI at scale Tags: webrtc , openai",
+    "matched_keywords": [
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 35,
+    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

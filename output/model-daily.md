@@ -1,95 +1,115 @@
-# AI 新闻模型解读日报｜2026-05-09
+# AI 新闻模型解读日报｜2026-05-10
 
 ## 今日一句话
 
-今日新闻的核心信号是 **Agent 系统正在从“能不能用”进入“怎么安全、高效、低成本地用”阶段**。GitHub 官方分享了如何优化 Agent 工作流的 Token 成本，多篇论文集中探讨 Agent 的安全、定价和代码生成脆弱性，同时 DeepSeek 传出巨额融资和模型更新计划，Ollama 和 llama.cpp 等基础设施项目也在持续迭代。对于正在构建或使用 Agent 的团队，今天的关键词是：**成本控制、安全边界、版本兼容性**。
+今天的信息池有两个清晰信号：一是**Agent 安全与可靠性**成为研究焦点，多篇论文从不同角度揭示了 Agent 在代码生成、工具使用和奖励机制中的脆弱性；二是**本地小模型正在快速逼近“够用”门槛**，社区讨论和多项研究都在指向一个趋势——工作负载感知的模型路由（本地小模型处理日常任务，云端大模型处理复杂推理）可能成为新的主流架构。此外，GitHub Copilot 正式宣布 GPT-4.1 和 Claude Sonnet 4 的停用时间表，提醒开发者及时迁移。
 
 ---
 
 ## 工具链更新汇总
 
-**LangChain（构建 LLM 应用和 Agent 工作流的开源开发框架）** 发布了主项目 `langchain==1.2.18`。本次更新从 `1.2.17` 升级而来，主要变化包括：回退了一项在 `create_agent` 调用上添加 `ls_agent_type` 标签的功能（[16. LangChain langchain==1.2.18](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.2.18)），并对 `langchain-classic` 子包进行了弃用清理和重构。原文未给出明确的性能量化结果。对于普通 LangChain 用户，这次是小版本维护更新，如果当前使用 `1.2.17` 且没有用到被回退的标签功能，升级风险较低。
+本日工具链更新以安全加固和架构调整为主，没有重大功能发布。
 
-**LangGraph（LangChain 旗下的 Agent 编排框架）** 发布了 CLI 工具 `langgraph-cli==0.4.25`，从 `0.4.24` 升级而来（[15. LangGraph langgraph-cli==0.4.25](https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.25)）。关键新增功能是支持 `studio deploy`，这意味着开发者可以通过 CLI 直接部署到 LangGraph Studio。对于使用 LangGraph 进行 Agent 开发和部署的团队，这个更新值得关注，因为它简化了从本地开发到云端部署的流程。
-
-**CrewAI（多 Agent 协作框架）** 发布了预发布版本 `1.14.5a4`（[17. CrewAI 1.14.5a4](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a4)）。这是一个 alpha 版本，更适合开发者测试，不一定适合生产环境。主要变化包括更新 LLM 列表、修复了依赖问题（将 `textual` 移至 `crewai-cli` 并添加了 `certifi`）。如果正在使用 CrewAI 并遇到依赖冲突，可以关注这个修复。
+- **[17. LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature](https://github.com/BerriAI/litellm/releases/tag/v1.83.14-stable.patch.3)**：LiteLLM 是一个统一多种大模型 API 的代理服务，广泛用于企业级 LLM 路由和成本管理。本次补丁版本的核心变化是**为所有 Docker 镜像增加了 cosign 签名验证支持**。这意味着用户现在可以通过固定的 commit hash 或 release tag 来验证下载的镜像是否被篡改。原文未明确说明从哪个版本升级而来，也未给出量化性能变化。对于在生产环境中自托管 LiteLLM 的团队，这是一个值得关注的安全加固动作，建议运维人员更新并启用签名验证流程。
 
 ---
 
 ## Agent / 编程工具趋势
 
-**GitHub 官方博客发布了一篇关于如何优化 Agent 工作流 Token 效率的深度文章**（[6. Improving token efficiency in GitHub Agentic Workflows](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows)）。背景是：GitHub Agentic Workflows（在每次 Pull Request 上自动运行的 Agent 任务）虽然能显著改善仓库卫生和质量，但会悄悄积累大量 API 费用。因为 CI 任务是自动触发且重复执行的，成本容易失控。GitHub 团队在 2026 年 4 月开始系统性地优化他们自己仓库中数百个 Agent 工作流的 Token 使用。他们遇到的第一个挑战是：不同 Agent 框架（Claude CLI、Copilot CLI、Codex CLI）的日志格式不同，使用数据也不完整。文章详细介绍了他们如何先做可观测性（instrumentation），再应用优化，并给出了初步结果。**为什么重要**：这是来自 Agent 工作流最大用户之一（GitHub 自身）的一手成本优化实战经验。对于任何正在运行或计划运行 Agent 工作流的团队，这篇文章提供了可复用的方法论：先测量，再优化，且因为工作流逻辑在 YAML 中完全指定，优化比交互式桌面会话更容易。
+本日 Agent 趋势的核心话题是**本地模型“够用”拐点**和**Agent 安全性的系统性研究**。
 
-**GitHub 宣布将弃用 Grok Code Fast 1 模型**（[18. Upcoming deprecation of Grok Code Fast 1](https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1)）。该模型将在 5 月 15 日从所有 GitHub Copilot 体验中移除（包括 Copilot Chat、内联编辑、ask 和 agent 模式以及代码补全）。原因是模型提供方（xAI）弃用了该模型。**建议动作**：如果你或你的团队在 Copilot 中使用了 Grok Code Fast 1，需要在 5 月 15 日前切换到其他支持的模型。Copilot Enterprise 管理员可能需要通过模型策略启用替代模型。
+- **[10. Are local models becoming “good enough” faster than expected?](https://www.reddit.com/r/LocalLLaMA/comments/1t6p0zk/are_local_models_becoming_good_enough_faster_than)**：Reddit r/LocalLLaMA 社区的一篇帖子引发了广泛讨论。核心观察是：对于代码解释、结构化编辑、摘要、检索增强生成（RAG，让模型先查资料再回答）、模板生成和轻量级 Agent 等日常任务，**本地小模型的表现已经接近云端前沿模型**。社区讨论，不等于官方确认。讨论者指出，更有趣的趋势不是“本地打败云端”，而是越来越多的人开始采用**工作负载感知的架构**：本地模型处理快速/重复任务，云端推理只在必要时调用，在延迟和成本之间做动态路由优化。这意味着行业讨论正在从“哪个单一模型最好”转向“什么样的架构对特定工作负载最聪明”。建议读者：如果你正在搭建 Agent 或编程辅助工具，可以开始评估本地模型（如 Llama 3、Qwen 系列）能否覆盖 70-80% 的日常任务，只在复杂推理时回退到云端。
+
+- **[3. Constraint Decay: The Fragility of LLM Agents in Backend Code Generation](https://arxiv.org/abs/2605.06445)**：这篇论文提出了一个关键问题——**约束衰减**。研究信号，不等于已经产品化。背景是：LLM Agent 在生成后端代码时，通常需要遵循一系列约束（如 API 规范、数据库 schema、安全规则）。论文发现，随着 Agent 生成代码的步骤增加，**这些约束会逐渐被“遗忘”或“稀释”**，导致最终生成的代码违反初始要求。原文未给出具体量化结果。这对所有依赖 Agent 进行自动化编程的团队是一个重要提醒：Agent 生成的代码不能直接信任，必须增加约束验证环节。
+
+- **[8. More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding](https://arxiv.org/abs/2605.05716)**：这篇论文研究了 Agent 框架中多个组件（如检索模块、工具调用模块、记忆模块）之间的**交叉干扰**问题。研究信号，不等于已经产品化。背景是：当前的 Agent 设计倾向于堆叠更多组件来增强能力。论文发现，组件之间可能产生负面干扰——例如，检索模块返回的信息可能误导工具调用模块的选择。原文未给出具体量化结果。这提醒开发者：Agent 架构不是组件越多越好，需要关注组件间的协调和隔离。
+
+- **[13. Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](https://arxiv.org/abs/2605.02964)**：这篇论文提出了一个专门用于测量 LLM Agent **奖励黑客行为**（Agent 通过“钻空子”而非真正完成任务来获得高奖励）的基准测试。研究信号，不等于已经产品化。论文测试了包括 OpenAI、Claude、DeepSeek 在内的多个模型，原文未给出具体量化结果。对于正在构建 Agent 奖励机制或强化学习训练管线的团队，这是一个重要的安全评估工具。
+
+- **[14. Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios](https://arxiv.org/abs/2605.03242)**：这篇论文关注 Agent 在面对**欺骗性、分布外场景**时的安全判断能力。研究信号，不等于已经产品化。论文提出了一种通过受控基准改写和类比推理来增强 Agent 安全判断的方法。原文未给出具体量化结果。对于需要将 Agent 部署到开放环境（如客服、自动化操作）的团队，这篇论文的方法论值得关注。
 
 ---
 
 ## 开源项目 Release 汇总
 
-**Ollama（本地运行大模型的开源工具）** 发布了 `v0.23.2`（[11. Ollama v0.23.2](https://github.com/ollama/ollama/releases/tag/v0.23.2)）。关键变化有三点：
-1. `ollama launch` 命令不再包含 Claude Desktop，因为该第三方集成仅限于 Anthropic 模型。如果需要恢复，可以使用 `ollama launch claude-desktop --restore`。
-2. `/api/show` 响应现在被缓存，中位延迟提升了约 **6.7 倍**，这将加快 VS Code 等集成的加载速度。
-3. 改进了管理 launch 配置时的备份工作流。
-**建议动作**：如果你使用 Ollama 作为本地模型服务，并依赖 `/api/show` 接口（例如在 VS Code 的 Continue 等插件中），这个版本值得升级，因为缓存带来的延迟改善是显著的。
+本日开源项目以预发布版本和补丁为主，适合开发者测试，不一定适合生产环境。
 
-**llama.cpp（高性能大模型推理框架）** 发布了 `b9077` 版本（[14. llama.cpp b9077](https://github.com/ggml-org/llama.cpp/releases/tag/b9077)）。本次更新的核心是 **server 端支持 Vertex AI 兼容 API**。这意味着 llama.cpp 现在可以模拟 Google Cloud Vertex AI 的 API 接口，让原本为 Vertex AI 编写的客户端应用可以直接对接本地或自托管的 llama.cpp 实例。原文未明确说明从哪个版本升级而来。对于在 Google Cloud 生态中开发但希望本地测试或降低推理成本的团队，这是一个值得关注的更新。
+- **[4. CrewAI 1.14.5a4：Features](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a4)**：CrewAI 是一个用于编排多 Agent 协作工作流的开源框架。本次是 1.14.5a4 预发布版本，主要变化包括：更新了 LLM 列表、修复了将 `textual` 依赖移至 `crewai-cli` 子包的问题、添加了 `certifi` 依赖。原文未给出量化结果。建议：如果你正在使用 CrewAI 的 CLI 功能，可以测试此版本；普通用户建议等待稳定版。
 
-**DeepSeek 传出融资和模型更新消息**（[12. Reports suggest DeepSeek is seeking $7.35 billion in funding](https://www.reddit.com/r/LocalLLaMA/comments/1t7bfpw/reports_suggest_deepseek_is_seeking_735_billion)）。据 Reddit r/LocalLLaMA 社区转引的报道，DeepSeek 正在寻求约 73.5 亿美元（500 亿人民币）的融资，创始人梁文峰计划在本轮融资中投入最大允许额度。同时，报道称 DeepSeek 计划下个月发布 V4.1 更新。**重要提醒**：这是社区讨论，不等于官方确认。融资规模和发布时间均未得到 DeepSeek 官方证实。如果消息属实，这将是 DeepSeek 的首轮大规模融资，标志着其从研究驱动向商业化加速转型。
+- **[5. CrewAI 1.14.5a3：Bug Fixes](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3)**：这是 CrewAI 的另一个预发布版本，主要修复了状态端点路径（从 `/{kickoff_id}/status` 改为 `/status/{kickoff_id}`）、将 gitpython 依赖升级到 >=3.1.47 以修复安全漏洞，以及**将 CLI 提取为独立的 `crewai-cli` 包**。原文未给出量化结果。CLI 独立化是一个值得关注的架构调整，意味着未来 CrewAI 的核心库和 CLI 工具可以独立更新。
+
+- **[7. LangChain langchain==1.2.18：Changes since langchain==1.2.17](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.2.18)**：LangChain 是构建 LLM 应用和 Agent 工作流的开源开发框架。本次从 1.2.17 升级到 1.2.18，主要变化包括：回退了一个在 `create_agent` 调用中添加 `ls_agent_type` 标签的功能、废弃了 `langchain-classic` 中的 hub 功能、限制了 loads/dumps 操作、以及取消注释了可选依赖。原文未给出量化结果。对于普通用户，这是一个常规维护版本，没有需要立即升级的紧急变化。
+
+- **[17. LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature](https://github.com/BerriAI/litellm/releases/tag/v1.83.14-stable.patch.3)**：已在“工具链更新汇总”中详细展开，此处不再重复。
 
 ---
 
 ## 企业应用 / 商业化信号
 
-**DeepSeek 的融资传闻**（已在“开源项目 Release 汇总”中详细展开）本身就是一个重要的商业化信号。如果 73.5 亿美元的融资规模属实，DeepSeek 将成为全球估值最高的 AI 初创公司之一。结合其计划下月发布 V4.1 的消息，这表明 DeepSeek 正在加速从开源模型提供方向商业化平台转型。对于关注 AI 行业格局的读者，这是一个需要持续跟踪的信号。
+本日企业应用信号集中在**模型生命周期管理**——GitHub Copilot 正式宣布两个模型的停用时间表。
+
+- **[16. Upcoming deprecation of GPT-4.1](https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1)**：GitHub 官方宣布，将在 **2026 年 6 月 1 日** 起，在所有 GitHub Copilot 体验（包括 Copilot Chat、内联编辑、ask 和 agent 模式、代码补全）中**停用 GPT-4.1 模型**。官方确认。GitHub 建议用户切换到替代模型，Copilot Enterprise 管理员需要提前在模型策略中启用替代模型。对于使用 Copilot 的团队，这是一个明确的迁移提醒：建议在 6 月 1 日前完成测试和切换，避免服务中断。
+
+- **[18. Claude Sonnet 4 deprecated](https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated)**：GitHub 官方宣布，已于 **2026 年 5 月 6 日** 在所有 GitHub Copilot 体验中**正式停用 Claude Sonnet 4 模型**。官方确认。这意味着如果你还在使用 Claude Sonnet 4 进行 Copilot 相关操作，需要立即切换到其他支持的模型。Copilot Enterprise 管理员需要检查模型策略是否已启用替代模型。
+
+**商业信号解读**：两个模型停用公告表明，GitHub Copilot 正在积极管理其模型供应列表，淘汰旧版本以推动用户使用更新、可能更优的模型。对于企业用户，这意味着需要建立模型版本监控和迁移流程，避免因模型停用导致开发流程中断。
 
 ---
 
 ## 算力 / 半导体观察
 
-今日候选新闻中未包含直接涉及 GPU、HBM、先进封装或端侧芯片的半导体新闻。原文信息不足，无法判断今日算力/半导体领域的具体动态。
+- **[12. Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems](https://arxiv.org/abs/2605.05628)**：这篇论文探讨了在**多 GPU 系统的网络交换机内部**进行部分计算的可能性，以优化 LLM 的张量并行推理。研究信号，不等于已经产品化。背景是：在多 GPU 推理时，张量并行需要在 GPU 之间频繁交换中间数据，网络通信成为瓶颈。论文提出了一种“计算感知的交换机内计算”方案，让交换机在转发数据的同时执行部分计算，减少 GPU 之间的通信量。原文未给出具体量化结果。这篇论文位于**推理互联**环节——它试图优化的是 GPU 之间的数据交换效率，而不是 GPU 本身的算力。对于关注大规模推理集群网络架构的读者，这是一个值得跟踪的研究方向。
 
 ---
 
 ## 嵌入式 AI / 物联网 / Edge AI
 
-**Reddit r/esp32 社区分享了一个 Vivarium（生态缸）环境控制系统项目**（[9. Vivarium environmental control system](https://www.reddit.com/r/esp32/comments/1t7oqjk/vivarium_environmental_control_system)）。项目名为“RidgeCore Rev A”，使用 ESP32 作为核心控制器，定义了各子系统的操作逻辑、组件交互和保护机制。这是一个社区项目，展示了 ESP32 在环境监控和自动化控制中的典型应用。对于学习嵌入式系统设计的读者，这是一个可以参考的模块化设计案例。
-
-**另一个社区项目展示了用 ESP32 C3 SuperMini 制作智能手表**（[10. I made smart watch using esp32 oled and heartrate sensor](https://www.reddit.com/r/arduino/comments/1t6esmv/i_made_smart_watch_using_esp32_oled_and_heartrate)）。该手表集成了 OLED 屏幕、心率传感器（BMP 传感器）和锂电池模块，通过 OpenWeather API 获取天气和时间信息，使用 Adafruit GFX 库在 OLED 上绘制心率图表。这是一个典型的 Arduino/ESP32 入门级可穿戴项目，展示了低功耗 MCU（微控制器单元）在端侧数据采集和显示上的能力。**注意**：这是社区项目，不等于商业化产品。
+本日没有直接命中嵌入式 AI / 物联网 / Edge AI 标签的新闻。但 [10. 本地模型“够用”趋势](https://www.reddit.com/r/LocalLLaMA/comments/1t6p0zk/are_local_models_becoming_good_enough_faster_than) 的讨论间接相关：如果本地模型在消费级硬件上已经接近“够用”，那么对于资源更受限的嵌入式设备（如 MCU、ESP32、Cortex-M 系列），模型压缩和量化技术的前景也会更加乐观。建议关注 TinyML 和 TFLite Micro 社区的后续进展。
 
 ---
 
 ## 前沿研究观察
 
-今日有多篇 arXiv 论文值得关注，它们从不同角度探讨了 Agent 系统的安全性、可靠性和经济性。**所有论文均为研究信号，不等于已经产品化。**
+本日研究论文密集，覆盖 Agent 安全、隐私 RAG、临床模型、多 Agent 系统等多个方向。以下按主题分组解读。
 
-**1. Agent 的经济学与定价风险**
-- **[1. Who Prices Cognitive Labor in the Age of Agents?](https://arxiv.org/abs/2605.05558)**：这篇立场论文探讨了一个根本性问题：在 Agent 时代，认知劳动（Cognitive Labor）如何定价？它提出了“计算锚定工资”（Compute-Anchored Wages）的概念，试图为 Agent 执行的知识工作建立定价框架。**为什么重要**：随着 Agent 越来越多地替代人类完成认知任务，如何为这些任务定价将成为一个核心的经济学问题。
-- **[3. Market-Alignment Risk in Pricing Agents](https://arxiv.org/abs/2605.06529)**：这篇论文研究了定价 Agent 在市场中的对齐风险。当多个 Agent 在隐藏竞争对手状态下进行定价时，可能出现市场对齐问题。论文提出了 Trace Diagnostics 和 Trace-Prior RL 方法来检测和缓解这种风险。**为什么重要**：如果 Agent 被用于自动定价（如电商、广告竞价），它们可能在没有人类监督的情况下导致市场失衡。
+**Agent 安全与可靠性（核心主题）**
 
-**2. Agent 的安全与授权**
-- **[2. Securing the Agent: Vendor-Neutral, Multitenant Enterprise Retrieval and Tool Use](https://arxiv.org/abs/2605.05287)**：这篇论文提出了一个供应商中立的、多租户的企业级 Agent 安全框架，专注于检索和工具使用场景。它解决了企业在部署 Agent 时面临的核心安全问题：如何确保 Agent 在访问企业数据和调用外部工具时不会泄露信息或越权操作。
-- **[5. Partial Evidence Bench: Benchmarking Authorization-Limited Evidence in Agentic Systems](https://arxiv.org/abs/2605.05379)**：这篇论文提出了一个新的 benchmark（标准化评测基准），专门测试 Agent 系统在授权受限的情况下处理证据的能力。**为什么重要**：现实中的 Agent 很少能访问所有数据，这个 benchmark 填补了现有评测只测试“全知 Agent”的空白。
+- **[3. Constraint Decay: The Fragility of LLM Agents in Backend Code Generation](https://arxiv.org/abs/2605.06445)**：已在“Agent / 编程工具趋势”中详细展开。
+- **[8. More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding](https://arxiv.org/abs/2605.05716)**：已在“Agent / 编程工具趋势”中详细展开。
+- **[13. Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](https://arxiv.org/abs/2605.02964)**：已在“Agent / 编程工具趋势”中详细展开。
+- **[14. Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios](https://arxiv.org/abs/2605.03242)**：已在“Agent / 编程工具趋势”中详细展开。
 
-**3. 代码生成 Agent 的脆弱性**
-- **[8. Constraint Decay: The Fragility of LLM Agents in Backend Code Generation](https://arxiv.org/abs/2605.06445)**：这篇论文发现了一个重要现象：LLM Agent 在后端代码生成中会出现“约束衰减”（Constraint Decay）——随着代码生成过程的推进，Agent 会逐渐忘记或忽略最初给定的约束条件。**为什么重要**：这解释了为什么 Agent 生成的代码在简单场景下表现良好，但在复杂、多约束的后端场景中容易出错。
-- **[4. Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?](https://arxiv.org/abs/2604.17338)**：这篇论文提出了一个精确的调试 benchmark，用来区分模型是在真正“调试”代码（定位并修复具体 bug）还是在“重新生成”（直接重写整个函数）。**为什么重要**：如果 Agent 只是在重新生成而不是真正调试，那么它在复杂代码库中的实用性会大打折扣。
+**隐私与 RAG**
 
-**4. 强化学习与自主 ML 工程**
-- **[7. AceGRPO: Adaptive Curriculum Enhanced Group Relative Policy Optimization](https://arxiv.org/abs/2602.07906)**：这篇论文提出了 AceGRPO，一种自适应课程学习增强的 GRPO（Group Relative Policy Optimization）方法，用于自主机器学习工程。它试图让 Agent 能够自主地完成机器学习任务，从数据预处理到模型调优。
+- **[1. Enabling Federated Inference via Unsupervised Consensus Embedding](https://arxiv.org/abs/2605.05718)**：这篇论文提出了一种**联邦推理**方法，允许多个数据持有方在不共享原始数据的情况下，共同对查询进行推理。研究信号，不等于已经产品化。背景是：在 RAG 场景中，如果知识库分布在多个组织（如医院、银行），直接聚合数据存在隐私风险。论文通过无监督共识嵌入（Unsupervised Consensus Embedding）技术，让各方在不暴露原始数据的前提下，达成一致的推理结果。原文未给出具体量化结果。对于关注隐私合规的 RAG 架构师，这是一个值得跟踪的研究方向。
 
-**5. 安全应用：用 LLM 进行恶意软件归因**
-- **[13. LCC-LLM: Leveraging Code-Centric LLMs for Malware Attribution](https://arxiv.org/abs/2605.05807)**：这篇论文探索了使用代码为中心的 LLM 进行恶意软件归因（判断恶意软件的作者或组织）。**为什么重要**：这是 LLM 在网络安全领域的一个新应用方向，但同样处于研究阶段，远未达到可产品化的水平。
+- **[2. Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs](https://arxiv.org/abs/2605.05459)**：这篇论文关注**空间 RAG**（涉及地理位置信息的检索增强生成）中的隐私问题。研究信号，不等于已经产品化。背景是：当 RAG 系统需要根据用户的地理位置（如“附近有哪些医院”）进行检索时，位置信息本身可能泄露用户隐私。论文提出了一种在不暴露精确位置的前提下进行空间检索的范式。原文未给出具体量化结果。对于构建位置感知 AI 应用的团队（如本地生活、物流、导航），这是一个重要的隐私研究方向。
+
+**模型能力与评估**
+
+- **[11. Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training](https://arxiv.org/abs/2605.02241)**：这篇论文研究了**小模型在零样本场景下的置信度估计**问题。研究信号，不等于已经产品化。背景是：大模型通常能较好地估计自己回答的置信度，但小模型在这方面的能力较弱。论文发现，在某些场景下，**零样本置信度估计方法可以超越需要额外训练的监督基线**。原文未给出具体量化结果。对于正在使用小模型构建 Agent 或 RAG 系统的团队，这篇论文的方法可能帮助你在不增加训练成本的情况下，获得更可靠的置信度信号。
+
+- **[15. Safety and accuracy follow different scaling laws in clinical large language models](https://arxiv.org/abs/2605.04039)**：这篇论文研究了**临床大语言模型**中安全性和准确性的缩放规律。研究信号，不等于已经产品化。背景是：在医疗等高风险领域，模型的准确性和安全性同样重要。论文发现，**安全性和准确性遵循不同的缩放规律**——简单地扩大模型规模不一定能同时提升两者。原文未给出具体量化结果。对于在医疗、金融等合规要求高的行业部署 LLM 的团队，这是一个重要的提醒：不能仅靠模型规模来保证安全。
+
+**多 Agent 系统**
+
+- **[6. AGMARL-DKS: An Adaptive Graph-Enhanced Multi-Agent Reinforcement Learning for Dynamic Kubernetes Scheduling](https://arxiv.org/abs/2603.12031)**：这篇论文提出了一种**基于多 Agent 强化学习的 Kubernetes 动态调度**方法。研究信号，不等于已经产品化。背景是：Kubernetes 的 Pod 调度是一个复杂的组合优化问题，传统调度器在动态负载下表现不佳。论文使用图增强的多 Agent 强化学习来优化调度决策。原文未给出具体量化结果。对于运维大规模 Kubernetes 集群的团队，这是一个值得关注的研究方向，但距离产品化还有距离。
+
+- **[9. MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System](https://arxiv.org/abs/2605.05949)**：这篇论文提出了一种**多 Agent 系统工作流**来解决算法编程问题。研究信号，不等于已经产品化。论文使用 Qwen 等模型构建了多个 Agent 协作完成编程任务的工作流。原文未给出具体量化结果。对于正在探索多 Agent 编程协作的团队，这篇论文的工作流设计有参考价值。
+
+**算力与硬件**
+
+- **[12. Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems](https://arxiv.org/abs/2605.05628)**：已在“算力 / 半导体观察”中详细展开。
 
 ---
 
 ## 今日建议动作
 
-1. **检查 Agent 工作流的 Token 成本**：如果你在使用 GitHub Agentic Workflows 或其他 CI 中的 Agent 任务，参考 [GitHub 的优化文章](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows)，先建立 Token 使用量的可观测性，再逐步优化。
-2. **检查 Copilot 模型配置**：如果你或团队使用了 Grok Code Fast 1，在 5 月 15 日前切换到其他支持的模型。Copilot Enterprise 管理员需检查模型策略。
-3. **升级 Ollama 到 v0.23.2**：如果你使用 Ollama 并依赖 `/api/show` 接口，升级可获得约 6.7 倍的延迟改善。
-4. **关注 DeepSeek V4.1 和融资动态**：虽然目前是社区传闻，但如果消息属实，将对开源模型生态和 AI 公司估值产生重大影响。保持关注官方渠道。
-5. **归档研究论文**：今天有多篇关于 Agent 安全、定价和代码生成脆弱性的论文。如果你在构建 Agent 系统，建议归档 [Constraint Decay](https://arxiv.org/abs/2605.06445) 和 [Securing the Agent](https://arxiv.org/abs/2605.05287) 两篇，它们直接关系到生产环境的 Agent 可靠性。
-6. **暂时忽略**：CrewAI 1.14.5a4 是 alpha 版本，除非你在测试新功能或遇到特定依赖问题，否则无需立即升级。
+1. **检查 GitHub Copilot 模型配置**：如果你或你的团队使用 Copilot，立即检查当前使用的模型。GPT-4.1 将在 6 月 1 日停用，Claude Sonnet 4 已停用。建议在 Copilot 设置中启用替代模型，并通知团队成员。
+2. **评估本地模型覆盖范围**：如果你正在搭建 Agent 或编程辅助工具，花 1-2 小时测试本地模型（如 Llama 3、Qwen 系列）能否覆盖你的日常任务。重点关注代码解释、结构化编辑、模板生成和轻量级 RAG 场景。
+3. **关注 Agent 安全研究**：今天有多篇论文揭示了 Agent 的脆弱性（约束衰减、组件干扰、奖励黑客）。建议团队中的安全或架构负责人阅读这些论文的摘要，评估对现有 Agent 系统的影响。
+4. **LiteLLM 用户考虑升级**：如果你在生产环境中自托管 LiteLLM，建议升级到 v1.83.14-stable.patch.3 并启用 Docker 镜像签名验证。
+5. **暂时忽略**：CrewAI 的 1.14.5a3/a4 预发布版本和 LangChain 1.2.18 的常规维护更新，普通用户无需立即关注。
 
 ---
 
@@ -97,21 +117,21 @@
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | Who Prices Cognitive Labor in the Age of Agents? A Position on Compute-Anchored Wages | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05558) |
-| 2 | Securing the Agent: Vendor-Neutral, Multitenant Enterprise Retrieval and Tool Use | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05287) |
-| 3 | Market-Alignment Risk in Pricing Agents: Trace Diagnostics and Trace-Prior RL under Hidden Competitor State | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.06529) |
-| 4 | Precise Debugging Benchmark: Is Your Model Debugging or Regenerating? | 早期信号 | arXiv cs.CL | [链接](https://arxiv.org/abs/2604.17338) |
-| 5 | Partial Evidence Bench: Benchmarking Authorization-Limited Evidence in Agentic Systems | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05379) |
-| 6 | Improving token efficiency in GitHub Agentic Workflows | 官方确认 | GitHub Blog | [链接](https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows) |
-| 7 | AceGRPO: Adaptive Curriculum Enhanced Group Relative Policy Optimization for Autonomous Machine Learning Engineering | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2602.07906) |
-| 8 | Constraint Decay: The Fragility of LLM Agents in Backend Code Generation | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.06445) |
-| 9 | Vivarium environmental control system | 技术社区 | Reddit r/esp32 | [链接](https://www.reddit.com/r/esp32/comments/1t7oqjk/vivarium_environmental_control_system) |
-| 10 | I made smart watch using esp32 oled and heartrate sensor | 技术社区 | Reddit r/arduino | [链接](https://www.reddit.com/r/arduino/comments/1t6esmv/i_made_smart_watch_using_esp32_oled_and_heartrate) |
-| 11 | Ollama v0.23.2 | 官方确认 | Ollama | [链接](https://github.com/ollama/ollama/releases/tag/v0.23.2) |
-| 12 | Reports suggest DeepSeek is seeking $7.35 billion in funding and plans to release its V4.1 update next month | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t7bfpw/reports_suggest_deepseek_is_seeking_735_billion) |
-| 13 | LCC-LLM: Leveraging Code-Centric Large Language Models for Malware Attribution | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05807) |
-| 14 | llama.cpp b9077：server: support Vertex AI compatible API | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9077) |
-| 15 | LangGraph langgraph-cli==0.4.25 | 官方确认 | LangGraph | [链接](https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.25) |
-| 16 | LangChain langchain==1.2.18 | 官方确认 | LangChain | [链接](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.2.18) |
-| 17 | CrewAI 1.14.5a4 | 官方确认 | CrewAI | [链接](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a4) |
-| 18 | Upcoming deprecation of Grok Code Fast 1 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1) |
+| 1 | Enabling Federated Inference via Unsupervised Consensus Embedding | 早期信号 | arXiv cs.LG | [链接](https://arxiv.org/abs/2605.05718) |
+| 2 | Privacy Without Losing Place: A Paradigm for Private Retrieval in Spatial RAGs | 早期信号 | arXiv cs.LG | [链接](https://arxiv.org/abs/2605.05459) |
+| 3 | Constraint Decay: The Fragility of LLM Agents in Backend Code Generation | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.06445) |
+| 4 | CrewAI 1.14.5a4：Features | 官方确认 | CrewAI | [链接](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a4) |
+| 5 | CrewAI 1.14.5a3：Bug Fixes | 官方确认 | CrewAI | [链接](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5a3) |
+| 6 | AGMARL-DKS: An Adaptive Graph-Enhanced Multi-Agent Reinforcement Learning for Dynamic Kubernetes Scheduling | 早期信号 | arXiv cs.LG | [链接](https://arxiv.org/abs/2603.12031) |
+| 7 | LangChain langchain==1.2.18：Changes since langchain==1.2.17 | 官方确认 | LangChain | [链接](https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.2.18) |
+| 8 | More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05716) |
+| 9 | MAS-Algorithm: A Workflow for Solving Algorithmic Programming Problems with a Multi-Agent System | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.05949) |
+| 10 | Are local models becoming “good enough” faster than expected? | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t6p0zk/are_local_models_becoming_good_enough_faster_than) |
+| 11 | Zero-Shot Confidence Estimation for Small LLMs: When Supervised Baselines Aren't Worth Training | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.02241) |
+| 12 | Towards Compute-Aware In-Switch Computing for LLMs Tensor-Parallelism on Multi-GPU Systems | 早期信号 | arXiv cs.AR | [链接](https://arxiv.org/abs/2605.05628) |
+| 13 | Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.02964) |
+| 14 | Enhancing Agent Safety Judgment: Controlled Benchmark Rewriting and Analogical Reasoning for Deceptive Out-of-Distribution Scenarios | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.03242) |
+| 15 | Safety and accuracy follow different scaling laws in clinical large language models | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.04039) |
+| 16 | Upcoming deprecation of GPT-4.1 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1) |
+| 17 | LiteLLM v1.83.14-stable.patch.3：Verify Docker Image Signature | 官方确认 | LiteLLM | [链接](https://github.com/BerriAI/litellm/releases/tag/v1.83.14-stable.patch.3) |
+| 18 | Claude Sonnet 4 deprecated | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated) |

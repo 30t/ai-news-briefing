@@ -11,7 +11,7 @@
     "tags": [],
     "score": 76,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -31,33 +31,7 @@
     ],
     "score": 74,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can LLMs Make (Personalized) Access Control Decisions?",
-    "url": "https://arxiv.org/abs/2511.20284",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2511.20284v2 Announce Type: replace-cross Abstract: Precise access control decisions are crucial for the security of both traditional applications and emerging agent-based systems. Typically, these decisions are made by users during app installation or at runtime. However, due to the increasing complexity and automation of systems, making access control decisions can impose a significant cognitive burden on users, often overwhelming them and leading to suboptimal or even arbitrary choices. To address this problem, we investigate the ability of LLMs to make dynamic, context-aware decisions aligned with users' security preferences, expressed during a lightweight setup phase. As a case study, we analyze smartphone application permission requests, given their ubiquity and users' familiarity with them. We curated a dataset comprising 307 user privacy statements (short, natural-language descriptions of user preferences) and 14,682 corresponding permission decisions, gathered from smartphone users in an online data collection. We compare these decisions with those made by two versions of LLMs that are tasked with reasoning about the app and the request context: a general model and...",
-    "matched_keywords": [
-      "Agent",
-      "automation",
-      "dataset",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 73,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -83,143 +57,7 @@
     ],
     "score": 73,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgenTEE: Confidential LLM Agent Execution on Edge Devices",
-    "url": "https://arxiv.org/abs/2604.18231",
-    "source_name": "arXiv cs.OS",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-05-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.18231v2 Announce Type: replace-cross Abstract: Large Language Model (LLM) agents provide powerful automation capabilities, but they also create a substantially broader attack surface than traditional applications due to their tight integration with non-deterministic models and third-party services. While current deployments primarily rely on cloud-hosted services, emerging designs increasingly execute agents directly on edge devices to reduce latency and enhance user privacy. However, securely hosting such complex agent pipelines on edge devices remains challenging. These deployments must protect proprietary assets (e.g., system prompts and model weights) and sensitive runtime state on heterogeneous platforms that are vulnerable to software attacks and potentially controlled by malicious users. To address these challenges, we present AgenTEE, a system for deploying confidential agent pipelines on edge devices. AgenTEE places the agent runtime, inference engine, and third-party applications into independently attested confidential virtual machines (cVMs) and mediates their interaction through explicit, verifiable communication channels. Built on Arm Confidential Compute...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "automation",
-      "inference",
-      "privacy",
-      "weights"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 73,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DeepSeek V4 paper full version is out, FP4 QAT details and stability tricks [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1t7yrvr/deepseek_v4_paper_full_version_is_out_fp4_qat",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-09T08:10:03+00:00",
-    "summary_or_excerpt": "DeepSeek dropped the full V4 paper this week. preview from april was 58 pages, this version adds a lot of technical depth. What stood out for me. FP4 quantization aware training. theyre running FP4 QAT directly in late stage training. MoE expert weights quantized to FP4 (the main gpu memory consumer). QK path in the CSA indexer uses FP4 activations. 2x speedup on QK selector with 99.7% recall preserved. inference runs directly on the FP4 weights. Efficiency table is striking: Model 1M context FLOPs KV cache V3.2 baseline baseline V4-Pro 27% of baseline 10% of baseline V4-Flash 10% of baseline 7% of baseline Training stability, two mechanisms. Trillion parameter MoE has the loss spike problem, divergence, unpredictable failures. they documented two fixes. Anticipatory routing. they deliberately desync main model and router updates. current step uses latest params for features, but routing uses cached older params. breaks the feedback loop that amplifies anomalies. 20% overhead but only kicks in during loss spikes. SwiGLU clamping. hard limits on the SwiGLU linear path (-10 to 10) and gate path (max 10). suppresses extreme values that would cascade. Generative reward model. instead...",
-    "matched_keywords": [
-      "DeepSeek",
-      "GPU",
-      "inference",
-      "quantization",
-      "weights"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 72,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Rubber Duck in GitHub Copilot CLI now supports more models",
-    "url": "https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-07T14:49:28+00:00",
-    "summary_or_excerpt": "Rubber Duck, the cross-family review agent in GitHub Copilot CLI, is now available using a Claude-powered critic agent when your session is using a GPT model. For sessions using Claude… The post Rubber Duck in GitHub Copilot CLI now supports more models appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "Claude",
-      "GitHub",
-      "GitHub Copilot",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 71,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Upcoming deprecation of Grok Code Fast 1",
-    "url": "https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-08T20:21:00+00:00",
-    "summary_or_excerpt": "We will deprecate Grok Code Fast 1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 15th: Model Deprecation date… The post Upcoming deprecation of Grok Code Fast 1 appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "GitHub",
-      "GitHub Copilot",
-      "Grok"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 71,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Qwen/WebWorld 32B/14B/8B (Qwen3 finetune)",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6c6vs/qwenwebworld_32b14b8b_qwen3_finetune",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-07T14:28:47+00:00",
-    "summary_or_excerpt": "WebWorld is a large-scale open-web world model series for training and evaluating web agents. It is trained on 1M+ real-world web interaction trajectories via a scalable hierarchical data pipeline, supporting: Long-horizon simulation (30+ steps) Multi-format state representations : A11y Tree, HTML, XML, Markdown, and natural language CoT-activated reasoning for transition prediction Cross-domain generalization to code, GUI, and game environments Agents trained on WebWorld-synthesized trajectories achieve +9.9% on MiniWob++ and +10.9% on WebArena . When used for inference-time lookahead search, WebWorld outperforms GPT-5 as a world model. https://huggingface.co/Qwen/WebWorld-32B https://huggingface.co/Qwen/WebWorld-14B https://huggingface.co/Qwen/WebWorld-8B submitted by /u/jacek2023 [link] [comments]",
-    "matched_keywords": [
-      "agents",
-      "GPT",
-      "inference",
-      "Qwen"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 71,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -242,7 +80,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -267,7 +105,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -288,7 +126,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -312,7 +150,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -336,77 +174,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Testing Local LLMs in Practice: Code Generation, Quality vs. Speed",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t7et9q/testing_local_llms_in_practice_code_generation",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-08T17:33:26+00:00",
-    "summary_or_excerpt": "Hello, I spent the last few months building an AI agent that autonomously writes Go code using local LLMs. The primary use case is log parser generation for SIEM pipelines. A large part of the work ended up being evaluation itself: how do you objectively measure whether a model is actually useful for autonomous coding tasks? So I built a harness that (1) lets agents generate real Go parsers, (2) compiles the Go code, (3) validates extracted fields and types, (4) measures parsing quality against expected schemas, (5) and tracks throughput/speed over longer runs. Given the current release cadence of open-weight models, the results are interesting. I published the first public version of the benchmark and methodology here: https://ndocs.teskalabs.com/logman.io/blog/2026/04/14/testing-local-llms-in-practice-code-generation-quality-vs-speed/ Feedback is very welcome. Also: which model should I test next? submitted by /u/Icy_Programmer7186 [link] [comments]",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "AI Agent",
-      "benchmark",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 70,
-    "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DIY market declining amid high RAM prices",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6gmcn/diy_market_declining_amid_high_ram_prices",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-07T17:03:58+00:00",
-    "summary_or_excerpt": "Asus shipped 15 million motherboards in 2025. Only expected to ship 10 million in 2026. CPU prices are also rising. https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&Cat=40&id=0000754394_2M94CB7W8M7OAA5Z4THE5 DIY = Do it yourself, build your own PC. Excerpt: NVIDIA GPU upgrade slowdown coupled with CPU and memory shortages causes PC motherboard manufacturers' shipment targets to collapse across the board. NVIDIA GPU updates are slowing down, and both CPUs and memory are experiencing shortages and price increases. PC motherboard manufacturers are also lowering shipment forecasts across the board for 2026. (Photo by Li Jianliang) The surge in AI demand has led to a squeeze on chip production capacity, resulting in severe shortages and price increases for memory and central processing units (CPUs). Sales of branded notebook and desktop (DT) products have declined, and the PC DIY market is in dire straits. PC supply chain sources revealed that the four major Taiwanese motherboard manufacturers have all lowered their 2026 shipment targets set at the end of 2025, and almost all of them have experienced a \"collapse.\" The situation is worse than during previous financial crises an...",
-    "matched_keywords": [
-      "GPU",
-      "NVIDIA"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 70,
-    "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "I've created the fastest local AI engine for Apple Silicon. Optimised for agentic use.",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t6uzdk/ive_created_the_fastest_local_ai_engine_for_apple",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-08T02:27:55+00:00",
-    "summary_or_excerpt": "https://preview.redd.it/p0rqofxvrtzg1.png?width=1460&format=png&auto=webp&s=8ce5b18b4ddaad9b71f71fd8eb623839fc9c6c8b For weeks I've been working on creating the fastest local AI engine for Apple Silicon... And I finally did! It's optimized for agentic use. focused specifically on coding agents, tool calling, and short-turn workflows. Repo: https://github.com/samuelfaj/lightning-mlx A few results from my Macbook Max M5 (128gb): Qwen3.6-27B 40.67 tok/s Qwen3.6-35B-A3B 220.86 tok/s I’d appreciate feedback on: Better benchmark designs for local coding agents Whether the MTPLX preset defaults make sense Other Apple Silicon setups I should test submitted by /u/TomatilloPutrid3939 [link] [comments]",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "GitHub"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 70,
-    "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -427,7 +195,7 @@
     ],
     "score": 70,
     "first_seen_at": "2026-05-08T10:47:22.631600+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -452,7 +220,7 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -475,7 +243,7 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-09T08:20:16.695831+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -505,7 +273,7 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -527,96 +295,115 @@
     ],
     "score": 69,
     "first_seen_at": "2026-05-08T16:41:46.204942+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Running Codex safely at OpenAI",
-    "url": "https://openai.com/index/running-codex-safely",
-    "source_name": "OpenAI News",
+    "title": "DeepSeek-V4-Flash W4A16+FP8 with MTP self-speculation: 85 tok/s @ 524k on 2× RTX PRO 6000 Max-Q",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t9em98/deepseekv4flash_w4a16fp8_with_mtp_selfspeculation",
+    "source_name": "Reddit r/LocalLLaMA",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-08T12:30:00+00:00",
-    "summary_or_excerpt": "How OpenAI runs Codex securely with sandboxing, approvals, network policies, and agent-native telemetry to support safe and compliant coding agent adoption.",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T18:22:24+00:00",
+    "summary_or_excerpt": "TL;DR : DeepSeek-V4-Flash running at 85.52 tok/s @ 524k ctx and ~111 tok/s @ 128k single-stream on 2× RTX PRO 6000 Max-Q pasta-paul's DeepSeek-V4-Flash-W4A16-FP8 quant is great, but its MTP head silently gets stripped at load time (HF transformers has it in _keys_to_ignore_on_load_unexpected ), so --speculative-config '{\"method\":\"mtp\",...}' is a no-op. Retrofitted the MTP block, ran a GPTQ pass on its routed experts to match the base's W4A16 INT4 group format, and patched vLLM. Decode goes from 52.85 tok/s (no MTP) → 85.52 tok/s @ 524k 2-stream → ~111 tok/s @ 128k single-stream . 671B total / 32B active, fits on 2× 96 GB. Model: https://huggingface.co/LordNeel/DeepSeek-V4-Flash-Acti-MTP-W4A16-FP8 Numbers 2× RTX PRO 6000 Blackwell Max-Q (96 GB each, no NVLink, sm_120): Profile Decode TPS TTFT Δ vs base pasta-paul base, no MTP, 524k 52.85 91 ms reference This model, 524k 2-stream 85.52 155 ms +62% (1.62×) This model, 128k single-stream ~111 ~310 ms +110% (2.10×) Sanity-check benchmarks (small samples, full data in the model card): Benchmark n Score GSM8K (T=0, COT, exact-match) 100 93% MMLU (mixed subjects) 100 53% (sample dragged by hard subjects; tracks base) HumanEval (syntactic...",
     "matched_keywords": [
-      "Agent",
-      "Codex",
-      "OpenAI"
+      "benchmark",
+      "Blackwell",
+      "DeepSeek",
+      "model card",
+      "Transformers",
+      "vLLM"
     ],
     "tags": [
-      "agent",
-      "coding_tool",
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MTP benchmark results: the nature of the generative task dictates whether you will benefit (coding) or get slower inference (creative) from speculative inference. No other factor comes close.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t9gcar/mtp_benchmark_results_the_nature_of_the",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T19:25:50+00:00",
+    "summary_or_excerpt": "I recently published MTP quants of Qwen 3.6 27B and I was suprised by the reports here on reddit, and on HF, of users who were experiencing worst speed with speculative inference than without. This did not match what I was seeing, but when I tried to reproduce their exact usage, it confirmed what they were experiencing. I tried to analyse the problem, made a few conjectures which later turned out to be false, and started a full blown systematical analysis, running 300+ tests and benchmarks, collecting and comparing the results of changing various parameters. This is what I found: F16 + MTP nearly triples coding tasks speed. Q4_K_M + MTP slows down creative writing. Same feature, same model, same settings, opposite results. I did not test all quant sizes, otherwise I would still be here in a few days, but restricted my self to 5 significant ones. The other parameters I varied were task type (4 types), temperature (0.0 0.3 0.7), quantisation of the MTP layer (q8 and matching the model quant). Temp and MTP quant have very little impact on the outcome. Cumulative average decode speeds with MTP compared to the baseline without MTP, varying the model quant and task type: quant base tok/...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Gemini API File Search is now multimodal",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanded-gemini-api-file-search-multimodal-rag",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T03:22:02+00:00",
+    "summary_or_excerpt": "HN points: 145. Comments: https://news.ycombinator.com/item?id=48080702",
+    "matched_keywords": [
+      "API",
+      "Gemini"
+    ],
+    "tags": [
+      "business",
       "model"
     ],
-    "score": 68,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "score": 66,
+    "hn_score": 145,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "model: add sarvam_moe architecture support by sumitchatterjee13 · Pull Request #20275 · ggml-org/llama.cpp",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by",
+    "title": "NVIDIA AI Releases Star Elastic: One Checkpoint that Contains 30B, 23B, and 12B Reasoning Models with Zero-Shot Slicing",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t8s83r/nvidia_ai_releases_star_elastic_one_checkpoint",
     "source_name": "Reddit r/LocalLLaMA",
     "source_type": "rss",
     "source_level": "tech_community",
-    "published_at": "2026-05-09T18:46:11+00:00",
-    "summary_or_excerpt": "Sarvam-30B is an advanced Mixture-of-Experts (MoE) model with 2.4B non-embedding active parameters, designed primarily for practical deployment. It combines strong reasoning, reliable coding ability, and best-in-class conversational quality across Indian languages. Sarvam-30B is built to run reliably in resource-constrained environments and can handle multilingual voice calls while performing tool calls. Sarvam-105B is an advanced Mixture-of-Experts (MoE) model with 10.3B active parameters, designed for superior performance across a wide range of complex tasks. It is highly optimized for complex reasoning, with particular strength in agentic tasks, mathematics, and coding. Sarvam-105B is a top-tier performer, consistently matching or surpassing several major closed-source models and staying within a narrow margin of frontier models across diverse reasoning and agentic benchmarks. It demonstrates exceptional agentic and reasoning capabilities in real-world applications such as web search and technical troubleshooting. A major focus during training was the Indian context and languages, resulting in state-of-the-art performance across 22 Indian languages for its model size. submitted...",
+    "published_at": "2026-05-10T00:48:04+00:00",
+    "summary_or_excerpt": "I saw this on another sub and didn't see it posted here, it looks awesome, and can definitely be run local. I guess it was released 11 days ago, but it never hit the top of my feed (which I look at way too often), so posting it again. This is my take on it: Think of this as like scalable video coding, you have a UHD stream, but strip some layers and you have a HD, or SD stream, it's all a single file stream, not multiple ones. Like nested models, rather than 3 different sets, and they can share their KV cache so the model can adjust speed like a sliding scale. You get an idea with a 30B model, then scale down and permutate all the thinking at 7000t/s on the 12B model, generating a book of reasoning in seconds, then slide up to 30B again to evaluate what's good. You could have a 30B kind of guide the smaller ones back and forth. Maybe it's somewhat of a hybrid between Dense and MoE, it's like MoE but with 3 dense models that are like russian dolls. Original Post: NVIDIA just released Star Elastic — and the inference strategy alone is worth understanding. Here's what's actually interesting from the technical side: One checkpoint. Three models. Star Elastic applies a post-training me...",
     "matched_keywords": [
-      "agentic",
-      "Llama",
-      "llama.cpp",
-      "pull request"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Hand-written OpenCL kernels for LLM inference on Adreno 6xx — running 6 small language models on a 2020 mid-range Android phone",
-    "url": "https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on",
-    "source_name": "Reddit r/embedded",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-09T12:37:15+00:00",
-    "summary_or_excerpt": "Mid-range Android GPUs (Adreno 6xx class — Snapdragon 6/7-series phones) sit in a weird hardware gap for ML inference: too old for vendor NPU SDKs, the open-source frameworks (llama.cpp, MLC, MNN) either don't support them or fall back to CPU. llama.cpp's own docs say \"A6x GPUs in phones are likely not supported due to the outdated driver and compiler.\" Decode tokens/sec on six small language models, fp16, greedy, 5-run warm median: SmolLM2-135M-Instruct 23.65 Mamba2-130M 23.18 Mamba-130M 22.15 OpenELM-270M 14.81 LFM2.5-350M 11.51 Qwen2.5-0.5B 10.41 Repo: https://github.com/a8nova/adreno-llms submitted by /u/Objective_Spot7997 [link] [comments]",
-    "matched_keywords": [
-      "GitHub",
       "inference",
-      "Llama",
-      "llama.cpp"
+      "NVIDIA"
     ],
     "tags": [
-      "model",
-      "open_source"
+      "open_source",
+      "semiconductor"
     ],
-    "score": 68,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "score": 66,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "80 tok/sec and 128K context on 12GB VRAM with Qwen3.6 35B A3B and llama.cpp MTP",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with",
+    "title": "NCCL-Free Tensor Parallelism on Dual Blackwell PCIe llama.cpp b9095 released!",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t96l6r/ncclfree_tensor_parallelism_on_dual_blackwell",
     "source_name": "Reddit r/LocalLLaMA",
     "source_type": "rss",
     "source_level": "tech_community",
-    "published_at": "2026-05-09T11:57:52+00:00",
-    "summary_or_excerpt": "Just wanted to share my config in hopes of helping other 12GB GPU owners achieve what I see as very respectable token generation speeds with modest VRAM. Using the latest llama.cpp build + MTP PR, I got over 80 tok/sec with 80%+ draft acceptance rate on the benchmark found here: https://gist.githubusercontent.com/am17an/228edfb84ed082aa88e3865d6fa27090/raw/7a2cee40ee1e2ca5365f4cef93632193d7ad852a/mtp-bench.py Here's my PC specs: OS: CachyOS (HIGHLY recommended) CPU: AMD Ryzen 7 9700X RAM: 48GB DDR5-6000 EXPO I GPU: RTX 4070 Super 12GB Results with other hardware may vary. To run llama.cpp with MTP support, you need to build it from source and add a draft PR that hasn't yet been merged with the master branch. You can find a very nice guide on how to do that here and also download the Qwen3.6 MTP GGUF: https://huggingface.co/havenoammo/Qwen3.6-35B-A3B-MTP-GGUF - Thanks u/havenoammo ! llama.cpp command: llama-server \\ -m Qwen3.6-35B-A3B-MTP-UD-Q4_K_XL.gguf \\ -fitt 1536 \\ -c 131072 \\ -n 32768 \\ -fa on \\ -np 1 \\ -ctk q8_0 \\ -ctv q8_0 \\ -ctkd q8_0 \\ -ctvd q8_0 \\ -ctxcp 64 \\ --no-mmap \\ --mlock \\ --no-warmup \\ --spec-type mtp \\ --spec-draft-n-max 2 \\ --chat-template-kwargs '{\"preserve_th...",
+    "published_at": "2026-05-10T13:12:33+00:00",
+    "summary_or_excerpt": "b9095 finally makes -sm tensor work on dual consumer Blackwell PCIe GPUs without NCCL If youre on dual Blackwell gpus this look like it could be big. I'll have my own results for 2x5060ti asap submitted by /u/Bulky-Priority6824 [link] [comments]",
     "matched_keywords": [
-      "AMD",
-      "benchmark",
-      "GPU",
+      "Blackwell",
       "Llama",
       "llama.cpp"
     ],
@@ -625,78 +412,84 @@
       "open_source",
       "semiconductor"
     ],
-    "score": 66,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "score": 64,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "BeeLlama.cpp: advanced DFlash & TurboQuant with support of reasoning and vision. Qwen 3.6 27B Q5 with 200k context on 3090, 2-3x faster than baseline (peak 135 tps!)",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-05-09T16:05:05+00:00",
-    "summary_or_excerpt": "TL;DR New llama.cpp fork! I wanted a Windows-friendly inference to run Qwen 3.6 27B Q5 on a single RTX 3090 with speculative decoding, high context without excess quantization, and vision enabled. No option did this out of the box for me without VRAM and/or tooling issues (this was before MTP PR for llama.cpp surfaced there). So I pulled out an old trick: stay up to 4 a.m. one too many times to do month+ work in a week or two. I probably lost a decent amount of hair while trying to make this all work, but now I have what seems to be a proper solution and don't mind to share. Anbeeld's BeeLlama.cpp https://preview.redd.it/lqjgiw1bx40h1.jpg?width=1800&format=pjpg&auto=webp&s=3b68c16e78d36a1089a14f31b338aa78b8a1c073 GitHub repo: https://github.com/Anbeeld/beellama.cpp BeeLlama.cpp (or just Bee) is a performance-focused llama.cpp fork for squeezing more speed and context out of local GGUF inference. It keeps the familiar llama.cpp tools and server flow, then adds DFlash speculative decoding, adaptive draft control, TurboQuant/TCQ KV-cache compression, and reasoning-loop protection, with full multimodal support. Not quite a pegasus, but close enough. Here's a plug-and-play Qwen 3.6 27B...",
-    "matched_keywords": [
-      "GitHub",
-      "inference",
-      "Llama",
-      "llama.cpp",
-      "quantization",
-      "Qwen"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Nvidia has already committed $40B to equity AI deals this year",
-    "url": "https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year",
-    "source_name": "TechCrunch AI",
+    "title": "OpenAI's Coding Agent Helped Create A New AMD Temperature Driver For Linux",
+    "url": "https://www.phoronix.com/news/AMD-Prom21-xHCI-Temp-Driver",
+    "source_name": "Phoronix",
     "source_type": "rss",
     "source_level": "needs_verification",
-    "published_at": "2026-05-09T14:43:30+00:00",
-    "summary_or_excerpt": "Nvidia continues to be a big investor in the AI ecosystem.",
+    "published_at": "2026-05-10T10:28:59+00:00",
+    "summary_or_excerpt": "The newest open-source AMD Linux driver on the Linux kernel mailing list that has recently been undergoing review is prom21-xhci that exposes the temperature sensors found on the AMD Promontory 21 chipsets' xHCI controllers...",
     "matched_keywords": [
-      "NVIDIA"
+      "Agent",
+      "AMD",
+      "OpenAI"
     ],
     "tags": [
+      "agent",
+      "model",
       "semiconductor"
     ],
-    "score": 62,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "score": 64,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Open WebUI v0.9.3：Added",
-    "url": "https://github.com/open-webui/open-webui/releases/tag/v0.9.3",
-    "source_name": "Open WebUI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-05-09T07:17:19+00:00",
-    "summary_or_excerpt": "### Added - 🔇 **Voice Mode mute control.** Voice Mode now includes a dedicated mute toggle with an \"M\" shortcut and auto-unmute after assistant playback, so you can prevent accidental interruptions from background noise without leaving the call overlay. [Commit](https://github.com/open-webui/open-webui/commit/072d2000f35a9f7b96342fa9bb28f925a92e7b4c), [#23832](https://github.com/open-webui/open-webui/issues/23832) - 🚀 **Faster prompt list loading.** Prompt and prompt-tag pages now load much faster for non-admin users, even with large prompt libraries, because accessible prompts are filtered efficiently in a single database query. [#24288](https://github.com/open-webui/open-webui/pull/24288), [#24258](https://github.com/open-webui/open-webui/discussions/24258) - ⚡ **Faster chat history loading.** Chat history maps now load from normalized message records when available, reducing overhead for large conversations while preserving fallback behavior for legacy chats. [Commit](https://github.com/open-webui/open-webui/commit/485d689cfd1ef8b9e7f77cd7b535b8b8747dff1f), [#23159](https://github.com/open-webui/open-webui/pull/23159) - 🗑️ **Delete from conversation menu.** You can now delete t...",
-    "matched_keywords": [
-      "GitHub",
-      "Open WebUI"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
+    "title": "Obsidian plugin was abused to deploy a remote access trojan",
+    "url": "https://cyber.netsecops.io/articles/obsidian-plugin-abused-in-campaign-to-deploy-phantom-pulse-rat",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T22:02:43+00:00",
+    "summary_or_excerpt": "HN points: 37. Comments: https://news.ycombinator.com/item?id=48088576",
+    "matched_keywords": [],
+    "tags": [],
     "score": 60,
-    "release_version": "v0.9.3",
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "hn_score": 37,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Maryland citizens hit with $2B power grid upgrade for out-of-state AI",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/maryland-citizens-slapped-with-usd2-billion-grid-upgrade-bill-for-out-of-state-ai-data-centers-state-complains-to-federal-energy-regulators-says-additional-cost-breaks-ratepayer-protection-pledge-promises",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T21:16:58+00:00",
+    "summary_or_excerpt": "HN points: 103. Comments: https://news.ycombinator.com/item?id=48088151",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 60,
+    "hn_score": 103,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Chrome's AI features may be hogging 4GB of your computer storage",
+    "url": "https://www.theverge.com/tech/924933/google-chrome-4gb-gemini-nano-ai-features",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T15:22:46+00:00",
+    "summary_or_excerpt": "HN points: 92. Comments: https://news.ycombinator.com/item?id=48084710",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 60,
+    "hn_score": 92,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -720,8 +513,8 @@
     ],
     "score": 59,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -741,7 +534,27 @@
     ],
     "score": 59,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Nvidia has already committed $40B to equity AI deals this year",
+    "url": "https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-09T14:43:30+00:00",
+    "summary_or_excerpt": "Nvidia continues to be a big investor in the AI ecosystem.",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -765,8 +578,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -791,8 +604,8 @@
     "score": 57,
     "release_version": "b9093",
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -811,7 +624,28 @@
     ],
     "score": 53,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anthropic says ‘evil’ portrayals of AI were responsible for Claude’s blackmail attempts",
+    "url": "https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-05-10T20:40:41+00:00",
+    "summary_or_excerpt": "Fictional portrayals of artificial intelligence can have a real effect on AI models, according to Anthropic.",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -832,7 +666,56 @@
     "score": 50,
     "hn_score": 246,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "BeeLlama.cpp: advanced DFlash & TurboQuant with support of reasoning and vision. Qwen 3.6 27B Q5 with 200k context on 3090, 2-3x faster than baseline (peak 135 tps!)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T16:05:05+00:00",
+    "summary_or_excerpt": "TL;DR New llama.cpp fork! I wanted a Windows-friendly inference to run Qwen 3.6 27B Q5 on a single RTX 3090 with speculative decoding, high context without excess quantization, and vision enabled. No option did this out of the box for me without VRAM and/or tooling issues (this was before MTP PR for llama.cpp surfaced there). So I pulled out an old trick: stay up to 4 a.m. one too many times to do month+ work in a week or two. I probably lost a decent amount of hair while trying to make this all work, but now I have what seems to be a proper solution and don't mind to share. Anbeeld's BeeLlama.cpp https://preview.redd.it/lqjgiw1bx40h1.jpg?width=1800&format=pjpg&auto=webp&s=3b68c16e78d36a1089a14f31b338aa78b8a1c073 GitHub repo: https://github.com/Anbeeld/beellama.cpp BeeLlama.cpp (or just Bee) is a performance-focused llama.cpp fork for squeezing more speed and context out of local GGUF inference. It keeps the familiar llama.cpp tools and server flow, then adds DFlash speculative decoding, adaptive draft control, TurboQuant/TCQ KV-cache compression, and reasoning-loop protection, with full multimodal support. Not quite a pegasus, but close enough. Here's a plug-and-play Qwen 3.6 27B...",
+    "matched_keywords": [
+      "GitHub",
+      "inference",
+      "Llama",
+      "llama.cpp",
+      "quantization",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 49,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I built an open source hyperparameter search tool for diffusion fine-tunes- pick the winner based on scoring",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t9k8gy/i_built_an_open_source_hyperparameter_search_tool",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T21:58:12+00:00",
+    "summary_or_excerpt": "I kept running the same loop: train a LoRA, look at the samples, decide it’s “fine”, change three things at once, train again, then when a new dataset needs training, all the parameters previously need to be reviewed again. So I built something to take the hassle out of this. It’s called Bracket . You point it at a dataset and a model Set a budget (such as sample size to test # of candidates or variations to try out It runs X short training trials in parallel configurations (Optuna TPE for the search). Each run gets scored two ways: The training-loss trajectory, A local VLM (LM Studio) judging the sample images on prompt-adherence, visual quality, and artifact-freeness. At the end you get a Markdown report with Welch’s t-test confidence on which config wins. The whole point is to replace “this LoRA looks better to me” with “config X beats baseline by 0.34 with p=0.03 over 4 seeds”. It doesn’t reimplement training. It drives musubi-tuner and sd-scripts as subprocesses, so the trainers are exactly what kohya already supports — same args, same outputs. Currently covers SDXL, Z-Image, Flux.1, Flux.1-Kontext, Flux-2-Klein, Qwen-Image (+ Edit), SD3.5, HunyuanVideo, Wan 2.1/2.2, LTX-Vide...",
+    "matched_keywords": [
+      "dataset",
+      "open source",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 47,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -858,7 +741,60 @@
     ],
     "score": 47,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9100：backend sampling: support returning post-sampling probs (#22622)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9100",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-10T20:06:59+00:00",
+    "summary_or_excerpt": "backend sampling: support returning post-sampling probs (#22622) * server: Never return 0.0 post-sampling probabilities * backend sampling: support returning post-sampling probs **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-macos-arm64.tar.gz) - [macOS Apple Silicon (arm64, KleidiAI enabled)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-macos-arm64-kleidiai.tar.gz) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9100/llama-b9100-bin-ubuntu-vulkan-x...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 46,
+    "release_version": "b9100",
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "vLLM v0.20.2：vLLM v0.20.2",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.20.2",
+    "source_name": "vLLM",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-05-10T07:37:57+00:00",
+    "summary_or_excerpt": "# vLLM v0.20.2 ## Highlights This release features 6 commits from 6 contributors (0 new)! This is a small patch release with bug fixes for DeepSeek V4, gpt-oss, and Qwen3-VL ### Bug Fixes * **DeepSeek V4 sparse attention**: Re-enable the persistent topk path on Hopper and ensure the memset kernel runs at CUDA graph capture time regardless of `max_seq_len`, fixing the MTP=1 hang on DeepSeek V4 (#41665, revert of #41605). * **DeepSeek V4 KV cache**: Fixed a \"failure to allocate KV blocks\" error in the V1 engine KV cache manager (#41282). * **gpt-oss MXFP4 + torch.compile**: Plumbed `hidden_dim_unpadded` through the `moe_forward` fake op so MXFP4 works under `torch.compile` on v0.20.x (#42002, backport of #41646). * **Qwen3-VL**: Removed an invalid deepstack boundary check that could fail under heavy load (#40932). ## Contributors @ywang96, @zyongye, @stecasta, @wzhao18, @Isotr0py, @khluu",
+    "matched_keywords": [
+      "CUDA",
+      "DeepSeek",
+      "GPT",
+      "release",
+      "vLLM"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 46,
+    "release_version": "v0.20.2",
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -885,8 +821,8 @@
     "score": 46,
     "release_version": "b9088",
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -901,8 +837,8 @@
     "tags": [],
     "score": 46,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -925,7 +861,60 @@
     ],
     "score": 46,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I made Esp3 Xiaozhi Ai Voice Assistant",
+    "url": "https://www.reddit.com/r/esp32/comments/1t9m7j0/i_made_esp3_xiaozhi_ai_voice_assistant",
+    "source_name": "Reddit r/esp32",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T23:22:59+00:00",
+    "summary_or_excerpt": "Video Tutorial : https://youtu.be/hBlcBcnU5mk Xiaozhi : https://xiaozhi.me/console/agents Source Code : https://github.com/78/xiaozhi-esp32 In this project I used. Esp32-16R8 Dev Board st7789 1.69\" tft Display Inmp441 Mems Microphone Max98357a I2s amplifier Project based on custom board configuration and Compiling on Esp-IDF. Also you need a vs code studio. In tutorial video I showed. How you can make it. No claude Server Needed. Completely open source. I think guest this is easiest way to make a chatbot with esp32 development board. I like that. This isn't just a fun project. Must be check it submitted by /u/ikilim [link] [comments]",
+    "matched_keywords": [
+      "agents",
+      "chatbot",
+      "Claude",
+      "ESP-IDF",
+      "ESP32",
+      "GitHub",
+      "open source"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "embedded_edge_ai",
+      "model",
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Running Qwen3.6 35b a3b on 8gb vram and 32gb ram ~190k context",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t9eo83/running_qwen36_35b_a3b_on_8gb_vram_and_32gb_ram",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T18:24:29+00:00",
+    "summary_or_excerpt": "If anyone is looking for a good high-speed setup with ~190k context, this config has been working insanely well for me. I’m using my laptop as a server over Tailscale. Installed Linux on it and running: - Qwen3.6 35B A3B - RTX 4060 8GB VRAM - 32GB DDR5 5600MHz RAM - Q5 quant models Current models tested: - `mudler/Qwen3.6-35B-A3B-APEX-GGUF` - ~40 tok/sec → 37 tok/sec - `hesamation/Qwen3.6-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-GGUF` - ~43 tok/sec → 37 tok/sec I can push it up to ~51 tok/sec by tweaking: - `--ctx-size 192640` - `--n-gpu-layers 430` - `--n-cpu-moe 35` and adjusting those values slightly higher/lower depending on stability and memory usage. Here’s my current config: #!/bin/bash # --- LLAMA SERVER LAUNCHER SCRIPT --- #SELECTED_MODEL=\"/home/atulloq/.lmstudio/models/hesamation/Qwen3.6-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-GGUF/Qwen3.6-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled.Q5_K_M.gguf\" SELECTED_MODEL=\"/home/atulloq/.lmstudio/models/mudler/Qwen3.6-35B-A3B-APEX-GGUF/Qwen3.6-35B-A3B-APEX-I-Balanced.gguf\" echo \"Starting Llama Server...\" echo \"Model: $SELECTED_MODEL\" /home/atulloq/llama-cpp-turboquant/build/bin/llama-server \\ --model \"$SELECTED_MODEL\" \\ --hos...",
+    "matched_keywords": [
+      "Claude",
+      "GPU",
+      "Llama"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -946,8 +935,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -971,8 +960,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -995,8 +984,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1016,8 +1005,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1038,8 +1027,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1058,7 +1047,56 @@
     ],
     "score": 41,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SpacemiT X100 clang benchmark with and without RVC",
+    "url": "https://www.reddit.com/r/RISCV/comments/1t9bzku/spacemit_x100_clang_benchmark_with_and_without_rvc",
+    "source_name": "Reddit r/RISCV",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T16:44:39+00:00",
+    "summary_or_excerpt": "I tested the impact of disabling RVC on the SpacemiT X100 with clang. Enabling RVC resulted in a roughly 10% performance improvement, which is higher than I expected. AFAIK while the X100 supports a handful of fusion pairs, those aren't compressed only. (bitwise+bitwise, mul+add, add+load/store, slli+sr*i) The fetch bandwidth is 16-byte / cycle (probably, because it's based on C910), so enough to saturate the 4-way decode without RVC, but may struggle to keep it feed, in branchy code. Though the Cortex-A76, also has a 16-byte fetch with a 4-wide decode. So I'm not sure what the tells us about RVC exactly. The additional L1I misses don't feel like they'd impact perf that much on their own. submitted by /u/camel-cdr- [link] [comments]",
+    "matched_keywords": [
+      "benchmark",
+      "SpacemiT"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I have DeepSeek V4 Pro at home",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t94ito/i_have_deepseek_v4_pro_at_home",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T11:35:01+00:00",
+    "summary_or_excerpt": "Just wanted to share that I used u/LegacyRemaster slightly modified (Q4_K_M conversion support) DeepSeek V4 CUDA repo (based on u/antirez work ) to convert and run Q4_K_M DeepSeek V4 Pro on my Epyc workstation (Genoa 9374F, 12 x 96GB RAM, single RTX PRO 6000 Max-Q) and it worked right from the start: (base) phm@epyc:~/projects/llama.cpp-deepseek-v4-flash-cuda/build-cuda$ ./bin/llama-cli -m ../models/DeepSeek-V4-Pro-Q4_K_M.gguf --no-repack -ub 128 --chat-template-file ../models/templates/deepseek-ai-DeepSeek-V3.2.jinja ggml_cuda_init: found 1 CUDA devices (Total VRAM: 97247 MiB): Device 0: NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, compute capability 12.0, VMM: yes, VRAM: 97247 MiB Loading model... ▄▄ ▄▄ ██ ██ ██ ██ ▀▀█▄ ███▄███▄ ▀▀█▄ ▄████ ████▄ ████▄ ██ ██ ▄█▀██ ██ ██ ██ ▄█▀██ ██ ██ ██ ██ ██ ██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀ ██ ██ ▀▀ ▀▀ build : b8936-44c7b01de model : DeepSeek-V4-Pro-Q4_K_M.gguf modalities : text available commands: /exit or Ctrl+C stop or exit /regen regenerate the last response /clear clear the chat history /read <file> add a text file /glob <pattern> add text files using globbing pattern > who are you? [Start thinking] Okay, the use...",
+    "matched_keywords": [
+      "Blackwell",
+      "CUDA",
+      "DeepSeek",
+      "Llama",
+      "llama.cpp",
+      "NVIDIA"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -1081,8 +1119,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1106,30 +1144,33 @@
     ],
     "score": 40,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "LLM rankings are not a ladder: experimental results from a transitive benchmark graph [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1t8f61o/llm_rankings_are_not_a_ladder_experimental",
-    "source_name": "Reddit r/MachineLearning",
+    "title": "Speeding up local LLM for usable coding agent",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t96kfh/speeding_up_local_llm_for_usable_coding_agent",
+    "source_name": "Reddit r/LocalLLaMA",
     "source_type": "rss",
     "source_level": "tech_community",
-    "published_at": "2026-05-09T19:16:19+00:00",
-    "summary_or_excerpt": "I built a small website called LLM Win : https://llm-win.com It turns LLM benchmark results into a directed graph: text If model A beats model B on benchmark X, add an edge A -> B. Then it searches for the shortest transitive chain between two models. The meme version is: text Can LLaMA 2 7B beat Claude Opus 4.7? In an absurd transitive benchmark sense, sometimes yes. But I added a Report tab because the structure itself seems useful for model evaluation. Some experimental findings from the current Artificial Analysis data snapshot: Weak-to-strong reachability is high. I checked 126,937 pairs where the source model has lower Intelligence Index than the target model. 119,514 of them are reachable through benchmark win chains, for a reachable rate of 94.2% . Most paths are short. Among reachable weak-to-strong pairs: 2-3 hop paths account for 91.4% . So this is not mostly long-chain cherry-picking. Direct reversal triples are abundant. After treating non-positive benchmark values as missing, there are still about 119k direct weak-over-strong triples of the form: (source model, target model, benchmark) , where the source has lower Intelligence Index but higher score on that benchmark...",
+    "published_at": "2026-05-10T13:11:42+00:00",
+    "summary_or_excerpt": "TL;DR: Qwen 3.6 35B-A3B (Q4_K_M) is running slow at around 9 t/s with 72% filled context (36147 tokens window) and a total response time of 77s including prefill and token generation. Ran this using LM Studio on Windows with the attached image settings, on a 5060 Ti (16GB VRAM) + 32GB system RAM. I don't consider this performance great for my planned coding agent use case, so how can I speed this up? If I can't meaningfully speed it up, what other still-useful, faster LLMs do you suggest for my hardware specs? Hello! As I see prices becoming tighter around cloud LLMs, I decided to look into local AI coding as a backup in case of a cloud LLM \"apocalypse\" or whenever I need to work with critical private software (I'm aware AI coding agents shouldn't be completely trusted around such things, I know the precautions to take). I have a 5060 Ti (16GB VRAM) + 32 GB system RAM. To test if my hardware is capable of hosting a competitive local AI, I decided to load Qwen 3.6 35B-A3B into LM Studio, which uses a llama.cpp backend. Loading it with around 32K context window, it runs at a decent speed of 17 t/s with just a simple \"Hi\" prompt. However, if you've used coding agents before, you'll k...",
     "matched_keywords": [
-      "benchmark",
-      "Claude",
-      "Llama"
+      "Agent",
+      "agents",
+      "Llama",
+      "llama.cpp",
+      "Qwen"
     ],
     "tags": [
+      "agent",
       "model",
       "open_source"
     ],
-    "score": 39,
-    "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "score": 38,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -1155,8 +1196,8 @@
     "score": 38,
     "release_version": "b9089",
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1178,8 +1219,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1201,7 +1242,55 @@
     ],
     "score": 37,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LLM rankings are not a ladder: experimental results from a transitive benchmark graph [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1t8f61o/llm_rankings_are_not_a_ladder_experimental",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-09T19:16:19+00:00",
+    "summary_or_excerpt": "https://preview.redd.it/668yjlucu80h1.png?width=2800&format=png&auto=webp&s=ca541488abb5262b06cfc13a9586efb19f24d644 I built a small website called LLM Win : https://llm-win.com It turns LLM benchmark results into a directed graph: If model A beats model B on benchmark X, add an edge A -> B. Then it searches for the shortest transitive chain between two models. The meme version is: Can LLaMA 2 7B beat Claude Opus 4.7? In an absurd transitive benchmark sense, sometimes yes. But I added a Report tab because the structure itself seems useful for model evaluation. Some experimental findings from the current Artificial Analysis data snapshot: Weak-to-strong reachability is high. I checked 126,937 pairs where the source model has lower Intelligence Index than the target model. 119,514 of them are reachable through benchmark win chains, for a reachable rate of 94.2% . Most paths are short. Among reachable weak-to-strong pairs: 2-3 hop paths account for 91.4% . So this is not mostly long-chain cherry-picking. Direct reversal triples are abundant. After treating non-positive benchmark values as missing, there are still about 119k direct weak-over-strong triples of the form: (source model,...",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Llama"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Ran some Llama.cpp RPC test to see if its worth it. And if 10Gbe needed.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t9lbcm/ran_some_llamacpp_rpc_test_to_see_if_its_worth_it",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-05-10T22:43:59+00:00",
+    "summary_or_excerpt": "Let me first say I am not doing anything with parallelism so these benchmarks and tests are not for you. That said if your hobbyist like me that is left wondering if can I use the GPUs my other PCs then I have some answers and but I'm still learning. There is probably a better config for Llama.cpp but haven't see any huge gains, in fact flash attention seems to slow things down a bit so I didn't test with on. Also I'm sure if someone has better than consumer level networking they could get their latency down more which should improve things. I just don't have that kind of hardware. On my main AI PC (see gpu details below) as the main for these tests. The 2nd PC has a 5070 and 3080 I tested this PC on WIndows 11, WSL, and Native Linux. And for fun one go around with a 3rd PC with a 5060ti 16gb. Here is the results. I did double check to be sure the RPC server was in fact being used on each run. Start off with the main PC only as a control to see how RPC does work. You can see my config and hardware used. For some reason I didn't need to rearrange my gpu order for the llama.bench to work good. All my test this PC is the main and is running Linux Mint with Nvidia driver 590.48.0.1 wi...",
+    "matched_keywords": [
+      "GPU",
+      "Llama",
+      "llama.cpp",
+      "NVIDIA"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -1227,8 +1316,8 @@
     "score": 35,
     "release_version": "b9087",
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1247,8 +1336,8 @@
     ],
     "score": 35,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1267,8 +1356,8 @@
     ],
     "score": 35,
     "first_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "last_seen_at": "2026-05-10T08:19:10.371163+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-05-11T08:21:45.693471+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

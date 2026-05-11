@@ -1,236 +1,269 @@
-# AI 新闻模型解读日报｜2026-05-10
+# AI 新闻模型解读日报｜2026-05-11
 
 ## 今日一句话
-今日技术社区围绕 **llama.cpp** 生态密集更新：多个版本连续发布，重点优化 Intel GPU 推理性能并新增 Sarvam MoE 架构支持；社区实测显示 Qwen3.6 35B 模型在 12GB 显存上可达 80 tok/s，BeeLlama.cpp 分支在 3090 上实现 135 tps 峰值。OpenAI 发布 Codex 安全运行实践，为 Agent 部署提供官方安全参考。端侧 AI 方面，手写 OpenCL 内核让 2020 年中端安卓手机跑起了小语言模型。
+
+本周 AI 领域的关键信号集中在**本地推理效率的突破**和**Agent 安全与可观测性的深化**：DeepSeek V4 完整论文公开了 FP4 量化训练细节，Redis 作者在 Mac 上跑通了 1M 上下文的 DeepSeek V4 Flash；OpenAI 详细披露了 Codex 的安全运行机制，Katanemo 提出无需 GPU 的 Agent 轨迹筛选方法；同时，DIY 硬件市场因内存涨价正在萎缩，而社区在 12GB VRAM 显卡上实现了 80 tok/s 的推理速度。
+
+---
 
 ## 工具链更新汇总
 
-### Allen AI 提出 EMO 预训练方法：让混合专家模型“自然长出”模块化能力
-[16. Allen AI提出EMO预训练方法：通过混合专家模型实现涌现模块化](https://huggingface.co/blog/allenai/emo)
+### Open WebUI v0.9.5：安全加固与渲染控制
+[5. Open WebUI v0.9.5 发布：新增 SSRF 保护、iframe CSP 和 Markdown 渲染控制](https://github.com/open-webui/open-webui/releases/tag/v0.9.5)
 
-**背景**：当前大语言模型（LLM）通常是“大一统”的——一个模型处理所有任务，但实际应用中往往只需要其中一部分能力（比如只做代码生成或数学推理）。混合专家模型（MoE）理论上可以通过激活不同“专家”来按需调用能力，但实践中仍需要加载全部参数才能正常工作。
+**Open WebUI** 是一个流行的自托管 AI 对话平台，支持连接各种大模型后端（如 Ollama、vLLM、OpenAI API 等），提供聊天、文件上传、工具调用等功能。本次 v0.9.5 版本主要聚焦安全性和用户体验：
 
-**这次发生了什么**：Allen AI（AI2）在 Hugging Face 博客上发布了 **EMO** 方法，这是一种端到端的预训练方式，让 MoE 模型的模块化结构直接从数据中“涌现”出来，而不依赖人工预设的专家分工规则。EMO 模型在特定任务上只需激活 12.5% 的专家就能保持接近全模型性能，同时全量使用时仍可作为通用模型工作。
+- **SSRF 保护**：默认阻止所有出站 HTTP 请求的 3xx 重定向（通过 `AIOHTTP_CLIENT_ALLOW_REDIRECTS` 环境变量控制），防止攻击者利用公开 URL 将请求重定向到内部网络地址（如 192.168.x.x、127.0.0.1、云元数据端点）。受影响的功能包括网页抓取、图片加载、OAuth 发现、工具服务器执行和代码解释器登录。
+- **iframe 内容安全策略（CSP）**：管理员可通过 `IFRAME_CSP` 环境变量配置 srcdoc iframe 的 CSP，限制 LLM 生成或用户上传的 HTML 在预览中能加载和执行的内容。
+- **Markdown 渲染控制**：用户现在可以在界面设置中独立禁用用户消息和助手回复的 Markdown 渲染，避免粘贴含 Markdown 敏感字符的文本时出现意外格式。
 
-**为什么重要**：模块化是提升模型可解释性和部署效率的关键方向。如果 EMO 方法成熟，未来用户可能只需加载与任务相关的“小模块”即可运行，大幅降低推理成本和内存占用。**但请注意**：博客未提供详细的量化实验结果或与现有方法的对比，目前仍处于早期研究阶段，不等于已经产品化。
+**为什么重要**：自托管平台的安全风险常被低估。SSRF 保护直接防止了内部网络泄露，CSP 配置阻止了恶意脚本执行，这两项更新让 Open WebUI 更适合企业或敏感环境部署。建议自托管用户尽快升级。
+
+### Open WebUI v0.9.3：性能优化与语音模式改进
+[16. Open WebUI v0.9.3：Added](https://github.com/open-webui/open-webui/releases/tag/v0.9.3)
+
+v0.9.3 版本（5月9日发布）主要优化了性能：提示词列表和聊天历史加载速度显著提升（通过单次数据库查询过滤），同时新增语音模式的静音切换（快捷键 M）和自动取消静音功能。**原文未给出量化性能提升数据**，但架构优化方向明确。建议普通用户关注 v0.9.5 的安全更新，v0.9.3 的改进已包含在 v0.9.5 中。
+
+---
 
 ## Agent / 编程工具趋势
 
-### OpenAI 发布 Codex 安全运行实践：沙箱、审批、网络策略与代理原生遥测
-[1. OpenAI 发布 Codex 安全运行实践：沙箱、审批、网络策略与代理原生遥测](https://openai.com/index/running-codex-safely)
+### OpenAI 详解 Codex 安全运行机制
+[9. Running Codex safely at OpenAI](https://openai.com/index/running-codex-safely)
 
-**背景**：Codex 是 OpenAI 的 AI 编码代理（coding agent），能够自主编写和修改代码。随着 Agent 越来越多地直接操作代码库和基础设施，安全问题成为企业采用的核心障碍——一个错误的 Agent 操作可能导致数据泄露或系统损坏。
+**背景**：Codex 是 OpenAI 的编程 Agent，能够自主编写和执行代码。随着 Agent 权限增大（如文件读写、网络访问、数据库操作），安全问题成为企业采用的核心障碍。
 
-**这次发生了什么**：OpenAI 官方详细介绍了如何安全运行 Codex，核心措施包括：
-- **沙箱隔离**：Agent 在隔离环境中执行，限制对主机系统的访问。
-- **操作审批**：关键操作（如写入文件、执行命令）需要人工确认（HITL，人在回路中）。
-- **网络策略**：限制 Agent 可以访问的网络资源，防止数据外泄。
-- **代理原生遥测**：内置监控和日志系统，追踪 Agent 的每一步操作。
+**本次内容**：OpenAI 官方博客详细披露了 Codex 在生产环境中的安全架构，包括：
+- **沙箱隔离**：代码执行在隔离环境中运行，无法访问宿主系统。
+- **审批机制**：关键操作（如文件删除、网络请求）需要人工确认（HITL，人在回路中）。
+- **网络策略**：限制 Agent 可访问的网络端点，防止数据外泄。
+- **Agent 原生遥测**：内置监控和日志系统，追踪 Agent 的每一步操作。
 
-**为什么重要**：这是 OpenAI 首次系统性地公开 Agent 安全部署的官方参考，直接影响了所有使用 AI 编码代理的开发者和企业。对于正在评估或已部署 Codex 的团队，这些实践是必须了解的安全基线。
+**为什么重要**：这是 OpenAI 首次系统性地公开 Agent 安全架构，为企业和开发者提供了可参考的安全设计模式。对于正在构建或采购 Agent 工具的团队，这些原则（沙箱 + 审批 + 网络策略 + 遥测）应成为基本要求。
 
-**建议动作**：如果你的团队正在使用或计划使用 AI 编码代理，建议仔细阅读原文，对照检查自己的安全策略是否覆盖了沙箱、审批和网络隔离。
+### GitHub Copilot CLI 的 Rubber Duck 支持更多模型
+[3. Rubber Duck in GitHub Copilot CLI now supports more models](https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models)
 
-### GitHub Copilot Cloud Agent 支持更灵活的 Secrets 和 Variables 配置
-[4. GitHub Copilot Cloud Agent 支持更灵活的 Secrets 和 Variables 配置](https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent)
+**背景**：Rubber Duck 是 GitHub Copilot CLI 中的跨模型审查 Agent，它使用不同模型家族的组合来提供“第二意见”——即让一个模型审查另一个模型生成的代码，以发现架构问题、细微 bug 和跨文件冲突。
 
-**背景**：GitHub Copilot Cloud Agent 是一个在后台运行的编码代理，它使用 GitHub Actions 作为运行环境。为了让 Agent 访问私有资源（如内部包注册表）或配置 MCP 服务器（让 Agent 连接外部工具和数据源的协议），需要传递 secrets（敏感信息）和 variables（变量）。
+**本次变化**：
+- 当用户选择 GPT 模型作为编排器时，Rubber Duck 现在可以使用 Claude 驱动的审查 Agent 提供第二意见。
+- 当用户选择 Claude 作为编排器时，Rubber Duck 升级为使用 GPT-5.5 作为审查模型。
 
-**原来的问题**：之前这些配置必须逐个仓库设置，在仓库的 Actions 设置下的 copilot 环境中操作。跨仓库共享配置（如一个通用的内部包注册令牌）非常麻烦。
+**为什么重要**：这种“跨家族模型互审”策略利用了不同模型的能力差异来提升代码质量。用户无需手动切换模型，Copilot CLI 自动调度。需要启用 `/experimental` 功能才能使用。
 
-**这次发生了什么**：GitHub 为 Copilot Cloud Agent 新增了独立的“Agents”类型的 secrets 和 variables，与现有的“Actions”、“Codespaces”、“Dependabot”类型并列。现在可以在组织级别配置并跨仓库共享，也可以在仓库设置中独立管理 Agent 的配置。
+### Grok Code Fast 1 即将在 GitHub Copilot 中弃用
+[4. Upcoming deprecation of Grok Code Fast 1](https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1)
 
-**为什么重要**：对于大规模使用 Copilot Cloud Agent 的团队，此更新显著简化了配置管理，提升了安全性和灵活性。
+GitHub 宣布将于 **5月15日** 弃用 Grok Code Fast 1 模型，涉及 Copilot Chat、内联编辑、ask 和 agent 模式以及代码补全等所有体验。弃用原因是模型提供商停止支持。建议使用 Grok Code Fast 1 的用户在截止日期前切换到其他支持的模型。企业管理员需在 Copilot 设置中启用替代模型的访问权限。
 
-### GitHub Copilot 用量指标 API 新增代码审查评论类型细分
-[5. GitHub Copilot 用量指标 API 新增代码审查评论类型细分](https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api)
+### Katanemo Labs 提出 Signals：无需 GPU 的轻量级 Agent 轨迹筛选方法
+[14. Katanemo Labs 提出 Signals：无需 LLM 的轻量级 Agent 轨迹筛选方法](https://www.reddit.com/r/MachineLearning/comments/1t9d3et/signals_finding_the_most_informative_agent_traces)
 
-**背景**：GitHub Copilot 的代码审查功能会自动在 PR 中生成行级审查评论。之前企业用户只能看到总体的建议数量，无法区分这些建议属于什么类型。
+**背景**：在 Agent 开发和部署中，开发者需要审查大量 Agent 执行轨迹（trajectories）来发现问题、改进行为。传统方法要么靠人工逐条审查（成本高），要么用额外的 LLM 调用自动评估（也贵且慢）。
 
-**这次发生了什么**：Copilot 用量指标 API 新增了 `copilot_suggestions_by_comment_type` 字段，可以按评论类型（如 security、bug_risk）查看 Copilot 生成的建议数量和开发者实际采纳的数量。目前支持企业和组织级别的单日和 28 天滚动报告，暂不支持仓库级别。
+**本次研究**：Katanemo Labs（DigitalOcean 旗下）提出 **Signals** 方法，从 Agent 交互中计算结构化信号（如 misalignment、stagnation、looping、exhaustion 等），无需额外 LLM 调用或 GPU。在 τ-bench 上的标注研究中，基于信号的采样达到 **82% 信息率**（随机采样为 54%），效率提升 1.52 倍。
 
-**为什么重要**：对于需要精细分析 Copilot 代码审查效果的团队，此 API 扩展提供了更细粒度的数据，可以判断 Copilot 在哪些类型的审查上最有价值。
+**为什么重要**：该方法直接降低了 Agent 轨迹审查成本，且已开源实现（项目 [Plano](https://github.com/katanemo/plano)）。对于大规模 Agent 部署团队，这是一个立即可用的工具。**注意**：这是社区研究，结果基于特定 benchmark，实际效果可能因场景而异。
 
-### Claude Code 团队成员建议：用 HTML 替代 Markdown 作为 AI 输出格式
-[3. Claude Code团队成员建议：用HTML替代Markdown作为AI输出格式](https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html)
+### Qwen/WebWorld：面向 Web Agent 训练的开源世界模型系列
+[6. Qwen/WebWorld 32B/14B/8B (Qwen3 finetune)](https://www.reddit.com/r/LocalLLaMA/comments/1t6c6vs/qwenwebworld_32b14b8b_qwen3_finetune)
 
-**背景**：自 GPT-4 时代以来，Markdown 因其 token 效率高（比 HTML 占用更少的 token 配额）成为 AI 输出的默认格式。但 Anthropic 的 Claude Code 团队成员 Thariq Shihipar 提出了不同的看法。
+**背景**：Web Agent 需要理解网页结构和用户交互，但训练数据获取困难。WebWorld 是一个基于 Qwen3 微调的开源世界模型系列，专门用于训练和评估 Web Agent。
 
-**这次发生了什么**：Shihipar 通过多个示例展示了 HTML 输出的优势：可以嵌入 SVG 图表、交互式小部件、页面导航等，让信息呈现更丰富、更易导航。他建议在提示词中要求 Claude 以 HTML 格式输出，例如“帮我审查这个 PR，创建一个 HTML 产物来描述它”。
+**关键数据**：
+- 在 100 万+ 真实网页交互轨迹上训练，支持 30 步以上的长周期模拟。
+- 支持多种状态表示格式：A11y Tree（无障碍树）、HTML、XML、Markdown 和自然语言。
+- 基于 WebWorld 合成轨迹训练的 Agent 在 MiniWob++ 上提升 **+9.9%**，在 WebArena 上提升 **+10.9%**。
+- 作为推理时的前瞻搜索世界模型，WebWorld 表现优于 GPT-5。
 
-**为什么重要**：随着模型上下文窗口的扩大（不再受 8K token 限制），HTML 的 token 开销不再是主要障碍。这一建议可能改变开发者与 AI 编码工具的交互方式，从“纯文本输出”转向“富媒体输出”。**注意**：这是社区讨论，不等于官方推荐。
+**为什么重要**：WebWorld 提供了高质量的开源训练数据生成器和世界模型，对 Web Agent 研究和开发有直接价值。模型已在 Hugging Face 上发布（32B/14B/8B 三个尺寸）。**注意**：这是社区发布，结果基于特定 benchmark，不等于产品化。
 
-### ESP32-S3 机器人协作项目：基于 ArUco 标记的视觉定位原型
-[8. ESP32-S3机器人协作项目：基于ArUco标记的视觉定位原型](https://www.reddit.com/r/esp32/comments/1t7f255/esp32s3_robots_with_onboard_camera_aruco_coop)
+### Redis 作者发布 DS4：在 Mac Metal 上运行 DeepSeek V4 Flash
+[15. Redis作者发布DS4：在Mac Metal上运行DeepSeek V4 Flash，支持1M上下文窗口](https://www.reddit.com/r/LocalLLaMA/comments/1t95k73/ds4)
 
-**背景**：该项目旨在构建一个小型机器人车队，每个机器人有不同的“感官”（一个只能看、一个只能听、一个只有接近感应），通过共享信息实现协作游戏。
+**背景**：Salvatore Sanfilippo（Redis 创始人）在 GitHub 上开源了 **DS4** 项目，目标是让 DeepSeek V4 Flash 在 Mac Metal 硬件上运行，并支持 1M 上下文窗口。
 
-**这次发生了什么**：目前项目处于早期阶段，作者使用 XIAO ESP32-S3 作为机器人主控，通过 WiFi 传输摄像头画面到 PC 进行 ArUco 标记检测，实现定位。尚未涉及协作策略的实现。
+**当前进展**：
+- 已在 Mac Metal 上成功运行 1M 上下文窗口。
+- 发布了在 DGX 上运行的视频。
+- 服务器已支持 OpenAI 和 Anthropic 端点，可用于 Agentic 代码工具。
 
-**为什么重要**：展示了低成本边缘 AI 硬件在机器人协作中的可行性，但当前阶段信息有限，仅适合作为灵感参考。**注意**：社区讨论，结果可能受测试条件和硬件环境影响。
+**为什么重要**：Redis 作者的技术创新可能推动本地大模型推理效率，尤其对 Mac 用户和 Agent 工作流开发者有直接价值。**注意**：这是社区项目，仍处于早期阶段，性能和生产可用性有待验证。
+
+### 本地 LLM 代码生成测试：质量 vs 速度
+[7. Testing Local LLMs in Practice: Code Generation, Quality vs. Speed](https://www.reddit.com/r/LocalLLaMA/comments/1t7et9q/testing_local_llms_in_practice_code_generation)
+
+一位开发者分享了他构建的评估框架，用于测试本地 LLM 在自主编写 Go 代码（日志解析器生成）时的质量和速度。框架包括编译验证、字段类型校验、解析质量评估和吞吐量追踪。**原文未给出具体模型排名**，但提出了一个可复用的评估方法论。对于正在评估本地模型用于代码生成的团队，这是一个值得参考的测试框架。
+
+### Lightning-MLX：为 Apple Silicon 优化的本地推理引擎
+[8. I've created the fastest local AI engine for Apple Silicon. Optimised for agentic use.](https://www.reddit.com/r/LocalLLaMA/comments/1t6uzdk/ive_created_the_fastest_local_ai_engine_for_apple)
+
+一位开发者发布了 **Lightning-MLX**，一个针对 Apple Silicon 优化的本地推理引擎，专注于编码 Agent、工具调用和短周期工作流。在 MacBook Max M5（128GB）上，Qwen3.6-27B 达到 **40.67 tok/s**，Qwen3.6-35B-A3B 达到 **220.86 tok/s**。**注意**：这是社区项目，结果基于特定硬件和测试条件，不等于官方基准。
+
+### llama.cpp 新增 Sarvam MoE 架构支持
+[10. model: add sarvam_moe architecture support by sumitchatterjee13 · Pull Request #20275 · ggml-org/llama.cpp](https://www.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by)
+
+llama.cpp 正在合并对 **Sarvam MoE** 架构的支持。Sarvam 是印度 AI 公司发布的混合专家（MoE）模型系列，包括 Sarvam-30B（2.4B 活跃参数）和 Sarvam-105B（10.3B 活跃参数），在推理、编码和 Agent 任务上表现突出，尤其擅长 22 种印度语言。**注意**：这是 Pull Request 阶段，尚未合并到主分支。
+
+---
 
 ## 开源项目 Release 汇总
 
-### llama.cpp 连续多版本发布：聚焦 Intel GPU 性能优化与 Sarvam MoE 支持
-llama.cpp（高性能大模型推理服务框架）今日密集发布了多个版本，主要围绕 SYCL 后端（Intel GPU 支持）的性能优化和新模型架构支持。
+### llama.cpp b9095：新增内部 AllReduce 内核，支持无 NCCL 的 2 GPU 张量并行
+[13. llama.cpp b9095：新增内部 AllReduce 内核，支持无 NCCL 的 2 GPU 张量并行](https://github.com/ggml-org/llama.cpp/releases/tag/b9095)
 
-#### b9093：新增 Sarvam MoE 架构支持
-[14. llama.cpp b9093 发布：新增 Sarvam MoE 架构支持](https://github.com/ggml-org/llama.cpp/releases/tag/b9093)
+**背景**：llama.cpp 是高性能大模型推理框架，支持多种硬件后端。在多 GPU 张量并行（Tensor Parallelism）场景下，通常需要 NCCL（NVIDIA 的集合通信库）来在 GPU 之间同步数据。
 
-**背景**：Sarvam 是印度 AI 公司开发的混合专家（MoE）模型系列，包括 30B（2.4B 活跃参数）和 105B（10.3B 活跃参数）两个版本。Sarvam-105B 在 Agent 和推理基准上接近前沿闭源模型。
+**本次更新**：b9095 版本新增了 `ggml_cuda_allreduce_provider`，通过 `GGML_CUDA_ALLREDUCE` 环境变量可选择 `nccl` 或 `internal` 提供者。内部实现使用单阶段 CUDA 内核，通过 D2H 拷贝、跨 GPU 握手和归约合并为一次内核启动。
 
-**这次发生了什么**：b9093 版本正式合并了 Sarvam MoE 架构支持（PR #20275），并提供了 macOS、Linux、iOS 等多平台二进制包。**注意**：原文未明确说明从哪个版本升级而来。
+**当前限制**：仅支持 2 张 GPU、FP32 张量。超过 2 张 GPU 或非 FP32 时会回退到元后端 CPU 归约。
 
-**为什么重要**：Sarvam-105B 在 Agent 任务上表现突出，llama.cpp 支持后可在本地部署，对 Agent 工作流和边缘推理有实际价值。
+**为什么重要**：对于多卡推理用户，该功能可减少对 NCCL 的依赖，简化部署并可能降低延迟，尤其适合本地或边缘场景。建议多 GPU 用户测试此版本。
 
-#### b9088：为 SYCL 后端添加 BF16 支持，修复 Intel GPU 性能回退
-[15. llama.cpp b9088：为 SYCL 后端 GET_ROWS 操作添加 BF16 支持，修复 Intel GPU 性能回退](https://github.com/ggml-org/llama.cpp/releases/tag/b9088)
+### DeepSeek V4 完整论文公开：FP4 量化训练细节与训练稳定性技巧
+[11. DeepSeek V4 paper full version is out, FP4 QAT details and stability tricks 【D】](https://www.reddit.com/r/MachineLearning/comments/1t7yrvr/deepseek_v4_paper_full_version_is_out_fp4_qat)
 
-**背景**：SYCL 是 llama.cpp 支持 Intel GPU 的后端。某些模型（如 Gemma4）使用 BF16 格式的嵌入张量，之前 SYCL 后端不支持 BF16 的 GET_ROWS 操作，导致这些操作回退到 CPU，每次 token 生成都需要完整的 GPU 到 CPU 张量传输，造成严重性能下降。
+**背景**：DeepSeek V4 是 DeepSeek 的最新大模型系列，包含 V4-Pro 和 V4-Flash 两个版本。此前预览版论文为 58 页，完整版增加了大量技术细节。
 
-**这次发生了什么**：b9088 版本为 SYCL 后端的 GET_ROWS 操作添加了 BF16 数据类型支持，修复了此性能回退问题。
+**关键发现**：
+- **FP4 量化感知训练（QAT）**：在训练后期直接进行 FP4 量化训练。MoE 专家权重量化为 FP4（主要 GPU 内存消耗者），CSA 索引器的 QK 路径使用 FP4 激活。QK 选择器实现 2 倍加速，99.7% 召回率保持。推理直接在 FP4 权重上运行。
+- **效率对比**：相比 V3.2 基线，V4-Pro 的 1M 上下文 FLOPs 降至 27%，KV 缓存降至 10%；V4-Flash 的 FLOPs 降至 10%，KV 缓存降至 7%。
+- **训练稳定性**：万亿参数 MoE 训练中的 loss spike 问题通过两种机制解决：**预期路由**（故意让主模型和路由器更新不同步，打破反馈循环）和 **SwiGLU 钳位**（对 SwiGLU 线性路径和门控路径设置硬限制）。
 
-**为什么重要**：对于使用 Intel GPU 运行 Gemma4 等 BF16 嵌入模型的用户，此修复可显著提升推理性能。
+**为什么重要**：FP4 量化训练是行业前沿方向，DeepSeek 的实践证明了在万亿参数规模下实现 FP4 推理的可行性。**注意**：这是论文研究，不等于已经产品化。但效率数据极具参考价值。
 
-#### b9089：优化 SYCL 后端 Flash Attention 内存分配
-[17. llama.cpp b9089 发布：优化 SYCL 后端 Flash Attention 内存分配](https://github.com/ggml-org/llama.cpp/releases/tag/b9089)
+### 在 2020 年中端安卓手机上运行 6 个小语言模型
+[12. Hand-written OpenCL kernels for LLM inference on Adreno 6xx — running 6 small language models on a 2020 mid-range Android phone](https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on)
 
-**背景**：Flash Attention 是一种高效注意力机制实现，但在 SYCL 后端上存在内存分配开销问题。
+一位开发者编写了手写 OpenCL 内核，在搭载 Adreno 6xx GPU（Snapdragon 6/7 系列）的 2020 年中端安卓手机上运行了 6 个小语言模型。llama.cpp 官方文档曾表示“A6x 手机 GPU 可能不支持”。实测结果（fp16，贪心解码，5 次运行中位数）：
+- SmolLM2-135M：23.65 tok/s
+- Mamba2-130M：23.18 tok/s
+- Mamba-130M：22.15 tok/s
+- OpenELM-270M：14.81 tok/s
+- LFM2.5-350M：11.51 tok/s
+- Qwen2.5-0.5B：10.41 tok/s
 
-**这次发生了什么**：b9089 版本通过重构代码，将相关函数移至独立文件，减少了 Flash Attention 过程中的内存分配开销。原文未给出明确量化结果。
+项目已开源：[adreno-llms](https://github.com/a8nova/adreno-llms)。**注意**：这是社区实验，结果受硬件和测试条件影响，不等于产品化。
 
-#### b9087：SYCL 后端优化 Q5_K/Q8_0 量化路径
-[18. llama.cpp b9087：SYCL后端优化Q5_K/Q8_0量化路径](https://github.com/ggml-org/llama.cpp/releases/tag/b9087)
+### 12GB VRAM 上实现 80 tok/s 和 128K 上下文
+[18. 80 tok/sec and 128K context on 12GB VRAM with Qwen3.6 35B A3B and llama.cpp MTP](https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with)
 
-**背景**：Q5_K 和 Q8_0 是 llama.cpp 中常用的模型量化格式，用于减少模型大小和加速推理。
+一位社区用户分享了在 **RTX 4070 Super（12GB VRAM）** 上使用最新 llama.cpp 构建和 MTP（Multi-Token Prediction）PR 的配置：Qwen3.6-35B-A3B 模型在 Q4_K_XL 量化下达到 **80+ tok/s**，草稿接受率 80%+，支持 128K 上下文。**注意**：这是社区测试结果，需要从源码构建并应用未合并的 PR，不适合生产环境。
 
-**这次发生了什么**：b9087 版本为 SYCL 后端添加了 Q5_K 和 Q8_0 量化格式的 reorder MMVQ/dequant 路径优化，旨在提升 Intel GPU 上的推理性能。原文未给出明确量化结果。
-
-**升级建议**：如果你使用 Intel GPU 运行 llama.cpp，建议升级到 b9088 及以上版本以获得 BF16 支持和性能优化。如果你关注 Sarvam MoE 模型，b9093 是必须升级的版本。
-
-### BeeLlama.cpp：llama.cpp 高性能分支，单卡 3090 上 Qwen 3.6 27B 达 135 tps
-[11. BeeLlama.cpp：llama.cpp高性能分支，支持DFlash推测解码与TurboQuant，Qwen 3.6 27B Q5在3090上达135 tps](https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with)
-
-**背景**：开发者 Anbeeld 需要一个 Windows 友好的推理方案，能在单张 RTX 3090 上运行 Qwen 3.6 27B Q5 模型，同时支持推测解码、高上下文窗口和多模态。
-
-**这次发生了什么**：Anbeeld 发布了 **BeeLlama.cpp**，一个性能优化的 llama.cpp 分支，集成了：
-- **DFlash 推测解码**：通过小模型生成草稿，大模型验证，加速推理。
-- **自适应草案控制**：动态调整草稿生成策略。
-- **TurboQuant / TCQ KV 缓存压缩**：减少 KV 缓存内存占用。
-- **推理循环保护**：防止异常情况导致崩溃。
-
-在单张 RTX 3090 上运行 Qwen 3.6 27B Q5 模型，实现 200K 上下文，峰值 135 tps（比基线快 2-3 倍）。
-
-**为什么重要**：该分支针对单卡高上下文推理场景有显著性能提升，对本地部署和边缘 AI 开发者具有实用参考价值。**注意**：社区讨论，结果可能受测试条件和硬件环境影响。
-
-### 社区实测：Qwen3.6 35B A3B 在 12GB VRAM 上实现 80 tok/s 和 128K 上下文
-[10. 社区实测：Qwen3.6 35B A3B在12GB VRAM上实现80 tok/s和128K上下文](https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with)
-
-**背景**：Qwen3.6 35B A3B 是一个混合专家模型，总参数 35B，但每次推理只激活 3B 参数。对于只有 12GB VRAM 的消费级 GPU（如 RTX 4070 Super），运行大模型一直是个挑战。
-
-**这次发生了什么**：Reddit 用户分享使用最新 llama.cpp MTP 分支（多 token 预测），在 RTX 4070 Super 12GB 上运行 Qwen3.6 35B A3B GGUF 模型，达到 80+ tok/s 生成速度，80% 以上草稿接受率，支持 128K 上下文。
-
-**为什么重要**：该配置展示了在消费级 GPU 上运行大模型的高效可能性，对本地 AI 开发者和边缘部署场景有直接参考意义。**注意**：社区讨论，结果可能受测试条件和硬件环境影响。
-
-### Open WebUI v0.9.3：新增语音模式静音控制与多项性能优化
-[12. Open WebUI v0.9.3 发布：新增语音模式静音控制与多项性能优化](https://github.com/open-webui/open-webui/releases/tag/v0.9.3)
-
-**背景**：Open WebUI 是一个开源的 AI 聊天界面，支持多种后端模型。
-
-**这次发生了什么**：v0.9.3 主要新增了语音模式静音切换（快捷键 M），防止背景噪音意外中断；优化了提示词列表和聊天历史加载速度；在对话菜单中增加了直接删除功能。
-
-**为什么重要**：语音模式静音控制和性能优化直接提升日常使用体验，对 Open WebUI 用户有实际价值。
-
-### 手写 OpenCL 内核在 Adreno 6xx GPU 上运行小语言模型：2020 年中端安卓手机实测
-[9. 手写OpenCL内核在Adreno 6xx GPU上运行小语言模型：2020年中端安卓手机实测](https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on)
-
-**背景**：中端安卓手机的 Adreno 6xx GPU（Snapdragon 6/7 系列）处于一个尴尬的位置：太老无法使用厂商的 NPU SDK，而开源框架（llama.cpp、MLC、MNN）要么不支持，要么回退到 CPU。llama.cpp 官方文档明确表示“A6x 手机 GPU 可能因驱动和编译器过旧而不被支持”。
-
-**这次发生了什么**：作者手写了 OpenCL 内核，在 Adreno 6xx GPU 上成功运行了 6 个小语言模型（如 SmolLM2-135M、Mamba2-130M 等），并给出了 fp16、贪心解码下的 token/s 性能数据。原文给出了具体的性能数字，但未在此处列出。
-
-**为什么重要**：该工作填补了中端手机 GPU 推理的空白，为端侧 AI 部署提供了低成本、可复现的替代方案。**注意**：社区讨论，结果可能受测试条件和硬件环境影响。
-
-### NVIDIA 发布 CUDA-Oxide 0.1：实验性 Rust 到 CUDA 编译器
-[13. NVIDIA 发布 CUDA-Oxide 0.1：实验性 Rust 到 CUDA 编译器](https://www.phoronix.com/news/NVIDIA-CUDA-Oxide-0.1)
-
-**背景**：CUDA 是 NVIDIA GPU 的编程框架，传统上使用 C/C++ 编写。Rust 因其内存安全特性在系统编程领域越来越受欢迎。
-
-**这次发生了什么**：NVIDIA Labs 发布了 CUDA-Oxide 0.1 版本，这是一个将 Rust 代码编译为 CUDA 内核的实验性编译器。目前版本号 0.1，处于早期阶段。
-
-**为什么重要**：如果成熟，可能改变 GPU 编程生态，让 Rust 开发者也能直接编写 GPU 内核。但 0.1 版本表明距离可用还有相当距离。**注意**：此信息来自 Phoronix，原文未提供官方确认链接，建议保持关注但暂不投入。
+---
 
 ## 企业应用 / 商业化信号
 
-（今日候选新闻中企业应用 / 商业化信号较少，主要 Agent 相关更新已在“Agent / 编程工具趋势”中覆盖。）
+### GitHub Copilot 模型更新：Grok Code Fast 1 弃用
+（已在 Agent / 编程工具趋势章节详细展开，此处不再重复）
+
+### OpenAI Codex 安全架构公开
+（已在 Agent / 编程工具趋势章节详细展开，此处不再重复）
+
+### GitHub Copilot CLI Rubber Duck 多模型支持
+（已在 Agent / 编程工具趋势章节详细展开，此处不再重复）
+
+---
 
 ## 算力 / 半导体观察
 
-### llama.cpp 连续优化 Intel GPU 推理性能
-今日多个 llama.cpp 版本（b9087、b9088、b9089）聚焦于 SYCL 后端（Intel GPU 支持）的性能优化，包括 BF16 支持、Flash Attention 内存分配优化和 Q5_K/Q8_0 量化路径优化。这些更新位于**推理**环节，针对的是 Intel GPU 这一相对小众但重要的推理硬件生态。对于使用 Intel GPU 进行本地推理的用户，建议升级到最新版本。
+### DIY 市场萎缩：高 RAM 价格冲击 PC 组装市场
+[17. DIY market declining amid high RAM prices](https://www.reddit.com/r/LocalLLaMA/comments/1t6gmcn/diy_market_declining_amid_high_ram_prices)
 
-### 社区实测：消费级 GPU 上的高效推理
-[10. 社区实测：Qwen3.6 35B A3B在12GB VRAM上实现80 tok/s和128K上下文](https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with) 和 [11. BeeLlama.cpp：llama.cpp高性能分支](https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with) 展示了在消费级 GPU（RTX 4070 Super 12GB、RTX 3090）上运行大模型的高效可能性。这些结果对评估本地推理的硬件需求有直接参考意义。
+**背景**：DIY（Do It Yourself，自己组装电脑）市场是个人开发者、AI 爱好者和中小团队获取算力的重要渠道。
+
+**关键数据**：
+- 华硕 2025 年出货 1500 万块主板，预计 2026 年仅出货 1000 万块。
+- AI 需求导致芯片产能被挤压，内存和 CPU 出现短缺和涨价。
+- 四大台湾主板制造商全部下调 2026 年出货目标，部分出现“崩盘式”下滑。
+- NVIDIA GPU 升级放缓，加上 CPU 和内存短缺，导致主板制造商出货目标全面崩溃。
+
+**为什么重要**：对于依赖 DIY 硬件进行本地 AI 推理的用户，这意味着硬件成本上升、选择减少。建议关注二手市场和企业淘汰设备，同时考虑云 GPU 实例作为替代方案。**注意**：这是行业媒体报道和社区讨论，数据来自 Digitimes，需关注后续官方财报验证。
+
+### llama.cpp b9095 内部 AllReduce 内核
+（已在开源项目 Release 汇总章节详细展开，此处不再重复）
+
+### DeepSeek V4 FP4 量化训练
+（已在开源项目 Release 汇总章节详细展开，此处不再重复）
+
+---
 
 ## 嵌入式 AI / 物联网 / Edge AI
 
-### 用 ESP32 将 60 美元咖啡机改造成自托管 Web 应用
-[6. 用ESP32将60美元咖啡机改造成自托管Web应用](https://www.reddit.com/r/arduino/comments/1t8am0p/i_turned_a_60_espresso_machine_into_a_selfhosted)
+### 在 2020 年中端安卓手机上运行 LLM
+（已在开源项目 Release 汇总章节详细展开，此处不再重复）
 
-**背景**：ESP32 是乐鑫科技推出的低成本 Wi-Fi/蓝牙双模微控制器，广泛应用于物联网项目。
+### AgenTEE：边缘设备上的机密 LLM Agent 执行
+[2. AgenTEE: Confidential LLM Agent Execution on Edge Devices](https://arxiv.org/abs/2604.18231)
 
-**这次发生了什么**：作者用 ESP32、热电偶、SSR（固态继电器）和 OLED 显示屏，将一台 60 美元的咖啡机改造成可通过手机 Web 界面控制的设备。实现了 ±0.5°C 的锅炉温度控制精度，支持冲泡和蒸汽模式切换。
+**背景**：在边缘设备上运行 LLM Agent 面临隐私和安全挑战——模型权重和用户数据可能被泄露。AgenTEE 提出利用 TEE（可信执行环境，Trusted Execution Environment）在边缘设备上实现机密 LLM Agent 执行。
 
-**为什么重要**：对于嵌入式 AI 或边缘计算爱好者，该项目展示了低成本设备智能化的可能性。但缺乏与 AI/Agent 工作流的直接关联。
+**为什么重要**：如果实现，这将使边缘 AI 设备（如手机、IoT 网关）能够安全运行 Agent，保护模型权重和用户数据。**注意**：这是 arXiv 论文，属于早期研究信号，不等于已经产品化。原文信息不足，无法判断具体实现细节和性能数据。
 
-### 社区 DIY：ESP32-C3+NFC+电子纸的信用卡大小智能卡原型
-[7. 社区DIY：ESP32-C3+NFC+电子纸的信用卡大小智能卡原型](https://www.reddit.com/r/esp32/comments/1t7gn4c/an_actually_creditcard_sized_smartcard_with)
-
-**背景**：ESP32-C3 是乐鑫科技推出的 RISC-V 架构 Wi-Fi/蓝牙微控制器，功耗更低。
-
-**这次发生了什么**：作者分享了制作信用卡大小智能卡的原型，集成了 ESP32-C3、NFC 和电子纸显示屏，总厚度约 1mm。目前原型脆弱且外观粗糙，但正在改进。
-
-**为什么重要**：对于关注端侧 AI 和嵌入式智能硬件的读者，这是一个有趣的硬件集成案例，但距离实用还有距离。
+---
 
 ## 前沿研究观察
 
-### Allen AI 提出 EMO 预训练方法
-[16. Allen AI提出EMO预训练方法：通过混合专家模型实现涌现模块化](https://huggingface.co/blog/allenai/emo)
+### Can LLMs Make (Personalized) Access Control Decisions?
+[1. Can LLMs Make (Personalized) Access Control Decisions?](https://arxiv.org/abs/2511.20284)
 
-已在“工具链更新汇总”中详细展开。**重申**：这是研究信号，不等于产品落地。博客未提供详细的量化实验结果。
+**背景**：访问控制（Access Control）是信息安全的核心问题——决定谁可以访问什么资源。传统方法依赖预定义规则，但个性化场景（如每个用户有不同权限）需要更灵活的方案。
+
+**研究问题**：LLM 能否做出个性化访问控制决策？**原文信息不足，无法判断具体方法、实验设置和结果**。**注意**：这是 arXiv 论文，属于早期研究信号，不等于已经产品化。
+
+### AgenTEE：边缘设备上的机密 LLM Agent 执行
+（已在嵌入式 AI / 物联网 / Edge AI 章节详细展开，此处不再重复）
+
+### DeepSeek V4 完整论文
+（已在开源项目 Release 汇总章节详细展开，此处不再重复）
+
+### Katanemo Signals
+（已在 Agent / 编程工具趋势章节详细展开，此处不再重复）
+
+---
 
 ## 今日建议动作
 
-1. **检查 Agent 安全策略**：如果你正在使用或计划使用 AI 编码代理（如 Codex、Copilot Cloud Agent），建议阅读 [OpenAI 的 Codex 安全实践](https://openai.com/index/running-codex-safely)，对照检查自己的沙箱、审批和网络策略。
+1. **检查 Open WebUI 版本**：如果自托管 Open WebUI，立即升级到 v0.9.5 以获得 SSRF 保护和 CSP 配置。检查 `AIOHTTP_CLIENT_ALLOW_REDIRECTS` 和 `IFRAME_CSP` 环境变量配置。
 
-2. **升级 llama.cpp**：如果你使用 Intel GPU 运行 llama.cpp，建议升级到 b9088 及以上版本以获得 BF16 支持和性能优化。如果你关注 Sarvam MoE 模型，b9093 是必须升级的版本。
+2. **评估 GitHub Copilot 模型切换**：如果使用 Grok Code Fast 1，在 5月15日前切换到其他支持的模型。企业管理员需检查 Copilot 设置中的模型策略。
 
-3. **试用 BeeLlama.cpp**：如果你有单张 RTX 3090 或类似显卡，且需要高上下文窗口推理，可以关注 [BeeLlama.cpp](https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with) 分支。
+3. **试用 Rubber Duck 跨模型审查**：在 GitHub Copilot CLI 中启用 `/experimental`，体验跨家族模型互审功能。
 
-4. **关注 Sarvam MoE 模型**：Sarvam-105B 在 Agent 任务上表现突出，llama.cpp 支持后可在本地部署，建议关注后续社区评测。
+4. **关注 DeepSeek V4 论文细节**：FP4 量化训练和训练稳定性技巧对模型训练团队有参考价值。建议阅读完整论文。
 
-5. **归档 CUDA-Oxide 0.1**：NVIDIA 的实验性 Rust 到 CUDA 编译器目前版本号 0.1，距离可用还有距离，建议保持关注但暂不投入。
+5. **评估 Katanemo Signals**：如果正在开发或运维 Agent 系统，试用 [Plano](https://github.com/katanemo/plano) 项目中的 Signals 方法，降低轨迹审查成本。
 
-6. **暂时忽略**：ESP32 咖啡机改造和智能卡原型项目属于硬件 DIY 爱好者的灵感参考，与 AI/Agent 工作流无直接关联，非嵌入式开发者可暂时忽略。
+6. **测试 llama.cpp b9095**：如果使用 2 张 GPU 进行推理，测试新的内部 AllReduce 内核，评估是否可减少对 NCCL 的依赖。
+
+7. **关注 DS4 项目进展**：如果使用 Mac 进行本地推理，关注 [DS4](https://github.com/antirez/ds4/) 项目，但暂不建议用于生产环境。
+
+8. **重新评估 DIY 硬件采购计划**：鉴于内存和 CPU 涨价趋势，考虑云 GPU 实例或二手企业设备作为替代方案。
+
+9. **暂时忽略**：AgenTEE 和 LLM 访问控制论文仍处于早期研究阶段，暂无需深入跟进。
+
+---
 
 ## 附录：候选来源索引
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | OpenAI 发布 Codex 安全运行实践：沙箱、审批、网络策略与代理原生遥测 | 官方确认 | OpenAI News | [链接](https://openai.com/index/running-codex-safely) |
-| 2 | llama.cpp 新增 Sarvam MoE 架构支持：Sarvam-30B/105B 模型可本地推理 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by) |
-| 3 | Claude Code团队成员建议：用HTML替代Markdown作为AI输出格式 | 技术社区 | Simon Willison | [链接](https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html) |
-| 4 | GitHub Copilot Cloud Agent 支持更灵活的 Secrets 和 Variables 配置 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent) |
-| 5 | GitHub Copilot 用量指标 API 新增代码审查评论类型细分 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api) |
-| 6 | 用ESP32将60美元咖啡机改造成自托管Web应用 | 技术社区 | Reddit r/arduino | [链接](https://www.reddit.com/r/arduino/comments/1t8am0p/i_turned_a_60_espresso_machine_into_a_selfhosted) |
-| 7 | 社区DIY：ESP32-C3+NFC+电子纸的信用卡大小智能卡原型 | 技术社区 | Reddit r/esp32 | [链接](https://www.reddit.com/r/esp32/comments/1t7gn4c/an_actually_creditcard_sized_smartcard_with) |
-| 8 | ESP32-S3机器人协作项目：基于ArUco标记的视觉定位原型 | 技术社区 | Reddit r/esp32 | [链接](https://www.reddit.com/r/esp32/comments/1t7f255/esp32s3_robots_with_onboard_camera_aruco_coop) |
-| 9 | 手写OpenCL内核在Adreno 6xx GPU上运行小语言模型：2020年中端安卓手机实测 | 技术社区 | Reddit r/embedded | [链接](https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on) |
-| 10 | 社区实测：Qwen3.6 35B A3B在12GB VRAM上实现80 tok/s和128K上下文 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with) |
-| 11 | BeeLlama.cpp：llama.cpp高性能分支，支持DFlash推测解码与TurboQuant，Qwen 3.6 27B Q5在3090上达135 tps | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t88zvv/beellamacpp_advanced_dflash_turboquant_with) |
-| 12 | Open WebUI v0.9.3 发布：新增语音模式静音控制与多项性能优化 | 官方确认 | Open WebUI | [链接](https://github.com/open-webui/open-webui/releases/tag/v0.9.3) |
-| 13 | NVIDIA 发布 CUDA-Oxide 0.1：实验性 Rust 到 CUDA 编译器 | 待验证 | Phoronix | [链接](https://www.phoronix.com/news/NVIDIA-CUDA-Oxide-0.1) |
-| 14 | llama.cpp b9093 发布：新增 Sarvam MoE 架构支持 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9093) |
-| 15 | llama.cpp b9088：为 SYCL 后端 GET_ROWS 操作添加 BF16 支持，修复 Intel GPU 性能回退 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9088) |
-| 16 | Allen AI提出EMO预训练方法：通过混合专家模型实现涌现模块化 | 官方确认 | Hugging Face Blog | [链接](https://huggingface.co/blog/allenai/emo) |
-| 17 | llama.cpp b9089 发布：优化 SYCL 后端 Flash Attention 内存分配 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9089) |
-| 18 | llama.cpp b9087：SYCL后端优化Q5_K/Q8_0量化路径 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9087) |
+| 1 | Can LLMs Make (Personalized) Access Control Decisions? | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2511.20284) |
+| 2 | AgenTEE: Confidential LLM Agent Execution on Edge Devices | 早期信号 | arXiv cs.OS | [链接](https://arxiv.org/abs/2604.18231) |
+| 3 | Rubber Duck in GitHub Copilot CLI now supports more models | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models) |
+| 4 | Upcoming deprecation of Grok Code Fast 1 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1) |
+| 5 | Open WebUI v0.9.5 发布：新增 SSRF 保护、iframe CSP 和 Markdown 渲染控制 | 官方确认 | Open WebUI | [链接](https://github.com/open-webui/open-webui/releases/tag/v0.9.5) |
+| 6 | Qwen/WebWorld 32B/14B/8B (Qwen3 finetune) | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t6c6vs/qwenwebworld_32b14b8b_qwen3_finetune) |
+| 7 | Testing Local LLMs in Practice: Code Generation, Quality vs. Speed | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t7et9q/testing_local_llms_in_practice_code_generation) |
+| 8 | I've created the fastest local AI engine for Apple Silicon. Optimised for agentic use. | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t6uzdk/ive_created_the_fastest_local_ai_engine_for_apple) |
+| 9 | Running Codex safely at OpenAI | 官方确认 | OpenAI News | [链接](https://openai.com/index/running-codex-safely) |
+| 10 | model: add sarvam_moe architecture support | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t8db1j/model_add_sarvam_moe_architecture_support_by) |
+| 11 | DeepSeek V4 paper full version is out, FP4 QAT details and stability tricks | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1t7yrvr/deepseek_v4_paper_full_version_is_out_fp4_qat) |
+| 12 | Hand-written OpenCL kernels for LLM inference on Adreno 6xx | 技术社区 | Reddit r/embedded | [链接](https://www.reddit.com/r/embedded/comments/1t83ung/handwritten_opencl_kernels_for_llm_inference_on) |
+| 13 | llama.cpp b9095：新增内部 AllReduce 内核，支持无 NCCL 的 2 GPU 张量并行 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9095) |
+| 14 | Katanemo Labs 提出 Signals：无需 LLM 的轻量级 Agent 轨迹筛选方法 | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1t9d3et/signals_finding_the_most_informative_agent_traces) |
+| 15 | Redis作者发布DS4：在Mac Metal上运行DeepSeek V4 Flash，支持1M上下文窗口 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t95k73/ds4) |
+| 16 | Open WebUI v0.9.3：Added | 官方确认 | Open WebUI | [链接](https://github.com/open-webui/open-webui/releases/tag/v0.9.3) |
+| 17 | DIY market declining amid high RAM prices | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t6gmcn/diy_market_declining_amid_high_ram_prices) |
+| 18 | 80 tok/sec and 128K context on 12GB VRAM with Qwen3.6 35B A3B and llama.cpp MTP | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1t82zxv/80_toksec_and_128k_context_on_12gb_vram_with) |

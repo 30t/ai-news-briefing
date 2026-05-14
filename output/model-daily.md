@@ -1,132 +1,109 @@
-# AI 新闻模型解读日报｜2026-05-13
+# AI 新闻模型解读日报｜2026-05-14
 
 ## 今日一句话
-今日新闻集中在**向量数据库与 AI 应用平台的安全与性能升级**、**表格数据基础模型的实用化突破**、**Agent 协作能力的基准测试瓶颈**，以及**端侧芯片与浏览器 AI 的落地信号**。Qdrant 和 Dify 的版本更新直接降低部署成本与安全风险；TabPFN-3 让百万行表格预测在单 GPU 上成为可能；而 ComplexMCP 基准测试则揭示了当前 LLM Agent 在复杂工具协作中的关键短板。
+表格基础模型 TabPFN-3 发布，支持百万行数据推理，速度提升 10-1000 倍；Ollama 和 llama.cpp 分别迎来架构级更新；GitHub Copilot 开放 Agent 任务 REST API；两篇 arXiv 论文分别提出 Agent 工具 API 设计范式和复杂 MCP 基准测试，揭示当前 Agent 在复杂工具调用中的瓶颈。
+
+---
 
 ## 工具链更新汇总
 
-### Chrome 的 AI 功能可能占用你 4GB 存储空间
-[8. Chrome's AI features may be hogging 4GB of your computer storage](https://www.theverge.com/tech/924933/google-chrome-4gb-gemini-nano-ai-features)
+### KGC 2026 演讲资料分享：企业级知识图谱生产系统案例
+Reddit 用户分享了 KGC 2026（知识图谱会议）的演讲资料，其中多个企业展示了生产级知识图谱系统。Bloomberg 展示了本体治理的正式依赖模型；AbbVie 介绍了内部知识图谱 ARCH，用于药物和疾病领域情报，连接评分引擎、研究员仪表盘和 LLM 接口——知识图谱是事实来源，LLM 是交互界面；Morgan Stanley 展示了 SHACL 漂移检测，每周自动检查语义层是否偏离治理标准。这些案例表明，知识图谱正在被用作生产级基础设施，而非简单的向量检索层。**社区讨论，不等于官方确认。** 对于正在构建 RAG（检索增强生成）或数据基础设施的团队，这些资料值得参考，尤其是知识图谱与 LLM 结合的真实落地模式。详见：[9. KGC 2026 演讲资料分享](https://www.reddit.com/r/MachineLearning/comments/1tbt6wl/sharing_all_kgc_2026_decks_more_productiongrade)
 
-**背景：** Google Chrome 浏览器内置了基于 Gemini Nano 模型的 AI 功能，包括诈骗检测、写作辅助、自动填充和建议功能。Gemini Nano 是 Google 的端侧小模型，设计在本地运行以保护隐私。
-
-**发生了什么：** 用户发现，当启用这些 AI 功能后，Chrome 会在浏览器目录中自动下载一个约 4GB 的 `weights.bin` 文件（模型权重文件）。许多用户并未收到关于文件大小的明确通知，导致硬盘空间意外减少。
-
-**为什么重要：** 这暴露了端侧 AI 部署的一个现实问题——隐私保护的代价是本地存储成本。对于存储空间有限的设备（如 128GB 的笔记本），4GB 的占用不可忽视。**社区讨论，不等于官方确认**，但该现象已被多家媒体报道。建议读者检查自己的 Chrome 数据文件夹，如果不需要 AI 功能，可在设置中关闭以释放空间。
+---
 
 ## Agent / 编程工具趋势
 
-### OpenAI 发布 NVIDIA 工程师使用 Codex 的案例
-[6. OpenAI发布NVIDIA工程师与研究人员使用Codex的案例](https://openai.com/index/nvidia)
+### GitHub Copilot 推出 Agent 任务 REST API 公开预览
+GitHub 官方宣布，Copilot Business 和 Enterprise 用户现可通过新的 Agent tasks REST API 以编程方式启动 Copilot 云代理任务。该 API 处于公开预览阶段。Copilot 云代理在独立开发环境中运行，可以生成和验证代码变更，然后创建 Pull Request。这意味着开发者可以将 Copilot 代理能力嵌入自定义自动化流程，例如：跨多个仓库批量执行重构或迁移、从内部开发者门户一键设置新仓库、每周自动准备发布版本和发布说明。API 支持个人访问令牌和 OAuth 令牌认证，GitHub App 安装访问令牌以及 Copilot Pro/Pro+ 用户的支持即将到来。详见：[4. GitHub Copilot 推出 Agent 任务 REST API 公开预览](https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api)
 
-**背景：** Codex 是 OpenAI 推出的 AI 编程工具，基于 GPT-5.5 模型，能够将自然语言描述转化为代码。NVIDIA 是全球最大的 GPU 和 AI 计算公司。
+### Agent-First Tool API：面向企业 AI Agent 系统的语义接口范式（arXiv 论文）
+这篇 arXiv 论文识别了传统 API 与 Agent 需求之间的五大不匹配，提出了一套 Agent-First Tool API 范式，包含六动词语义协议、标准化工具契约和双层治理管道。研究者在生产 SaaS 平台上验证了该范式，覆盖 85 个工具和 6 个业务域。**研究信号，不等于已经产品化。** 对于正在构建 Agent 工作流的开发者，这篇论文提供了实用的 API 设计原则，直接影响工具集成方式。详见：[2. Agent-First Tool API 论文](https://arxiv.org/abs/2605.10555)
 
-**发生了什么：** OpenAI 官方博客介绍了 NVIDIA 团队如何使用 Codex 来构建生产系统，并将研究想法快速转化为可运行的实验。文章强调了 Codex 在加速开发流程中的作用，但**原文未给出具体的量化效率提升数据**。
+### ComplexMCP：基于 MCP 协议评估 LLM Agent 在复杂工具沙箱中的表现（arXiv 论文）
+这篇论文提出了 ComplexMCP 基准测试，用于评估 LLM Agent 在动态、相互依赖的大规模工具沙箱中的表现。结果发现，即使顶级模型在复杂工具调用任务中的成功率也低于 60%，远低于人类的 90%。通过细粒度轨迹分析，识别出三个主要瓶颈：工具检索饱和、过度自信（跳过环境验证）等。**研究信号，不等于已经产品化。** 该基准测试直接关联 MCP（Model Context Protocol，让 Agent 连接外部工具和数据源的协议）和 Agent 工作流，揭示了当前 Agent 在真实商业自动化中的关键短板，对工具链优化和 Agent 设计有指导意义。详见：[3. ComplexMCP 论文](https://arxiv.org/abs/2605.10787)
 
-**为什么重要：** 这是 Codex 在大型企业中的实际应用参考。NVIDIA 的工程师使用 Codex 进行生产级开发，说明该工具已具备处理复杂工程任务的能力。对于评估 AI 编程工具的企业价值，这是一个积极的信号，但具体效果仍需根据自身场景测试。
+---
 
 ## 开源项目 Release 汇总
 
-### Qdrant v1.18.0 发布：TurboQuant 量化、低内存模式、命名向量 API
-[1. Qdrant v1.18.0 发布：TurboQuant 量化、低内存模式、命名向量 API](https://github.com/qdrant/qdrant/releases/tag/v1.18.0)
+### TabPFN-3 发布：预训练表格基础模型支持百万行数据
+TabPFN-3 是预训练表格基础模型的最新版本，最初发表于 Nature。TabPFN 的核心能力是：对表格数据进行单次前向传播预测——无需训练、无需超参数搜索、无需调优。基于 TabPFN-2.5（2025 年 11 月）和 TabPFNv2（Nature，2025 年 1 月），累计下载量超过 300 万次，已有 200 多个已发表应用。本次更新：支持单 H100 处理百万行数据（比 2.5 版大 10 倍）；通过减少 KV 缓存（每百万行每估计器约 8GB）和行分块推理，使单 GPU 推理成为可能；推理速度较前代提升 10-1000 倍，通过 KV 缓存实现 SHAP 计算加速 120 倍；新增 Thinking Mode（API 端测试时计算，通过一次性额外拟合提升预测精度）；在 TabArena 上以 200+ Elo 优势击败所有非 TabPFN 方法（包括 4 小时调优的 AutoGluon 1.5 extreme），在大数据子集上差距扩大到 420 Elo；对经典 ML 方法有 93% 的胜率；原生支持最多 160 个类别的多分类；校准分位数回归头可生成校准的分位数预测。**社区讨论，不等于官方确认。** 该模型大幅降低了表格数据预测的门槛，对自动化机器学习、数据分析和 RAG 工作流有潜在应用价值。详见：[1. TabPFN-3 发布](https://www.reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular)
 
-**背景：** Qdrant 是一个高性能的向量数据库，常用于 RAG（检索增强生成）和 AI 应用中的相似性搜索。向量数据库的存储成本（主要是内存）一直是部署中的痛点。
+### Ollama v0.30.0-rc15：架构重构，直接支持 llama.cpp
+Ollama 发布了 v0.30.0-rc15 预发布版本。这是底层架构的重大升级：从 GGML 迁移到直接支持 llama.cpp，兼容 GGUF 文件格式，并利用 MLX 加速 Apple Silicon 上的模型推理。已知问题包括暂不支持 laguna-xs.2 和 llama3.2-vision。**预发布版本，更适合开发者测试，不一定适合生产环境。** 对于使用 Ollama 本地部署模型的用户，此版本可能带来性能提升和更广泛的模型兼容性，但建议在测试环境中验证后再升级。详见：[7. Ollama v0.30.0-rc15](https://github.com/ollama/ollama/releases/tag/v0.30.0-rc15)
 
-**发生了什么：** Qdrant v1.18.0 是一次重要版本更新，核心变化包括：
-- **TurboQuant 量化变体**：实现 8 倍向量压缩，且**无召回损失**。这意味着原本需要 8GB 内存存储的向量数据，现在只需 1GB，同时搜索精度不变。
-- **低内存模式**：将所有数据强制存储在磁盘上，减少启动时的内存溢出（OOM）崩溃。
-- **命名向量 API**：支持在已有集合中创建和删除命名向量，提升了集合管理的灵活性。
-- **深度内存报告**：显示存储组件的内存占用明细，方便运维排查。
-- **移除 RocksDB 支持**：简化了存储处理逻辑。
+### llama.cpp b9133：server 与 webui 支持推理模型的 continue generation
+llama.cpp 发布 b9133 版本，在 server 和 webui 中实现了对推理模型的 continue generation 支持。通过处理 thinking 标签，使对话续写和断点恢复正常工作。当前仅支持简单的 thinking_start/end 标签对，基于 channel 的模板（如 GPT-OSS）暂不支持。对于使用 llama.cpp 部署推理模型的用户，此更新修复了对话续写和断点恢复的关键问题，提升了本地 Agent 工作流的可靠性。详见：[5. llama.cpp b9133](https://github.com/ggml-org/llama.cpp/releases/tag/b9133)
 
-**为什么重要：** TurboQuant 和低内存模式直接降低了向量数据库的部署成本，对于需要处理大规模向量数据的 RAG 应用开发者来说，这是一个显著的利好。建议 Qdrant 用户关注升级，尤其是内存受限的部署场景。
+### llama.cpp b9127：opencl: add opt-in Adreno xmem F16xF32 GEMM for prefill
+llama.cpp 发布 b9127 版本，为 OpenCL 后端添加了可选的 Adreno xmem F16xF32 GEMM（通用矩阵乘法）优化，用于 prefill 阶段。这主要影响使用 Adreno GPU（常见于高通骁龙移动平台）的设备。原文未给出明确量化结果。对于在移动端或嵌入式设备上运行 llama.cpp 的用户，此优化可能提升推理性能。详见：[10. llama.cpp b9127](https://github.com/ggml-org/llama.cpp/releases/tag/b9127)
 
-### Dify v1.14.1 发布：安全加固、工作流与知识库稳定性提升
-[2. Dify v1.14.1 发布：安全加固、工作流与知识库稳定性提升，自部署更安全](https://github.com/langgenius/dify/releases/tag/1.14.1)
+### LangGraph langgraph==1.2.0：从 1.2.0a7 以来的变化
+LangGraph（构建 LLM 应用和 Agent 工作流的开源开发框架）发布 1.2.0 正式版。主要变化包括：跨主机崩溃的持久化错误恢复、StateGraph 新增 set_node_defaults() 方法、强制 delta channel 快照、以及依赖项更新。原文未给出明确量化结果。对于使用 LangGraph 构建 Agent 工作流的开发者，此版本提升了稳定性和开发体验。详见：[6. LangGraph 1.2.0](https://github.com/langchain-ai/langgraph/releases/tag/1.2.0)
 
-**背景：** Dify 是一个开源的 LLM 应用开发平台，支持可视化编排工作流、构建知识库和部署 AI 应用。许多企业和开发者选择自部署 Dify。
+### 商汤发布 SenseNova-U1 系列原生多模态模型：A3B-MoT 权重开源
+SenseNova-U1 系列是商汤发布的新一代原生多模态模型，包括 8B 和 A3B 两种规模的 MoT（Mixture of Tokens）模型，已在 Hugging Face 开源权重。该模型从像素到词元端到端统一处理语言和视觉，支持高效的理解、生成和交错推理。**社区讨论，不等于官方确认。** 该模型代表了多模态 AI 从模态集成到真正统一的范式转变，对本地部署、Agent 视觉理解和多模态工作流有潜在应用价值。详见：[8. 商汤 SenseNova-U1 系列](https://www.reddit.com/r/LocalLLaMA/comments/1tc47q0/sensenovasensenovau1a3bmot_hugging_face)
 
-**发生了什么：** v1.14.1 是一个补丁版本，重点修复了安全问题和提升稳定性：
-- **安全加固**：自部署的 `SECRET_KEY` 不再使用默认值，防止被攻击；内部指标端点（`/threads`、`/db-pool-stat`）增加了认证保护；修复了账户头像接口的 IDOR 漏洞（越权访问）；升级了 LiteLLM 依赖以修复已知 CVE 漏洞。
-- **稳定性改进**：工作流和知识库的稳定性得到提升。
-
-**为什么重要：** 安全加固和稳定性修复直接影响自部署用户的运维安全与可靠性。**原文未明确说明从哪个版本升级而来**，但建议所有自部署 Dify 的用户及时升级到 v1.14.1。
+---
 
 ## 企业应用 / 商业化信号
 
-### TabPFN-3 发布：预训练表格基础模型，单 H100 支持百万行
-[3. TabPFN-3 发布：预训练表格基础模型，单 H100 支持百万行，推理速度提升 10-1000 倍](https://www.reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular)
+### TabPFN-3 发布（已在上方“开源项目 Release 汇总”详细展开）
+详见：[1. TabPFN-3 发布](https://www.reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular)
 
-**背景：** TabPFN 是一个预训练的表格数据基础模型，最初发表在 Nature 期刊上。它的核心能力是：**无需训练、无需调参**，只需一次前向传播即可对表格数据进行预测。TabPFN-2.5 版本已累计超过 300 万次下载和 200 多个已发表的应用。
+### GitHub Copilot Agent 任务 REST API 公开预览（已在上方“Agent / 编程工具趋势”详细展开）
+详见：[4. GitHub Copilot 推出 Agent 任务 REST API 公开预览](https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api)
 
-**发生了什么：** TabPFN-3 在 TabPFN-2.5 基础上实现了重大突破：
-- **规模提升**：单张 H100 GPU 支持处理 100 万行数据（是 2.5 版本的 10 倍）。通过减少 KV 缓存（每百万行每评估器约 8GB）和行分块推理实现。
-- **速度提升**：推理速度比之前版本快 10-1000 倍。通过 KV 缓存，SHAP 值计算速度提升 120 倍。
-- **Thinking Mode（仅 API）**：在推理时通过额外的测试时计算进一步提升预测性能。
-- **准确率**：在 TabArena 基准测试上，以超过 200 Elo 的优势击败所有非 TabPFN 方法（包括经过 4 小时调参的 AutoGluon 1.5 extreme）。在大数据子集上，优势扩大到 420 Elo。对经典机器学习方法的胜率达到 93%。
-- **新能力**：原生支持最多 160 个类别的分类任务；校准分位数回归头可一次性生成校准的分位数预测。
-
-**为什么重要：** TabPFN-3 大幅降低了表格数据预测的计算门槛。对于数据科学团队，这意味着可以在单 GPU 上处理百万行级的企业数据，无需复杂的模型训练和调参流程。**社区讨论，不等于官方确认**，但该模型已在 Nature 发表过前作，可信度较高。建议数据科学从业者关注其 API 和开源版本，评估在自动化 ML 工作流中的适用性。
+---
 
 ## 算力 / 半导体观察
 
-*（本日无新增重点新闻进入此板块。TabPFN-3 虽涉及 GPU 算力，但其核心突破在于算法优化而非硬件，已在“企业应用 / 商业化信号”中详细展开。）*
+### SpacemiT K3 驱动的 DC-ROMA RISC-V 主板 III 适配 Framework Laptop 13
+Reddit 用户发帖称 SpacemiT K3 驱动的 DC-ROMA RISC-V 主板 III 已发布，适配 Framework Laptop 13。但帖子仅包含标题和链接，无具体规格、性能或价格信息。**社区讨论，不等于官方确认。** 若属实，这是 RISC-V 在消费级笔记本领域的重要里程碑，但需等待官方确认和详细规格。SpacemiT K3 是 RISC-V 架构的 SoC（系统级芯片），位于端侧芯片和边缘计算环节。详见：[11. SpacemiT K3 RISC-V 主板](https://www.reddit.com/r/RISCV/comments/1tbuirq/spacemit_k3powered_dcroma_riscv_motherboard_iii)
+
+---
 
 ## 嵌入式 AI / 物联网 / Edge AI
 
-### SiFive 发布 RVA23 兼容 Performance P570 Gen3 RISC-V 核心
-[7. SiFive 发布 RVA23 兼容 Performance P570 Gen3 RISC-V 核心，面向消费和 AIoT 应用](https://www.reddit.com/r/RISCV/comments/1tb1dem/sifive_introduces_rva23compliant_performance_p570)
+今日无直接相关的嵌入式 AI / 物联网 / Edge AI 新闻入选。
 
-**背景：** SiFive 是 RISC-V 架构（一种开源指令集架构，与 ARM 和 x86 竞争）的领先设计公司。RISC-V 核心常用于物联网、边缘计算和 AIoT（人工智能物联网）设备。RVA23 是 RISC-V 的一个配置文件标准，定义了核心必须支持的功能集。
-
-**发生了什么：** SiFive 发布了 Performance P570 Gen3 核心，这是其第三代高性能乱序执行核心。关键规格包括：
-- **RVA23 兼容**：支持所有强制扩展，可运行现代 Linux 发行版，如 Ubuntu 26.04 LTS 和 Red Hat Enterprise。
-- **新增扩展**：包括 Smepmp（安全）、Zvkng（向量加密）、Zvksg、Zicfilp、Zicfiss、Zfbfmin、Zvfbfmin、Zvfbfwma 和 Zvdot4a8i（点积扩展，对 AI 推理有直接意义）。
-- **微架构**：3 宽、13 级乱序执行超标量流水线；单 128 位向量流水线带点积扩展。
-- **多核支持**：最多支持 16 个核心的一致性（4 个 4 核集群）。
-
-**为什么重要：** RVA23 兼容性意味着该核心可以运行标准的 Linux 发行版和软件栈，降低了开发门槛。向量和点积扩展对 AIoT 设备上的本地推理有直接意义，例如图像识别、语音处理等。**社区讨论，不等于官方确认**，但 SiFive 是 RISC-V 领域的头部公司，该消息可信度较高。对于关注边缘 AI 硬件选型的读者，这是一个值得跟踪的信号。
+---
 
 ## 前沿研究观察
 
-### ComplexMCP：基于 MCP 协议的多工具协作 Agent 基准测试
-[4. ComplexMCP：基于MCP协议的多工具协作Agent基准测试，揭示LLM在动态环境中的性能瓶颈](https://arxiv.org/abs/2605.10787)
+### Agent-First Tool API 论文（已在上方“Agent / 编程工具趋势”详细展开）
+详见：[2. Agent-First Tool API 论文](https://arxiv.org/abs/2605.10555)
 
-**背景：** MCP（Model Context Protocol，模型上下文协议）是一种让 AI Agent 连接外部工具和数据源的开放协议。随着 Agent 应用增多，如何评估它们在复杂、动态、多工具环境中的协作能力成为一个关键问题。
+### ComplexMCP 基准测试论文（已在上方“Agent / 编程工具趋势”详细展开）
+详见：[3. ComplexMCP 论文](https://arxiv.org/abs/2605.10787)
 
-**发生了什么：** 这篇 arXiv 论文提出了 ComplexMCP 基准测试，专门评估 LLM Agent 在动态、相互依赖和大规模工具沙箱中的表现。研究发现：
-- 即使是最先进的模型，在复杂工具协作任务中的成功率也**低于 60%**，远低于人类的 90%。
-- 通过细粒度轨迹分析，识别出三个关键瓶颈：**工具检索饱和**（模型在大量工具中找不到正确的）、**过度自信**（跳过环境验证直接执行）、**环境噪声处理能力不足**（无法过滤无关信息）。
-
-**为什么重要：** 该基准测试直接关联 MCP 协议和 Agent 工作流，揭示了当前 LLM Agent 在真实商业自动化中的关键短板。**研究信号不等于产品落地**，但该论文对工具链优化和 Agent 设计有重要指导意义。建议 Agent 开发者关注这三个瓶颈，在系统设计中加入环境验证和工具检索优化。
-
-### Agentick：通用序列决策 Agent 的统一基准测试
-[5. Agentick: A Unified Benchmark for General Sequential Decision-Making Agents](https://arxiv.org/abs/2605.06869)
-
-**背景：** 随着 AI Agent 在游戏、机器人、自动化等领域的应用增多，需要一个统一的基准来评估它们的序列决策能力。
-
-**发生了什么：** 这篇 arXiv 论文提出了 Agentick，一个用于评估通用序列决策 Agent 的统一基准测试。**原文信息不足，无法判断**具体的测试方法、模型表现和关键发现。论文摘要仅提供了标题和分类信息。
-
-**为什么重要：** 序列决策是 Agent 的核心能力之一，一个统一的基准有助于比较不同 Agent 框架的性能。**研究信号不等于产品落地**，建议对 Agent 评估方法感兴趣的读者关注论文的完整内容。
+---
 
 ## 今日建议动作
 
-1. **检查 Chrome 存储**：如果你的电脑硬盘空间紧张，检查 Chrome 数据文件夹中是否有 4GB 的 `weights.bin` 文件。如果不需要 AI 功能，在 Chrome 设置中关闭相关选项以释放空间。
-2. **评估 Qdrant 升级**：如果你是 Qdrant 用户，尤其是内存受限的部署场景，建议关注 v1.18.0 的 TurboQuant 和低内存模式，评估升级收益。
-3. **升级 Dify 自部署**：如果你是 Dify 自部署用户，建议尽快升级到 v1.14.1，以修复安全漏洞和提升稳定性。
-4. **关注 TabPFN-3**：如果你的工作涉及表格数据预测，建议关注 TabPFN-3 的 API 和开源版本，评估其在自动化 ML 工作流中的适用性。
-5. **跟踪 RISC-V 硬件**：如果你关注边缘 AI 硬件选型，建议跟踪 SiFive P570 Gen3 的后续产品发布和生态支持情况。
-6. **归档研究论文**：将 ComplexMCP 和 Agentick 论文归档，作为 Agent 评估和设计的技术参考。
+1. **检查 TabPFN-3**：如果你从事表格数据预测或自动化机器学习工作，建议阅读 TabPFN-3 的发布说明，评估其在你的数据集上的表现。注意这是社区讨论，需自行验证。
+2. **试用 GitHub Copilot Agent 任务 API**：如果你是 Copilot Business/Enterprise 用户，可以开始探索新的 Agent tasks REST API，尝试将其集成到自动化工作流中。
+3. **测试 Ollama v0.30.0-rc15**：如果你使用 Ollama 本地部署模型，建议在测试环境中安装此预发布版本，验证性能变化和模型兼容性。注意已知问题。
+4. **更新 llama.cpp**：如果你使用推理模型，建议升级到 b9133 版本以获得 continue generation 支持。
+5. **归档 KGC 2026 资料**：如果你关注知识图谱与 RAG 的结合，建议下载并阅读 KGC 2026 的演讲资料，尤其是 Bloomberg、AbbVie 和 Morgan Stanley 的案例。
+6. **继续观察 RISC-V 主板**：SpacemiT K3 适配 Framework Laptop 13 的消息目前缺乏细节，建议等待官方确认和评测。
+7. **暂时忽略**：如果你不涉及表格数据预测或本地模型部署，TabPFN-3 和 Ollama 的更新可以暂时不关注。
+
+---
 
 ## 附录：候选来源索引
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | Qdrant v1.18.0 发布：TurboQuant 量化、低内存模式、命名向量 API | 官方确认 | Qdrant | [链接](https://github.com/qdrant/qdrant/releases/tag/v1.18.0) |
-| 2 | Dify v1.14.1 发布：安全加固、工作流与知识库稳定性提升，自部署更安全 | 官方确认 | Dify | [链接](https://github.com/langgenius/dify/releases/tag/1.14.1) |
-| 3 | TabPFN-3 发布：预训练表格基础模型，单 H100 支持百万行，推理速度提升 10-1000 倍 | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular) |
-| 4 | ComplexMCP：基于MCP协议的多工具协作Agent基准测试，揭示LLM在动态环境中的性能瓶颈 | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.10787) |
-| 5 | Agentick: A Unified Benchmark for General Sequential Decision-Making Agents | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.06869) |
-| 6 | OpenAI发布NVIDIA工程师与研究人员使用Codex的案例 | 官方确认 | OpenAI News | [链接](https://openai.com/index/nvidia) |
-| 7 | SiFive 发布 RVA23 兼容 Performance P570 Gen3 RISC-V 核心，面向消费和 AIoT 应用 | 技术社区 | Reddit r/RISCV | [链接](https://www.reddit.com/r/RISCV/comments/1tb1dem/sifive_introduces_rva23compliant_performance_p570) |
-| 8 | Chrome's AI features may be hogging 4GB of your computer storage | 技术社区 | Hacker News | [链接](https://www.theverge.com/tech/924933/google-chrome-4gb-gemini-nano-ai-features) |
+| 1 | TabPFN-3 发布：预训练表格基础模型支持百万行数据 | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1tb3fh5/tabpfn3_just_released_a_pretrained_tabular) |
+| 2 | Agent-First Tool API：面向企业AI Agent系统的语义接口范式 | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.10555) |
+| 3 | ComplexMCP：基于MCP协议评估LLM代理在动态、相互依赖的大规模工具沙箱中的表现 | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.10787) |
+| 4 | GitHub Copilot 推出 Agent 任务 REST API 公开预览 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api) |
+| 5 | llama.cpp b9133：server 与 webui 支持推理模型的 continue generation | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9133) |
+| 6 | LangGraph langgraph==1.2.0 | 官方确认 | LangGraph | [链接](https://github.com/langchain-ai/langgraph/releases/tag/1.2.0) |
+| 7 | Ollama v0.30.0-rc15：架构重构，直接支持 llama.cpp | 官方确认 | Ollama | [链接](https://github.com/ollama/ollama/releases/tag/v0.30.0-rc15) |
+| 8 | 商汤发布 SenseNova-U1 系列原生多模态模型：A3B-MoT 权重开源 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tc47q0/sensenovasensenovau1a3bmot_hugging_face) |
+| 9 | KGC 2026 演讲资料分享：企业级知识图谱生产系统案例 | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1tbt6wl/sharing_all_kgc_2026_decks_more_productiongrade) |
+| 10 | llama.cpp b9127：opencl: add opt-in Adreno xmem F16xF32 GEMM for prefill | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9127) |
+| 11 | SpacemiT K3驱动的DC-ROMA RISC-V主板III适配Framework Laptop 13 | 技术社区 | Reddit r/RISCV | [链接](https://www.reddit.com/r/RISCV/comments/1tbuirq/spacemit_k3powered_dcroma_riscv_motherboard_iii) |

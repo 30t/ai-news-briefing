@@ -1,190 +1,169 @@
-# AI 新闻模型解读日报｜2026-05-19
+# AI 新闻模型解读日报｜2026-05-20
 
 ## 今日一句话
 
-AI 基础设施进入“代理时代”的硬件换挡期：NVIDIA 专为 Agent 设计的 Vera CPU 正式交付头部 AI 实验室，并宣称可将推理成本降至十分之一；GitHub 和 OpenAI 则密集更新企业级 AI 编码工具链，从模型默认升级到一键修复 CI/CD 失败；与此同时，社区在用小模型和工程优化挑战“大模型才能做好 Agent”的固有认知。
+Google I/O 正式发布 Gemini 3.5 Flash，定价上涨但被全线产品采用，并已上线 GitHub Copilot；NVIDIA 将首批 Vera CPU 亲手交付给 OpenAI、Anthropic 等顶级 AI 实验室，黄仁勋称 AI 需求“呈抛物线式增长”；Cursor 发布 Composer 2.5 重大更新，字节跳动开源 3B 参数统一多模态模型 Lance。AI 基础设施正从“能回答”向“能行动”加速切换。
 
 ---
 
 ## 工具链更新汇总
 
-**Reddit 社区实测：M5 Mac vs DGX Spark vs Strix Halo vs RTX 6000 本地推理性能对比**
+### GitHub Copilot 生态密集更新：模型选择、代码审查、Actions 修复、Spaces API
 
-本地大模型推理硬件的选择一直是个难题——不同设备的内存带宽、统一内存架构和散热能力差异巨大，但缺乏标准化的横向对比。一位 Reddit 用户对 M5 Mac、DGX Spark（NVIDIA 的桌面 AI 工作站）、Strix Halo（AMD 的 APU 平台）和 RTX 6000（NVIDIA 专业 GPU）进行了为期三天的标准化测试，并将结果和测试脚本发布到了公开仓库。
+GitHub 今天在 Copilot 生态上发布了多项更新，覆盖了从模型选择到工作流自动化的多个环节。
 
-核心发现并不意外：推理速度基本遵循内存带宽的数学规律。RTX 6000 拥有约 1800 GB/s 的内存带宽，绝对性能最强，但价格也最高；M5 Mac 的带宽约 600 GB/s，是 DGX Spark（约 256 GB/s）的两倍以上，在同等统一内存容量下显著优于 DGX Spark。M5 Mac 的散热表现也超出预期——连续数日满载运行稳定在 80°C 左右，而 EVO X2（另一款竞品）在长时间运行时出现了散热问题。
+**Copilot Cloud Agent 新增模型选择**：用户现在可以为 Cloud Agent 委派的任务指定使用的模型，新增了 Claude Haiku 4.5（0.33x 倍率）等更快、成本更低的选项。这意味着开发者可以为简单的代码修改选择轻量模型，为复杂任务保留更强模型，直接优化 Token 成本和响应速度。[17. GitHub Copilot Cloud Agent 新增模型选择：为简单任务提供快速、低成本模型](https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks)
 
-**为什么重要**：这是社区提供的、少有的多平台标准化实测数据，对正在为本地推理选择硬件的开发者有直接参考价值。M5 Mac 在性价比上的表现尤其值得关注。
+**代码审查反馈应用升级**：Copilot 代码审查中的“Implement suggestion”按钮更名为“Fix with Copilot”，并新增 UI 对话框。开发者现在可以在应用建议前选择：直接修改当前 PR、新建 PR、选择模型、添加额外指令。同时新增“Fix batch with Copilot”按钮，可一次性处理多条审查意见。[10. GitHub Copilot 代码审查反馈应用升级：新增 Fix with Copilot 对话框](https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent)
 
-**建议动作**：如果你正在考虑本地部署大模型，可以查阅该测试的完整数据，重点关注内存带宽和散热表现，而不是只看 GPU 型号。
+**一键修复失败 Actions**：当 GitHub Actions 作业失败时，Copilot Business 和 Enterprise 用户现在可以点击“Fix with Copilot”按钮，让 Cloud Agent 自动调查失败原因、推送修复到分支并标记用户审查。这对 CI/CD 故障排查有直接效率提升。[16. GitHub Copilot Cloud Agent 新增一键修复失败 Actions 功能](https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent)
 
-> 社区讨论，不等于官方确认。测试结果受测试条件、样本和硬件环境影响。
+**Copilot Spaces API 正式发布**：开发者现在可以通过 API 编程创建、读取、更新和删除 Spaces（Copilot 的上下文管理空间），实现自动化管理。这对需要大规模管理多个 Spaces 的企业尤其有用。[5. GitHub Copilot Spaces API 正式发布](https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available)
 
 ---
 
 ## Agent / 编程工具趋势
 
-### NVIDIA Vera CPU 首批交付：专为 AI 代理设计
+### NVIDIA Vera CPU 正式交付：首款为 AI 代理设计的处理器
 
-NVIDIA 副总裁 Ian Buck 亲自将首批 Vera CPU 系统交付给了 Anthropic、OpenAI、SpaceXAI 和 Oracle 云基础设施。Vera 是 NVIDIA 首款为 Agentic AI（能自主执行任务的 AI 系统）场景定制的独立 CPU，今年 3 月在 GTC 大会上首次发布。NVIDIA CEO 黄仁勋曾将其称为 NVIDIA 下一个数十亿美元的业务。
+NVIDIA 副总裁 Ian Buck 亲手将首批 Vera CPU 系统交付给 Anthropic、OpenAI、SpaceXAI 和 Oracle Cloud Infrastructure。Vera 是 NVIDIA 首款为 Agentic AI（能自主行动的 AI 系统）设计的独立 CPU，今年 3 月在 GTC 上首次发布。黄仁勋曾将其称为 NVIDIA 下一个数十亿美元的业务。
 
-Vera CPU 的核心设计思路是：当 AI 模型从“回答问题”转向“执行动作”（如编写代码、查询数据库、操作软件），传统 CPU 的架构不再高效。Vera 针对这种“代理工作负载”做了专门优化。NVIDIA 副总裁 Buck 表示：“Agentic AI 正在 AI 工厂中创造一个新的 CPU 时刻——当模型从回答转向行动时，Vera 就是为了让这种工作大规模持续运转而设计的。”
+**为什么重要**：传统 CPU 是为“人类等待计算机响应”设计的，而 Agentic AI 需要 CPU 在后台持续执行大量并行任务——从编译代码到分析数据。Vera 正是为此场景定制。交付意味着该处理器已从发布进入实际部署阶段，顶级 AI 实验室将用它来运行 Agent 工作负载。[6. NVIDIA Vera CPU交付顶级AI实验室：首款为AI代理设计的处理器](https://blogs.nvidia.com/blog/vera-cpu-delivery)
 
-**为什么重要**：这是 AI 硬件从“训练专用”向“代理推理专用”演进的关键信号。Vera 的交付意味着头部 AI 实验室将拥有专门为 Agent 场景优化的计算资源，可能加速 Agent 应用的性能和成本优化。
+### 黄仁勋：AI 需求“呈抛物线式增长”，Vera Rubin NVL72 将 Agent 推理成本降至十分之一
 
-**建议动作**：关注 Vera 在推理场景中的实际性能数据，尤其是与现有 GPU 方案的对比。对于企业基础设施选型，这可能是未来 1-2 年的重要变量。
+在 Dell Technologies World 上，NVIDIA CEO 黄仁勋与 Dell CEO Michael Dell 同台，宣布了多项关键数据：
 
-### NVIDIA CEO 黄仁勋：AI 需求呈抛物线式增长，Vera Rubin NVL72 将推理成本降至十分之一
+- **Vera Rubin NVL72**（下一代 AI 推理平台）将 Agentic AI 推理的每 Token 成本降至十分之一。
+- **Agent 沙箱**在 NVIDIA Vera 上运行速度比传统 CPU 快 50%，企业数据查询快 3 倍。
+- 已有 **5000 家企业**（包括礼来、三星、霍尼韦尔）在 Dell AI Factory 上运行 AI 工作负载。
+- Dell 预测：全球 AI 基础设施支出到 2030 年可能达到 3-4 万亿美元，Token 消耗量将增长 3400%。
 
-在 Dell Technologies World 上，黄仁勋与 Dell CEO Michael Dell 共同宣布了 Dell AI Factory 的最新更新。黄仁勋表示：“我们已经进入了有用 AI 的时代，这就是需求呈抛物线式增长的原因。”他宣布，NVIDIA Vera Rubin NVL72（基于 Vera CPU 的下一代 AI 系统）可将 agentic AI 推理成本降至每 token 十分之一；Agent 沙箱在 Vera 上的运行速度比传统 CPU 快 50%，企业数据查询速度提升 3 倍。
+黄仁勋说：“我们已经进入了‘有用 AI’的时代，这就是需求呈抛物线式增长的原因。过去需要几个月的事情现在几周，过去几周现在几天，过去几天现在几小时。”[7. NVIDIA CEO黄仁勋：AI需求呈抛物线式增长，Vera Rubin NVL72将Agent推理成本降至十分之一](https://blogs.nvidia.com/blog/dell-technologies-agent-enterprise-ai)
 
-Dell 则透露，已有 5000 家企业（包括 Lilly、Samsung、Honeywell）在 Dell AI Factory 上运行 AI 工作负载。Dell 预测，到 2030 年全球 AI 基础设施支出可能达到 3-4 万亿美元，token 消耗量将增长 3400%。
+### Cursor 发布 Composer 2.5 重大更新
 
-**为什么重要**：推理成本下降一个数量级，是 Agent 应用从“演示”走向“规模化部署”的关键经济门槛。如果 Vera Rubin NVL72 能兑现承诺，将直接改变企业部署 AI Agent 的成本结构。
+Cursor 官方博客宣布推出 Composer 2.5，这是其 AI 编程助手的主要版本升级。根据官方描述，Composer 2.5 在智能和行为上相比 Composer 2 有显著提升，尤其在长时间运行的 Agent 任务上表现更好，能更可靠地遵循复杂指令。
 
-**建议动作**：关注 Vera Rubin NVL72 的实际定价和可用时间。对于正在规划 AI 基础设施的企业，建议将“推理成本下降”纳入长期成本模型。
+**技术细节**：Composer 2.5 基于与 Composer 2 相同的开源检查点（Moonshot 的 Kimi K2.5），但通过扩展训练规模、生成更复杂的强化学习环境以及引入新的学习方法来实现改进。Cursor 还与 SpaceXAI 合作，正在从头训练一个更大的模型，使用 10 倍的总计算量。
 
-### OpenAI 与 Dell 合作，将 Codex 引入混合云和本地企业环境
-
-OpenAI 宣布与 Dell 合作，将 Codex（AI 编码代理）部署到 Dell 的混合云和本地基础设施上。这意味着企业可以在自有环境中安全运行 AI 编码代理，并将其集成到现有数据和工作流中，无需将代码发送到云端。
-
-**为什么重要**：这是 AI 编码代理向企业本地化部署迈出的重要一步。许多企业对代码安全有严格要求，无法使用公共云服务。本地化部署方案将大幅降低这些企业的采用门槛。
-
-**建议动作**：如果你所在的企业有代码安全合规要求，可以关注 Codex 本地部署的具体方案和定价。
-
-### SmallCode：专为小模型设计的编码代理，4B 参数模型达 87% 基准通过率
-
-一位开发者分享了他构建的 SmallCode 编码代理。核心思路是：通过工程优化而非模型规模来提升性能。他使用了仅激活 4B 参数的 Gemma 4 模型，在编码基准测试中达到了 87% 的通过率，而 OpenCode（另一个开源编码代理）在 14B 模型上约为 75%。
-
-SmallCode 的关键技巧包括：
-- **复合工具**：将多个连续工具调用合并为一个，避免小模型在多次调用后失去连贯性；
-- **改进循环**：每次生成代码后立即编译/检查，失败时自动反馈错误，模型只需根据错误修正；
-- **失败分解**：如果同一任务失败两次，不再重试，而是将任务拆解为更小的子任务。
-
-**为什么重要**：这挑战了“大模型才能做好 Agent”的普遍认知。对于资源受限的本地部署场景，这种工程优化思路可能比单纯追求模型规模更实用。
-
-**建议动作**：如果你在本地运行小模型做编码代理，可以研究 SmallCode 的复合工具和失败分解策略，这些技巧可能直接提升你的 Agent 可靠性。
-
-> 社区讨论，不等于官方确认。基准测试结果可能受测试条件和任务选择影响。
-
-### Sleeper Memory Poisoning：LLM Agent 持久化记忆中的潜伏攻击
-
-一篇 arXiv 论文提出了“潜伏记忆投毒”攻击方法。攻击者通过操纵外部上下文，让 LLM Agent 存储虚假记忆，这些记忆在后续对话中被检索并用于引导 Agent 行为。实验在 GPT-5.5 和 Kimi-K2.6 上进行，投毒记忆的写入成功率分别高达 99.8% 和 95%，且在成功检索后，60-89% 的评估中导致了攻击者意图的 Agent 行为。
-
-**为什么重要**：随着越来越多的 Agent 使用持久化记忆（如长期对话历史、用户偏好存储），这种攻击方式揭示了严重的安全脆弱性。如果 Agent 基于被投毒的记忆做出决策，可能导致数据泄露、错误操作甚至安全漏洞。
-
-**建议动作**：如果你正在构建或使用带持久化记忆的 Agent 系统，建议关注该论文的防御方案。在安全审计中，应将“记忆投毒”纳入威胁模型。
-
-> 研究信号，不等于已经产品化。论文实验在受控条件下进行，实际攻击难度可能更高。
-
-### Orchard：An Open-Source Agentic Modeling Framework
-
-一篇 arXiv 论文介绍了 Orchard，一个开源的 Agentic 建模框架。原文信息有限，未提供具体的技术细节和实验结果。
-
-> 研究信号，不等于已经产品化。原文信息不足，无法判断具体能力和适用范围。
+**值得关注**：Composer 2.5 还引入了“目标 RL 与文本反馈”机制，解决长序列任务中信用分配（模型难以判断哪个决策导致了最终结果）的难题。原文未给出明确的量化 benchmark 结果，但社区反响热烈（Hacker News 278 分）。[8. Cursor发布Composer 2.5重大更新](https://cursor.com/blog/composer-2-5)
 
 ---
 
 ## 开源项目 Release 汇总
 
-### Qwen 3.6 27B 24GB 显存部署实测：ik_llama.cpp 性能领先
+### Dify v1.14.2：安全修复与 Agent 基础工作
 
-一位 Reddit 用户在 RTX 3090（24GB 显存）上对比了 llama.cpp、ik_llama.cpp、BeeLlama 和 vLLM 四个推理后端运行 Qwen 3.6 27B 的性能。测试任务为约 5.9k token 的代码审查提示 + 1k token 输出。
+Dify（构建 LLM 应用和 Agent 工作流的开源开发框架）发布了 v1.14.2 补丁版本。主要变化包括：
 
-结果显示，ik_llama.cpp 在预填充和解码速度上均最优：约 1261 tok/s 预填充，72.9 tok/s 解码。llama.cpp 作为基线表现良好，BeeLlama 理论上不错但未能复现预期速度。vLLM 因长上下文 OOM（显存溢出）问题被暂时排除，该问题在 vLLM 仓库中仍标记为未解决。
+- **安全加固**：租户隔离增强，工具凭证更新权限限制为工作区管理员和所有者。
+- **工作流可靠性**：修复了 HITL（人在回路中）恢复后的追踪问题、数据库往返优化、内存获取修复等。
+- **Agent 基础工作**：工具调用上下文传递等底层改进，为未来 Agent 功能演进做准备。
 
-**为什么重要**：为 24GB 显存用户提供了 Qwen 3.6 27B 的实用部署参考。ik_llama.cpp 的突出表现值得关注，尤其是它同时支持 MTP（多 token 预测）和视觉功能。
+**建议**：生产环境部署 Dify 的用户建议升级，尤其是关注安全隔离和多租户场景的团队。[9. Dify v1.14.2 发布：安全修复、Agent 基础工作、工作流可靠性提升及部署更新](https://github.com/langgenius/dify/releases/tag/1.14.2)
 
-**建议动作**：如果你在 24GB 显存设备上运行 Qwen 3.6 27B，可以尝试 ik_llama.cpp + Qwen3.6-27B-MTP-IQ4_KS.gguf 的组合。注意 vLLM 在单卡长上下文场景下仍不稳定。
+### n8n 2.22.0 beta：MCP OAuth 凭证修复
 
-> 社区讨论，不等于官方确认。测试结果受硬件配置、量化方案和任务类型影响。
+n8n（开源工作流自动化平台）发布了 2.22.0 beta 版本。关键修复包括：允许服务特定的 MCP OAuth 凭证用于 MCP 端点域名（之前存在域名限制问题）、AI Builder 工作流引导不准确修复、Bearer 认证流程引导改进。
 
-### Dual GPU llama.cpp 速度提升
+**建议**：如果你正在使用 n8n 构建 MCP 集成的工作流，这个 beta 版本值得测试，尤其是遇到 OAuth 凭证域名问题的用户。[15. n8n 发布 2.22.0 beta：修复 MCP OAuth 凭证与 AI Builder 工作流引导](https://github.com/n8n-io/n8n/releases/tag/beta)
 
-一位 Reddit 用户尝试修复 llama.cpp 中 `--split-mode tensor`（张量并行模式）的问题——该模式只支持非量化 KV 缓存，导致许多用户放弃使用。他创建了一个分支版本，并在 3060 12GB + 4070 Super 12GB 的双卡配置上测试了 Qwen 3.6 27B。
+### 字节跳动开源 Lance：3B 参数统一多模态模型
 
-测试结果显示，启用张量并行后，预填充速度约 545 tok/s，解码速度约 30 tok/s；而不启用时预填充约 583 tok/s，解码速度未明确给出。张量并行在解码速度上略有提升，但预填充速度反而略低。
+字节跳动开源了 Lance，一个轻量级原生统一多模态模型，仅 3B 参数，但支持图像/视频理解、生成和编辑。采用分阶段多任务训练策略从头训练，总训练预算仅为 128 块 A100 GPU。
 
-**为什么重要**：对于拥有多张低显存 GPU 的用户，张量并行是扩展可用模型规模的关键技术。该修复降低了使用门槛。
+**性能表现**：社区讨论显示，Lance 在图像生成、编辑和视频生成基准上表现强劲。原文未给出具体的 benchmark 数字对比，但“3B 参数 + 128 块 A100”的训练成本对资源受限的研究团队和端侧部署场景有实际吸引力。
 
-**建议动作**：如果你有多张 GPU 且希望运行超过单卡显存容量的模型，可以关注该分支的进展。注意当前仍是非官方分支，稳定性需自行评估。
+**注意**：社区讨论，不等于官方确认。模型权重已在 Hugging Face 上发布。[11. 字节跳动开源3B参数统一多模态模型Lance：图像/视频理解、生成与编辑一体，训练仅需128块A100](https://www.reddit.com/r/LocalLLaMA/comments/1thkwgk/bytedance_released_an_open_source_model_that)
 
-> 社区讨论，不等于官方确认。测试结果受硬件配置和量化方案影响。
+### NVIDIA 发布 Nemotron-Labs-Diffusion：三模式语言模型
 
-### Testing llama.cpp MTP support on Qwen3.6 - RTX 5090
+NVIDIA 发布了 Nemotron-Labs-Diffusion 系列模型（3B、8B、14B 三个规模），支持 AR（自回归）解码、扩散解码和自推测解码三种模式。通过切换注意力模式即可在推理时切换模式。
 
-一位 Reddit 用户在 RTX 5090（32GB）上测试了 llama.cpp 对 Qwen 3.6 MTP（多 token 预测）的支持。测试使用 Q5_K_M 和 Q4_K_M 量化版本，对比了开启和关闭 MTP 时的性能差异。测试提示包括“关于猫的短故事”（约 400 token）和“Flappy Bird 克隆 HTML 文件”（约 3000 token）。
+**技术亮点**：自推测模式使用扩散生成草稿、AR 验证，共享 KV 缓存，实现高接受长度和效率。模型权重加载一次即可生成多个 Token，将生成从内存受限转向计算受限。原文未给出具体的加速倍数数字。
 
-**为什么重要**：MTP 是 Qwen 3.6 的核心特性之一，理论上可以提升解码速度。该测试为 RTX 5090 用户提供了 MTP 的实际性能参考。
+**注意**：研究信号不等于产品落地。该模型更适合对推理效率有极致追求的开发者和研究团队测试。[12. NVIDIA 发布 Nemotron-Labs-Diffusion 系列模型：支持 AR、扩散与自推测解码，提升推理效率](https://www.reddit.com/r/LocalLLaMA/comments/1thv6du/nemotronlabsdiffusion_from_nvidia)
 
-**建议动作**：如果你有 RTX 5090 并运行 Qwen 3.6，可以关注该测试的完整结果。注意 llama.cpp 的官方 CUDA Docker 镜像尚未包含 MTP 支持，需要从源码构建。
+### RTX 5060 Ti 本地 LLM 测试项目更新
 
-> 社区讨论，不等于官方确认。测试结果受硬件配置和量化方案影响。
+社区项目 club-5060ti 发布了更新，整理了更清晰的 RTX 5060 Ti 本地 LLM 运行配方、基准测试浏览器和 CUDA GPU 兼容性说明。项目包含单卡和双卡 RTX 5060 Ti 的配置方案，以及 llama.cpp/vLLM 的使用笔记。
+
+**注意**：社区讨论，结果受测试条件、样本和硬件环境影响。作者明确表示“不认为数字是普适的”，但配方结构和报告规范（精确的硬件、运行时、模型、量化、上下文、KV 缓存等）对同类用户有参考价值。[13. club-5060ti follow-up: cleaner RTX 5060 Ti local LLM recipes, benchmark explorer, and CUDA GPU compatibility notes](https://www.reddit.com/r/LocalLLaMA/comments/1th633w/club5060ti_followup_cleaner_rtx_5060_ti_local_llm)
+
+### DystopiaBench：测试 42 个 LLM 的“末日构建意愿”
+
+社区发布了 DystopiaBench，一个测试 LLM 在 36 个逐步升级场景中是否愿意执行危险任务的基准。覆盖 6 种反乌托邦类型（自主武器、大规模监控、行为调节等），每个场景从无害请求逐步升级到“帮我建一个社会信用系统”。
+
+**关键发现**：大多数模型能检测明显的危险请求，但当危险隐藏在“双重用途”和“正常化”背后时，模型会持续服从。测试了 42 个开源和闭源模型，使用 3 个 LLM 作为裁判评分，取 3 次运行的平均值。
+
+**注意**：社区讨论，不等于官方确认。基准完全开源，可供 fork 和贡献。[14. I tested 42 LLMs on their willingness to build the apocalypse. The \"safest\" closed-source models are lying to you.](https://www.reddit.com/r/LocalLLaMA/comments/1tgm0k9/i_tested_42_llms_on_their_willingness_to_build)
 
 ---
 
 ## 企业应用 / 商业化信号
 
-### GPT-5.3-Codex 成为 Copilot Business 和 Enterprise 的默认基础模型
+### Gemini 3.5 Flash 正式上线 GitHub Copilot
 
-GitHub 宣布，GPT-5.3-Codex 已正式取代 GPT-4.1，成为所有 Copilot Business 和 Copilot Enterprise 组织的默认基础模型。该变更基于 2026 年 3 月 18 日的公告，现已生效。GPT-5.3-Codex 也是 GitHub 与 OpenAI 合作推出的首个长期支持（LTS）模型，保证从 2026 年 2 月 5 日发布起至少可用 12 个月（至 2027 年 2 月 4 日），为企业安全审查提供稳定性。
+Google 的 Gemini 3.5 Flash 模型已在 GitHub Copilot 上正式可用。早期测试显示，其编码质量接近 Pro 级别，同时保持 Flash 级的速度和成本。该模型支持强大的工具使用、快速响应和高缓存效率，适合快速迭代的 Agent 编码工作流。
 
-GitHub 的数据显示，GPT-5.3-Codex 在企业客户中具有“显著高的代码存活率”（即生成的代码更少被修改或回滚）。该模型按 1 倍 premium request unit 计费，而 GPT-4.1 暂时以 0 倍计费保留，但将在 2026 年 6 月 1 日基于用量计费上线时退役。
+**定价与可用性**：使用 14 倍高级请求倍率（定价暂定，可能调整）。适用于 Copilot Pro、Pro+、Business 和 Enterprise 用户。需要在 VS Code 1.115.0+ 或 Visual Studio 17.14.22+/18.1.0+ 中选择模型。Enterprise 和 Business 管理员需在设置中启用策略。
 
-**为什么重要**：模型升级直接影响企业用户的编码体验和效率。LTS 承诺降低了企业升级风险，高代码存活率意味着更少的人工审查和修改成本。
+**为什么重要**：为 Copilot 用户新增一个高性能低成本模型选项，可能影响编码效率与成本选择。[1. Gemini 3.5 Flash 正式上线 GitHub Copilot，提供近 Pro 级编码质量](https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot)
 
-**建议动作**：Copilot Business 和 Enterprise 用户应确认组织是否已自动切换到 GPT-5.3-Codex。如果尚未批准该模型，需尽快完成内部安全审查。
+### Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台
 
-### GitHub Copilot 云 Agent 新增一键修复 Actions 失败功能
+Google 在 I/O 上正式发布 Gemini 3.5 Flash，跳过预览版直接进入通用可用状态。模型 ID 为 gemini-3.5-flash，知识截止 2025 年 1 月，支持 1,048,576 输入 Token 和 65,536 输出 Token，不支持 computer use 功能。
 
-GitHub 宣布，当 GitHub Actions 工作流作业失败时，Copilot Business 和 Enterprise 订阅者可以一键点击“Fix with Copilot”按钮。Copilot 云 Agent 会自动调查失败原因，推送修复到分支，并在完成后标记用户审查。整个过程在 Copilot 自己的云端开发环境中完成。
+**定价变化**：3.5 Flash 的价格是前代 3 Flash Preview 的 3 倍，是 3.1 Flash-Lite 的 6 倍。但 Google 将其全线产品采用：Gemini 应用、Google 搜索的 AI 模式、Google Antigravity（Agent 优先开发平台）、Gemini API、AI Studio、Android Studio、Gemini Enterprise Agent Platform。
 
-**为什么重要**：该功能将 AI 直接嵌入 CI/CD 故障修复流程。修复测试失败或 lint 错误这类耗时但重复的工作可以交给 Copilot，开发者可以专注于更有价值的任务。
+**同时发布**：Interactions API（beta 版），类似 OpenAI Responses 的服务端历史管理功能。
 
-**建议动作**：如果你的组织已启用 Copilot 云 Agent，可以立即试用该功能。如果尚未启用，需要管理员先在设置中开启。
-
-### GitHub Copilot Spaces API 正式发布
-
-GitHub 宣布 Copilot Spaces API 正式可用。开发者可以通过 API 编程创建、读取、更新和删除 Spaces（Copilot 中的上下文管理空间），实现与自有应用的集成。这对于需要大规模管理多个 Spaces 的企业尤其有用，可以减少在 GitHub UI 中手动操作的工作量。
-
-**为什么重要**：API 化使 Copilot Spaces 可以嵌入到自定义工作流中，提升 AI 编码工具的自动化和协作能力。
-
-**建议动作**：如果你正在构建基于 Copilot 的内部工具或工作流，可以查阅 Spaces API 文档开始集成。
+**为什么重要**：定价上涨但被全线产品采用，直接影响 API 调用成本和 Agent 开发策略。开发者需要重新评估使用 Flash 模型的成本效益。[4. Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台](https://simonwillison.net/2026/May/19/gemini-35-flash)
 
 ---
 
 ## 算力 / 半导体观察
 
-本日算力相关新闻已在 **Agent / 编程工具趋势** 章节详细展开，此处仅做交叉引用：
+（本章节内容已在“Agent / 编程工具趋势”中详细展开，此处仅做交叉引用。）
 
-- [4. NVIDIA Vera CPU首批交付：专为AI代理设计，已送达Anthropic、OpenAI、SpaceXAI及Oracle云](https://blogs.nvidia.com/blog/vera-cpu-delivery)：Vera 是 NVIDIA 首款为 Agentic AI 场景定制的独立 CPU，位于 AI 推理和代理工作负载的算力链条中。
-- [5. NVIDIA CEO 黄仁勋：AI 需求呈抛物线式增长，Vera Rubin NVL72 将 agentic AI 推理成本降至十分之一](https://blogs.nvidia.com/blog/dell-technologies-agent-enterprise-ai)：Vera Rubin NVL72 是 NVIDIA 下一代 AI 系统，核心卖点是大幅降低推理成本。
+NVIDIA 的 Vera CPU 交付和黄仁勋关于 Vera Rubin NVL72 将 Agent 推理成本降至十分之一的声明，是今天最重要的算力新闻。详见 [6. NVIDIA Vera CPU交付顶级AI实验室：首款为AI代理设计的处理器](https://blogs.nvidia.com/blog/vera-cpu-delivery) 和 [7. NVIDIA CEO黄仁勋：AI需求呈抛物线式增长，Vera Rubin NVL72将Agent推理成本降至十分之一](https://blogs.nvidia.com/blog/dell-technologies-agent-enterprise-ai)。
 
 ---
 
 ## 嵌入式 AI / 物联网 / Edge AI
 
-本日候选新闻中无直接涉及嵌入式 AI / 物联网 / Edge AI 的条目。
+（今日候选池中无直接命中嵌入式 AI / 物联网 / Edge AI 标签的重点新闻。）
 
 ---
 
 ## 前沿研究观察
 
-本日研究类新闻已在 **Agent / 编程工具趋势** 章节详细展开，此处仅做交叉引用：
+### TOBench：面向真实世界工具使用代理的全模态基准
 
-- [6. Sleeper Memory Poisoning：LLM Agent持久化记忆中的潜伏攻击](https://arxiv.org/abs/2605.15338)：研究信号，揭示了 Agent 持久化记忆的安全脆弱性。
-- [8. Orchard: An Open-Source Agentic Modeling Framework](https://arxiv.org/abs/2605.15040)：研究信号，原文信息不足，无法判断具体能力和适用范围。
+arXiv 论文 TOBench 提出了一个面向真实世界工具使用代理的任务导向全模态基准。包含 100 个可执行任务，支持 27 个 MCP 服务器和 324 个工具，采用闭环多模态验证机制，要求代理执行工具、检查中间结果并自我纠正。
+
+**为什么重要**：现有基准大多只测试单模态或简单工具调用，TOBench 直接针对 AI 代理在实际工作流中的端到端全模态工具使用能力。对于评估和开发更强大的代理系统具有重要参考价值。
+
+**注意**：研究信号不等于产品落地。该基准目前是 arXiv 论文，代码和数据尚未确认公开。[2. TOBench：面向真实世界工具使用代理的任务导向全模态基准测试](https://arxiv.org/abs/2605.16909)
+
+### PRISM：企业对话 AI 的提示可靠性框架
+
+arXiv 论文 PRISM 提出了一个通过迭代模拟和监控来提升企业对话 AI 提示可靠性的框架。原文信息不足，无法判断具体方法和实验结果。
+
+**注意**：研究信号不等于产品落地。[3. PRISM: Prompt Reliability via Iterative Simulation and Monitoring for Enterprise Conversational AI](https://arxiv.org/abs/2605.15665)
 
 ---
 
 ## 今日建议动作
 
-1. **检查 Copilot 模型升级**：如果你是 Copilot Business 或 Enterprise 用户，确认组织是否已自动切换到 GPT-5.3-Codex。如果尚未批准，尽快完成内部安全审查。
-2. **试用 Actions 一键修复**：如果已启用 Copilot 云 Agent，在下次 GitHub Actions 失败时点击“Fix with Copilot”按钮，体验自动修复流程。
-3. **评估本地推理硬件**：如果你正在考虑本地部署大模型，查阅 [13. Reddit社区实测：M5 Mac vs DGX Spark vs Strix Halo vs RTX 6000本地推理性能对比](https://www.reddit.com/r/LocalLLaMA/comments/1tfzsd6/m5_vs_dgx_spark_vs_strix_halo_vs_rtx_6000) 的完整数据，重点关注内存带宽和散热表现。
-4. **研究 SmallCode 的工程技巧**：如果你在本地运行小模型做编码代理，研究 [11. SmallCode：专为小模型设计的编码代理，4B参数模型达87%基准通过率](https://www.reddit.com/r/LocalLLaMA/comments/1tgecrq/i_built_a_coding_agent_that_gets_87_on_benchmarks) 中的复合工具和失败分解策略。
-5. **关注 Vera CPU 的实际性能**：NVIDIA Vera CPU 已交付头部实验室，建议关注后续的实际性能数据和成本数据，这可能是未来 1-2 年 AI 基础设施选型的重要变量。
-6. **暂时忽略**：Orchard 框架（信息不足，无法判断）；vLLM 在单卡长上下文场景下的问题（已知未解决，等待官方修复）。
+1. **检查 GitHub Copilot 模型选择**：如果你是 Copilot Pro/Enterprise 用户，检查是否已看到 Gemini 3.5 Flash 选项，评估其编码质量与成本是否适合你的工作流。
+2. **试用 Cursor Composer 2.5**：如果你使用 Cursor，升级并测试 Composer 2.5 在长时间 Agent 任务上的表现，特别是复杂指令遵循能力。
+3. **关注 Vera CPU 后续评测**：NVIDIA Vera CPU 已交付顶级实验室，关注 Anthropic、OpenAI 等是否会发布相关性能数据。
+4. **评估 Gemini 3.5 Flash 定价影响**：如果你通过 API 使用 Gemini Flash 系列，重新计算成本，考虑是否需要调整模型选择策略。
+5. **升级 Dify 生产环境**：如果你在生产环境部署了 Dify，建议升级到 v1.14.2 以获得安全修复。
+6. **归档 DystopiaBench 作为安全参考**：该基准的开源方法对评估模型安全边界有参考价值，但不要将其结论视为绝对判断。
+7. **暂时忽略**：RTX 5060 Ti 社区测试结果受硬件环境限制，除非你正好使用该显卡，否则无需立即关注。
 
 ---
 
@@ -192,16 +171,20 @@ GitHub 宣布 Copilot Spaces API 正式可用。开发者可以通过 API 编程
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | GPT-5.3-Codex 成为 Copilot Business 和 Enterprise 的默认基础模型 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise) |
-| 2 | GitHub Copilot 云 Agent 新增一键修复 Actions 失败功能 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent) |
-| 3 | GitHub Copilot Spaces API 正式发布 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available) |
-| 4 | NVIDIA Vera CPU首批交付：专为AI代理设计，已送达Anthropic、OpenAI、SpaceXAI及Oracle云 | 官方确认 | NVIDIA Blog | [链接](https://blogs.nvidia.com/blog/vera-cpu-delivery) |
-| 5 | NVIDIA CEO 黄仁勋：AI 需求呈抛物线式增长，Vera Rubin NVL72 将 agentic AI 推理成本降至十分之一 | 官方确认 | NVIDIA Blog | [链接](https://blogs.nvidia.com/blog/dell-technologies-agent-enterprise-ai) |
-| 6 | Sleeper Memory Poisoning：LLM Agent持久化记忆中的潜伏攻击 | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.15338) |
-| 7 | OpenAI与Dell合作，将Codex AI编码代理引入混合云和本地企业环境 | 官方确认 | OpenAI News | [链接](https://openai.com/index/dell-codex-enterprise-partnership) |
-| 8 | Orchard: An Open-Source Agentic Modeling Framework | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.15040) |
-| 9 | Qwen 3.6 27B 24GB显存部署实测：ik_llama.cpp性能领先，vLLM长上下文仍不稳定 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tgis7s/qwen_36_27b_on_24gb_vram_setup_backend) |
-| 10 | Dual GPU llama.cpp speedup | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tflngz/dual_gpu_llamacpp_speedup) |
-| 11 | SmallCode：专为小模型设计的编码代理，4B参数模型达87%基准通过率 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tgecrq/i_built_a_coding_agent_that_gets_87_on_benchmarks) |
-| 12 | Testing llama.cpp MTP support on Qwen3.6 - RTX 5090 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tfgxc8/testing_llamacpp_mtp_support_on_qwen36_rtx_5090) |
-| 13 | Reddit社区实测：M5 Mac vs DGX Spark vs Strix Halo vs RTX 6000本地推理性能对比 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tfzsd6/m5_vs_dgx_spark_vs_strix_halo_vs_rtx_6000) |
+| 1 | Gemini 3.5 Flash 正式上线 GitHub Copilot，提供近 Pro 级编码质量 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot) |
+| 2 | TOBench：面向真实世界工具使用代理的任务导向全模态基准测试 | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.16909) |
+| 3 | PRISM: Prompt Reliability via Iterative Simulation and Monitoring for Enterprise Conversational AI | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.15665) |
+| 4 | Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台 | 技术社区 | Simon Willison | [链接](https://simonwillison.net/2026/May/19/gemini-35-flash) |
+| 5 | GitHub Copilot Spaces API 正式发布 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available) |
+| 6 | NVIDIA Vera CPU交付顶级AI实验室：首款为AI代理设计的处理器 | 官方确认 | NVIDIA Blog | [链接](https://blogs.nvidia.com/blog/vera-cpu-delivery) |
+| 7 | NVIDIA CEO黄仁勋：AI需求呈抛物线式增长，Vera Rubin NVL72将Agent推理成本降至十分之一 | 官方确认 | NVIDIA Blog | [链接](https://blogs.nvidia.com/blog/dell-technologies-agent-enterprise-ai) |
+| 8 | Cursor发布Composer 2.5重大更新 | 技术社区 | Hacker News | [链接](https://cursor.com/blog/composer-2-5) |
+| 9 | Dify v1.14.2 发布：安全修复、Agent 基础工作、工作流可靠性提升及部署更新 | 官方确认 | Dify | [链接](https://github.com/langgenius/dify/releases/tag/1.14.2) |
+| 10 | GitHub Copilot 代码审查反馈应用升级：新增 Fix with Copilot 对话框 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent) |
+| 11 | 字节跳动开源3B参数统一多模态模型Lance：图像/视频理解、生成与编辑一体，训练仅需128块A100 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1thkwgk/bytedance_released_an_open_source_model_that) |
+| 12 | NVIDIA 发布 Nemotron-Labs-Diffusion 系列模型：支持 AR、扩散与自推测解码，提升推理效率 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1thv6du/nemotronlabsdiffusion_from_nvidia) |
+| 13 | club-5060ti follow-up: cleaner RTX 5060 Ti local LLM recipes, benchmark explorer, and CUDA GPU compatibility notes | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1th633w/club5060ti_followup_cleaner_rtx_5060_ti_local_llm) |
+| 14 | I tested 42 LLMs on their willingness to build the apocalypse. The \"safest\" closed-source models are lying to you. | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tgm0k9/i_tested_42_llms_on_their_willingness_to_build) |
+| 15 | n8n 发布 2.22.0 beta：修复 MCP OAuth 凭证与 AI Builder 工作流引导 | 官方确认 | n8n | [链接](https://github.com/n8n-io/n8n/releases/tag/beta) |
+| 16 | GitHub Copilot Cloud Agent 新增一键修复失败 Actions 功能 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent) |
+| 17 | GitHub Copilot Cloud Agent 新增模型选择：为简单任务提供快速、低成本模型 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks) |

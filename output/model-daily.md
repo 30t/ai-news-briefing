@@ -1,74 +1,175 @@
-# AI 新闻模型解读日报｜2026-05-21
+# AI 新闻模型解读日报｜2026-05-22
 
 ## 今日一句话
-Google 在 I/O 大会上正式发布 Gemini 3.5 Flash，定价上涨但全面铺向搜索与 Agent 平台；Cohere 发布首个 MoE 模型 Command A+，采用 Apache 2.0 许可，量化后可在 1-2 张 GPU 上运行；llama.cpp 连续发布两个版本，分别引入统一可执行文件和针对 Hopper+ GPU 的 PDL 性能优化；社区发现 AMD BC-250/PS5 APU 可通过驱动修改解锁全部 40 个 CU，低成本本地推理性能翻倍。
+
+Agent 工作流的成本评估正在从“每 token 单价”转向“每成功任务成本”，开源模型在可靠性上开始反超闭源；Cohere 发布首个开源 MoE 模型，瞄准低资源 Agent 部署；Agent 安全评测体系正在学术层面加速建立。
 
 ## 工具链更新汇总
-本日工具链更新主要集中在 **llama.cpp** 和 **CrewAI** 两个项目，分别涉及本地推理性能优化、部署简化以及 Agent 框架的稳定性改进。
 
-- **llama.cpp b9253** 引入了统一可执行文件（`llama`），将原本分散的多个子命令（如 `serve`、`completion`、`bench`）整合到一个二进制文件中，用户可通过子命令调用不同功能。这简化了本地推理工具的使用和分发，对开发者部署和测试模型更友好。原文未明确说明从哪个版本升级而来。[12. llama.cpp b9253：引入统一可执行文件，简化本地推理部署](https://github.com/ggml-org/llama.cpp/releases/tag/b9253)
-
-- **llama.cpp b9254** 为多个 CUDA 内核（包括量化、矩阵乘法、归一化、注意力等）添加了 Programmatic Dependent Launch (PDL) 支持。PDL 通过流捕获和屏障机制实现内核执行重叠，从而提升 Hopper+ GPU（如 H100、B200）上的推理吞吐。对于使用 Hopper+ GPU 运行 llama.cpp 的用户，此更新可直接提升推理速度，值得立即测试。[1. llama.cpp b9254 引入 Programmatic Dependent Launch (PDL)，提升 Hopper+ GPU 推理性能](https://github.com/ggml-org/llama.cpp/releases/tags/b9254)
-
-- **CrewAI 1.14.5** 是一个功能与修复并重的版本。主要变化包括：弃用 `CrewAgentExecutor`，默认 Crew 代理改用 `AgentExecutor`；新增 `restore_from_state_id` kickoff 参数；修复了 `git.py` 中的内存泄漏（改用 `cached_property`）；将 CLI 提取为独立的 `crewai-cli` 包。这些改进提升了 Agent 工作流的稳定性和可维护性。[5. CrewAI 1.14.5：Features](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5)
+本日无直接的工具链版本更新新闻。但 [7. Datasette Agent 发布：基于 LLM 的对话式数据查询助手](https://simonwillison.net/2026/May/21/datasette-agent) 本身是一个新工具发布，属于 Agent 工具链的扩展，详见“Agent / 编程工具趋势”章节。
 
 ## Agent / 编程工具趋势
-本日 Agent 领域有两个重要信号：一是 Cohere 发布了面向 Agent 开发的开源模型，二是 GitHub 扩展了 Copilot 的跨设备 Agent 工作流能力。
 
-- **Cohere 发布 Command A+：首个 MoE 模型，Apache 2.0 许可**。Cohere 联合创始人 Nick Frosst 在 Reddit 宣布发布 Command A+，这是 Cohere 首个 MoE（混合专家）模型，采用 Apache 2.0 许可。通过出色的量化工作，该模型在 1-2 张 GPU 上即可高效运行。Cohere 明确表示，优先考虑模型的实用性，让小型团队和开发者能够用它构建 Agent 应用。**社区讨论，不等于官方确认**，但这一发布对开源模型生态和 Agent 开发有实际意义。[7. Cohere 发布 Command A+：首个 MoE 模型，Apache 2.0 许可，量化后可在 1-2 GPU 上运行](https://www.reddit.com/r/LocalLLaMA/comments/1tizmar/re_what_ever_happened_to_coheres_commanda_series)
+### Cohere 发布 Command A+：首个开源 MoE 模型，Apache 2.0 许可
 
-- **GitHub Copilot 远程控制功能正式可用**。GitHub 宣布，开发者现在可以在 VS Code 或 CLI 中启动 Copilot 会话，然后通过 github.com 或 GitHub Mobile 应用远程查看进度、发送指令。这意味着 Agent 工作流不再局限于桌面，开发者可以跨设备持续管理多个 Copilot 会话。这是官方确认的功能，对使用 Copilot 进行多任务开发的团队有实际价值。[9. Take your local GitHub sessions anywhere](https://github.blog/news-insights/product-news/take-your-local-github-sessions-anywhere)
+**背景：** Cohere 是一家以企业级 AI 服务为主的加拿大公司，此前发布的 Command 系列模型以闭源或受限许可为主。社区曾对其开源承诺存疑。
+
+**这次发生了什么：** Cohere 联合创始人 Nick Frosst 在 Reddit 社区宣布发布 **Command A+**，这是 Cohere 首个 MoE（混合专家模型，通过多个子网络分工处理不同任务来提升效率）模型。原文信息显示，该模型以 **Apache 2.0** 许可开源，意味着几乎无使用限制。
+
+**具体变化：**
+- 这是 Cohere 首个 MoE 架构模型，在保持竞争力的同时实现了“极快的推理速度”。
+- 通过先进的量化技术，该模型可在 **1-2 张 GPU** 上高效运行，原文称“运行得非常好”。
+- 许可从之前的受限模式转向 Apache 2.0，目标是让小型团队和开发者能够构建类似其企业平台的 Agent。
+
+**为什么重要：** 这是 Cohere 首次以完全开放许可发布 MoE 模型，低资源部署门槛（1-2 GPU）使其对 Agent 开发者和开源社区极具吸引力。原文未给出具体 benchmark 数字，但强调“在同类中是最快和最响应的模型之一”。
+
+**建议动作：** 关注该模型的权重发布和社区评测，特别是其在 Agent 任务中的实际表现和推理成本。适合有 1-2 张 GPU 的团队评估是否替换现有模型。
+
+> **注意：** 该信息来自 Reddit 社区讨论（Cohere 联合创始人亲自发布），属于官方确认级别，但具体性能数据需等待独立评测验证。
+
+### Datasette Agent 发布：对话式数据查询助手
+
+**背景：** Datasette 是一个开源的数据探索和发布工具，Simon Willison 是其核心开发者。他此前已开发了 LLM（大语言模型）Python 库，用于与各种模型交互。
+
+**这次发生了什么：** Simon Willison 宣布 **Datasette Agent** 首个版本发布。这是一个基于 LLM 的对话式数据查询助手，用户可以用自然语言提问，工具自动将其转换为 SQL 查询并返回结果。
+
+**具体变化：**
+- 提供对话式接口，用户可以直接问“我最近一次看到鹈鹕是什么时候？”这类问题。
+- 支持通过插件 `datasette-agent-charts` 生成图表。
+- 演示基于 **Gemini 3.1 Flash-Lite** 模型运行，原文称其“便宜、快速，写 SQLite 查询毫无问题”。
+- 像 Datasette 其他组件一样，可通过插件扩展。
+
+**为什么重要：** 该工具展示了 LLM 与数据基础设施的实用结合，将自然语言查询能力直接嵌入到已有的开源数据工具中，对构建 Agent 驱动的数据分析工作流有启发意义。
+
+**建议动作：** 如果你已经在使用 Datasette，可以试用该 Agent 插件；如果对“自然语言查数据库”场景感兴趣，可以关注其架构和插件机制。
+
+> **注意：** 这是社区项目发布，非商业产品。演示基于特定模型，实际效果可能因模型和数据库复杂度而异。
+
+### GitHub Copilot 代码审查 Agent 升级：更可控的反馈应用流程
+
+**背景：** GitHub Copilot 的代码审查功能此前已支持“Implement suggestion”按钮，点击后会自动生成一个包含修改的 Pull Request。
+
+**这次发生了什么：** GitHub 官方宣布将“Implement suggestion”按钮更名为 **Fix with Copilot**，并增加了 UI 对话框，让开发者对如何应用修改有更多控制权。
+
+**具体变化：**
+- 点击“Fix with Copilot”后，会弹出一个对话框，开发者可以：
+  - 选择直接应用到当前 Pull Request，或新建一个针对当前分支的 Pull Request。
+  - 选择 Copilot 用于实现修改的模型。
+  - 添加额外的指令来引导修改。
+- 新增 **Fix batch with Copilot** 按钮，可以一次性选择多个代码审查评论，批量交给 Copilot cloud agent 处理。
+
+**为什么重要：** 这标志着代码审查 Agent 从“一键自动修改”向“可控的半自动协作”演进。开发者现在可以在 Agent 执行前确认修改方式，降低了自动化修改的风险。
+
+**建议动作：** 如果你使用 GitHub Copilot 进行代码审查，可以尝试新的批量修复功能，评估其对代码审查效率的提升。
+
+> **注意：** 这是官方确认的功能更新，已上线。
 
 ## 开源项目 Release 汇总
-本日开源项目发布集中在 llama.cpp 和 CrewAI，已在“工具链更新汇总”中详细展开。此外，社区还发现了一个重要的硬件解锁方法。
 
-- **社区发现：AMD BC-250/PS5 APU 可解锁全部 40 个 CU**。Reddit 用户发现，通过修改 amdgpu 驱动中的两个寄存器（`CC_GC_SHADER_ARRAY_CONFIG` 和 `SPI_PG_ENABLE_STATIC_WGP_MASK`），可将 AMD BC-250/PS5 APU 的 CU（计算单元）从 24 个解锁至 40 个。在 llama.cpp 上，token 生成速度从 230 tok/s 提升至 372 tok/s（1500 MHz），超频至 2 GHz 可达 466 tok/s。用户还在开发自定义 HIP 内核以进一步优化。**社区讨论，不等于官方确认**，结果可能受硬件个体差异和散热条件影响。这一发现可能大幅降低本地大模型推理的硬件成本，对 AI 开发者和边缘计算场景有实际意义。[11. 社区发现：AMD BC-250/PS5 APU可解锁全部40个CU，低成本本地推理性能翻倍](https://www.reddit.com/r/LocalLLaMA/comments/1tj4unp/amd_bc250_and_the_search_for_cheap_compute)
+本日无独立的版本发布新闻。上述 [4. Cohere 发布 Command A+](https://www.reddit.com/r/LocalLLaMA/comments/1tizmar/re_what_ever_happened_to_coheres_commanda_series) 和 [7. Datasette Agent](https://simonwillison.net/2026/May/21/datasette-agent) 均为新项目/新模型发布，已在“Agent / 编程工具趋势”章节详细展开。
 
 ## 企业应用 / 商业化信号
-本日商业化信号密集，主要集中在 Google 和 GitHub 的产品更新，以及 Hugging Face 对 PapersWithCode 的复兴尝试。
 
-- **Gemini 3.5 Flash 正式在 GitHub Copilot 上可用**。GitHub 宣布，Gemini 3.5 Flash 模型已在 GitHub Copilot 上正式可用。早期测试显示，其编码质量接近 Pro 级别，但速度和成本保持 Flash 级优势。该模型面向 Copilot Pro、Pro+、Business 和 Enterprise 用户，在 VS Code 1.115.0 及以上版本、Visual Studio 17.14.22 及以上版本中可选。**官方确认**，但定价为 14 倍 premium 请求乘数，且可能调整。[2. Gemini 3.5 Flash 正式在 GitHub Copilot 上可用](https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot)
+### Agent 执行税：社区基准测试揭示 token 定价误导
 
-- **Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台**。Google 在 I/O 上正式发布 Gemini 3.5 Flash，模型 ID 为 `gemini-3.5-flash`，知识截止 2025 年 1 月，支持 1M 输入 token 和 65K 输出 token。定价较前代上涨：是 Gemini 3 Flash Preview 的 3 倍，是 Gemini 3.1 Flash-Lite 的 6 倍。同时推出 Interactions API（Beta），类似 OpenAI Responses 的服务器端历史管理。Google 计划将其用于 Gemini 应用、AI Mode 搜索、Google Antigravity 平台、Android Studio 和 Gemini Enterprise。**社区讨论，不等于官方确认**，但信息来自知名技术博主 Simon Willison 对 I/O 的解读。[3. Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台](https://simonwillison.net/2026/May/19/gemini-35-flash)
+**背景：** 企业在选择 Agent 工作流使用的模型时，通常以“每百万 token 单价”作为成本基准。但 Agent 任务中，模型可能因解析失败、输出格式错误等原因需要多次重试，实际成本远高于 token 单价计算的结果。
 
-- **Hugging Face 正在复兴 PapersWithCode**。Hugging Face 开源团队负责人 Niels 在 Reddit 宣布，正在利用 AI Agent 自动解析论文并生成排行榜。目前已支持按领域分类、引用计数、自动链接 GitHub 和项目页面，并收录了 Qwen 3.5/3.6、RF-DETR、DINOv3 等高影响力论文。**社区讨论，不等于官方确认**，但这是 Hugging Face 团队成员的官方表态，可信度较高。[4. Reviving PapersWithCode (by Hugging Face) 【P】](https://www.reddit.com/r/MachineLearning/comments/1tgmwqr/reviving_paperswithcode_by_hugging_face_p)
+**这次发生了什么：** Reddit 社区用户发布了一项针对浏览器 Agent 任务的基准测试，提出了 **Agent 执行税**（Agent Execution Tax）这一新指标，定义为“浪费的推理 / 有效推理”的比例。
+
+**具体结果（社区测试，非官方）：**
+- 测试在 **WebVoyager** benchmark（浏览器 Agent 评测基准）上运行了 720 个任务，对比了四个模型。
+- 一个模型支付了 **22.9%** 的 Agent 执行税（即近四分之一的推理算力被浪费在重试上）。
+- 按 token 单价看似最便宜的模型，实际每成功任务成本反而高出 **2.3 倍**。
+- 开源模型在可靠性上表现突出：
+  - **GLM-5**：准确率最高（57.1%），在结构化数据上表现最强。
+  - **Kimi K2.5**：在 852 次调用中解析重试率为 **0%**（Gemini 2.5 Flash 为 18.6%）。
+  - **MiniMax M2.5**：每成功任务成本比 Gemini 便宜 2.3 倍。
+
+**为什么重要：** 该指标揭示了 token 定价在 Agent 场景下的误导性。一个模型可能 token 单价便宜，但如果频繁重试，实际成本反而更高。这直接影响企业的模型采购决策和 Agent 工作流设计。
+
+**建议动作：** 如果你正在为 Agent 工作流选型，不要只看 token 单价。建议在自己的任务场景中做端到端测试，计算“每成功任务成本”和“重试率”。开源模型在可靠性上的表现值得关注。
+
+> **注意：** 这是技术社区的单次测试，结果受测试条件、样本和硬件环境影响。但方法论本身有参考价值。
+
+### SpacemiT K3 芯片的 AI 核心编程工具发布
+
+**背景：** SpacemiT K3 是一款基于 RISC-V 架构的芯片，集成了名为 A100 的“AI”核心。RISC-V 是一种开源指令集架构，正在从嵌入式领域向 AI 计算领域扩展。
+
+**这次发生了什么：** 开发者 brucehoult 在 GitHub 上发布了工具 **k3_ai**，允许用户在 SpacemiT K3 芯片的 A100 AI 核心上运行 Linux 程序。
+
+**具体变化：**
+- 工具可以启动单个程序或整个构建流程（如 `make -j8`）在 A100 核心上运行。
+- 甚至可以启动一个 shell，所有后续命令都在 AI 核心上执行。
+- 已在预装的 Bianbu 系统上测试通过。
+
+**为什么重要：** 这是 RISC-V 芯片在 AI 推理/计算领域落地的早期信号。该工具降低了开发者使用 K3 芯片 AI 核心的门槛，可能推动 RISC-V 在端侧 AI 场景的应用。
+
+**建议动作：** 如果你关注 RISC-V 生态或端侧 AI 硬件，可以关注该工具的后续发展和社区反馈。目前仍处于早期阶段，原文提到“尚不清楚 Ubuntu 上是否可用”。
+
+> **注意：** 这是社区工具发布，非官方产品。SpacemiT K3 芯片的普及度和生态成熟度仍需观察。
 
 ## 算力 / 半导体观察
-本日算力领域有两个重要信号：一是 llama.cpp 针对 Hopper+ GPU 的 PDL 优化（已在“工具链更新汇总”中详细展开），二是社区发现的 AMD BC-250/PS5 APU 解锁方法（已在“开源项目 Release 汇总”中详细展开）。这两个信号分别指向高端推理加速和低成本推理硬件，反映了算力链条中“高端优化”与“低成本替代”并行的趋势。
+
+本日无独立的算力/半导体新闻。上述 [3. SpacemiT K3 AI 核心编程工具](https://www.reddit.com/r/RISCV/comments/1tigs96/github_brucehoultk3_ai_utility_to_start_a_program) 涉及 RISC-V 芯片的 AI 核心编程，已在“企业应用 / 商业化信号”章节展开。
 
 ## 嵌入式 AI / 物联网 / Edge AI
-本日 Edge AI 领域有一个重要的社区测试报告。
 
-- **Qwen 3.6 35B GGUF 量化对比：NTP vs MTP 在多种硬件上的性能测试**。ByteShape 团队发布了 Qwen 3.6 35B 的 GGUF 量化版本，并对比了 NTP（Next Token Prediction，非 MTP）与 MTP（Multi-Token Prediction）在 RTX 4090/5090/Pro 6000/4080/5060 Ti 以及 Intel i7/Ultra 7、Ryzen 9、Raspberry Pi 5 上的性能。结果显示：MTP 在 GPU 上可带来 20-40% 的生成速度提升，但内存占用增加；CPU 上 MTP 无优势，推荐 NTP。**社区讨论，不等于官方确认**，测试结果受硬件配置和 workload 影响。这一测试为本地大模型部署者提供了 NTP 与 MTP 量化的实际性能参考，有助于根据硬件选择最优量化策略。[10. Qwen 3.6 35B GGUF量化对比：NTP vs MTP在RTX 4090/5090/Intel/Ryzen/Raspberry Pi上的性能测试](https://www.reddit.com/r/LocalLLaMA/comments/1tipihx/qwen_36_35b_gguf_ntp_vs_mtp_quantization_results)
+本日无直接相关的嵌入式 AI 新闻。
 
 ## 前沿研究观察
-本日有两篇 arXiv 论文值得关注，均为早期研究信号，不等于已经产品化。
 
-- **ADR: An Agentic Detection System for Enterprise Agentic AI Security**。这篇论文提出了一种面向企业 Agent AI 安全的检测系统。研究问题是如何检测和防御 Agent 工作流中的安全威胁。**早期信号，不等于已经产品化**，原文未给出具体实验结果。[6. ADR: An Agentic Detection System for Enterprise Agentic AI Security](https://arxiv.org/abs/2605.17380)
+### Agent 安全基准测试的分类与一致性分析
 
-- **GraphMind: From Operational Traces to Self-Evolving Workflow Automation**。这篇论文提出了一种从操作轨迹到自进化工作流自动化的方法。研究问题是如何让 Agent 从历史操作中学习并自动优化工作流。**早期信号，不等于已经产品化**，原文未给出具体实验结果。[8. GraphMind: From Operational Traces to Self-Evolving Workflow Automation](https://arxiv.org/abs/2605.17617)
+**背景：** 随着 AI Agent 在自主决策场景中的应用增加，其安全性成为关键问题。目前已有多个 Agent 安全评测基准，但彼此之间缺乏统一分类和一致性验证。
+
+**这次发生了什么：** arXiv 上发布了一篇论文 [5. Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents](https://arxiv.org/abs/2605.16282)，对现有的 AI Agent 安全基准测试进行了分类学和一致性分析。
+
+**具体内容（原文信息有限）：**
+- 论文属于计算机科学 > 社会与计算机方向。
+- 研究目标是建立 Agent 安全基准的分类体系，并分析不同基准之间的一致性。
+
+**为什么重要：** 这是 Agent 安全评测领域的基础性工作。如果不同基准测试对同一 Agent 给出矛盾的安全评分，企业将无法信任评测结果。该研究有助于建立更可靠的 Agent 安全评估体系。
+
+**建议动作：** 如果你在构建或采购 Agent 系统，可以关注该论文的完整内容，了解当前安全基准的局限性和最佳实践。
+
+> **注意：** 这是 arXiv 预印本，属于早期研究信号，不等于已经产品化或形成行业标准。
+
+### 自主安全 Agent 的安全对齐效果测量
+
+**背景：** 当 AI Agent 被用于网络安全场景（如自动漏洞扫描、入侵检测）时，其自身的安全性同样重要。如果 Agent 本身被攻击或产生误判，可能造成严重后果。
+
+**这次发生了什么：** arXiv 上发布了另一篇论文 [6. Measuring Safety Alignment Effects in Autonomous Security Agents](https://arxiv.org/abs/2605.19722)，研究如何测量自主安全 Agent 的安全对齐效果。
+
+**具体内容（原文信息有限）：**
+- 论文属于计算机科学 > 密码学与安全方向。
+- 研究涉及 Llama 等模型在安全 Agent 场景下的对齐效果。
+
+**为什么重要：** 安全 Agent 是一个高风险应用场景。该研究为评估 Agent 在安全任务中的行为可靠性提供了方法论，对安全运维团队和 Agent 开发者都有参考价值。
+
+**建议动作：** 如果你在开发或部署安全相关的 Agent，建议阅读该论文，了解当前安全对齐测量的方法和局限。
+
+> **注意：** 这是 arXiv 预印本，属于早期研究信号，不等于已经产品化。
 
 ## 今日建议动作
-1. **检查 llama.cpp 版本**：如果你使用 Hopper+ GPU（H100/B200），立即升级到 b9254 以启用 PDL 优化；所有用户可升级到 b9253 体验统一可执行文件。
-2. **试用 Gemini 3.5 Flash on Copilot**：如果你是 Copilot Pro/Enterprise 用户，在 VS Code 或 Visual Studio 中切换模型，评估编码质量和成本。
-3. **关注 Command A+ 的量化部署**：如果你在 1-2 GPU 上运行 Agent 应用，下载 Command A+ 的量化版本进行测试。
-4. **归档 AMD BC-250 解锁方法**：如果你有 PS5 APU 或 BC-250 硬件，记录驱动修改方法，但注意散热和功耗风险。
-5. **继续观察 Qwen 3.6 GGUF 量化选择**：根据你的硬件（GPU 或 CPU）选择 NTP 或 MTP 量化版本，参考社区测试结果。
-6. **暂时忽略两篇 arXiv 论文**：ADR 和 GraphMind 均为早期研究，尚无产品化信号，可归档等待后续进展。
+
+1. **检查 Agent 成本模型：** 如果你正在为 Agent 工作流选型，不要只看 token 单价。建议在自己的任务场景中做端到端测试，计算“每成功任务成本”和“重试率”。关注 [1. Agent 执行税](https://www.reddit.com/r/LocalLLaMA/comments/1tjnd5m/agent_execution_tax_new_procurement_metric_for) 中提到的开源模型（GLM-5、Kimi K2.5、MiniMax M2.5）在可靠性上的表现。
+
+2. **试用 Datasette Agent：** 如果你已经在使用 Datasette，可以尝试安装 [7. Datasette Agent](https://simonwillison.net/2026/May/21/datasette-agent) 插件，体验自然语言查询数据库的能力。
+
+3. **关注 Cohere Command A+：** 如果你有 1-2 张 GPU 的部署条件，可以关注 [4. Command A+](https://www.reddit.com/r/LocalLLaMA/comments/1tizmar/re_what_ever_happened_to_coheres_commanda_series) 的权重发布和社区评测，评估其是否适合替代现有模型。
+
+4. **归档 Agent 安全论文：** 将 [5. Agent 安全基准分类](https://arxiv.org/abs/2605.16282) 和 [6. 安全 Agent 对齐测量](https://arxiv.org/abs/2605.19722) 加入阅读清单，它们代表了 Agent 安全评测的前沿研究方向。
+
+5. **暂时忽略：** 本日无需要立即关注的算力/半导体或嵌入式 AI 新闻。
 
 ## 附录：候选来源索引
 
 | 编号 | 标题 | 来源等级 | 来源名称 | 链接 |
 |------|------|----------|----------|------|
-| 1 | llama.cpp b9254 引入 Programmatic Dependent Launch (PDL)，提升 Hopper+ GPU 推理性能 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9254) |
-| 2 | Gemini 3.5 Flash 正式在 GitHub Copilot 上可用 | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot) |
-| 3 | Google I/O 发布 Gemini 3.5 Flash：定价上涨，全面用于搜索与 Agent 平台 | 技术社区 | Simon Willison | [链接](https://simonwillison.net/2026/May/19/gemini-35-flash) |
-| 4 | Reviving PapersWithCode (by Hugging Face) 【P】 | 技术社区 | Reddit r/MachineLearning | [链接](https://www.reddit.com/r/MachineLearning/comments/1tgmwqr/reviving_paperswithcode_by_hugging_face_p) |
-| 5 | CrewAI 1.14.5：Features | 官方确认 | CrewAI | [链接](https://github.com/crewAIInc/crewAI/releases/tag/1.14.5) |
-| 6 | ADR: An Agentic Detection System for Enterprise Agentic AI Security | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.17380) |
-| 7 | Cohere 发布 Command A+：首个 MoE 模型，Apache 2.0 许可，量化后可在 1-2 GPU 上运行 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tizmar/re_what_ever_happened_to_coheres_commanda_series) |
-| 8 | GraphMind: From Operational Traces to Self-Evolving Workflow Automation | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.17617) |
-| 9 | Take your local GitHub sessions anywhere | 官方确认 | GitHub Blog | [链接](https://github.blog/news-insights/product-news/take-your-local-github-sessions-anywhere) |
-| 10 | Qwen 3.6 35B GGUF量化对比：NTP vs MTP在RTX 4090/5090/Intel/Ryzen/Raspberry Pi上的性能测试 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tipihx/qwen_36_35b_gguf_ntp_vs_mtp_quantization_results) |
-| 11 | 社区发现：AMD BC-250/PS5 APU可解锁全部40个CU，低成本本地推理性能翻倍 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tj4unp/amd_bc250_and_the_search_for_cheap_compute) |
-| 12 | llama.cpp b9253：引入统一可执行文件，简化本地推理部署 | 官方确认 | llama.cpp | [链接](https://github.com/ggml-org/llama.cpp/releases/tag/b9253) |
+| 1 | Agent执行税：社区基准测试揭示token定价误导，开源模型在浏览器Agent任务中更具成本效益 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tjnd5m/agent_execution_tax_new_procurement_metric_for) |
+| 2 | Easily apply Copilot code review feedback with Copilot cloud agent | 官方确认 | GitHub Changelog | [链接](https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent) |
+| 3 | GitHub - brucehoult/k3_ai: Utility to start a program on the A100 "AI" cores on SpacemiT K3 machines. | 技术社区 | Reddit r/RISCV | [链接](https://www.reddit.com/r/RISCV/comments/1tigs96/github_brucehoultk3_ai_utility_to_start_a_program) |
+| 4 | Cohere 发布 Command A+：首个 MoE 开源模型，Apache 2.0 许可，支持 1-2 GPU 高效运行 | 技术社区 | Reddit r/LocalLLaMA | [链接](https://www.reddit.com/r/LocalLLaMA/comments/1tizmar/re_what_ever_happened_to_coheres_commanda_series) |
+| 5 | Taxonomy and Consistency Analysis of Safety Benchmarks for AI Agents | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.16282) |
+| 6 | Measuring Safety Alignment Effects in Autonomous Security Agents | 早期信号 | arXiv cs.AI | [链接](https://arxiv.org/abs/2605.19722) |
+| 7 | Datasette Agent 发布：基于 LLM 的对话式数据查询助手 | 技术社区 | Simon Willison | [链接](https://simonwillison.net/2026/May/21/datasette-agent) |

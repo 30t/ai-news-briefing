@@ -2,8 +2,8 @@
 
 当前 `main` 已经合并为一条完整日报流程，但仍保留两层边界：
 
-- `output/daily.md`：规则候选层。
-- `output/model-daily.md`：模型解读层。
+- `output/sources/latest.md` 和 `output/sources/YYYY-MM-DD.md`：规则候选层。
+- `output/model/latest.md` 和 `output/model/YYYY-MM-DD.md`：模型解读层。
 
 这两个文件承担不同职责，不能混在一起理解。
 
@@ -18,8 +18,8 @@
 - 按关键词加分。
 - 按营销、活动、招聘、赞助等噪声信号降权。
 - 对 URL 和相似标题去重。
-- 生成 `output/daily.md`。
-- 生成 `output/YYYY-MM-DD.md` 日期归档。
+- 生成 `output/sources/latest.md`。
+- 生成 `output/sources/YYYY-MM-DD.md` 日期归档。
 
 每条新闻必须保留：
 
@@ -36,7 +36,8 @@
 
 它读取规则筛出的候选新闻，抓取必要正文片段，然后生成：
 
-- `output/model-daily.md`
+- `output/model/latest.md`
+- `output/model/YYYY-MM-DD.md`
 
 模型层可以做人话解读、主题归纳、业务启发和行动建议，但不能替代：
 
@@ -45,7 +46,7 @@
 - 原文链接
 - 人工事实核验
 
-如果缺少 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY`，系统不会伪造模型日报，而是写入失败说明文件。
+如果缺少 `LLM_API_KEY` 或 `DEEPSEEK_API_KEY`，系统不会伪造模型日报，而是直接失败。
 
 ## 来源分级逻辑
 
@@ -80,4 +81,4 @@
 ## 当前 workflow
 
 - `Generate Daily AI News Briefing`：完整流程，每天北京时间 / 新加坡时间 07:30 自动运行，也可以手动运行。
-- `Refresh Model AI News Briefing`：只手动运行，只基于现有 `output/daily.md` 重新生成 `output/model-daily.md`。
+- `Refresh Model AI News Briefing`：只手动运行，只基于现有 `output/sources/latest.md` 重新生成 `output/model/latest.md` 和当天归档文件。

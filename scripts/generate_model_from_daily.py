@@ -2,12 +2,20 @@ from __future__ import annotations
 
 import logging
 import re
+from argparse import ArgumentParser
 from pathlib import Path
 from typing import Any
 
 from fetch_article_text import enrich_items_with_article_text
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
 from judge_candidates_with_llm import require_llm_api_key
+from output_paths import (
+    dated_model_path,
+    dated_source_path,
+    discover_dated_source_paths,
+    latest_model_path,
+    latest_source_path,
+)
 from utils import ROOT, load_yaml, setup_logging
 
 
@@ -34,21 +42,37 @@ TYPE_MAP = {
 
 def main() -> None:
     setup_logging()
-    output_dir = Path(ROOT / "output")
-    daily_path = output_dir / "daily.md"
-    model_output_path = output_dir / "model-daily.md"
-    model_failed_path = output_dir / "model-daily-failed.md"
-
+    args = _parse_args()
     llm_config = _load_required_config(ROOT / "config" / "llm.yml")
     scoring_config = _load_required_config(ROOT / "config" / "scoring.yml")
     require_llm_api_key(llm_config)
 
-    if not daily_path.exists():
-        raise RuntimeError("Missing output/daily.md. Run the full daily pipeline before model-only refresh.")
+    source_paths = _source_paths_for_args(args)
+    if not source_paths:
+        raise RuntimeError("No source candidate files found in output/sources.")
 
-    total_count, ranked_items = parse_daily_markdown(daily_path.read_text(encoding="utf-8"))
+    generated_paths: list[Path] = []
+    for source_path in source_paths:
+        model_path = generate_model_from_source_path(source_path, scoring_config, llm_config)
+        generated_paths.append(model_path)
+        logging.info("Generated %s from existing %s", model_path, source_path)
+
+    if generated_paths:
+        latest = latest_model_path(ROOT)
+        latest.parent.mkdir(parents=True, exist_ok=True)
+        latest.write_text(generated_paths[-1].read_text(encoding="utf-8"), encoding="utf-8")
+        _remove_if_exists(ROOT / "output" / "model" / "failed.md")
+
+
+def generate_model_from_source_path(source_path: Path, scoring_config: dict, llm_config: dict) -> Path:
+    if not source_path.exists():
+        raise RuntimeError(f"Missing source candidate file: {source_path}")
+
+    content = source_path.read_text(encoding="utf-8")
+    source_date = _parse_daily_date(content) or source_path.stem
+    total_count, ranked_items = parse_daily_markdown(content)
     if not ranked_items:
-        raise RuntimeError("No candidate items could be parsed from output/daily.md.")
+        raise RuntimeError(f"No candidate items could be parsed from {source_path}.")
 
     model_candidates = select_items_for_model_daily(ranked_items, scoring_config, llm_config)
     model_candidates = enrich_items_with_article_text(model_candidates, llm_config)
@@ -56,9 +80,27 @@ def main() -> None:
     if not model_markdown:
         raise RuntimeError("Model daily generation failed. No rule-only fallback is allowed.")
 
-    model_output_path.write_text(model_markdown, encoding="utf-8")
-    _remove_if_exists(model_failed_path)
-    logging.info("Generated %s from existing %s", model_output_path, daily_path)
+    model_path = dated_model_path(ROOT, source_date)
+    model_path.parent.mkdir(parents=True, exist_ok=True)
+    model_path.write_text(model_markdown, encoding="utf-8")
+    return model_path
+
+
+def _parse_args() -> Any:
+    parser = ArgumentParser(description="Generate model daily markdown from existing source candidate files.")
+    parser.add_argument("--date", help="Generate one date from output/sources/YYYY-MM-DD.md.")
+    parser.add_argument("--all", action="store_true", help="Generate every dated file in output/sources.")
+    return parser.parse_args()
+
+
+def _source_paths_for_args(args: Any) -> list[Path]:
+    if args.date and args.all:
+        raise RuntimeError("Use either --date or --all, not both.")
+    if args.date:
+        return [dated_source_path(ROOT, args.date)]
+    if args.all:
+        return discover_dated_source_paths(ROOT)
+    return [latest_source_path(ROOT)]
 
 
 def parse_daily_markdown(content: str) -> tuple[int, list[dict[str, Any]]]:
@@ -173,6 +215,11 @@ def _blockquote_after(chunk: str, heading: str) -> str:
 def _parse_total_count(content: str) -> int:
     match = re.search(r"今天自动抓取\s+(\d+)\s+条信息", content)
     return int(match.group(1)) if match else 0
+
+
+def _parse_daily_date(content: str) -> str:
+    match = re.search(r"^#\s+每日 AI 情报候选池｜(\d{4}-\d{2}-\d{2})\s*$", content, flags=re.MULTILINE)
+    return match.group(1) if match else ""
 
 
 def _split_keywords(text: str) -> list[str]:

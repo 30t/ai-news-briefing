@@ -93,7 +93,7 @@ AI 新闻每天很多，但直接阅读会遇到几个问题：
 可选抓取原文正文片段
   ↓
 生成模型解读日报
-  ├─ 成功 → 输出 model-daily.md
+  ├─ 成功 → 输出 output/model/YYYY-MM-DD.md 和 output/model/latest.md
   └─ 失败 → 直接失败，不生成规则兜底日报
 ```
 
@@ -359,8 +359,8 @@ editorial_judge_max_items: 120
 
 | 文件 | 作用 |
 |---|---|
-| `output/daily.md` | 最新一份每日 AI 情报候选池 |
-| `output/YYYY-MM-DD.md` | 按日期归档的历史候选池文件 |
+| `output/sources/latest.md` | 最新一份每日 AI 情报候选池 |
+| `output/sources/YYYY-MM-DD.md` | 按日期归档的历史候选池文件 |
 
 ---
 
@@ -498,9 +498,10 @@ article_text_limit: 5000
 
 | 文件 | 作用 |
 |---|---|
-| `output/model-daily.md` | 模型版 AI 情报解读日报 |
+| `output/model/latest.md` | 最新模型版 AI 情报解读日报 |
+| `output/model/YYYY-MM-DD.md` | 按日期归档的模型版 AI 情报解读日报 |
 
-如果模型日报生成失败，系统直接失败，不生成 `model-daily-failed.md` 兜底文件。
+如果模型日报生成失败，系统直接失败，不生成规则兜底文件。
 
 ---
 
@@ -508,13 +509,13 @@ article_text_limit: 5000
 
 ### 作用
 
-用于未来扩展：在已经存在 `output/daily.md` 或已评审候选池的情况下，单独重新生成 `output/model-daily.md`。
+用于在已经存在 `output/sources/latest.md` 或 `output/sources/YYYY-MM-DD.md` 已评审候选池的情况下，单独重新生成 `output/model/latest.md` 或 `output/model/YYYY-MM-DD.md`。
 
 ### 当前状态
 
 当前主流程仍以 `scripts/main.py` 为入口，完整执行第一段规则采集与候选召回、第二段模型编辑评审与日报综合。
 
-如果未来需要单独重跑模型日报，应该复用已经过模型编辑评审的候选 item，避免重新做逐条模型评审。
+如果需要单独重跑模型日报，使用 `python scripts/generate_model_from_daily.py` 复用最新候选池，使用 `python scripts/generate_model_from_daily.py --date YYYY-MM-DD` 复用某天候选池，或使用 `python scripts/generate_model_from_daily.py --all` 批量回填所有历史候选池。这个脚本不会重新抓取数据源。GitHub Actions 的 `Refresh Model AI Intelligence Briefing` 手动运行入口也支持 `latest`、`date` 和 `all` 三种范围。
 
 ### 推荐原则
 
@@ -561,9 +562,10 @@ Stage 2: LLM editorial review and daily synthesis
 
 | 文件 | 作用 |
 |---|---|
-| `output/daily.md` | 最新每日 AI 情报候选池，包含规则召回信息和模型编辑评审结果 |
-| `output/YYYY-MM-DD.md` | 按日期归档的每日候选池 |
-| `output/model-daily.md` | 模型综合生成的中文 AI 情报日报 |
+| `output/sources/latest.md` | 最新每日 AI 情报候选池，包含规则召回信息和模型编辑评审结果 |
+| `output/sources/YYYY-MM-DD.md` | 按日期归档的每日候选池 |
+| `output/model/latest.md` | 最新模型综合生成的中文 AI 情报日报 |
+| `output/model/YYYY-MM-DD.md` | 按日期归档的模型综合生成的中文 AI 情报日报 |
 | `docs/PIPELINE.md` | 当前真实 pipeline 结构说明 |
 
 ---

@@ -2,6 +2,14 @@ name: Refresh Model AI Intelligence Briefing
 
 on:
   workflow_dispatch:
+    inputs:
+      scope:
+        description: "Refresh scope: latest, all, or date"
+        required: true
+        default: "latest"
+      date:
+        description: "Date for scope=date, formatted as YYYY-MM-DD"
+        required: false
   push:
     branches:
       - main
@@ -33,15 +41,21 @@ jobs:
 
       - name: Refresh model daily from existing editorial candidate pool
         run: |
-          echo "Stage 2 only: reuse existing output/daily.md"
+          echo "Stage 2 only: reuse existing output/sources/*.md"
           echo "Skip source collection and rule-based candidate recall"
-          python scripts/generate_model_from_daily.py
+          if [ "${{ github.event.inputs.scope }}" = "all" ]; then
+            python scripts/generate_model_from_daily.py --all
+          elif [ "${{ github.event.inputs.scope }}" = "date" ]; then
+            python scripts/generate_model_from_daily.py --date "${{ github.event.inputs.date }}"
+          else
+            python scripts/generate_model_from_daily.py
+          fi
 
       - name: Commit refreshed model output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/model-daily.md
+          git add output/model/
           if git diff --cached --quiet; then
             echo "No model output changes to commit."
           else

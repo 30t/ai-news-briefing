@@ -12,6 +12,7 @@ from fetch_rss import fetch_rss_sources
 from generate_markdown import generate_markdown
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
 from judge_candidates_with_llm import judge_candidates_with_llm, require_llm_api_key
+from output_paths import dated_model_path, dated_source_path, latest_model_path, latest_source_path, output_dir
 from score_items import dedupe_items, filter_by_lookback, rank_items, score_items
 from utils import LOCAL_TIMEZONE, ROOT, load_yaml, setup_logging
 
@@ -43,16 +44,19 @@ def main() -> None:
     ranked_items = rank_items(judged_candidates, max_items)
 
     markdown = generate_markdown(ranked_items, total_count, max_items)
-    output_dir = Path(ROOT / "output")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    dated_output_path = output_dir / f"{datetime.now(LOCAL_TIMEZONE).strftime('%Y-%m-%d')}.md"
-    latest_output_path = output_dir / "daily.md"
-    model_output_path = output_dir / "model-daily.md"
-    model_failed_path = output_dir / "model-daily-failed.md"
-    dated_output_path.write_text(markdown, encoding="utf-8")
-    latest_output_path.write_text(markdown, encoding="utf-8")
+    today = datetime.now(LOCAL_TIMEZONE).strftime("%Y-%m-%d")
+    root_output_dir = output_dir(ROOT)
+    source_dated_path = dated_source_path(ROOT, today)
+    source_latest_path = latest_source_path(ROOT)
+    model_dated_path = dated_model_path(ROOT, today)
+    model_latest_path = latest_model_path(ROOT)
+    model_failed_path = root_output_dir / "model" / "failed.md"
+    source_dated_path.parent.mkdir(parents=True, exist_ok=True)
+    model_dated_path.parent.mkdir(parents=True, exist_ok=True)
+    source_dated_path.write_text(markdown, encoding="utf-8")
+    source_latest_path.write_text(markdown, encoding="utf-8")
 
-    previous_backlog = load_backlog(output_dir)
+    previous_backlog = load_backlog(root_output_dir)
     model_markdown, selected_model_items = _generate_model_daily_required(
         ranked_items,
         previous_backlog,
@@ -60,12 +64,13 @@ def main() -> None:
         scoring_config,
         llm_config,
     )
-    model_output_path.write_text(model_markdown, encoding="utf-8")
+    model_dated_path.write_text(model_markdown, encoding="utf-8")
+    model_latest_path.write_text(model_markdown, encoding="utf-8")
     _remove_if_exists(model_failed_path)
-    logging.info("Generated %s with model summary layer", model_output_path)
+    logging.info("Generated %s with model summary layer", model_dated_path)
 
     new_backlog = update_backlog_after_model_selection(
-        output_dir=output_dir,
+        output_dir=root_output_dir,
         previous_backlog=previous_backlog,
         ranked_items=ranked_items,
         selected_model_items=selected_model_items,
@@ -74,8 +79,8 @@ def main() -> None:
 
     logging.info(
         "Generated %s and %s with %s model-ranked items from %s fetched items",
-        dated_output_path,
-        latest_output_path,
+        source_dated_path,
+        source_latest_path,
         len(ranked_items),
         total_count,
     )

@@ -76,8 +76,8 @@ Stage 2 is mandatory. If the model API key is missing or model generation fails,
 | Rule candidate ranking | Rules | Choose a limited pool for LLM review | Top candidate pool |
 | Editorial review | LLM | Judge value, relevance, actionability and confidence | `editorial`, `editorial_score`, reusable `llm` fields |
 | Final ranking | Rules over LLM output | Sort by editorial score | Top daily items |
-| Daily candidate pool | Markdown generator | Show traceable ranking and judge reasons | `output/daily.md`, `output/YYYY-MM-DD.md` |
-| Model daily synthesis | LLM | Organize selected items into a readable daily briefing | `output/model-daily.md` |
+| Daily candidate pool | Markdown generator | Show traceable ranking and judge reasons | `output/sources/latest.md`, `output/sources/YYYY-MM-DD.md` |
+| Model daily synthesis | LLM | Organize selected items into a readable daily briefing | `output/model/latest.md`, `output/model/YYYY-MM-DD.md` |
 
 ## Key design rules
 

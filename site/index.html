@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News AI 情报时间线</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f8f7;
+        --panel: #ffffff;
+        --ink: #17211c;
+        --muted: #68746e;
+        --line: #d9dfdb;
+        --accent: #0b7a6e;
+        --accent-soft: #d9f0ec;
+        --agent: #1565c0;
+        --release: #0b7a6e;
+        --research: #5b6b12;
+        --business: #7a4f00;
+        --risk: #9a2f2f;
+        --shadow: 0 12px 32px rgba(23, 33, 28, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .app {
+        min-height: 100vh;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 28px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 248, 247, 0.92);
+        backdrop-filter: blur(12px);
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .brand p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .stats {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .stat {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        min-width: 88px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 18px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      main {
+        padding: 24px 28px 56px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin: 18px 0 14px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .section-head p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .legend {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .timeline-tools {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 14px;
+        border-bottom: 1px solid var(--line);
+        background: #fbfcfb;
+      }
+
+      .control {
+        display: grid;
+        grid-template-columns: auto 190px auto;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .control label {
+        color: var(--ink);
+        font-weight: 650;
+      }
+
+      .control input,
+      .control select {
+        accent-color: var(--accent);
+      }
+
+      .density-note {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 9px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .timeline-shell {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .timeline {
+        position: relative;
+        min-height: 560px;
+        max-height: 720px;
+        overflow-x: auto;
+        overflow-y: auto;
+        padding: 18px 18px 28px;
+      }
+
+      .timeline-track {
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        min-width: 2200px;
+      }
+
+      .day-column {
+        flex: 0 0 var(--day-width, 300px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfb;
+        overflow: hidden;
+      }
+
+      .day-title {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 252, 251, 0.94);
+        backdrop-filter: blur(10px);
+      }
+
+      .day-title strong {
+        font-size: 14px;
+      }
+
+      .day-title span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .day-events {
+        display: grid;
+        gap: 8px;
+        padding: 9px;
+      }
+
+      .event {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 9px 10px;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(23, 33, 28, 0.06);
+      }
+
+      .event:hover,
+      .event:focus {
+        outline: 2px solid var(--accent-soft);
+        border-color: var(--accent);
+      }
+
+      .event strong {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .event-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .score {
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .company-calendar-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .company-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .company-card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+        background: #eef4f1;
+      }
+
+      .company-card-head strong {
+        font-size: 14px;
+      }
+
+      .company-card-head span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .company-days {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 1px;
+        background: var(--line);
+        padding: 1px;
+      }
+
+      .weekday,
+      .company-day.empty {
+        background: #f5f7f6;
+      }
+
+      .weekday {
+        padding: 7px 8px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 650;
+        text-align: center;
+      }
+
+      .company-day {
+        min-height: 104px;
+        background: #fbfcfb;
+        padding: 8px;
+      }
+
+      .company-day.has-news {
+        background: #eef8f5;
+      }
+
+      .company-day.activity-2 {
+        background: #d9f0ec;
+      }
+
+      .company-day.activity-3 {
+        background: #bfe5df;
+      }
+
+      .company-day button {
+        all: unset;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .company-day time {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-bottom: 5px;
+      }
+
+      .activity-dots {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        min-height: 12px;
+      }
+
+      .activity-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .activity-count {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .activity-headline {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-top: 7px;
+        color: var(--ink);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .detail {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 10;
+        width: min(440px, calc(100vw - 36px));
+        max-height: calc(100vh - 36px);
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 18px 56px rgba(23, 33, 28, 0.18);
+        padding: 18px;
+      }
+
+      .detail[hidden] {
+        display: none;
+      }
+
+      .detail-head {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .detail h3 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.35;
+      }
+
+      .close {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        padding: 6px 9px;
+      }
+
+      .detail dl {
+        display: grid;
+        grid-template-columns: 78px 1fr;
+        gap: 8px 12px;
+        margin: 16px 0;
+        font-size: 13px;
+      }
+
+      .detail dt {
+        color: var(--muted);
+      }
+
+      .detail dd {
+        margin: 0;
+      }
+
+      .detail p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .detail-original {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .detail-sections {
+        display: grid;
+        gap: 12px;
+        margin: 16px 0;
+      }
+
+      .detail-section {
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+
+      .detail-section h4 {
+        margin: 0 0 5px;
+        font-size: 13px;
+      }
+
+      .detail-section p {
+        margin: 0;
+      }
+
+      .detail-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .detail-list button {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfb;
+        color: var(--ink);
+        cursor: pointer;
+        padding: 9px;
+        text-align: left;
+      }
+
+      .detail-link {
+        display: inline-flex;
+        margin-top: 10px;
+        padding: 9px 12px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .state {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 18px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          position: static;
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 18px;
+        }
+
+        main {
+          padding: 18px;
+        }
+
+        .section-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .timeline-track {
+          min-width: 1600px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <h1>News AI 情报入口</h1>
+          <p>把日报素材池转成可拖动时间线和核心公司动态日历。</p>
+        </div>
+        <div class="stats" aria-label="数据概况">
+          <div class="stat"><strong id="item-count">0</strong><span>新闻节点</span></div>
+          <div class="stat"><strong id="date-count">0</strong><span>覆盖日期</span></div>
+          <div class="stat"><strong id="company-count">0</strong><span>核心公司</span></div>
+        </div>
+      </header>
+
+      <main>
+        <section aria-labelledby="timeline-title">
+          <div class="section-head">
+            <div>
+              <h2 id="timeline-title">30 天情报时间线</h2>
+              <p>按发布时间横向铺开；节点只保留短信号，标题和总结放进详情。</p>
+            </div>
+            <div class="legend" id="legend"></div>
+          </div>
+          <div class="timeline-shell">
+            <div class="timeline-tools" aria-label="时间线密度控制">
+              <div class="control">
+                <label for="timeline-density">横轴密度</label>
+                <input id="timeline-density" type="range" min="220" max="560" step="20" value="300" />
+                <span id="density-value">300px/天</span>
+              </div>
+              <div class="control">
+                <label for="timeline-pan">时间滑轨</label>
+                <input id="timeline-pan" type="range" min="0" max="1000" step="1" value="0" />
+                <span id="pan-value">最前</span>
+              </div>
+              <div class="control">
+                <label for="daily-limit">每天显示</label>
+                <select id="daily-limit">
+                  <option value="8">8 条</option>
+                  <option value="16" selected>16 条</option>
+                  <option value="32">32 条</option>
+                  <option value="all">全部</option>
+                </select>
+                <span id="visible-count">0 条</span>
+              </div>
+              <span class="density-note">现在按天分列：一列就是当天，卡片放大但排布更密。</span>
+            </div>
+              <div class="timeline" id="timeline" tabindex="0">
+              <div class="timeline-track" id="timeline-track"></div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="calendar-title">
+          <div class="section-head">
+            <div>
+              <h2 id="calendar-title">核心公司日历</h2>
+              <p>只放公司官方来源的自家动态；日历格用点和颜色表达发布频率。</p>
+            </div>
+          </div>
+          <div class="company-calendar-grid" id="company-calendars"></div>
+        </section>
+
+        <section class="state" id="empty-state" hidden>
+          暂无 timeline 数据。请先运行 python3 scripts/generate_timeline.py。
+        </section>
+      </main>
+
+      <aside class="detail" id="detail" hidden aria-live="polite">
+        <div class="detail-head">
+          <div>
+            <h3 id="detail-title"></h3>
+            <div class="detail-original" id="detail-original-title"></div>
+          </div>
+          <button class="close" id="detail-close" type="button" aria-label="关闭详情">×</button>
+        </div>
+        <dl>
+          <dt>时间</dt>
+          <dd id="detail-time"></dd>
+          <dt>来源</dt>
+          <dd id="detail-source"></dd>
+          <dt>分数</dt>
+          <dd id="detail-score"></dd>
+          <dt>分类</dt>
+          <dd id="detail-category"></dd>
+          <dt>公司</dt>
+          <dd id="detail-company"></dd>
+        </dl>
+        <div class="detail-sections" id="detail-sections"></div>
+        <div class="detail-list" id="detail-list"></div>
+        <a class="detail-link" id="detail-link" href="#" target="_blank" rel="noreferrer">继续看原文</a>
+      </aside>
+    </div>
+
+    <script src="timeline-data.js"></script>
+    <script>
+      const DATA_URL = "../output/timeline/latest.json";
+      const categoryColors = {
+        major_release: "#0b7a6e",
+        minor_release: "#4f8a7d",
+        community_discussion: "#1565c0",
+        business_signal: "#7a4f00",
+        research: "#5b6b12",
+        benchmark: "#5b6b12",
+        marketing: "#9a2f2f",
+        event: "#9a2f2f",
+        official_release: "#0b7a6e",
+        other: "#68746e",
+        news: "#68746e",
+      };
+
+      const state = {
+        payload: null,
+        itemsById: new Map(),
+        timelineDensity: 300,
+        dailyLimit: 16,
+        isSyncingPan: false,
+      };
+
+      async function init() {
+        if (window.TIMELINE_DATA) {
+          loadPayload(window.TIMELINE_DATA);
+          return;
+        }
+        try {
+          const response = await fetch(DATA_URL);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const payload = await response.json();
+          loadPayload(payload);
+        } catch (error) {
+          document.getElementById("empty-state").hidden = false;
+          console.error("Failed to load timeline data", error);
+        }
+      }
+
+      function loadPayload(payload) {
+        state.payload = payload;
+        const detailItems = [...payload.items, ...(payload.company_items || [])];
+        state.itemsById = new Map(detailItems.map((item) => [item.id, item]));
+        bindTimelineControls();
+        render(payload);
+      }
+
+      function render(payload) {
+        document.getElementById("item-count").textContent = payload.items.length;
+        document.getElementById("date-count").textContent = payload.generated_from.length;
+        document.getElementById("company-count").textContent = payload.companies.length;
+        renderLegend(payload.items);
+        renderTimeline(payload);
+        renderCompanyCalendars(payload);
+      }
+
+      function bindTimelineControls() {
+        const density = document.getElementById("timeline-density");
+        const dailyLimit = document.getElementById("daily-limit");
+        const pan = document.getElementById("timeline-pan");
+        const timeline = document.getElementById("timeline");
+        density.addEventListener("input", () => {
+          state.timelineDensity = Number(density.value);
+          document.getElementById("density-value").textContent = `${state.timelineDensity}px/天`;
+          renderTimeline(state.payload);
+          syncPanFromScroll();
+        });
+        pan.addEventListener("input", () => {
+          const maxScroll = Math.max(0, timeline.scrollWidth - timeline.clientWidth);
+          state.isSyncingPan = true;
+          timeline.scrollLeft = maxScroll * (Number(pan.value) / 1000);
+          state.isSyncingPan = false;
+          updatePanText();
+        });
+        timeline.addEventListener("scroll", () => {
+          if (!state.isSyncingPan) syncPanFromScroll();
+        });
+        dailyLimit.addEventListener("change", () => {
+          state.dailyLimit = dailyLimit.value === "all" ? "all" : Number(dailyLimit.value);
+          renderTimeline(state.payload);
+          syncPanFromScroll();
+        });
+      }
+
+      function syncPanFromScroll() {
+        const pan = document.getElementById("timeline-pan");
+        const timeline = document.getElementById("timeline");
+        const maxScroll = Math.max(0, timeline.scrollWidth - timeline.clientWidth);
+        pan.value = maxScroll ? Math.round((timeline.scrollLeft / maxScroll) * 1000) : 0;
+        updatePanText();
+      }
+
+      function updatePanText() {
+        const value = Number(document.getElementById("timeline-pan").value);
+        const label = value <= 20 ? "最前" : value >= 980 ? "最后" : `${Math.round(value / 10)}%`;
+        document.getElementById("pan-value").textContent = label;
+      }
+
+      function renderLegend(items) {
+        const legend = document.getElementById("legend");
+        const categories = [...new Set(items.map((item) => item.category || "news"))].slice(0, 7);
+        legend.innerHTML = categories
+          .map((category) => {
+            const color = categoryColors[category] || categoryColors.news;
+            return `<span class="pill"><span class="dot" style="background:${color}"></span>${escapeHtml(category)}</span>`;
+          })
+          .join("");
+      }
+
+      function renderTimeline(payload) {
+        const track = document.getElementById("timeline-track");
+        const dates = payload.generated_from;
+        const dayCount = Math.max(dates.length, 1);
+        const targetWidth = Math.max(1400, dayCount * state.timelineDensity);
+        track.style.minWidth = `${targetWidth}px`;
+        track.style.setProperty("--day-width", `${state.timelineDensity}px`);
+        const visibleItems = timelineVisibleItems(payload.items, dates);
+        document.getElementById("visible-count").textContent = `${visibleItems.length} 条`;
+
+        const byDate = new Map(dates.map((date) => [date, []]));
+        visibleItems.forEach((item) => {
+          if (byDate.has(item.date)) byDate.get(item.date).push(item);
+        });
+
+        track.innerHTML = "";
+        dates.forEach((date, index) => {
+          const dayItems = byDate.get(date) || [];
+          const column = document.createElement("section");
+          column.className = "day-column";
+          column.setAttribute("aria-label", `${date} 新闻`);
+          column.innerHTML = `
+            <div class="day-title">
+              <strong>${formatShortDate(date)}</strong>
+              <span>${dayItems.length} 条</span>
+            </div>
+            <div class="day-events"></div>
+          `;
+          const list = column.querySelector(".day-events");
+          dayItems.forEach((item) => {
+            const event = document.createElement("button");
+            event.type = "button";
+            event.className = "event";
+            event.style.borderTop = `4px solid ${categoryColors[item.category] || categoryColors.news}`;
+            event.style.opacity = Math.max(0.76, Math.min(1, (item.score || 0) / 85));
+            event.title = `${item.headline || item.title}\n${item.reason || ""}`;
+            event.setAttribute("aria-label", item.headline || item.title);
+            event.innerHTML = `
+              <strong>${escapeHtml(compactLabel(item))}</strong>
+              <span class="event-meta">
+                <span>${escapeHtml(item.time || "")}</span>
+                <span class="score">${escapeHtml(String(item.score || 0))}</span>
+              </span>
+            `;
+            event.addEventListener("click", () => showDetail(item));
+            list.appendChild(event);
+          });
+          track.appendChild(column);
+        });
+      }
+
+      function timelineVisibleItems(items, dates) {
+        if (state.dailyLimit === "all") return items;
+        const byDate = new Map(dates.map((date) => [date, []]));
+        items.forEach((item) => {
+          if (!byDate.has(item.date)) return;
+          byDate.get(item.date).push(item);
+        });
+        return dates.flatMap((date) =>
+          byDate
+            .get(date)
+            .slice()
+            .sort((left, right) => (right.score || 0) - (left.score || 0))
+            .slice(0, state.dailyLimit)
+            .sort((left, right) => String(left.time || "").localeCompare(String(right.time || ""))),
+        );
+      }
+
+      function compactLabel(item) {
+        const text = cleanLabelText(item.headline || item.title || item.summary || item.source_name || "news");
+        if (text.length <= 28) return text;
+        return `${text.slice(0, 28)}…`;
+      }
+
+      function cleanLabelText(value) {
+        return String(value)
+          .replace(/^[\d.\s]+/, "")
+          .replace(/[｜|:：].*$/, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function renderCompanyCalendars(payload) {
+        const container = document.getElementById("company-calendars");
+        const dates = payload.generated_from;
+        container.innerHTML = payload.company_matrix
+          .map((row) => {
+            const total = row.days.reduce((sum, day) => sum + day.count, 0);
+            const daysByDate = new Map(row.days.map((day) => [day.date, day]));
+            const days = calendarCellsForDates(dates, daysByDate)
+              .map((day) => {
+                if (day.empty) return `<div class="company-day empty" aria-hidden="true"></div>`;
+                if (day.weekday) return `<div class="weekday">${day.label}</div>`;
+                if (!day.count) return `<div class="company-day"><time>${formatShortDate(day.date)}</time></div>`;
+                const ids = day.item_ids.map((id) => `'${escapeAttr(id)}'`).join(",");
+                const dotCount = Math.min(day.count, 3);
+                const dots = Array.from({ length: dotCount }, () => '<span class="activity-dot"></span>').join("");
+                return `
+                  <div class="company-day has-news activity-${dotCount}">
+                    <button type="button" onclick="showMatrixItems([${ids}])">
+                      <time>${formatShortDate(day.date)}</time>
+                      <span class="activity-dots">${dots}</span>
+                      <span class="activity-count">${day.count} 条 · ${day.score} 分</span>
+                      <span class="activity-headline">${escapeHtml(day.headline)}</span>
+                    </button>
+                  </div>
+                `;
+              })
+              .join("");
+            return `
+              <article class="company-card">
+                <div class="company-card-head">
+                  <strong>${escapeHtml(row.company)}</strong>
+                  <span>${total} 条动态</span>
+                </div>
+                <div class="company-days">${days}</div>
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      function calendarCellsForDates(dates, daysByDate) {
+        const weekdays = ["一", "二", "三", "四", "五", "六", "日"].map((label) => ({
+          weekday: true,
+          label,
+        }));
+        const first = dates[0] ? new Date(`${dates[0]}T00:00:00`) : null;
+        const leading = first ? (first.getDay() + 6) % 7 : 0;
+        const cells = Array.from({ length: leading }, () => ({ empty: true }));
+        dates.forEach((date) => {
+          cells.push(daysByDate.get(date) || { date, count: 0 });
+        });
+        const remainder = cells.length % 7;
+        if (remainder) {
+          cells.push(...Array.from({ length: 7 - remainder }, () => ({ empty: true })));
+        }
+        return [...weekdays, ...cells];
+      }
+
+      function showMatrixItems(ids) {
+        const items = ids.map((id) => state.itemsById.get(id)).filter(Boolean);
+        if (!items[0]) return;
+        showDetail(items[0], items);
+      }
+
+      function showDetail(item, relatedItems = []) {
+        document.getElementById("detail-title").textContent = item.headline || item.title;
+        document.getElementById("detail-original-title").textContent = detailOriginalTitle(item);
+        document.getElementById("detail-time").textContent = `${item.date} ${item.time || ""}`;
+        document.getElementById("detail-source").textContent = `${item.source_name || ""} · ${item.source_level_label || ""}`;
+        document.getElementById("detail-score").textContent = item.score || 0;
+        document.getElementById("detail-category").textContent = item.category || "news";
+        document.getElementById("detail-company").textContent = item.company || "未归入核心公司";
+        renderDetailSections(item);
+        renderDetailList(item, relatedItems);
+        document.getElementById("detail-link").href = item.url;
+        document.getElementById("detail").hidden = false;
+      }
+
+      function detailOriginalTitle(item) {
+        if (!item.title || item.title === item.headline) return "";
+        return `原始标题：${item.title}`;
+      }
+
+      function renderDetailSections(item) {
+        const sections = [
+          ["做了什么", detailAction(item)],
+          ["大致内容", item.summary || item.headline || item.title || "暂无摘要。"],
+          ["背景", detailBackground(item)],
+          ["价值点", item.reason || "暂无入选原因。"],
+        ];
+        document.getElementById("detail-sections").innerHTML = sections
+          .map(
+            ([title, body]) => `
+              <section class="detail-section">
+                <h4>${escapeHtml(title)}</h4>
+                <p>${escapeHtml(body)}</p>
+              </section>
+            `,
+          )
+          .join("");
+      }
+
+      function detailAction(item) {
+        const headline = item.headline || item.title || "";
+        const source = item.company || item.source_name || "相关方";
+        return `${source}：${headline}`;
+      }
+
+      function detailBackground(item) {
+        const parts = [];
+        if (item.source_level_label) parts.push(`来源等级是${item.source_level_label}`);
+        if (item.source_type) parts.push(`发布渠道是${item.source_type}`);
+        if (item.category) parts.push(`内容类型为 ${item.category}`);
+        if (item.keywords && item.keywords.length) parts.push(`命中关键词：${item.keywords.slice(0, 6).join("、")}`);
+        return parts.length ? `${parts.join("；")}。` : "暂无明确背景信息，可直接查看原文确认上下文。";
+      }
+
+      function renderDetailList(activeItem, relatedItems) {
+        const list = document.getElementById("detail-list");
+        if (!relatedItems || relatedItems.length <= 1) {
+          list.innerHTML = "";
+          return;
+        }
+        list.innerHTML = relatedItems
+          .map((item) => {
+            const active = item.id === activeItem.id ? " 当前" : "";
+            return `<button type="button" onclick="showDetailById('${escapeAttr(item.id)}')">${escapeHtml(item.time || "")}${active} · ${escapeHtml(item.headline || item.title)}</button>`;
+          })
+          .join("");
+      }
+
+      function showDetailById(id) {
+        const item = state.itemsById.get(id);
+        if (item) showDetail(item);
+      }
+
+      document.getElementById("detail-close").addEventListener("click", () => {
+        document.getElementById("detail").hidden = true;
+      });
+
+      function formatShortDate(date) {
+        return date.slice(5);
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function escapeAttr(value) {
+        return String(value).replaceAll("\\", "\\\\").replaceAll("'", "\\'");
+      }
+
+      init();
+      window.showMatrixItems = showMatrixItems;
+      window.showDetailById = showDetailById;
+    </script>
+  </body>
+</html>

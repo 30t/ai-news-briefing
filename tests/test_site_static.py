@@ -1,0 +1,48 @@
+from __future__ import annotations
+
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class StaticSiteTest(unittest.TestCase):
+    def test_static_dashboard_reads_timeline_json_and_has_two_sections(self) -> None:
+        html = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+
+        self.assertIn("../output/timeline/latest.json", html)
+        self.assertIn("timeline-data.js", html)
+        self.assertIn("window.TIMELINE_DATA", html)
+        self.assertIn("30 天情报时间线", html)
+        self.assertIn("核心公司日历", html)
+        self.assertIn("company-calendar-grid", html)
+        self.assertIn("company-card", html)
+        self.assertIn("day-column", html)
+        self.assertIn("day-events", html)
+        self.assertIn("activity-dot", html)
+        self.assertIn("activity-count", html)
+        self.assertIn("activity-headline", html)
+        self.assertIn("renderCompanyCalendars", html)
+        self.assertIn("calendarCellsForDates", html)
+        self.assertNotIn("matrix-row", html)
+        self.assertIn("grid-template-columns: repeat(7, minmax(0, 1fr))", html)
+        self.assertIn("timeline-density", html)
+        self.assertIn("timeline-pan", html)
+        self.assertIn("时间滑轨", html)
+        self.assertIn("daily-limit", html)
+        self.assertIn("密度", html)
+        self.assertIn("cleanLabelText", html)
+        self.assertIn("detail-section", html)
+        self.assertIn("做了什么", html)
+        self.assertIn("大致内容", html)
+        self.assertIn("背景", html)
+        self.assertIn("价值点", html)
+        self.assertIn("继续看原文", html)
+        self.assertIn("renderDetailSections", html)
+        self.assertIn("detailOriginalTitle", html)
+        self.assertNotIn("https://cdn.jsdelivr.net/npm/react", html)
+
+
+if __name__ == "__main__":
+    unittest.main()

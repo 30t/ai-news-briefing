@@ -11,6 +11,7 @@ from fetch_hackernews import fetch_hackernews
 from fetch_rss import fetch_rss_sources
 from generate_markdown import generate_markdown
 from generate_model_daily import generate_model_daily, select_items_for_model_daily
+from generate_timeline import write_timeline_payload
 from judge_candidates_with_llm import judge_candidates_with_llm, require_llm_api_key
 from output_paths import dated_model_path, dated_source_path, latest_model_path, latest_source_path, output_dir
 from score_items import dedupe_items, filter_by_lookback, rank_items, score_items
@@ -84,6 +85,8 @@ def main() -> None:
         len(ranked_items),
         total_count,
     )
+    timeline_path = write_timeline_payload(ROOT, company_items=items)
+    logging.info("Generated %s for visual timeline dashboard", timeline_path)
 
 
 def _load_required_config(path: Path) -> dict:

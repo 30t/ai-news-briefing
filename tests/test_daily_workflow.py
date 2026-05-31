@@ -15,6 +15,15 @@ class DailyWorkflowTest(unittest.TestCase):
         self.assertIn("python scripts/main.py", workflow)
         self.assertIn("git add output/ site/timeline-data.js", workflow)
 
+    def test_pages_action_publishes_static_site_directory(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
+
+        self.assertIn("Deploy Timeline Site", workflow)
+        self.assertIn("pages: write", workflow)
+        self.assertIn("id-token: write", workflow)
+        self.assertIn("path: site", workflow)
+        self.assertIn("actions/deploy-pages", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -987,7 +987,7 @@
       }
 
       function showDetail(item, relatedItems = []) {
-        document.getElementById("detail-title").textContent = item.headline || item.title;
+        document.getElementById("detail-title").textContent = item.decision_title || item.headline || item.title;
         document.getElementById("detail-original-title").textContent = detailOriginalTitle(item);
         document.getElementById("detail-time").textContent = `${item.date} ${item.time || ""}`;
         document.getElementById("detail-source").textContent = `${item.source_name || ""} · ${item.source_level_label || ""}`;
@@ -1007,10 +1007,12 @@
 
       function renderDetailSections(item) {
         const sections = [
-          ["做了什么", detailAction(item)],
-          ["大致内容", item.summary || item.headline || item.title || "暂无摘要。"],
-          ["背景", detailBackground(item)],
-          ["价值点", item.reason || "暂无入选原因。"],
+          ["一句话结论", item.key_change || item.summary || item.headline || item.title || "暂无摘要。"],
+          ["为什么重要", item.why_important || item.reason || "暂无入选原因。"],
+          ["影响领域", detailImpactObjects(item)],
+          ["处理建议", detailActionAdvice(item)],
+          ["原始来源", detailBackground(item)],
+          ["相似新闻", detailSimilar(item)],
         ];
         document.getElementById("detail-sections").innerHTML = sections
           .map(
@@ -1024,19 +1026,31 @@
           .join("");
       }
 
-      function detailAction(item) {
-        const headline = item.headline || item.title || "";
-        const source = item.company || item.source_name || "相关方";
-        return `${source}：${headline}`;
+      function detailImpactObjects(item) {
+        if (item.impact_objects && item.impact_objects.length) return item.impact_objects.join(" / ");
+        return item.category || "未归类";
+      }
+
+      function detailActionAdvice(item) {
+        const advice = item.action_advice || "归档";
+        const reason = item.action_reason || "信息有参考价值，但当前不需要立刻行动。";
+        return `${advice}：${reason}`;
       }
 
       function detailBackground(item) {
         const parts = [];
-        if (item.source_level_label) parts.push(`来源等级是${item.source_level_label}`);
-        if (item.source_type) parts.push(`发布渠道是${item.source_type}`);
-        if (item.category) parts.push(`内容类型为 ${item.category}`);
+        if (item.source_name) parts.push(item.source_name);
+        if (item.source_type) parts.push(item.source_type);
+        if (item.event_type) parts.push(item.event_type);
+        if (item.source_level_label) parts.push(item.source_level_label);
         if (item.keywords && item.keywords.length) parts.push(`命中关键词：${item.keywords.slice(0, 6).join("、")}`);
-        return parts.length ? `${parts.join("；")}。` : "暂无明确背景信息，可直接查看原文确认上下文。";
+        return parts.length ? `${parts.join("｜")}。` : "暂无明确来源信息，可直接查看原文确认上下文。";
+      }
+
+      function detailSimilar(item) {
+        const count = Number(item.similar_count || 0);
+        if (count > 0) return `疑似还有 ${count} 条相似新闻，可后续合并多来源。`;
+        return "暂无明显相似新闻。";
       }
 
       function renderDetailList(activeItem, relatedItems) {

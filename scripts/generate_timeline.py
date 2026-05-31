@@ -83,6 +83,7 @@ def build_timeline_payload(
         source_date = path.stem
         items.extend(_parse_source_markdown(path.read_text(encoding="utf-8"), source_date))
 
+    _annotate_similar_counts(items)
     items.sort(key=lambda item: (item["date"], item["time"], item["score"]), reverse=False)
     dates = _timeline_dates(paths, items, days)
     company_calendar_items = _raw_company_calendar_items(company_items or [], dates)
@@ -139,6 +140,16 @@ def classify_news_section(
     reason: str = "",
 ) -> str:
     text = _domain_text(title, source_name, source_type, keywords, summary, content_type, reason)
+    if _has_any(text, ("stepfun", "step ", "step-", "step3", "step 3", "nuextract", "liquid ai", "lfm")):
+        return "模型与能力更新"
+    if _has_any(text, ("nvidia", "n1x", "gpu", "cpu", "npu", "chip", "semiconductor", "芯片", "硬件", "半导体")):
+        if _has_any(text, ("deployment", "deploy", "tps", "throughput", "speedup", "acceleration", "本地推理", "部署", "提速", "加速")):
+            return "应用与落地"
+        if _has_any(text, ("vllm", "llama.cpp", "executorch", "mlx", "webgpu", "gguf", "kv cache", "mtp")):
+            return "工具链与开发"
+        return "硬件与基础设施"
+    if _has_any(text, ("itbench", "itbench-aa", "swe-bench", "agent benchmark", "enterprise agents on tool-use")):
+        return "工具链与开发"
     if _has_any(
         text,
         (
@@ -181,6 +192,7 @@ def classify_news_section(
             "attack",
             "防护",
             "poisoning",
+            "memfail",
             "privacy",
             "leak",
             "agentwall",
@@ -243,6 +255,8 @@ def classify_news_section(
     if _has_any(
         text,
         (
+            "itbench",
+            "itbench-aa",
             "copilot",
             "cursor",
             "claude code",
@@ -372,6 +386,120 @@ def infer_event_type(title: str, content_type: str, source_name: str, keywords: 
     return "更新"
 
 
+def enrich_decision_fields(item: dict[str, Any]) -> dict[str, Any]:
+    enriched = dict(item)
+    title = enriched.get("headline") or enriched.get("title") or "未命名新闻"
+    summary = enriched.get("summary") or ""
+    reason = enriched.get("reason") or ""
+    category = enriched.get("category") or "前沿研究"
+    source_type = enriched.get("source_type") or "未知来源"
+    source_level = enriched.get("source_level") or ""
+    score = _parse_int(str(enriched.get("score") or "0"))
+    text = _domain_text(
+        str(enriched.get("title") or title),
+        str(enriched.get("source_name") or ""),
+        source_type,
+        list(enriched.get("keywords") or []),
+        summary,
+        str(enriched.get("content_type") or ""),
+        reason,
+    )
+
+    enriched["decision_title"] = _decision_title(enriched)
+    enriched["key_change"] = _key_change(title, summary)
+    enriched["why_important"] = _why_important(category, text, reason)
+    enriched["impact_objects"] = _impact_objects(category, list(enriched.get("keywords") or []), text)
+    advice, advice_reason = _action_advice(score, source_level, source_type, enriched.get("event_type") or "", category, text)
+    enriched["action_advice"] = advice
+    enriched["action_reason"] = advice_reason
+    enriched["similar_count"] = int(enriched.get("similar_count") or 0)
+    return enriched
+
+
+def _decision_title(item: dict[str, Any]) -> str:
+    headline = normalize_space(str(item.get("headline") or ""))
+    title = normalize_space(str(item.get("title") or ""))
+    summary = normalize_space(str(item.get("summary") or ""))
+    if _looks_like_name_only(headline) and title and title != headline:
+        return _short_text(title, 72)
+    if _looks_like_name_only(headline) and summary:
+        return _short_text(f"{headline}：{summary}", 72)
+    return _short_text(headline or title or summary or "未命名新闻", 72)
+
+
+def _key_change(title: str, summary: str) -> str:
+    text = normalize_space(summary or title)
+    replacements = (
+        ("multi-adapter inference", "多适配器推理"),
+        ("throughput", "吞吐"),
+        ("integrated with vLLM", "集成 vLLM"),
+        ("local inference", "本地推理"),
+        ("deployment", "部署"),
+    )
+    for source, target in replacements:
+        text = re.sub(re.escape(source), target, text, flags=re.IGNORECASE)
+    return _short_text(text or "暂无关键变化摘要。", 110)
+
+
+def _why_important(category: str, text: str, reason: str) -> str:
+    if reason:
+        return reason
+    if category == "模型与能力更新":
+        return "它可能影响模型选型、能力替换和后续工作流接入。"
+    if category == "硬件与基础设施":
+        return "它会影响算力成本、边缘 AI 和未来硬件路线判断。"
+    if category == "应用与落地":
+        if _has_any(text, ("local inference", "本地推理", "deployment", "部署", "throughput", "tps")):
+            return "它影响本地推理部署效率，尤其是可复用的部署和性能优化场景。"
+        return "它更接近可直接尝试的实践经验，可能比单纯论文更快进入工作流。"
+    if category == "工具链与开发":
+        return "它可能改变开发工具链、Agent 工作流或代码生成效率。"
+    if category == "商业与产业":
+        return "它反映企业采用、合作关系或资金流向，能帮助判断产业趋势。"
+    if category == "安全与可靠性":
+        return "它提示真实使用中的攻击面、可靠性风险或防护方向。"
+    return "它属于前沿信号，可作为长期观察和素材归档。"
+
+
+def _impact_objects(category: str, keywords: list[str], text: str) -> list[str]:
+    objects = [category]
+    mapping = (
+        ("本地推理", ("local inference", "本地推理", "vllm", "llama.cpp", "gguf", "tps")),
+        ("Agent 工作流", ("agent", "mcp", "langgraph", "tool use", "工具调用")),
+        ("企业部署", ("enterprise", "customer", "企业", "客户", "deployment", "部署")),
+        ("半导体硬件", ("gpu", "nvidia", "chip", "semiconductor", "芯片", "硬件")),
+        ("AI Coding", ("copilot", "cursor", "claude code", "codex", "swe-bench", "代码")),
+        ("RAG / 数据", ("rag", "retrieval", "knowledge", "nuextract", "数据", "检索")),
+        ("AI 安全", ("prompt injection", "poisoning", "安全", "可靠性", "attack")),
+        ("边缘 AI", ("edge", "esp32", "边缘", "端侧")),
+    )
+    keyword_text = " ".join(keywords).lower()
+    combined = f"{text} {keyword_text}"
+    for label, needles in mapping:
+        if _has_any(combined, needles) and label not in objects:
+            objects.append(label)
+    return objects[:5]
+
+
+def _action_advice(
+    score: int,
+    source_level: str,
+    source_type: str,
+    event_type: str,
+    category: str,
+    text: str,
+) -> tuple[str, str]:
+    if score >= 78 and source_level == "official_confirmed":
+        return "必看", "官方高分信号，优先判断是否能接入现有方案或影响主线判断。"
+    if score < 50 or _has_any(text, ("bug fix", "maintenance patch", "quota reset", "配额重置", "小修复")):
+        return "忽略", "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。"
+    if source_type in {"Reddit", "HN", "社区", "早期信号"} or event_type in {"传闻", "实测"}:
+        return "跟进", "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。"
+    if category in {"模型与能力更新", "硬件与基础设施", "应用与落地", "工具链与开发"} and score >= 65:
+        return "跟进", "和核心能力、部署或工具链相关，值得后续观察可用性。"
+    return "归档", "信息有参考价值，但当前不需要立刻行动。"
+
+
 def _domain_text(
     title: str,
     source_name: str,
@@ -386,6 +514,22 @@ def _domain_text(
 
 def _has_any(text: str, needles: tuple[str, ...]) -> bool:
     return any(needle.lower() in text for needle in needles)
+
+
+def _looks_like_name_only(text: str) -> bool:
+    value = normalize_space(text)
+    if not value:
+        return True
+    if len(value) <= 18 and not re.search(r"\s|：|:|，|,|发布|提升|支持|上线|新增|released|improves|adds", value, flags=re.IGNORECASE):
+        return True
+    return False
+
+
+def _short_text(text: str, limit: int) -> str:
+    value = normalize_space(text)
+    if len(value) <= limit:
+        return value
+    return value[: limit - 1].rstrip() + "…"
 
 
 def official_company_for_item(item: dict[str, Any]) -> str | None:
@@ -454,7 +598,7 @@ def raw_company_calendar_item(item: dict[str, Any], fallback_date: str) -> dict[
         summary=item.get("summary_or_excerpt") or "",
         content_type="official_release",
     )
-    return {
+    return enrich_decision_fields({
         "id": _stable_id(date_text, url, title),
         "date": date_text,
         "time": time_text,
@@ -476,7 +620,7 @@ def raw_company_calendar_item(item: dict[str, Any], fallback_date: str) -> dict[
         "reason": "公司官方来源的自家发布，进入核心公司发布节奏日历。",
         "summary": normalize_space(strip_html(item.get("summary_or_excerpt") or "")),
         "company": company,
-    }
+    })
 
 
 def _company_keywords(keywords: list[str]) -> list[str]:
@@ -578,7 +722,7 @@ def _parse_source_markdown(content: str, source_date: str) -> list[dict[str, Any
             "summary": summary,
             "company": classify_company(title, source_name, keywords),
         }
-        items.append(item)
+        items.append(enrich_decision_fields(item))
     return items
 
 
@@ -617,6 +761,29 @@ def _merge_company_items(
             seen_urls.add(item["url"])
         merged.append(item)
     return merged
+
+
+def _annotate_similar_counts(items: list[dict[str, Any]]) -> None:
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for item in items:
+        key = _similarity_key(item)
+        if not key:
+            continue
+        groups.setdefault(key, []).append(item)
+    for group in groups.values():
+        if len(group) <= 1:
+            continue
+        for item in group:
+            item["similar_count"] = len(group) - 1
+
+
+def _similarity_key(item: dict[str, Any]) -> str:
+    text = normalize_space(str(item.get("title") or item.get("headline") or "")).lower()
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", text)
+    stopwords = {"the", "a", "an", "to", "and", "of", "in", "for", "with", "发布", "更新"}
+    tokens = [token for token in text.split() if token not in stopwords]
+    return " ".join(tokens[:8])
 
 
 def _build_company_matrix(items: list[dict[str, Any]], dates: list[str]) -> list[dict[str, Any]]:

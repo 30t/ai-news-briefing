@@ -17,6 +17,7 @@ from generate_timeline import (  # noqa: E402
     classify_company,
     classify_news_section,
     discover_recent_source_paths,
+    enrich_decision_fields,
     infer_event_type,
     raw_company_calendar_item,
     official_company_for_item,
@@ -147,6 +148,21 @@ class GenerateTimelineTest(unittest.TestCase):
         self.assertEqual("https://aihot.virxact.com/feed.xml", sources["AIHOT Featured"]["url"])
         self.assertEqual("needs_verification", sources["AIHOT Featured"]["level"])
 
+    def test_curated_external_feeds_are_configured_as_supplemental_sources(self) -> None:
+        config = load_yaml(ROOT / "config" / "sources.yml")
+        sources = {source["name"]: source for source in config["rss_sources"]}
+
+        self.assertEqual("https://www.bestblogs.dev/en/feeds/rss?category=ai&minScore=90", sources["BestBlogs AI High Score"]["url"])
+        self.assertEqual("needs_verification", sources["BestBlogs AI High Score"]["level"])
+        self.assertEqual("https://www.bestblogs.dev/zh/feeds/rss/daily-brief", sources["BestBlogs Daily Brief"]["url"])
+        self.assertEqual("needs_verification", sources["BestBlogs Daily Brief"]["level"])
+        self.assertEqual("https://aigc-weekly.agi.li/rss.xml", sources["Agili AIGC Weekly"]["url"])
+        self.assertEqual("needs_verification", sources["Agili AIGC Weekly"]["level"])
+        self.assertEqual("https://tw93.fun/feed.xml", sources["TW93 Blog"]["url"])
+        self.assertEqual("tech_community", sources["TW93 Blog"]["level"])
+        self.assertEqual("https://weekly.tw93.fun/rss.xml", sources["TW93 Weekly"]["url"])
+        self.assertEqual("tech_community", sources["TW93 Weekly"]["level"])
+
     def test_classifies_core_company_from_title_keywords_and_source(self) -> None:
         self.assertIn("OpenAI/GPT", COMPANY_ROWS)
         self.assertEqual("OpenAI/GPT", classify_company("GPT-5 tools", "OpenAI News", ["Agent"]))
@@ -230,6 +246,88 @@ class GenerateTimelineTest(unittest.TestCase):
             ],
         )
 
+    def test_classification_object_priority_handles_known_misplacements(self) -> None:
+        self.assertEqual(
+            "模型与能力更新",
+            classify_news_section(
+                title="StepFun Step 3.7 Flash released with stronger multimodal model capability",
+                source_name="StepFun",
+                source_type="RSS",
+                keywords=["StepFun", "model", "multimodal"],
+                summary="New model release.",
+                content_type="major_release",
+            ),
+        )
+        self.assertEqual(
+            "硬件与基础设施",
+            classify_news_section(
+                title="NVIDIA N1X notebook chip rumor exposes AI PC hardware plan",
+                source_name="Reddit r/hardware",
+                source_type="RSS",
+                keywords=["NVIDIA", "N1X", "chip"],
+                summary="Hardware rumor.",
+                content_type="funding_rumor",
+            ),
+        )
+        self.assertEqual(
+            "安全与可靠性",
+            classify_news_section(
+                title="MemFail shows long-term memory poisoning risk in AI agents",
+                source_name="arXiv cs.AI",
+                source_type="RSS",
+                keywords=["MemFail", "memory", "poisoning"],
+                summary="Reliability and memory safety issue.",
+                content_type="research",
+            ),
+        )
+        self.assertEqual(
+            "工具链与开发",
+            classify_news_section(
+                title="ITBench-AA evaluates enterprise agents on tool-use automation tasks",
+                source_name="arXiv cs.AI",
+                source_type="RSS",
+                keywords=["Agent", "benchmark", "tool use"],
+                summary="Enterprise agent benchmark.",
+                content_type="benchmark",
+            ),
+        )
+        self.assertEqual(
+            "模型与能力更新",
+            classify_news_section(
+                title="NuExtract3 improves structured data extraction model capability",
+                source_name="Hacker News",
+                source_type="RSS",
+                keywords=["NuExtract", "data extraction", "model"],
+                summary="Model for information extraction.",
+                content_type="minor_release",
+            ),
+        )
+
+    def test_enriches_decision_fields_for_clickable_intelligence_card(self) -> None:
+        item = enrich_decision_fields(
+            {
+                "headline": "PreFT",
+                "title": "PreFT improves multi-adapter inference throughput 1.9x and integrates vLLM",
+                "summary": "PreFT improves serving throughput for multi-adapter inference by 1.9x and is integrated with vLLM.",
+                "reason": "对本地推理部署效率有直接价值。",
+                "category": "应用与落地",
+                "event_type": "基准",
+                "source_type": "Reddit",
+                "source_level": "tech_community",
+                "keywords": ["vLLM", "inference", "throughput", "adapter"],
+                "score": 70,
+            }
+        )
+
+        self.assertIn("PreFT", item["decision_title"])
+        self.assertIn("1.9x", item["decision_title"])
+        self.assertIn("多适配器推理", item["key_change"])
+        self.assertIn("本地推理", item["why_important"])
+        self.assertIn("应用与落地", item["impact_objects"])
+        self.assertIn("本地推理", item["impact_objects"])
+        self.assertEqual("跟进", item["action_advice"])
+        self.assertIn("需要等待后续验证", item["action_reason"])
+
     def test_infers_event_type_without_using_it_as_category(self) -> None:
         self.assertEqual("论文", infer_event_type("Agent safety paper", "research", "arXiv cs.AI", ["Agent"]))
         self.assertEqual("基准", infer_event_type("Qwen benchmark result", "community_discussion", "Reddit r/LocalLLaMA", ["benchmark"]))
@@ -269,6 +367,8 @@ class GenerateTimelineTest(unittest.TestCase):
             self.assertEqual("发布", first["event_type"])
             self.assertEqual("官方", first["source_type"])
             self.assertEqual("RSS", first["source_channel"])
+            self.assertEqual("必看", first["action_advice"])
+            self.assertIn("工具链与开发", first["impact_objects"])
             self.assertEqual(82, first["score"])
             self.assertEqual("官方发布，和 Agent 工作流高度相关。", first["reason"])
             self.assertEqual("OpenAI released new GPT tool capabilities.", first["summary"])
@@ -296,6 +396,36 @@ class GenerateTimelineTest(unittest.TestCase):
 
             self.assertIn("2026-05-24", payload["generated_from"])
             self.assertIn("2026-05-25", payload["generated_from"])
+
+    def test_marks_similar_news_count_for_duplicate_like_items(self) -> None:
+        duplicate_markdown = SOURCE_MARKDOWN + """
+### 5. OpenAI releases GPT-5 tools
+
+- 来源等级：技术社区
+- 来源名称：Reddit r/OpenAI
+- 来源类型：RSS
+- 发布时间：2026-05-25 14:30
+- 原文链接：https://example.com/openai-reddit
+- 命中关键词：OpenAI、GPT、Agent
+- 规则召回分：60
+- 内容类型：community_discussion
+- 入选原因：社区复述同一发布。
+- Feed 摘要：
+  > Community discussed the same OpenAI GPT tools release.
+
+---
+"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            sources = root / "output" / "sources"
+            sources.mkdir(parents=True)
+            (sources / "2026-05-25.md").write_text(duplicate_markdown, encoding="utf-8")
+
+            payload = build_timeline_payload(root, days=30)
+
+            duplicates = [item for item in payload["items"] if item["title"] == "OpenAI releases GPT-5 tools"]
+            self.assertEqual(2, len(duplicates))
+            self.assertEqual({1}, {item["similar_count"] for item in duplicates})
 
     def test_builds_timeline_payload_from_legacy_source_markdown(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:

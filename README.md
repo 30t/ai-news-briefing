@@ -533,17 +533,20 @@ article_text_limit: 5000
 `.github/workflows/daily-news.yml` 会定时运行：
 
 ```yaml
-cron: '30 23 * * *'
+cron: '0 23 * * *'
 ```
 
-对应 UTC+8 时间约为每天早上 07:30。
+对应 UTC+8 时间为每天早上 07:00。
 
 Actions 执行的是完整两段式流水线：
 
 ```text
 Stage 1: rule-based collection and candidate recall
 Stage 2: LLM editorial review and daily synthesis
+Stage 3: visual timeline data refresh
 ```
+
+工作流会提交 `output/` 以及 `site/timeline-data.js`，因此时间线网站会跟随每天生成结果自动刷新。
 
 ### 必需 Secrets
 

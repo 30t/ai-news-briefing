@@ -169,7 +169,7 @@
         border: 1px solid var(--line);
         border-radius: 999px;
         background: var(--panel);
-        color: var(--muted);
+        color: var(--ink);
         font-size: 12px;
       }
 
@@ -237,14 +237,37 @@
 
       .day-events {
         display: grid;
-        gap: 8px;
+        gap: 16px;
         padding: 9px;
+      }
+
+      .event-group {
+        display: grid;
+        gap: 7px;
+        padding: 9px;
+        border-radius: 8px;
+        background: var(--group-bg, #f4f7f5);
+      }
+
+      .event-group-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        color: var(--group-ink, var(--ink));
+        font-size: 12px;
+        font-weight: 750;
+      }
+
+      .event-group-title span {
+        color: var(--muted);
+        font-weight: 500;
       }
 
       .event {
         display: block;
         width: 100%;
-        border: 1px solid var(--line);
+        border: 1px solid rgba(23, 33, 28, 0.1);
         border-radius: 8px;
         background: #fff;
         padding: 9px 10px;
@@ -648,18 +671,34 @@
     <script>
       const DATA_URL = "../output/timeline/latest.json";
       const categoryColors = {
-        major_release: "#0b7a6e",
-        minor_release: "#4f8a7d",
-        community_discussion: "#1565c0",
-        business_signal: "#7a4f00",
-        research: "#5b6b12",
-        benchmark: "#5b6b12",
-        marketing: "#9a2f2f",
-        event: "#9a2f2f",
-        official_release: "#0b7a6e",
-        other: "#68746e",
-        news: "#68746e",
+        模型与能力更新: "#0b6fb3",
+        硬件与基础设施: "#a45a00",
+        应用与落地: "#00796b",
+        工具链与开发: "#8a3ffc",
+        商业与产业: "#b25c00",
+        安全与可靠性: "#b73a3a",
+        前沿研究: "#6a7f00",
       };
+
+      const categoryLabels = {
+        模型与能力更新: "模型与能力更新 ⭐⭐⭐",
+        硬件与基础设施: "硬件与基础设施 ⭐⭐",
+        应用与落地: "应用与落地 ⭐⭐",
+        工具链与开发: "工具链与开发 ⭐⭐",
+        商业与产业: "商业与产业 ⭐",
+        安全与可靠性: "安全与可靠性 ⭐",
+        前沿研究: "前沿研究",
+      };
+
+      const categoryOrder = [
+        "模型与能力更新",
+        "硬件与基础设施",
+        "应用与落地",
+        "工具链与开发",
+        "商业与产业",
+        "安全与可靠性",
+        "前沿研究",
+      ];
 
       const state = {
         payload: null,
@@ -749,8 +788,8 @@
         const categories = [...new Set(items.map((item) => item.category || "news"))].slice(0, 7);
         legend.innerHTML = categories
           .map((category) => {
-            const color = categoryColors[category] || categoryColors.news;
-            return `<span class="pill"><span class="dot" style="background:${color}"></span>${escapeHtml(category)}</span>`;
+            const color = categoryColors[category] || "#5f6b66";
+            return `<span class="pill"><span class="dot" style="background:${color}"></span>${escapeHtml(categoryLabel(category))}</span>`;
           })
           .join("");
       }
@@ -784,26 +823,72 @@
             <div class="day-events"></div>
           `;
           const list = column.querySelector(".day-events");
-          dayItems.forEach((item) => {
-            const event = document.createElement("button");
-            event.type = "button";
-            event.className = "event";
-            event.style.borderTop = `4px solid ${categoryColors[item.category] || categoryColors.news}`;
-            event.style.opacity = Math.max(0.76, Math.min(1, (item.score || 0) / 85));
-            event.title = `${item.headline || item.title}\n${item.reason || ""}`;
-            event.setAttribute("aria-label", item.headline || item.title);
-            event.innerHTML = `
-              <strong>${escapeHtml(compactLabel(item))}</strong>
-              <span class="event-meta">
-                <span>${escapeHtml(item.time || "")}</span>
-                <span class="score">${escapeHtml(String(item.score || 0))}</span>
-              </span>
+          groupedDayItems(dayItems).forEach((group) => {
+            const color = categoryColors[group.category] || "#5f6b66";
+            const section = document.createElement("section");
+            section.className = "event-group";
+            section.style.setProperty("--group-bg", translucentColor(color, 0.1));
+            section.style.setProperty("--group-ink", color);
+            section.innerHTML = `
+              <div class="event-group-title">
+                ${escapeHtml(categoryLabel(group.category))}
+                <span>${group.items.length} 条</span>
+              </div>
             `;
-            event.addEventListener("click", () => showDetail(item));
-            list.appendChild(event);
+            group.items.forEach((item) => {
+              const event = document.createElement("button");
+              event.type = "button";
+              event.className = "event";
+              event.style.borderLeft = `5px solid ${categoryColors[item.category] || "#5f6b66"}`;
+              event.style.opacity = Math.max(0.78, Math.min(1, (item.score || 0) / 85));
+              event.title = `${item.headline || item.title}\n${item.reason || ""}`;
+              event.setAttribute("aria-label", item.headline || item.title);
+              event.innerHTML = `
+                <strong>${escapeHtml(compactLabel(item))}</strong>
+                <span class="event-meta">
+                  <span>${escapeHtml([item.event_type, item.source_type, item.time].filter(Boolean).join("｜"))}</span>
+                  <span class="score">${escapeHtml(String(item.score || 0))}</span>
+                </span>
+              `;
+              event.addEventListener("click", () => showDetail(item));
+              section.appendChild(event);
+            });
+            list.appendChild(section);
           });
           track.appendChild(column);
         });
+      }
+
+      function groupedDayItems(items) {
+        const groups = new Map();
+        items.forEach((item) => {
+          const category = item.category || "news";
+          if (!groups.has(category)) groups.set(category, []);
+          groups.get(category).push(item);
+        });
+        return [...groups.entries()]
+          .sort((left, right) => categoryRank(left[0]) - categoryRank(right[0]))
+          .map(([category, groupItems]) => ({
+            category,
+            items: groupItems.slice().sort((left, right) => String(left.time || "").localeCompare(String(right.time || ""))),
+          }));
+      }
+
+      function categoryRank(category) {
+        const index = categoryOrder.indexOf(category);
+        return index === -1 ? categoryOrder.length : index;
+      }
+
+      function categoryLabel(category) {
+        return categoryLabels[category] || category.replaceAll("_", " ");
+      }
+
+      function translucentColor(hex, alpha) {
+        const value = hex.replace("#", "");
+        const red = parseInt(value.slice(0, 2), 16);
+        const green = parseInt(value.slice(2, 4), 16);
+        const blue = parseInt(value.slice(4, 6), 16);
+        return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
       }
 
       function timelineVisibleItems(items, dates) {

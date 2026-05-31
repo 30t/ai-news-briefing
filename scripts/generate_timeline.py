@@ -26,6 +26,16 @@ COMPANY_KEYWORDS: list[tuple[str, tuple[str, ...]]] = [
 
 COMPANY_ROWS = [company for company, _keywords in COMPANY_KEYWORDS]
 
+NEWS_SECTIONS = [
+    "模型与能力更新",
+    "硬件与基础设施",
+    "应用与落地",
+    "工具链与开发",
+    "商业与产业",
+    "安全与可靠性",
+    "前沿研究",
+]
+
 OFFICIAL_COMPANY_SOURCES = {
     "OpenAI/GPT": {"OpenAI News"},
     "Anthropic/Claude": {"Anthropic News"},
@@ -118,6 +128,266 @@ def classify_company(title: str, source_name: str, keywords: list[str]) -> str |
     return None
 
 
+def classify_news_section(
+    *,
+    title: str,
+    source_name: str,
+    source_type: str,
+    keywords: list[str],
+    summary: str = "",
+    content_type: str = "",
+    reason: str = "",
+) -> str:
+    text = _domain_text(title, source_name, source_type, keywords, summary, content_type, reason)
+    if _has_any(
+        text,
+        (
+            "partnership",
+            "partner",
+            "customer",
+            "enterprise",
+            "revenue",
+            "earnings",
+            "license",
+            "licence",
+            "pricing",
+            "funding",
+            "acquisition",
+            "commercial",
+            "business",
+            "合作",
+            "客户",
+            "企业",
+            "财报",
+            "许可",
+            "定价",
+            "融资",
+            "收购",
+            "商业",
+            "产业",
+        ),
+    ):
+        return "商业与产业"
+    if _has_any(
+        text,
+        (
+            "prompt injection",
+            "jailbreak",
+            "安全",
+            "长期可靠性",
+            "对齐",
+            "alignment",
+            "risk",
+            "attack",
+            "防护",
+            "poisoning",
+            "privacy",
+            "leak",
+            "agentwall",
+            "agingbench",
+            "distractionif",
+        ),
+    ):
+        return "安全与可靠性"
+    if _has_any(
+        text,
+        (
+            "gpu",
+            "cpu",
+            "npu",
+            "nvidia",
+            "blackwell",
+            "nvlink",
+            "esp32",
+            "chip",
+            "semiconductor",
+            "memory",
+            "m5 mac",
+            "dgx",
+            "芯片",
+            "硬件",
+            "算力",
+            "半导体",
+            "边缘芯片",
+        ),
+    ):
+        if _has_any(text, ("deployment", "deploy", "tps", "throughput", "speedup", "acceleration", "本地推理", "部署", "提速", "加速")):
+            return "应用与落地"
+        if _has_any(text, ("vllm", "llama.cpp", "executorch", "mlx", "webgpu", "gguf", "kv cache", "mtp")):
+            return "工具链与开发"
+        return "硬件与基础设施"
+    if _has_any(
+        text,
+        (
+            "deployment",
+            "deploy",
+            "tps",
+            "tokens/s",
+            "throughput",
+            "latency",
+            "speedup",
+            "acceleration",
+            "accelerate",
+            "single gpu",
+            "rtx",
+            "local inference",
+            "本地推理",
+            "部署方案",
+            "实测",
+            "提速",
+            "加速",
+            "达到",
+        ),
+    ):
+        return "应用与落地"
+    if _has_any(
+        text,
+        (
+            "copilot",
+            "cursor",
+            "claude code",
+            "codex",
+            "swe-bench",
+            "swebench",
+            "code generation",
+            "coding",
+            "ide",
+            "warp",
+            "poolside",
+            "composer",
+            "vllm",
+            "llama.cpp",
+            "exectuorch",
+            "executorch",
+            "mlx",
+            "webgpu",
+            "gguf",
+            "kv cache",
+            "mtp",
+            "runtime",
+            "serving",
+            "langgraph",
+            "mcp",
+            "tool calling",
+            "gui agent",
+            "browser agent",
+            "workflow",
+            "automation",
+            "autopa",
+            "autopra",
+            "autorpa",
+            "saas-bench",
+            "graphmind",
+            "智能体",
+            "自动化",
+            "工具调用",
+            "工作流",
+            "代码",
+            "编程",
+            "编码",
+            "推理框架",
+            "服务框架",
+        ),
+    ):
+        return "工具链与开发"
+    if _has_any(
+        text,
+        (
+            "model",
+            "models",
+            "moe",
+            "multimodal",
+            "context",
+            "qwen",
+            "gemini",
+            "gpt",
+            "claude",
+            "deepseek",
+            "llama",
+            "mistral",
+            "command a",
+            "step",
+            "liquid ai",
+            "lfm",
+            "quantization",
+            "模型",
+            "多模态",
+            "上下文",
+            "量化",
+            "能力",
+        ),
+    ):
+        return "模型与能力更新"
+    if _has_any(
+        text,
+        (
+            "rag",
+            "graphrag",
+            "chroma",
+            "retrieval",
+            "knowledge graph",
+            "knowledge base",
+            "memory",
+            "memfail",
+            "nuextract",
+            "datasette",
+            "研究",
+            "research",
+            "arxiv",
+            "paper",
+            "benchmark",
+            "bench",
+            "数据",
+            "检索",
+            "知识库",
+            "知识图谱",
+            "记忆",
+            "论文",
+            "基准",
+        ),
+    ):
+        return "前沿研究"
+    return "前沿研究"
+
+
+classify_domain_category = classify_news_section
+
+
+def infer_event_type(title: str, content_type: str, source_name: str, keywords: list[str]) -> str:
+    text = " ".join([title, content_type, source_name, " ".join(keywords)]).lower()
+    if _has_any(text, ("funding_rumor", "rumor", "传闻")):
+        return "传闻"
+    if _has_any(text, ("business_signal", "partnership", "partner", "earnings", "customer", "商业", "合作", "财报")):
+        return "商业信号"
+    if _has_any(text, ("benchmark", "bench", "测评", "评测", "基准")):
+        return "基准"
+    if _has_any(text, ("reddit", "实测", "测试")) and not _has_any(text, ("release", "发布")):
+        return "实测"
+    if _has_any(text, ("research", "arxiv", "paper", "论文")):
+        return "论文"
+    if _has_any(text, ("minor_release", "update", "updated", "changelog", "v0.", "v1.", "更新")):
+        return "更新"
+    if _has_any(text, ("major_release", "release", "released", "launch", "announce", "发布", "推出", "上线")):
+        return "发布"
+    return "更新"
+
+
+def _domain_text(
+    title: str,
+    source_name: str,
+    source_type: str,
+    keywords: list[str],
+    summary: str,
+    content_type: str,
+    reason: str,
+) -> str:
+    return " ".join([title, source_name, source_type, " ".join(keywords), summary, content_type, reason]).lower()
+
+
+def _has_any(text: str, needles: tuple[str, ...]) -> bool:
+    return any(needle.lower() in text for needle in needles)
+
+
 def official_company_for_item(item: dict[str, Any]) -> str | None:
     if item.get("source_level") != "official_confirmed":
         return None
@@ -175,6 +445,15 @@ def raw_company_calendar_item(item: dict[str, Any], fallback_date: str) -> dict[
         return None
     keywords = list(item.get("matched_keywords") or [])
     score = _parse_int(str(item.get("editorial_score") or item.get("score") or item.get("rule_relevance_score") or "0"))
+    source_channel = item.get("source_type") or "未知"
+    category = classify_domain_category(
+        title=title,
+        source_name=item.get("source_name") or "未知来源",
+        source_type=source_channel,
+        keywords=keywords,
+        summary=item.get("summary_or_excerpt") or "",
+        content_type="official_release",
+    )
     return {
         "id": _stable_id(date_text, url, title),
         "date": date_text,
@@ -185,9 +464,11 @@ def raw_company_calendar_item(item: dict[str, Any], fallback_date: str) -> dict[
         "source_name": item.get("source_name") or "未知来源",
         "source_level": item.get("source_level") or "needs_verification",
         "source_level_label": "官方确认",
-        "source_type": item.get("source_type") or "未知",
+        "source_type": normalize_source_type(item.get("source_name") or "", source_channel, item.get("source_level") or ""),
+        "source_channel": source_channel,
         "keywords": keywords,
-        "category": "official_release",
+        "category": category,
+        "event_type": infer_event_type(title, "official_release", item.get("source_name") or "", keywords),
         "score": score,
         "decision": "company_calendar",
         "content_type": "company_calendar",
@@ -210,6 +491,27 @@ def _matches_company_keyword(text: str, keyword: str) -> bool:
     if re.search(r"[a-z0-9]", keyword):
         return bool(re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", text))
     return keyword in text
+
+
+def normalize_source_type(source_name: str, source_channel: str, source_level: str) -> str:
+    text = " ".join([source_name, source_channel]).lower()
+    if "arxiv" in text:
+        return "arXiv"
+    if "github" in text:
+        return "GitHub"
+    if "reddit" in text:
+        return "Reddit"
+    if "hacker news" in text or text.strip() == "hn":
+        return "HN"
+    if "blog" in text:
+        return "博客"
+    if source_level == "official_confirmed":
+        return "官方"
+    if source_level == "tech_community":
+        return "社区"
+    if source_level == "early_signal":
+        return "早期信号"
+    return "媒体"
 
 
 def _parse_source_markdown(content: str, source_date: str) -> list[dict[str, Any]]:
@@ -236,6 +538,19 @@ def _parse_source_markdown(content: str, source_date: str) -> list[dict[str, Any
             or legacy_meta.get("source_type")
             or "未知"
         )
+        source_level = LEVEL_BY_LABEL.get(source_level_label, "needs_verification")
+        content_type = _field(chunk, "内容类型")
+        reason = _field(chunk, "入选原因") or _field(chunk, "为什么值得看")
+        summary = _blockquote_after(chunk, "Feed 摘要") or _blockquote_after(chunk, "核心总结")
+        category = classify_domain_category(
+            title=title,
+            source_name=source_name,
+            source_type=source_type,
+            keywords=keywords,
+            summary=summary,
+            content_type=content_type,
+            reason=reason,
+        )
         item = {
             "id": _stable_id(source_date, url, title),
             "date": date_text,
@@ -244,21 +559,23 @@ def _parse_source_markdown(content: str, source_date: str) -> list[dict[str, Any
             "headline": llm_title or title,
             "url": url,
             "source_name": source_name,
-            "source_level": LEVEL_BY_LABEL.get(source_level_label, "needs_verification"),
+            "source_level": source_level,
             "source_level_label": source_level_label,
-            "source_type": source_type,
+            "source_type": normalize_source_type(source_name, source_type, source_level),
+            "source_channel": source_type,
             "keywords": keywords,
-            "category": _category_for_item(chunk, keywords),
+            "category": category,
+            "event_type": infer_event_type(title, content_type, source_name, keywords),
             "score": _parse_int(
                 _field(chunk, "模型编辑分")
                 or _field(chunk, "规则召回分")
                 or legacy_meta.get("score", "")
             ),
             "decision": _field(chunk, "编辑决策"),
-            "content_type": _field(chunk, "内容类型"),
+            "content_type": content_type,
             "risk_level": _field(chunk, "风险等级"),
-            "reason": _field(chunk, "入选原因") or _field(chunk, "为什么值得看"),
-            "summary": _blockquote_after(chunk, "Feed 摘要") or _blockquote_after(chunk, "核心总结"),
+            "reason": reason,
+            "summary": summary,
             "company": classify_company(title, source_name, keywords),
         }
         items.append(item)

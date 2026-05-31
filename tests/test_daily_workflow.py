@@ -21,6 +21,7 @@ class DailyWorkflowTest(unittest.TestCase):
         self.assertIn("Deploy Timeline Site", workflow)
         self.assertIn("pages: write", workflow)
         self.assertIn("id-token: write", workflow)
+        self.assertIn("enablement: true", workflow)
         self.assertIn("path: site", workflow)
         self.assertIn("actions/deploy-pages", workflow)
 

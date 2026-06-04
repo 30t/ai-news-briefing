@@ -13,6 +13,8 @@ BACKLOG_FILENAME = "backlog.json"
 DEFAULT_MAX_AGE_DAYS = 3
 DEFAULT_MIN_SCORE = 35
 DEFAULT_MAX_ITEMS = 80
+DEFAULT_MAX_EARLY_SIGNAL_ITEMS = 20
+DEFAULT_MAX_SOURCE_ITEMS = 15
 
 
 def load_backlog(output_dir: Path) -> list[dict[str, Any]]:
@@ -76,6 +78,8 @@ def update_backlog_after_model_selection(
     min_score: int = DEFAULT_MIN_SCORE,
     max_age_days: int = DEFAULT_MAX_AGE_DAYS,
     max_items: int = DEFAULT_MAX_ITEMS,
+    max_early_signal_items: int = DEFAULT_MAX_EARLY_SIGNAL_ITEMS,
+    max_source_items: int = DEFAULT_MAX_SOURCE_ITEMS,
 ) -> list[dict[str, Any]]:
     selected_keys = {_item_key(item) for item in selected_model_items if _item_key(item)}
     now = datetime.now(LOCAL_TIMEZONE)
@@ -95,13 +99,48 @@ def update_backlog_after_model_selection(
             continue
         candidates[key] = _normalize_backlog_item(item, now=now, source="today")
 
-    new_backlog = sorted(
+    sorted_candidates = sorted(
         candidates.values(),
         key=lambda entry: (int(entry.get("score", 0)), str(entry.get("first_seen_at", ""))),
         reverse=True,
-    )[:max_items]
+    )
+    new_backlog = _limit_backlog_concentration(
+        sorted_candidates,
+        max_items=max_items,
+        max_early_signal_items=max_early_signal_items,
+        max_source_items=max_source_items,
+    )
     save_backlog(output_dir, new_backlog)
     return new_backlog
+
+
+def _limit_backlog_concentration(
+    items: list[dict[str, Any]],
+    *,
+    max_items: int,
+    max_early_signal_items: int,
+    max_source_items: int,
+) -> list[dict[str, Any]]:
+    limited: list[dict[str, Any]] = []
+    source_counts: dict[str, int] = {}
+    early_signal_count = 0
+
+    for item in items:
+        if len(limited) >= max_items:
+            break
+        source_level = str(item.get("source_level") or "")
+        source_name = str(item.get("source_name") or "")
+        if source_level == "early_signal" and early_signal_count >= max_early_signal_items:
+            continue
+        if source_name and source_counts.get(source_name, 0) >= max_source_items:
+            continue
+
+        limited.append(item)
+        if source_level == "early_signal":
+            early_signal_count += 1
+        if source_name:
+            source_counts[source_name] = source_counts.get(source_name, 0) + 1
+    return limited
 
 
 def _fresh_backlog_items(items: list[dict[str, Any]], *, max_age_days: int) -> list[dict[str, Any]]:

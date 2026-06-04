@@ -545,37 +545,75 @@ def official_company_for_item(item: dict[str, Any]) -> str | None:
 def should_include_company_calendar_item(item: dict[str, Any]) -> bool:
     text = " ".join(
         str(item.get(key) or "")
-        for key in ("title", "headline", "summary_or_excerpt", "summary", "reason")
+        for key in ("title", "headline", "summary_or_excerpt", "summary", "reason", "content_type")
     ).lower()
     if any(word in text for word in ("quota reset", "rate limit reset", "额度重置", "配额重置")):
         return False
     if any(word in text for word in ("bug fix", "bug fixes", "maintenance patch", "patch release", "修复 bug", "错误修复")):
         return False
-    include_markers = (
-        "introducing",
-        "announce",
-        "announcing",
-        "launch",
-        "released",
-        "release",
-        "new",
-        "available",
-        "mobile",
-        "app",
-        "partnership",
-        "integration",
-        "api",
-        "model",
-        "feature",
-        "发布",
-        "推出",
-        "上线",
-        "新增",
-        "合作",
-        "集成",
-        "功能",
+    low_value_markers = (
+        "marketing",
+        "case study",
+        "customer story",
+        "build with codex",
+        "built with codex",
+        "use codex",
+        "used codex",
+        "using codex",
+        "使用codex",
+        "案例",
+        "偏营销",
+        "dependency scanning",
+        "secret scanning",
+        "deprecation notice",
+        "field will be removed",
+        "technical preview availability",
+        "expanded technical preview",
+        "now supports more models",
+        "rubber duck",
+        "minor_release",
+        "小版本",
     )
-    return any(marker in text for marker in include_markers)
+    if any(marker in text for marker in low_value_markers):
+        return False
+    if "preview" in text and not _has_any(text, ("major", "flagship", "model", "gpt", "claude", "gemini", "llama", "grok")):
+        return False
+    if re.search(r"\bv(?:0|1)\.\d+(?:\.\d+)?\b", text):
+        return False
+
+    major_model_patterns = (
+        r"\bgpt[-\s]?\d+(?:\.\d+)?\b",
+        r"\bclaude\s+\d+(?:\.\d+)?\b",
+        r"\bgemini\s+\d+(?:\.\d+)?\b",
+        r"\bllama\s+\d+(?:\.\d+)?\b",
+        r"\bgrok\s+\d+(?:\.\d+)?\b",
+        r"\bqwen\s*\d+(?:\.\d+)?\b",
+        r"\bdeepseek[-\s]?(?:v|r)?\d+(?:\.\d+)?\b",
+        r"\bmistral\s+(?:large|medium|small)\b",
+    )
+    if any(re.search(pattern, text) for pattern in major_model_patterns):
+        return _has_any(text, ("release", "released", "launch", "available", "introducing", "发布", "推出", "上线"))
+
+    major_markers = (
+        "copilot sdk is now generally available",
+        "introducing codex",
+        "codex mobile app",
+        "flagship",
+        "major release",
+        "new autonomous ai agents",
+        "partnership",
+        "partner on",
+        "ai infrastructure",
+        "ai factory",
+        "blackwell",
+        "dgx",
+        "rtx spark",
+        "发布旗舰",
+        "重大合作",
+        "战略合作",
+        "基础设施",
+    )
+    return any(marker in text for marker in major_markers)
 
 
 def raw_company_calendar_item(item: dict[str, Any], fallback_date: str) -> dict[str, Any] | None:

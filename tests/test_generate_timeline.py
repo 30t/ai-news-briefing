@@ -499,6 +499,94 @@ class GenerateTimelineTest(unittest.TestCase):
         self.assertFalse(should_include_company_calendar_item({"title": "Quota reset schedule update"}))
         self.assertFalse(should_include_company_calendar_item({"title": "Bug fixes and maintenance patch"}))
 
+    def test_company_calendar_requires_major_company_milestones(self) -> None:
+        self.assertTrue(
+            should_include_company_calendar_item(
+                {
+                    "title": "Introducing GPT-5.5 Instant",
+                    "summary_or_excerpt": "OpenAI releases a new flagship GPT model with stronger reasoning.",
+                    "source_name": "OpenAI News",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+        self.assertTrue(
+            should_include_company_calendar_item(
+                {
+                    "title": "Claude 5.6 Sonnet is now available",
+                    "summary_or_excerpt": "Anthropic releases a major Claude model update.",
+                    "source_name": "Anthropic News",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+        self.assertFalse(
+            should_include_company_calendar_item(
+                {
+                    "title": "Dependency scanning with GitHub MCP Server is in public preview",
+                    "summary_or_excerpt": "A product preview for dependency scanning.",
+                    "source_name": "GitHub Changelog",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+        self.assertFalse(
+            should_include_company_calendar_item(
+                {
+                    "title": "Expanded technical preview availability for the GitHub Copilot app",
+                    "summary_or_excerpt": "A technical preview availability update.",
+                    "source_name": "GitHub Changelog",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+        self.assertFalse(
+            should_include_company_calendar_item(
+                {
+                    "title": "How NVIDIA engineers and researchers build with Codex",
+                    "summary_or_excerpt": "Teams use Codex with GPT-5.5 to ship production systems.",
+                    "reason": "内容偏营销，缺乏具体技术细节。",
+                    "content_type": "marketing",
+                    "source_name": "OpenAI News",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+        self.assertFalse(
+            should_include_company_calendar_item(
+                {
+                    "title": "Secret scanning with GitHub MCP Server is now generally available",
+                    "summary_or_excerpt": "Security feature availability update.",
+                    "source_name": "GitHub Changelog",
+                    "source_level": "official_confirmed",
+                }
+            )
+        )
+
+    def test_company_calendar_maps_more_official_company_sources(self) -> None:
+        self.assertEqual(
+            "Anthropic/Claude",
+            official_company_for_item(
+                {
+                    "title": "Claude 5.6 Sonnet is now available",
+                    "source_name": "Anthropic News",
+                    "source_level": "official_confirmed",
+                    "matched_keywords": ["Claude"],
+                }
+            ),
+        )
+        self.assertEqual(
+            "Google/Gemini",
+            official_company_for_item(
+                {
+                    "title": "Gemini 3.0 Pro is now available",
+                    "source_name": "Google DeepMind Blog",
+                    "source_level": "official_confirmed",
+                    "matched_keywords": ["Gemini"],
+                }
+            ),
+        )
+
     def test_company_calendar_can_use_raw_official_items_without_adding_them_to_timeline(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

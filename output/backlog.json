@@ -15,35 +15,7 @@
     ],
     "score": 72,
     "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Self-Healing Agentic Orchestrators for Reliable Tool-Augmented Large Language Model Systems",
-    "url": "https://arxiv.org/abs/2606.01416",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.01416v1 Announce Type: new Abstract: Tool-augmented large language model (LLM) agents rely on orchestration layers that coordinate planning, retrieval, tool invocation, validation, memory, and recovery. In these systems, failures arise not only from model errors, but also from orchestration-level issues such as tool timeouts, malformed arguments, stale context, contradictory evidence, retry loops, and unverified intermediate outputs. This paper presents a self-healing agentic orchestrator that treats reliability as a bounded runtime control problem. The orchestrator maps observable failure signals to inferred failure classes, selects targeted recovery actions under explicit budgets, verifies recovered trajectories, and records observability traces. We evaluate the approach on a 100-task controlled fault-injection benchmark against static workflow, retry-only, ReAct-style, and full-replanning baselines. Self-healing achieves 98.8\\% task success, compared with 94.5\\% for retry-only and 93.8\\% for full replanning. A matched recovery-budget sweep shows that self-healing outperforms retry-only and full replanning at every tested budget, with the largest gap under a single re...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "orchestration",
-      "retrieval",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -53,7 +25,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
+    "published_at": "2026-06-05T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.05080v1 Announce Type: new Abstract: Scientific and engineering progress is fundamentally a long-horizon iterative process: proposing changes, running experiments, measuring outcomes, and continuously refining artifacts. Yet existing benchmarks for frontier models primarily evaluate either single-turn responses or short-horizon agent trajectories, failing to capture the challenges of sustained iterative improvement over extended time horizons. To address this gap, we introduce AutoLab, a new benchmark for ultra long-horizon closed-loop optimization. AutoLab consists of 36 realistic, expert-curated tasks spanning four diverse domains: system optimization, puzzle & challenge, model development, and CUDA kernel optimization. Each task begins with a correct but deliberately suboptimal baseline and challenges agents to improve it within a strict wall-clock budget. Evaluating 17 state-of-the-art models reveals the dominant predictor of success is not the quality of an agent's initial attempt, but its persistence in repeatedly benchmarking, editing, and incorporating empirical feedback. While claude-opus-4.6 exhibits strong long-horizon optimization capabilities, most frontier...",
     "matched_keywords": [
       "Agent",
@@ -69,31 +41,8 @@
       "semiconductor"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "From Untrusted Input to Trusted Memory: A Systematic Study of Memory Poisoning Attacks in LLM Agents",
-    "url": "https://arxiv.org/abs/2606.04329",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.04329v1 Announce Type: cross Abstract: Memory is a core component of AI agents, enabling them to accumulate knowledge across interactions and improve performance. However, persistent memory introduces the risk of memory poisoning, where a single adversarial memory write can exert long-term influence over agent behavior. We present a systematic study of memory poisoning in LLM-based agents. We identify four memory write channels and nine structural vulnerabilities in model capabilities, system prompt design, and agent system architecture that make these channels exploitable. Based on these vulnerabilities, we develop a taxonomy of six classes of memory poisoning attacks. Furthermore, we design MPBench -- a benchmark for evaluating memory poisoning attacks, and show that agents designed to write and retrieve memory more aggressively are more exploitable. We also show that existing prompt injection defenses fail to cover memory poisoning attacks. Our findings provide a foundation for understanding and mitigating memory poisoning attacks against AI agents.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -103,7 +52,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
+    "published_at": "2026-06-05T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.04425v1 Announce Type: cross Abstract: Modern agentic systems transform LLMs from session-bounded assistants into stateful systems that persist and evolve shared world state across sessions through memories, filesystems, tools, and other long-lived contextual artifacts. This shift fundamentally expands the attack surface of prompt injection. However, prior works on prompt injection have largely focused on model-level threats within a single session, overlooking how cross-session persistent system state fundamentally changes the system-level risk of agentic systems. Inspired by stored cross-site scripting in web systems, we introduce cross-session stored prompt injection, where a successful injection can persist within agentic system state and silently influence future executions long after the original attacker interaction has ended. To systematically study this threat, we formalize stored prompt injection and develop a taxonomy of how adversarial content persists and affects agentic systems across sessions. We further develop a benchmark and sandbox toolkit to evaluate the risks of stored prompt injection, enabling quantitative analysis of attack success across differe...",
     "matched_keywords": [
       "agentic",
@@ -114,8 +63,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -125,7 +74,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
+    "published_at": "2026-06-05T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.04460v1 Announce Type: cross Abstract: AI has the potential to transform cybersecurity by enabling systems that can autonomously detect, analyze, and remediate software vulnerabilities. However, existing cybersecurity evaluations of AI systems are limited in scale or scope, and fail to capture the end-to-end lifecycle of real-world software vulnerability discovery and remediation. To address this gap, we propose CyberGym-E2E, a large-scale and realistic end-to-end cybersecurity benchmark that comprehensively evaluates AI agents' abilities across the full lifecycle of vulnerability discovery, PoC generation, and patch generation. CyberGym-E2E is comprehensive and scalable, as we build an automated, agent-enhanced pipeline for transforming open-source vulnerability data into realistic evaluation environments. Currently, the benchmark consists of 920 real-world vulnerabilities across 139 different open-source projects.",
     "matched_keywords": [
       "Agent",
@@ -137,8 +86,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -148,7 +97,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
+    "published_at": "2026-06-05T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.04594v1 Announce Type: cross Abstract: LLM serving frameworks are quickly evolving with a complex software stack and a vast number of optimizations. The rapid development process can introduce silent errors where output quality silently degrades without any explicit error signals. Diagnosing silent errors is notoriously difficult due to the substantial semantic gap between the high-level symptoms and the low-level root causes. We observe that diagnosis of silent errors can be effectively framed as a differential debugging problem by leveraging the existence of semantically correct reference implementations. We propose Ekka, an automated diagnosis system that identifies root causes by systematically aligning and comparing intermediate execution states between a target and a reference framework. We constructed a benchmark of real-world silent errors from popular serving frameworks, where Ekka shows 80% pass@1 diagnosis accuracy and 88% pass@5 diagnosis accuracy, outperforming state-of-the-art systems. Ekka also diagnoses 4 new silent errors from serving frameworks, all of which have been confirmed by the developers.",
     "matched_keywords": [
       "benchmark",
@@ -159,8 +108,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -170,7 +119,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
+    "published_at": "2026-06-05T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.05158v1 Announce Type: cross Abstract: Multi-agent reasoning systems adopt a \"generate-then-transfer\" paradigm that forces end-to-end latency to scale linearly with pipeline depth. We introduce StreamMA, a multi-agent reasoning system that streams each reasoning step to downstream agents as soon as it is generated, pipelining adjacent agents and thus reducing latency. Surprisingly, this pipelining also improves effectiveness: because multi-step reasoning quality is non-uniform and early steps are more reliable than later ones, working with these reliable early steps instead of the full chain prevents error-prone late steps from misleading downstream agents. We formalize both advantages with the first closed-form joint analysis of stream, serial, and single protocols, deriving the effectiveness ordering, speedup upper bound, and cost ratio. Across eight reasoning benchmarks spanning mathematics, science, and code, two frontier LLMs (Claude Opus 4.6 and GPT-5.4), and three topologies (Chain, Tree, Graph), StreamMA outperforms both baselines (avg. +7.3 pp, max +22.4 pp on HMMT 2026; Claude Opus 4.6-high). Beyond these contributions, we discover a \"step-level scaling law\":...",
     "matched_keywords": [
       "Agent",
@@ -184,8 +133,55 @@
       "model"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CodegenBench: Can LLMs Write Efficient Code Across Architectures?",
+    "url": "https://arxiv.org/abs/2606.04023",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.04023v1 Announce Type: cross Abstract: While large language models (LLMs) have been extensively evaluated on code generation tasks for general-purpose programming and GPU-accelerated environments (e.g., PyTorch, CUDA), their capabilities in CPU-oriented high-performance computing (HPC) across diverse architectures remain underexplored. To bridge this gap, we introduce CodegenBench, a comprehensive benchmark suite designed to evaluate the generation of efficient parallel code across three distinct hardware platforms: x86_64, Sunway, and Kunpeng. Our benchmark comprises 106 standard Basic Linear Algebra Subprograms (BLAS) routines establishing a fundamental baseline, alongside 20 specialized computational kernels adapted for each of the unique supercomputing architectures (LeetSunway and LeetKunpeng). Our extensive evaluation reveals that while state-of-the-art LLMs can generate optimized code for ubiquitous architectures like x86_64, they exhibit significant performance degradation on domain-specific architectures with limited public documentation and training data, highlighting critical limitations in cross-platform generalization. Furthermore, our analysis of factors i...",
+    "matched_keywords": [
+      "benchmark",
+      "CUDA",
+      "GPU"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Provably Auditable and Safe LLM Agents from Human-Authored Ontologies",
+    "url": "https://arxiv.org/abs/2606.04903",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.04903v1 Announce Type: cross Abstract: We introduce the LLM agent architecture Agentic Redux, intended for use with nontrivial problem domains that require linear auditability. Using the typed lambda calculus, we prove that, run on appropriate domains, Agentic Redux executions are semantically guaranteed to be correct, with all decisions recorded in an append-only ledger. We present two production-grade appropriate domains, in healthcare billing compliance, and security vulnerability disclosure. Working code for Agentic Redux run on both domains is available in a supporting code repository. We also introduce Ontology-First Agent Design, a methodology for creation of agent frameworks on a problem domain, in which a human expert ontologizes the problem domain with Basic Formal Ontology, and then assigns an LLM to derive roles that agents and humans-in-the-loop can fill, in order to work the problems in the domain.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -205,8 +201,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -228,7 +224,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -251,7 +247,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -274,7 +270,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -301,7 +297,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -325,7 +321,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -348,150 +344,33 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "cyankiwi AWQ 4-bit — 26.05 update, NVFP4 + FP8 Dynamic quantization and benchmarks across Qwen3.6 4-bit quants",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1twz9ur/cyankiwi_awq_4bit_2605_update_nvfp4_fp8_dynamic",
-    "source_name": "Reddit r/LocalLLaMA",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-04T20:18:41+00:00",
-    "summary_or_excerpt": "We are happy to share cyankiwi AWQ update: better AWQ implementation, now with NVFP4 and FP8 Dynamic quantization support. We measured KL divergence against the BF16 baseline for 4-bit Qwen3.6 quants, on synthesized Qwen3.6 BF16 GPQA Diamond responses. cyankiwi AWQ release comes out lowest on both the 27B dense and the 35B-A3B MoE. Qwen3.6-27B (dense) Model Weight size KLD Lorbus/Qwen3.6-27B-int4-AutoRound 17.69 GiB 0.031682 Intel/Qwen3.6-27B-int4-AutoRound 17.69 GiB 0.032569 sakamakismile/Qwen3.6-27B-NVFP4 18.36 GiB 0.092948 rdtand/Qwen3.6-27B-PrismaSCOUT-Blackwell-NVFP4-BF16-vllm 18.79 GiB 0.040911 cyankiwi/Qwen3.6-27B-AWQ-INT4 19.04 GiB 0.020443 berkerdooo/Qwen3.6-27B-NVFP4 19.15 GiB 0.043821 ocicek/Qwen3.6-27B-NVFP4 19.15 GiB 0.092993 QuantTrio/Qwen3.6-27B-AWQ 20.35 GiB 0.034925 unsloth/Qwen3.6-27B-NVFP4 24.57 GiB 0.039140 QuantTrio/Qwen3.6-27B-AWQ-6Bit 25.79 GiB 0.028084 cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4 26.37 GiB 0.018299 cyankiwi/Qwen3.6-27B-AWQ-BF16-NVFP4 26.59 GiB 0.032549 Qwen3.6-35B-A3B (MoE) Model Weight size KLD Intel/Qwen3.6-35B-A3B-int4-mixed-AutoRound 20.02 GiB 0.032453 rdtand/Qwen3.6-35B-A3B-PrismaQuant-4.75bit-vllm 21.31 GiB 0.036303 nvidia/Qwen3.6-35B-A3B-NVFP4...",
-    "matched_keywords": [
-      "Blackwell",
-      "Intel",
-      "NVIDIA",
-      "quantization",
-      "release",
-      "vLLM"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 63,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Dreaming: Better memory for a more helpful ChatGPT",
-    "url": "https://openai.com/index/chatgpt-memory-dreaming",
+    "title": "How Endava is redesigning software delivery around AI agents",
+    "url": "https://openai.com/index/endava-frontiers",
     "source_name": "OpenAI News",
     "source_type": "rss",
     "source_level": "official_confirmed",
-    "published_at": "2026-06-04T09:00:00+00:00",
-    "summary_or_excerpt": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
+    "published_at": "2026-06-04T12:00:00+00:00",
+    "summary_or_excerpt": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
     "matched_keywords": [
+      "agents",
       "ChatGPT",
+      "Codex",
       "OpenAI"
     ],
     "tags": [
-      "model"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.14.7a1：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.7a1",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-03T17:41:00+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Add crew trained agents file support - Add native Snowflake Cortex LLM provider - Add Databricks integration guide - Add Snowflake integration guide ### Bug Fixes - Fix CLI by restoring `[project.scripts]` in crewai package for UV tool install - Resolve file input reliability issues - Fix incomplete tool result histories in Snowflake Claude - Handle stringified tool calls for Snowflake Claude - Re-arm multi-source `or_` listeners across router-driven cycles ### Performance - Improve crewai import speed by lazy-loading docling imports ### Refactoring - Split `flow.py` into DSL, definition, and runtime ## Contributors @Luzk, @alex-clawd, @devin-ai-integration[bot], @greysonlalonde, @jessemiller, @lorenzejay, @vinibrsl",
-    "matched_keywords": [
-      "agents",
-      "Claude",
-      "CrewAI",
-      "Devin"
-    ],
-    "tags": [
       "agent",
-      "model"
-    ],
-    "score": 60,
-    "release_version": "1.14.7a1",
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fix with Copilot for failing Actions now in Pro, Pro+, and Max",
-    "url": "https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-04T20:46:11+00:00",
-    "summary_or_excerpt": "When a GitHub Actions job fails, Copilot Pro, Pro+, and Max subscribers can now ask Copilot cloud agent to fix it in one click. Click the Fix with Copilot button… The post Fix with Copilot for failing Actions now in Pro, Pro+, and Max appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "GitHub"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Expanded technical preview availability for the GitHub Copilot app",
-    "url": "https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-02T17:36:00+00:00",
-    "summary_or_excerpt": "The GitHub Copilot app technical preview is now available to all existing Copilot Pro, Pro+, Business, and Enterprise customers. Download the Copilot app for Windows, macOS, or Linux to get… The post Expanded technical preview availability for the GitHub Copilot app appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
       "coding_tool",
-      "open_source"
+      "model"
     ],
-    "score": 54,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Microsoft announces Scout, an autonomous AI agent built on OpenClaw",
-    "url": "https://www.computerworld.com/article/4180103/microsoft-unveils-scout-an-autonomous-ai-agent-built-on-openclaw.html",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-02T18:19:27+00:00",
-    "summary_or_excerpt": "HN points: 84. Comments: https://news.ycombinator.com/item?id=48374079",
-    "matched_keywords": [
-      "Agent",
-      "AI Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 52,
-    "hn_score": 84,
-    "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
+    "score": 48,
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -513,8 +392,33 @@
     ],
     "score": 48,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "We built a source-available LLM reliability library (free for research / personal / internal eval) that can cut inference cost by half at matched quality, and you adopt it by changing one import [P] [R]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1twtdob/we_built_a_sourceavailable_llm_reliability",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-04T16:51:29+00:00",
+    "summary_or_excerpt": "TL;DR: Reliability techniques (methods that boost an LLM's correctness by spending extra inference, e.g., retries with feedback, ensembling, generator/critic refinement, verification passes, difficulty-aware routing) are scattered across the literature, each in its own paper-specific codebase. We unified 28 reliability techniques ( 21 communication-theoretic methods across 6 families plus 7 prior-method baselines : Self-Consistency, Self-Refine, CoVe, BoN, Weighted BoN, CISC, MoA), each measured against an uncoded single-pass baseline, under a single API, with 3 adaptive routers (SemKNN + two local ACM routers) sitting on top, then showed that routing the technique adaptively per prompt lets you slide along a quality/cost frontier. In our paper benchmark with one specific lineup, Nemotron + Devstral as the two generators and GLM-5.1 as the judge, the adaptive router delivered ~56% cost reduction at matched quality, or ~7% quality bump at matched cost, vs the best fixed method we compared against at that same lineup. One knob ( λ ) does the sliding. The qualitative pattern (adaptive beats fixed) should generalize, but absolute numbers are lineup-specific, and we haven't run the ful...",
+    "matched_keywords": [
+      "API",
+      "benchmark",
+      "GLM",
+      "inference"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -541,8 +445,8 @@
     "score": 46,
     "release_version": "python-1.43.0",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -565,33 +469,8 @@
     "score": 46,
     "release_version": "beta",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "We built a source-available LLM reliability library (free for research / personal / internal eval) that can cut inference cost by half at matched quality, and you adopt it by changing one import [P] [R]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1twtdob/we_built_a_sourceavailable_llm_reliability",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-04T16:51:29+00:00",
-    "summary_or_excerpt": "TL;DR: Reliability techniques (methods that boost an LLM's correctness by spending extra inference, e.g., retries with feedback, ensembling, generator/critic refinement, verification passes, difficulty-aware routing) are scattered across the literature, each in its own paper-specific codebase. We unified 28 reliability techniques ( 21 communication-theoretic methods across 6 families plus 7 prior-method baselines : Self-Consistency, Self-Refine, CoVe, BoN, Weighted BoN, CISC, MoA), each measured against an uncoded single-pass baseline, under a single API, with 3 adaptive routers (SemKNN + two local ACM routers) sitting on top, then showed that routing the technique adaptively per prompt lets you slide along a quality/cost frontier. In our paper benchmark with one specific lineup, Nemotron + Devstral as the two generators and GLM-5.1 as the judge, the adaptive router delivered ~56% cost reduction at matched quality, or ~7% quality bump at matched cost, vs the best fixed method we compared against at that same lineup. One knob ( λ ) does the sliding. The qualitative pattern (adaptive beats fixed) should generalize, but absolute numbers are lineup-specific, and we haven't run the ful...",
-    "matched_keywords": [
-      "API",
-      "benchmark",
-      "GLM",
-      "inference"
-    ],
-    "tags": [
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -614,7 +493,7 @@
     "score": 46,
     "release_version": "v5.10.1",
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -639,7 +518,7 @@
     "score": 46,
     "release_version": "b9481",
     "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -656,7 +535,7 @@
     "score": 44,
     "hn_score": 390,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -680,7 +559,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -703,80 +582,32 @@
     "score": 44,
     "hn_score": 96,
     "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "LangGraph langgraph==1.2.3：Changes since 1.2.2",
-    "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.3",
-    "source_name": "LangGraph",
-    "source_type": "github_release",
+    "title": "Enterprise-managed plugins in VS Code in public preview",
+    "url": "https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
     "source_level": "official_confirmed",
-    "published_at": "2026-06-01T18:56:09+00:00",
-    "summary_or_excerpt": "Changes since 1.2.2 * release(langgraph): 1.2.3 (#7945) * feat(langgraph): wire RemoteGraph.interleave to sdk-py interleave_projections (#7938) * feat(langgraph): add v3 streaming support to RemoteGraph (#7927) * feat(langgraph): name tool-dispatched subagents via lc_agent_name (#7928) * fix(langgraph): rename ProtocolEvent.eventId to event_id to match the wire field (#7942) * fix(langgraph): merge instead of overwrite in ensure_config for callbacks, tags, metadata, configurable (#7926) * fix(langgraph): [LSD-1507] Distinguish between user cancelled and other cancellations (#7920) * fix(cli): bump api bound to 0.10.0 (#7922) * feat(sdk-py): add websocket stream transports (#7830) * feat(sdk-py): add messages and tool call projections (#7823) * feat(sdk-py): add v3 streaming primitives and SSE transport (#7818)",
+    "published_at": "2026-06-05T21:01:48+00:00",
+    "summary_or_excerpt": "Last month we launched a public preview with Copilot CLI that allows enterprise administrators the ability to configure and distribute plugins to GitHub Copilot CLI users across their enterprise. VS… The post Enterprise-managed plugins in VS Code in public preview appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "Agent",
-      "API",
-      "LangGraph",
-      "release"
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
     ],
     "tags": [
-      "agent",
       "business",
+      "coding_tool",
       "open_source"
     ],
-    "score": 44,
-    "release_version": "1.2.3",
-    "first_seen_at": "2026-06-02T08:15:02.604097+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NVIDIA AI Cloud Ecosystem Expands Worldwide to Meet Global AI Compute Demand",
-    "url": "https://blogs.nvidia.com/blog/ai-cloud-ecosystem",
-    "source_name": "NVIDIA Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-01T05:00:56+00:00",
-    "summary_or_excerpt": "The NVIDIA AI Cloud ecosystem is accelerating the global buildout of AI factory infrastructure. Partners are expanding capacity to meet growing demand from enterprises, startups, nations, AI labs and developers scaling agentic AI applications. NVIDIA AI Clouds are a growing ecosystem of purpose-built clouds serving the exploding token demand behind today’s most popular AI applications. […]",
-    "matched_keywords": [
-      "agentic",
-      "NVIDIA",
-      "serving"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-06-02T08:15:02.604097+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Taiwan’s Industry Titans Turbocharge World’s AI Infrastructure Buildout With NVIDIA",
-    "url": "https://blogs.nvidia.com/blog/taiwan-ecosystem-ai-infrastructure",
-    "source_name": "NVIDIA Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-01T05:00:41+00:00",
-    "summary_or_excerpt": "Taiwan is home to more than 500 NVIDIA ecosystem partners. More than 1 million NVIDIA MGX rack components for NVIDIA Vera Rubin infrastructure come together in Taiwan, from across 25 factory sites. As Vera Rubin ramps into full production to power agentic AI factories worldwide, that ecosystem spans the full supply chain — from key […]",
-    "matched_keywords": [
-      "agentic",
-      "NVIDIA"
-    ],
-    "tags": [
-      "agent",
-      "semiconductor"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-06-02T08:15:02.604097+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "backlog",
+    "score": 43,
+    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -800,8 +631,8 @@
     "score": 42,
     "release_version": "v0.30.3",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -824,8 +655,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

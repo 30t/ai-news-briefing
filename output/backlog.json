@@ -1,22 +1,253 @@
 [
   {
-    "title": "The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary",
-    "url": "https://arxiv.org/abs/2606.00376",
+    "title": "Do More Agents Help? Controlled and Protocol-Aligned Evaluation of LLM Agent Workflows",
+    "url": "https://arxiv.org/abs/2606.05670",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.00376v1 Announce Type: new Abstract: Extended chain-of-thought reasoning can degrade performance on deterministic state-tracking tasks, not due to preference biases, but limits rooted in the information-theoretic capacity of decoder-only attention. We establish: (1) an Attention Bottleneck Theorem with a complementary achievability construction, bounding state-tracking capacity as $O(H \\cdot \\log(L/H) \\cdot \\sqrt{d_h})$; (2) a context-dependent error model yielding super-exponential accuracy decay; (3) the State-Space Jaccard metric distinguishing capability from preference failures; (4) a Deterministic Horizon $d^* \\in [19, 31]$ beyond which tool delegation becomes necessary. Across 12 models and 8 task domains (including SWE-Bench, WebArena, and SQL-Multi), tool-integrated reasoning consistently outperforms neural chain-of-thought; on the primary model suite it reaches 86-94% accuracy versus 24-42% for neural chain-of-thought. Fine-tuning on optimal-length traces yields $<$5% improvement, confirming an architectural ceiling, and high cross-model correlation ($r = 0.81$-$0.91$) indicates these failures are architectural rather than training-specific. Our results provid...",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05670v1 Announce Type: new Abstract: Does adding more agents help an LLM workflow once compared systems share the same benchmark loader, tool access, answer contract, usage accounting, and trajectory logging? We introduce BenchAgent, an evaluation framework that places single-agent, fixed multi-agent (MAS), and evolving MAS workflows under one normalized execution and logging protocol. BenchAgent evaluates these substrate-internal workflows across ten reasoning, coding, and tool-use benchmarks with GPT-4.1, and separately reports a Protocol-Aligned External (PAE) GAIA study of a runtime-generated workflow. Under SI conditions, at most one of six tested MAS exceeds the matched single-agent anchor on benchmark-balanced average accuracy: EvoAgent lies within the Wilson one-run guidance, while the remaining five trail by 2.56-11.29 points and occupy more expensive accuracy-cost trade-offs. On the PAE GAIA snapshot, a Claude-Code-style runtime workflow reaches 66.72% overall and 69.23% on Level 3, more than 20 points above the strongest non-Claude baseline, Jarvis, a fixed MAS.",
     "matched_keywords": [
-      "fine-tuning"
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT",
+      "multi-agent",
+      "workflow"
     ],
     "tags": [
+      "agent",
+      "ai_app",
+      "model",
       "open_source"
     ],
-    "score": 72,
-    "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
+    "score": 67,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agents' Last Exam",
+    "url": "https://arxiv.org/abs/2606.05405",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05405v1 Announce Type: new Abstract: Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely used benchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), a benchmark designed to evaluate AI agents on long-horizon, economically valuable, real-world tasks with verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference to O*NET / SOC 2018 (the U.S. federal occupational taxonomy). It is organized around a task taxonomy with 55 subfields grouped into 13 industry clusters covering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the average full pass rate is 2.6%. ALE is designed as a living benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as another leaderb...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "SoC"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Continual Learning Bench: Evaluating Frontier AI Systems in Real-World Stateful Environments",
+    "url": "https://arxiv.org/abs/2606.05661",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05661v1 Announce Type: new Abstract: Continual learning, the ability of AI systems to improve through sequential experience, has attracted substantial interest, but no high-quality benchmark exists to evaluate it. We introduce Continual Learning Bench (CL-Bench), the first difficult, expert-validated benchmark designed to measure whether LLM-based systems genuinely improve with experience. CL-Bench spans six diverse domains (software engineering, signal processing, disease outbreak forecasting, database querying, strategic game-playing, and demand forecasting), each validated by domain experts and designed so that tasks share a learnable latent structure (codebase layout, disease outbreak dynamics, opponent strategies) that a stateful system can discover online but a stateless one cannot. We evaluate frontier models across several agent architectures, from naive in-context learning (ICL) to dedicated memory systems, introducing a gain metric to isolate learning from prior capabilities. We find that these systems leave headroom for improved continual learning: agents frequently overfit to immediate observations or fail to reuse knowledge across instances, and dedicated m...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Tools Fail: Benchmarking Dynamic Replanning and Anomaly Recovery in LLM Agents",
+    "url": "https://arxiv.org/abs/2606.05806",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05806v1 Announce Type: new Abstract: Existing benchmarks evaluate Tool-Integrated Reasoning (TIR) in LLMs on idealized ''happy paths'', largely overlooking real-world tool failures. We introduce ToolMaze, a benchmark for dynamic path discovery and error recovery in TIR agents. To separate systematic replanning from blind trial-and-error, ToolMaze adopts a two-dimensional design: DAG-based topological complexity and a $2 \\times 2$ taxonomy of tool perturbations (explicit/implicit, transient/permanent). Evaluations show that perturbations degrade performance across nearly all models, with the sharpest drops under implicit semantic failures. Driven by systemic over-trust in corrupted outputs, Perturbation Recovery Rate (PRR) plummets by around 37\\% in these scenarios, while complex topologies trap agents in futile trial-and-error loops. Crucially, agentic fault-tolerance improves with model scale $3.66\\times$ slower than basic task execution, highlighting dynamic replanning as a distinct bottleneck unaddressed by model scaling or prompting. Data and code are available at https://github.com/Zhudongsheng75/ToolMaze.",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents",
+    "url": "https://arxiv.org/abs/2606.06284",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.06284v1 Announce Type: new Abstract: Large language model agents increasingly rely on external tools, but larger tool menus can reduce reliability and efficiency by increasing wrong-tool calls, premature actions, and token cost. Existing tool-selection methods often optimize semantic relevance, exposing tools whose names or descriptions match the user request. We argue that relevance is insufficient: a tool may be related to the task while still being unnecessary or premature at the current step. We propose Causal Minimal Tool Filtering (CMTF), a training-free method that selects tools by causal sufficiency. CMTF uses lightweight precondition-effect contracts to expose only the minimal next-step tool frontier needed to advance from the current state toward the user goal. Across multi-step tool-use tasks, we compare CMTF with all-tools exposure, keyword retrieval, state-aware filtering, and causal-path ablations, measuring task success, wrong-tool calls, premature actions, tool exposure, and token cost. In the main benchmark with 102 tasks, 100 tools, four LLM backends, and 2448 task-method-model runs, CMTF matches the strongest causal baseline in aggregate success while...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Benchmark Everything Everywhere All at Once",
+    "url": "https://arxiv.org/abs/2606.06462",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.06462v1 Announce Type: new Abstract: Benchmarks are fundamental for evaluating and advancing LLMs and MLLMs by providing standardized and explicit measures of performance. However, their construction is labor-intensive and hard to reuse, raising concerns about sustainability and scalability. Moreover, existing benchmarks often quickly reach performance saturation after their release, resulting in insufficient discrimination among state-of-the-art models. To address these challenges, we introduce Benchmark Agent, a fully autonomous agentic system designed for benchmark building. Our framework orchestrates the complete benchmark construction pipeline, from user query analysis and subtask design to data annotation and quality control. To assess Benchmark Agent, we implement it to produce 15 representative benchmarks, spanning diverse evaluation scenarios, including text understanding, multimodal understanding, and domain-specific reasoning. Extensive experiments, including human evaluation, LLM-as-a-judge assessment, and consistency checks, demonstrate Benchmark Agent can generate high-quality benchmark samples with minimal human involvement. More importantly, through cont...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Domain-Conditioned Safety in Frontier Computer-Using Agents: A 793-Episode Browser Benchmark, a Coding-Domain Cross-Reference, and a Reproducibility Audit of Recent Red-Teaming",
+    "url": "https://arxiv.org/abs/2606.05233",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05233v1 Announce Type: cross Abstract: Recent computer-using-agent (CUA) red-teaming papers report prompt-injection attack success rates (ASR) of 42-98%, but these headline numbers cluster on retired models and on the most-vulnerable model in each paper's panel. We ask whether those techniques, reproduced as hand-crafted templates, still work against current frontier CUAs. We release CUA-HandCrafted, a public benchmark of 793 episodes spanning 24 multi-step web tasks, 56 attack templates, 8 attack families, and 4 system-prompt configurations. Against Claude Sonnet 4.6 and GPT-5.4 we measure 0/140 multi-step attack success (Clopper-Pearson 95% upper bound 2.60%); a prompt ablation shows this resistance lives in the model weights. Yet it does not generalize: on a sister coding-agent benchmark (SkillBench), the same weights fall to hand-crafted skill-injection at up to 100%. We argue that the literature's high ASR is largely attributable to RL-optimized injection text rather than the attack categories, and that frontier safety hardening is domain-conditioned, specific to the heavily-targeted browser surface. Reporting techniques without releasing the optimized strings, or...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT",
+      "release",
+      "weights"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Search-Time Contamination in Deep Research Agents: Measuring Performance Inflation in Public Benchmark Evaluation",
+    "url": "https://arxiv.org/abs/2606.05241",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05241v1 Announce Type: cross Abstract: Public benchmarks enable fair and reproducible evaluation of LLM reasoning, but they become fragile for deep research agents that actively search the web during inference. Such agents may retrieve public benchmark metadata, question context, or even ground-truth answers via web search. This gives rise to Search-Time Contamination (STC), where external retrieval bypasses intended reasoning and inflates measured performance. We systematically study STC in deep research agent evaluation. We define three contamination types with increasing severity, namely Benchmark Metadata Leakage, Question-Context Leakage, and Explicit Answer Leakage, and develop detection algorithms to identify them and quantify their impact on agent performance. Evaluating modern deep research agents on six public benchmarks, we find that STC is widespread and can inflate performance by up to 4%. Our findings show that existing evaluations may overestimate true reasoning ability. We therefore advocate contamination-aware practices, including isolated sandboxes, transparent search trajectories, and controlled benchmark access.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "inference",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TensorBench: Benchmarking Coding Agents on a Compiler-Based Tensor Framework",
+    "url": "https://arxiv.org/abs/2606.05570",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05570v1 Announce Type: cross Abstract: Repository-level coding benchmarks face a trade-off between task difficulty and evaluation reliability: tasks that challenge frontier models often involve large codebases with incomplete test coverage, while human review does not scale. We introduce TensorBench, a benchmark of 199 feature-addition and refactoring tasks on an open-source compiler-based tensor framework that extends PyTorch with first-class support for dense and sparse tensors. Tasks cover new sparse formats, dense optimization passes, IR transformations, scheduler changes, runtime components, and high-level numerical operators. TensorBench grades each run by applying the agent's patch and running the framework's test suite, which includes the pre-existing randomized regression tests and any tests the agent adds. For feature-addition tasks, a pass means that the patched repository preserves the tested pre-existing behavior and satisfies the agent-added checks for the requested feature. We evaluate seven coding agents spanning three frontier model families and one open-weight model. Pass rates under this criterion range from $64.8\\%$ for the strongest agent to $22.1\\%...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Dense Contexts Are Hard Contexts: Lexical Density Limits Effective Context in LLMs",
+    "url": "https://arxiv.org/abs/2606.06203",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.06203v1 Announce Type: cross Abstract: Input length and the position of relevant information are widely cited as the primary causes of degraded LLM long-context performance. Here, we study lexical density -- the rate at which a context introduces distinct information -- as a third, largely overlooked factor that systematically reduces the effective context window of LLMs. We quantify the impact of lexical density on open-weight LLMs (9B-685B) using three \"find-the-needle\" style benchmarks with identical length (~12k tokens) and controlled needle position, but increasing density of information. We observe a sharp performance collapse in higher-density benchmarks: models that are near-perfect in sparse contexts drop below 60% retrieval score on denser ones. To rule out task-type confounds, we vary and control the density within each benchmark while keeping all other properties unchanged. Reducing density generally restores performance, especially in the high-density regimes where degradation appears. These results show that effective context capacity is a function of lexical density, with direct implications for real-world LLM systems operating on compact, information-ric...",
+    "matched_keywords": [
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -42,8 +273,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -64,8 +295,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -87,8 +318,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -109,8 +340,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -134,218 +365,29 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Meta Keeps Delaying the Release of Its New AI Model to Developers",
+    "url": "https://www.wsj.com/tech/ai/meta-keeps-delaying-the-release-of-its-new-ai-model-to-developers-f8569c8c",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-06T12:15:59+00:00",
+    "summary_or_excerpt": "HN points: 61. Comments: https://news.ycombinator.com/item?id=48424252",
+    "matched_keywords": [
+      "release"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 49,
+    "hn_score": 61,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CodegenBench: Can LLMs Write Efficient Code Across Architectures?",
-    "url": "https://arxiv.org/abs/2606.04023",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.04023v1 Announce Type: cross Abstract: While large language models (LLMs) have been extensively evaluated on code generation tasks for general-purpose programming and GPU-accelerated environments (e.g., PyTorch, CUDA), their capabilities in CPU-oriented high-performance computing (HPC) across diverse architectures remain underexplored. To bridge this gap, we introduce CodegenBench, a comprehensive benchmark suite designed to evaluate the generation of efficient parallel code across three distinct hardware platforms: x86_64, Sunway, and Kunpeng. Our benchmark comprises 106 standard Basic Linear Algebra Subprograms (BLAS) routines establishing a fundamental baseline, alongside 20 specialized computational kernels adapted for each of the unique supercomputing architectures (LeetSunway and LeetKunpeng). Our extensive evaluation reveals that while state-of-the-art LLMs can generate optimized code for ubiquitous architectures like x86_64, they exhibit significant performance degradation on domain-specific architectures with limited public documentation and training data, highlighting critical limitations in cross-platform generalization. Furthermore, our analysis of factors i...",
-    "matched_keywords": [
-      "benchmark",
-      "CUDA",
-      "GPU"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Provably Auditable and Safe LLM Agents from Human-Authored Ontologies",
-    "url": "https://arxiv.org/abs/2606.04903",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.04903v1 Announce Type: cross Abstract: We introduce the LLM agent architecture Agentic Redux, intended for use with nontrivial problem domains that require linear auditability. Using the typed lambda calculus, we prove that, run on appropriate domains, Agentic Redux executions are semantically guaranteed to be correct, with all decisions recorded in an append-only ledger. We present two production-grade appropriate domains, in healthcare billing compliance, and security vulnerability disclosure. Working code for Agentic Redux run on both domains is available in a supporting code repository. We also introduce Ontology-First Agent Design, a methodology for creation of agent frameworks on a problem domain, in which a human expert ontologizes the problem domain with Basic Formal Ontology, and then assigns an LLM to derive roles that agents and humans-in-the-loop can fill, in order to work the problems in the domain.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PersistBench: When Should Long-Term Memories Be Forgotten by LLMs?",
-    "url": "https://arxiv.org/abs/2602.01146",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.01146v2 Announce Type: replace Abstract: Conversational assistants are increasingly integrating long-term memory with large language models (LLMs). This persistence of memories, e.g., the user is vegetarian, can enhance personalization in future conversations. However, the same persistence can also introduce safety risks that have been largely overlooked. Hence, we introduce PersistBench to measure the extent of these safety risks. We identify two long-term memory-specific risks: cross-domain leakage, where LLMs inappropriately inject context from the long-term memories; and memory-induced sycophancy, where stored long-term memories insidiously reinforce user biases. We evaluate 18 frontier and open-source LLMs on our benchmark. Our results reveal a surprisingly high failure rate across these LLMs - a median failure rate of 53% on cross-domain samples and 97% on sycophancy samples. To address this, our benchmark encourages the development of more robust and safer long-term memory usage in frontier conversational systems.",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "What Benchmarks Don't Measure: The Case for Evaluating Abstention Competence in Autonomous Agents",
-    "url": "https://arxiv.org/abs/2606.02965",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.02965v1 Announce Type: new Abstract: Benchmarks for autonomous agents measure whether agents complete tasks, yet this framing is systematically blind to whether an agent should have proceeded at all. Agents trained under human-feedback objectives develop a structural tendency to proceed even when they lack the inputs, evidence, or authorization to act safely, a disposition we term compliance bias, because both the reward signal and the benchmark scoring regime treat proceeding as the correct default regardless of whether the preconditions for safe action are present. We make three contributions. We first show that compliance bias originates in reward hacking within human-feedback pipelines and is entrenched by prominent agent benchmarks, which either penalize agents for pausing or are architecturally unable to distinguish a principled pause from a silent failure. We then introduce a three-gap taxonomy of abstention-warranted scenarios, covering specification gaps where required information is absent, verification gaps where world state cannot be confirmed, and authority gaps where explicit authorization has not been given, which together provide a principled basis for c...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Inducing Reasoning Primitives from Agent Traces",
-    "url": "https://arxiv.org/abs/2606.02994",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.02994v1 Announce Type: new Abstract: ReAct-style LLM agents often rediscover the same reasoning routines across problems, yet leave those routines trapped in transient scratchpads. We introduce Reasoning Primitive Induction, a single-pass method that mines successful ReAct traces, clusters recurrent reasoning moves, and converts the most frequent moves into a compact library of typed pseudo-tools. Each pseudo-tool is specified by a natural-language docstring interpreted by an LLM at invocation time, and a standard ReAct loop composes these primitives at test time. The central result is that induced libraries outperform the very agent that generated their traces: by +44pp on RuleArena NBA (30 -> 74), +30pp on MuSR team allocation (38 -> 68), and +22pp on NatPlan meeting planning (7 -> 29). Across five comparable subtasks spanning narrative deduction, rule application, and constraint-satisfaction planning, a single fixed configuration improves over zero-shot Chain-of-Thought on every subtask, matches or surpasses expert-authored decompositions, and outperforms AWM at lower average inference cost.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DeskCraft: Benchmarking Desktop Agents on Professional Workflows and Human-in-the-Loop Collaboration",
-    "url": "https://arxiv.org/abs/2606.03103",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.03103v1 Announce Type: new Abstract: Real-world professional desktop workflows in specialized creative and engineering software unfold over long horizons and often require human-in-the-loop coordination, where agents proactively seek necessary information and users provide additional instructions, clarifications, feedback, or corrections as the task progresses. Yet existing desktop GUI benchmarks mostly reduce this setting to short, simplified tasks with all user instructions provided upfront. To address this issue, we introduce DeskCraft, a desktop GUI benchmark targeting long horizon creative and engineering workflows and proactive human-agent collaboration. DeskCraft organizes tasks into a multilevel difficulty taxonomy, with long horizon tasks requiring over 50 execution steps, and covers professional creative software across design, video, audio, and 3D creation. Furthermore, DeskCraft formalizes human-agent collaboration into an interaction protocol covering mid-turn and post-turn exchanges. Mid-turn interaction captures both agent-initiated clarification under uncertainty and user-initiated interruption during execution, while post-turn interaction accommodates u...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "What Makes Interaction Trajectories Effective for Training Terminal Agents?",
-    "url": "https://arxiv.org/abs/2606.03461",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.03461v1 Announce Type: new Abstract: Stronger code agents are commonly assumed to be superior teachers for post-training, yet this assumption remains poorly disentangled from task difficulty, harness design, and student capacity. We investigate this pedagogical link using Terminal-Lego, a scalable pipeline that transforms multi-domain real-world issues into environment-verified agentic tasks. Surprisingly, standalone performance does not dictate teaching efficacy: while Claude Opus 4.6 achieves higher scores on Terminal-Bench 2.0, students fine-tuned on trajectories from DeepSeek-V3.2, a lower-scoring agent, exhibit significantly stronger generalization. We attribute this \"pedagogical paradox\" to Environment-Grounded Supervision (EGS): trajectories that explicitly expose inspect-act-verify behaviors through harness-visible interactions allow students to internalize robust problem-solving routines rather than fragile action sequences. Scaling analysis reveals exceptional data efficiency: with only 15.3k Terminal-Lego trajectories, for example, Qwen3-32B achieves a 24.3% score on Terminal-Bench 2.0, rivaling previous SOTA performance established with over 30x the data vol...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "Claude",
-      "DeepSeek",
-      "terminal"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "BigFinanceBench: A Workflow-Grounded Benchmark for Financial-Research Agents",
-    "url": "https://arxiv.org/abs/2606.03829",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.03829v1 Announce Type: new Abstract: Financial-research answers are decision-relevant only when another analyst can audit how they were produced: which source was chosen, which period and accounting definition were used, which assumptions were made, and how the calculation was performed. Existing finance benchmarks largely evaluate isolated subskills or final answers, leaving the auditable derivation itself under-measured. We introduce BigFinanceBench, a 928-item expert-authored benchmark of open-ended financial-research tasks in which each item pairs a ground-truth reference answer with a point-weighted rubric that decomposes the derivation into independently checkable steps. BigFinanceBench is workflow-grounded in that it evaluates the full derivation rather than only the final output. Across 36,241 rubric points, the benchmark supports partial-credit evaluation and localization of failures across the analyst workflow. Evaluating ten current frontier and open-weight agents, we find substantial headroom: the best system reaches only 58.8% rubric score, final-answer accuracy is a useful but lossy proxy for derivation quality, and model capability varies non-uniformly ac...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Which Defense Closes Which Threat? Attributing OWASP-LLM-Top-10 Coverage and Its Brittleness Under Paraphrasing",
-    "url": "https://arxiv.org/abs/2606.02822",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.02822v1 Announce Type: cross Abstract: Production LLM applications stack several defense families -- refusal-phrase filters, token-budget controls, model allowlists, rate limits, tool-registry authentication -- yet existing breach-and-attack-simulation (BAS) benchmarks report a single aggregate coverage number, hiding which family closes which threat. We measure attribution. We add four OWASP-LLM-Top-10-aware agents to a 21-agent baseline scanner and target a lattice of four synthetic LLM endpoints: $L_0$ (no defenses), $L_1$ (refusal-only), $L_2$ (budget-only), and $L_3$ (full stack). $L_1$ and $L_2$ are sibling single-axis ablations, not subsets of each other; $L_3$ is their union plus tool-registry authentication and credential scrubbing. Across $N=10$ replications, the per-OWASP finding count is clean: refusal alone removes all LLM01 (jailbreak) and LLM07 (system-prompt leakage) findings; budget alone removes all LLM02 (sensitive-info disclosure) and LLM10 (unbounded consumption) findings by terminating multi-step sequences; LLM06 (excessive agency) requires the full stack. We probe brittleness under paraphrasing: with 300 Gemini-generated paraphrases ($K=5$ over a...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "Gemini"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -369,8 +411,8 @@
     ],
     "score": 48,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -392,8 +434,59 @@
     ],
     "score": 48,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Cohere's unreleased coding model (early access for localllama)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tylzy2/coheres_unreleased_coding_model_early_access_for",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-06T16:36:41+00:00",
+    "summary_or_excerpt": "Hey, Nick here from Cohere. Thanks for all the feedback on Command A+ the other week everyone. I read these threads all the time about other releases so it was fun to read one about our own :) we would like to do more of it. We actually have our first coding model we’re getting ready to release soon, and I wanted to give this community an opportunity to test it out and give feedback before we officially release it. Figured why not try something different and get you guys to help directly here? It’s a 30B model with 3B active params so it runs nicely on some local set ups. It’s on our Hugging Face for now (more platforms to come as we get the model officially launched soon). This one is small but the team is excited about its speed, we’re seeing token output tests in line with similar models in its size class. The weights are here but again this isn’t publicly launched yet (or even fully ready) so i’d encourage you to test the model with what you are trying to achieve. The goal is to build from our learnings with this release and improve the models, so there’s some room for how this gets used now to shape how we continue to develop it. Check it out and let me know how it’s working...",
+    "matched_keywords": [
+      "Continue",
+      "release",
+      "weights"
+    ],
+    "tags": [
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 47,
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.14.7a2：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.7a2",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-05T21:19:52+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Add conversational flow traces support. - Update conversational flow documentation to utilize `handle_turn`. - Surface real `finish_reason`, sampling parameters, and `response.id` in LLM events. - Type DSL triggers as route-aware decorators. - Implement chat API for conversational flows. - Make locking backend overridable in lock store. - Split flow DSL monolith into focused decorator modules. - Flatten LiteLLM cache/reasoning usage sub-counts in `_usage_to_dict`. - Build `FlowDefinition` from Flow DSL metadata. ### Documentation - Add NVIDIA Nemotron LLM guide. - Document monorepo deployments. - Update changelog and version for v1.14.7a1. ## Contributors @alex-clawd, @gvieira, @lorenzejay, @lucasgomide, @mattatcha, @vinibrsl",
+    "matched_keywords": [
+      "API",
+      "changelog",
+      "CrewAI",
+      "LiteLLM",
+      "NVIDIA"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "business",
+      "semiconductor"
+    ],
+    "score": 46,
+    "release_version": "1.14.7a2",
+    "first_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -417,8 +510,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -445,7 +538,7 @@
     "score": 46,
     "release_version": "python-1.43.0",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -469,7 +562,7 @@
     "score": 46,
     "release_version": "beta",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -493,32 +586,7 @@
     "score": 46,
     "release_version": "v5.10.1",
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9481：model : support granite multilingual embeddings R2 (ibm-granite/granite-embedding-{97,311}",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9481",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-02T16:57:07+00:00",
-    "summary_or_excerpt": "model : support granite multilingual embeddings R2 (ibm-granite/granite-embedding-{97,311}m-multilingual-r2) (#22716) * Add support for the ibm-granite/granite-embedding-{97m,311m}-multilingual-r2 embedding models: * Added a version of the gpt4o tokenizer that has a fixed regex (better handling of marks), and different token merging setting for the 97m model * Reused gemma4 tokenizer for the 311m model * granite-embedding-*-multilingual-r2 : add support SwiGLU FFN for Granite Embedding Multilingual R2 * added new GGUF key .hidden_activation (LLM_KV_HIDDEN_ACT) + writer * added a forward declaration of llm_ffn_op_type to llama-hparams.h * added llm_ffn_op in hparams * added LLM_FFN_NONE = 0 sentinel to llm_ffn_op_type (value-initialization), modern-bert: explicitly assigns LLM_FFN_GEGLU before reading GGUF (unchanged). * centralized hidden_act mapping in llama-model.cpp, added llm_ffn_op_type_from_string() helper, mirroring rope_scaling_type/llama_rope_scaling_type_from_string() * modern-bert reads the GGUF key (when present) and uses the resulting op in its FFN graph * Added granite-embedding-{97m,311m}-multilingual-r2 to the converter code * Added the hashes for the granite embed...",
-    "matched_keywords": [
-      "embeddings",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 46,
-    "release_version": "b9481",
-    "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -535,7 +603,7 @@
     "score": 44,
     "hn_score": 390,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -559,55 +627,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-04T08:34:12.572451+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Launch HN: Expanse (YC P26) – Unlock Wasted GPU Capacity",
-    "url": "https://news.ycombinator.com/item?id=48356312",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-01T13:05:02+00:00",
-    "summary_or_excerpt": "HN points: 96. Comments: https://news.ycombinator.com/item?id=48356312",
-    "matched_keywords": [
-      "GPU",
-      "launch"
-    ],
-    "tags": [
-      "business",
-      "semiconductor"
-    ],
-    "score": 44,
-    "hn_score": 96,
-    "first_seen_at": "2026-06-03T08:36:50.580259+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enterprise-managed plugins in VS Code in public preview",
-    "url": "https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-05T21:01:48+00:00",
-    "summary_or_excerpt": "Last month we launched a public preview with Copilot CLI that allows enterprise administrators the ability to configure and distribute plugins to GitHub Copilot CLI users across their enterprise. VS… The post Enterprise-managed plugins in VS Code in public preview appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -631,7 +652,7 @@
     "score": 42,
     "release_version": "v0.30.3",
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -655,7 +676,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-05T08:09:23.248304+08:00",
-    "last_seen_at": "2026-06-06T08:09:07.398168+08:00",
+    "last_seen_at": "2026-06-07T08:04:27.033604+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

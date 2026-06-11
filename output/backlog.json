@@ -20,7 +20,28 @@
     ],
     "score": 68,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Catching One in Five: LLM-as-Judge Blind Spots in Production Multi-Turn Transaction Agents",
+    "url": "https://arxiv.org/abs/2606.10315",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10315v1 Announce Type: cross Abstract: LLM-as-judge is the default instrument for evaluating conversational agents, yet its reliability is almost always reported as agreement with human ratings, not recall of real defects. We study a deployed multi-turn food-and-beverage ordering agent and measure how many genuine quality problems its built-in LLM judge catches, using exhaustive human transcript review as ground truth. Across three batches the judge surfaces well under a quarter of human-confirmed systematic problems -- 2 of 9 patterns (22%) in one batch, and its operational gate flagged zero of 100 rounds in a batch where humans confirmed 23 distinct defects and 7 new cross-cutting patterns. Our blind-spot taxonomy shows the failure is structured, not random: the judge catches turn-local issues (a fabricated statistic, a wrong language) but misses cross-turn state issues (confirm-gate lockout, cart hallucination, escalation lockout, stale referents). The mechanism: the scoring rubric exposes only three coarse axes (intent, brand-voice, personalization) and has no category for the behavioural dimensions -- state-tracking, guardrails, recovery -- where most defects clust...",
+    "matched_keywords": [
+      "Agent",
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -42,55 +63,181 @@
     ],
     "score": 65,
     "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
-    "url": "https://arxiv.org/abs/2606.09426",
+    "title": "STAGE-Claw: Automated State-based Agent Benchmarking for Realistic Scenarios",
+    "url": "https://arxiv.org/abs/2606.10394",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.09426v1 Announce Type: new Abstract: Computer-use agents (CUAs) increasingly operate in runtimes that combine visual desktop control, command-line execution, code editing, browsers, and external tools. Existing benchmarks, however, often evaluate these interfaces as separable capabilities, leaving long-horizon cross-interface orchestration under-tested. Thus, we introduce WeaveBench, a long-horizon hybrid-interface benchmark with 114 tasks across 8 real-world work domains, grounded in real user requests and publicly verifiable artifacts. Each task requires agents to combine GUI observations/actions with CLI/code operations within a single trajectory. We evaluate these tasks on a real Ubuntu desktop inside deployed CLI-agent runtimes, augmented with a minimal desktop-control plugin. We also propose a companion trajectory-aware judge that inspects deliverables, files, screenshots, logs, and action traces, while detecting shortcut behaviors such as fabricated visual evidence or hard-coded metrics. Across frontier model-runtime pairings, the best PassRate reaches only 41.2%, showing the benchmark remains far from saturated. The trajectory-aware judge further reveals that ou...",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10394v1 Announce Type: new Abstract: Large language models are increasingly used to power personal agents for everyday applications, but evaluating these agents remains a challenge. Existing benchmarks still rely on sandboxed artifacts, static task design, and coarse scoring, which hinder scalability and limit progress toward reliable personal-agent evaluation. This paper introduces STAGE-Claw, an automated framework for building and evaluating realistic personal-agent scenarios in state-based personal-computing environments. Given a task hint, STAGE-Claw automatically creates and validates a realistic benchmark task with its environment, task prompts, ground truth, and related verification programs. Agents are then evaluated in realistic operating environments, where performance is measured by the correctness of the final system state rather than only the textual response. Using STAGE-Claw, this paper creates a benchmark with 40 challenging real scenario agent tasks, evaluates 11 frontier models, and analyzes their task scores, costs, tool-call reliability, and common failure patterns. Overall, STAGE-Claw offers a scalable, state-based way to evaluate agents in realist...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "benchmark",
-      "orchestration"
+      "benchmark"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "SpatialWorld: Benchmarking Interactive Spatial Reasoning of Multimodal Agents in Real-World Tasks",
-    "url": "https://arxiv.org/abs/2606.09669",
+    "title": "Recalling Too Well: Sycophancy Evaluation and Mitigation in Memory-Augmented Models",
+    "url": "https://arxiv.org/abs/2606.10949",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.09669v1 Announce Type: new Abstract: Spatial reasoning is a foundational capability for multimodal large language models (MLLMs) to perceive and operate within the physical world. However, existing benchmarks predominantly rely on passive evaluation (e.g., static VQA) or simulator-specific pipelines, failing to assess general interactive spatial understanding. We introduce SpatialWorld, a unified benchmark designed specifically for evaluating the interactive spatial understanding of multimodal agents in complex real-world tasks. Integrating eight heterogeneous simulation backends under a shared, simulator-agnostic protocol, SpatialWorld features 760 human-annotated tasks across diverse domains (e.g., household routines, travel, social collaboration). Agents must solve tasks under vision-only partial observability, actively gathering egocentric visual evidence and expressing decisions via a unified, text-based action interface native to MLLMs. For reliable evaluation, each task includes a human-validated initial state, a reference trajectory, and a terminal-state verifier. Evaluating 15 advanced agents reveals that robust spatial task solving remains challenging: the str...",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10949v1 Announce Type: new Abstract: Persistent memory systems promise to make LLMs more helpful by storing user beliefs over time. We show they also make models less correct by systematically amplifying sycophancy, wherein models prioritize agreement with users over accuracy. We conduct the first systematic evaluation of this effect, introducing MIST: a benchmark of synthetically generated multi-turn conversations where users express plausible misconceptions in scientific, medical, and moral reasoning domains. Testing across three state-of-the-art memory systems and five model families reveals that memory amplifies sycophantic behavior across all conditions, with up to 25x higher sycophancy rates than in-context baselines. Error analyses suggest memory extraction as the primary culprit: lossy compression into discrete snippets encodes user misconceptions while discarding corrective context. Based on these results, we propose two lightweight mitigations that substantially reduce sycophancy while matching or exceeding memory systems at factual recall.",
     "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Mind the Gap: Can Frontier LLMs Pass a Standardized Office Proficiency Exam?",
+    "url": "https://arxiv.org/abs/2606.10956",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10956v1 Announce Type: new Abstract: The deployment of Large Language Model (LLM) agents for computer automation is accelerating, yet their ability to navigate complex, professional-grade productivity software is largely untested. We argue that Office automation is an ideal environment for benchmarking document-automation capability, as it requires long-horizon planning and reasoning, precise parameter configuration, and multi-application integration. To quantify this capability, we introduce an evaluation based on China's National Computer Rank Examination (NCRE), featuring 200 comprehensive practical-operation tasks across Word, Excel, and PowerPoint. Each task is scored on a 100-point rubric scale using 7,118 machine-gradable criteria, and Score Rate (SR) denotes the mean percentage of rubric points earned across these tasks. We benchmark 7 frontier LLMs and observe stark limitations: single-turn models score a maximum of 36.6%. A stronger agentic system with execution feedback, iterative repair, and broader Office automation access reaches 68.8%, but remains below the 95.5% community-reference score used as a scoring sanity check. Ultimately, our experiments demonst...",
+    "matched_keywords": [
+      "agentic",
       "agents",
+      "automation",
       "benchmark",
-      "terminal"
+      "productivity"
     ],
     "tags": [
       "agent",
+      "ai_app",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Workflow-GYM: Towards Long-Horizon Evaluation of Computer-use Agentic tasks in Real-World Professional Fields",
+    "url": "https://arxiv.org/abs/2606.11042",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.11042v1 Announce Type: new Abstract: Recent years have witnessed the rapid evolution of AI agents toward handling increasingly complex, real-world tasks. However, existing benchmarks rarely evaluate whether agents can operate graphical user interfaces to complete long-horizon, high-value professional workflows across diverse domains. Current GUI benchmarks still predominantly focus on general-purpose software, relatively simple applications, and short-horizon tasks, leaving it largely unknown whether modern agents can follow user instructions to autonomously operate domain-specific professional software and accomplish economically valuable work in an end-to-end manner. To bridge this gap, we introduce Workflow-GYM, a benchmark for long-horizon GUI tasks centered on professional domains and specialized software environments. Through extensive experiments on state-of-the-art models, we find that even the strongest models achieve only slightly above 30% success rates, highlighting that professional long-horizon GUI workflows remain highly challenging for current GUI agents. Further analysis reveals that current agents struggle to maintain long-horizon workflow consistency,...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitInject: Real-World Prompt Injection Attacks in AI-Powered CI/CD Pipelines",
+    "url": "https://arxiv.org/abs/2606.09935",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.09935v1 Announce Type: cross Abstract: AI-powered agents are increasingly embedded in continuous integration and continuous delivery/deployment (CI/CD) pipelines to autonomously review pull requests (PRs), triage issues, and maintain codebases. These agents ingest untrusted content while operating with elevated repository permissions, making them a natural target for prompt injection attacks with supply chain consequences. We present GitInject, an open-source framework for evaluating prompt injection vulnerabilities in real, live GitHub workflows, a widely deployed instance of CI/CD pipelines. Unlike prior agent security benchmarks that simulate tool calls, GitInject provisions ephemeral repositories and triggers actual workflow runs, so that sandbox constraints, credential handling, and permission boundaries behave exactly as in production. Using GitInject, we study workflow configurations across four AI providers and document eleven named attacks spanning config-file injection, credential exfiltration, judgment manipulation, and availability. We find that all tested providers are susceptible to at least one attack class in their default configuration, and that the mos...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "GitHub",
+      "repository",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
       "coding_tool",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "$\\tau$-Rec: A Verifiable Benchmark for Agentic Recommender Systems",
+    "url": "https://arxiv.org/abs/2606.10156",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10156v1 Announce Type: cross Abstract: As recommender systems transition toward agentic, multi-turn conversational interfaces, evaluation paradigms have struggled to keep pace. Current benchmarks often rely on \"LLM-as-a-judge\" evaluations, which introduce subjectivity, high costs and inconsistency. We present $\\tau$-Rec, a benchmark for agentic recommender systems that replaces subjective evaluation with verifiable rewards and a reveal-tagged elicitation (RTE) mechanism that controls how task constraints surface during dialogue. By testing agents against structured catalog predicates and employing a pass^k reliability metric, $\\tau$-Rec provides a systematic test for consistent reasoning. Our evaluation of nine configurations across five model families -- GPT-5.4, Claude Sonnet 4.6, Gemini 2.5 Flash, DeepSeek V4 Flash, Qwen3-32B and GPT-5 mini -- reveals a steep reliability cliff, where even the best model achieves only ~57% at pass^1 and ~38% at pass^4, highlighting a critical gap in current conversational agent deployment. All code and data are publicly available at https://github.com/nbharaths/tau-rec.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "Claude",
+      "DeepSeek",
+      "Gemini",
+      "GitHub",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LakeQA: An Exploratory QA Benchmark over a Million-Scale Data Lake",
+    "url": "https://arxiv.org/abs/2606.10460",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.10460v1 Announce Type: cross Abstract: Recent large language models (LLMs) have shown rapid progress in reading-based question answering (QA), where evidence is explicitly provided or can be trivially retrieved. In contrast, real-world questions are often not paired with accurate evidence documents. The useful evidence resides in massive data lakes, making search a prerequisite for answering. However, there is a lack of comprehensive benchmarks that require both searching and reasoning over large data lakes. To this end, we introduce LakeQA, a comprehensive benchmark for search-centric question answering over data lakes that jointly emphasizes searching and reasoning capabilities. LakeQA is built on a heterogeneous collection of approximately 9.5 TB of text resources from Wikipedia and open-source government data, spanning structured and unstructured data. To ensure task quality, each sample is annotated by at least one Ph.D.-level expert. Each task requires long-horizon multi-hop reasoning with implicit intermediate steps: agents need to discover the correct documents and then compose evidence across sources to produce the answer. Experimental results on seven frontier...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -117,8 +264,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -141,8 +288,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -162,8 +309,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -189,8 +336,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -209,149 +356,101 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "When Does Multi-Agent Collaboration Help? An Entropy Perspective",
-    "url": "https://arxiv.org/abs/2602.04234",
-    "source_name": "arXiv cs.AI",
+    "title": "Dedicated security review command now available in Copilot CLI",
+    "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+    "source_name": "GitHub Changelog",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.04234v6 Announce Type: cross Abstract: Multi-agent systems (MAS) have emerged as a prominent paradigm for leveraging large language models (LLMs) to tackle complex tasks. However, the mechanisms governing the effectiveness of MAS built upon publicly available LLMs, specifically the underlying rationales for their success or failure, remain largely unexplored. In this paper, we revisit MAS through the perspective of \\textit{entropy}, considering both intra- and inter-agent dynamics by investigating entropy transitions during problem-solving across various topologies, six reasoning benchmarks, and two agentic tasks. By analyzing 245 features spanning token-, agent-, and round-level entropy, we counterintuitively find that a single agent outperforms MAS in approximately 43.3\\% of cases, and that entropy dynamics are largely determined during the first round of interaction. Furthermore, we provide three key observations: 1) \\textit{Certainty Preference}: peak entropy directly harms and stable entropy directly benefits MAS correctness; 2) \\textit{Base Entropy}: base models with lower entropy during problem-solving causally drive MAS performance; and 3) \\textit{Task Awareness...",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-10T11:44:41+00:00",
+    "summary_or_excerpt": "You can now run a security review on your code changes directly from GitHub Copilot CLI. The new /security-review slash command is shipping as an experimental feature in public preview,… The post Dedicated security review command now available in Copilot CLI appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "multi-agent"
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
     ],
     "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Measuring Agents in Production",
-    "url": "https://arxiv.org/abs/2512.04123",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2512.04123v4 Announce Type: replace-cross Abstract: LLM-based agents already operate in production across many industries, yet we lack an understanding of what technical methods make deployments successful. We present the first systematic study of Measuring Agents in Production, MAP, using first-hand data from agent developers. We conducted 20 case studies via in-depth interviews and surveyed 86 deployed systems practitioners across 26 domains. We investigate why organizations build agents, how they build them, how they evaluate them, and their top development challenges. Our study finds that production agents are built using simple, controllable approaches: 68% execute at most 10 steps before human intervention, 70% rely on prompting off-the-shelf models instead of weight tuning, and 74% depend primarily on human evaluation. Reliability (consistent correct behavior over time) remains the top development challenge, which practitioners currently address through systems-level design. MAP documents the current state of production agents, providing the research community with visibility into deployment realities and underexplored research avenues.",
-    "matched_keywords": [
-      "Agent",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents",
-    "url": "https://arxiv.org/abs/2512.23128",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2512.23128v2 Announce Type: replace-cross Abstract: Web-based agents powered by large language models are increasingly used for tasks such as email management or professional networking. Their reliance on dynamic web content, however, makes them vulnerable to prompt injection attacks: adversarial instructions hidden in interface elements that persuade the agent to divert from its original task. We introduce the Task-Redirecting Agent Persuasion Benchmark (TRAP), a benchmark for studying how persuasion techniques misguide autonomous web agents on realistic tasks. Across six frontier models, agents are susceptible to prompt injection in 25% of tasks on average (13% for GPT-5 to 43% for DeepSeek-R1), with small interface or contextual changes often doubling success rates and revealing systemic, psychologically driven vulnerabilities in web-based agents. We also provide a modular social-engineering injection framework with controlled experiments on high-fidelity website clones, allowing for further benchmark expansion.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "DeepSeek",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
+      "business",
+      "coding_tool",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "backlog",
+    "score": 58,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Extracting Recurring Vulnerabilities from Black-Box LLM-Generated Software",
-    "url": "https://arxiv.org/abs/2602.04894",
-    "source_name": "arXiv cs.AI",
+    "title": "Access OpenAI models and Codex through your Oracle cloud commitment",
+    "url": "https://openai.com/index/openai-on-oracle-cloud",
+    "source_name": "OpenAI News",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.04894v4 Announce Type: replace-cross Abstract: LLMs are increasingly used for code generation, but their outputs often follow recurring templates that can induce predictable vulnerabilities. We study vulnerability persistence in LLM-generated software and introduce Feature--Security Table (FSTab) with two components. First, FSTab enables a black-box attack that predicts likely backend vulnerabilities from observable frontend features and knowledge of the source LLM, without access to the backend or source code. Second, FSTab provides a model-centric evaluation that quantifies how consistently a model reproduces the same vulnerabilities across programs, semantics-preserving rephrasings, and application domains. We evaluate FSTab on state-of-the-art code LLMs, including GPT-5.2, Claude-4.5 Opus, and Gemini-3 Pro, across diverse application domains. Our results show strong cross-domain transfer: even when the target domain is excluded from training, FSTab achieves up to 94% attack success and 93% vulnerability coverage on Internal Tools (Claude-4.5 Opus). These findings expose an underexplored attack surface in LLM-generated software and highlight the security risks of cod...",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-10T20:00:00+00:00",
+    "summary_or_excerpt": "Access OpenAI models and Codex through Oracle Cloud, using existing commitments to build and deploy AI with enterprise security and governance.",
     "matched_keywords": [
-      "Claude",
-      "Gemini",
-      "GPT"
+      "Codex",
+      "OpenAI"
     ],
     "tags": [
+      "coding_tool",
       "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "backlog",
+    "score": 46,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "EvoClaw: Evaluating AI Agents on Continuous Software Evolution",
-    "url": "https://arxiv.org/abs/2603.13428",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.13428v2 Announce Type: replace-cross Abstract: With AI agents increasingly deployed as long-running systems, it becomes essential to autonomously construct and continuously evolve customized software to enable interaction within dynamic environments. Yet, existing benchmarks evaluate agents on isolated, one-off coding tasks, neglecting the temporal dependencies and technical debt inherent in real-world software evolution. To bridge this gap, we introduce DeepCommit, an agentic pipeline that reconstructs verifiable Milestone DAGs from noisy commit logs, where milestones are defined as functionally cohesive development goals. These executable sequences enable EvoClaw, a novel benchmark that requires agents to sustain system integrity and limit error accumulation, dimensions of long-term software evolution largely missing from current benchmarks. Our evaluation of 12 frontier models across 4 agent frameworks reveals a critical vulnerability: overall performance scores drop significantly from >80% on isolated tasks to at most 38% in continuous settings, exposing agents' profound struggle with long-term maintenance and error propagation.",
+    "title": "CrewAI 1.14.7a4：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.7a4",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-09T19:58:45+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Migrate @listen/@router runtime to read from FlowDefinition - Add pluggable default backends for memory, knowledge, rag, and flow ### Documentation - Update changelog and version for v1.14.7a3 ## Contributors @greysonlalonde, @mattatcha, @vinibrsl",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
+      "changelog",
+      "CrewAI",
+      "RAG"
     ],
     "tags": [
       "agent",
+      "business",
+      "rag_data"
+    ],
+    "score": 46,
+    "release_version": "1.14.7a4",
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Pyrecall open source tool for detecting catastrophic forgetting during LLM fine-tuning[P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1u2hjye/pyrecall_open_source_tool_for_detecting",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-10T22:49:52+00:00",
+    "summary_or_excerpt": "Surprised there's no real tooling for this given how much research exists on continual learning. Built pyrecall to fill the gap. Snapshots skill scores before/after fine-tuning, flags regressions, rolls back LoRA adapters by name. Fully local, no external APIs. v0.1.0, MIT, pip install pyrecall Curious if anyone has thoughts on the benchmark design that's the part I'm least confident about. https://github.com/Arths17/Pyrecall submitted by /u/Level_Frosting_7950 [link] [comments]",
+    "matched_keywords": [
+      "benchmark",
+      "fine-tuning",
+      "GitHub",
+      "open source"
+    ],
+    "tags": [
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Syll: Open-Source Personal Automation with Cross-Surface Execution",
-    "url": "https://arxiv.org/abs/2606.07594",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.07594v1 Announce Type: new Abstract: Personal AI agents must increasingly operate across APIs, shells, web surfaces, and desktop GUIs, yet many systems remain tuned to a single interface and offer limited support for user teaching and auditability. We present Syll, an open-source, self-hosted multimodal agent harness that unifies MCP/API tools, CLI execution, and visual GUI control in a modular runtime, enabling agents to coordinate computer use across heterogeneous interfaces while streamlining how users and agents exchange information. At the core of Syll is a bidirectional user-agent interaction layer: users teach procedures through direct demonstration, which Syll compiles into reusable skills; agent execution is translated back into multimodal evidence -- logs, keyframes, and approval checkpoints -- for inspection and control. Syll further externalizes memory, skills, routines, and governance as editable local artifacts, supporting straightforward inspection, extension, and downstream development. Our implementation has been validated on production desktop applications including Adobe Photoshop, Adobe Audition, Stardew Valley, macOS Finder and others. We report mec...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "API",
-      "automation",
-      "computer use",
-      "MCP"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "score": 46,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -372,7 +471,28 @@
     ],
     "score": 46,
     "first_seen_at": "2026-06-10T08:16:42.767523+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SenseNova U1 dropped an infographic-specific finetune",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1u25dkn/sensenova_u1_dropped_an_infographicspecific",
+    "source_name": "Reddit r/LocalLLaMA",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-10T15:25:34+00:00",
+    "summary_or_excerpt": "it's the same U1-8B-MoT base with an extended MT (multi-task) training phase focused on structured visual output. the benchmark jumps are significant: IGenBench I-ACC (infographic accuracy) : 4.2👉17.0 (4x) Chart Understanding: 51.3👉69.5Text Rendering: 39.8👉46.6Overall Aesthetic: 53.8👉53.3 Repo: https://github.com/OpenSenseNova/SenseNova-U1github (infographic model docs): https://github.com/OpenSenseNova/SenseNova-U1/blob/main/docs/u1\\_infographic\\_model.md submitted by /u/Matakotight [link] [comments]",
+    "matched_keywords": [
+      "benchmark",
+      "GitHub"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-06-11T08:20:03.509857+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -400,7 +520,7 @@
     "score": 41,
     "release_version": "b9564",
     "first_seen_at": "2026-06-09T08:07:00.052558+08:00",
-    "last_seen_at": "2026-06-10T08:16:42.767523+08:00",
+    "last_seen_at": "2026-06-11T08:20:03.509857+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

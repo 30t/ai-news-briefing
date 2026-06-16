@@ -1,64 +1,162 @@
 [
   {
-    "title": "Brick: Spatial Capability Routing for the Mixture-of-Models (MoM) Paradigm",
-    "url": "https://arxiv.org/abs/2606.13241",
-    "source_name": "arXiv cs.AI",
+    "title": "Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents",
+    "url": "https://arxiv.org/abs/2606.13995",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.13241v1 Announce Type: new Abstract: Defining query difficulty is one of the hardest problems in deployment engineering. Existing LLM routers rely on surface features such as domain labels, keywords, and token count, ignoring the within-domain variance that actually determines model success. Frontier models cost ten to one hundred times more than local open-weight models, so at production scale even small per-request savings become a direct cloud-bill lever. We present Brick, a multimodal router that scores each model on six capability dimensions, combines this with a per-query difficulty estimate, and dispatches via a cost-penalized geometric rule. A continuous preference knob lets operators slide between max-quality and max-saving profiles at deploy time. On a benchmark of 5,504 queries, Brick at max-quality reaches 76.98% accuracy, beating the best single model (75.02%) and all tested routers. At a neutral cost-quality profile, Brick achieves 74.11% accuracy at 4.71x lower cost than always using the strongest model. At min-cost, it cuts cost 22.15x with 11.85 points accuracy loss. Median latency drops from 51.2s to 22.8s.",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13995v1 Announce Type: new Abstract: AI coding agents have rapidly transformed software engineering, powering widely used interactive coding assistants. Despite their interactive real-world use, existing benchmarks evaluate them as fully-autonomous systems. In this work, we introduce Dialogue SWE-Bench, an automatic benchmark dataset for evaluating the ability of coding agents to resolve real-world software engineering problems through dialogue with a user. We design a novel, persona-grounded user simulator to support our task evaluation, and augment our task evaluation with automatic evaluations of dialogue quality. We also propose a new schema-guided agent, aimed at improving the dialogue capabilities of off-the-shelf coding agents, which improves over strong baselines by 3-14%. Our results indicate that better coding models do not always correspond to better dialogue models, suggesting that dialogue capability is a distinct and currently understudied dimension of coding agent performance.",
     "matched_keywords": [
-      "benchmark"
+      "Agent",
+      "agents",
+      "benchmark",
+      "dataset",
+      "software engineering"
     ],
     "tags": [
+      "agent",
+      "coding_tool",
       "open_source"
     ],
-    "score": 65,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 67,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "One Polluted Page Is Enough: Evaluating Web Content Pollution in Generative Recommenders",
-    "url": "https://arxiv.org/abs/2606.13610",
+    "title": "When the Tool Decides: LLM Agents Defer Blindly to Graph Neural Network Tools, and Stronger Backbones Defer More",
+    "url": "https://arxiv.org/abs/2606.14476",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.13610v1 Announce Type: cross Abstract: Search-augmented LLMs increasingly mediate everyday consumer recommendations by retrieving live web content. This creates a new risk: generative recommenders may consume polluted web content, such as fake reviews and promotional pages crafted to mislead recommendations. We ask: to what extent do search-augmented LLMs become unwitting promoters of fake products when consuming polluted retrieval results? To answer this, we introduce FORGE (Fake Online Recommendations in Generative Environments), a benchmark for measuring fake-product promotion under controlled web-content pollution. Given an upstream search result, FORGE locally rewrites real products in retrieved web pages into fake ones to simulate web-content pollution, and measures how often the LLM recommends the fake product. FORGE covers 225 real-world products across 15 categories and 5 consumer scenarios. Across 12 commercial and open-weights LLMs, all models are vulnerable: a single polluted page yields fooled rates of up to 27%, while the full top-3 replacement raises this to 73.8%. Vulnerability varies substantially across categories, increasing when models lack stable pr...",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14476v1 Announce Type: new Abstract: A growing line of work equips large language model (LLM) agents with graph neural networks (GNNs) as callable tools, assuming the agent exercises judgment over when and how much to rely on such a tool. We test this directly. We expose a frozen GNN to a ReAct-style LLM agent as an explicit tool and measure, on node classification over a text-attributed graph (ogbn-arxiv, replicated on WikiCS), whether the agent uses the tool or merely obeys it. We find the agent does not exercise judgment: its predictions agree with the raw GNN's 97.6-99.2% of the time (5 seeds), collapsing into a GNN parrot that adopts the tool's output wholesale and bypasses its own reasoning. Sweeping backbone capability (Qwen2.5 0.5B-7B), the deference is not a weak-model artifact: among models able to invoke the tool, agreement rises with capability (0.60 to 0.98 from 1.5B to 7B). Crucially, the cost of deference does not shrink as capability grows and grows where alternatives emerge: a per-node oracle over the available actions beats the parrot by 0.09-0.18 at 3B and 0.12-0.22 at 7B, roughly doubling at high homophily, because the parrot is pinned to the frozen...",
     "matched_keywords": [
-      "benchmark",
-      "retrieval",
-      "weights"
+      "Agent",
+      "agents"
     ],
     "tags": [
-      "open_source",
-      "rag_data"
+      "agent"
     ],
-    "score": 65,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 64,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Anthropic cuts off Fable 5 and Mythos 5 access following government order",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-national-security",
-    "source_name": "The Verge AI",
+    "title": "SEVRA-BENCH: Social Engineering of Vulnerabilities in Review Agents",
+    "url": "https://arxiv.org/abs/2606.13757",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T12:55:49+00:00",
-    "summary_or_excerpt": "On Friday evening, the government ordered Anthropic to block access to Fable 5 and Mythos 5 for all foreign nations, both inside and outside the US, due to national security concerns. That order included employees of Anthropic. To meet those demands, the company has completely cut off access to the models for all customers. In […]",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13757v1 Announce Type: cross Abstract: Large language model (LLM) reviewers are increasingly used in pull-request (PR) workflows, where their approvals help decide which code is merged into a repository. This raises a question that benchmarks for static vulnerability detection or code generation do not address: can an automated reviewer reject a malicious contribution when the attacker controls both the code change and the accompanying PR text? We introduce SEVRA-BENCH (Social Engineering of Vulnerabilities in Review Agents), a benchmark that measures how often an automated reviewer approves such adversarial pull requests. Each malicious PR in SEVRA-BENCH is built from a real project commit that previously fixed a vulnerability listed in the Common Vulnerabilities and Exposures (CVE) database. We automatically invert that fix to restore the original vulnerable code and submit it as a pull request wrapped in one of 15 social-engineering framings, which vary the claims made, the supporting evidence, the urgency conveyed, signals of prior approval, and appeals to authority. SEVRA-BENCH contains 1,062 malicious PRs drawn from Common Vulnerabilities and Exposures (CVE)-linke...",
     "matched_keywords": [
-      "Anthropic"
+      "agents",
+      "benchmark",
+      "pull request",
+      "repository"
     ],
     "tags": [
-      "model"
+      "agent",
+      "coding_tool",
+      "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Same-Origin Policy for Agentic Browsers",
+    "url": "https://arxiv.org/abs/2606.14027",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14027v1 Announce Type: cross Abstract: Agentic browsers integrate autonomous AI agents into web browsers, enabling users to accomplish web tasks through natural-language instructions. The same-origin policy (SOP) is a fundamental browser security mechanism that prevents unauthorized automated cross-origin data flows induced by scripts. However, whether SOP remains effective in agentic browsers is an open question that has not been systematically studied. In this work, we bridge this gap. We first observe that an agentic browser can itself serve as an automated channel for cross-origin data flows, potentially leading to SOP violations. To investigate this phenomenon, we construct SOPBench, a benchmark for evaluating SOP violations in agentic browsers. Our evaluation shows that existing agentic browsers frequently violate SOP, both in benign settings and under attacks. To address this problem, we propose SOPGuard, an SOP enforcement mechanism tailored to agentic browsers. We implement SOPGuard in BrowserOS, an open-source agentic browser. Extensive evaluations demonstrate that SOPGuard effectively enforces SOP while preserving utility and incurring only a small runtime ov...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AgentCyberRange: Benchmarking Frontier AI Systems in Realistic Cyber Ranges",
+    "url": "https://arxiv.org/abs/2606.14295",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14295v1 Announce Type: cross Abstract: Frontier AI systems are increasingly capable of cybersecurity tasks, including codebase inspection, vulnerability detection, and exploitation. However, evaluating their offensive capabilities remains constrained by limited access to open, reproducible, multi-host cyber ranges. Existing public benchmarks capture isolated skills such as CTF solving, vulnerability reproduction, and exploit generation, but often abstract away realistic intrusion workflows: discovering exposed services, gaining a foothold, collecting internal information, and expanding compromise across hosts. This gap makes it difficult to observe emerging risks early, because frontier AI systems are rarely evaluated under realistic attack conditions. We introduce AgentCyberRange, the first open, multi-range infrastructure for measuring autonomous cyber attack capability in realistic cyber ranges. It combines 110 vulnerabilities across 15 real web applications and 8 enterprise-like cyber ranges with 156 internal hosts, plus Cage, a toolchain for execution, orchestration, result collection, and verification. The benchmark covers two core stages: web exploitation, where...",
+    "matched_keywords": [
+      "benchmark",
+      "orchestration"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime",
+    "url": "https://arxiv.org/abs/2606.14589",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14589v1 Announce Type: cross Abstract: LLM agent systems increasingly run as long-lived autonomous runtimes: scheduling jobs, calling tools, maintaining memory, and pushing results to humans. We present a longitudinal study of silent failures in one such system: a personal-assistant agent runtime in continuous production since March 2026, with roughly 40 scheduled jobs, 8 LLM providers, a tool-governance proxy, and a knowledge-base memory plane, defended by 4,286 unit tests and 827 governance checks. Over eight weeks we documented 22 incidents with full root-cause postmortems, in which one meta-pattern -- a failure whose error signal never reaches a human in actionable form -- manifested at least 28 times. We derive a five-class, mechanism-oriented taxonomy: (A) environment and platform quirks, (B) design-assumption mismatches, (C) error swallowing and dilution, (D) chained hallucination and fabrication, (E) operational omission and forensic blind spots. Class D is unique to LLM systems and the most dangerous: the system does not merely fail to report an error -- the LLM transforms it into fluent, plausible narrative delivered to the user. We term this fail-plausible: g...",
+    "matched_keywords": [
+      "Agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Verbatim Chunks Beat Extracted Artifacts: A Controlled Ablation of Memory Representations for Long LLM Conversations",
+    "url": "https://arxiv.org/abs/2601.00821",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2601.00821v3 Announce Type: replace Abstract: A growing class of conversational-memory systems compresses dialogue history into structured artifacts -- extracted facts, decisions, or events -- on the premise that distilled structure retrieves better than raw text. We test this premise with a controlled ablation: within one fixed retrieval-rerank-reasoning pipeline, we swap only the stored representation -- LLM-extracted typed artifacts versus verbatim conversation chunks -- holding the model, retriever, reranker, and judge constant. Verbatim chunks win by 15.9 points on LoCoMo (43.9% vs. 28.0%) and 22.0 points on LongMemEval-S (67.4% vs. 45.4%); a 1-hop semantic graph does not recover the gap, and five confound controls reproduce the effect. The mechanism is lossy distillation: extraction discards verbatim detail that chunks retain for free, and the extracted-artifact pipeline never beats naive RAG in overall accuracy. Concurrent positive results with near-verbatim, provenance-preserving units fit the same account: retrieval accuracy tracks how far the representation departs from the source. For the extraction designs we test, structured memory should augment verbatim text r...",
+    "matched_keywords": [
+      "RAG",
+      "reranker",
+      "retrieval"
+    ],
+    "tags": [
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -74,164 +172,65 @@
     "tags": [],
     "score": 64,
     "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Claude Fable 5 因美国政府指令被暂停访问",
-    "url": "https://www.bestblogs.dev/en/status/2065597942602531163?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T00:51:41+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 依据美国政府出口管制指令，暂停所有用户对 Claude Fable 5 的访问权限，理由涉及国家安全。 📝 Summary ClaudeDevs 宣布，由于美国政府指令，所有用户对 Claude Fable 5 的访问已被暂停。新会话将默认使用 Opus 4.8 或用户已选模型，现有 Fable 5 会话将报错终止。AnthropicAI 引用的推文解释称，该指令针对的是外国国民（包括 Anthropic 的外籍员工）对 Fable 5 和 Mythos 5 的出口管制。Anthropic 认为这是一场误会，并正在努力恢复访问权限。 📊 Article Meta AI Screening： 90 Source： ClaudeDevs(@ClaudeDevs) Author： ClaudeDevs Category： 人工智能 Language： 英文 Read Time： 3 min Word Count： 544 Tags： Claude Fable 5 , Anthropic , 美国政府指令 , 出口管制 , AI 监管 Read Tweet",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "美国政府要求 Anthropic 暂停外国公民访问 Fable 5 和 Mythos 5",
-    "url": "https://www.bestblogs.dev/en/status/2065597531644743999?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T00:50:03+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 宣布，由于美国政府以国家安全为由发布出口管制指令，必须立即为所有客户禁用 Fable 5 和 Mythos 5，该指令影响包括其外籍员工在内的所有外国公民。 📝 Summary Anthropic 官方账号发布重大消息：美国政府依据国家安全权限，发布出口管制指令，要求暂停所有外国公民（无论身处美国境内还是境外，包括 Anthropic 的外籍员工）对 Fable 5 和 Mythos 5 的访问。为遵守规定，Anthropic 必须立即为所有客户禁用这些模型。其他 Claude 模型的访问不受影响。Anthropic 对此表示歉意，并认为这是一场误会，正在努力尽快恢复访问。声明中附有完整公告的链接。 📊 Article Meta AI Screening： 91 Featured： Yes Source： Anthropic(@AnthropicAI) Author： Anthropic Category： 人工智能 Language： 英文 Read Time： 3 min Word Count： 634 Tags： AI 监管 , Anthropic , 出口管制 , 国家安全 , Fable 5 Read Tweet",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EpiBench: Verifiable Evaluation of AI Agents on Epigenomics Analysis",
-    "url": "https://arxiv.org/abs/2606.13602",
+    "title": "Did You Forget What I Asked? Prospective Memory Failures in Large Language Models",
+    "url": "https://arxiv.org/abs/2603.23530",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.13602v1 Announce Type: new Abstract: We introduce EpiBench, a verifiable benchmark for short-horizon epigenomics analysis. EpiBench evaluates whether agents can make well-defined analysis decisions from realistic workflow states and return deterministically gradable answers. The benchmark includes 106 evaluations across CUT\\&Tag/CUT\\&RUN, ATAC-seq, ChIP-seq, and DNA methylation workflows. Across 5,088 valid trajectories from 16 model-harness pairs, no system passed a majority of attempts: GPT-5.5 / Pi led at 45.0\\% (143/318 attempts; 95\\% confidence interval (CI), 36.3--53.7), followed by GPT-5.5 / OpenAI Codex at 39.9\\% (127/318 attempts; 95\\% CI, 31.6--48.3). Claude Opus 4.8 Max / Pi and GPT-5.4 / Pi each passed 39.0\\% (124/318 attempts; 95\\% CI, 30.2--47.8 and 31.0--47.0, respectively). Performance varies across assay types, and many failed runs still contain parts of the correct answer. Agents often found the right files and computed useful intermediate results, but failed when the task required deeper, assay-specific scientific judgment.",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2603.23530v2 Announce Type: replace-cross Abstract: Large language models often fail to satisfy formatting instructions when they must simultaneously perform demanding tasks. We study this behaviour through a prospective memory inspired lens from cognitive psychology, using a controlled paradigm that combines verifiable formatting constraints with benchmark tasks of increasing complexity. Across three model families and over 8,000 prompts, compliance drops by 2-21% under concurrent task load. Vulnerability is highly type-dependent: terminal constraints (requiring action at the response boundary) degrade most, with drops up to 50%, while avoidance constraints remain comparatively robust. A salience-enhanced format (explicit instruction framing plus a trailing reminder) recovers much of the lost compliance, restoring performance to 90-100% in many settings. Interference is bidirectional: formatting constraints can also reduce task accuracy, with one model's GSM8K accuracy dropping from 93% to 27%. In additional stacking experiments, joint compliance declines sharply as constraints accumulate. All results use deterministic programmatic checkers without an LLM-as-judge component...",
     "matched_keywords": [
-      "agents",
       "benchmark",
-      "Claude",
-      "Codex",
-      "GPT",
-      "OpenAI",
-      "workflow"
+      "terminal"
     ],
     "tags": [
-      "agent",
-      "ai_app",
       "coding_tool",
-      "model",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 62,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "DSAEval: Evaluating Data Science Agents on a Wide Range of Real-World Data Science Problems",
-    "url": "https://arxiv.org/abs/2601.13591",
+    "title": "StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance",
+    "url": "https://arxiv.org/abs/2606.14571",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.13591v2 Announce Type: replace Abstract: Recent LLM-based data agents aim to automate data science tasks ranging from data analysis to deep learning. However, the open-ended nature of real-world data science problems, which often span multiple taxonomies and lack standard answers, poses a significant challenge for evaluation. To address this, we introduce DSAEval, a benchmark comprising 641 real-world data science problems grounded in 285 diverse datasets, covering both structured and unstructured data (e.g., image and text). DSAEval incorporates three distinctive features: (1) Multimodal Environment Perception, which enables agents to interpret observations from multiple modalities, including text and vision; (2) Multi-Query Interactions, which mirror the iterative and cumulative nature of real-world data science projects; and (3) Multi-Dimensional Evaluation, which provides a holistic assessment across reasoning, code, and results. We systematically evaluate 13 recent advanced agentic LLMs using DSAEval. Our results show that Claude-Sonnet-4.5 achieves the strongest overall performance, MiMo-V2-Pro and GPT-5.2 lead in duration and step efficiency, respectively, and Mi...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "Claude",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agents' Last Exam",
-    "url": "https://arxiv.org/abs/2606.05405",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.05405v2 Announce Type: replace Abstract: Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely used benchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), a benchmark designed to evaluate AI agents on long horizon, economically valuable, real world tasks with verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference to O*NET / SOC 2018 (the U.S. federal occupational taxonomy). It is organized around a task taxonomy with 55 sub fields grouped into 13 industry clusters covering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the average full pass rate is below 1%. ALE is designed as a living benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as anothe...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "SoC"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope",
-    "url": "https://arxiv.org/abs/2606.07489",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.07489v2 Announce Type: replace Abstract: Frontier AI systems are bridging the gap between intelligence and utility by shifting from conversational assistants to autonomous agents that execute tasks end to end. Using production data from Perplexity's Search and Computer products, we study this transition by examining how AI agents accelerate and reshape knowledge work. Three key empirical findings emerge. First, using sessions with near-identical initial query pairs as natural experiments for the same underlying task attempted with both products, Computer performs 26 minutes of autonomous work per user session, versus 33 seconds for Search. Computer automates task decomposition and execution that Search users might otherwise manually orchestrate and implement. As a result, Computer shifts follow-up query distribution toward higher-order work such as verification and extension. Autonomy also increases execution quality, with per-query dissatisfaction rates 55% lower on Computer than on Search. Second, due to its autonomy advantage, Computer reduces completion time from 269 to 36 minutes on matched tasks, lowering estimated time and cost by 87% and 94%, respectively, compa...",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-13T08:22:37.007849+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can AI Agents Synthesize Scientific Conclusions?",
-    "url": "https://arxiv.org/abs/2606.11337",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.11337v1 Announce Type: new Abstract: Scientific AI agents increasingly retrieve evidence, reason across sources, and synthesize conclusions used in consequential decisions. Yet, their ability to do so in high-stakes domains such as health remains unclear. We introduce SciConBench, a large-scale live benchmark of 9.11K questions and expert-written conclusions from systematic reviews to evaluate open-domain scientific conclusion synthesis. The benchmark draws on an expert-validated automated evaluation pipeline that decomposes conclusions into atomic facts and measures correctness and comprehensiveness via factual precision and recall. To mitigate data leakage, we further introduce SciConHarness, a clean-room evaluation harness that equips agents with controlled web interaction to ensure valid measurement. Evaluating 8 frontier models and deep research agents, we find that factual quality remains low: under clean-room settings, the best agent achieves only a factual F1 of 0.337. Our clean-room setting consistently reduces performance relative to unconstrained evaluation, suggesting that leakage inflates estimates of models' true synthesis capabilities. Finally, we audit c...",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14571v1 Announce Type: new Abstract: A central role of personal-agent memory is to turn stored information and prior interactions into future-oriented assistance. In daily use, useful cues come from what the agent observes and how the user interacts with the agent, and the agent must carry them forward from the current request to similar future tasks. Existing memory benchmarks usually test dialogue recall or task improvement in isolation, leaving the trajectory from streaming observations to later assistance largely untested. We introduce StreamMemBench, a streaming benchmark that constructs a two-step task sequence around each evidence anchor from EgoLife egocentric streams. The initial task tests evidence use, while the follow-up task tests whether feedback and interaction experience are reused. Four metrics diagnose evidence recall, initial evidence use, feedback incorporation, and follow-up reuse. Experiments with eight memory systems across two backbones show that current systems often fail to use observed evidence or turn feedback into reliable follow-up behavior, even when evidence is stored or feedback is incorporated locally. StreamMemBench is publicly availab...",
     "matched_keywords": [
       "Agent",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Hidden in Plain Sight: Benchmarking Agent Safety Against Decomposition Attacks with DECOMPBENCH",
+    "url": "https://arxiv.org/abs/2606.13994",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13994v1 Announce Type: cross Abstract: LLM-based Agents are becoming increasingly capable and widely deployed, creating growing incentives for adversarial misuse in the real-world. A key emerging threat is Decomposition Attacks \\cite{glukhov2024breach, jones2024adversaries} in which a harmful task is broken into simpler, benign subtasks that evade safety mechanisms when executed separately but cumulatively fulfill the malicious intent. Although recent benchmarks assess agent safety in multi-turn and multi-tool-use settings, they do not explicitly capture this form of decompositional misuse and may not represent realistic adversarial execution flows. To this end, we introduce DeCompBench, a benchmark designed specifically to evaluate agentic safety under decomposition attacks. DeCompBench is created with a decomposition-by-design principle using a graphical framework and enables harmful task decomposition into individually benign and executable subtasks with realistic workflows. Our experiments using a custom decomposer show that state-of-the-art agents exhibit high refusal rates on monolithic harmful tasks, but significantly lower refusal rates on their decomposed varia...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
       "agents",
       "benchmark"
     ],
@@ -239,161 +238,123 @@
       "agent",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-12T08:24:00.146221+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Layer-Isolated Evaluation: Gating the Deterministic Scaffold of a Production LLM Agent with a No-LLM, Regression-Locked Test Harness",
-    "url": "https://arxiv.org/abs/2606.11686",
-    "source_name": "arXiv cs.AI",
+    "title": "CacheRL:Multi-Turn Tool-Calling Agents via Cached Rollouts and Hybrid Reward",
+    "url": "https://arxiv.org/abs/2606.14179",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.11686v1 Announce Type: cross Abstract: End-to-end task-success is the dominant way to evaluate LLM agents, but one aggregate number tells you that an agent regressed, not where. We present layer-isolated evaluation: a deployed ordering agent is decomposed into a fixed taxonomy of layers (ontology, intent, routing, decomposition, escalation, safety, memory, and cross-cutting envelope/defense), each exercised by its own assertion slice in a deterministic, no-LLM \"pure\" mode. The pure suite (238 cases across 23 slices; 225 run in 2.39 s, ~10 ms/case) runs in CI on every change against a locked per-slice baseline. We validate by controlled regression injection, degrading one layer at a time across seven non-safety layers. The effect we did not design in is masking: the aggregate pass-rate barely moves (-1.7 to -5.9 pp for six local regressions), while the matching slice craters (-25 to -91 pp). A layer's slice reacting to its own fault is partly by construction; the measured results are (i) the aggregate masking and (ii) that damage stays off the other slices: the injected layer's slice is the single worst-hit in 5 of 7 cases and top-3 in 7 of 7 (mean rank 1.29 of 19). Loca...",
-    "matched_keywords": [
-      "Agent",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-12T08:24:00.146221+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
-    "url": "https://arxiv.org/abs/2606.09426",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.09426v2 Announce Type: replace Abstract: Computer-use agents (CUAs) increasingly operate in runtimes that combine visual desktop control, command-line execution, code editing, browsers, and external tools. Existing benchmarks, however, often evaluate these interfaces as separable capabilities, leaving long-horizon cross-interface orchestration under-tested. Thus, we introduce WeaveBench, a long-horizon hybrid-interface benchmark with 114 tasks across 8 real-world work domains, grounded in real user requests and publicly verifiable artifacts. Each task requires agents to combine GUI observations/actions with CLI/code operations within a single trajectory. We evaluate these tasks on a real Ubuntu desktop inside deployed CLI-agent runtimes, augmented with a minimal desktop-control plugin. We also propose a companion trajectory-aware judge that inspects deliverables, files, screenshots, logs, and action traces, while detecting shortcut behaviors such as fabricated visual evidence or hard-coded metrics. Across frontier model-runtime pairings, the best PassRate reaches only 41.2%, showing the benchmark remains far from saturated. The trajectory-aware judge further reveals tha...",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14179v1 Announce Type: new Abstract: We present CacheRL, a system for training small agent foundation models that achieves 92 percent process accuracy on multi-step tool-calling tasks, approaching GPT-5's 94 percent while requiring 100 times less compute. Our approach addresses three challenges in practical agent training: transferring tool-calling knowledge from large models at scale, enabling reinforcement learning without costly live tool execution, and learning robustly from noisy cached environments. CacheRL introduces three key innovations. First, a hybrid thinking trajectory pipeline augments agent trajectories with LLM-generated reasoning traces, producing training examples that teach models not only what tools to call but also why. Second, the CacheAgentLoop eliminates live execution costs through a three-tier fuzzy cache while preserving trajectory fidelity using token-level masking. Third, a cache-tier-aware reward dynamically adjusts answer-quality weights to avoid penalizing models for cache-induced limitations. Through iterative supervised fine-tuning (SFT) and Group Relative Policy Optimization (GRPO), CacheRL improves Qwen3-4B-Thinking's validation rewar...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "benchmark",
-      "orchestration"
+      "fine-tuning",
+      "GPT",
+      "policy",
+      "weights"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Squeeze-Release: Iterative Pruning with Exact Structural Minimization",
+    "url": "https://arxiv.org/abs/2606.14346",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14346v1 Announce Type: cross Abstract: Unstructured pruning produces sparse weight tensors, but the standard implementation keeps tensor shapes unchanged so the deployed model is no smaller than before pruning. We present an exact structural rewrite, which we call minimization, that converts a masked network into a smaller dense network with the same forward function up to floating-point rounding. The Squeeze-Release cycle iterates pruning and minimization with an intermediate release step that re-enables the exact-zero positions inside the compacted tensors as small calibrated noise, turning otherwise wasted capacity back into trainable parameters. Successive cycles use that capacity to find structural redundancy a single pass cannot reach. We additionally introduce CompensatedLayerNorm, a function-preserving replacement for LayerNorm that extends minimization to channel reduction across LayerNorm-equipped residual streams. Squeeze-Release compresses the deployable network to 39x smaller than the unpruned model on a fully-connected model network and 14.8x smaller on modern CNN (ConvNeXt-Tiny), at comparable accuracy. In addition we prove that the rewrite can be extende...",
+    "matched_keywords": [
+      "release"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SIMMER: Benchmarking Latent Failures in LLM Executable Planning with a World Model",
+    "url": "https://arxiv.org/abs/2606.14574",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14574v1 Announce Type: cross Abstract: Large language models (LLMs) are increasingly deployed as planners for autonomous agents in household environments. While existing benchmarks evaluate whether LLM-generated plans execute successfully, they overlook a critical type of failure: latent failures. Unlike immediate failures that trigger instant feedback at execution time and enable timely correction, latent failures do not immediately halt plan execution but silently compromise goal achievement. In severe cases, they cause irreversible harm. To address this gap, we introduce SIMMER, a benchmark for evaluating latent failures in LLM planning through a human-curated symbolic world model grounded in the kitchen domain. SIMMER defines a world model comprising 77 actions, 262 unique objects, and approximately 46,800 possible interactions that are semantically realistic, derived from real-world cooking scripts. It then leverages a state machine executor that validates plans against the world model and detects immediate precondition violations, latent hazards, and irreversible failures. Experiments across six LLMs show that even frontier models achieve at most 17% error-free pl...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-12T08:24:00.146221+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 58,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Grounding Computer Use Agents on Human Demonstrations",
-    "url": "https://arxiv.org/abs/2511.07332",
+    "title": "Quantized Evolution Strategies: High-precision Fine-tuning of Quantized LLMs at Low-precision Cost",
+    "url": "https://arxiv.org/abs/2602.03120",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2511.07332v2 Announce Type: replace-cross Abstract: Building reliable computer-use agents requires grounding: accurately connecting natural language instructions to the correct on-screen elements. While large datasets exist for web and mobile interactions, high-quality resources for desktop environments are limited. To address this gap, we introduce GroundCUA, a large-scale desktop grounding dataset built from expert human demonstrations. It covers 87 applications across 12 categories and includes 56K screenshots, with every on-screen element carefully annotated for a total of over 3.56M human-verified annotations. From these demonstrations, we generate diverse instructions that capture a wide range of real-world tasks, providing high-quality data for model training. Using GroundCUA, we develop the GroundNext family of models that map instructions to their target UI elements. At both 3B and 7B scales, GroundNext achieves state-of-the-art results across five benchmarks using supervised fine-tuning, while requiring less than one-tenth the training data of prior work. Reinforcement learning post-training further improves performance, and when evaluated in an agentic setting on...",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2602.03120v2 Announce Type: replace-cross Abstract: Post-Training Quantization (PTQ) is essential for deploying Large Language Models (LLMs) on memory-constrained devices, yet it renders models static and difficult to fine-tune. Standard fine-tuning paradigms, including Reinforcement Learning (RL), fundamentally rely on backpropagation and continuous weights to compute gradients. Thus they cannot be used on quantized models, where the parameter space is discrete and non-differentiable. While Evolution Strategies (ES) offer a backpropagation-free alternative, optimization of the quantized parameters can still fail due to vanishing or inaccurate gradient estimation. This paper introduces Quantized Evolution Strategies (QES), an optimization paradigm that performs full-parameter fine-tuning directly in the quantized space. QES is based on two innovations: (1) it integrates accumulated error feedback to preserve high-precision weight updating signals, and (2) it utilizes a stateless seed replay to reduce memory usage to low-precision inference levels. QES significantly outperforms the state-of-the-art zeroth-order fine-tuning methods on a variety of tasks, making direct fine-tun...",
     "matched_keywords": [
-      "agentic",
-      "agents",
-      "computer use",
-      "dataset",
-      "fine-tuning"
+      "fine-tuning",
+      "inference",
+      "quantization",
+      "weights"
     ],
     "tags": [
-      "agent",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-12T08:24:00.146221+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 58,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Anthropic Says It’s Taking Claude Fable 5 Offline to Comply With US Government Order",
-    "url": "https://www.wired.com/story/anthropic-says-us-government-ordered-it-to-shut-down-mythos-models",
-    "source_name": "WIRED AI",
+    "title": "OdysSim: Building Foundation Models for Human Behavior Simulation",
+    "url": "https://arxiv.org/abs/2606.14199",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T02:26:10+00:00",
-    "summary_or_excerpt": "“The government believes it has become aware of a method of bypassing, or ‘jailbreaking’ Fable 5,” the company said in a blog post.",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14199v1 Announce Type: cross Abstract: Large language models are increasingly deployed as human simulators for interactive evaluation and social simulation. Yet helpfulness-driven post-training pulls them toward a homogeneous, overly agreeable assistant register, creating a behavioral Sim2Real gap. We present OdysSim, the largest open systematic investigation of behavioral foundation models, i.e., models trained to simulate human behavior at scale. We propose SOUL, a taxonomy of five capability axes (CONV, SS, COG, ROLE, EVAL) that unifies 62 datasets and 23 benchmark tasks under one framework. Specifically, we curate the OdysSim corpus (21.4M interactions, 10B tokens, retrofitted with back-generated social contexts), construct the SOUL-Index benchmark, and develop an end-to-end training recipe combining midtraining, task-specific RL, and expert distillation. The resulting open 8B OSim model ranks first or tied-first on 8 of 23 tasks, outperforming any individual frontier model by this count, with the strongest gains on conversational and social tasks. Its outputs are also more human-like in length, formatting, and word choice, and it transfers zero-shot to out-of-distr...",
     "matched_keywords": [
-      "Anthropic",
-      "Claude"
+      "benchmark"
     ],
     "tags": [
-      "model"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI 遭多州总检察长联合调查",
-    "url": "https://www.bloomberg.com/news/articles/2026-06-13/openai-probed-by-coalition-of-state-attorneys-general",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T00:27:02+00:00",
-    "summary_or_excerpt": "OpenAI 正被一个由多州总检察长组成的联盟调查，该联盟已向这家人工智能公司索取涵盖广泛主题的信息。",
-    "matched_keywords": [
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
+      "open_source"
     ],
     "score": 57,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "扎克伯格承认 Meta AI 转型\"脱轨\"：裁员 10%、转岗 7000 人后组织调整过快",
-    "url": "https://www.ithome.com/0/963/858.htm",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T06:49:25+00:00",
-    "summary_or_excerpt": "路透社披露的 Meta 内部备忘录显示，CEO 扎克伯格承认公司在 AI 转型中组织调整节奏过快，带来员工安置、管理跨度等问题，预计未来\"几乎肯定会犯更多错误\"。Meta 今年 5 月已裁减全球 10% 员工，并将 7000 人转入 AI 相关新项目。为缓解协作问题，公司将增加团队建设预算，7 月举办黑客松。新成立的应用 AI 工程部门个人贡献者与管理者比例最高达 50：1。扎克伯格重申今年不再全公司裁员。",
-    "matched_keywords": [
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 56,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 秘密申请上市，估值 9650 亿美元",
-    "url": "https://www.bloomberg.com/news/articles/2026-06-13/global-capitalism-bets-it-all-on-ai-future-that-alarms-voters",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T11:00:00+00:00",
-    "summary_or_excerpt": "Anthropic，这家估值达 9650 亿美元的 AI 巨头、史上增长最快的初创公司之一，在秘密提交 IPO 申请后，再次投下重磅炸弹。",
-    "matched_keywords": [
-      "Anthropic"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -408,84 +369,74 @@
     "tags": [],
     "score": 50,
     "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "AI OSS tool repo goes archived over night after raising $7.3M Seed",
-    "url": "https://github.com/tensorzero/tensorzero",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-13T12:10:47+00:00",
-    "summary_or_excerpt": "HN points: 272. Comments: https://news.ycombinator.com/item?id=48516504",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 49,
-    "hn_score": 272,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "title": "TwinBI: An Agentic Digital Twin for Efficient Augmented Interactions with Business Intelligence Dashboards",
+    "url": "https://arxiv.org/abs/2606.13731",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13731v1 Announce Type: new Abstract: Business intelligence (BI) increasingly combines dashboard interaction with LLM-based assistance, but these two modes often fall out of sync during multi-step analysis. As users switch between direct dashboard manipulation and natural-language queries, it becomes difficult to preserve a consistent analytical state across filters, hierarchies, metrics, and chart context. We present TwinBI, an agentic digital-twin framework that couples an LLM-based agent system with an executable BI dashboard state. TwinBI unifies conversational interaction, dashboard manipulation, semantic grounding, and provenance tracking through a shared analytical state reconstructed from a unified interaction log. It also exposes artifacts such as schema views, SQL, logs, and an /insights command for state-grounded analytical summaries. We evaluate TwinBI in two complementary ways. In a controlled A/B benchmark with the same backbone agent, TwinBI improves exact-match accuracy from 43.3% to 63.3%, partial-credit accuracy from 48.3% to 70.8%, and substantially reduces timeout rate from 40.0% to 10.0% relative to Dashboard alone. In a usability study, participants...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "亚马逊首席执行官与美国官员会谈引发对 Anthropic 模型的整治",
-    "url": "https://www.wsj.com/tech/ai/amazon-ceos-talks-with-u-s-officials-triggered-crackdown-on-anthropic-models-dcc90578",
-    "source_name": "AIHOT Featured",
+    "title": "Formalizing Numerical Analysis: An Agent Pipeline and Quality Audit Beyond Kernel Acceptance",
+    "url": "https://arxiv.org/abs/2606.14000",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T18:22:19+00:00",
-    "summary_or_excerpt": "亚马逊 CEO 与美国官员的会谈直接导致美国政府对 Anthropic 公司的 AI 模型采取整治行动。此次事件涉及对 Anthropic 旗下大语言模型的监管升级，具体措施及模型版本细节尚未披露。",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14000v1 Announce Type: new Abstract: Recent work has demonstrated that coding agents can formalize entire advanced mathematics textbooks in Lean 4, yet existing efforts concentrate on branches of mathematics already well-represented in mathlib and measure success solely through kernel acceptance. We address both limitations by applying a coding agent to formalize Numerical Methods for Ordinary Differential Equations, a textbook in numerical analysis that is largely absent from mathlib, stressing the agent's capacity to develop new theory from scratch. We further introduce a systematic, reproducible three-dimensional framework for evaluating the quality of agent-produced formalizations beyond compilation: semantic correctness, Mathlib reuse, and cross-file reuse via LLM-as-judge methods. Applying this framework to our own formalization and to the released outputs of RepoProver and M2F, we uncover recurring unfaithful formalization patterns, including incomplete multi-part statements, added weakening hypotheses, and parameter restrictions, that kernel acceptance entirely obscures. Our results suggest that compilation-based metrics substantially overstate formalization qua...",
     "matched_keywords": [
-      "Anthropic"
+      "Agent",
+      "agents"
     ],
     "tags": [
-      "model"
+      "agent"
     ],
-    "score": 48,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "score": 44,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Anthropic的安全警告可能适得其反--政府已撤回其最强大AI",
-    "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai",
-    "source_name": "AIHOT Featured",
+    "title": "Retrospective Progress-Aware Self-Refinement for LLM Agent Training",
+    "url": "https://arxiv.org/abs/2606.14302",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T02:26:30+00:00",
-    "summary_or_excerpt": "Anthropic对政府撤回其最强大AI模型表达不满，称仅基于一个狭窄的潜在越狱发现就召回已部署给数亿用户的商业模型不合理。",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.14302v1 Announce Type: new Abstract: LLM-based agents trained with reinforcement learning optimize step-wise action prediction but lack metacognitive awareness of task progress, inducing a gap that hinders long-horizon scaling. A pilot study reveals that online progress prompting hurts performance while retrospective demonstrations help, yet this capability cannot emerge from outcome-reward training alone. We present RePro, Retrospective Progress-Aware Training, a framework that trains agents to self-generate progress signals via a forward-then-reflect rollout paradigm: the agent executes actions online, then retrospectively reassesses its step-wise progress given the completed trajectory and known outcome. RePro initializes with a Retrospection Warmup that teaches reflection format from minimal external demonstrations, then further trains through RePro-PO with a composite reward that produces self-generated signals without continuous external supervision. Experiments on WebShop, ALFWorld, and Sokoban show that RePro enhances the Qwen family's performance, with up to $12\\%$ absolute success rate gains.",
     "matched_keywords": [
-      "Anthropic"
+      "Agent",
+      "agents",
+      "Qwen"
     ],
     "tags": [
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "China may have accessed Mythos",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/949644/china-white-house-anthropic-mythos",
-    "source_name": "The Verge AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-14T18:27:55+00:00",
-    "summary_or_excerpt": "According to a new report from Semafor, the White House's decision to impose export restrictions on Anthropic's Mythos was driven in part by fears that it had been accessed by a group linked to China. If the Chinese government actually had access to Mythos 5 or Fable 5, it would present a serious national security […]",
-    "matched_keywords": [
-      "Anthropic"
-    ],
-    "tags": [
+      "agent",
       "model"
     ],
     "score": 44,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -505,78 +456,58 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MedLatentDx: Latent Multi-Agent Communication for Cross-Hospital Rare-Disease Diagnosis",
+    "url": "https://arxiv.org/abs/2606.13945",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13945v1 Announce Type: new Abstract: Rare diseases affect over $300$ million patients across more than $7{,}000$ conditions, yet no single hospital encounters enough cases of any one condition for reliable diagnosis. Cross-hospital collaboration could help by allowing a diagnosing institution to use distributed, case-specific diagnostic evidence, but privacy regulations restrict the transmission of identifiable clinical text across institutional boundaries. This setting raises two challenges: existing medical agent systems often rely on textual evidence exchange, while raw latent states such as hidden states and KV caches may still reveal prompt-derived clinical content. We introduce MedLatentDx, a latent multi-agent communication framework in which hospital agents keep private clinical records and retrieved cases local, and send compact latent KV blocks to a host agent for rare-disease diagnosis. MedLatentDx supports two deployment settings: same-backbone hospital agents use latent KV distillation, while hospitals with different LLM backbones use cross-family latent alignment. On CrossRare-Bench, a self-built large-scale rare-disease benchmark with hospital-level parti...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b9637：chat: add dedicated Cohere2MoE (North Code) parser (#24615)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9637",
+    "title": "llama.cpp b9656：chat: harden peg-native tool call parsing (#24329)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9656",
     "source_name": "llama.cpp",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-06-14T18:50:23+00:00",
-    "summary_or_excerpt": "chat: add dedicated Cohere2MoE (North Code) parser (#24615) * chat: add dedicated Cohere2MoE (North Code) parser * Some renames to make @CISC happy :> **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9637/llama-b9637-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/...",
+    "published_at": "2026-06-15T20:27:33+00:00",
+    "summary_or_excerpt": "chat: harden peg-native tool call parsing (#24329) * chat: harden peg-native tool call parsing accept an optional leading type: function field in build_json_tools_flat_keys so openai style tool calls parse on templates whose serialization opens on the name field. return a clean error and log the unparsed fragment on a final peg parse failure instead of throwing the raw parser position and input. keep the raw arguments string in func_args_not_string when it is not valid json instead of aborting the prompt render. * chat: surface peg-native parse failures a final peg parse failure threw the raw parser position and input. log the unparsed fragment and raise a clearer error instead, so a model output that does not match the expected format no longer fails silently with an empty assistant turn. minimal change, no behavior change on successful parses. * chat: handle openai style tool calls in peg-native * nits * common: scope OpenAI wrapper grammar trigger via autoparser flag * chat: gate type:function parsing leniency on the analysis flag Thread accept_openai_wrapper from the generator to build_json_tools_flat_keys so the leading \"type\": \"function\" field is accepted only when openai_wr...",
     "matched_keywords": [
-      "GitHub",
-      "Intel",
       "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 43,
-    "release_version": "b9637",
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "I built an open-source Knowledge Graph pipeline with hybrid retrieval to improve LLM multi-hop reasoning [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1u5yyyl/i_built_an_opensource_knowledge_graph_pipeline",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-14T22:38:22+00:00",
-    "summary_or_excerpt": "Hey everyone, I built an open-source full-stack pipeline (Django + React) that constructs a Knowledge Graph from raw text, detects thematic communities, and uses hybrid search to solve the \"lost in the middle\" problem in standard vector retrieval. The Pipeline: Ingestion & Chunking: Raw text is cleaned, parsed, and split into overlapping chunks to preserve local context. Graph Construction: spaCy extracts named entities from each chunk. A weighted co-occurrence graph is built using NetworkX , mapping which entities appear together and linking them to their source chunks. Community Detection: The graph is partitioned into thematic clusters using greedy_modularity_communities . For each cluster, random text chunks are sampled and sent to an LLM to generate a high-level summary (preventing \"hub node\" bias). Indexing: All chunks are embedded into a dense vector store, and a sparse BM25 index is built over the same corpus. Hybrid Retrieval: On query, the system performs a dual search (Dense Vector + BM25). Simultaneously, it extracts entities from the prompt, traverses the graph for 1st-degree neighbors, and retrieves their associated chunks. Fusion & Reranking: Local and Global (commu...",
-    "matched_keywords": [
-      "retrieval"
-    ],
-    "tags": [
-      "rag_data"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI WebRTC Audio Session, now with document context",
-    "url": "https://simonwillison.net/2026/Jun/12/openai-webrtc",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-12T23:53:04+00:00",
-    "summary_or_excerpt": "OpenAI WebRTC Audio Session, now with document context I built the first version of this tool in December 2024 to try out the then-new OpenAI WebRTC API for interacting with their realtime audio models. Last month OpenAI introduced a brand new model to that API called GPT‑Realtime‑2 , which they promoted as \"our first voice model with GPT‑5‑class reasoning\" - with a Sep 30, 2024 knowledge cut-off. I've been waiting for that model to show up in the ChatGPT iPhone app but it still hasn't, so I revisited my old playground. You can now pick the better model, and you can also paste in a big chunk of document context so you can have as audio conversation in your browser about whatever information you think would be useful to explore in a conversational way. Tags: audio , tools , ai , openai , generative-ai , llms , multi-modal-output , webrtc",
-    "matched_keywords": [
-      "API",
-      "ChatGPT",
-      "GPT",
+      "llama.cpp",
       "OpenAI"
     ],
     "tags": [
-      "business",
-      "model"
+      "model",
+      "open_source"
     ],
     "score": 41,
-    "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "backlog",
+    "release_version": "b9656",
+    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -595,8 +526,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -615,8 +546,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -632,7 +563,7 @@
     "score": 40,
     "hn_score": 129,
     "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -653,7 +584,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-14T08:06:06.327020+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -673,8 +604,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -694,8 +625,8 @@
     "score": 36,
     "hn_score": 86,
     "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-16T08:33:02.368233+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

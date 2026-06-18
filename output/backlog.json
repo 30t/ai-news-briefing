@@ -18,34 +18,8 @@
     ],
     "score": 68,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CoAgent: Concurrency Control for Multi-Agent Systems",
-    "url": "https://arxiv.org/abs/2606.15376",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15376v1 Announce Type: cross Abstract: Multi-agent LLM systems -- coding agents, devops agents, document agents -- now routinely run several agents in parallel against the same git tree, Kubernetes cluster, or document. As soon as two of them mutate shared state, they enter the regime classical concurrency control has studied for decades, but classical mechanisms fit LLM agents poorly. A single agent transaction spans minutes of inference, read sets are broad and opaque rather than statically inferable, and the live state agents act on admits neither fork nor buffer, so writes take effect the moment they execute. Locks block long inference intervals; OCC abort-and-retry discards minutes of work on every conflict. This paper builds concurrency control on a capability classical transactions lack: the LLM inside each agent can judge whether a conflicting write invalidates its plan, and can repair exactly the operations that depended on it. Control therefore turns advisory: the runtime informs, the agent repairs. Our protocol, MTPO (Monotonic Trajectory Pre-Order), fixes a serialization order at launch, serves each read the order-filtered value, and applies writes speculati...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "inference",
-      "launch",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 67,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -70,7 +44,7 @@
     ],
     "score": 67,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -100,8 +74,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -121,7 +95,112 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EComAgentBench: Benchmarking Shopping Agents on Long-Horizon Tasks with Distributed Hidden Intent",
+    "url": "https://arxiv.org/abs/2606.17698",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.17698v1 Announce Type: new Abstract: As LLM-based shopping agents enter production, existing benchmarks fail to capture how a shopper's requirements arrive: stated implicitly in the query, recorded in a profile, or revealed only when the right question is asked. Benchmarks that expose full intent upfront and grade only the final choice can neither pose this long-horizon challenge nor explain which requirement an agent missed. To address this gap, we introduce EComAgentBench, a benchmark of 662 tasks grounded in real Amazon products and reviews. Each task scatters these requirements across a visible query, a tool-gated profile, and scripted clarification; an agent must uncover hidden intent, verify candidates against attributes and review evidence, and commit to a single product within 100 tool calls. Moreover, typed, source-tagged rubrics grade every task, attributing each failure to a requirement and its source. Construction is automated yet reliable, with every answer fixed in code before any text is generated and every sample validated. Our evaluation of seven models reveals that even the strongest attains only 57.1% overall accuracy, and rubric satisfaction degrades...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ANEForge: Python for direct computation on the Apple Neural Engine",
+    "url": "https://arxiv.org/abs/2606.17090",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.17090v1 Announce Type: cross Abstract: ANEForge is a Python package that programs the Apple Neural Engine (ANE), the fixed-function neural accelerator on every recent Apple device, directly and without CoreML. In production the engine is reachable only through CoreML, which treats it as a scheduling option: no configuration requires the ANE, and a model can silently run on the CPU or GPU instead. ANEForge compiles a lazy tensor graph, built from 58 fused operators and 19 native bridge operators, into a single ANE program. The program is dispatched through the same ANE daemon and kernel-driver stack as Apple's internal framework. Beyond inference, the package reaches the engine's native fused attention, streams int8, int4, and sparse weights, keeps decoder and optimizer state resident across steps, and runs the forward pass, backward pass, and optimizer update of training on the engine. A small fused program completes a call in about 90us, near the engine's 70us per-program dispatch floor, and a pretrained ResNet-18 forward runs end-to-end in 0.33ms. ResNet-18, a sentence encoder, and a Vision Transformer run end-to-end against framework references, and a Stable Diffusio...",
+    "matched_keywords": [
+      "GPU",
+      "inference",
+      "weights"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering",
+    "url": "https://arxiv.org/abs/2606.17799",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.17799v1 Announce Type: cross Abstract: Coding agents have become a major mode of software engineering, but the benchmarks we use to compare them were designed in a pre-agent era: they collapse model, harness, and environment into a single end-to-end score, typically computed against one reference solution, with no component-level signal for iteration. We argue that current coding benchmarks are misaligned with agentic software engineering. A coding agent in practice is not a model: it is a system harness -- a composite of models, harnesses, contexts, environments, and feedback signals, any one of which can move the benchmark score by margins comparable to those between adjacent model generations. We discuss three symptoms: (i) benchmark scores conflate the model with the rest of the harness; (ii) grading against a single reference solution penalises equally valid alternatives; and (iii) the absence of signal at the level of individual harness components makes the end-to-end system score difficult to iterate on.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code",
+    "url": "https://arxiv.org/abs/2606.18168",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18168v1 Announce Type: cross Abstract: Software practitioners increasingly use AI coding agents that generate test code alongside production code in open source pull requests (PRs). Recent studies report more than 932,000 agent-authored PRs across more than 116,000 repositories, yet whether their test files contain meaningful verification logic remains underexplored. Test files lacking explicit assertions execute code without verifying behavior, so quality gates based on test-file presence overestimate verification strength. The goal of this paper is to help practitioners assess the verification strength of agent-authored patches by characterizing oracle signals and their link to merge outcomes and review effort. We conduct an empirical study of 86,156 test-file patches from 33,596 agent-authored PRs across 2,807 GitHub repositories produced by five coding agents: OpenAI Codex, GitHub Copilot, Devin, Cursor, and Claude Code. A qualitative analysis of 384 stratified patches informs a syntactic taxonomy of eight oracle signal categories. Applied at scale, 80.2% of test patches contain weak or no explicit oracle signals. While raw merge rates are lower for strong-oracle PR...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "Cursor",
+      "Devin",
+      "GitHub",
+      "GitHub Copilot",
+      "open source",
+      "OpenAI"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -144,8 +223,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -166,8 +245,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -193,8 +272,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -217,8 +296,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -237,8 +316,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -258,8 +337,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -279,7 +358,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -304,71 +383,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgentCyberRange: Benchmarking Frontier AI Systems in Realistic Cyber Ranges",
-    "url": "https://arxiv.org/abs/2606.14295",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.14295v1 Announce Type: cross Abstract: Frontier AI systems are increasingly capable of cybersecurity tasks, including codebase inspection, vulnerability detection, and exploitation. However, evaluating their offensive capabilities remains constrained by limited access to open, reproducible, multi-host cyber ranges. Existing public benchmarks capture isolated skills such as CTF solving, vulnerability reproduction, and exploit generation, but often abstract away realistic intrusion workflows: discovering exposed services, gaining a foothold, collecting internal information, and expanding compromise across hosts. This gap makes it difficult to observe emerging risks early, because frontier AI systems are rarely evaluated under realistic attack conditions. We introduce AgentCyberRange, the first open, multi-range infrastructure for measuring autonomous cyber attack capability in realistic cyber ranges. It combines 110 vulnerabilities across 15 real web applications and 8 enterprise-like cyber ranges with 156 internal hosts, plus Cage, a toolchain for execution, orchestration, result collection, and verification. The benchmark covers two core stages: web exploitation, where...",
-    "matched_keywords": [
-      "benchmark",
-      "orchestration"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When Errors Become Narratives: A Longitudinal Taxonomy of Silent Failures in a Production LLM Agent Runtime",
-    "url": "https://arxiv.org/abs/2606.14589",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.14589v1 Announce Type: cross Abstract: LLM agent systems increasingly run as long-lived autonomous runtimes: scheduling jobs, calling tools, maintaining memory, and pushing results to humans. We present a longitudinal study of silent failures in one such system: a personal-assistant agent runtime in continuous production since March 2026, with roughly 40 scheduled jobs, 8 LLM providers, a tool-governance proxy, and a knowledge-base memory plane, defended by 4,286 unit tests and 827 governance checks. Over eight weeks we documented 22 incidents with full root-cause postmortems, in which one meta-pattern -- a failure whose error signal never reaches a human in actionable form -- manifested at least 28 times. We derive a five-class, mechanism-oriented taxonomy: (A) environment and platform quirks, (B) design-assumption mismatches, (C) error swallowing and dilution, (D) chained hallucination and fabrication, (E) operational omission and forensic blind spots. Class D is unique to LLM systems and the most dangerous: the system does not merely fail to report an error -- the LLM transforms it into fluent, plausible narrative delivered to the user. We term this fail-plausible: g...",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Verbatim Chunks Beat Extracted Artifacts: A Controlled Ablation of Memory Representations for Long LLM Conversations",
-    "url": "https://arxiv.org/abs/2601.00821",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.00821v3 Announce Type: replace Abstract: A growing class of conversational-memory systems compresses dialogue history into structured artifacts -- extracted facts, decisions, or events -- on the premise that distilled structure retrieves better than raw text. We test this premise with a controlled ablation: within one fixed retrieval-rerank-reasoning pipeline, we swap only the stored representation -- LLM-extracted typed artifacts versus verbatim conversation chunks -- holding the model, retriever, reranker, and judge constant. Verbatim chunks win by 15.9 points on LoCoMo (43.9% vs. 28.0%) and 22.0 points on LongMemEval-S (67.4% vs. 45.4%); a 1-hop semantic graph does not recover the gap, and five confound controls reproduce the effect. The mechanism is lossy distillation: extraction discards verbatim detail that chunks retain for free, and the extracted-artifact pipeline never beats naive RAG in overall accuracy. Concurrent positive results with near-verbatim, provenance-preserving units fit the same account: retrieval accuracy tracks how far the representation departs from the source. For the extraction designs we test, structured memory should augment verbatim text r...",
-    "matched_keywords": [
-      "RAG",
-      "reranker",
-      "retrieval"
-    ],
-    "tags": [
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -396,8 +411,30 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitHub Code Quality generally available July 20, 2026",
+    "url": "https://github.blog/changelog/2026-06-16-github-code-quality-generally-available-july-20-2026",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-16T16:25:31+00:00",
+    "summary_or_excerpt": "More than 10,000 enterprises have used the GitHub Code Quality public preview to detect maintainability and reliability issues, enforce quality gates, and track code coverage. On July 20, 2026, Code… The post GitHub Code Quality generally available July 20, 2026 appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 54,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -419,8 +456,59 @@
       "semiconductor"
     ],
     "score": 48,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Semantic Kernel python-1.43.1：* Python: Add function_choice_behavior support to Azure AI and OpenAI Assistant agents by",
+    "url": "https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1",
+    "source_name": "Semantic Kernel",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-17T07:27:31+00:00",
+    "summary_or_excerpt": "## What's Changed * Python: Add function_choice_behavior support to Azure AI and OpenAI Assistant agents by @SergeyMenshykh in https://github.com/microsoft/semantic-kernel/pull/14057 * Fix MessagePack by @SergeyMenshykh in https://github.com/microsoft/semantic-kernel/pull/14079 * .Net: fix: prevent duplicate \"null\" in JSON Schema type arrays for nullable parameters by @roli-lpci in https://github.com/microsoft/semantic-kernel/pull/13635 * Python: Reject encoded dot-segment paths in OpenAPI plugin (.NET and Python) by @rogerbarreto in https://github.com/microsoft/semantic-kernel/pull/14086 * Python: Bump Python version to 1.43.1 for a release. by @moonbox3 in https://github.com/microsoft/semantic-kernel/pull/14093 **Full Changelog**: https://github.com/microsoft/semantic-kernel/compare/python-1.43.0...python-1.43.1",
+    "matched_keywords": [
+      "agents",
+      "changelog",
+      "GitHub",
+      "OpenAI",
+      "release",
+      "Semantic Kernel"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "python-1.43.1",
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "What is Speculative Decoding? (trending on paperswithco.de) [R]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1u83kzt/what_is_speculative_decoding_trending_on",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-17T07:41:34+00:00",
+    "summary_or_excerpt": "A method that is currently trending on Papers with Code is Speculative Decoding. https://preview.redd.it/dm4nh4t71o7h1.png?width=3082&format=png&auto=webp&s=b6468668667d4bcfb6c9248d3af7fd09f21fe0da Speculative decoding is an inference optimization technique that uses a fast, small \"draft\" model to quickly propose several future tokens, which are then verified in parallel by a larger, slower \"target\" model. This process significantly speeds up token generation for large language models (LLMs) by allowing multiple tokens per step without sacrificing output quality. SGLang, one of the most popular frameworks for running LLMs alongside vLLM, just released a blog post detailing how they achieve state-of-the-art latencies for LLM inference serving using Modal and Z.ai's DFlash speculative decoding models. Learn more at https://paperswithcode.co/methods/speculative-decoding . You can also find all the papers that cite the original paper that introduced this technique. SGLang's blog: https://www.lmsys.org/blog/2026-06-15-next-generation-speculative-decoding-dflash-v2/ Let me know which other methods I should add! Cheers, Niels from HF submitted by /u/NielsRogge [link] [comments]",
+    "matched_keywords": [
+      "inference",
+      "serving",
+      "vLLM"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -446,8 +534,8 @@
     "score": 46,
     "release_version": "b9668",
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -469,28 +557,30 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Amazon security research reportedly led to the White House’s Anthropic Fable ban",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/949601/amazon-anthropic-fablemythos-government-ban",
-    "source_name": "The Verge AI",
+    "title": "Introducing LifeSciBench",
+    "url": "https://openai.com/index/introducing-life-sci-bench",
+    "source_name": "OpenAI News",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T21:39:26+00:00",
-    "summary_or_excerpt": "According to the Wall Street Journal, the export control directive that led to Anthropic cutting off access to Fable 5 and Mythos 5 was triggered in part by cybersecurity research from Amazon and conversations between CEO Andy Jassy and the White House. According to the report, the paper from Amazon claims that, through a series […]",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-17T00:00:00+00:00",
+    "summary_or_excerpt": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
     "matched_keywords": [
-      "Anthropic"
+      "benchmark",
+      "OpenAI"
     ],
     "tags": [
-      "model"
+      "model",
+      "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
+    "score": 43,
+    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -515,8 +605,8 @@
     "score": 43,
     "release_version": "b9669",
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -541,7 +631,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -565,88 +655,7 @@
     "score": 41,
     "release_version": "b9656",
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fusion API：半价达Fable级智能",
-    "url": "https://x.com/OpenRouter/status/2065856853989270011",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T18:00:30+00:00",
-    "summary_or_excerpt": "推出Fusion API，市场上最智能的复合模型。 Fusion以一半的价格实现Fable级别的智能。 工作原理如下👇",
-    "matched_keywords": [
-      "API"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "/architect：减少80%的Fable token，Fable负责协调/审核，Codex负责构建",
-    "url": "https://github.com/DanMcInerney/architect-loop",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T16:46:05+00:00",
-    "summary_or_excerpt": "/architect项目将Fable token减少80%，由Fable进行协调和审核，Codex负责构建任务。",
-    "matched_keywords": [
-      "Codex"
-    ],
-    "tags": [
-      "coding_tool"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI faces investigation from state attorneys general",
-    "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-13T16:47:18+00:00",
-    "summary_or_excerpt": "It's not clear which states are involved, but they're asking about everything from OpenAI's ad policies to its handling of health data.",
-    "matched_keywords": [
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 38,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Making Claude a Chemist",
-    "url": "https://www.anthropic.com/research/making-claude-a-chemist",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-14T02:55:36+00:00",
-    "summary_or_excerpt": "HN points: 86. Comments: https://news.ycombinator.com/item?id=48523752",
-    "matched_keywords": [
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 36,
-    "hn_score": 86,
-    "first_seen_at": "2026-06-15T08:05:14.572699+08:00",
-    "last_seen_at": "2026-06-17T08:19:30.827678+08:00",
+    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

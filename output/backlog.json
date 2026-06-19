@@ -1,28 +1,5 @@
 [
   {
-    "title": "ToolMenuBench: Benchmarking Tool-Menu Filtering Strategies for Reliable and Efficient LLM Agents",
-    "url": "https://arxiv.org/abs/2606.15508",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15508v1 Announce Type: new Abstract: Tool-augmented large language model agents increasingly operate over large tool libraries, but existing evaluations often focus on whether a model can call a tool correctly rather than how the visible tool menu shapes reliability, efficiency, and safety-relevant risk exposure. We introduce ToolMenuBench, a benchmark for evaluating tool-menu construction in multi-step LLM agents. ToolMenuBench varies tool-menu size, distractor type, state-dependent task structure, and risk exposure, and reports both filter-level and downstream agent metrics, including visible-tool count, risky-tool exposure, task success, wrong-tool calls, premature actions, and token usage. In a controlled evaluation across seven model backends, three tool-menu sizes, six filtering methods, and seven evaluation settings, CMTF improves task success from 32.1% under all-tools exposure to 85.7%, while reducing average token usage by roughly 98%. Causal minimal tool filtering achieves the strongest overall tradeoff, reducing visible tools, wrong-tool calls, premature actions, and risky-tool exposure relative to unfiltered exposure, lexical filtering, state-aware filterin...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
     "title": "Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents",
     "url": "https://arxiv.org/abs/2606.13995",
     "source_name": "arXiv cs.CL",
@@ -44,7 +21,7 @@
     ],
     "score": 67,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -74,7 +51,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -95,8 +72,153 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "NAVI-Orbital: First In-Orbit Demonstration of a Zero-Shot Vision-Language Model for Autonomous Earth Observation",
+    "url": "https://arxiv.org/abs/2606.18271",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18271v1 Announce Type: new Abstract: As Earth Observation data generation outpaces downlink bandwidth and human-in-the-loop processing, a widening gap has emerged between onboard collection and actionable ground intelligence. This paper presents NAVI-Orbital, a software system deployed on a Low Earth Orbit (LEO) spacecraft. On April 16, 2026, NAVI-Orbital achieved what is, to the authors' knowledge, the first in-orbit demonstration of a vision-language model performing autonomous multi-modal inference entirely onboard. NAVI-Orbital uses a local vision-language model (Gemma 3) to classify each captured scene, produce a text description of its content and the relationships between its features, and respond to operator follow-up via natural-language dialogue. The system is re-tasked through plain-English prompts in place of conventional command sequences, and is orchestrated by a graph-based state machine (LangGraph) coordinating dedicated agents for detection and dialogue. Results across ground benchmarking (88.16% accuracy on the 7,960-image curated AID benchmark), Flatsat validation, and live in-orbit captures of newly acquired, previously unseen Earth imagery (includin...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "inference",
+      "LangGraph"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SafeClawBench: Separating Semantic, Audit-Evidence, and Sandbox Harm in Tool-Using LLM Agents",
+    "url": "https://arxiv.org/abs/2606.18356",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18356v1 Announce Type: cross Abstract: Tool-using language-model agents introduce security failures that go beyond unsafe text: they can disclose protected objects, write persistent memory, send messages, modify databases, or trigger harmful code and tool effects. Existing evaluations often collapse these stages into a single attack success rate, making it difficult to tell whether a model merely agreed with an attacker or actually produced observable harm. We introduce SafeClawBench, a staged benchmark for tool-using agent security with 600 controlled adversarial tasks across six attack families: direct and indirect prompt injection, tool-return injection, memory poisoning, memory extraction, and ambiguity-driven unsafe inference. SafeClawBench reports three separate endpoints: semantic attack acceptance, audit-visible harm evidence, and sandbox-observed tool/state harm. Evaluating five agent endpoints under four prompt-level policies, we find that these endpoints capture different failure modes. Without additional prompt protection, semantic failure rates vary widely across models, from 9.0% to 44.2%. Audited harm evidence is narrower than semantic failure, and under...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "RedactionBench",
+    "url": "https://arxiv.org/abs/2606.18782",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18782v1 Announce Type: cross Abstract: Large Language Models are increasingly applied to sensitive domains that require redaction of personally identifiable information (PII). While redacting PII is a data cleaning prerequisite, existing benchmarks conflate extraction mechanics with privacy semantics. A public phone number is not equivalent to a phone number in a medical record. Whether information constitutes a violation depends heavily on who holds it, why, and in what context, fundamentally differentiating redaction from simple entity recognition. Grounded in contextual integrity, we introduce RedactionBench, a manually annotated benchmark comprising 200 diverse documents across 11 domains, mostly seeded from real-world sources. We also introduce R-Score, a novel character-level metric that treats semantically similar redactions equally and nullifies shallow formatting choices, such as varying masking styles for phone numbers. Evaluations across Named Entity Recognition models, entity extraction Small Language Models, and frontier models equipped with agentic tools demonstrate that contextual redaction remains an unsolved problem. A human evaluation with over 80 user...",
+    "matched_keywords": [
+      "agentic",
+      "benchmark",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TRAP: Benchmark for Task-completion and Resistance to Active Privacy-extraction",
+    "url": "https://arxiv.org/abs/2606.18996",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18996v1 Announce Type: cross Abstract: Agents are increasingly deployed in document-intensive workflows where sensitive private information is not an edge case but a routine input, e.g., an agent booking a flight needs passport numbers. In such settings, the agent must use private information to complete tasks accurately while never exposing it in its responses, because it cannot verify who is actually at the keyboard. These two obligations are in fundamental tension. A model capable enough to use private information for task completion can, by the same capability, be induced to reveal it. To evaluate the trade-off of task accuracy and privacy leakage, we introduce Task-completion and Resistance to Active Privacy-extraction (TRAP). Each scenario includes a document containing private information, a task query that requires the agent to invoke the correct tool using private fields, and an attack query that attempts to elicit the same information in natural language. Evaluating 22 models spanning frontier proprietary and open-source models at multiple scales, we find that all model families exhibit non-trivial leakage, and that instruction-following ability correlates wit...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Data Intelligence Agents: Interpreting, Modeling, and Querying Enterprise Data via Autonomous Coding Agents",
+    "url": "https://arxiv.org/abs/2606.19319",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19319v1 Announce Type: cross Abstract: Production data integration is bottlenecked by repeated, lossy handoffs between data owners, engineers, and analysts who must collaboratively discover, structure, and query enterprise data. We present Data Intelligence Agents (DIA), a system of three agents (Data Interpreter, Schema Creator, and Query Generator) that compresses this workflow by treating autonomous coding agents (ACAs) as a first-class abstraction: rather than emitting text, the agents generate, execute, validate, and repair concrete artifacts, draw on a shared memory for experience reuse, and surface each for review by domain experts. DIA is deployed in production for enterprise customers. We study the Query Generator in depth and evaluate it in fully autonomous mode across seven SQL benchmarks spanning four task categories and four dialects. It matches or surpasses the best published results on all seven, demonstrating that an architecture grounded in execution, built on ACAs and a shared memory, generalizes across the data intelligence workload with adaptation confined to natural-language instructions.",
+    "matched_keywords": [
+      "agents",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "WebSP-Eval: Evaluating Web Agents on Website Security and Privacy Tasks",
+    "url": "https://arxiv.org/abs/2604.06367",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.06367v2 Announce Type: replace-cross Abstract: Web agents automate browser tasks, ranging from simple form completion to complex workflows like ordering groceries. While current benchmarks evaluate general-purpose performance~(e.g., WebArena) or safety against malicious actions~(e.g., SafeArena), no existing framework assesses an agent's ability to successfully execute user-facing website security and privacy tasks, such as managing cookie preferences, configuring privacy-sensitive account settings, or revoking inactive sessions. To address this gap, we introduce WebSP-Eval, an evaluation framework for measuring web agent performance on website security and privacy tasks. WebSP-Eval comprises 1) a manually crafted task dataset of 200 task instances across 28 websites; 2) a robust agentic system supporting account and initial state management across runs using a custom Google Chrome extension; and 3) an automated evaluator. We evaluate a total of 8 web agent instantiations using state-of-the-art multimodal large language models, conducting a fine-grained analysis across websites, task categories, and UI elements. Our evaluation reveals that current models suffer from lim...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "dataset",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -118,8 +240,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -141,8 +263,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -167,8 +289,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -200,8 +322,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -223,7 +345,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -245,7 +367,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -272,118 +394,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgentFairBench: Do LLM Agents Discriminate When They Act?",
-    "url": "https://arxiv.org/abs/2606.16723",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.16723v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly take actions (screening applicants, recommending credit, triaging patients), yet fairness for LLMs is still measured by grading answers. We introduce AgentFairBench, a cheap, reproducible, multi-domain benchmark for demographic disparity in the actions of LLM agents. Grounded in a companion framework, the Bias Conduction Framework (BCF, restated here), it spans three regulator-anchored domains: hiring, lending, and medical triage. Synthetic, demographic-neutral profiles are evaluated in counterfactual matched sets that vary only a name-coded race x gender signal (in the Bertrand Mullainathan tradition), under four agent scaffolds of increasing agency (direct, chain-of-thought, multi-agent deliberation, tool-augmented). A NumPy-only harness computes counterfactual flip rate, mean absolute score difference (MASD), action-rate disparity, and tool-invocation disparity, with bootstrap confidence intervals, paired tests, and false-discovery-rate control, for single-digit dollars per model. A live leaderboard with a held-out private split and a contamination canary admits external models by sub...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AutoDojo: Adaptive Attacks Expose Superficial Defenses and User-Underspecification Limits in LLM Agents",
-    "url": "https://arxiv.org/abs/2606.15057",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15057v1 Announce Type: cross Abstract: Indirect prompt injection (IPI) is a major security threat to LLM-powered agents. Thus, a growing body of work have proposed a variety of defensive approaches against IPI. These can be grouped into three broad categories: 1) prompt-based (using prompting as a way to prevent agents from following malicious instructions), 2) detection-based (identifying and filtering malicious instructions), and 3) system-level (using systems insights, such as control and data isolation, for defense). However, commonly used benchmarks for evaluating defense, such as AgentDojo, are \\emph{inherently static}, generating a fixed distribution of IPI attacks. Consequently, static benchmarks do not usefully evaluate defense robustness to adaptive threats. We address this issue by developing AutoDojo, an adaptive extension of AgentDojo that optimizes IPI against a given defense. Using AutoDojo against state-of-the-art IPI defenses across three task suites and five target models, we make two key observations. First, many defenses offer only limited protection: a cheap, black-box adaptive attack using a frontier LLM to iteratively optimize the injection raises...",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Benign in Isolation, Harmful in Composition: Security Risks in Agent Skill Ecosystems",
-    "url": "https://arxiv.org/abs/2606.15242",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15242v1 Announce Type: cross Abstract: Skills are becoming the capability layer through which LLM agents turn plans into actions, but their use introduces security risks such as data leakage, unauthorized operations, and tool misuse. Existing vetting usually evaluates each skill in isolation, while real agent tasks often invoke multiple skills in a shared execution context. This creates Skill Composition Risk (SCR): a skill that appears benign alone can become harmful when its outputs, trust signals, authorization cues, or side effects influence later invocations along an activated path. We introduce SCR-Bench to evaluate this risk in controlled, sandboxed skill environments. Rather than relying only on textual intent or surface behavior, SCR-Bench records downstream state changes and path-level outcomes across composed skill executions. It contains three sub-benchmarks: SCR-CapFlow for capability-flow composition, SCR-TrustLift for trust-transfer composition, and SCR-AuthBlur for authorization-confusion composition. Across SCR-Bench, composed paths expose risks that are largely absent under isolated evaluation. In SCR-CapFlow, attack success rate reaches 33.6 percent u...",
-    "matched_keywords": [
-      "Agent",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When the Tool Decides: LLM Agents Defer Blindly to Graph Neural Network Tools, and Stronger Backbones Defer More",
-    "url": "https://arxiv.org/abs/2606.14476",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.14476v1 Announce Type: new Abstract: A growing line of work equips large language model (LLM) agents with graph neural networks (GNNs) as callable tools, assuming the agent exercises judgment over when and how much to rely on such a tool. We test this directly. We expose a frozen GNN to a ReAct-style LLM agent as an explicit tool and measure, on node classification over a text-attributed graph (ogbn-arxiv, replicated on WikiCS), whether the agent uses the tool or merely obeys it. We find the agent does not exercise judgment: its predictions agree with the raw GNN's 97.6-99.2% of the time (5 seeds), collapsing into a GNN parrot that adopts the tool's output wholesale and bypasses its own reasoning. Sweeping backbone capability (Qwen2.5 0.5B-7B), the deference is not a weak-model artifact: among models able to invoke the tool, agreement rises with capability (0.60 to 0.98 from 1.5B to 7B). Crucially, the cost of deference does not shrink as capability grows and grows where alternatives emerge: a per-node oracle over the available actions beats the parrot by 0.09-0.18 at 3B and 0.12-0.22 at 7B, roughly doubling at high homophily, because the parrot is pinned to the frozen...",
-    "matched_keywords": [
-      "Agent",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SEVRA-BENCH: Social Engineering of Vulnerabilities in Review Agents",
-    "url": "https://arxiv.org/abs/2606.13757",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.13757v1 Announce Type: cross Abstract: Large language model (LLM) reviewers are increasingly used in pull-request (PR) workflows, where their approvals help decide which code is merged into a repository. This raises a question that benchmarks for static vulnerability detection or code generation do not address: can an automated reviewer reject a malicious contribution when the attacker controls both the code change and the accompanying PR text? We introduce SEVRA-BENCH (Social Engineering of Vulnerabilities in Review Agents), a benchmark that measures how often an automated reviewer approves such adversarial pull requests. Each malicious PR in SEVRA-BENCH is built from a real project commit that previously fixed a vulnerability listed in the Common Vulnerabilities and Exposures (CVE) database. We automatically invert that fix to restore the original vulnerable code and submit it as a pull request wrapped in one of 15 social-engineering framings, which vary the claims made, the supporting evidence, the urgency conveyed, signals of prior approval, and appeals to authority. SEVRA-BENCH contains 1,062 malicious PRs drawn from Common Vulnerabilities and Exposures (CVE)-linke...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "pull request",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -411,104 +422,79 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "GitHub Code Quality generally available July 20, 2026",
-    "url": "https://github.blog/changelog/2026-06-16-github-code-quality-generally-available-july-20-2026",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-16T16:25:31+00:00",
-    "summary_or_excerpt": "More than 10,000 enterprises have used the GitHub Code Quality public preview to detect maintainability and reliability issues, enforce quality gates, and track code coverage. On July 20, 2026, Code… The post GitHub Code Quality generally available July 20, 2026 appeared first on The GitHub Blog .",
+    "title": "DeepSeek Introduces Vision",
+    "url": "https://chat.deepseek.com/",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-18T06:17:40+00:00",
+    "summary_or_excerpt": "HN points: 446. Comments: https://news.ycombinator.com/item?id=48581458",
     "matched_keywords": [
-      "changelog",
-      "GitHub"
+      "DeepSeek"
     ],
     "tags": [
-      "business",
-      "open_source"
+      "model"
     ],
-    "score": 54,
-    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "score": 49,
+    "hn_score": 446,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "HPE AI Factory With NVIDIA Expands for the Era of Agents",
-    "url": "https://blogs.nvidia.com/blog/hpe-ai-factory-agentic-enterprise",
-    "source_name": "NVIDIA Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-16T16:30:27+00:00",
-    "summary_or_excerpt": "Enterprises are moving agentic AI from proof of concept to production — and the next generation of AI factories are built for the era of agents. At HPE Discover Las Vegas, running through Thursday, June 18, NVIDIA and HPE are expanding the HPE AI Factory with NVIDIA, including NVIDIA Vera CPU and NVIDIA Agent Toolkit […]",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "NVIDIA"
-    ],
-    "tags": [
-      "agent",
-      "semiconductor"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Semantic Kernel python-1.43.1：* Python: Add function_choice_behavior support to Azure AI and OpenAI Assistant agents by",
-    "url": "https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1",
-    "source_name": "Semantic Kernel",
+    "title": "LangGraph langgraph==1.2.6：Changes since 1.2.5",
+    "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.6",
+    "source_name": "LangGraph",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-06-17T07:27:31+00:00",
-    "summary_or_excerpt": "## What's Changed * Python: Add function_choice_behavior support to Azure AI and OpenAI Assistant agents by @SergeyMenshykh in https://github.com/microsoft/semantic-kernel/pull/14057 * Fix MessagePack by @SergeyMenshykh in https://github.com/microsoft/semantic-kernel/pull/14079 * .Net: fix: prevent duplicate \"null\" in JSON Schema type arrays for nullable parameters by @roli-lpci in https://github.com/microsoft/semantic-kernel/pull/13635 * Python: Reject encoded dot-segment paths in OpenAPI plugin (.NET and Python) by @rogerbarreto in https://github.com/microsoft/semantic-kernel/pull/14086 * Python: Bump Python version to 1.43.1 for a release. by @moonbox3 in https://github.com/microsoft/semantic-kernel/pull/14093 **Full Changelog**: https://github.com/microsoft/semantic-kernel/compare/python-1.43.0...python-1.43.1",
+    "published_at": "2026-06-18T20:58:32+00:00",
+    "summary_or_excerpt": "Changes since 1.2.5 * release(langgraph): 1.2.6 (#8139) * fix: nested subgraph inherits parent checkpoint_ns (regression in 1.2.3) (#8053) * fix: cancel running subgraphs on v3 stream abort [closes #8029] (#8057) * release(cli): 0.4.30 (#8101) * docs: standardize package `README.md` structure (#8064) * chore(deps): bump tornado from 6.5.5 to 6.5.6 in /libs/langgraph (#8063)",
     "matched_keywords": [
-      "agents",
-      "changelog",
-      "GitHub",
-      "OpenAI",
-      "release",
-      "Semantic Kernel"
+      "LangGraph",
+      "release"
     ],
     "tags": [
       "agent",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "1.2.6",
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Ollama v0.30.10：* Command A and North family models now run on Apple Silicon with the MLX engine",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.30.10",
+    "source_name": "Ollama",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-17T16:22:02+00:00",
+    "summary_or_excerpt": "## What's Changed * Command A and North family models now run on Apple Silicon with the MLX engine * Updated the underlying llama.cpp engine to build 9672 * Fixed build artifacts for MLX **Full Changelog**: https://github.com/ollama/ollama/compare/v0.30.9...v0.30.10",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "Llama",
+      "llama.cpp",
+      "Ollama"
+    ],
+    "tags": [
+      "ai_app",
       "business",
       "model",
       "open_source"
     ],
     "score": 46,
-    "release_version": "python-1.43.1",
-    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "What is Speculative Decoding? (trending on paperswithco.de) [R]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1u83kzt/what_is_speculative_decoding_trending_on",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-17T07:41:34+00:00",
-    "summary_or_excerpt": "A method that is currently trending on Papers with Code is Speculative Decoding. https://preview.redd.it/dm4nh4t71o7h1.png?width=3082&format=png&auto=webp&s=b6468668667d4bcfb6c9248d3af7fd09f21fe0da Speculative decoding is an inference optimization technique that uses a fast, small \"draft\" model to quickly propose several future tokens, which are then verified in parallel by a larger, slower \"target\" model. This process significantly speeds up token generation for large language models (LLMs) by allowing multiple tokens per step without sacrificing output quality. SGLang, one of the most popular frameworks for running LLMs alongside vLLM, just released a blog post detailing how they achieve state-of-the-art latencies for LLM inference serving using Modal and Z.ai's DFlash speculative decoding models. Learn more at https://paperswithcode.co/methods/speculative-decoding . You can also find all the papers that cite the original paper that introduced this technique. SGLang's blog: https://www.lmsys.org/blog/2026-06-15-next-generation-speculative-decoding-dflash-v2/ Let me know which other methods I should add! Cheers, Niels from HF submitted by /u/NielsRogge [link] [comments]",
-    "matched_keywords": [
-      "inference",
-      "serving",
-      "vLLM"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "release_version": "v0.30.10",
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -534,8 +520,32 @@
     "score": 46,
     "release_version": "b9668",
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Datasette Apps: Host custom HTML applications inside Datasette",
+    "url": "https://simonwillison.net/2026/Jun/18/datasette-apps",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-18T23:58:38+00:00",
+    "summary_or_excerpt": "Today we launched a new plugin for Datasette, datasette-apps , with this launch announcement post on the Datasette project blog. That post has the what , but I'm going to expand on that a little bit here to provide the why . The TL;DR Datasette Apps are self-contained HTML+JavaScript applications that run in a tightly constrained <iframe> sandbox hosted on your Datasette application. They can use JavaScript to run read-only SQL queries against data in Datasette, and can run write queries too if you configure them with some stored queries . Here's a very simple example and a more complex custom timeline example - the latter looks like this: Apps are allowed to run JavaScript and render HTML and CSS. They are limited in terms of access - the <iframe sandbox=\"allow-scripts allow-forms\"> they run in prevents them from accessing cookies or localStorage and they also have an injected CSP header (thanks to this research ) which prevents them from making HTTP requests to outside hosts, preventing a malicious or buggy app from exfiltrating private data. Datasette Apps started out as my attempt at building a Claude Artifacts mechanism for Datasette Agent , but I quickly realised that the sa...",
+    "matched_keywords": [
+      "Agent",
+      "Claude",
+      "launch"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -557,7 +567,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -579,8 +589,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -605,7 +615,7 @@
     "score": 43,
     "release_version": "b9669",
     "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -631,8 +641,32 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Copilot-authored pull requests now included in author searches",
+    "url": "https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-18T16:24:05+00:00",
+    "summary_or_excerpt": "Searching for pull requests using author: now shows pull requests opened by Copilot cloud agent on the user’s behalf. For example, searching with author:@me on github.com/pulls will return your own… The post Copilot-authored pull requests now included in author searches appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "Agent",
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 41,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -655,8 +689,81 @@
     "score": 41,
     "release_version": "b9656",
     "first_seen_at": "2026-06-16T08:33:02.368233+08:00",
-    "last_seen_at": "2026-06-18T08:14:12.141033+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Launch HN: TesterArmy (YC P26) – Agents that test web and mobile apps",
+    "url": "https://tester.army",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-18T14:49:44+00:00",
+    "summary_or_excerpt": "HN points: 93. Comments: https://news.ycombinator.com/item?id=48586299",
+    "matched_keywords": [
+      "agents",
+      "launch"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 40,
+    "hn_score": 93,
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ComfyUI v0.25.1：* [Partner Nodes] feat(Kling): add support for Kling V3-Turbo model (https://github.com/Co",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.25.1",
+    "source_name": "ComfyUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-18T18:32:30+00:00",
+    "summary_or_excerpt": "* [Partner Nodes] feat(Kling): add support for Kling V3-Turbo model (https://github.com/Comfy-Org/ComfyUI/pull/14528). **Full Changelog**: https://github.com/Comfy-Org/ComfyUI/compare/v0.25.0...v0.25.1",
+    "matched_keywords": [
+      "changelog",
+      "ComfyUI",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "v0.25.1",
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9704：server : return HTTP 400 on invalid grammar (#24144) (#24154)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9704",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-18T15:47:20+00:00",
+    "summary_or_excerpt": "server : return HTTP 400 on invalid grammar (#24144) (#24154) Throw on grammar parse failure so the server returns HTTP 400 instead of silently dropping the constraint. Add a regression test for the invalid-grammar response. Fixes #24144 **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9704/llama-b9704-bin-ubu...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b9704",
+    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "last_seen_at": "2026-06-19T08:28:20.395454+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

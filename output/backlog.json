@@ -5,7 +5,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
+    "published_at": "2026-06-20T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.19348v1 Announce Type: cross Abstract: We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T parameters (49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) -- both supporting a context length of one million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and optimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention (CSA) and Heavily Compressed Attention (HCA) to improve long-context efficiency; (2) Manifold-Constrained Hyper-Connections (mHC) that enhance conventional residual connections; (3) and the Muon optimizer for faster convergence and greater training stability. We pre-train both models on more than 32T diverse and high-quality tokens, followed by a comprehensive post-training pipeline that unlocks and further enhances their capabilities. DeepSeek-V4-Pro-Max, the maximum reasoning effort mode of DeepSeek-V4-Pro, redefines the state-of-the-art for open models, outperforming its predecessors in core tasks. Meanwhile, DeepSeek-V4 series are highly efficient in long-context scenarios. In the one...",
     "matched_keywords": [
       "DeepSeek"
@@ -13,9 +13,33 @@
     "tags": [
       "model"
     ],
+    "score": 71,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Techniques for Peak Memory Reduction for LoRA Fine-tuning of LLMs on Edge Devices",
+    "url": "https://arxiv.org/abs/2606.19528",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19528v1 Announce Type: cross Abstract: Fine-tuning of Large Language Models (LLMs) using Low-Rank Adaptation (LoRA) on an end-user's data offers personalized experiences while keeping data private, but faces severe memory constraints on consumer hardware. Peak memory during fine-tuning often exceeds device limits, especially for models with billions of parameters and long-context training data. This paper introduces a suite of complementary techniques to reduce memory footprint without sacrificing model quality: (1) base model quantization with on-the-fly dequantization, (2) memory-efficient checkpointing combining selective activation caching and disk offloading, (3) softmax approximation using semantically relevant token subsets, and (4) logits masking. Experiments on Llama-3.2 3B and Qwen-2.5 3B demonstrate up to $26\\times$ and $28\\times$ reduction in peak memory, enabling fine-tuning on resource-constrained devices.",
+    "matched_keywords": [
+      "fine-tuning",
+      "Llama",
+      "quantization",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
     "score": 68,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -25,7 +49,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
+    "published_at": "2026-06-20T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.19613v1 Announce Type: cross Abstract: We introduce StaminaBench, a benchmark that measures the stamina of coding agents: how many consecutive interaction turns (change requests) they can handle before failing. Unlike the prevailing fraction-of-tasks-solved metric, this matches real vibe-coding where sessions run dozens or hundreds of turns. In StaminaBench, agents implement a REST API server and modify it across a tunable number of procedurally generated follow-up change requests - 100 in our experiments, resulting in codebases of up to 6,000 lines. Tests are generated fully programmatically without LLM involvement, ensuring reproducibility and reliability; change sequences are drawn from either a hardcoded or LLM-driven sampler, both constrained to a structured action space to ensure changes are valid. The agent and the server run in an isolated environment and communicate with the benchmark through HTTP, making testing fully black-box and language-agnostic. We evaluate six agent harnesses paired with seven open-source LLMs across 20 scenarios of 100 turns each and find that: (1) all the tested models fail within 5-6 turns, confirming that vibe-coding-style programmin...",
     "matched_keywords": [
       "Agent",
@@ -39,135 +63,8 @@
       "open_source"
     ],
     "score": 67,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DRFLOW: A Deep Research Benchmark for Personalized Workflow Prediction",
-    "url": "https://arxiv.org/abs/2606.18191",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.18191v2 Announce Type: replace Abstract: Deep research (DR) systems are increasingly used for complex information-seeking tasks, but existing works mainly focus on generating reports and summaries. In contrast, many enterprise tasks instead require an agent to identify concrete workflows which is a sequence of action-steps. For example, rather than summarizing budgeting policies, an agent should be able to determine the steps needed to answer a question such as: \"How do I request new headcount given a fixed budget?\". Therefore, we introduce DRFLOW, a benchmark for evaluating personalized workflows predicted by agents from heterogeneous sources. Each task requires the agent to identify relevant evidence from scattered sources, then use that evidence to predict the correct action-step sequence for the user's task. DRFLOW contains 100 tasks across five domains, with 1,246 reference workflow steps grounded in more than 3,900 sources. We define seven diagnostic metrics covering factual grounding, step recovery, structural ordering, condition resolution, and personalization. We further present DRFLOW-Agent (DRFA), a workflow-oriented reference agent to predict personalized wo...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 67,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Beyond Static Endpoints: Tool Programs as an Interface for Flexible Agentic Web Services",
-    "url": "https://arxiv.org/abs/2606.19992",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19992v1 Announce Type: cross Abstract: In the agentic web era, LLM-based agents increasingly invoke web services as tools, yet most interfaces remain \\emph{static endpoints} that poorly express long-horizon workflows with loops, conditionals, joins, and retries. We present ToolPro, which represents an agent's tool intent as an \\emph{executable tool program} that compactly encodes multi-step service interactions with explicit effect types. ToolPro combines constraint-guided program construction, effect-aware replay for exactly-once state-modifying calls, and a profile-driven policy that decides when program execution outperforms stepwise calling. We instantiate ToolPro over MCP-style services with WebAssembly sandboxing and evaluate it on diverse workflows of real-world applications. ToolPro reduces end-to-end latency by up to 53.4\\% and client-side traffic by up to 96.1\\%, with larger gains under higher network latency and workflow complexity.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "MCP",
-      "policy",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "APEX: Adaptive Principle EXtraction A Three-Layer Self-Evolution Framework for Production AI Agents",
-    "url": "https://arxiv.org/abs/2606.15363",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15363v1 Announce Type: new Abstract: Self-improvement in AI agents has emerged as a key research frontier: systems that modify their own prompts, workflows, and decision rules based on accumulated operational experience. The state-of-the-art Self-Harness framework [1] achieves 14--21% improvement on Terminal-Bench-2.0 by mining failure clusters and patching the agent harness. However, Self-Harness optimises only one dimension -- the prompt harness -- leaving behavioural principles and workflow topology unchanged. We propose APEX (Adaptive Principle EXtraction), a three-layer co-evolution framework that simultaneously evolves: (L1) the harness via failure-mode patching, (L2) behavioural principles via success-trace distillation [2], and (L3) the agent workflow topology via structural fitness-based selection [6]. We implement APEX on Joe [13], a production-grade super AI Agent built on NVIDIA Nemotron and designed as an Edge AI Agent Factory for the NVIDIA Agent Challenge 2026, managing a 15-node compute fleet using 114 real task traces collected over 18 days. APEX achieves an APEX Health Score of 0.570 (+90% vs. baseline 0.300) in a single evolutionary run, distilling 6...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "AI Agent",
-      "Edge AI",
-      "NVIDIA",
-      "terminal",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "coding_tool",
-      "embedded_edge_ai",
-      "semiconductor"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Your Agent Has a Genome: Sequence-Level Behavioral Analysis and Runtime Governance of LLM-Powered Autonomous Agents",
-    "url": "https://arxiv.org/abs/2606.15579",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.15579v1 Announce Type: new Abstract: We propose Base Sequence Analysis, a framework that encodes the runtime behavior of LLM-powered autonomous agents into compact symbolic sequences using a four-letter alphabet: X (Explore), E (Execute), P (Plan), and V (Verify). Drawing an analogy to genomic sequence analysis, we apply n-gram pattern mining, Markov transition matrices, and point-biserial correlation to 347 real-world execution traces collected from a production ReAct agent system over 8 days. Our analysis reveals that (1) the trigram P-X-P is the only statistically significant high-risk pattern, lowering success rate by 10.4%; (2) P-ratio is the strongest negative predictor of success (r=-0.256, p V transition probability is only 2.1%, indicating a systemic verification deficit. Based on these findings, we design Governor, a three-layer runtime intervention system comprising a rule engine, a statistical accumulator, and a chi-square-based threshold adaptor. In a natural before/after deployment evaluation (N=101 vs. N=246), Governor achieves a +6.2% absolute increase in task success rate while simultaneously reducing average token consumption by 44%. To validate cross-...",
-    "matched_keywords": [
-      "Agent",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Benchmarking Agentic Review Systems",
-    "url": "https://arxiv.org/abs/2606.19749",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19749v1 Announce Type: new Abstract: A new class of agentic review systems are emerging as a remedy to the pressure placed on peer review systems by AI-assisted research, but it is unclear how they should be evaluated. We evaluate two open-source systems (OpenAIReview and coarse), one proprietary system (Reviewer3), and a zero-shot baseline, across six LLMs spanning frontier and efficient models. First, we study whether AI reviews on ICLR/NeurIPS papers track with papers' quality as approximated by external signals such as citations and acceptance decisions. Every system performs above chance in pairwise accuracy, and the best is OpenAIReview + GPT-5.5 at 83.0%. Second, to test whether systems can catch errors with known ground truth, we construct a perturbation benchmark that injects four categories of errors into papers across eight arXiv subject classes and measure detection recall. The strongest configuration (OpenAIReview + GPT-5.5) catches 71.6% of injected errors, leaving substantial room for improvement. The union of detections across six models reaches 83.3% recall, suggesting different models detect different errors and better harness design can potentially in...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -177,7 +74,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
+    "published_at": "2026-06-20T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.19605v1 Announce Type: cross Abstract: Multi-step LLM pipelines fail through interactions among retrieval, reasoning, and formatting steps, so prompt-only optimization can miss bottlenecks in the chain. We present FAPO (Fully Autonomous Prompt Optimization), a framework that lets Claude Code optimize an LLM pipeline inside a standardized codebase. FAPO evaluates a pipeline, inspects intermediate steps, diagnoses failures, proposes scoped changes, and validates variants repeatedly to optimize against a score function. It first tries prompt edits and, only when prompt optimization appears insufficient, changes chain structure within the permitted scope when attribution identifies a structural bottleneck. Across six benchmarks and three task models, FAPO beats the baseline GEPA in 15 of 18 model-benchmark comparisons. In 11 model-benchmark comparisons, FAPO wins with non-overlapping mean $\\pm$ trial-standard-deviation ranges, and the mean FAPO-GEPA gain is +14.1 pp. In the six HoVer and IFBench comparisons where prompt-first search escalated to structural changes, FAPO wins all six with a mean gain of +33.8 pp. FAPO also improves performance on security tasks: on CTIBench-...",
     "matched_keywords": [
       "benchmark",
@@ -192,56 +89,9 @@
       "rag_data"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LLM agent safety, multi-turn red-teaming, jailbreak benchmarks, adversarial robustness, safety-critical systems",
-    "url": "https://arxiv.org/abs/2606.20408",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.20408v1 Announce Type: cross Abstract: Large language model (LLM) agents are increasingly proposed as supervisory components for safety-critical systems, yet their robustness under sustained, adaptive adversarial pressure remains poorly characterized. We present NRT-Bench, a benchmark for multi-turn red-teaming of LLM agents acting as operators of a safety-critical system, instantiated in a simulated nuclear power plant control room. A five-role operator team, each backed by a configurable LLM, runs a plant governed by six critical safety functions (CSFs), while adversaries inject messages over four channels in bounded multi-turn sessions with per-turn feedback. Harm is an objective signal rather than LLM-judged text: a run terminates the moment any CSF is lost, attributed to the causing message. Evaluating four frontier operator models under a fixed-attack paired-replay protocol, we find that adaptive multi-turn attacks reliably push the operator team past a safety limit: across the four models, between 8.7% and 12.1% of attack sessions end with the plant losing a critical safety function. Although the four models look almost equally robust by this aggregate rate, thei...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NAVI-Orbital: First In-Orbit Demonstration of a Zero-Shot Vision-Language Model for Autonomous Earth Observation",
-    "url": "https://arxiv.org/abs/2606.18271",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.18271v1 Announce Type: new Abstract: As Earth Observation data generation outpaces downlink bandwidth and human-in-the-loop processing, a widening gap has emerged between onboard collection and actionable ground intelligence. This paper presents NAVI-Orbital, a software system deployed on a Low Earth Orbit (LEO) spacecraft. On April 16, 2026, NAVI-Orbital achieved what is, to the authors' knowledge, the first in-orbit demonstration of a vision-language model performing autonomous multi-modal inference entirely onboard. NAVI-Orbital uses a local vision-language model (Gemma 3) to classify each captured scene, produce a text description of its content and the relationships between its features, and respond to operator follow-up via natural-language dialogue. The system is re-tasked through plain-English prompts in place of conventional command sequences, and is orchestrated by a graph-based state machine (LangGraph) coordinating dedicated agents for detection and dialogue. Results across ground benchmarking (88.16% accuracy on the 7,960-image curated AID benchmark), Flatsat validation, and live in-orbit captures of newly acquired, previously unseen Earth imagery (includin...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "inference",
-      "LangGraph"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -264,7 +114,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -286,33 +136,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "WebSP-Eval: Evaluating Web Agents on Website Security and Privacy Tasks",
-    "url": "https://arxiv.org/abs/2604.06367",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.06367v2 Announce Type: replace-cross Abstract: Web agents automate browser tasks, ranging from simple form completion to complex workflows like ordering groceries. While current benchmarks evaluate general-purpose performance~(e.g., WebArena) or safety against malicious actions~(e.g., SafeArena), no existing framework assesses an agent's ability to successfully execute user-facing website security and privacy tasks, such as managing cookie preferences, configuring privacy-sensitive account settings, or revoking inactive sessions. To address this gap, we introduce WebSP-Eval, an evaluation framework for measuring web agent performance on website security and privacy tasks. WebSP-Eval comprises 1) a manually crafted task dataset of 200 task instances across 28 websites; 2) a robust agentic system supporting account and initial state management across runs using a custom Google Chrome extension; and 3) an automated evaluator. We evaluate a total of 8 web agent instantiations using state-of-the-art multimodal large language models, conducting a fine-grained analysis across websites, task categories, and UI elements. Our evaluation reveals that current models suffer from lim...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "dataset",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -335,7 +159,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -358,226 +182,195 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "DeepSeek Introduces Vision",
-    "url": "https://chat.deepseek.com/",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-18T06:17:40+00:00",
-    "summary_or_excerpt": "HN points: 446. Comments: https://news.ycombinator.com/item?id=48581458",
+    "title": "Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2606.20493",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.20493v1 Announce Type: cross Abstract: When large language models serve as evaluators in multi-agent systems, their systematic evaluation biases propagate through the agent network. We introduce Contagion Networks, a formal framework for measuring how evaluator biases spread across interacting LLM agents. In a controlled 3-agent experiment using DeepSeek-chat with three distinct evaluator bias profiles (structured, balanced, evidence-based), we measure the Cross-Agent Contagion Matrix Gamma_3 and find that evaluator biases consistently propagate between agents (gamma in [0.157, 0.352]), even within the same underlying model. We identify three propagation regimes governed by the spectral radius rho(Gamma_N), and demonstrate that homogeneous-model agents produce contagion coefficients 3-5x weaker than cross-model coefficients observed in prior work (MM-EPC: gamma approx 0.85-1.3), placing them in the suppression regime. We show that increasing evaluator committee size from k=1 to k=3 reduces effective contagion by 72.4%, providing an actionable mitigation strategy. We release the open-source Contagion Network experimental framework.",
     "matched_keywords": [
-      "DeepSeek"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 49,
-    "hn_score": 446,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LangGraph langgraph==1.2.6：Changes since 1.2.5",
-    "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.6",
-    "source_name": "LangGraph",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-18T20:58:32+00:00",
-    "summary_or_excerpt": "Changes since 1.2.5 * release(langgraph): 1.2.6 (#8139) * fix: nested subgraph inherits parent checkpoint_ns (regression in 1.2.3) (#8053) * fix: cancel running subgraphs on v3 stream abort [closes #8029] (#8057) * release(cli): 0.4.30 (#8101) * docs: standardize package `README.md` structure (#8064) * chore(deps): bump tornado from 6.5.5 to 6.5.6 in /libs/langgraph (#8063)",
-    "matched_keywords": [
-      "LangGraph",
+      "Agent",
+      "agents",
+      "DeepSeek",
+      "multi-agent",
       "release"
     ],
     "tags": [
       "agent",
+      "model",
       "open_source"
     ],
-    "score": 46,
-    "release_version": "1.2.6",
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "score": 61,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Ollama v0.30.10：* Command A and North family models now run on Apple Silicon with the MLX engine",
-    "url": "https://github.com/ollama/ollama/releases/tag/v0.30.10",
-    "source_name": "Ollama",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-17T16:22:02+00:00",
-    "summary_or_excerpt": "## What's Changed * Command A and North family models now run on Apple Silicon with the MLX engine * Updated the underlying llama.cpp engine to build 9672 * Fixed build artifacts for MLX **Full Changelog**: https://github.com/ollama/ollama/compare/v0.30.9...v0.30.10",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "Llama",
-      "llama.cpp",
-      "Ollama"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "v0.30.10",
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9668：vulkan: prefer host-visible memory buffers on UMA devices (#22930)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9668",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-16T11:48:13+00:00",
-    "summary_or_excerpt": "vulkan: prefer host-visible memory buffers on UMA devices (#22930) * implement UMA host-visible memory * update based on 0cc4m's suggestion **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9668/llama-b9668-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/do...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 46,
-    "release_version": "b9668",
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Datasette Apps: Host custom HTML applications inside Datasette",
-    "url": "https://simonwillison.net/2026/Jun/18/datasette-apps",
-    "source_name": "Simon Willison",
+    "title": "DRFLOW: A Deep Research Benchmark for Personalized Workflow Prediction",
+    "url": "https://arxiv.org/abs/2606.18191",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-18T23:58:38+00:00",
-    "summary_or_excerpt": "Today we launched a new plugin for Datasette, datasette-apps , with this launch announcement post on the Datasette project blog. That post has the what , but I'm going to expand on that a little bit here to provide the why . The TL;DR Datasette Apps are self-contained HTML+JavaScript applications that run in a tightly constrained <iframe> sandbox hosted on your Datasette application. They can use JavaScript to run read-only SQL queries against data in Datasette, and can run write queries too if you configure them with some stored queries . Here's a very simple example and a more complex custom timeline example - the latter looks like this: Apps are allowed to run JavaScript and render HTML and CSS. They are limited in terms of access - the <iframe sandbox=\"allow-scripts allow-forms\"> they run in prevents them from accessing cookies or localStorage and they also have an injected CSP header (thanks to this research ) which prevents them from making HTTP requests to outside hosts, preventing a malicious or buggy app from exfiltrating private data. Datasette Apps started out as my attempt at building a Claude Artifacts mechanism for Datasette Agent , but I quickly realised that the sa...",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.18191v2 Announce Type: replace Abstract: Deep research (DR) systems are increasingly used for complex information-seeking tasks, but existing works mainly focus on generating reports and summaries. In contrast, many enterprise tasks instead require an agent to identify concrete workflows which is a sequence of action-steps. For example, rather than summarizing budgeting policies, an agent should be able to determine the steps needed to answer a question such as: \"How do I request new headcount given a fixed budget?\". Therefore, we introduce DRFLOW, a benchmark for evaluating personalized workflows predicted by agents from heterogeneous sources. Each task requires the agent to identify relevant evidence from scattered sources, then use that evidence to predict the correct action-step sequence for the user's task. DRFLOW contains 100 tasks across five domains, with 1,246 reference workflow steps grounded in more than 3,900 sources. We define seven diagnostic metrics covering factual grounding, step recovery, structural ordering, condition resolution, and personalization. We further present DRFLOW-Agent (DRFA), a workflow-oriented reference agent to predict personalized wo...",
     "matched_keywords": [
       "Agent",
-      "Claude",
-      "launch"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Control who and what triggers GitHub Actions workflows",
-    "url": "https://github.blog/changelog/2026-06-18-control-who-and-what-triggers-github-actions-workflows",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-18T14:06:18+00:00",
-    "summary_or_excerpt": "Workflow execution protections are now in public preview for GitHub Enterprise, organizations, and repositories. This new capability lets enterprise administrators define an allow list that controls who can trigger GitHub… The post Control who and what triggers GitHub Actions workflows appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
+      "agents",
+      "benchmark",
       "workflow"
     ],
     "tags": [
+      "agent",
       "ai_app",
-      "business",
       "open_source"
     ],
-    "score": 43,
-    "first_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Introducing LifeSciBench",
-    "url": "https://openai.com/index/introducing-life-sci-bench",
-    "source_name": "OpenAI News",
+    "title": "Beyond Static Endpoints: Tool Programs as an Interface for Flexible Agentic Web Services",
+    "url": "https://arxiv.org/abs/2606.19992",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-17T00:00:00+00:00",
-    "summary_or_excerpt": "Introducing LifeSciBench, an expert-authored, expert-reviewed benchmark for evaluating how AI systems handle real-world life science research tasks and decisions.",
-    "matched_keywords": [
-      "benchmark",
-      "OpenAI"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-06-18T08:14:12.141033+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9669：spec: add backend sampling support for eagle3 (#24655)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9669",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-16T12:25:36+00:00",
-    "summary_or_excerpt": "spec: add backend sampling support for eagle3 (#24655) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9669/llama-b9669-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm 7.2)](ht...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 43,
-    "release_version": "b9669",
-    "first_seen_at": "2026-06-17T08:19:30.827678+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Copilot-authored pull requests now included in author searches",
-    "url": "https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-18T16:24:05+00:00",
-    "summary_or_excerpt": "Searching for pull requests using author: now shows pull requests opened by Copilot cloud agent on the user’s behalf. For example, searching with author:@me on github.com/pulls will return your own… The post Copilot-authored pull requests now included in author searches appeared first on The GitHub Blog .",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19992v1 Announce Type: cross Abstract: In the agentic web era, LLM-based agents increasingly invoke web services as tools, yet most interfaces remain \\emph{static endpoints} that poorly express long-horizon workflows with loops, conditionals, joins, and retries. We present ToolPro, which represents an agent's tool intent as an \\emph{executable tool program} that compactly encodes multi-step service interactions with explicit effect types. ToolPro combines constraint-guided program construction, effect-aware replay for exactly-once state-modifying calls, and a profile-driven policy that decides when program execution outperforms stepwise calling. We instantiate ToolPro over MCP-style services with WebAssembly sandboxing and evaluate it on diverse workflows of real-world applications. ToolPro reduces end-to-end latency by up to 53.4\\% and client-side traffic by up to 96.1\\%, with larger gains under higher network latency and workflow complexity.",
     "matched_keywords": [
       "Agent",
-      "changelog",
-      "GitHub"
+      "agentic",
+      "agents",
+      "MCP",
+      "policy",
+      "workflow"
     ],
     "tags": [
       "agent",
-      "business",
+      "ai_app",
+      "business"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
+    "url": "https://arxiv.org/abs/2606.19704",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19704v1 Announce Type: new Abstract: Agent benchmarks are growing fast, but no single benchmark touches more than four or five of the dimensions that deployment exposes. This paper aggregates the largest coordinated deep-dive of one MCP-based industrial-agent benchmark to date: fourteen parallel implementation studies covering new asset classes (including a multi-modal visual extension), alternative orchestrations, retrieval strategies, reasoning modes, infrastructure optimizations, and evaluation-methodology probes. Consolidating those studies with seven prior agent benchmarks, we argue that aggregate-score leaderboards systematically underspecify deployed-agent evaluation. Rankings derived from aggregate scores do not transfer to out-of-distribution settings; recent public-to-hidden competition retrospectives provide direct empirical evidence of this rank instability. We propose ranking configurations by predictive validity, the correlation between in-sample and out-of-sample rank, rather than in-sample mean, and report a twelve-tier measurement apparatus that exposes the deployment-relevant dimensions HELM and its agent-era successors collapse. The position is operat...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "MCP",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ORAgentBench: Can LLM Agents Solve Challenging Operations Research Tasks End to End?",
+    "url": "https://arxiv.org/abs/2606.19787",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19787v1 Announce Type: new Abstract: Large language models are increasingly deployed as autonomous agents for multi-step tasks in executable environments, yet their ability to perform realistic operations research (OR) work remains unclear. Existing OR evaluations often decouple modeling from solving, rely on pre-formalized or text-only instances, and rarely test the full workflow from operational artifacts to validated decisions. In this work, we introduce ORAgentBench, an execution-grounded benchmark for evaluating autonomous agents on challenging end-to-end operations research tasks. It contains 107 human-reviewed tasks across diverse operational scenarios, each packaged in an isolated environment with a natural-language brief, multi-file data, configuration artifacts, and a required submission schema. Agents must write and run solution code, and their submissions are evaluated by hidden validators for schema validity, hard-constraint feasibility, and normalized objective quality. Experiments with fourteen frontier agent-model configurations show that current agents remain far from reliable OR practice. The best agent passes only 35.51% of all tasks and 20.59% of har...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
       "open_source"
     ],
-    "score": 41,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DynAMO:Dynamic Asset Management Orchestration via Topological Multi-Agent Scheduling",
+    "url": "https://arxiv.org/abs/2606.19382",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19382v1 Announce Type: cross Abstract: While LLM-powered agents offer end-to-end automation for industrial asset lifecycles, real-world Industry 4.0 deployment is hindered by latency, concurrency instability, and safety risks. We present DynAMO (Dynamic Asset Management Orchestration), a deployment-ready engine using a Plan-then-Execute architecture to generate verifiable workflow graphs. DynAMO supports both SequentialWorkflow (topological execution) and ParallelWorkflow (dependency-aware concurrency). By dynamically identifying independent tasks, DynAMO preserves structural correctness and safety while significantly improving efficiency through controlled reasoning overlap. Across six controlled experiments on the AssetOpsBench industrial benchmark, DynAMO demonstrates substantial performance and robustness gains. Parallel execution reduces end-to-end latency by a median of 1.6x over sequential orchestration, rising to 1.8x on highly parallelizable workflows. After instrumenting external tool calls with realistic latencies, a latency decomposition shows that LLM reasoning and orchestration still account for more than 90% of execution time, identifying model inference...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "automation",
+      "benchmark",
+      "inference",
+      "multi-agent",
+      "orchestration",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows",
+    "url": "https://arxiv.org/abs/2606.19595",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.19595v1 Announce Type: cross Abstract: Voice agents deployed in structured workflows (customer service, healthcare scheduling, account management) must handle frequent user interruptions while maintaining progress through multi-step procedures. Existing benchmarks for speech-capable models focus on the timing of interruptions: barge-in detection, endpointing, and turn-taking dynamics. They leave unmeasured what happens after the interruption: does the agent resume the workflow at the correct step? Does it address the user's interjection? Does it avoid re-delivering content the user already heard? We introduce IHBench (Interruption Handling Benchmark), a benchmark that evaluates post-interruption recovery in voice agents executing state-machine-driven workflows across 10 enterprise domains. Six interruption types are injected at controlled points mid-utterance, with per-interruption evaluation rubrics generated alongside the data. Each interruption is scored on two axes: task fulfillment and recovery quality. We evaluate 27 audio-language model configurations from OpenAI, Google, and the open-weight community. Models vary widely, and recovery quality depends strongly on...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "customer",
+      "OpenAI",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -599,7 +392,7 @@
     "score": 40,
     "hn_score": 93,
     "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -623,7 +416,7 @@
     "score": 38,
     "release_version": "v0.25.1",
     "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -649,7 +442,7 @@
     "score": 38,
     "release_version": "b9704",
     "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-20T08:09:04.192530+08:00",
+    "last_seen_at": "2026-06-21T08:09:58.817383+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

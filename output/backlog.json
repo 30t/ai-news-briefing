@@ -15,31 +15,7 @@
     ],
     "score": 71,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Techniques for Peak Memory Reduction for LoRA Fine-tuning of LLMs on Edge Devices",
-    "url": "https://arxiv.org/abs/2606.19528",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19528v1 Announce Type: cross Abstract: Fine-tuning of Large Language Models (LLMs) using Low-Rank Adaptation (LoRA) on an end-user's data offers personalized experiences while keeping data private, but faces severe memory constraints on consumer hardware. Peak memory during fine-tuning often exceeds device limits, especially for models with billions of parameters and long-context training data. This paper introduces a suite of complementary techniques to reduce memory footprint without sacrificing model quality: (1) base model quantization with on-the-fly dequantization, (2) memory-efficient checkpointing combining selective activation caching and disk offloading, (3) softmax approximation using semantically relevant token subsets, and (4) logits masking. Experiments on Llama-3.2 3B and Qwen-2.5 3B demonstrate up to $26\\times$ and $28\\times$ reduction in peak memory, enabling fine-tuning on resource-constrained devices.",
-    "matched_keywords": [
-      "fine-tuning",
-      "Llama",
-      "quantization",
-      "Qwen"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -56,54 +32,52 @@
     "score": 65,
     "hn_score": 72,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Temporary Cloudflare Accounts for AI agents",
+    "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-21T22:01:04+00:00",
+    "summary_or_excerpt": "Temporary Cloudflare Accounts for AI agents The announcement says this is \"for AI agents\" but (as is pretty common these days) the AI hook isn't really necessary, this is an interesting feature for everyone else as well. Short version: you can now create a Cloudflare Workers project and run this, without even creating a Cloudflare account: npx wrangler deploy --temporary Cloudflare will deploy the application to a new, ephemeral project which will stay live for 60 minutes. I had GPT-5.5 xhigh in Codex Desktop build this test application providing a tool for following HTTP redirects and returning the final destination. The temporary deployment worked as advertised. Running the deployment spits out the URL to a page for claiming the new project, for if you want it to last for more than 60 minutes. Here's what that claim screen looks like: Via Hacker News Tags: cloudflare",
+    "matched_keywords": [
+      "agents",
+      "Codex",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "SafeClawBench: Separating Semantic, Audit-Evidence, and Sandbox Harm in Tool-Using LLM Agents",
-    "url": "https://arxiv.org/abs/2606.18356",
-    "source_name": "arXiv cs.AI",
+    "title": "提示注入的机制解释（以及为什么你应该研究角色）— LessWrong",
+    "url": "https://www.bestblogs.dev/en/article/8f187d0e?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.18356v1 Announce Type: cross Abstract: Tool-using language-model agents introduce security failures that go beyond unsafe text: they can disclose protected objects, write persistent memory, send messages, modify databases, or trigger harmful code and tool effects. Existing evaluations often collapse these stages into a single attack success rate, making it difficult to tell whether a model merely agreed with an attacker or actually produced observable harm. We introduce SafeClawBench, a staged benchmark for tool-using agent security with 600 controlled adversarial tasks across six attack families: direct and indirect prompt injection, tool-return injection, memory poisoning, memory extraction, and ambiguity-driven unsafe inference. SafeClawBench reports three separate endpoints: semantic attack acceptance, audit-visible harm evidence, and sandbox-observed tool/state harm. Evaluating five agent endpoints under four prompt-level policies, we find that these endpoints capture different failure modes. Without additional prompt protection, semantic failure rates vary widely across models, from 9.0% to 44.2%. Audited harm evidence is narrower than semantic failure, and under...",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T14:42:19+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本文解释了提示注入的本质在于 LLM 并非通过标签（如 、 ）来感知角色，而是依赖写作风格，这使得像 CoT Forgery 这样的攻击成为可能，并通过机制探测展示了角色混淆现象。 📝 Summary 本文基于 LLM 内部如何感知角色标签，提出了提示注入的机制解释。作者开发了角色探针来测量 LLM 内部对每个 token 所属角色的信念，并表明角色感知是由写作风格而非实际标签驱动的。这导致角色混淆：听起来像用户指令或推理风格的文本会覆盖分配的角色标签。他们提出了一种新攻击 CoT Forgery，将虚假推理放入用户提示中，诱使模型将其视为自己的思考，在越狱基准上达到约 60% 的成功率。他们还发现，当注入的文本听起来像用户风格（例如添加前缀“User:”）时，标准提示注入在工具输出上也能成功。核心发现是角色是由表面特征重建的软边界，而非硬架构边界，这使提示注入成为可能。文章倡导研究角色的新子领域，并概述了包括潜意识引导和原则性角色设计在内的开放研究方向。 💡 Main Points LLM 基于写作风格感知角色，而非实际标签。 通过角色探针，作者表明去除或更改标签并不影响模型内部的角色感知——只有写作风格才重要。这意味着本应安全的边界（标签）会被表面特征常规性地覆盖。 CoT Forgery 是一种利用角色混淆的强大新攻击。 通过将模仿模型推理风格的文本注入用户提示，攻击者可以使 LLM 将其视为自己已验证的推理，从而在各模型上实现高越狱成功率，无需利用特定模型的缺陷。 标准提示注入之所以有效，是因为 标签内的注入命令可能听起来像 文本。 只需在隐藏命令前添加“User:”，就会提升模型内部的“用户性”感知，使其更可能被视为指令。这表明仅靠标签无法保证安全。 角色混淆是软边界的普遍失效，不仅限于对抗攻击。 文章讨论了角色泄露如何导致潜意识引导——非对抗性文本（例如热情的产品页面）可以在没有明确指令的情况下改变模型的角色或决策，构成更广泛的风险。 💬 Key Quotes 角色本应设计为离散的架构边界，强加于原本无差别的字符串之上。然而在内部，这些并非硬边界，而是软推理，由其他表面特征组合重建而成。 LLM 没有独立的特征来表示“被标记为推理”和“听起来像推理”。它只有一个特征表示“这是我的推理”，而 和类似推理的风格都会激活该特征。 如果听起来像某个角色就足以成为那个角色，那么攻击者只需要听起来有说服力即可。 一个对人类几乎不可见的变化，却完全改变了 LLM 的角色感知。 📊 Article Meta AI Screening： 91 Source： LessWrong Author： Charles Ye Category： 人工智能 Language： 英文 Read Time： 22 min Word...",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "inference"
+      "Meta AI"
     ],
     "tags": [
-      "agent",
-      "open_source"
+      "model"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Data Intelligence Agents: Interpreting, Modeling, and Querying Enterprise Data via Autonomous Coding Agents",
-    "url": "https://arxiv.org/abs/2606.19319",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19319v1 Announce Type: cross Abstract: Production data integration is bottlenecked by repeated, lossy handoffs between data owners, engineers, and analysts who must collaboratively discover, structure, and query enterprise data. We present Data Intelligence Agents (DIA), a system of three agents (Data Interpreter, Schema Creator, and Query Generator) that compresses this workflow by treating autonomous coding agents (ACAs) as a first-class abstraction: rather than emitting text, the agents generate, execute, validate, and repair concrete artifacts, draw on a shared memory for experience reuse, and surface each for review by domain experts. DIA is deployed in production for enterprise customers. We study the Query Generator in depth and evaluate it in fully autonomous mode across seven SQL benchmarks spanning four task categories and four dialects. It matches or surpasses the best published results on all seven, demonstrating that an architecture grounded in execution, built on ACAs and a shared memory, generalizes across the data intelligence workload with adaptation confined to natural-language instructions.",
-    "matched_keywords": [
-      "agents",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-19T08:28:20.395454+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -118,7 +92,28 @@
     "tags": [],
     "score": 63,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Nvidia says its AI data center design runs hotter to use a lot less water",
+    "url": "https://www.theverge.com/tech/954139/nvidia-data-centers-rubin-liquid-cooling",
+    "source_name": "The Verge AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T23:24:32+00:00",
+    "summary_or_excerpt": "Public pushback against data centers has emphasized their water and energy consumption, and now Nvidia is highlighting its claim that the Rubin generation reference design for a fully liquid-cooled data center has \"eliminated massive amounts of power usage and pretty much all water usage.\" Still, it doesn't address all of the concerns around AI data […]",
+    "matched_keywords": [
+      "data center",
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -144,8 +139,31 @@
     ],
     "score": 61,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The text in Claude Code’s “Extended Thinking” output",
+    "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T14:22:46+00:00",
+    "summary_or_excerpt": "HN points: 264. Comments: https://news.ycombinator.com/item?id=48630535",
+    "matched_keywords": [
+      "Claude",
+      "Claude Code"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 60,
+    "hn_score": 264,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -166,8 +184,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -191,7 +209,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -218,7 +236,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -244,7 +262,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -269,7 +287,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -298,7 +316,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -327,8 +345,151 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Show HN: Recall – Local project memory for Claude Code",
+    "url": "https://github.com/raiyanyahya/recall",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-21T21:05:37+00:00",
+    "summary_or_excerpt": "HN points: 127. Comments: https://news.ycombinator.com/item?id=48622590",
+    "matched_keywords": [
+      "Claude",
+      "Claude Code"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 58,
+    "hn_score": 127,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Daybreak：保护全球每一家组织的安全工具",
+    "url": "https://www.bestblogs.dev/en/article/ea8af03a?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T10:00:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary OpenAI 通过 Codex Security 插件、GPT-5.5-Cyber 模型、合作伙伴计划以及 Patch the Planet 倡议扩展 Daybreak，以加速大规模漏洞修复。 📝 Summary OpenAI 宣布对其 Daybreak 网络安全计划进行重大扩展，旨在将瓶颈从漏洞发现转移到自动化修复。主要发布包括：Codex Security 插件（现已普遍可用），可扫描代码库、验证发现并生成补丁；GPT-5.5-Cyber 完整版，这是一款用于授权防御工作的最先进模型（在 CyberGym 上达到 85.6%）；Daybreak Cyber 合作伙伴计划，使合作伙伴能够通过 Trusted Access 使用 GPT-5.5；以及 Patch the Planet，与 Trail of Bits 和 HackerOne 合作，帮助开源维护者从发现到修复的协作倡议。文章还强调了与政府和关键基础设施运营商的伙伴关系，并强调了人工监督和负责任部署。 💡 Main Points 网络安全的瓶颈已从发现漏洞转向修复漏洞。 AI 模型现在以前所未有的速度发现漏洞，大量报告令防御者不堪重负；真正的挑战在于在攻击者利用之前验证和修复问题。 Codex Security 插件在现有开发者工作流中自动化完整的修复闭环。 它扫描代码库、追踪攻击路径、构建威胁模型、生成并验证补丁，并与 SARIF/CodeQL 集成，为每位开发者配备一位安全工程师。 GPT-5.5-Cyber 在 CyberGym（85.6%）和其他基准上达到了新的最先进性能。 它在漏洞复现、利用生成和长周期发现方面优于 GPT-5.5，同时保留了处理复杂任务的通用智能。 Patch the Planet 通过专家人工审查直接支持开源维护者。 安全研究人员在将漏洞交给维护者之前进行验证、去重和修补，解决了低质量自动化报告造成的维护者瓶颈。 防御性 AI 能力应普及化，但需通过强有力的保障措施进行治理。 OpenAI 提供 Trusted Access for Cyber、合作伙伴计划以及与政府的合作，确保强大的工具到达防御者手中，同时防止滥用。 💬 Key Quotes 仅凭漏洞报告本身，无法保护任何人。 发现漏洞很重要，但真正保护世界的是完成修复。 AI 已经改变了网络安全的物理规则。 📊 Article Meta AI Screening： 92 Featured： Yes Source： OpenAI News Author： OpenAI Category： 人工智能 Language： 英文 Read Time： 9 min Word Count： 2038 Tags： AI安全 , LLM , 漏洞发现 , 网络安全 , 开源 Rea...",
+    "matched_keywords": [
+      "Codex",
+      "GPT",
+      "Meta AI",
+      "OpenAI"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenAI Launches Full-Scale Effort to Patch Open-Source Bugs as It Takes on Anthropic’s Mythos",
+    "url": "https://www.wired.com/story/openai-launches-full-scale-effort-to-patch-open-source-bugs-as-it-takes-on-anthropics-mythos",
+    "source_name": "WIRED AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T17:00:00+00:00",
+    "summary_or_excerpt": "Amid concerns about AI models’ cybersecurity capabilities, OpenAI revealed an improved version of GPT-5.5-Cyber and its “Patch the Planet” initiative to fix open-source software bugs.",
+    "matched_keywords": [
+      "Anthropic",
+      "GPT",
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 57,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "使用 Google 的 Agent Development Kit 和 A2A 构建跨语言多智能体团队",
+    "url": "https://www.bestblogs.dev/en/article/c8922ae0?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T00:00:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本文演示了如何使用 Google 的 ADK 和 Agent2Agent（A2A）协议构建一个跨语言的多智能体合同合规管线，包含一个基于 Python LLM 的提取智能体和一个确定性的 Go 验证智能体。 📝 Summary 本文解决了在生成环境中集成不同语言编写的智能体这一常见挑战。文章展示了一个合同合规多智能体管线：Python 智能体使用 Gemini 提取合同条款，Go 智能体根据策略验证这些条款，两者通过开放的 A2A 协议进行编排。作者解释了生产级多智能体系统背后的架构模式：使用 A2A 进行跨语言协作、ADK 的 RemoteA2aAgent 抽象（将任何符合 A2A 的服务包装为本地子智能体），以及具备专业化智能体的多智能体管线编排。文章包含完整的代码解读、Go 合规端点的实现，以及一个包含网络故障模拟的开源运维控制台。文中强调的好处包括技术自由、简化集成、弹性和隔离审计。 💡 Main Points 将单体智能体分解为具有专注提示词和最小工具集的专用微智能体。 遵循过去十年改造后端工程的相同模式，本文主张用多个狭窄的智能体替代一个大型提示词，以避免上下文退化、减少影响范围并实现可测试性。 Agent2Agent（A2A）协议通过发现和 JSON-RPC 通信实现跨语言智能体协作。 智能体通过 Agent 卡片（/.well-known/agent.json）公布自身能力，并使用类型化的消息部分交换结构化数据。任何一个智能体都无需知道对方的实现细节。 ADK 的 RemoteA2aAgent 抽象无缝地将远程 A2A 服务包装为本地子智能体。 只需几行代码，开发者就能将 Go 合规服务集成到 Python 管线中，无需编写自定义 HTTP 客户端或负载编组。 内置的故障安全转换会在下游智能体不可达时，将合同路由至人工审核。 管线定义了一个包含 MANUAL_REVIEW 状态的 ComplianceStep 枚举，确保网络故障或崩溃不会导致整个工作流程静默失败。 💬 Key Quotes 解决方案与十年前改造后端工程的模式相同：将单体分解为专门的微服务。 多智能体编排不仅仅是串联提示词，而是构建健壮的跨语言分布式系统。 通过使用 Google ADK 和开放的 A2A 协议，将 Python 的 AI 生态与 Go 的运行时可靠性桥接起来，你就能两全其美：在存在歧义的地方进行认知推理，在有策略的地方进行确定性执行。 📊 Article Meta AI Screening： 90 Source： Google Developers Blog Author： Shubham Saboo, Eric Dong Category： 人工智能 Language： 英文 Read Time： 7 min...",
+    "matched_keywords": [
+      "Agent",
+      "Gemini",
+      "Meta AI"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 57,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Porting the Moebius 0.2B image inpainting model to run in the browser with Claude Code",
+    "url": "https://simonwillison.net/2026/Jun/22/porting-moebius",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T23:43:51+00:00",
+    "summary_or_excerpt": "This morning on Hacker News I saw Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance , describing a small but effective inpainting model - a model where you can mark regions of an image to remove and the model imagines what should fill the space. The released model required PyTorch and NVIDIA CUDA , but since it described itself as 0.2B I decided to try and get it running using WebGPU in a browser. TL;DR: I got it working, and you can try the demo at simonw.github.io/moebius-web/ . Read on for the details. The finished tool Here's a video demo of the finished tool: You can open any image in it (non-square images get letterboxed), highlight areas to remove, click the \"Run inpaint\" button and wait for the model to do its magic. A parallel agent side-project My main project for today was landing a major feature in Datasette: a UI for creating and altering tables, as a follow-up to the insert and edit rows feature I released last week. I was working on that in Codex Desktop (here's the PR ) and often found myself spending 5-10 minutes spinning my fingers waiting for it to complete a mid-sized refactor or add the finishing touches to a change to the UI. (An...",
+    "matched_keywords": [
+      "Agent",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "CUDA",
+      "GitHub",
+      "NVIDIA"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 56,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Show HN: Oak – Git alternative designed for agents",
+    "url": "https://oak.space/oak/oak",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T15:37:48+00:00",
+    "summary_or_excerpt": "HN points: 131. Comments: https://news.ycombinator.com/item?id=48631726",
+    "matched_keywords": [
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 52,
+    "hn_score": 131,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -344,24 +505,118 @@
     "score": 50,
     "hn_score": 49,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "神话后的红队测试 — Zico Kolter 与 Matt Fredrikson，Gray Swan",
+    "url": "https://www.bestblogs.dev/en/article/c4be1c11?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T21:06:55+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 一次与 Gray Swan 联合创始人的深度播客访谈，探讨为何 AI 安全从根本上区别于传统网络安全、自动化红队测试的兴起，以及为何智能体系统中的提示注入代表了一类新的不可避免的漏洞。 📝 Summary 本期 Latent.Space 节目邀请到 Gray Swan 联合创始人 Zico Kolter 和 Matt Fredrikson，讨论 AI 红队测试的现状。他们解释 AI 安全并非简单地“在网络安全中加入 AI”——AI 系统存在固有的、全新的漏洞（如提示注入、对抗性攻击），需要专门的安全思维。对话涵盖了 Gray Swan 的双轨策略：社区驱动的红队测试竞技场（15，000 多名参与者）以及使用其模型“Shade”的自动化红队测试，后者在受控实验中已能超越人类红队测试者。他们引入了“致命三重奏”（不受信任数据、私密数据、数据外泄），并指出前沿模型并不会随规模扩大而自动变得更加稳健。嘉宾还讨论了智能体原生身份与权限、重大 AI 提示注入事件不可避免的可能性，以及 AI 安全未来可能融入保险与合规体系。 💡 Main Points AI 安全需要不同的思维模式，因为 AI 系统具有独特的漏洞。 与传统软件不同，AI 可以像人类一样被欺骗，而广泛使用的模型之间的相关性故障会创造出一类新的可利用漏洞。 自动化红队测试（Shade）现在在破坏模型方面超越了人类红队测试者。 Gray Swan 的专业红队测试模型基于人类专家数据训练，能在固定时间内比甚至最熟练的人类参与者发现更多的漏洞。 前沿模型不会随规模扩大而自动变得更加稳健。 安全性和稳健性并非大型模型的涌现属性，需要显式训练，且更大的模型本身并不更擅长进行红队测试。 在智能体系统（如编码智能体）中的提示注入是一个关键且几乎不可避免的漏洞向量。 当智能体使用工具和浏览网页时，它们容易受到间接提示注入的攻击，而第一起重大 AI 安全事件被认为是“灰天鹅”事件——事先可见但未能阻止。 💬 Key Quotes 极智能 AI 的风险越来越像灰天鹅事件：一个所有人都能预见的事件。 AI 系统有其固有的漏洞。它们可以像人类一样被欺骗，因此你需要一种不同的安全思维。 下一个重大 AI 事件可能是一只灰天鹅：不太可能，但在发生之前却清晰可见。 📊 Article Meta AI Screening： 91 Source： Latent.Space Author： Latent.Space Category： 人工智能 Language： 英文 Read Time： 48 min Word Count： 11825 Tags： AI 安全 , 红队测试 , 提示注入 , LLM , AI 智能体 Read Full Article",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Stop wasting tokens and re explaining your project between sessions",
-    "url": "https://github.com/raiyanyahya/recall",
+    "title": "Unsloth GLM-5.2 – How to Run Locally",
+    "url": "https://unsloth.ai/docs/models/glm-5.2",
     "source_name": "Hacker News",
     "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-06-21T21:05:37+00:00",
-    "summary_or_excerpt": "HN points: 55. Comments: https://news.ycombinator.com/item?id=48622590",
+    "published_at": "2026-06-22T21:21:01+00:00",
+    "summary_or_excerpt": "HN points: 102. Comments: https://news.ycombinator.com/item?id=48636377",
+    "matched_keywords": [
+      "GLM"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 43,
+    "hn_score": 102,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GLM-5.2 is the step change for open agents",
+    "url": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+    "source_name": "Interconnects",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T14:52:45+00:00",
+    "summary_or_excerpt": "A capability threshold I've been carefully monitoring.",
+    "matched_keywords": [
+      "agents",
+      "GLM"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EP95 · Claude Code 工程、苹果 AI 重构、Qubot · 06-22 早报",
+    "url": "https://www.bestblogs.dev/explore/brief/2026-06-22?entry=rss_brief_index",
+    "source_name": "BestBlogs Daily Brief",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T06:00:00+00:00",
+    "summary_or_excerpt": "📝 今日导语 当编码不再是瓶颈，工程团队的真正考验变成了如何验证产出。Anthropic Claude Code 负责人分享了一线打法，从常驻远程会话到自动生成 PR 的 routines，勾勒出 AI 时代团队的运转方式。GitHub 也首次公开内部数据分析智能体的三层架构，印证结构化上下文如何让答案又快又准。再加上一篇有现场视角的 WWDC26 复盘，看库克离场前苹果的 AI 权力如何重新洗牌。 🏷 今日关键词： Claude Code WWDC26 Apple Intelligence Qubot Fiona Fung GLM-5.2 数据分析智能体 超级个体 📰 今日精选内容 打造全球最「All-in AI」工程团队：Anthropic Claude Code 负责人 Fiona Fung 的一线实践 Lenny's Podcast · 视频 · 评分 92 库克的离场，苹果新 AI 权力重构与价值观天平｜WWDC26 硅谷101 · 文章 · 评分 91 我们如何构建内部数据分析智能体 The GitHub Blog · 文章 · 评分 90 [AINews] GLM-5.2 货真价实；Z.ai 预测年底前推出 Open Fable Latent.Space · 文章 · 评分 90 图灵奖得主押上 10 亿美元的「世界模型」，是 AI 的下一个十年？（下） 十字路口Crossing · 文章 · 评分 90 从 Cerebras IPO 聊起：AI 算力变化、Scaling law 的萌芽和百度美研往事 晚点AI · 文章 · 评分 88 DeepSeek 背后的 356 人：一份白皮书揭开中美 AI 人才战争 AINLP · 文章 · 评分 88 ACL 2026 | 腾讯混元发现「不完全学习」，SFT 仍漏学 15%训练数据 PaperWeekly · 文章 · 评分 88 如何围绕公司隐性规则设计智能体系统 HBR.org · 文章 · 评分 89 AI 编程实战：如何用软件工程思维驾驭 Agent 生成代码 宝玉(@dotey) · 推文 · 评分 90 AI 智能体让 OpenAI 的数据变得有意义 InfoQ · 文章 · 评分 90 JavaScriptCore 的共享内存线程（实验性，尚未完成）——Jarred-Sumner · Pull Request #249 · oven-sh/WebKit Hacker News · 文章 · 评分 90 从零构建受 OpenClaw 启发的 AI 智能体：工具、记忆、人格、Telegram 与定时任务 freeCodeCamp.org · 视频 · 评分 90 Introducing MonitoringBench — LessWrong LessWrong · 文章 · 评分 89...",
+    "matched_keywords": [
+      "Agent",
+      "Anthropic",
+      "Claude",
+      "Claude Code",
+      "DeepSeek",
+      "GitHub",
+      "GLM",
+      "OpenAI",
+      "pull request"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Apertus – Open Foundation Model for Sovereign AI",
+    "url": "https://apertvs.ai/",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-21T21:29:43+00:00",
+    "summary_or_excerpt": "HN points: 520. Comments: https://news.ycombinator.com/item?id=48622778",
     "matched_keywords": [],
     "tags": [],
-    "score": 44,
-    "hn_score": 55,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "score": 40,
+    "hn_score": 520,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -386,8 +641,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -405,8 +660,70 @@
       "open_source"
     ],
     "score": 38,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9763：server : Add id to tool call responses api (#24882)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9763",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-22T21:32:31+00:00",
+    "summary_or_excerpt": "server : Add id to tool call responses api (#24882) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9763/llama-b9763-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm 7.2)](https...",
+    "matched_keywords": [
+      "API",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b9763",
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Moebius: 0.2B image inpainting model with 10B-level performance",
+    "url": "https://hustvl.github.io/Moebius",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T13:53:02+00:00",
+    "summary_or_excerpt": "HN points: 214. Comments: https://news.ycombinator.com/item?id=48630171",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 38,
+    "hn_score": 214,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Sakana Fugu",
+    "url": "https://sakana.ai/fugu",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T02:08:18+00:00",
+    "summary_or_excerpt": "HN points: 212. Comments: https://news.ycombinator.com/item?id=48624782",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 38,
+    "hn_score": 212,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -427,7 +744,80 @@
     "score": 37,
     "hn_score": 517,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-22T08:07:30.760845+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "From Materials Simulation to Experimental Astronomy, New NVIDIA AI Software Unlocks Scientific Discoveries",
+    "url": "https://blogs.nvidia.com/blog/ai-for-science-software-cuda",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-22T13:00:20+00:00",
+    "summary_or_excerpt": "At the ISC conference running in Hamburg this week, NVIDIA is introducing new software that speeds AI for science, from chemistry and materials discovery to the search for dark matter. The NVIDIA DAQIRI library and new NVIDIA ALCHEMI NIM microservices — as well as the NVIDIA cuPhoton reference code, coming soon — turn work that […]",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Show HN: Selector Forge – browser extension for AI-generated resilient selectors",
+    "url": "https://github.com/Intuned/selector-forge",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T14:21:24+00:00",
+    "summary_or_excerpt": "HN points: 30. Comments: https://news.ycombinator.com/item?id=48630515",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 36,
+    "hn_score": 30,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Qualcomm Posts Linux Patches For HP EliteBook X G2q X2 Elite Laptop",
+    "url": "https://www.phoronix.com/news/HP-EliteBook-X-G2q-Linux",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-21T14:38:15+00:00",
+    "summary_or_excerpt": "Last month Qualcomm engineers posted patches bringing up the Lenovo Yoga Slim 7x Gen11 Snapdragon X2 laptop on Linux. Sent out this weekend were a new set of patches from Qualcomm for bringing up the HP EliteBook X G2q laptop model powered by the Snapdragon X2 Elite SoC...",
+    "matched_keywords": [
+      "SoC"
+    ],
+    "tags": [
+      "riscv_stack"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Read this before you vibe-code another app",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/950844/vibe-coding-security-risks-apps",
+    "source_name": "The Verge AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T11:00:00+00:00",
+    "summary_or_excerpt": "Bob Starr was delighted with his vibe-coded website. \"Boomberg\" showed how much US tax money is going to tech companies, and Starr launched it online immediately after making it. It wasn't until months after the site went live that he realized there was a problem: a hidden SQL injection risk. It could've left the site […]",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 35,
+    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   }

@@ -15,48 +15,118 @@
     ],
     "score": 71,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Project Fetch: Phase Two",
-    "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+    "title": "Mistral OCR 4",
+    "url": "https://mistral.ai/news/ocr-4",
     "source_name": "Hacker News",
     "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-06-21T00:00:25+00:00",
-    "summary_or_excerpt": "HN points: 72. Comments: https://news.ycombinator.com/item?id=48614311",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 65,
-    "hn_score": 72,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "backlog",
+    "published_at": "2026-06-23T14:03:19+00:00",
+    "summary_or_excerpt": "HN points: 421. Comments: https://news.ycombinator.com/item?id=48645152",
+    "matched_keywords": [
+      "Mistral"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 66,
+    "hn_score": 421,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Temporary Cloudflare Accounts for AI agents",
-    "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts",
-    "source_name": "Simon Willison",
+    "title": "SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters",
+    "url": "https://arxiv.org/abs/2605.00528",
+    "source_name": "arXiv cs.OS",
     "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-06-21T22:01:04+00:00",
-    "summary_or_excerpt": "Temporary Cloudflare Accounts for AI agents The announcement says this is \"for AI agents\" but (as is pretty common these days) the AI hook isn't really necessary, this is an interesting feature for everyone else as well. Short version: you can now create a Cloudflare Workers project and run this, without even creating a Cloudflare account: npx wrangler deploy --temporary Cloudflare will deploy the application to a new, ephemeral project which will stay live for 60 minutes. I had GPT-5.5 xhigh in Codex Desktop build this test application providing a tool for following HTTP redirects and returning the final destination. The temporary deployment worked as advertised. Running the deployment spits out the URL to a page for claiming the new project, for if you want it to last for more than 60 minutes. Here's what that claim screen looks like: Via Hacker News Tags: cloudflare",
+    "source_level": "early_signal",
+    "published_at": "2026-06-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.00528v2 Announce Type: replace-cross Abstract: AI agents execute tens to hundreds of chained LLM calls per task, yet GPU schedulers treat each call as independent, discarding gigabytes of intermediate state between steps and inflating end-to-end latency by 3-8x. We argue that this request-level abstraction is fundamentally mismatched to compound AI workloads, and propose a shift to program-level scheduling: treating the entire agent workflow (not individual inference calls) as the first-class schedulable unit. We present SAGA, a distributed scheduler that implements this abstraction through three mechanisms: (1) Agent Execution Graphs that capture workflow structure to predict KV cache reuse across tool-call boundaries, achieving within 1.31x of B\\'el\\'ady's optimal offline policy; (2) session-affinity batching with work stealing that co-locates correlated requests while maintaining global load balance; and (3) Agent Fair Share, a task-completion-time fairness metric with provable bounded-deviation guarantees. On a 64-GPU cluster serving SWE-bench coding agents and WebArena browser tasks, SAGA reduces task completion time by 1.64x (geometric mean, p < 0.001) over vLLM v...",
     "matched_keywords": [
+      "Agent",
       "agents",
-      "Codex",
-      "GPT"
+      "AI Agent",
+      "GPU",
+      "inference",
+      "policy",
+      "serving",
+      "vLLM",
+      "workflow"
     ],
     "tags": [
       "agent",
-      "coding_tool",
+      "ai_app",
+      "business",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Claude Tag",
+    "url": "https://www.anthropic.com/news/introducing-claude-tag",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-23T17:09:18+00:00",
+    "summary_or_excerpt": "HN points: 225. Comments: https://news.ycombinator.com/item?id=48648039",
+    "matched_keywords": [
+      "Claude"
+    ],
+    "tags": [
       "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "score": 65,
+    "hn_score": 225,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Apple Neural Engine: Architecture, Programming, and Performance",
+    "url": "https://arxiv.org/abs/2606.22283",
+    "source_name": "arXiv cs.OS",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.22283v1 Announce Type: cross Abstract: The Apple Neural Engine (ANE) is the fixed-function matrix accelerator that has shipped in Apple systems-on-chip since the A11-class iPhone and iPad chips and the M1-class Mac chips, exposed to applications only through the Core ML model framework. This guide reports a reverse-engineered account of the engine, based on direct measurement on Apple silicon and static analysis of the private runtime, compiler, kernel driver, and firmware. It documents the datapath and the roofline that bound the engine's throughput and energy, the dispatch route that reaches it below Core ML, the compiler and on-disk program format, the weight-compression scheme, and the kernel driver, firmware, and command protocol beneath them. The account covers the A11 through A18 and M1 through M5 families, with per-chip target tables and an operation-by-device matrix; the direct measurements are on the M1 and M5. Claims are labeled as measured, decompile-derived, or predicted, and the methodology and open questions are recorded. The direct route is callable from ordinary user space but remains undocumented, unsupported, and version-fragile; it is intended for me...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 65,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anthropic 推出 Claude Tag：在 Slack 中通过 @Claude 协作",
+    "url": "https://aihot.virxact.com/items/cmqqwge4a0e6tslp50f3tli27",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T17:09:41+00:00",
+    "summary_or_excerpt": "Anthropic 推出 Claude Tag，一种在 Slack 频道中通过 @Claude 委托任务的新协作方式。Claude 可记住频道上下文，支持多用户交互，经授权后可自动学习其他频道和数据源。开启\"环境\"行为后，能主动更新未解决的线程或任务。支持异步工作，可自主推进项目数小时或数天。即日起面向 Claude Enterprise 和 Team 客户提供 beta 版。管理员可精细控制工具和渠道访问权限、设置 token 消耗限额，并查看所有操作日志。 🔗 阅读原文：https://www.anthropic.com/news/introducing-claude-tag",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -75,8 +145,30 @@
       "model"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "在团队频道里直接 @ Claude：Claude Tag 如何协作处理 PR、文档与权限边界",
+    "url": "https://www.bestblogs.dev/en/video/b4083b2?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T17:09:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 将 Claude Tag 定位为融入团队频道的 AI 协作者，可以跟进讨论、创建代码 PR、更新发布文档，并按频道执行安全边界。 📝 Summary 这支 Anthropic 第一方发布短片介绍了 Claude Tag：团队可以在现有协作频道里直接 @ Claude，让它参与产品、工程、法务和发布沟通。Lydia 提到，Anthropic 今年内部已经大量采用这种模式，Claude Tag 负责创建了 65% 的产品 PR。演示把 Claude 呈现为多人协作中的队友：它能跟进群组线程，响应实时产品决策，定位相关代码区域，创建 PR，并同步更新发布营销材料，减少跨团队交接等待。最有价值的部分是安全模型：Claude 使用独立账号，权限按团队和频道划定，记忆隔离，凭据使用有日志记录。整体内容简洁、实用，能帮助读者理解产品方向，但更接近精炼的发布演示，而不是深入的技术拆解。 💡 Main Points Claude Tag 将 Claude 直接嵌入团队频道 核心思路是让产品、工程、法务和发布讨论发生在哪里，团队就能在哪里 @ Claude，把它变成频道原生的协作者，而不是另一个需要切换的独立工具。 Anthropic 声称内部已有大量 PR 自动化 视频称 Claude Tag 创建了 Anthropic 产品 PR 的 65%，这个发布主张因此有了具体的运营数据支撑，尽管视频没有解释统计口径和方法。 Claude 能跟进实时团队决策并执行代码变更 在工程示例里，Claude 跟上群组线程，理解功能请求，找到代码库中的修改位置，创建 PR，并完成对应改动。 跨职能协作也是产品承诺的一部分 演示不只停留在写代码，还展示 Claude 识别到工程变更会影响发布营销，并更新相关文档，从而降低沟通延迟。 安全设计围绕范围化账号和隔离记忆展开 Claude 拥有自己的账号和凭据，访问权限按团队与频道限定，记忆遵守私有边界，凭据使用也会被记录，便于追责。 💬 Key Quotes 今天我们发布 Claude Tag，让 Claude 可以直接在团队身边协作 在 Anthropic 内部，Claude Tag 创建了我们 65% 的产品 PR Nadia 给 Claude 发消息后，Claude 会跟上群组线程，并响应实时做出的产品决策 很酷的一点是，Claude 知道这个功能是什么，也知道该去代码库的哪里改 记忆遵守同样的边界，所以它在私有频道或 DM 中学到的内容会留在那里 📊 Article Meta AI Screening： 91 Featured： Yes Source： Claude Author： Claude Category： 人工智能 Language： 英文 Read Time： 1...",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -92,28 +184,69 @@
     "tags": [],
     "score": 63,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Nvidia says its AI data center design runs hotter to use a lot less water",
-    "url": "https://www.theverge.com/tech/954139/nvidia-data-centers-rubin-liquid-cooling",
-    "source_name": "The Verge AI",
+    "title": "东京 AI 公司 Sakana AI 推出多智能体编排系统 Sakana Fugu",
+    "url": "https://aihot.virxact.com/items/cmqpez1uu001gslp5j4h23mih",
+    "source_name": "AIHOT Featured",
     "source_type": "rss",
     "source_level": "needs_verification",
-    "published_at": "2026-06-22T23:24:32+00:00",
-    "summary_or_excerpt": "Public pushback against data centers has emphasized their water and energy consumption, and now Nvidia is highlighting its claim that the Rubin generation reference design for a fully liquid-cooled data center has \"eliminated massive amounts of power usage and pretty much all water usage.\" Still, it doesn't address all of the concerns around AI data […]",
+    "published_at": "2026-06-22T16:11:41+00:00",
+    "summary_or_excerpt": "Sakana AI 是 2023 年成立于东京的 AI 公司，由前 Google Brain 的 David Ha（CEO）、Transformer 论文共同作者 Llion Jones（CTO）及前日本外交官 Ren Ito（主席）联合创立。其产品 Sakana Fugu 将多智能体系统封装成单个 API 调用，内部自动拆解任务、调度全球模型并验证结果。Fugu Ultra 在工程、科学、推理等基准上对标 Fable/Mythos，通过动态编排多模型天然绕开单一供应商出口管制风险，被视为将多智能体从复杂工程变为开箱即用的产品形态。 🔗 阅读原文：https://x.com/berryxia/status/2069090959938466298",
     "matched_keywords": [
-      "data center",
-      "NVIDIA"
+      "API"
     ],
     "tags": [
-      "semiconductor"
+      "business"
     ],
     "score": 62,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "微信Agent小微灰度内测：主入口发消息红包，子入口可读聊天记录",
+    "url": "https://aihot.virxact.com/items/cmqpbc21e08laslx6gica1m67",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T13:34:14+00:00",
+    "summary_or_excerpt": "微信Agent小微灰度内测已开始，主入口位于微信首页左上角，支持给好友发消息和红包（需确认），但无法读取聊天记录或向群聊发消息。群聊和私聊的\"问小微\"子入口则可读取聊天记录并支持群发。小微可创建日程提醒、待办、总结朋友圈，打通公众号和视频号进行问答。收藏仅可读取小微自建笔记。内置\"小工具\"功能，支持语音创建简易小程序（暂不可发布），还可调用第三方小程序。 🔗 阅读原文：https://mp.weixin.qq.com/s/qVdfx01e9C9r5mGi0jh2BA",
+    "matched_keywords": [
+      "Agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "当 RAG 用户提出模糊问题时：澄清一次，学习默认值",
+    "url": "https://www.bestblogs.dev/en/article/b00e30e3?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T13:30:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本文提出了一种在 RAG 系统中处理用户模糊查询的模式：提出一次有针对性的澄清，从答案中学习默认值，之后对类似问题保持沉默。 📝 Summary 本文扩展了企业 RAG 系统中的问题解析模块，以处理生产环境查询中常见的模糊字段。它识别了五种失败模式（模糊字段类型、缺失页面范围、模糊日期范围、模糊意图、隐式实体），并引入了两个 Pydantic 模式：`ClarificationRequest`（用于向用户提问）和 `ClarificationDefault`（用于从答案中学习）。通过一个经纪人示例演示了循环：系统首次提问，记录答案，随后在类似问题上静默复用已学习的默认值。提供了更新规则和门控函数的 Python 代码。该模式区别于多轮对话；它强调跨请求学习而非对话内学习。文章还讨论了边界条件、待解决问题（多字段、对抗性用户、跨租户共享）以及模式如何与存储和评估基础设施集成。 💡 Main Points 澄清一次，然后学习默认值：正确的做法是提问、存储，随后静默应用。 当 ParsedQuestion 字段模糊时，系统应提出一次有针对性的澄清，将用户的回答记录为学习的默认值，并在未来相同的查询中自动应用。 两个 Pydantic 模式使循环形式化：ClarificationRequest 和 ClarificationDefault。 ClarificationRequest 针对每个缺失字段发出；ClarificationDefault 跟踪候选值、加权投票和置信度。门控函数根据置信度决定是提问、静默应用，还是偶尔提问。 学习的默认值在失败检测时分层，以处理边缘情况。 当默认值失败（返回 null）时，系统回退到提问，然后通过添加子条件（例如，第 1 页种类）来细化默认值，提高未来准确性。 该模式随时间减少用户摩擦：简单的问题变为静默处理，只有模糊的问题才触发澄清。 通过置信度阈值（低于 0.6 总是提问，高于 0.85 静默应用），系统学习哪些默认值是可靠的，并停止为可预测的情况打扰用户。 💬 Key Quotes 廉价的修复是提问。正确的修复是提问，然后学习默认值，这样下一次情况就变成静默处理。 没有学习的默认值表，静默推理只是猜测。 代价是两个模式和一张表的一列。好处是系统不再询问简单的问题，只询问模糊的问题。 📊 Article Meta AI Screening： 90 Source： Towards Data Science Author： angela shi Category： 人工智能 Language： 英文 Read Time： 9 min Word Count： 2206 Tags： RAG , LLM , 问题解析 , 结构化输出 , 智能体设计模式 Read Full Article",
+    "matched_keywords": [
+      "Meta AI",
+      "RAG"
+    ],
+    "tags": [
+      "model",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -139,8 +272,96 @@
     ],
     "score": 61,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GLM-5.2 – How to Run Locally",
+    "url": "https://unsloth.ai/docs/models/glm-5.2",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-22T21:21:01+00:00",
+    "summary_or_excerpt": "HN points: 579. Comments: https://news.ycombinator.com/item?id=48636377",
+    "matched_keywords": [
+      "GLM"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 60,
+    "hn_score": 579,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.14.8a3：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.8a3",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-23T21:11:46+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Add unified declarative flow loading - Improve crewai run startup UX - Consolidate `crewai run` and `crewai flow kickoff` - Keep flow method progress visible for nested crews - Add declarative Flow CLI support - Allow `@router()` as start method of a flow - Add typed output schemas for CrewAI tools ### Bug Fixes - Pin opentelemetry to ~=1.42.0 ### Documentation - Add \"One Card per Step\" Studio page ## Contributors @jessemiller, @joaomdmoura, @lucasgomide, @vinibrsl",
+    "matched_keywords": [
+      "CrewAI",
+      "startup"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 60,
+    "release_version": "1.14.8a3",
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
+    "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
+    "source_name": "Hugging Face Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-23T12:51:55+00:00",
+    "summary_or_excerpt": "",
+    "matched_keywords": [
+      "agentic"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anthropic 推出 Slack 版 Claude Tag",
+    "url": "https://www.bestblogs.dev/en/status/2069474681749754272?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T17:36:27+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Boris Cherny 宣布推出 Claude Tag，这是一款新的 Slack 集成，能让 Claude 成为具有身份和记忆功能的主动型多玩家团队成员。 📝 Summary Boris Cherny 宣布推出 Claude Tag，用户可以在 Slack 频道中 @Claude。Claude 成为一个主动的团队成员，可以在频道中协作，拥有自己的身份和记忆。该功能由 Claude Code 驱动，已彻底改变了他们产品团队使用 Claude 的方式。官方 Claude AI 账号的一条引用推文提供了最初的发布公告。 📊 Article Meta AI Screening： 90 Source： Boris Cherny(@bcherny) Author： Boris Cherny Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 252 Tags： Claude Tag , Slack 集成 , Anthropic , AI 智能体 , 团队协作 Read Tweet",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Claude Code",
+      "Meta AI"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -162,8 +383,8 @@
     "score": 60,
     "hn_score": 264,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -184,7 +405,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -209,7 +430,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -236,7 +457,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -262,7 +483,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -287,7 +508,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -316,7 +537,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -345,8 +566,185 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "网易有道发布 Confucius4-TTS：14 语种跨语种无口音语音克隆开源模型",
+    "url": "https://aihot.virxact.com/items/cmqqjmnoj0af8slp5kb7ky21w",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T11:00:00+00:00",
+    "summary_or_excerpt": "网易有道推出\"子曰 4.0\"TTS 引擎 Confucius4-TTS，声称是业内首个支持 14 种语言跨语种无口音、且无需参考文本即可完成语音克隆的开源模型。用户仅需 3 秒音频即可实现零样本音色克隆，克隆音色与原声相似度超 85%，任务准确度达 97%。模型支持中文、英语等 14 种语言，首创音频 Prompt 情感克隆迁移。底层采用 GPT 式语义大模型、SSL 预训练特征与 ECAPA-TDNN 说话人编码器、Flow Matching 框架。已全量开源（Apache 协议），提供 54GB 资源包供本地部署。 🔗 阅读原文：https://www.ithome.com/0/967/636.htm",
+    "matched_keywords": [
+      "GPT"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 59,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "五眼联盟警告：AI网络威胁数月内将影响普通用户",
+    "url": "https://aihot.virxact.com/items/cmqqdbcno08taslp5yd9dbxjt",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T08:00:00+00:00",
+    "summary_or_excerpt": "2026年6月22日，五眼联盟（美、英、加、澳、新）网络安全部门联合警告，即将到来的AI模型（如OpenAI的GPT-5.5-Cyber、Anthropic的Mythos）将降低编写复杂攻击代码的门槛。自动化智能体可全天候扫描互联网漏洞，大幅缩短安全窗口期。AI驱动的超个性化钓鱼诈骗已在亚太蔓延，印度2026年初勒索软件事件激增165%。五眼联盟建议企业部署自动化防御AI，个人用户开启多因素认证、删除闲置账户。 🔗 阅读原文：https://www.artificialintelligence-news.com/news/five-eyes-warning-ai-cyber-threats",
+    "matched_keywords": [
+      "Anthropic",
+      "GPT",
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 59,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Nvidia says its AI data center design runs hotter to use a lot less water",
+    "url": "https://www.theverge.com/tech/954139/nvidia-data-centers-rubin-liquid-cooling",
+    "source_name": "The Verge AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T23:24:32+00:00",
+    "summary_or_excerpt": "Public pushback against data centers has emphasized their water and energy consumption, and now Nvidia is highlighting its claim that the Rubin generation reference design for a fully liquid-cooled data center has \"eliminated massive amounts of power usage and pretty much all water usage.\" Still, it doesn't address all of the concerns around AI data […]",
+    "matched_keywords": [
+      "data center",
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AgenticOS: An Intent-Oriented Secure Operating System Architecture for Autonomous AI Agents",
+    "url": "https://arxiv.org/abs/2606.21129",
+    "source_name": "arXiv cs.OS",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.21129v1 Announce Type: cross Abstract: Traditional OS security models based on \"resource exposure plus permission checks\" face structural challenges as LLM-driven autonomous agents acquire capabilities for planning, tool use, network access, and code execution. Once an agent runtime is compromised through prompt injection or malicious tool outputs, an attacker can compose POSIX-style resource primitives into behaviors far beyond the user's task authorization. To address this, we propose AgenticOS, an intent-oriented secure OS architecture that consolidates delegable, auditable software capabilities into OS-native ones rather than replacing all applications. The core insight is to reframe the OS from a \"resource manager\" into an \"intent filter\": instead of requesting low-level resources directly, agents submit structured intent declarations, from which the system synthesizes a least-privilege environment with mandatory mediation, auditing, and information-flow constraints. At the implementation level, we introduce a four-layer architecture -- Ghost Kernel, Logic Shutter, Agent Capsule, and Semantic Boundary Gateway -- together with the Intent ABI, Manifest-Only Runtime,...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "tool use"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Oracle因AI应用裁员21000人，债务驱动云基础设施投资",
+    "url": "https://aihot.virxact.com/items/cmqr4zhkm0gidslp5x8ow892r",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T20:17:38+00:00",
+    "summary_or_excerpt": "Oracle在截至5月31日的财年裁员21000人，员工总数降至141，000人，降幅12.9%。公司称AI技术的采用导致劳动力缩减，同时重组成本达18亿美元，同比增长481%。Oracle计划2026年通过债务和股权筹集450至500亿美元，扩建Oracle Cloud Infrastructure，服务OpenAI、xAI、AMD、Nvidia、Meta等客户。公司债务超1200亿美元。分析人士指出裁员有助于改善现金流，但Oracle也承认大规模裁员可能带来生产力下降、人才短缺和员工士气受损等风险。 🔗 阅读原文：https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments",
+    "matched_keywords": [
+      "AMD",
+      "NVIDIA",
+      "OpenAI",
+      "xAI"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "FastWan-QAD：单卡5090上1.8秒生成5秒视频",
+    "url": "https://aihot.virxact.com/items/cmqr15pz20fjzslp5eps5gotw",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T18:52:30+00:00",
+    "summary_or_excerpt": "Sky Computing Lab 发布 FastWan-QAD 视频生成模型系列，基于 FastVideo 的量化感知蒸馏（QAD）方案训练。在单张 NVIDIA GeForce RTX 5090 上，端到端生成一段 5 秒 480P 视频仅需 1.8 秒。模型、代码及博客已开源。 🔗 阅读原文：https://x.com/haoailab/status/2069493820732170695",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "豆包音频生成模型1.0发布，重新定义AI音频创作",
+    "url": "https://aihot.virxact.com/items/cmqq876yf07gsslp5eix31xaq",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T05:41:11+00:00",
+    "summary_or_excerpt": "火山引擎正式发布豆包音频生成模型1.0（Doubao-Seed-Audio 1.0），支持文本与音频参考生成，端到端输出目标音频。单条Prompt可编排多角色对白、情绪语气、背景音乐及环境氛围，长时生成中保持多角色音色一致性，无需后期多轨混音。模型支持0样本多模态输入，无需额外训练即可生成；实现音色与风格解耦控制及\"一声多角\"能力。一次支持2分钟音频创作，多次延长保持音色统一。已开启火山方舟API邀测，个人用户享30分钟创作额度，即将上线剪映、即梦、番茄等产品。 🔗 阅读原文：https://mp.weixin.qq.com/s/iL0uyUjOMUEfudeuDP6wQQ",
+    "matched_keywords": [
+      "API",
+      "Doubao"
+    ],
+    "tags": [
+      "business",
+      "model"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenRouter：通过API路由实现AI数据驻留合规",
+    "url": "https://aihot.virxact.com/items/cmqpyc83704y1slp584b2av9b",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-22T15:00:00+00:00",
+    "summary_or_excerpt": "Deloitte 报告显示 77% 的公司将供应商国籍纳入 AI 选型考量。OpenRouter 将数据驻留视为路由决策：通过 API 请求中的 `provider` 对象设置 `order` 或 `only` 限定服务商、`allow_fallbacks` 为 `false` 禁止回退、`data_collection` 为 `deny` 禁止数据存储或训练、`zdr` 为 `true` 要求零数据保留。示例以 `anthropic/claude-sonnet-4.6` 调用，首选 Anthropic 直连和 Amazon Bedrock。针对欧盟需求，可限制仅 Mistral 等欧盟总部供应商。若无可合规供应商，API 返回错误而非路由至不合规服务商。 🔗 阅读原文：https://openrouter.ai/blog/insights/ai-data-residency",
+    "matched_keywords": [
+      "Anthropic",
+      "API",
+      "Claude",
+      "Mistral",
+      "OpenRouter"
+    ],
+    "tags": [
+      "ai_app",
+      "business",
+      "model"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -368,8 +766,8 @@
     "score": 58,
     "hn_score": 127,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -392,8 +790,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -414,8 +812,8 @@
     ],
     "score": 57,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -437,8 +835,8 @@
     ],
     "score": 57,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -466,8 +864,29 @@
       "semiconductor"
     ],
     "score": 56,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DeviceTree-ACPI Hybrid Mode Proposed For Improving Linux Support On Snapdragon Laptops",
+    "url": "https://www.phoronix.com/news/DT-ACPI-Hybrid-Mode-Linux",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-23T15:23:51+00:00",
+    "summary_or_excerpt": "Over the years while working at Red Hat, Hans de Goede was known for driving many wonderful Linux laptop improvements benefiting AMD/Intel x86_64 hardware. Hans left Red Hat last year and ended up joining Qualcomm to advance their open-source/Linux support. Today he is out with a significant new patch series for consideration that has the potential of significantly improving the Qualcomm Snapdragon X Series laptop Linux support and also important indicators for better Snapdragon laptop support on Linux moving forward...",
+    "matched_keywords": [
+      "AMD",
+      "Intel"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 56,
+    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -488,8 +907,8 @@
     "score": 52,
     "hn_score": 131,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -505,7 +924,7 @@
     "score": 50,
     "hn_score": 49,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -525,29 +944,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Unsloth GLM-5.2 – How to Run Locally",
-    "url": "https://unsloth.ai/docs/models/glm-5.2",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-22T21:21:01+00:00",
-    "summary_or_excerpt": "HN points: 102. Comments: https://news.ycombinator.com/item?id=48636377",
-    "matched_keywords": [
-      "GLM"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 43,
-    "hn_score": 102,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -568,8 +966,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -599,8 +997,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -616,8 +1014,8 @@
     "score": 40,
     "hn_score": 520,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -641,7 +1039,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -661,8 +1059,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -689,8 +1087,8 @@
     "score": 38,
     "release_version": "b9763",
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -706,8 +1104,8 @@
     "score": 38,
     "hn_score": 214,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -723,8 +1121,8 @@
     "score": 38,
     "hn_score": 212,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -744,7 +1142,7 @@
     "score": 37,
     "hn_score": 517,
     "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -764,8 +1162,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -781,8 +1179,8 @@
     "score": 36,
     "hn_score": 30,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -801,8 +1199,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -817,8 +1215,8 @@
     "tags": [],
     "score": 35,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

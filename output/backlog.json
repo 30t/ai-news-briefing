@@ -1,74 +1,78 @@
 [
   {
-    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
-    "url": "https://arxiv.org/abs/2606.19348",
+    "title": "Governed Shared Memory for Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2606.24535",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19348v1 Announce Type: cross Abstract: We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T parameters (49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) -- both supporting a context length of one million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and optimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention (CSA) and Heavily Compressed Attention (HCA) to improve long-context efficiency; (2) Manifold-Constrained Hyper-Connections (mHC) that enhance conventional residual connections; (3) and the Muon optimizer for faster convergence and greater training stability. We pre-train both models on more than 32T diverse and high-quality tokens, followed by a comprehensive post-training pipeline that unlocks and further enhances their capabilities. DeepSeek-V4-Pro-Max, the maximum reasoning effort mode of DeepSeek-V4-Pro, redefines the state-of-the-art for open models, outperforming its predecessors in core tasks. Meanwhile, DeepSeek-V4 series are highly efficient in long-context scenarios. In the one...",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24535v1 Announce Type: new Abstract: Multi-agent LLM environments require robust mechanisms for shared knowledge management. This paper formalizes the fleet-memory problem and identifies four foundational failure modes: unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse. To address these, we define explicit systems-level primitives: scoped retrieval, temporal supersession, provenance tracking, and policy-governed memory propagation. These primitives are implemented in MemClaw, a production multi-tenant memory service, and evaluated via ArgusFleet, a reproducible harness testing four governance dimensions. Rather than a baseline comparison, this study measures a live production service, emphasizing real-world architectural insights and negative results. Key Evaluation Results Provenance: Successfully reconstructed 100% of depth-four derivation chains with correct writer identity at sub-second per-hop latency. Propagation: Demonstrated high intra-fleet visibility with zero cross-fleet leakage. Under strong write mode, write-to-visible latency was optimized to a single search round-trip. Production Architectural Issues Discovered As...",
     "matched_keywords": [
-      "DeepSeek"
+      "Agent",
+      "multi-agent",
+      "policy",
+      "retrieval"
     ],
     "tags": [
-      "model"
+      "agent",
+      "business",
+      "rag_data"
     ],
-    "score": 71,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mistral OCR 4",
-    "url": "https://mistral.ai/news/ocr-4",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-23T14:03:19+00:00",
-    "summary_or_excerpt": "HN points: 421. Comments: https://news.ycombinator.com/item?id=48645152",
-    "matched_keywords": [
-      "Mistral"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 66,
-    "hn_score": 421,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "score": 67,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters",
-    "url": "https://arxiv.org/abs/2605.00528",
-    "source_name": "arXiv cs.OS",
+    "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
+    "url": "https://arxiv.org/abs/2606.24855",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.00528v2 Announce Type: replace-cross Abstract: AI agents execute tens to hundreds of chained LLM calls per task, yet GPU schedulers treat each call as independent, discarding gigabytes of intermediate state between steps and inflating end-to-end latency by 3-8x. We argue that this request-level abstraction is fundamentally mismatched to compound AI workloads, and propose a shift to program-level scheduling: treating the entire agent workflow (not individual inference calls) as the first-class schedulable unit. We present SAGA, a distributed scheduler that implements this abstraction through three mechanisms: (1) Agent Execution Graphs that capture workflow structure to predict KV cache reuse across tool-call boundaries, achieving within 1.31x of B\\'el\\'ady's optimal offline policy; (2) session-affinity batching with work stealing that co-locates correlated requests while maintaining global load balance; and (3) Agent Fair Share, a task-completion-time fairness metric with provable bounded-deviation guarantees. On a 64-GPU cluster serving SWE-bench coding agents and WebArena browser tasks, SAGA reduces task completion time by 1.64x (geometric mean, p < 0.001) over vLLM v...",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24855v1 Announce Type: new Abstract: Agentic language models dramatically expand the applications of AI yet little is publicly known about how to curate training data for broadly capable agents. Existing open efforts such as SWE-Smith, SERA, and Nemotron-Terminal typically target a single benchmark, leaving open the question of how to train models that generalize across diverse agentic tasks. The OpenThoughts-Agent (OT-Agent) project addresses this gap with a fully open data curation pipeline for training agentic models. We conduct more than 100 controlled ablation experiments to systematically investigate each stage of the pipeline, yielding insights on the importance of task sources and diversity. We then assemble a training set of 100K examples from our pipeline and fine-tune Qwen3-32B on this dataset, which yields an average accuracy of 44.8% across seven agentic benchmarks and a 3.9 percentage point improvement over the strongest existing open data agentic model (Nemotron-Terminal-32B, 40.9%). Moreover, our training data exhibits strong scaling properties, outperforming alternative open datasets at every training set size in compute-controlled comparisons. We publi...",
     "matched_keywords": [
       "Agent",
+      "agentic",
       "agents",
-      "AI Agent",
-      "GPU",
-      "inference",
-      "policy",
-      "serving",
-      "vLLM",
-      "workflow"
+      "benchmark",
+      "dataset",
+      "terminal"
     ],
     "tags": [
       "agent",
-      "ai_app",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 67,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CAVEWOMAN: How Large Language Models Behave Under Linguistic Input and Output Compression",
+    "url": "https://arxiv.org/abs/2606.24083",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24083v1 Announce Type: cross Abstract: \"Talk short. Drop grammar. Save token.\" This caveman style is widely promoted as a way to cut inference cost, but whether it actually saves anything depends on which channel (the user's prompt or the model's response) is being compressed. We present Cavewoman, a two-channel evaluation protocol that scores every generation on task accuracy, realized per-item cost, and reference-text agreement against the model's unconstrained reference. We evaluate eight models on five datasets at five reduction levels, with both channels measured on the same items. Output compression cuts realized cost on most API models (1.4-2.4x per model, up to 3x in the best case) and on all four open-weight models under public-tier pricing. Input compression has the opposite effect, a strict lose-lose: it raises net cost rather than lowering it (~1.15x on the five-benchmark mean, up to 1.8x on the worst dataset and 2.7x under stronger compression), because models compensate with longer responses even as accuracy collapses. Under the same setting, surface text diverges from the unconstrained reference: on the non-reasoning models, roughly half of all generation...",
+    "matched_keywords": [
+      "API",
+      "benchmark",
+      "dataset",
+      "inference",
+      "pricing"
+    ],
+    "tags": [
       "business",
-      "open_source",
-      "semiconductor"
+      "open_source"
     ],
     "score": 66,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -89,8 +93,8 @@
     "score": 65,
     "hn_score": 225,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -105,8 +109,8 @@
     "tags": [],
     "score": 65,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -126,7 +130,103 @@
     ],
     "score": 65,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2606.24551",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24551v1 Announce Type: new Abstract: Computer-use agents can execute software tasks through either graphical interfaces or programmatic command interfaces, but existing evaluations confound interaction modality with differences in tasks, initial states, verifiers, and permitted actions. We introduce a matched execution-layer benchmark of 440 desktop tasks across 18 applications and 12 workflow categories, where screen-only GUI agents and skill-mediated CLI agents receive identical goals, states, and final-state verifiers while being restricted to modality-native actions. In this controlled setting, the strongest GUI agent reaches a 59.1% full pass rate, outperforming the strongest original-skill CLI agent at 48.2%; however, verifier-guided skill augmentation raises CLI success to 69.3%, showing that much of the CLI deficit comes from incomplete skill coverage rather than model capability alone. These results suggest that GUI and CLI expose different execution bottlenecks: GUI agents are limited by reliable grounded interaction over long-horizon workflows, whereas CLI agents are limited by the coverage and scalability of their skill interfaces.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SAFARI: Scaling Long Horizon Agentic Fault Attribution via Active Investigation",
+    "url": "https://arxiv.org/abs/2606.24626",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24626v1 Announce Type: new Abstract: As autonomous agents tackle increasingly complex multi-step, multi-agent tasks, their execution trajectories have scaled beyond the constraints of even the largest context windows. Current methods for effectively diagnosing agent failures load the full trajectory into an LLM's context window, which suffers from attention dilution and fails when agentic traces inevitably exceed context limits. To address this, we introduce SAFARI (Scaling long-horizon Agentic Fault AttRibution via active Investigation), a framework that replaces linear context loading with a tool-augmented diagnostic loop. By equipping LLMs with a specialized toolbox to read and search trajectory segments alongside a persistent Short-Term Memory (STM) for cross-turn reasoning, SAFARI effectively decouples diagnostic accuracy from architectural context limits. Our experiments demonstrate that SAFARI outperforms state-of-the-art results by 20% on the Who&When dataset within a 1M token budget, and by 19% on TRAIL GAIA subset on a 25K token budget. Most significantly, SAFARI maintains a 0.58 precision even when the target fault resides 5x beyond the model's native context...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "dataset",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EComAgentBench: Benchmarking Shopping Agents on Long-Horizon Tasks with Distributed Hidden Intent",
+    "url": "https://arxiv.org/abs/2606.17698",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.17698v2 Announce Type: replace Abstract: As LLM-based shopping agents enter production, existing benchmarks fail to capture how a shopper's requirements arrive: stated implicitly in the query, recorded in a profile, or revealed only when the right question is asked. Benchmarks that expose full intent upfront and grade only the final choice can neither pose this long-horizon challenge nor explain which requirement an agent missed. To address this gap, we introduce EComAgentBench, a benchmark of 662 tasks grounded in real Amazon products and reviews. Each task scatters these requirements across a visible query, a tool-gated profile, and scripted clarification; an agent must uncover hidden intent, verify candidates against attributes and review evidence, and commit to a single product within 100 tool calls. Moreover, typed, source-tagged rubrics grade every task, attributing each failure to a requirement and its source. Construction is automated yet reliable, with every answer fixed in code before any text is generated and every sample validated. Our evaluation of seven models reveals that even the strongest attains only 57.1% overall accuracy, and rubric satisfaction degr...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark",
+    "url": "https://arxiv.org/abs/2409.11363",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2409.11363v2 Announce Type: replace-cross Abstract: AI agents have the potential to aid users on a variety of consequential tasks, including conducting scientific research. To spur the development of useful agents, we need benchmarks that are challenging, but more crucially, directly correspond to real-world tasks of interest. This paper introduces such a benchmark, designed to measure the accuracy of AI agents in tackling a crucial yet surprisingly challenging aspect of scientific research: computational reproducibility. This task, fundamental to the scientific process, involves reproducing the results of a study using the provided code and data. We introduce CORE-Bench (Computational Reproducibility Agent Benchmark), a benchmark consisting of 270 tasks based on 90 scientific papers across three disciplines (computer science, social science, and medicine). Tasks in CORE-Bench consist of three difficulty levels and include both language-only and vision-language tasks. We provide an evaluation system to measure the accuracy of agents in a fast and parallelizable way, saving days of evaluation time for each run compared to a sequential implementation. We evaluated two baseline...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -146,8 +246,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -168,112 +268,79 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NSA局长：Mythos数小时内攻破其几乎所有机密系统",
-    "url": "https://aihot.virxact.com/items/cmqny6q7v0288slhkbzc8ob3u",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-21T15:31:52+00:00",
-    "summary_or_excerpt": "美国NSA局长称，Mythos在数小时内攻破了其几乎所有机密系统。此前Mythos已在5天内破解MacOS。而顶级漏洞团队Google Project Zero完成同等攻击需6个月，单个MacOS零日漏洞价值约200万美元。苹果原假设全球仅10-20个团队具备此能力，Mythos将使该数字增至数千。全球约20亿活跃苹果设备中，Mac用户多为记者、高管、政府官员等高价值目标，苹果曾是\"最安全\"的选择。 🔗 阅读原文：https://x.com/AISafetyMemes/status/2068718552174252477",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 63,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "东京 AI 公司 Sakana AI 推出多智能体编排系统 Sakana Fugu",
-    "url": "https://aihot.virxact.com/items/cmqpez1uu001gslp5j4h23mih",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-22T16:11:41+00:00",
-    "summary_or_excerpt": "Sakana AI 是 2023 年成立于东京的 AI 公司，由前 Google Brain 的 David Ha（CEO）、Transformer 论文共同作者 Llion Jones（CTO）及前日本外交官 Ren Ito（主席）联合创立。其产品 Sakana Fugu 将多智能体系统封装成单个 API 调用，内部自动拆解任务、调度全球模型并验证结果。Fugu Ultra 在工程、科学、推理等基准上对标 Fable/Mythos，通过动态编排多模型天然绕开单一供应商出口管制风险，被视为将多智能体从复杂工程变为开箱即用的产品形态。 🔗 阅读原文：https://x.com/berryxia/status/2069090959938466298",
-    "matched_keywords": [
-      "API"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "微信Agent小微灰度内测：主入口发消息红包，子入口可读聊天记录",
-    "url": "https://aihot.virxact.com/items/cmqpbc21e08laslx6gica1m67",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-22T13:34:14+00:00",
-    "summary_or_excerpt": "微信Agent小微灰度内测已开始，主入口位于微信首页左上角，支持给好友发消息和红包（需确认），但无法读取聊天记录或向群聊发消息。群聊和私聊的\"问小微\"子入口则可读取聊天记录并支持群发。小微可创建日程提醒、待办、总结朋友圈，打通公众号和视频号进行问答。收藏仅可读取小微自建笔记。内置\"小工具\"功能，支持语音创建简易小程序（暂不可发布），还可调用第三方小程序。 🔗 阅读原文：https://mp.weixin.qq.com/s/qVdfx01e9C9r5mGi0jh2BA",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "当 RAG 用户提出模糊问题时：澄清一次，学习默认值",
-    "url": "https://www.bestblogs.dev/en/article/b00e30e3?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-22T13:30:00+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary 本文提出了一种在 RAG 系统中处理用户模糊查询的模式：提出一次有针对性的澄清，从答案中学习默认值，之后对类似问题保持沉默。 📝 Summary 本文扩展了企业 RAG 系统中的问题解析模块，以处理生产环境查询中常见的模糊字段。它识别了五种失败模式（模糊字段类型、缺失页面范围、模糊日期范围、模糊意图、隐式实体），并引入了两个 Pydantic 模式：`ClarificationRequest`（用于向用户提问）和 `ClarificationDefault`（用于从答案中学习）。通过一个经纪人示例演示了循环：系统首次提问，记录答案，随后在类似问题上静默复用已学习的默认值。提供了更新规则和门控函数的 Python 代码。该模式区别于多轮对话；它强调跨请求学习而非对话内学习。文章还讨论了边界条件、待解决问题（多字段、对抗性用户、跨租户共享）以及模式如何与存储和评估基础设施集成。 💡 Main Points 澄清一次，然后学习默认值：正确的做法是提问、存储，随后静默应用。 当 ParsedQuestion 字段模糊时，系统应提出一次有针对性的澄清，将用户的回答记录为学习的默认值，并在未来相同的查询中自动应用。 两个 Pydantic 模式使循环形式化：ClarificationRequest 和 ClarificationDefault。 ClarificationRequest 针对每个缺失字段发出；ClarificationDefault 跟踪候选值、加权投票和置信度。门控函数根据置信度决定是提问、静默应用，还是偶尔提问。 学习的默认值在失败检测时分层，以处理边缘情况。 当默认值失败（返回 null）时，系统回退到提问，然后通过添加子条件（例如，第 1 页种类）来细化默认值，提高未来准确性。 该模式随时间减少用户摩擦：简单的问题变为静默处理，只有模糊的问题才触发澄清。 通过置信度阈值（低于 0.6 总是提问，高于 0.85 静默应用），系统学习哪些默认值是可靠的，并停止为可预测的情况打扰用户。 💬 Key Quotes 廉价的修复是提问。正确的修复是提问，然后学习默认值，这样下一次情况就变成静默处理。 没有学习的默认值表，静默推理只是猜测。 代价是两个模式和一张表的一列。好处是系统不再询问简单的问题，只询问模糊的问题。 📊 Article Meta AI Screening： 90 Source： Towards Data Science Author： angela shi Category： 人工智能 Language： 英文 Read Time： 9 min Word Count： 2206 Tags： RAG , LLM , 问题解析 , 结构化输出 , 智能体设计模式 Read Full Article",
-    "matched_keywords": [
-      "Meta AI",
-      "RAG"
-    ],
-    "tags": [
-      "model",
-      "rag_data"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Contagion Networks: Evaluator Bias Propagation in Multi-Agent LLM Systems",
-    "url": "https://arxiv.org/abs/2606.20493",
+    "title": "BioMedArena: An Open-source Toolkit for Building and Evaluating Biomedical Deep Research Agents",
+    "url": "https://arxiv.org/abs/2605.06177",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.20493v1 Announce Type: cross Abstract: When large language models serve as evaluators in multi-agent systems, their systematic evaluation biases propagate through the agent network. We introduce Contagion Networks, a formal framework for measuring how evaluator biases spread across interacting LLM agents. In a controlled 3-agent experiment using DeepSeek-chat with three distinct evaluator bias profiles (structured, balanced, evidence-based), we measure the Cross-Agent Contagion Matrix Gamma_3 and find that evaluator biases consistently propagate between agents (gamma in [0.157, 0.352]), even within the same underlying model. We identify three propagation regimes governed by the spectral radius rho(Gamma_N), and demonstrate that homogeneous-model agents produce contagion coefficients 3-5x weaker than cross-model coefficients observed in prior work (MM-EPC: gamma approx 0.85-1.3), placing them in the suppression regime. We show that increasing evaluator committee size from k=1 to k=3 reduces effective contagion by 72.4%, providing an actionable mitigation strategy. We release the open-source Contagion Network experimental framework.",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.06177v2 Announce Type: replace Abstract: Reproducing and comparing deep research agents today is hard: the same backbone evaluated on the same benchmark can report different accuracies across papers because the harness and tool registry differ, and integrating a new model into a comparable evaluation surface costs weeks of model-specific engineering. These are symptoms of a broader reproducibility problem in deep research agent research. Here, we introduce BioMedArena, an open-source toolkit that addresses this reproducibility gap and provides an arena for comparing deep research agents under a shared evaluation environment. BioMedArena decouples six layers of biomedical agent evaluation -- benchmark loading, tool exposure, tool selection, harness mode, context management, and scoring -- and exposes 166 biomedical benchmarks and 75 biomedical tools across 9 functional families. Adding a new model, benchmark, or tool can be accomplished with a few-line provider adapter. Beyond evaluation infrastructure, BioMedArena ships a library of high-quality reference components: 6 agent harnesses (including our proposed Mutual-Evolve) and 6 context-management strategies, any of whi...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "DeepSeek",
-      "multi-agent",
-      "release"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "model",
       "open_source"
     ],
     "score": 61,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ReM-MoA: Reasoning Memory Sustains Mixture-of-Agents Scaling",
+    "url": "https://arxiv.org/abs/2606.24437",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24437v1 Announce Type: new Abstract: Mixture-of-Agents (MoA) architectures improve inference-time scaling by organizing multiple LLM agents into layered reasoning pipelines. However, existing MoA variants fail to sustain gains as depth increases, exhibiting degradation, early plateauing, or saturation. We propose ReM-MoA, a memory-augmented MoA framework that sustains scaling through two mechanisms: (1) a Ranked Reasoning Memory that persistently stores and ranks reasoning traces from all layers using a comparative Reviewer Agent, and (2) a Curated Diversified Memory Routing scheme that exposes different agents to distinct combinations of successful and failed traces, preserving exploration diversity while propagating high-quality reasoning. We further introduce an optional multi-domain Reviewer distillation pipeline that improves ranking quality through frontier-model supervision. Across five reasoning benchmarks spanning math, formal logic, code, knowledge, and commonsense, ReM-MoA consistently outperforms prior MoA variants across both depth and width scaling, and its advantage widens with depth, establishing structured cross-layer reasoning memory as a key missing m...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ZONOS2 Technical Report",
+    "url": "https://arxiv.org/abs/2606.24320",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24320v1 Announce Type: cross Abstract: We present ZONOS2 8B, our latest TTS model, which achieves state-of-the-art naturalness, prosody, and voice cloning fidelity. We improve upon Zonos-v0.1 across scale, data, and training recipe. We scale the model from 1.6B to 8B total parameters (900M active) with a novel mixture-of-experts (MoE) backbone, improving inference latency and throughput. We expand our training corpus from 200K to over 6M hours using a new data processing pipeline, and we simplify our post-training and conditioning recipes to improve naturalness and voice cloning fidelity. We evaluate ZONOS2 8B on quality, speaker similarity, WER, and ZTTS1-Eval, our novel TTS benchmark, where it performs competitively with state-of-the-art systems while maintaining good streaming latency. We release our model weights and example inference code under an Apache 2.0 license on GitHub and Hugging Face.",
+    "matched_keywords": [
+      "Apache 2.0",
+      "benchmark",
+      "GitHub",
+      "inference",
+      "release",
+      "weights"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -293,280 +360,7 @@
     "score": 60,
     "hn_score": 579,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.14.8a3：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.8a3",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-23T21:11:46+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Add unified declarative flow loading - Improve crewai run startup UX - Consolidate `crewai run` and `crewai flow kickoff` - Keep flow method progress visible for nested crews - Add declarative Flow CLI support - Allow `@router()` as start method of a flow - Add typed output schemas for CrewAI tools ### Bug Fixes - Pin opentelemetry to ~=1.42.0 ### Documentation - Add \"One Card per Step\" Studio page ## Contributors @jessemiller, @joaomdmoura, @lucasgomide, @vinibrsl",
-    "matched_keywords": [
-      "CrewAI",
-      "startup"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 60,
-    "release_version": "1.14.8a3",
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Build real agentic apps using CUGA: two dozen working examples on a lightweight harness",
-    "url": "https://huggingface.co/blog/ibm-research/cuga-apps",
-    "source_name": "Hugging Face Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-23T12:51:55+00:00",
-    "summary_or_excerpt": "",
-    "matched_keywords": [
-      "agentic"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 推出 Slack 版 Claude Tag",
-    "url": "https://www.bestblogs.dev/en/status/2069474681749754272?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-23T17:36:27+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Boris Cherny 宣布推出 Claude Tag，这是一款新的 Slack 集成，能让 Claude 成为具有身份和记忆功能的主动型多玩家团队成员。 📝 Summary Boris Cherny 宣布推出 Claude Tag，用户可以在 Slack 频道中 @Claude。Claude 成为一个主动的团队成员，可以在频道中协作，拥有自己的身份和记忆。该功能由 Claude Code 驱动，已彻底改变了他们产品团队使用 Claude 的方式。官方 Claude AI 账号的一条引用推文提供了最初的发布公告。 📊 Article Meta AI Screening： 90 Source： Boris Cherny(@bcherny) Author： Boris Cherny Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 252 Tags： Claude Tag , Slack 集成 , Anthropic , AI 智能体 , 团队协作 Read Tweet",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Claude Code",
-      "Meta AI"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The text in Claude Code’s “Extended Thinking” output",
-    "url": "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-22T14:22:46+00:00",
-    "summary_or_excerpt": "HN points: 264. Comments: https://news.ycombinator.com/item?id=48630535",
-    "matched_keywords": [
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 60,
-    "hn_score": 264,
-    "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Nobel laureate John Jumper is leaving DeepMind for rival Anthropic",
-    "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-20T16:39:57+00:00",
-    "summary_or_excerpt": "Jumper isn't the only big name leaving Google DeepMind.",
-    "matched_keywords": [
-      "Anthropic",
-      "DeepMind",
-      "Google DeepMind"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DRFLOW: A Deep Research Benchmark for Personalized Workflow Prediction",
-    "url": "https://arxiv.org/abs/2606.18191",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.18191v2 Announce Type: replace Abstract: Deep research (DR) systems are increasingly used for complex information-seeking tasks, but existing works mainly focus on generating reports and summaries. In contrast, many enterprise tasks instead require an agent to identify concrete workflows which is a sequence of action-steps. For example, rather than summarizing budgeting policies, an agent should be able to determine the steps needed to answer a question such as: \"How do I request new headcount given a fixed budget?\". Therefore, we introduce DRFLOW, a benchmark for evaluating personalized workflows predicted by agents from heterogeneous sources. Each task requires the agent to identify relevant evidence from scattered sources, then use that evidence to predict the correct action-step sequence for the user's task. DRFLOW contains 100 tasks across five domains, with 1,246 reference workflow steps grounded in more than 3,900 sources. We define seven diagnostic metrics covering factual grounding, step recovery, structural ordering, condition resolution, and personalization. We further present DRFLOW-Agent (DRFA), a workflow-oriented reference agent to predict personalized wo...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Beyond Static Endpoints: Tool Programs as an Interface for Flexible Agentic Web Services",
-    "url": "https://arxiv.org/abs/2606.19992",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19992v1 Announce Type: cross Abstract: In the agentic web era, LLM-based agents increasingly invoke web services as tools, yet most interfaces remain \\emph{static endpoints} that poorly express long-horizon workflows with loops, conditionals, joins, and retries. We present ToolPro, which represents an agent's tool intent as an \\emph{executable tool program} that compactly encodes multi-step service interactions with explicit effect types. ToolPro combines constraint-guided program construction, effect-aware replay for exactly-once state-modifying calls, and a profile-driven policy that decides when program execution outperforms stepwise calling. We instantiate ToolPro over MCP-style services with WebAssembly sandboxing and evaluate it on diverse workflows of real-world applications. ToolPro reduces end-to-end latency by up to 53.4\\% and client-side traffic by up to 96.1\\%, with larger gains under higher network latency and workflow complexity.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "MCP",
-      "policy",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
-    "url": "https://arxiv.org/abs/2606.19704",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19704v1 Announce Type: new Abstract: Agent benchmarks are growing fast, but no single benchmark touches more than four or five of the dimensions that deployment exposes. This paper aggregates the largest coordinated deep-dive of one MCP-based industrial-agent benchmark to date: fourteen parallel implementation studies covering new asset classes (including a multi-modal visual extension), alternative orchestrations, retrieval strategies, reasoning modes, infrastructure optimizations, and evaluation-methodology probes. Consolidating those studies with seven prior agent benchmarks, we argue that aggregate-score leaderboards systematically underspecify deployed-agent evaluation. Rankings derived from aggregate scores do not transfer to out-of-distribution settings; recent public-to-hidden competition retrospectives provide direct empirical evidence of this rank instability. We propose ranking configurations by predictive validity, the correlation between in-sample and out-of-sample rank, rather than in-sample mean, and report a twelve-tier measurement apparatus that exposes the deployment-relevant dimensions HELM and its agent-era successors collapse. The position is operat...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "MCP",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ORAgentBench: Can LLM Agents Solve Challenging Operations Research Tasks End to End?",
-    "url": "https://arxiv.org/abs/2606.19787",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19787v1 Announce Type: new Abstract: Large language models are increasingly deployed as autonomous agents for multi-step tasks in executable environments, yet their ability to perform realistic operations research (OR) work remains unclear. Existing OR evaluations often decouple modeling from solving, rely on pre-formalized or text-only instances, and rarely test the full workflow from operational artifacts to validated decisions. In this work, we introduce ORAgentBench, an execution-grounded benchmark for evaluating autonomous agents on challenging end-to-end operations research tasks. It contains 107 human-reviewed tasks across diverse operational scenarios, each packaged in an isolated environment with a natural-language brief, multi-file data, configuration artifacts, and a required submission schema. Agents must write and run solution code, and their submissions are evaluated by hidden validators for schema validity, hard-constraint feasibility, and normalized objective quality. Experiments with fourteen frontier agent-model configurations show that current agents remain far from reliable OR practice. The best agent passes only 35.51% of all tasks and 20.59% of har...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DynAMO:Dynamic Asset Management Orchestration via Topological Multi-Agent Scheduling",
-    "url": "https://arxiv.org/abs/2606.19382",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19382v1 Announce Type: cross Abstract: While LLM-powered agents offer end-to-end automation for industrial asset lifecycles, real-world Industry 4.0 deployment is hindered by latency, concurrency instability, and safety risks. We present DynAMO (Dynamic Asset Management Orchestration), a deployment-ready engine using a Plan-then-Execute architecture to generate verifiable workflow graphs. DynAMO supports both SequentialWorkflow (topological execution) and ParallelWorkflow (dependency-aware concurrency). By dynamically identifying independent tasks, DynAMO preserves structural correctness and safety while significantly improving efficiency through controlled reasoning overlap. Across six controlled experiments on the AssetOpsBench industrial benchmark, DynAMO demonstrates substantial performance and robustness gains. Parallel execution reduces end-to-end latency by a median of 1.6x over sequential orchestration, rising to 1.8x on highly parallelizable workflows. After instrumenting external tool calls with realistic latencies, a latency decomposition shows that LLM reasoning and orchestration still account for more than 90% of execution time, identifying model inference...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "automation",
-      "benchmark",
-      "inference",
-      "multi-agent",
-      "orchestration",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows",
-    "url": "https://arxiv.org/abs/2606.19595",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.19595v1 Announce Type: cross Abstract: Voice agents deployed in structured workflows (customer service, healthcare scheduling, account management) must handle frequent user interruptions while maintaining progress through multi-step procedures. Existing benchmarks for speech-capable models focus on the timing of interruptions: barge-in detection, endpointing, and turn-taking dynamics. They leave unmeasured what happens after the interruption: does the agent resume the workflow at the correct step? Does it address the user's interjection? Does it avoid re-delivering content the user already heard? We introduce IHBench (Interruption Handling Benchmark), a benchmark that evaluates post-interruption recovery in voice agents executing state-machine-driven workflows across 10 enterprise domains. Six interruption types are injected at controlled points mid-utterance, with per-interruption evaluation rubrics generated alongside the data. Each interruption is scored on two axes: task fulfillment and recovery quality. We evaluate 27 audio-language model configurations from OpenAI, Google, and the open-weight community. Models vary widely, and recovery quality depends strongly on...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "customer",
-      "OpenAI",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-21T08:09:58.817383+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -586,8 +380,8 @@
     ],
     "score": 59,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -608,28 +402,98 @@
     ],
     "score": 59,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Krea 2: SOTA open-weights 12B image model",
+    "url": "https://www.krea.ai/blog/krea-2-technical-report",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-23T15:31:21+00:00",
+    "summary_or_excerpt": "HN points: 323. Comments: https://news.ycombinator.com/item?id=48646659",
+    "matched_keywords": [
+      "weights"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "hn_score": 323,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Nvidia says its AI data center design runs hotter to use a lot less water",
-    "url": "https://www.theverge.com/tech/954139/nvidia-data-centers-rubin-liquid-cooling",
-    "source_name": "The Verge AI",
+    "title": "Age of LLM: A Strategic 1v1 Benchmark for Reasoning, Diplomacy and Reliability of Large Language Models under Fog of War",
+    "url": "https://arxiv.org/abs/2606.24391",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-22T23:24:32+00:00",
-    "summary_or_excerpt": "Public pushback against data centers has emphasized their water and energy consumption, and now Nvidia is highlighting its claim that the Rubin generation reference design for a fully liquid-cooled data center has \"eliminated massive amounts of power usage and pretty much all water usage.\" Still, it doesn't address all of the concerns around AI data […]",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24391v1 Announce Type: new Abstract: We introduce Age of LLM, a turn-based 1v1 benchmark in which two LLMs face off on a 13x7 grid to destroy the enemy base. Three stressors are deliberate: fog of war, full diplomacy (messages, ceasefires, ultimatums; uranium kept secret), and a reliability dimension where every turn must follow a strict JSON schema and an illegal action is silently discarded. The engine is private and each match uses a fresh random map seed and opponent, mitigating the data contamination that affects public benchmarks. Models receive a (near) rule-only prompt with no build-order advice (two tactical seed phrases were present during data collection; see Section 2.7). We benchmark 15 reasoning models across 54 matches and 5,258 actions. Findings: (1) the nuclear rush dominates (78% on the rules-coherent v0.11+ sub-corpus; 85% corpus-wide) with a sole-launcher signature that is largely mechanical under secret-simultaneous launch rules, not a cognitive deterrence failure; (2) military conquest is rare but faster (12.3 vs 18.9 turns); (3) diplomacy is prolific yet almost never consummated; (4) ~58% of illegal actions are fog/state errors, making the illegal...",
     "matched_keywords": [
-      "data center",
+      "benchmark",
+      "launch"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "2.5-D Decomposition for LLM-Based Spatial Construction",
+    "url": "https://arxiv.org/abs/2605.07066",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.07066v3 Announce Type: replace Abstract: Autonomous systems that build structures from natural-language instructions need reliable spatial reasoning, yet large language models (LLMs) make systematic coordinate errors when generating three-dimensional block placements. We present a neuro-symbolic pipeline based on \\emph{2.5-D decomposition}: the LLM plans in the two-dimensional horizontal plane while a deterministic executor computes all vertical placement from column occupancy, eliminating an entire class of errors. On the Build What I Mean benchmark (160 rounds), GPT-4o-mini with this pipeline achieves 94.6\\% mean structural accuracy across 12 independent runs, within 3.0 percentage points of the 97.6\\% ceiling imposed by architect-agent errors that no builder-side improvement can address. This outperforms both GPT-4o at 90.3\\% and the best competing system at 76.3\\%. A controlled ablation confirms that 2.5-D decomposition is the dominant contributor, accounting for 50.7 percentage points of accuracy. The pipeline transfers directly to edge hardware: Nemotron-3 120B running locally on an NVIDIA Jetson Thor AGX matches the cloud result at 94.5\\% with no prompt modificat...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "GPT",
       "NVIDIA"
     ],
     "tags": [
+      "agent",
+      "model",
+      "open_source",
       "semiconductor"
     ],
     "score": 58,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "VISTA: An End-to-End Benchmark for Visual Spec-to-Web-App Coding Agents",
+    "url": "https://arxiv.org/abs/2605.26144",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.26144v3 Announce Type: replace-cross Abstract: We present VISTA (VIsual Spec-To-App Benchmark), a benchmark for evaluating the end-to-end web-app generation capabilities of LLM-based agents. Unlike prior code generation benchmarks that focus on algorithmic tasks, VISTA targets realistic UI-centric development, where agents must produce functional, visually coherent applications from underspecified inputs. We define five prompt-information conditions that vary along two axes, visual/structural fidelity and stack constraint: (1) text only with free stack choice, (2) text with reference screenshots under three specified stacks, (3) text with reference screenshots under free stack choice, (4) text with screenshots and pruned Figma structure under a single specified stack, and (5) text with screenshots and pruned Figma structure under free stack choice. To enable robust evaluation, each page in the benchmark is manually annotated with interactive UI components and around three visual anchor points, addressing the well-known limitations of script-based testing tools such as Playwright in open-ended code generation settings. Evaluation combines DOM-grounded reference matching,...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -651,52 +515,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Oracle因AI应用裁员21000人，债务驱动云基础设施投资",
-    "url": "https://aihot.virxact.com/items/cmqr4zhkm0gidslp5x8ow892r",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-23T20:17:38+00:00",
-    "summary_or_excerpt": "Oracle在截至5月31日的财年裁员21000人，员工总数降至141，000人，降幅12.9%。公司称AI技术的采用导致劳动力缩减，同时重组成本达18亿美元，同比增长481%。Oracle计划2026年通过债务和股权筹集450至500亿美元，扩建Oracle Cloud Infrastructure，服务OpenAI、xAI、AMD、Nvidia、Meta等客户。公司债务超1200亿美元。分析人士指出裁员有助于改善现金流，但Oracle也承认大规模裁员可能带来生产力下降、人才短缺和员工士气受损等风险。 🔗 阅读原文：https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments",
-    "matched_keywords": [
-      "AMD",
-      "NVIDIA",
-      "OpenAI",
-      "xAI"
-    ],
-    "tags": [
-      "model",
-      "semiconductor"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "FastWan-QAD：单卡5090上1.8秒生成5秒视频",
-    "url": "https://aihot.virxact.com/items/cmqr15pz20fjzslp5eps5gotw",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-23T18:52:30+00:00",
-    "summary_or_excerpt": "Sky Computing Lab 发布 FastWan-QAD 视频生成模型系列，基于 FastVideo 的量化感知蒸馏（QAD）方案训练。在单张 NVIDIA GeForce RTX 5090 上，端到端生成一段 5 秒 480P 视频仅需 1.8 秒。模型、代码及博客已开源。 🔗 阅读原文：https://x.com/haoailab/status/2069493820732170695",
-    "matched_keywords": [
-      "NVIDIA"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -717,34 +537,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenRouter：通过API路由实现AI数据驻留合规",
-    "url": "https://aihot.virxact.com/items/cmqpyc83704y1slp584b2av9b",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-22T15:00:00+00:00",
-    "summary_or_excerpt": "Deloitte 报告显示 77% 的公司将供应商国籍纳入 AI 选型考量。OpenRouter 将数据驻留视为路由决策：通过 API 请求中的 `provider` 对象设置 `order` 或 `only` 限定服务商、`allow_fallbacks` 为 `false` 禁止回退、`data_collection` 为 `deny` 禁止数据存储或训练、`zdr` 为 `true` 要求零数据保留。示例以 `anthropic/claude-sonnet-4.6` 调用，首选 Anthropic 直连和 Amazon Bedrock。针对欧盟需求，可限制仅 Mistral 等欧盟总部供应商。若无可合规供应商，API 返回错误而非路由至不合规服务商。 🔗 阅读原文：https://openrouter.ai/blog/insights/ai-data-residency",
-    "matched_keywords": [
-      "Anthropic",
-      "API",
-      "Claude",
-      "Mistral",
-      "OpenRouter"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "model"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -766,7 +560,7 @@
     "score": 58,
     "hn_score": 127,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -790,7 +584,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -812,7 +606,7 @@
     ],
     "score": 57,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -835,8 +629,38 @@
     ],
     "score": 57,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Find the best open-source OCR models in one place at Papers with Code [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1ueiam6/find_the_best_opensource_ocr_models_in_one_place",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-06-24T16:26:21+00:00",
+    "summary_or_excerpt": "Hi, I've created an overview of the most important OCR benchmarks, along with the top open models, and links to their paper and code: https://paperswithcode.co/tasks/ocr . This week, new OCR models were released by Baidu and Mistral. Baidu released Unlimited OCR , a 3B-parameter model that introduces a key innovation called Reference Sliding Window Attention (R-SWA) and builds on top of DeepSeek OCR . Mistral released OCR 4 , which is available via an API. OCR, or Optical-Character Recognition, is the task of digitizing PDFs or scanned documents. There's, of course, a huge interest in this task, as it enables ingestion of all company data for agentic use cases. AI agents love Markdown; it can be valuable to turn all those messy PDF documents into a standardized, machine-readable format. This enables use cases like agentic RAG (retrieval-augmented generation), which powers chatbots, both internally and for external customer support. With a large number of OCR releases on Hugging Face over the last few months, it may be hard to know which one to use. Hence, I've built this page, which lists the major OCR benchmarks, along with the top-performing models and links to their code. This...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "API",
+      "customer",
+      "DeepSeek",
+      "Mistral",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "rag_data"
+    ],
+    "score": 56,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -865,8 +689,8 @@
     ],
     "score": 56,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -886,8 +710,8 @@
     ],
     "score": 56,
     "first_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -907,25 +731,157 @@
     "score": 52,
     "hn_score": 131,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "NSA director: 'Mythos \"broke into almost all of our classified systems in hours\"",
-    "url": "https://www.economist.com/briefing/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-21T09:45:06+00:00",
-    "summary_or_excerpt": "HN points: 49. Comments: https://news.ycombinator.com/item?id=48617278",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 50,
-    "hn_score": 49,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
+    "title": "llama.cpp b9784：hexagon: MUL_MAT and MUL_MAT_ID rework : 32x32 tiled weight repack, kernel-params, cached",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9784",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-24T19:55:59+00:00",
+    "summary_or_excerpt": "hexagon: MUL_MAT and MUL_MAT_ID rework : 32x32 tiled weight repack, kernel-params, cached graphs (#24954) * hex-mm: new weight layout and fusion updates * hvx-mm: unroll the new tiled vec_dots to optimize hvx register util * hex-mm: optimize dyn.quant format for q8_0 and q8_1 to reduce overhead in vec_dots. * hvx-mm: parallel quantizer per block for large rows * hvx-mm: simplify and futher optimize dyn.quant and vec_dots * hvx-mm: keep intermediate per tile accumulators in fp16 * hmx-mm: optimize weight dequant by aligning the repacked tiles with the DMA * hmx-mm: remove qweight scratch and just use vtcm_weight * hmx-mm: remove all unused and obsolete code * hmx-mm: the new tiled repack format is here to stay -- rename all x4x2 to _tiled * hmx-mm: improve activation processing with dma prefetch * hex-mm: fix hmx/hvx fallback logic and MUL_MAT_ID allocation (unbreaks OLMoE) * hex-mm: align the weight tiles with dma just like we did in hmx-mm * hex-mm: factor out common mm bits into htp/matmul-ops.h * hex-mm: start moving mm kernel selection to the host * hex-mm: move all of the matmul param compute into the host * hmx-mm: restore pipelined mode * hmx-mm: unroll the dequant function...",
+    "matched_keywords": [
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 48,
+    "release_version": "b9784",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "How Businesses Are Building Specialized AI They Can Trust",
+    "url": "https://blogs.nvidia.com/blog/nvidia-agent-toolkit-open-models-tools-skills-secure-runtime-ai-agents",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-23T13:00:07+00:00",
+    "summary_or_excerpt": "Companies are asking how to build specialized AI that fits with the way their workflows actually run. The first wave of enterprise AI was about access. Companies experimented with new frontier and open models, ran pilots and explored how AI can help. Now, specialized agents — systems of models that can reason, use tools and […]",
+    "matched_keywords": [
+      "agents",
+      "enterprise AI",
+      "NVIDIA"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "semiconductor"
+    ],
+    "score": 48,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.14.8a4：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.8a4",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-24T16:20:02+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Support conversational flows in the CLI TUI. ### Bug Fixes - Fix symlink path traversal in skill archive extraction. - Validate declarative flow definition paths. ### Documentation - Update snapshot and changelog for v1.14.8a3. ## Contributors @lorenzejay, @theCyberTech, @vinibrsl",
+    "matched_keywords": [
+      "changelog",
+      "CrewAI"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 46,
+    "release_version": "1.14.8a4",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Retrieval Metrics Mislead: Measuring Policy Signal in Long-Horizon Tool-Use Agents",
+    "url": "https://arxiv.org/abs/2606.23937",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.23937v1 Announce Type: cross Abstract: Exact-match retrieval recall is often used as a proxy for whether a retriever supplies useful policy context to a downstream decision model. We test this proxy for pre-action policy classification in tau-bench using Qwen2.5-3B/7B classifiers. Under gold-policy conditioning, a compact structured state improves macro-F1 over raw trajectories by 0.13-0.17 after tuning. We then replace the benchmark-designated policy clause with the top-ranked clause retrieved from decision-time context. Although the exact governing clause is retrieved at rank 1 for only 7% of airline states, the primary 3B classifier obtains macro-F1 0.58 with retrieved clauses versus 0.60 with gold clauses (Delta=-0.02, task-cluster 95% CI [-0.23,+0.21]); mismatched-policy and no-policy controls score 0.32 and 0.21. We do not detect a macro-F1 difference between retrieved and gold clauses in this configuration, although the interval remains too wide to establish non-inferiority. The same qualitative pattern appears with a second retriever and at 7B, while varying across fine-tuning configurations. These results indicate that exact-match clause recall can underestimat...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "fine-tuning",
+      "policy",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands cloud: 1.39.0：1.39.0 (2026-06-24)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/cloud-1.39.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-24T15:41:03+00:00",
+    "summary_or_excerpt": "## 1.39.0 (2026-06-24) ## What's Changed ### Features * feat: move existing users into the default org when first auto-added by @ak684 in https://github.com/OpenHands/OpenHands/pull/14740 * feat: route unclaimed automation events to the default org on single-org installs by @ak684 in https://github.com/OpenHands/OpenHands/pull/14745 * feat: add hide_personal_workspaces flag for org-only OHE installs by @ak684 in https://github.com/OpenHands/OpenHands/pull/14741 * feat: make the first signed-in user the default org owner, track the org by is_default flag by @ak684 in https://github.com/OpenHands/OpenHands/pull/14752 * feat(acp): add switch_acp_model proxy endpoint for cloud conversations by @simonrosenberg in https://github.com/OpenHands/OpenHands/pull/14744 * feat(acp): add model dropdown and credential fields to agent settings page by @simonrosenberg in https://github.com/OpenHands/OpenHands/pull/14733 * feat: add validation for secret names to ensure valid env var format by @jpshackelford in https://github.com/OpenHands/OpenHands/pull/12980 * feat: auto-accept invitation links instead of the confirm/cancel modal by @ak684 in https://github.com/OpenHands/OpenHands/pull/14786 * fe...",
+    "matched_keywords": [
+      "Agent",
+      "automation",
+      "GitHub",
+      "OpenHands"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 44,
+    "release_version": "cloud-1.39.0",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Helpfulness Overrides Causal Caution: Context-Dependent Suppression and Recovery in LLMs",
+    "url": "https://arxiv.org/abs/2606.24370",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.24370v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly integrated into decision-support roles in business and policy contexts. While prior benchmark studies have primarily evaluated LLMs' causal reasoning capabilities, a more fundamental epistemic dimension has been overlooked: Causal Caution, defined as the propensity to refrain from causal judgment when empirical evidence is insufficient. This study examines the systematic suppression of Causal Caution that occurs when LLMs shift from academic to practical advisory contexts. Using an evaluation rubric inspired by Pearl's Causal Hierarchy (the PCH score), we conducted experiments on four high-performance LLMs -- Claude Sonnet 4.6, Claude Opus 4.7, GPT 5.5, and Gemini 3.1 Pro -- across 480 trials. Causal Caution maintenance rates were 91.7--100.0% in academic contexts but dropped to 6.7--18.3% in practical advisory contexts (Fisher's exact test, p < .001 across all models). Furthermore, when restricted to practical prompts requesting concrete recommendations or explanatory rationales, only 1 of 200 responses (0.5%) maintained Causal Caution. A brief self-correction prompt -- \"Please reconside...",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Gemini",
+      "GPT",
+      "policy"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -944,8 +900,34 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9777：model : Add LFM2.5-ColBERT-350M and LFM2.5-Embedding-350M (#24913)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9777",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-24T07:43:17+00:00",
+    "summary_or_excerpt": "model : Add LFM2.5-ColBERT-350M and LFM2.5-Embedding-350M (#24913) * model : Add LFM2.5-ColBERT-350M and LFM2.5-Embedding-350M * Restore LFM2 models in README.md **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9777/llama-b9777-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 43,
+    "release_version": "b9777",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -966,7 +948,7 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -997,8 +979,31 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n n8n@2.28.1：[2.28.1](https://github.com/n8n-io/n8n/compare/n8n@2.28.0...n8n@2.28.1) (2026-06-24)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.28.1",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-24T10:53:36+00:00",
+    "summary_or_excerpt": "## [2.28.1](https://github.com/n8n-io/n8n/compare/n8n@2.28.0...n8n@2.28.1) (2026-06-24) ### Bug Fixes * **core:** Verify Instance AI workflows before setup ([#32918](https://github.com/n8n-io/n8n/issues/32918)) ([1fcd8e5](https://github.com/n8n-io/n8n/commit/1fcd8e5e23e8a72ccbb205df587462447cbe9fc9)) ### Features * **core:** Fix building incorrect chained nodes ([#32855](https://github.com/n8n-io/n8n/issues/32855)) ([a6a1aad](https://github.com/n8n-io/n8n/commit/a6a1aad22b4cbcd952da67dd809520ebae9112a1)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 41,
+    "release_version": "n8n@2.28.1",
+    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -1014,32 +1019,7 @@
     "score": 40,
     "hn_score": 520,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "美团tabbit国际版免费接入GPT-5.5/Claude Opus 4.8等旗舰模型",
-    "url": "https://aihot.virxact.com/items/cmqnokdyn007jsl4nxazzzxp1",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-21T10:11:21+00:00",
-    "summary_or_excerpt": "美团近期上线tabbit国际版应用，免费集成多家顶级AI模型的最新旗舰版，包括GPT-5.5、Claude Opus 4.8、Gemini 3.5 Flash，以及国内Kimi-2.6、GLM-5.1、MiniMax-M3。用户无需单独订阅即可使用这些模型。需注意：只有国际版包含海外模型，国内版仅提供国内模型。该应用旨在抢占AI入口，目前处于免费推广阶段。 🔗 阅读原文：https://x.com/AYi_AInotes/status/2068637890247016607",
-    "matched_keywords": [
-      "Claude",
-      "Gemini",
-      "GLM",
-      "GPT",
-      "Kimi",
-      "MiniMax"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1059,7 +1039,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1087,7 +1067,7 @@
     "score": 38,
     "release_version": "b9763",
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1104,7 +1084,7 @@
     "score": 38,
     "hn_score": 214,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1121,28 +1101,7 @@
     "score": 38,
     "hn_score": 212,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Identity verification on Claude",
-    "url": "https://support.claude.com/en/articles/14328960-identity-verification-on-claude",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-21T12:44:13+00:00",
-    "summary_or_excerpt": "HN points: 517. Comments: https://news.ycombinator.com/item?id=48618455",
-    "matched_keywords": [
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 37,
-    "hn_score": 517,
-    "first_seen_at": "2026-06-22T08:07:30.760845+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1162,7 +1121,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1179,7 +1138,7 @@
     "score": 36,
     "hn_score": 30,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1199,7 +1158,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1215,7 +1174,7 @@
     "tags": [],
     "score": 35,
     "first_seen_at": "2026-06-23T08:07:42.382558+08:00",
-    "last_seen_at": "2026-06-24T07:57:21.005547+08:00",
+    "last_seen_at": "2026-06-25T08:09:17.378140+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

@@ -1,58 +1,11 @@
 [
   {
-    "title": "Cosmos 3: Omnimodal World Models for Physical AI",
-    "url": "https://arxiv.org/abs/2606.02800",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-25T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.02800v4 Announce Type: replace-cross Abstract: We introduce Cosmos 3, a family of omnimodal world models designed to jointly process and generate language, image, video, audio, and action sequences within a unified mixture-of-transformers architecture. By supporting highly flexible input-output configurations, Cosmos 3 seamlessly unifies critical modalities for Physical AI -- effectively subsuming vision-language models, video generators, world simulators, and world-action models into a single framework. Our evaluation demonstrates that Cosmos 3 establishes a new state-of-the-art across a diverse suite of understanding and generation tasks, demonstrating omnimodal world models as scalable, general-purpose backbones for embodied agents. Our post-trained Cosmos 3 models were ranked as the best open-source Text-to-Image and Image-to-Video models by Artificial Analysis, and the best policy model by RoboArena at the time the technical report was written. To accelerate open research and deployment in Physical AI, we make our code, model checkpoints, curated synthetic datasets, and evaluation benchmark available under the Linux Foundation's OpenMDW-1.1 License at https://githu...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "policy",
-      "Transformers"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Capability Frontier: Benchmarks Miss 82% of Model Performance",
-    "url": "https://arxiv.org/abs/2606.26836",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26836v1 Announce Type: new Abstract: Existing benchmarks typically report accuracy for a single model on a single run. This systematically understates real-world LLM capabilities, particularly under heterogeneous data distributions: (i) different models get different questions correct according to their specializations, and (ii) given a budget, multiple generations can be sampled and selectively retained. To quantify this gap, we introduce the Capability Frontier: a Pareto frontier over a set of models that characterizes the best achievable performance at each cost level under optimal selection across models and generations (i.e., via an oracle). Our construction corrects for two opposing biases: underestimation from single-model evaluation and overestimation from taking maxima over noisy samples. We study 21 LLMs across 16 widely used benchmarks spanning coding, reasoning, medicine, factuality, instruction following, and agentic tasks, comparing Capability Frontier performance at matched cost to each benchmark's top-performing model. Correcting for single-model evaluation yields a 54% error rate reduction; additionally correcting for single runs yields an 82% improveme...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "CyberChainBench: Can AI Agents Secure Smart Contracts Against Real-World On-Chain Vulnerabilities?",
     "url": "https://arxiv.org/abs/2606.26216",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
+    "published_at": "2026-06-27T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.26216v1 Announce Type: cross Abstract: We present CyberChainBench, a benchmark for evaluating LLM-based agents on smart contract security across three complementary tasks: vulnerability detection, exploit generation, and patch synthesis. Built from 541 real-world exploit incidents from DeFiHackLabs spanning 9 EVM chains, the benchmark provides end-to-end on-chain evaluation where agents interact with historical blockchain state through isolated evaluation environments orchestrated by Harbor, using tools to read code, trace transactions, and validate exploits on mainnet forks. Each case is anchored to a specific block and includes structured ground truth covering vulnerability type, localization, and attacker profit. Exploits are graded by economic impact on historical forks; patches are validated by replaying historical attacks and legitimate transactions as fail-to-pass test oracles on a proxy-upgradeable subset. We define a five-type vulnerability taxonomy and evaluate multiple agent--model configurations. Results reveal a clear difficulty gradient: the best configuration scores 37.5% on detection, 43.7% on exploitation, but only 23.4% on patching, with the top agent...",
     "matched_keywords": [
       "Agent",
@@ -64,8 +17,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -75,7 +28,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
+    "published_at": "2026-06-27T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.26479v1 Announce Type: cross Abstract: Recent work (2024 to 2026) has converged on a strategy for defending tool-using LLM agents against indirect prompt injection: rather than training the model to refuse malicious instructions, enforce security outside the model with a deterministic policy that mediates the agent's actions. Systems such as CaMeL, FIDES, Progent, RTBAS, and FORGE realize this with capabilities, information-flow labels, and reference monitors, and several report near-elimination of attacks on the AgentDojo benchmark. We make two contributions. First, we organize these out-of-band defenses as instances of classical integrity protection (Biba), reference monitoring, and least privilege, yielding a structured comparison of what they do and do not cover. Second, we warn that every one of them is validated only on static benchmarks (a fixed set of injection attempts), the same methodology that made in-band defenses look strong until adaptive, defense-aware attacks broke twelve of them at over 90% success; we specify the threat model and protocol an adaptive evaluation requires. We then run that protocol as an independent reproduction and extension of Progent...",
     "matched_keywords": [
       "Agent",
@@ -89,8 +42,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -100,7 +53,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
+    "published_at": "2026-06-27T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2605.17554v3 Announce Type: replace Abstract: Frontier deep research agents (DRAs) are being deployed in enterprise workflows faster than they are being evaluated. Existing benchmarks measure factual recall, single-hop QA, or generic agentic skill, and miss the multi-document, decision-grade deliverables DRAs are asked to produce. We introduce a benchmark of 70 SME-authored management consulting prompts, each embedding cognitive traps that penalize surface-pattern reasoning. Three frontier agents, namely Claude Opus~4.6, OpenAI o3-deep-research and Gemini~3.1~Pro deep-research, are scored on two complementary layers: deterministic binary verifiers (mean 14.9 per task) and a five-criterion 0--3 SME rubric (Data Integrity, Analytical Rigor, Relevance \\& Focus, Execution Precision, Format \\& Deliverability), combined into a Verifier-Rubric Score (VRS, 0--100). Acceptance under a joint threshold (rubric mean $\\geq 2.5$ and verifier pass rate $\\geq 80\\%$) is uniformly low: o3 15.7\\%, Claude 12.9\\%, Gemini 12.9\\%. Pairwise differences are statistically indistinguishable. On the continuous VRS, o3 leads (61.4~[CI: 55.2,\\,67.5]), followed by Gemini (52.6) and Claude (38.5); the o3--...",
     "matched_keywords": [
       "agentic",
@@ -116,36 +69,59 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
-    "url": "https://arxiv.org/abs/2606.24855",
+    "title": "OpenRCA 2.0: From Outcome Labels to Causal Process Supervision",
+    "url": "https://arxiv.org/abs/2606.27154",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-25T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.24855v1 Announce Type: new Abstract: Agentic language models dramatically expand the applications of AI yet little is publicly known about how to curate training data for broadly capable agents. Existing open efforts such as SWE-Smith, SERA, and Nemotron-Terminal typically target a single benchmark, leaving open the question of how to train models that generalize across diverse agentic tasks. The OpenThoughts-Agent (OT-Agent) project addresses this gap with a fully open data curation pipeline for training agentic models. We conduct more than 100 controlled ablation experiments to systematically investigate each stage of the pipeline, yielding insights on the importance of task sources and diversity. We then assemble a training set of 100K examples from our pipeline and fine-tune Qwen3-32B on this dataset, which yields an average accuracy of 44.8% across seven agentic benchmarks and a 3.9 percentage point improvement over the strongest existing open data agentic model (Nemotron-Terminal-32B, 40.9%). Moreover, our training data exhibits strong scaling properties, outperforming alternative open datasets at every training set size in compute-controlled comparisons. We publi...",
+    "published_at": "2026-06-27T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.27154v1 Announce Type: new Abstract: Root cause analysis (RCA) poses a holistic test of LLM agentic capabilities, such as long-context understanding, multi-step reasoning, and tool use. However, existing datasets suffer from a fundamental gap: they label only the root cause, not the propagation path connecting it to the observed symptom, which largely simplifies the task to naive pattern matching. To support rigorous evaluation, we introduce PAVE, a step-wise labeling protocol that leverages known interventions from fault injection to reconstruct causal propagation paths. The mechanism is forward verification: reasoning from cause to effect rather than inferring backward from symptoms. Applying PAVE yields OpenRCA 2.0 (500 instances), the first cross-system RCA benchmark with step-wise causal annotations for LLM agents. Across 11 frontier LLMs, recovering the exact root-cause set succeeds in only 20.7% of cases on average. To locate where this difficulty lies, we relax the criterion and find what we call the ungrounded diagnosis: agents identify at least one correct root-cause service in 76.0% of cases, but ground that service in a verified causal propagation path to th...",
     "matched_keywords": [
-      "Agent",
       "agentic",
       "agents",
       "benchmark",
-      "dataset",
-      "terminal"
+      "tool use"
     ],
     "tags": [
       "agent",
-      "coding_tool",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
+    "url": "https://arxiv.org/abs/2606.26356",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-27T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.26356v1 Announce Type: new Abstract: Practitioners of prompt-composed agentic systems report a recurring failure mode: editing one prompt module silently shifts the behavior of others despite no shared variable or executable dependency. We formalize this as compositional behavioral leakage (CBL): interference between modules sharing a context window. CBL is enabled by architectural non-isolation: transformer self-attention provides no formal boundary between concatenated modules. We probe CBL on a deployed job-evaluation agent (Claude Sonnet 4.6, 144 trials) through a reusable three-channel protocol that perturbs non-focal modules along volume, content, and form. Only the content channel produces a detectable paired effect (Cohen's d = 0.63, bootstrap 95% CI excluding zero); no recommendation flipped -- a sub-threshold regime invisible to standard QA but compounding across the thousands of decisions a deployed agent makes. CBL is orthogonal to known agent-failure axes (adversarial injection, cognitive degradation, multi-agent fault propagation, privacy leakage). We contribute an operational definition, a reusable protocol, a falsifiable prediction set, and a system-clas...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "Claude",
+      "multi-agent",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -169,7 +145,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -192,7 +168,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -215,8 +191,30 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Capability Frontier: Benchmarks Miss 82% of Model Performance",
+    "url": "https://arxiv.org/abs/2606.26836",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-27T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.26836v1 Announce Type: new Abstract: Existing benchmarks typically report accuracy for a single model on a single run. This systematically understates real-world LLM capabilities, particularly under heterogeneous data distributions: (i) different models get different questions correct according to their specializations, and (ii) given a budget, multiple generations can be sampled and selectively retained. To quantify this gap, we introduce the Capability Frontier: a Pareto frontier over a set of models that characterizes the best achievable performance at each cost level under optimal selection across models and generations (i.e., via an oracle). Our construction corrects for two opposing biases: underestimation from single-model evaluation and overestimation from taking maxima over noisy samples. We study 21 LLMs across 16 widely used benchmarks spanning coding, reasoning, medicine, factuality, instruction following, and agentic tasks, comparing Capability Frontier performance at matched cost to each benchmark's top-performing model. Correcting for single-model evaluation yields a 54% error rate reduction; additionally correcting for single runs yields an 82% improveme...",
+    "matched_keywords": [
+      "agentic",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -240,31 +238,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MKG-RAG-Bench: Benchmarking Retrieval in Multimodal Knowledge Graph-Augmented Generation",
-    "url": "https://arxiv.org/abs/2606.26458",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26458v1 Announce Type: new Abstract: Retrieval-augmented generation (RAG) over knowledge graphs has emerged as a promising approach for grounding large language models, yet existing benchmarks largely overlook the challenges of retrieval in multimodal knowledge graph RAG (MKG-RAG). In practice, retrieval is a critical bottleneck: multimodal knowledge is heterogeneous, difficult to align across modalities, and often poorly served by retrievers designed for unstructured corpora. To address this gap, we introduce MKG-RAG-Bench, a cross-domain benchmark explicitly designed to evaluate retrieval in MKG-RAG. MKG-RAG-Bench is constructed from two multimodal knowledge graphs spanning general and medical domains, and includes carefully aligned question-answering datasets that support controlled evaluation of both retrieval and downstream generation. The benchmark is built using an LLM-based curation pipeline that filters low-utility knowledge, generates structurally grounded queries with exact supervision, and systematically covers diverse modality configurations. Through extensive experiments across representative retriever families and modality settings, we show that effective...",
-    "matched_keywords": [
-      "benchmark",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -273,7 +248,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
+    "published_at": "2026-06-27T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2606.26649v1 Announce Type: new Abstract: Agent safety in high-stakes domains requires formal policy enforcement, but most existing approaches either rely on probabilistic guardrails (fine-tuned classifiers, prompt-based steering) that offer no formal guarantees, or on hand-coded symbolic enforcement that does not scale to the breadth of real policy specifications. We present an autoformalization pipeline that translates agent prompts, MCP tool descriptions, and natural language policy documents into formally verified policies using an LLM-based generator-critic loop. The resulting policies are written in the Cedar Policy Language. On the MedAgentBench benchmark, our autoformalized policies cover substantially more of the source natural-language specification than the hand-coded symbolic enforcement in prior work.",
     "matched_keywords": [
       "Agent",
@@ -287,35 +262,8 @@
       "open_source"
     ],
     "score": 60,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Hybrid privacy-aware semantic search: SVD-truncated document geometry and CKKS-encrypted query reranking under a restricted threat model",
-    "url": "https://arxiv.org/abs/2606.26373",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26373v1 Announce Type: cross Abstract: Dense embeddings power semantic search and retrieval-augmented generation, but embedding-inversion attacks can reconstruct source text from a vector: when a vector database leaks, the documents behind it leak too. The textbook defences are extremes - encrypting the whole search homomorphically is sound but too slow at million-document scale, while privacy noise degrades ranking long before it protects. We study a middle path exploiting the asymmetry between the static collection and the dynamic query. The collection is protected geometrically: each vector is truncated onto a lower-dimensional SVD subspace and rotated by a secret orthogonal transform known only to the owner. The query is protected cryptographically: it is reranked under CKKS homomorphic encryption, so an honest-but-curious server never sees the query or the scores. CKKS parameters come from a small offline benchmark. We prove a tight lower bound on the reconstruction error of any attacker confined to the protected subspace. On one million documents and five encoders the scheme preserves ranking quality (slightly improving it on strong encoders, as a linear denoiser)...",
-    "matched_keywords": [
-      "benchmark",
-      "embeddings",
-      "privacy",
-      "retrieval",
-      "semantic search",
-      "vector database"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -340,7 +288,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -361,7 +309,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -384,7 +332,77 @@
     ],
     "score": 59,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Life After Benchmark Saturation: A Case Study of CORE-Bench",
+    "url": "https://arxiv.org/abs/2606.26158",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-27T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.26158v1 Announce Type: new Abstract: When a benchmark's accuracy saturates, it is often retired and replaced with a more challenging version. We show that this approach privileges accuracy and misses the opportunity to study six other key dimensions of agent performance: construct validity issues such as shortcuts, out-of-distribution generalizability, efficiency, reliability, the relative importance of the model versus the scaffold, and uplift from human-agent collaboration. We use CORE-Bench Hard, a benchmark for computational reproducibility of scientific code, as a case study to demonstrate that measuring agents along these dimensions yields meaningful insights into agent performance even after accuracy saturates. First, we surface threats to construct validity in CORE-Bench Hard that are difficult to anticipate with less capable agents. We introduce an improved benchmark, CORE-Bench v1.1, and an out-of-distribution task suite, CORE-Bench OOD. Second, we find that despite accuracy saturation, CORE-Bench v1.1 remains useful for measuring efficiency, reliability, model performance, and scaffold performance. Finally, we conduct a small-scale randomized experiment to me...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research",
+    "url": "https://arxiv.org/abs/2606.26671",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-27T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.26671v1 Announce Type: new Abstract: Post-training alignment determines the reasoning and human preference following capabilities of large language models, yet most existing works withhold detailed data construction, filtering rules and training recipes, which hinders community reproducibility and lightweight model optimization. This work presents NebulaExp, a fully transparent, ablation-driven post-training pipeline built on Qwen3-8B-base, covering two orthogonal model branches: general instruct model and complex reasoning-specialized model. We curate a raw corpus of 3.84M multi-source SFT samples and a 200K verifiable RL candidate pool, and design an end-to-end data processing stack including response distillation, multi-dimensional cross-verification filtering, fine-grained difficulty grading, task classification and diversity-aware sampling. For the Instruct branch, our three-stage optimized supervised fine-tuning approach NebulaExp-Ins-SFT improves the average benchmark score from the 55.01 baseline of Qwen3-8B-nothink to 60.99. GRPO reinforcement learning then further elevates the average score to 61.85. For the Reasoning branch, medium-difficulty GRPO RL improves...",
+    "matched_keywords": [
+      "benchmark",
+      "fine-tuning"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands cloud: 1.40.0：1.40.0 (2026-06-26)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/cloud-1.40.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-26T20:36:25+00:00",
+    "summary_or_excerpt": "## 1.40.0 (2026-06-26) ## What's Changed ### Features * feat: Add full Git history user setting by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/14950 * feat(enterprise): add admin user-provisioning endpoint by @chuckbutkus in https://github.com/OpenHands/OpenHands/pull/14864 * feat: Use interrupt endpoint for agent pause UI by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/14972 * feat: add default_sandbox_spec_id to user settings by @tofarr in https://github.com/OpenHands/OpenHands/pull/14985 * feat(azure-devops): add resolver mentions + org-level one-click webhook setup by @ak684 in https://github.com/OpenHands/OpenHands/pull/14991 * feat(jira-dc): email-mode auto-link, targeted repo lookup, and picker mentions by @ak684 in https://github.com/OpenHands/OpenHands/pull/15001 ### Bug Fixes * fix: avoid decrypting org_member.llm_api_key when not set by @saurya in https://github.com/OpenHands/OpenHands/pull/14898 * fix: Fix CVE-2026-54285: Update @opentelemetry/core to 2.8.0 by @mamoodi in https://github.com/OpenHands/OpenHands/pull/14980 * fix: Fix GHSA-4xgf-cpjx-pc3j: Update pydantic-settings to 2.14.2 by @mamoodi in https://github.com/OpenHands/OpenHands/pu...",
+    "matched_keywords": [
+      "Agent",
+      "API",
+      "GitHub",
+      "OpenHands"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 49,
+    "release_version": "cloud-1.40.0",
+    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -408,8 +426,8 @@
     "score": 44,
     "release_version": "1.15.1a1",
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -433,8 +451,8 @@
     "score": 44,
     "release_version": "b9820",
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -456,8 +474,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -480,8 +498,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -507,8 +525,8 @@
     "score": 43,
     "release_version": "b9817",
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -531,8 +549,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -557,7 +575,7 @@
     "score": 41,
     "release_version": "cloud-1.39.0",
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -580,7 +598,7 @@
     "score": 41,
     "release_version": "n8n@2.28.1",
     "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
-    "last_seen_at": "2026-06-27T08:04:33.157599+08:00",
+    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

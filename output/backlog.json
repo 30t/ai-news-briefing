@@ -1,5 +1,87 @@
 [
   {
+    "title": "DeepSeek 开源 DSpark 投机解码框架，加速 DeepSeek-V4 生成速度 60-85%",
+    "url": "https://aihot.virxact.com/items/cmqwm45f901n6sly0gpl6b6l5",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-27T16:59:58+00:00",
+    "summary_or_excerpt": "DeepSeek 发布 DSpark 投机解码框架并开源检查点与训练代码。该框架不是新模型，而是在 DeepSeek-V4 权重上附加草稿模块，通过半自回归生成（并行骨干 + 轻量级顺序头）实现无损加速。生产环境下，DeepSeek-V4-Flash 和 V4-Pro 每用户生成速度较 MTP-1 基线分别提升 60-85% 和 57-78%。离线测试中，接受长度比 Eagle3 高 26-31%，比 DFlash 高 16-18%。配套 DeepSpec 训练代码库采用 MIT 许可证。 🔗 阅读原文：https://www.marktechpost.com/2026/06/27/deepseek-releases-dspark-a-speculative-decoding-framework-that-accelerates-deepseek-v4-per-user-generation-60-85-over-mtp-1",
+    "matched_keywords": [
+      "DeepSeek"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "我们构建了一个路由层来削减 AI 成本，结果搞砸了产品",
+    "url": "https://www.bestblogs.dev/en/article/a676552d?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-27T15:00:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 某团队构建路由层将 AI 推理成本降低 60%，但廉价模型的质量损失数月未被发现，导致客户满意度下降与流失——最终代价是节省金额的 4–5 倍。 📝 Summary 本文复盘了一款生产环境 AI 客服代理的故障分析。该团队训练了一个分类器，将\"简单\"查询（占流量的 65%）路由至更便宜的模型，使推理成本降低 60%。然而，廉价模型在那些看似简单却隐藏复杂性的长尾查询上失效（例如，隐藏在账单状态查询背后的欺诈性收费）。现有的监控架构——聚合人工审核、静态回归测试套件和低信号反馈组件——无法检测质量差距。当团队注意到满意度下降和流失时，累积的损害成本已是节省金额的 4–5 倍。文章解释了结构性原因（表面形式 vs. 深层意图、小模型的自信失败、分布漂移），并呈现了来自不同行业的另外两个案例。最后提出了具体的测量架构修复方案：分层级质量监控、分层抽样和端到端路由标签传播。 💡 Main Points 将\"简单\"查询路由至廉价模型的路由层，制造了隐藏的长尾故障模式 分类器只能看到表面形式；看似简单的查询（如\"我的扣款来自哪里\"）可能隐藏复杂意图（欺诈、对账）。廉价模型在这些查询上自信地失败，而聚合指标完全无法察觉这类错误。 标准监控架构在结构上无法捕捉质量损失 聚合人工审核混合了两个层级，离线回归使用静态分布，产品内反馈信噪比过低。它们都没有按路由层级切分，因此廉价模型的降级数月未被发现。 成本节省一目了然，下游质量代价却隐匿且由不同团队承担 推理节省出现在一个仪表盘上；而增加的人工支持量、满意度下降和流失则冲击不同的预算和指标，最终对公司形成净负优化。 修复方案是在路由层上线前，将所有质量信号按路由层级拆分 分层级人工审核、层级专属回归测试套件、带路由标签的反馈事件，能够实现质量漂移的早期检测。仅看聚合指标在结构上就是不可靠的。 💬 Key Quotes 我们并没有赢。我们只是把成本转移到了一个我们不曾测量的地方。 分类器恰好在不需要校准的地方校准良好，而在最需要校准的地方校准糟糕。 组合后的几何结构毫不留情。廉价模型层级处理得来容易的批量查询时表现良好，在隐藏的长尾上不透明地失败，且随着分布漂移进一步恶化。 推理层的成本节省由构建路由系统的团队衡量。质量损失的代价则由客户体验、人工支持团队和留存职能承担，而这些都不归优化团队所有。 📊 Article Meta AI Screening： 90 Source： Towards Data Science Author： Pratik R Category： 人工智能 Language： 英文 Read Time： 17 min Word Count： 4051 Tags： AI 工程实践 , 成本优化 , 模型路由 , 质量监控 , LLM Read Full Art...",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "新浪开源VibeThinker-3B：推理可压缩，事实知识不能",
+    "url": "https://aihot.virxact.com/items/cmqxiel9h004ysl50umg2c011",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-28T07:44:41+00:00",
+    "summary_or_excerpt": "新浪发布仅3B参数的VibeThinker-3B，在AIME26等数学编程基准上持平DeepSeek V3.2等大200-333倍的模型，LiveCodeBench超越所有20B以下模型，LeetCode竞赛解决123/128题超过GPT-5.2、Kimi K2.5等。但知识密集型GPQA-Diamond大幅落后。模型基于阿里Qwen2.5-Coder-3B，经SFT、强化学习、自蒸馏等多阶段后训练。研究提出\"参数压缩-覆盖假说\"：逻辑推理依赖少数可压缩模式，而广泛世界知识仍需大参数。模型已开源。 🔗 阅读原文：https://the-decoder.com/sinas-open-model-vibethinker-3b-aims-to-show-reasoning-compresses-well-but-factual-knowledge-doesnt",
+    "matched_keywords": [
+      "DeepSeek",
+      "GPT",
+      "Kimi"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "一次失败的（民族国家？）攻击的剖析",
+    "url": "https://aihot.virxact.com/items/cmqwju303014msly0vp9nlrjv",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-27T15:39:53+00:00",
+    "summary_or_excerpt": "作者收到伪装成新加坡VC Lua Ventures的虚假面试邮件，要求完成一个TypeScript仓库的\"测试\"。作者将仓库交给Claude扫描，在`typescript+5.9.2.patch`中发现base64混淆载荷，该载荷在`patch-package`安装时触发，向`~/.cache-`等目录写入`payload.js`和`mutex.js`，构成后门（命名PinpinRAT）。攻击者使用虚构身份和空洞LinkedIn资料，目标是作者在crates.io上的Rust包。相关信息已报告加拿大CCCS等机构。 🔗 阅读原文：https://grack.com/blog/2026/06/25/dissecting-a-failed-nation-state-attack",
+    "matched_keywords": [
+      "Claude"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "CyberChainBench: Can AI Agents Secure Smart Contracts Against Real-World On-Chain Vulnerabilities?",
     "url": "https://arxiv.org/abs/2606.26216",
     "source_name": "arXiv cs.AI",
@@ -18,33 +100,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents",
-    "url": "https://arxiv.org/abs/2606.26479",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26479v1 Announce Type: cross Abstract: Recent work (2024 to 2026) has converged on a strategy for defending tool-using LLM agents against indirect prompt injection: rather than training the model to refuse malicious instructions, enforce security outside the model with a deterministic policy that mediates the agent's actions. Systems such as CaMeL, FIDES, Progent, RTBAS, and FORGE realize this with capabilities, information-flow labels, and reference monitors, and several report near-elimination of attacks on the AgentDojo benchmark. We make two contributions. First, we organize these out-of-band defenses as instances of classical integrity protection (Biba), reference monitoring, and least privilege, yielding a structured comparison of what they do and do not cover. Second, we warn that every one of them is validated only on static benchmarks (a fixed set of injection attempts), the same methodology that made in-band defenses look strong until adaptive, defense-aware attacks broke twelve of them at over 90% success; we specify the threat model and protocol an adaptive evaluation requires. We then run that protocol as an independent reproduction and extension of Progent...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -70,8 +127,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -94,34 +151,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Instruction Bleed: Cross-Module Interference in Prompt-Composed Agentic Systems",
-    "url": "https://arxiv.org/abs/2606.26356",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26356v1 Announce Type: new Abstract: Practitioners of prompt-composed agentic systems report a recurring failure mode: editing one prompt module silently shifts the behavior of others despite no shared variable or executable dependency. We formalize this as compositional behavioral leakage (CBL): interference between modules sharing a context window. CBL is enabled by architectural non-isolation: transformer self-attention provides no formal boundary between concatenated modules. We probe CBL on a deployed job-evaluation agent (Claude Sonnet 4.6, 144 trials) through a reusable three-channel protocol that perturbs non-focal modules along volume, content, and form. Only the content channel produces a detectable paired effect (Cohen's d = 0.63, bootstrap 95% CI excluding zero); no recommendation flipped -- a sub-threshold regime invisible to standard QA but compounding across the thousands of decisions a deployed agent makes. CBL is orthogonal to known agent-failure axes (adversarial injection, cognitive degradation, multi-agent fault propagation, privacy leakage). We contribute an operational definition, a reusable protocol, a falsifiable prediction set, and a system-clas...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "Claude",
-      "multi-agent",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -145,7 +176,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -168,7 +199,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -191,7 +222,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -213,8 +244,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -238,7 +269,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -263,8 +294,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -288,7 +319,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -309,8 +340,29 @@
     ],
     "score": 60,
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Google limits Meta's use of its Gemini AI models",
+    "url": "https://www.cnbc.com/2026/06/28/google-limits-metas-use-of-its-gemini-ai-models-ft-reports.html",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-28T13:30:06+00:00",
+    "summary_or_excerpt": "HN points: 140. Comments: https://news.ycombinator.com/item?id=48707103",
+    "matched_keywords": [
+      "Gemini"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 59,
+    "hn_score": 140,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -332,8 +384,30 @@
     ],
     "score": 59,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GLM 5.2 beats Claude in our benchmarks",
+    "url": "https://semgrep.dev/blog/2026/we-have-mythos-at-home-glm-52-beats-claude-in-our-cyber-benchmarks",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-28T17:50:47+00:00",
+    "summary_or_excerpt": "HN points: 338. Comments: https://news.ycombinator.com/item?id=48709670",
+    "matched_keywords": [
+      "Claude",
+      "GLM"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 58,
+    "hn_score": 338,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -355,8 +429,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -376,83 +450,24 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands cloud: 1.40.0：1.40.0 (2026-06-26)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/cloud-1.40.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-26T20:36:25+00:00",
-    "summary_or_excerpt": "## 1.40.0 (2026-06-26) ## What's Changed ### Features * feat: Add full Git history user setting by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/14950 * feat(enterprise): add admin user-provisioning endpoint by @chuckbutkus in https://github.com/OpenHands/OpenHands/pull/14864 * feat: Use interrupt endpoint for agent pause UI by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/14972 * feat: add default_sandbox_spec_id to user settings by @tofarr in https://github.com/OpenHands/OpenHands/pull/14985 * feat(azure-devops): add resolver mentions + org-level one-click webhook setup by @ak684 in https://github.com/OpenHands/OpenHands/pull/14991 * feat(jira-dc): email-mode auto-link, targeted repo lookup, and picker mentions by @ak684 in https://github.com/OpenHands/OpenHands/pull/15001 ### Bug Fixes * fix: avoid decrypting org_member.llm_api_key when not set by @saurya in https://github.com/OpenHands/OpenHands/pull/14898 * fix: Fix CVE-2026-54285: Update @opentelemetry/core to 2.8.0 by @mamoodi in https://github.com/OpenHands/OpenHands/pull/14980 * fix: Fix GHSA-4xgf-cpjx-pc3j: Update pydantic-settings to 2.14.2 by @mamoodi in https://github.com/OpenHands/OpenHands/pu...",
-    "matched_keywords": [
-      "Agent",
-      "API",
-      "GitHub",
-      "OpenHands"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 49,
-    "release_version": "cloud-1.40.0",
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.15.1a1：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.1a1",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-26T22:17:01+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Track TUI button telemetry - Require explicit CrewAI project definitions - Open deployment page after CLI deploy ### Bug Fixes - Fix JSON crew template rendering - Fix JSON crew version pin - Fix SSRF redirect bypass in scraping fetches ### Documentation - Improve coding agent setup CTA - Snapshot and changelog for v1.15.0 ## Contributors @joaomdmoura, @lorenzejay, @theCyberTech, @vinibrsl",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "CrewAI"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 44,
-    "release_version": "1.15.1a1",
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b9820：sched : reintroduce less synchronizations during split compute (#20793)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9820",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-26T18:35:23+00:00",
-    "summary_or_excerpt": "sched : reintroduce less synchronizations during split compute (#20793) * CUDA: Improve performance via less synchronizations between token (#17795) * Adds CPU-to-CUDA copy capability to ggml_backend_cuda_cpy_tensor_async() * Adds function to relax sync requirements between input copies on supported backends (CUDA for now) * Exchanges synchronous copy with async copy function. * Adds macro guards to allow compilation in non-CUDA builds * Reworked backend detection in ggml-backend.cpp to avoid linking conflicts * Relax requirement of checks in async CUDA copies from backend and buffer type to just buffer type, to avoid linking issues * Minor cleanup * Makes opt-in to relax use of explicit syncs more general. Backends like vulkan which require a synchronization between HtoD copies and graph execution could also adopt this change now. * Reintroduces stricter check for CPU->CUDA backend async copy via GGML_DEVICE_TYPE_CPU. * Corrects initialization of ggml_backend_sync_mode in ggml_backend_sched_split initialization * Simplifies synchronizations to adhere to `saaasg` pattern. * Apply suggestion from @ggerganov (src->buffer to buf_src) Co-authored-by: Georgi Gerganov * Apply suggestion...",
-    "matched_keywords": [
-      "CUDA",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 44,
-    "release_version": "b9820",
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "backlog",
+    "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
+    "url": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-28T19:05:39+00:00",
+    "summary_or_excerpt": "\"Mistakenly we thought that by just introducing artificial intelligence ... that would produce a high-quality product.”",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 57,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -474,59 +489,60 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI",
-    "url": "https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-25T21:30:42+00:00",
-    "summary_or_excerpt": "Enterprises can now control which plugins their users can install in GitHub Copilot CLI and VS Code. This setting is now available in public preview. Add strictKnownMarketplaces to your enterprise-managed… The post Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI appeared first on The GitHub Blog .",
+    "title": "Asian AI startups launch Mythos-like models",
+    "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-27T13:10:21+00:00",
+    "summary_or_excerpt": "HN points: 266. Comments: https://news.ycombinator.com/item?id=48697958",
     "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
+      "launch"
     ],
     "tags": [
-      "business",
+      "business"
+    ],
+    "score": 43,
+    "hn_score": 266,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "阿德拉菲尼尔：仅在AI agent工作时阻止Mac睡眠的菜单栏工具",
+    "url": "https://aihot.virxact.com/items/cmqx9k72u0425slp05ijlfezl",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-28T03:55:17+00:00",
+    "summary_or_excerpt": "Adrafinil 是一款 macOS 菜单栏应用，仅在 Claude Code、Codex、Cursor、Gemini CLI、Aider、Hermes、OpenCode、Cline、Pi 等 9 种 AI coding agent 持有活跃会话时阻止系统睡眠（包括合盖睡眠）。无 agent 工作时，合盖后 Mac 正常睡眠。它通过各 agent 的钩子系统调用 CLI，往返延迟低于 50ms，支持引用计数断言、热切出（温度阈值强制释放）、空闲释放及进程嗅探。需要 macOS Tahoe 26.4，Xcode 26+ 构建，以签名公证的磁盘映像提供。 🔗 阅读原文：https://github.com/kageroumado/adrafinil",
+    "matched_keywords": [
+      "Agent",
+      "AI Agent",
+      "Aider",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "Cursor",
+      "Gemini",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
       "coding_tool",
+      "model",
       "open_source"
     ],
-    "score": 43,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9817：openvino: Update to OV 2026.2.1, self-contained release packages, operator improvements (#",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9817",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-26T17:27:10+00:00",
-    "summary_or_excerpt": "openvino: Update to OV 2026.2.1, self-contained release packages, operator improvements (#24974) * Update to OV 2026.2.1, Make OV release packages self-contained * Update to OV 2026.2.1, Make OV release packages self-contained * OpenVINO Backend: Remove compute_op_type hardcoded sets (#222) * OpenVINO Backend: Remove compute_op_type hardcoded sets * revert get_op_type removal * OpenVINO backend: enable softmax with sink input * OpenVINO backend: opt mul_mat_id convert process for large size * OpenVINO backend: Modify add_id to support 2D/4D * OpenVINO Backend: Add glu_swiglu_oai * PR review: fix paths * PR review: fix path consistency --------- Co-authored-by: Mostafa Co-authored-by: Xuejun **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9817/llama-b9817-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9817/llama-b9817-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9817/llama-b9817-xcframework.zip) **Linux:** - [Ub...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp",
-      "release"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 43,
-    "release_version": "b9817",
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "backlog",
+    "score": 42,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -549,8 +565,34 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9833：chat : implement minicpm5 parser (#24889)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9833",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-28T15:32:30+00:00",
+    "summary_or_excerpt": "chat : implement minicpm5 parser (#24889) * Add minicpm5 tool call parser * Refactor MiniCPM5 PEG parser per review feedback * Fix jinja min/max API to match Jinja2 * modify by review * MiniCPM5: use autoparser for XML tool calls and fix grammar preserved-token triggers * MiniCPM5: fix streaming tool-arg placeholder and remove alt XML markers * skip min/max attribute tests in -py mode * test-jinja: use real expected output for min/max attribute tests * MiniCPM5: revert shared mapper and history fallbacks per review Drop streaming tool-arg placeholder workarounds from the generic PEG mapper and restore strict tool-call argument JSON parsing so MiniCPM5 support stays limited to autoparser/diff-analyzer changes. * chat : refactor minicpm5 back to dedicated parser * cont : simplify grammar * cont : refactor * cont : fixes * cont : rename template to openbmb-MiniCPM5-1B.jinja * cont : add message delimiters * cont : fix tests --------- Co-authored-by: zhangtao Co-authored-by: 张涛 <> **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9833/llama-b9833-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](htt...",
+    "matched_keywords": [
+      "API",
+      "GitHub",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 41,
+    "release_version": "b9833",
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -575,31 +617,126 @@
     "score": 41,
     "release_version": "cloud-1.39.0",
     "first_seen_at": "2026-06-26T08:14:23.852254+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "n8n n8n@2.28.1：[2.28.1](https://github.com/n8n-io/n8n/compare/n8n@2.28.0...n8n@2.28.1) (2026-06-24)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.28.1",
-    "source_name": "n8n",
+    "title": "苹果Vision负责人跳槽OpenAI，触控OLED MacBook用M5芯片",
+    "url": "https://aihot.virxact.com/items/cmqwmotnk01tasly021bf38i5",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-06-27T17:05:48+00:00",
+    "summary_or_excerpt": "2026年6月26日，Mark Gurman称苹果Vision产品组副总裁Paul Meade下周离职加入OpenAI硬件部门。他负责Vision Pro、无屏幕AI智能眼镜及AR眼镜研发。苹果计划首款触控OLED MacBook使用M5 Pro/Max芯片，2026年底到2027年初发布；M7 Pro/Max版本2027年底跟进。苹果此前因涨价市值蒸发2300多亿美元。核心高管流失至OpenAI凸显AI硬件竞争加速。 🔗 阅读原文：https://x.com/berryxia/status/2070916520822321292",
+    "matched_keywords": [
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9830：common : allow --offline in llama download (#25091)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9830",
+    "source_name": "llama.cpp",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-06-24T10:53:36+00:00",
-    "summary_or_excerpt": "## [2.28.1](https://github.com/n8n-io/n8n/compare/n8n@2.28.0...n8n@2.28.1) (2026-06-24) ### Bug Fixes * **core:** Verify Instance AI workflows before setup ([#32918](https://github.com/n8n-io/n8n/issues/32918)) ([1fcd8e5](https://github.com/n8n-io/n8n/commit/1fcd8e5e23e8a72ccbb205df587462447cbe9fc9)) ### Features * **core:** Fix building incorrect chained nodes ([#32855](https://github.com/n8n-io/n8n/issues/32855)) ([a6a1aad](https://github.com/n8n-io/n8n/commit/a6a1aad22b4cbcd952da67dd809520ebae9112a1)) ---",
+    "published_at": "2026-06-28T11:03:50+00:00",
+    "summary_or_excerpt": "common : allow --offline in llama download (#25091) Expose the existing --offline flag to `llama download` so a script can run it to check whether a model is already cached and ready to be served without touching the network. Also fix a latent use-after-free in the URL-task on_done callback: first_path is block-scoped and was captured by reference, but invoked after the block ends. Signed-off-by: Adrien Gallouët **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-or...",
     "matched_keywords": [
       "GitHub",
-      "n8n"
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 36,
+    "release_version": "b9830",
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LiteLLM v1.91.0-rc.1：Verify Docker Image Signature",
+    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.91.0-rc.1",
+    "source_name": "LiteLLM",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-28T03:46:48+00:00",
+    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0-rc.1 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.91.0-rc.1/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0-rc.1 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * fix(guardrails...",
+    "matched_keywords": [
+      "GitHub",
+      "LiteLLM",
+      "release",
+      "repository"
     ],
     "tags": [
       "ai_app",
+      "coding_tool",
       "open_source"
     ],
-    "score": 41,
-    "release_version": "n8n@2.28.1",
-    "first_seen_at": "2026-06-25T08:09:17.378140+08:00",
-    "last_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "backlog_source": "backlog",
+    "score": 36,
+    "release_version": "v1.91.0-rc.1",
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Show HN: NanoEuler – GPT-2 scale model in pure C/CUDA from scratch",
+    "url": "https://github.com/JustVugg/nanoeuler",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-28T19:38:14+00:00",
+    "summary_or_excerpt": "HN points: 33. Comments: https://news.ycombinator.com/item?id=48710778",
+    "matched_keywords": [
+      "CUDA",
+      "GPT"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 36,
+    "hn_score": 33,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I used Claude Code to get a second opinion on my MRI",
+    "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-06-28T16:35:19+00:00",
+    "summary_or_excerpt": "HN points: 308. Comments: https://news.ycombinator.com/item?id=48708941",
+    "matched_keywords": [
+      "Claude",
+      "Claude Code"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 35,
+    "hn_score": 308,
+    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "last_seen_at": "2026-06-29T08:05:31.122536+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

@@ -1,5 +1,31 @@
 [
   {
+    "title": "Dockerless: Environment-Free Program Verifier for Coding Agents",
+    "url": "https://arxiv.org/abs/2606.28436",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.28436v1 Announce Type: cross Abstract: Program verifiers play a central role in training coding agents, including selecting trajectories for supervised fine-tuning (SFT) and providing rewards for reinforcement learning (RL). Standard execution-based verification requires running unit tests inside per-repository environments such as Docker images, incurring substantial environment setup costs. We propose Dockerless, an environment-free agentic patch verifier that evaluates generated code patches without executing them. Rather than simply matching candidate patches to references, Dockerless judges patch correctness using evidence gathered through agentic repository exploration. On a verifier evaluation benchmark, Dockerless outperforms the strongest open-source verifier by 14.3 AUC points. Using Dockerless as both the SFT trajectory filter and the RL reward enables a fully environment-free post-training pipeline. The resulting model reaches 62.0%, 50.0%, and 35.2% resolve rate on SWE-bench Verified, Multilingual, and Pro, respectively. It surpasses the Qwen3.5-9B baseline by 2.4, 8.7, and 2.9 points, matching environment-based post-training.",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "fine-tuning",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "MetaBreak: Jailbreaking Online LLM Services via Special Token Manipulation",
     "url": "https://arxiv.org/abs/2510.10271",
     "source_name": "arXiv cs.AI",
@@ -16,7 +42,28 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Complexity Ceiling Benchmark: A Multi-Domain Evaluation of Sequential Reasoning Under Depth Scaling",
+    "url": "https://arxiv.org/abs/2606.29278",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.29278v1 Announce Type: new Abstract: We introduce the Complexity Ceiling Benchmark (CCB), a controlled evaluation of how language-model reasoning decays as the number of required sequential steps grows. CCB fixes the semantic content of a task and varies only its depth N in {5,...,50} across three structurally distinct regimes: grounded spatial state-tracking, abstract symbolic pointer manipulation, and transitive relational inference. Across 6,000 trials over five frontier and open-weight LLMs we find a consistent pattern of geometric per-step decay with widely separated domain ceilings: on the first two regimes the strongest models retain pd>0.92 across N=50; on the third every model collapses by N=5, with the best model's 50%-success horizon at H0.5~4.7 steps despite pd=0.863. A trace-level metric (TFBC) shows that 14.5% of correct answers across the benchmark are reached via incorrect intermediate reasoning. Forced verbose state-tracking does not move the ceiling (McNemar p=1.000), and the mean step at which reasoning first diverges, k*, predicts within-domain accuracy better than parameter count. CCB and the geometric decay model together reduce a model's long-hori...",
+    "matched_keywords": [
+      "benchmark",
+      "inference"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -41,37 +88,131 @@
     ],
     "score": 65,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks",
+    "url": "https://arxiv.org/abs/2606.29537",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.29537v1 Announce Type: new Abstract: Existing computer-use benchmarks fail to capture the realism, complexity, and long-horizon demands of real-world computer use, limiting their ability to reveal the limitations of frontier agents. We introduce OSWorld 2.0, a benchmark of 108 long-horizon computer-use workflows across everyday and professional tasks, designed to capture complex and challenging real-world phenomena. Each task represents a realistic end-to-end workflow that takes human users a median of about 1.6 hours to complete and requires an average of 318 tool calls with Claude Opus 4.7 using maximum thinking, compared with about 30 in OSWorld 1.0. OSWorld 2.0 targets challenge phenomena that are common in real workflows yet underrepresented in prior benchmarks, spanning interaction-design challenges such as streaming interaction and dynamic environments, as well as agent-pattern challenges such as cross-source reasoning, implicit-state inference, and visual-spatial precision. Tasks are grounded in authentic input artifacts and cross-referenced against realistic stateful user profile data, and include separate safety reports auditing safety-sensitive execution. Und...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "computer use",
+      "inference",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents",
-    "url": "https://arxiv.org/abs/2606.28061",
+    "title": "Whose Side Is Your Agent On? Multi-Party Principal Loyalty in LLM Agents",
+    "url": "https://arxiv.org/abs/2606.30383",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.28061v1 Announce Type: cross Abstract: Large language models (LLMs) have increasingly moved from standalone text generation systems to agents that invoke external tools, access environments, and execute multi-step tasks. However, conventional function-calling benchmarks mainly evaluate task completion and API correctness, while privacy evaluation benchmarks typically focus on final responses or privacy judgments. Neither perspective captures purpose-bound information flow across an executed multi-tool trajectory. Motivated by this limitation in current agent evaluation, ToolPrivacyBench audits whether task-private atoms are routed only to authorized tools and downstream sinks, thereby evaluating both task completion and privacy over-disclosure during tool use. The benchmark contains 2,150 cases, including 1,150 fully synthetic privacy-sensitive business workflows and 1,000 cases adapted from existing multi-tool and function-calling benchmarks. Each case is represented by a policy knowledge base. After an agent executes against mock business backends, the evaluator compares recorded tool arguments and backend audit logs with this policy knowledge base. The evaluation cov...",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.30383v1 Announce Type: new Abstract: A rapidly growing class of LLM agents is multi-party: the agent acts for a principal (who briefs it, sends follow-ups, and receives results) while also conversing in a separate channel with a counterparty whose interests may diverge (negotiating with a vendor, screening inbound requests, or mediating between employees). Here \"help whoever you are talking to\" is the wrong objective. The agent must stay loyal to the principal it represents without over-refusing the principal's own cooperative asks. We study this multi-party loyalty problem and contribute a measurement instrument, two mechanisms, and a structural lesson. PrincipalBench is a 75-item multi-turn benchmark with leak probes, dual judges, and an integrity-audit gate. Across 13 frontier subjects it exposes a sharp split (<=20% vs. 53.6-75.3% harm) invisible to single-turn safety evaluations: a selective cluster that declines adversarial probes while still following the principal's legitimate requests, and an over-refusing cluster that refuses broadly. (M1) A prompt-time loyalty scaffold (a fixed system prompt of seven prioritized rules, open-coded from 50+ failure trajectories...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "API",
-      "benchmark",
-      "knowledge base",
-      "policy",
-      "privacy",
-      "tool use"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond the Reranker: Do RAG Retrieval Enhancements Help Once a Strong Reranker Is Present?",
+    "url": "https://arxiv.org/abs/2606.28367",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.28367v1 Announce Type: cross Abstract: Retrieval-augmented generation (RAG) is routinely extended with methods meant to improve retrieval: query expansion, hierarchical and cross-document summarization, graph-based expansion, per-query routing, rank fusion, and corrective re-retrieval. The benefits reported for these methods come almost exclusively from homogeneous corpora, predominantly Wikipedia prose. Whether they hold on the mixed-format collections common in practice, where code, markdown, tables, scientific PDFs, and prose are interleaved within one corpus, has not been measured. To study this directly, we build \\textbf{HetDocQA}, a heterogeneous benchmark with \\emph{chunker-agnostic} span-overlap relevance labels and collection-disjoint splits, and pair it with MuSiQue and QASPER as homogeneous controls. We evaluate eight methods on a shared backbone, with bootstrap confidence intervals and multiple-comparison correction. A strong cross-encoder reranker accounts for most of the pipeline's quality; beyond it, only two methods yield reliable gains: query expansion and SSCC. SSCC, a per-source calibrated corrector introduced here, sets a separate acceptance threshol...",
+    "matched_keywords": [
+      "benchmark",
+      "RAG",
+      "reranker",
+      "retrieval"
+    ],
+    "tags": [
       "open_source",
       "rag_data"
     ],
     "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents",
+    "url": "https://arxiv.org/abs/2606.28480",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.28480v1 Announce Type: cross Abstract: As large language models and harness frameworks continue to advance, agents operating in terminals are increasingly capable of performing a broader range of general computer-use tasks beyond coding. However, existing benchmarks do not adequately evaluate general-purpose terminal computer-use agents (TUAs): general computer-use benchmarks primarily target graphical user interfaces (GUIs), whereas terminal-based benchmarks largely emphasize technical and programming-centric workflows historically native to the shell. We introduce TUA-Bench, a general-purpose benchmark for terminal-use agents. TUA-Bench includes 120 real-world tasks across five task families, covering routine digital activities-including document editing, email management, and live-web information seeking-as well as scientific and engineering workflows co-designed with PhD-level domain experts that require specialized software. This breadth distinguishes TUA-Bench from prior shell-focused or domain-specific benchmarks. Each task is manually designed, runs in a real terminal with a deterministic setup script, and is evaluated by an execution-based scoring protocol. We...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "Continue",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "KernelSight-LM: A Kernel-Level LLM Inference Simulator",
+    "url": "https://arxiv.org/abs/2606.28565",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.28565v1 Announce Type: cross Abstract: As large language models (LLMs) move into production serving, practitioners must rapidly evaluate inference performance across diverse hardware, models, and serving parameters to meet cost and latency targets. However, the end-to-end behavior of LLMs couples serving-layer policies with low-level GPU kernel execution and rapidly evolving architectures, forcing slow, deployment-specific benchmarking that is hard to generalize. We present KernelSight-LM, a fine-grained inference simulator that models token-level execution and produces kernel-level latency breakdowns. It decomposes each serving step into a roofline kernel model with a learned efficiency term, a communication model, and a host-overhead model, composed through a discrete-event scheduler that also captures mechanisms like prefix caching and continuous batching. KernelSight-LM offers two prediction tiers that trade target-GPU data for accuracy. The cross-generation tier uses no target-GPU measurements, only hardware specifications and kernel microbenchmarks from previously profiled GPUs, and predicts per-kernel latency on an unseen GPU generation to 12.1% error, a 1.8x imp...",
+    "matched_keywords": [
+      "GPU",
+      "inference",
+      "serving"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -96,8 +237,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -121,8 +262,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -143,8 +284,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -166,8 +307,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -196,32 +337,28 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "OpenRCA 2.0: From Outcome Labels to Causal Process Supervision",
-    "url": "https://arxiv.org/abs/2606.27154",
+    "title": "When More Sampling Hurts: The Modal Ceiling and Correlation Ceiling of Test-Time Scaling",
+    "url": "https://arxiv.org/abs/2606.28661",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.27154v1 Announce Type: new Abstract: Root cause analysis (RCA) poses a holistic test of LLM agentic capabilities, such as long-context understanding, multi-step reasoning, and tool use. However, existing datasets suffer from a fundamental gap: they label only the root cause, not the propagation path connecting it to the observed symptom, which largely simplifies the task to naive pattern matching. To support rigorous evaluation, we introduce PAVE, a step-wise labeling protocol that leverages known interventions from fault injection to reconstruct causal propagation paths. The mechanism is forward verification: reasoning from cause to effect rather than inferring backward from symptoms. Applying PAVE yields OpenRCA 2.0 (500 instances), the first cross-system RCA benchmark with step-wise causal annotations for LLM agents. Across 11 frontier LLMs, recovering the exact root-cause set succeeds in only 20.7% of cases on average. To locate where this difficulty lies, we relax the criterion and find what we call the ungrounded diagnosis: agents identify at least one correct root-cause service in 76.0% of cases, but ground that service in a verified causal propagation path to th...",
+    "published_at": "2026-06-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.28661v1 Announce Type: cross Abstract: People overthink; language models over-sample, and the extra effort can talk both into a worse answer. Reasoning systems answer a hard question by sampling it many times (test-time scaling), and the more they draw, the more often a correct answer turns up somewhere, so coverage, the fraction of problems with at least one correct try, climbs and appears to be progress. But a deployed system must return one answer, and choosing it, not knowing which try is right, is selection; selection is capped, and past a point extra samples only make the model surer of a confident mistake, even as every draw adds cost. The gap between climbing coverage and stalled selection, the identifiability gap, is the answer a model can produce but not pick. So the real question is not whether to sample but how far, and the answer is: not far. For picking an answer, the vote has already settled within a few dozen draws, the modal ceiling; for scoring a benchmark, sooner still, the correlation ceiling. Beyond that, extra draws cost compute and add nothing, and can even make the answer worse. This paper turns the cutoff into a single number, the effective numb...",
     "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "tool use"
+      "benchmark"
     ],
     "tags": [
-      "agent",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "backlog",
+    "score": 62,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -242,167 +379,33 @@
     ],
     "score": 62,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Capability Frontier: Benchmarks Miss 82% of Model Performance",
-    "url": "https://arxiv.org/abs/2606.26836",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26836v1 Announce Type: new Abstract: Existing benchmarks typically report accuracy for a single model on a single run. This systematically understates real-world LLM capabilities, particularly under heterogeneous data distributions: (i) different models get different questions correct according to their specializations, and (ii) given a budget, multiple generations can be sampled and selectively retained. To quantify this gap, we introduce the Capability Frontier: a Pareto frontier over a set of models that characterizes the best achievable performance at each cost level under optimal selection across models and generations (i.e., via an oracle). Our construction corrects for two opposing biases: underestimation from single-model evaluation and overestimation from taking maxima over noisy samples. We study 21 LLMs across 16 widely used benchmarks spanning coding, reasoning, medicine, factuality, instruction following, and agentic tasks, comparing Capability Frontier performance at matched cost to each benchmark's top-performing model. Correcting for single-model evaluation yields a 54% error rate reduction; additionally correcting for single runs yields an 82% improveme...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Lost at the End: Primacy Bias in Multimodal Retrieval-Augmented Question Answering",
-    "url": "https://arxiv.org/abs/2606.16494",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.16494v2 Announce Type: replace-cross Abstract: Knowledge-based visual question answering (KB-VQA) lets vision-language systems answer questions that exceed their parametric knowledge by conditioning a reader on passages retrieved from a Wikipedia-scale knowledge base. In pure-text long-context LLMs, retrieved-context use follows the U-shaped \"lost-in-the-middle\" effect of Liu et al. (2024): information at the start and end of context is used, the middle is lost. Whether this transfers to deployed multimodal KB-VQA is open. To close this gap, we design the first controlled probe of reader-side position dependence in multimodal KB-VQA: a gold-position protocol in which only the gold passage's prompt slot varies within question. We run it on three open-source 7B/8B VLM readers and two KB-VQA benchmarks at k up to 20. The shape flips from U to primacy: gold-at-first beats gold-at-last by 16 to 26 points on every reader-by-benchmark cell, an effect we call \"Lost at the End\". Three targeted ablations narrow the cause: a text-only control shows the multimodal setting amplifies an already-present text-mode primacy 2.2 to 4.5 times, and image-position and distractor-shuffle abla...",
+    "title": "ComfyUI v0.27.0：The major change in this version is added support for int8 convrot models.",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.27.0",
+    "source_name": "ComfyUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-30T22:19:48+00:00",
+    "summary_or_excerpt": "The major change in this version is added support for int8 convrot models. ## What's Changed * chore(openapi): sync shared API contract from cloud@363764b by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/14607 * [Partner Nodes] feat(Alibaba): add support for HappyHorse 1.1 model by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14611 * Downgrade the template to 0.10.2 to bring the HH1.1 templates back by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/14613 * [Partner Nodes] feat(Grok): add 1080p resolution to Grok Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14612 * [Partner Nodes] feat(ByteDance): add 4K resolution support for SeeDance 2.0 by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14614 * feat: Add support for Seed node (CORE-295) by @yousef-rafat in https://github.com/Comfy-Org/ComfyUI/pull/14616 * Add advanced krea 2 model merging node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14621 * chore(openapi): sync shared API contract from cloud@42eb0d1 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/14619 * feat: Bounding box canvas and Ideogram JSON prompt (CORE-292) by @jtydhr...",
     "matched_keywords": [
-      "benchmark",
-      "knowledge base",
-      "retrieval"
+      "API",
+      "ComfyUI",
+      "GitHub",
+      "Grok"
     ],
     "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Autoformalization of Agent Instructions into Policy-as-Code",
-    "url": "https://arxiv.org/abs/2606.26649",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26649v1 Announce Type: new Abstract: Agent safety in high-stakes domains requires formal policy enforcement, but most existing approaches either rely on probabilistic guardrails (fine-tuned classifiers, prompt-based steering) that offer no formal guarantees, or on hand-coded symbolic enforcement that does not scale to the breadth of real policy specifications. We present an autoformalization pipeline that translates agent prompts, MCP tool descriptions, and natural language policy documents into formally verified policies using an LLM-based generator-critic loop. The resulting policies are written in the Cedar Policy Language. On the MedAgentBench benchmark, our autoformalized policies cover substantially more of the source natural-language specification than the hand-coded symbolic enforcement in prior work.",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "MCP",
-      "policy"
-    ],
-    "tags": [
-      "agent",
       "business",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-06-28T08:03:48.005394+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Nemotron-TwoTower: Diffusion Language Modeling with Pretrained Autoregressive Context",
-    "url": "https://arxiv.org/abs/2606.26493",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-26T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.26493v1 Announce Type: new Abstract: Diffusion language models offer a promising alternative to autoregressive models due to their potential for parallel and iterative generation. However, existing approaches use a single network for both context representation and iterative denoising, forcing one model to serve both roles and limiting its capacity for either role. We propose TwoTower, a block-wise autoregressive diffusion model that decouples these roles into two towers: a frozen AR context tower that causally processes clean tokens, and a trainable diffusion denoiser tower with bidirectional block attention that refines noisy blocks via cross-attention to the context. Built on Nemotron-3-Nano-30B-A3B, an open-weight 30B hybrid Mamba-Transformer MoE model, and trained on approximately 2.1T tokens, Nemotron-TwoTower retains 98.7% of the autoregressive baseline's quality while offering 2.42X higher wall-clock generation throughput. We release the code and model weights at https://huggingface.co/collections/nvidia/nemotron-twotower.",
-    "matched_keywords": [
-      "NVIDIA",
-      "release",
-      "weights"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 59,
-    "first_seen_at": "2026-06-27T08:04:33.157599+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Health-ORSC-Bench: A Benchmark for Measuring Over-Refusal and Safety Completion in Health Context",
-    "url": "https://arxiv.org/abs/2601.17642",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.17642v2 Announce Type: replace Abstract: Safety alignment in Large Language Models is critical for healthcare; however, reliance on binary refusal boundaries often results in over-refusal of benign queries or unsafe compliance with harmful ones. While existing benchmarks measure these extremes, they fail to evaluate Safe Completion: the model's ability to maximise helpfulness on dual-use or borderline queries by providing safe, high-level guidance without crossing into actionable harm. We introduce Health-ORSC-Bench, the first large-scale benchmark designed to systematically measure Over-Refusal and Safe Completion quality in healthcare. Comprising 31,920 benign boundary prompts across seven health categories (e.g., self-harm, medical misinformation), our framework uses an automated pipeline with human validation to test models at varying levels of intent ambiguity. We evaluate 30 state-of-the-art LLMs, including GPT-5 and Claude-4, revealing a significant tension: safety-optimised models frequently refuse up to 80% of \"Hard\" benign prompts, while domain-specific models often sacrifice safety for utility. Our findings demonstrate that model family and size significantly...",
-    "matched_keywords": [
-      "benchmark",
-      "Claude",
-      "GPT"
-    ],
-    "tags": [
       "model",
       "open_source"
     ],
     "score": 58,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When the Prompt Becomes Visual: Vision-Centric Jailbreak Attacks for Large Image Editing Models",
-    "url": "https://arxiv.org/abs/2602.10179",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.10179v2 Announce Type: replace-cross Abstract: Recent advances in large image editing models have shifted the paradigm from text-driven instructions to vision-prompt editing, where user intent is inferred directly from visual inputs such as marks, arrows, and visual-text prompts. While this paradigm greatly expands usability, it also introduces a critical and underexplored safety risk: the attack surface itself becomes visual. In this work, we propose Vision-Centric Jailbreak Attack (VJA), the first visual-to-visual jailbreak attack that conveys malicious instructions purely through visual inputs. To systematically study this emerging threat, we introduce IESBench, a safety-oriented benchmark for image editing models. Extensive experiments on IESBench demonstrate that VJA effectively compromises state-of-the-art commercial models, achieving attack success rates of up to 80.9% on Nano Banana Pro and 70.1% on GPT-Image-1.5. To mitigate this vulnerability, we propose a training-free defense based on introspective multimodal reasoning, which substantially improves the safety of poorly aligned models to a level comparable with commercial systems, without auxiliary guard mode...",
-    "matched_keywords": [
-      "benchmark",
-      "GPT"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EXPLORE-Bench: Egocentric Scene Prediction with Long-Horizon Reasoning",
-    "url": "https://arxiv.org/abs/2603.09731",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.09731v3 Announce Type: replace-cross Abstract: Multimodal large language models (MLLMs) are increasingly considered as a foundation for embodied agents, yet it remains unclear whether they can reliably reason about the long-term physical consequences of actions from an egocentric viewpoint. We study this gap through a new task, Egocentric Scene Prediction with LOng-horizon REasoning: given an initial-scene image and a sequence of atomic action descriptions, a model is asked to predict the final scene after all actions are executed. To enable systematic evaluation, we introduce EXPLORE-Bench, a benchmark curated from real first-person videos spanning diverse scenarios. Each instance pairs long action sequences with structured final-scene annotations, including object categories, visual attributes, and inter-object relations, which supports fine-grained, quantitative assessment. Experiments on a range of proprietary and open-source MLLMs reveal a significant performance gap to humans, indicating that long-horizon egocentric reasoning remains a major challenge. We further analyze test-time scaling via stepwise reasoning and show that decomposing long action sequences can i...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "release_version": "v0.27.0",
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -422,8 +425,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -448,8 +451,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -464,8 +467,75 @@
     "tags": [],
     "score": 57,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "How NVIDIA’s Inference Software Stack Powers the Lowest Token Cost",
+    "url": "https://blogs.nvidia.com/blog/inference-software-lowest-token-cost",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-30T15:00:57+00:00",
+    "summary_or_excerpt": "As organizations move from AI pilots to production AI factories, infrastructure decisions have shifted from peak chip specifications to cost per token: how many useful tokens they can deliver per dollar, per watt and within required latency targets. Codesigned with NVIDIA GPUs, CPUs, networking and systems, and strengthened by a broad open source ecosystem, NVIDIA’s […]",
+    "matched_keywords": [
+      "inference",
+      "NVIDIA",
+      "open source"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 55,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.15.2a1：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.2a1",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-30T20:18:03+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Repoint template commands to crewAIInc-fde org - Support inline skill definitions - Define stream frame protocol for flows - Add type tool and app in CrewDefinition - Add generated Flow Definition authoring skill ### Bug Fixes - Cut docs version navigation from Edge to prevent new pages from being dropped ### Documentation - Document Cost Limit rule type in Agent Control Plane - Drop CREWAI_LOG_FORMAT references from Datadog guide ## Contributors @danielfsbarreto, @joaomdmoura, @lorenzejay, @lucasgomide, @vinibrsl",
+    "matched_keywords": [
+      "Agent",
+      "CrewAI"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 46,
+    "release_version": "1.15.2a1",
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Introducing GeneBench-Pro",
+    "url": "https://openai.com/index/introducing-genebench-pro",
+    "source_name": "OpenAI News",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-06-30T00:00:00+00:00",
+    "summary_or_excerpt": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
+    "matched_keywords": [
+      "benchmark",
+      "OpenAI"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -488,8 +558,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -511,8 +581,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -532,7 +602,7 @@
     "score": 43,
     "hn_score": 266,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -553,8 +623,8 @@
     "score": 42,
     "release_version": "v0.10.1",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -584,7 +654,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -610,7 +680,7 @@
     "score": 41,
     "release_version": "b9833",
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -630,7 +700,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -658,8 +728,8 @@
     "score": 38,
     "release_version": "v0.30.12-rc0",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -684,8 +754,8 @@
     "score": 38,
     "release_version": "v6.1-beta1",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -710,7 +780,7 @@
     "score": 36,
     "release_version": "b9830",
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -736,7 +806,7 @@
     "score": 36,
     "release_version": "v1.91.0-rc.1",
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -759,7 +829,7 @@
     "score": 36,
     "hn_score": 33,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -782,7 +852,7 @@
     "score": 35,
     "hn_score": 308,
     "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-06-30T08:03:02.917714+08:00",
+    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

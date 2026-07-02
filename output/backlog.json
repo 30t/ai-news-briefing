@@ -1,31 +1,5 @@
 [
   {
-    "title": "Dockerless: Environment-Free Program Verifier for Coding Agents",
-    "url": "https://arxiv.org/abs/2606.28436",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.28436v1 Announce Type: cross Abstract: Program verifiers play a central role in training coding agents, including selecting trajectories for supervised fine-tuning (SFT) and providing rewards for reinforcement learning (RL). Standard execution-based verification requires running unit tests inside per-repository environments such as Docker images, incurring substantial environment setup costs. We propose Dockerless, an environment-free agentic patch verifier that evaluates generated code patches without executing them. Rather than simply matching candidate patches to references, Dockerless judges patch correctness using evidence gathered through agentic repository exploration. On a verifier evaluation benchmark, Dockerless outperforms the strongest open-source verifier by 14.3 AUC points. Using Dockerless as both the SFT trajectory filter and the RL reward enables a fully environment-free post-training pipeline. The resulting model reaches 62.0%, 50.0%, and 35.2% resolve rate on SWE-bench Verified, Multilingual, and Pro, respectively. It surpasses the Qwen3.5-9B baseline by 2.4, 8.7, and 2.9 points, matching environment-based post-training.",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "fine-tuning",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "MetaBreak: Jailbreaking Online LLM Services via Special Token Manipulation",
     "url": "https://arxiv.org/abs/2510.10271",
     "source_name": "arXiv cs.AI",
@@ -42,7 +16,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -63,33 +37,76 @@
     ],
     "score": 65,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Security--Fidelity Tradeoffs: The Hidden Cost of Prompt Injection Defense",
+    "url": "https://arxiv.org/abs/2606.30783",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.30783v1 Announce Type: cross Abstract: We identify a security-fidelity tradeoff in defending LLMs against indirect prompt injection: defenses resist injected instructions largely by suppressing untrusted text, which corrupts tasks that must preserve it, such as translation and document editing. Attack-success metrics cannot see this, because a model that ignores an injection and one that faithfully processes it as data score identically. We introduce SecFid, a benchmark built so that executing an injection, processing it as data, and ignoring it produce distinguishable outputs. This makes fidelity measurable and exposes a frontier: across 1,168 examples and 48 configurations, no model or defense achieves both objectives. The highest-fidelity model reaches 96.5% fidelity at 47.8% security, while the most secure defenses invert this, at 99.3% security but only 71.0%-73.9% fidelity. Even defenses with identical security differ in how they earn it: some repair hijacks into faithful processing, others simply suppress benign content. A decision-theoretic analysis shows why no fixed choice can be right everywhere: the correct behavior is not a property of the defense but of th...",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents",
-    "url": "https://arxiv.org/abs/2606.27472",
+    "title": "Learning from Failure: Inference-Time Self-Improvement for Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2606.31270",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.27472v1 Announce Type: cross Abstract: Large language model (LLM) agents operate over long, multi-session interactions in which facts change: a user moves, a price updates, a plan is revised. Acting correctly requires using the current value of a fact and discarding values that have been superseded. We isolate this ability on real conversational data and show that it is a distinct, unsolved failure. On the knowledge-update subset of LongMemEval, replacing an agent's full context with a bounded, self-maintained memory drops accuracy from 92% to 77% even on a frontier model (gpt-5.4), a gap that is statistically significant (paired McNemar p<0.005) and persists across model scale while full-context accuracy saturates near 92%. The bottleneck is therefore memory maintenance, not comprehension, and is not closed by a stronger model. We then ask whether this is merely an undersized memory, and find it is not: as the conversation grows 24x, accuracy falls further (from 68% to 28%), and granting the agent proportionally more memory yields no detectable recovery (28% to 28%, n=25). The failure scales with the length of the conversation, not the compression ratio. We release Sup...",
+    "published_at": "2026-07-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.31270v1 Announce Type: cross Abstract: Computer-use agents, which leverage multimodal large language models (MLLMs) to operate computers and complete tasks, have attracted significant attention for their utility and versatility. A major challenge in developing these agents is collecting large-scale, high-quality trajectories. The standard approach generates synthetic data through a self-improving loop: an agent is placed in a verifiable environment and iteratively fine-tuned on its successful trajectories. Despite its effectiveness, this paradigm exploits only successful trajectories and discards the failed ones, even though failures carry rich information about a model's weaknesses. In this work, we explore a complementary failure-driven self-improvement loop, a data-centric paradigm that turns failed trajectories into agent improvements. Specifically, we employ an LLM to diagnose failure modes, propose inference-time solutions, and generate code patches -- lightly verified by humans -- that upgrade the agent. We validate this approach with the state-of-the-art OpenCUA-72B model on the OSWorld benchmark, improving the success rate from 42.3% to 48.9%, a gain of 6.6 per...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "GPT",
-      "release"
+      "benchmark",
+      "inference"
     ],
     "tags": [
       "agent",
-      "model",
       "open_source"
     ],
-    "score": 65,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
+    "score": 64,
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent",
+    "url": "https://arxiv.org/abs/2604.17931",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.17931v3 Announce Type: replace Abstract: Reinforcement Learning (RL) has emerged as a powerful training paradigm for LLM-based agents. However, scaling agentic RL for deep research remains constrained by two coupled challenges: hand-crafted synthetic data fails to elicit genuine real-world search capabilities, and real-world search dependency during RL training introduces instability and prohibitive cost, which limits the scalability of Agentic RL. LiteResearcher is a training framework that makes Agentic RL scalable: by constructing a lite virtual world that mirrors real-world search dynamics, we enable a continuously improving training recipe that empowers a tiny search agent to outperform large-scale open-source and commercial models (e.g., Tongyi DeepResearch and Claude-4.5 Sonnet). Specifically, on common benchmarks such as GAIA and Xbench, our LiteResearcher-4B achieves open-source state-of-the-art results of 71.3% and 78.0% respectively, demonstrating that scalable RL training is a key enabler for Deep Research Agents.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "Claude"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -117,8 +134,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -140,8 +157,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -164,8 +181,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -189,8 +206,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -212,8 +229,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -237,7 +254,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -262,7 +279,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -284,7 +301,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -307,7 +324,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -337,28 +354,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When More Sampling Hurts: The Modal Ceiling and Correlation Ceiling of Test-Time Scaling",
-    "url": "https://arxiv.org/abs/2606.28661",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.28661v1 Announce Type: cross Abstract: People overthink; language models over-sample, and the extra effort can talk both into a worse answer. Reasoning systems answer a hard question by sampling it many times (test-time scaling), and the more they draw, the more often a correct answer turns up somewhere, so coverage, the fraction of problems with at least one correct try, climbs and appears to be progress. But a deployed system must return one answer, and choosing it, not knowing which try is right, is selection; selection is capped, and past a point extra samples only make the model surer of a confident mistake, even as every draw adds cost. The gap between climbing coverage and stalled selection, the identifiability gap, is the answer a model can produce but not pick. So the real question is not whether to sample but how far, and the answer is: not far. For picking an answer, the vote has already settled within a few dozen draws, the modal ceiling; for scoring a benchmark, sooner still, the correlation ceiling. Beyond that, extra draws cost compute and add nothing, and can even make the answer worse. This paper turns the cutoff into a single number, the effective numb...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -379,34 +376,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ComfyUI v0.27.0：The major change in this version is added support for int8 convrot models.",
-    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.27.0",
-    "source_name": "ComfyUI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-30T22:19:48+00:00",
-    "summary_or_excerpt": "The major change in this version is added support for int8 convrot models. ## What's Changed * chore(openapi): sync shared API contract from cloud@363764b by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/14607 * [Partner Nodes] feat(Alibaba): add support for HappyHorse 1.1 model by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14611 * Downgrade the template to 0.10.2 to bring the HH1.1 templates back by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/14613 * [Partner Nodes] feat(Grok): add 1080p resolution to Grok Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14612 * [Partner Nodes] feat(ByteDance): add 4K resolution support for SeeDance 2.0 by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14614 * feat: Add support for Seed node (CORE-295) by @yousef-rafat in https://github.com/Comfy-Org/ComfyUI/pull/14616 * Add advanced krea 2 model merging node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14621 * chore(openapi): sync shared API contract from cloud@42eb0d1 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/14619 * feat: Bounding box canvas and Ideogram JSON prompt (CORE-292) by @jtydhr...",
-    "matched_keywords": [
-      "API",
-      "ComfyUI",
-      "GitHub",
-      "Grok"
-    ],
-    "tags": [
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 58,
-    "release_version": "v0.27.0",
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -425,7 +396,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -451,47 +422,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
-    "url": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-28T19:05:39+00:00",
-    "summary_or_excerpt": "\"Mistakenly we thought that by just introducing artificial intelligence ... that would produce a high-quality product.”",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 57,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "How NVIDIA’s Inference Software Stack Powers the Lowest Token Cost",
-    "url": "https://blogs.nvidia.com/blog/inference-software-lowest-token-cost",
-    "source_name": "NVIDIA Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-30T15:00:57+00:00",
-    "summary_or_excerpt": "As organizations move from AI pilots to production AI factories, infrastructure decisions have shifted from peak chip specifications to cost per token: how many useful tokens they can deliver per dollar, per watt and within required latency targets. Codesigned with NVIDIA GPUs, CPUs, networking and systems, and strengthened by a broad open source ecosystem, NVIDIA’s […]",
-    "matched_keywords": [
-      "inference",
-      "NVIDIA",
-      "open source"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 55,
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -512,8 +444,8 @@
     "score": 46,
     "release_version": "1.15.2a1",
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -534,7 +466,53 @@
     ],
     "score": 45,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenSBI OpenSBI Version 1.9：This release has the following changes.",
+    "url": "https://github.com/riscv-software-src/opensbi/releases/tag/v1.9",
+    "source_name": "OpenSBI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-01T12:22:40+00:00",
+    "summary_or_excerpt": "This release has the following changes. General: * Initialize stack guard using Zkr extension * Improved irqchip framework to handle wired interrupts and MSIs * Added unit test for string operations * Added NMI support using Smrnmi extension * Added timer events support * Added Vector context save/restore in domain switch * Added Floating-point context save/restore in domain switch * Added Common PMP encoding/decoding helper functions * Added UBSan support * Improved misaligned vector load/store emulation Platforms: * Added SiFive development platform support * Removed kendryte/k210 platform * Added Tenstorrent Atlantis platform support Drivers: * Added Andes last level cache controller driver * Added Andes ATCSMU suspend driver * Added Altera JTAG UART driver * Added MPXY client driver for RPMI MM service group * Added minimal SpacemiT I2C driver * Added SpacemiT P1 PMIC reset driver * Added Litex SoC reset driver",
+    "matched_keywords": [
+      "OpenSBI",
+      "release",
+      "SiFive",
+      "SoC",
+      "SpacemiT"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 44,
+    "release_version": "v1.9",
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage [R]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uk713d/reap_automatic_curation_of_coding_agent",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-01T00:50:50+00:00",
+    "summary_or_excerpt": "submitted by /u/julian88888888 [link] [comments]",
+    "matched_keywords": [
+      "Agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -558,8 +536,30 @@
     ],
     "score": 44,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Enterprises can default to auto model selection",
+    "url": "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-01T22:27:16+00:00",
+    "summary_or_excerpt": "Enterprise administrators can now set model to auto in the enterprise managed-settings.json to make Copilot auto model selection the default for new conversations. Add auto to .github-private/.github/copilot/managed-settings.json in your source… The post Enterprises can default to auto model selection appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -581,28 +581,7 @@
     ],
     "score": 43,
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Asian AI startups launch Mythos-like models",
-    "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-27T13:10:21+00:00",
-    "summary_or_excerpt": "HN points: 266. Comments: https://news.ycombinator.com/item?id=48697958",
-    "matched_keywords": [
-      "launch"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 43,
-    "hn_score": 266,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -623,84 +602,7 @@
     "score": 42,
     "release_version": "v0.10.1",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "阿德拉菲尼尔：仅在AI agent工作时阻止Mac睡眠的菜单栏工具",
-    "url": "https://aihot.virxact.com/items/cmqx9k72u0425slp05ijlfezl",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-28T03:55:17+00:00",
-    "summary_or_excerpt": "Adrafinil 是一款 macOS 菜单栏应用，仅在 Claude Code、Codex、Cursor、Gemini CLI、Aider、Hermes、OpenCode、Cline、Pi 等 9 种 AI coding agent 持有活跃会话时阻止系统睡眠（包括合盖睡眠）。无 agent 工作时，合盖后 Mac 正常睡眠。它通过各 agent 的钩子系统调用 CLI，往返延迟低于 50ms，支持引用计数断言、热切出（温度阈值强制释放）、空闲释放及进程嗅探。需要 macOS Tahoe 26.4，Xcode 26+ 构建，以签名公证的磁盘映像提供。 🔗 阅读原文：https://github.com/kageroumado/adrafinil",
-    "matched_keywords": [
-      "Agent",
-      "AI Agent",
-      "Aider",
-      "Claude",
-      "Claude Code",
-      "Codex",
-      "Cursor",
-      "Gemini",
-      "GitHub"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9833：chat : implement minicpm5 parser (#24889)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9833",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-28T15:32:30+00:00",
-    "summary_or_excerpt": "chat : implement minicpm5 parser (#24889) * Add minicpm5 tool call parser * Refactor MiniCPM5 PEG parser per review feedback * Fix jinja min/max API to match Jinja2 * modify by review * MiniCPM5: use autoparser for XML tool calls and fix grammar preserved-token triggers * MiniCPM5: fix streaming tool-arg placeholder and remove alt XML markers * skip min/max attribute tests in -py mode * test-jinja: use real expected output for min/max attribute tests * MiniCPM5: revert shared mapper and history fallbacks per review Drop streaming tool-arg placeholder workarounds from the generic PEG mapper and restore strict tool-call argument JSON parsing so MiniCPM5 support stays limited to autoparser/diff-analyzer changes. * chat : refactor minicpm5 back to dedicated parser * cont : simplify grammar * cont : refactor * cont : fixes * cont : rename template to openbmb-MiniCPM5-1B.jinja * cont : add message delimiters * cont : fix tests --------- Co-authored-by: zhangtao Co-authored-by: 张涛 <> **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9833/llama-b9833-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](htt...",
-    "matched_keywords": [
-      "API",
-      "GitHub",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 41,
-    "release_version": "b9833",
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "苹果Vision负责人跳槽OpenAI，触控OLED MacBook用M5芯片",
-    "url": "https://aihot.virxact.com/items/cmqwmotnk01tasly021bf38i5",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-06-27T17:05:48+00:00",
-    "summary_or_excerpt": "2026年6月26日，Mark Gurman称苹果Vision产品组副总裁Paul Meade下周离职加入OpenAI硬件部门。他负责Vision Pro、无屏幕AI智能眼镜及AR眼镜研发。苹果计划首款触控OLED MacBook使用M5 Pro/Max芯片，2026年底到2027年初发布；M7 Pro/Max版本2027年底跟进。苹果此前因涨价市值蒸发2300多亿美元。核心高管流失至OpenAI凸显AI硬件竞争加速。 🔗 阅读原文：https://x.com/berryxia/status/2070916520822321292",
-    "matched_keywords": [
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -728,7 +630,7 @@
     "score": 38,
     "release_version": "v0.30.12-rc0",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -754,105 +656,7 @@
     "score": 38,
     "release_version": "v6.1-beta1",
     "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9830：common : allow --offline in llama download (#25091)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9830",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-28T11:03:50+00:00",
-    "summary_or_excerpt": "common : allow --offline in llama download (#25091) Expose the existing --offline flag to `llama download` so a script can run it to check whether a model is already cached and ready to be served without touching the network. Also fix a latent use-after-free in the URL-task on_done callback: first_path is block-scoped and was captured by reference, but invoked after the block ends. Signed-off-by: Adrien Gallouët **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9830/llama-b9830-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-or...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 36,
-    "release_version": "b9830",
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteLLM v1.91.0-rc.1：Verify Docker Image Signature",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.91.0-rc.1",
-    "source_name": "LiteLLM",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-28T03:46:48+00:00",
-    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0-rc.1 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.91.0-rc.1/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0-rc.1 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * fix(guardrails...",
-    "matched_keywords": [
-      "GitHub",
-      "LiteLLM",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "ai_app",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 36,
-    "release_version": "v1.91.0-rc.1",
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Show HN: NanoEuler – GPT-2 scale model in pure C/CUDA from scratch",
-    "url": "https://github.com/JustVugg/nanoeuler",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-28T19:38:14+00:00",
-    "summary_or_excerpt": "HN points: 33. Comments: https://news.ycombinator.com/item?id=48710778",
-    "matched_keywords": [
-      "CUDA",
-      "GPT"
-    ],
-    "tags": [
-      "model",
-      "semiconductor"
-    ],
-    "score": 36,
-    "hn_score": 33,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "I used Claude Code to get a second opinion on my MRI",
-    "url": "https://antoine.fi/mri-analysis-using-claude-code-opus",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-06-28T16:35:19+00:00",
-    "summary_or_excerpt": "HN points: 308. Comments: https://news.ycombinator.com/item?id=48708941",
-    "matched_keywords": [
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 35,
-    "hn_score": 308,
-    "first_seen_at": "2026-06-29T08:05:31.122536+08:00",
-    "last_seen_at": "2026-07-01T08:08:55.121912+08:00",
+    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

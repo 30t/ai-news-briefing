@@ -1,23 +1,48 @@
 [
   {
-    "title": "MetaBreak: Jailbreaking Online LLM Services via Special Token Manipulation",
-    "url": "https://arxiv.org/abs/2510.10271",
+    "title": "Self-GC: Self-Governing Context for Long-Horizon LLM Agents",
+    "url": "https://arxiv.org/abs/2607.00692",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2510.10271v2 Announce Type: replace-cross Abstract: Unlike regular tokens derived from existing text corpora, special tokens are artificially created to annotate structured conversations during the fine-tuning process of Large Language Models (LLMs). Serving as metadata of training data, these tokens play a crucial role in instructing LLMs to generate coherent and context-aware responses. We demonstrate that special tokens can be exploited to construct four attack primitives, with which malicious users can reliably bypass the internal safety alignment of online LLM services and circumvent state-of-the-art (SOTA) external content moderation systems simultaneously. Moreover, we found that addressing this threat is challenging, as aggressive defense mechanisms-such as input sanitization by removing special tokens entirely, as suggested in academia-are less effective than anticipated. This is because such defense can be evaded when the special tokens are replaced by regular ones with high semantic similarity within the tokenizer's embedding space. We systemically evaluated our method, named MetaBreak, on both lab environment and commercial LLM platforms. Our approach achieves ja...",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.00692v1 Announce Type: new Abstract: Long-horizon LLM agents accumulate tool results, files, plans, and user constraints that are too structured to be treated as a disposable text suffix. Current systems mostly rely on in-run heuristics such as chronological pruning and tool-output masking, or on final self-summary near a context limit. Heuristics are cheap but blind to future dependencies; summaries preserve narrative state but often hide exact evidence, locators, and editable artifacts. We present Self-GC, where GC denotes self-governing context while deliberately echoing garbage collection: the system does not merely reclaim unused tokens, but governs the lifecycle of agent context objects. Self-GC turns user turns, tool spans, and skill state into indexed objects; asks a side-channel planner to propose fold, mask, and prune actions; and lets the harness enforce recoverable sidecars, safe commit boundaries, and cache-aware commit. On a 33-session Hard Set, Self-GC prunes 43.95% of prefix tokens while leaving 84.85% of future continuations unaffected, compared with no-impact rates of 54.55% to 69.70% for heuristic baselines. On a 332-session production-derived suite,...",
     "matched_keywords": [
-      "fine-tuning",
-      "serving"
+      "Agent",
+      "agents"
     ],
     "tags": [
+      "agent"
+    ],
+    "score": 67,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?",
+    "url": "https://arxiv.org/abs/2607.01211",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.01211v1 Announce Type: cross Abstract: Repository-level performance-optimization benchmarks such as GSO, SWE-Perf and SWE-fficiency evaluate coding agents by applying patches to real repositories and comparing runtime against unoptimized baselines and official reference patches. Their leaderboard scores are increasingly used as evidence of coding-agent progress, but those scores can conflate runtime instability, benchmark-specific scoring rules, and how many tasks are already solved by at least one public submission. We audit these issues across the three benchmarks. First, we replay the official reference patches for 740 code optimization tasks across four common types of Google Cloud machines. Most benchmark tasks can be replayed, but their reference patches satisfy the original benchmark validity rules in every cross-machine replay for only 39/102 GSO tasks, 11/140 SWE-Perf tasks, and 411/498 SWE-fficiency tasks; SWE-Perf is especially fragile because many reference patches produce close-to-zero runtime changes. Second, we show that public submission rankings depend strongly on the benchmark scoring rule. Among eight public submissions shared by GSO and SWE-fficiency...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
       "open_source"
     ],
-    "score": 66,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
+    "score": 65,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -37,8 +62,124 @@
     ],
     "score": 65,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent",
+    "url": "https://arxiv.org/abs/2604.17931",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.17931v4 Announce Type: replace Abstract: Reinforcement Learning (RL) has emerged as a powerful training paradigm for LLM-based agents. However, scaling agentic RL for deep research remains constrained by two coupled challenges: hand-crafted synthetic data fails to elicit genuine real-world search capabilities, and real-world search dependency during RL training introduces instability and prohibitive cost, which limits the scalability of Agentic RL. LiteResearcher is a training framework that makes Agentic RL scalable: by constructing a lite virtual world that mirrors real-world search dynamics, we enable a continuously improving training recipe that empowers a tiny search agent to outperform large-scale open-source and commercial models (e.g., Tongyi DeepResearch and Claude-4.5 Sonnet). Specifically, on common benchmarks such as GAIA and Xbench, our LiteResearcher-4B achieves open-source state-of-the-art results of 71.3% and 78.0% respectively, demonstrating that scalable RL training is a key enabler for Deep Research Agents.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "Claude"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+    "url": "https://arxiv.org/abs/2607.01071",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.01071v1 Announce Type: cross Abstract: Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factual accuracy or objective reasoning. Despite this emerging risk, existing memory benchmarks primarily evaluate whether memories are correctly stored, retrieved, or updated, while overlooking how retrieved memories influence downstream reasoning and decision-making. To bridge this gap, we propose MemSyco-Bench, a comprehensive benchmark for evaluating memory-induced sycophancy in agent systems. MemSyco-Bench measures when memory should influence a decision and how valid memory should be used. Specifically, it covers five tasks that assess whether agents can reject memory as factual evidence, respect its applicable scope, resolve conflicts between memory and objective evidence, track memory updates, and use valid memory for personalization. All related resources are collected for the community at https://github.com/XMUDeepLI...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GameDevBench: Evaluating Agentic Capabilities Through Game Development",
+    "url": "https://arxiv.org/abs/2602.11103",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2602.11103v2 Announce Type: replace Abstract: Despite rapid progress on coding agents, progress on their multimodal counterparts has lagged behind. A key challenge is the scarcity of evaluation testbeds that combine the complexity of software development with the need for deep multimodal understanding. In game development, agents must navigate large, dense codebases while manipulating intrinsically multimodal assets such as shaders, sprites, and animations within a visual game scene. We present GameDevBench, the first benchmark for evaluating agents on game development tasks. GameDevBench consists of 333 tasks derived from web and video tutorials. Tasks require significant multimodal understanding and are complex: the average solution requires over three times the lines of code and file changes compared to prior software development benchmarks. Agents struggle with game development, with the best agent and method solving only 53.8% of tasks. We find a strong correlation between perceived task difficulty and multimodal complexity, with average success rate dropping from 51.4% on gameplay-oriented tasks to 33.0% on 2D graphics tasks. To improve multimodal capability, we introd...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GUI-Perturbed: Domain Randomization Reveals Systematic Brittleness in GUI Grounding Models",
+    "url": "https://arxiv.org/abs/2604.14262",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.14262v2 Announce Type: replace-cross Abstract: GUI grounding models report over 85% accuracy on standard benchmarks, yet drop 27-56 percentage points when instructions require spatial reasoning rather than direct element naming. Current benchmarks miss this because they evaluate each screenshot once with a single fixed instruction. We introduce GUI-Perturbed, a controlled perturbation framework that independently varies visual scenes and instructions to measure grounding robustness. Evaluating three 7B models from the same architecture lineage, we find that relational instructions cause systematic accuracy collapse across all models, a 70% browser zoom produces statistically significant degradation, and rank-8 LoRA fine-tuning with augmented data degrades performance rather than improving it. By perturbing along independent axes, GUI-Perturbed isolates which specific capability axes are affected-spatial reasoning, visual robustness, reasoning calibration-providing diagnostic signal that aggregate benchmarks cannot. We release the dataset, augmentation pipeline, and a fine-tuned model.",
+    "matched_keywords": [
+      "dataset",
+      "fine-tuning",
+      "release"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ChainCaps: Composition-Safe Tool-Using Agents via Monotonic Capability Attenuation",
+    "url": "https://arxiv.org/abs/2605.26542",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.26542v4 Announce Type: replace-cross Abstract: Tool-using agents increasingly operate in open-ended deployment environments, where they compose file systems, web APIs, code interpreters, and enterprise services at runtime. This creates a safety gap in tool composition: an agent can satisfy every per-tool permission check and still produce an unsafe end-to-end effect, such as reading a confidential document, summarizing it, and sending the summary to an external endpoint. We call this failure mode permission laundering. ChainCaps addresses it with a runtime rule: every value carries a sink-specific capability budget, and tool composition propagates budgets by intersection. A value can preserve or lose authority as it moves through a tool chain, but it cannot gain new authority through composition. We implement ChainCaps as a transparent MCP proxy that requires no changes to the agent or tool servers. On 82 tasks across five frontier models from three providers, ChainCaps reduces attack success rate from 25-68% to 0-4.8% while preserving 96-100% benign completion. In replay experiments, it also outperforms scalar-IFC and per-function-isolation baselines. Manifest quality...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "MCP"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -57,56 +198,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Learning from Failure: Inference-Time Self-Improvement for Computer-Use Agents",
-    "url": "https://arxiv.org/abs/2606.31270",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.31270v1 Announce Type: cross Abstract: Computer-use agents, which leverage multimodal large language models (MLLMs) to operate computers and complete tasks, have attracted significant attention for their utility and versatility. A major challenge in developing these agents is collecting large-scale, high-quality trajectories. The standard approach generates synthetic data through a self-improving loop: an agent is placed in a verifiable environment and iteratively fine-tuned on its successful trajectories. Despite its effectiveness, this paradigm exploits only successful trajectories and discards the failed ones, even though failures carry rich information about a model's weaknesses. In this work, we explore a complementary failure-driven self-improvement loop, a data-centric paradigm that turns failed trajectories into agent improvements. Specifically, we employ an LLM to diagnose failure modes, propose inference-time solutions, and generate code patches -- lightly verified by humans -- that upgrade the agent. We validate this approach with the state-of-the-art OpenCUA-72B model on the OSWorld benchmark, improving the success rate from 42.3% to 48.9%, a gain of 6.6 per...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent",
-    "url": "https://arxiv.org/abs/2604.17931",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.17931v3 Announce Type: replace Abstract: Reinforcement Learning (RL) has emerged as a powerful training paradigm for LLM-based agents. However, scaling agentic RL for deep research remains constrained by two coupled challenges: hand-crafted synthetic data fails to elicit genuine real-world search capabilities, and real-world search dependency during RL training introduces instability and prohibitive cost, which limits the scalability of Agentic RL. LiteResearcher is a training framework that makes Agentic RL scalable: by constructing a lite virtual world that mirrors real-world search dynamics, we enable a continuously improving training recipe that empowers a tiny search agent to outperform large-scale open-source and commercial models (e.g., Tongyi DeepResearch and Claude-4.5 Sonnet). Specifically, on common benchmarks such as GAIA and Xbench, our LiteResearcher-4B achieves open-source state-of-the-art results of 71.3% and 78.0% respectively, demonstrating that scalable RL training is a key enabler for Deep Research Agents.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "Claude"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -134,7 +227,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -157,7 +250,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -181,7 +274,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -206,7 +299,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -229,435 +322,126 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Govern the Repository, Not the Agent: Measuring Ecosystem-Level Risk in AI-Native Software",
-    "url": "https://arxiv.org/abs/2606.28235",
+    "title": "MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark",
+    "url": "https://arxiv.org/abs/2607.00724",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.00724v1 Announce Type: new Abstract: Multilingual fluency often invites a stronger assumption: a model that can speak a user's language must also understand the culture encoded by that language. We call this the Illusion of Cultural Alignment. To test this assumption directly, we introduce MSQA, a benchmark of 1,064 natively sourced questions across 11 language groups, five cultural dimensions, and three difficulty tiers. Unlike translated benchmarks, MSQA targets locally grounded knowledge and reduces shortcuts from English-centric cross-lingual transfer. Evaluating 18 LLMs, we find substantial cultural degradation and a pronounced Locality Effect: cultural competence tracks pre-training exposure more closely than general reasoning ability. We further show that common inference-time remedies do not dissolve the illusion. Models remain overconfident on unfamiliar cultural questions, repeated sampling yields unstable rather than reliable correctness, and retrieval augmentation helps unevenly on long-tail facts. These findings indicate that cultural alignment cannot be inferred from multilingual ability alone and requires deeper intervention than calibration, sampling, or...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Libra: Training the Environment for Agentic Information Retrieval",
+    "url": "https://arxiv.org/abs/2607.00016",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.28235v1 Announce Type: cross Abstract: Autonomous coding agents now open and merge pull requests in shared repositories at scale, and the field evaluates them the way it has always evaluated components, one agent at a time, on isolated benchmark tasks. Yet agents that each pass their own tests still leave repositories that accumulate problems no single contribution accounts for. We ask whether this problem belongs to the individual agent or to the repository where it accumulates. We study integration friction, the cost of integrating a contribution into a codebase that other contributors are concurrently changing. Across more than 930,000 agent-authored pull requests, we measure how much of the variation in friction stays with the repository after the contribution, its author, its size, and its agent are accounted for. About half does, and it survives full controls. In the same repositories, agent-authored contributions concentrate this repository-level friction roughly twice as much as human ones (intraclass correlation 0.30 versus 0.16), a gap that holds after controlling for codebase size, age, task shape, process maturity, and merge path. The risk is a property of t...",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.00016v1 Announce Type: cross Abstract: Information localization within massive repositories is a cornerstone of agentic LLM systems. While synthetic data-driven optimization has proven successful in training LLMs, little attention has been paid to optimizing the agent's working environment (the repository itself) in a data-driven manner. To bridge this gap, we present Libra, a self-evolving framework that introduces mutable \"catalogs\" (hierarchical Markdown files serving as navigable indices) into the repository. Libra runs an LLM-driven optimization loop where a Prompter generates synthetic queries, a frozen Solver attempts to resolve them by navigating the catalogs, and a Healer rewrites the catalogs in response to the Solver's localization failures. Evaluations across 12 SWE-bench Lite repositories demonstrate that this environmental healing yields continual, logarithmic improvements in code localization accuracy. Furthermore, these environmental improvements transfer zero-shot across different LLMs and problem sets. Although the focus of this paper is to study the general behavior of such a system, we also demonstrate that a minimalist coding agent equipped with Lib...",
     "matched_keywords": [
       "Agent",
-      "agents",
-      "benchmark",
-      "repository"
+      "agentic",
+      "repository",
+      "retrieval",
+      "serving"
     ],
     "tags": [
       "agent",
       "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Just Ask: Curious Code Agents Reveal System Prompts in Frontier LLMs",
-    "url": "https://arxiv.org/abs/2601.21233",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.21233v2 Announce Type: replace Abstract: Autonomous code agents built on large language models are reshaping software and AI development through tool use, long-horizon reasoning, and self-directed interaction. However, this autonomy introduces a previously unrecognized security risk: agentic interaction fundamentally expands the LLM attack surface, enabling systematic probing and recovery of hidden system prompts that guide model behavior. We identify system prompt extraction as an emergent vulnerability intrinsic to code agents and present \\textbf{\\textsc{JustAsk}}, a self-evolving framework that autonomously discovers effective extraction strategies through interaction alone. Unlike prior prompt-engineering or dataset-based attacks, \\textsc{JustAsk} requires no handcrafted prompts, labeled supervision, or privileged access beyond standard user interaction. It formulates extraction as an online exploration problem, using Upper Confidence Bound-based strategy selection and a hierarchical skill space spanning atomic probes and high-level orchestration. These skills exploit imperfect system-instruction generalization and inherent tensions between helpfulness and safety. E...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "dataset",
-      "orchestration",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Ranking Before Serving: Low-Latency LLM Serving via Pairwise Learning-to-Rank",
-    "url": "https://arxiv.org/abs/2510.03243",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2510.03243v3 Announce Type: replace-cross Abstract: Efficient scheduling of large language model (LLM) inference tasks is critical for achieving low latency and high throughput, a challenge that is becoming increasingly acute with the rise of reasoning-capable LLMs whose generation lengths are highly variable. Traditional strategies like First Come, First-Serve (FCFS) often suffer from Head-of-Line (HOL) blocking, where long-running tasks delay shorter ones queued behind them. In this paper, we introduce PARS, a prompt-aware LLM task scheduler that mitigates HOL blocking by approximating shortest-job-first (SJF) scheduling through pairwise ranking with a margin ranking loss. PARS effectively predicts response-length-based task ordering directly from prompts, thereby optimizing scheduling decisions with minimal overhead. In addition, it integrates seamlessly with vLLM, a state-of-the-art LLM serving system, for the research community. Extensive experiments across multiple LLM models and real-world inference use cases, including chat, math, and code generation, demonstrate that PARS significantly reduces latency by up to 15.7x compared to the vLLM default scheduler. Cross-mode...",
-    "matched_keywords": [
-      "inference",
-      "serving",
-      "vLLM"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiveClawBench: Benchmarking LLM Agents on Complex, Real-World Assistant Tasks",
-    "url": "https://arxiv.org/abs/2604.13072",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.13072v2 Announce Type: replace-cross Abstract: OpenClaw-style personal assistants extend LLM agents from isolated tool use to open-ended, stateful, and personalized software environments. Evaluating these assistants is fundamentally a fidelity problem: benchmarks must be faithful both to the distribution of real assistant tasks and to the execution semantics of the environments in which those tasks unfold. Existing benchmarks often lose fidelity in one dimension or the other. Their task distributions are shaped by what is easy to isolate, mock, and verify, underrepresenting real-world difficulties such as cross-service dependency, contaminated state, implicit intent, and runtime change. Their environments are either live but hard to reproduce, or reproducible but reduced to endpoint-level stubs that remove sessions, artifacts, state transitions, and downstream side effects. We introduce LiveClawBench, a benchmark designed around this dual-fidelity requirement. LiveClawBench combines a Triple-Axis Complexity Framework for difficulty-driven task construction with reproducible full-stack mock applications that preserve stateful execution semantics. With 134 executable case...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "$\\tau$-Rec: A Verifiable Benchmark for Agentic Recommender Systems",
-    "url": "https://arxiv.org/abs/2606.10156",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.10156v2 Announce Type: replace-cross Abstract: As recommender systems transition toward agentic, multi-turn conversational interfaces, evaluation paradigms have struggled to keep pace. Current benchmarks often rely on \"LLM-as-a-judge\" evaluations, which introduce subjectivity, high costs and inconsistency. We present $\\tau$-Rec, a benchmark for agentic recommender systems that replaces subjective evaluation with verifiable rewards and a reveal-tagged elicitation (RTE) mechanism that controls how task constraints surface during dialogue. By testing agents against structured catalog predicates and employing a pass^k reliability metric, $\\tau$-Rec provides a systematic test for consistent reasoning. Our evaluation of nine configurations across five model families -- GPT-5.4, Claude Sonnet 4.6, Gemini 2.5 Flash, DeepSeek V4 Flash, Qwen3-32B and GPT-5 mini -- reveals a steep reliability cliff, where even the best model achieves only ~57% at pass^1 and ~35% at pass^4, highlighting a critical gap in current conversational agent deployment. All code and data are publicly available at https://github.com/nbharaths/tau-rec.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "Claude",
-      "DeepSeek",
-      "Gemini",
-      "GitHub",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Check Yourself Before You Wreck Yourself: Selectively Quitting Improves LLM Agent Safety",
-    "url": "https://arxiv.org/abs/2510.16492",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2510.16492v4 Announce Type: replace Abstract: As Large Language Model (LLM) agents increasingly operate in complex environments with real-world consequences, their safety becomes critical. While uncertainty quantification is well-studied for single-turn tasks, multi-turn agentic scenarios with real-world tool access present unique challenges where uncertainties and ambiguities compound, leading to severe or catastrophic risks beyond traditional text generation failures. We propose using \"quitting\" as a simple yet effective behavioral mechanism for LLM agents to recognize and withdraw from situations where they lack confidence. Leveraging the ToolEmu framework, we conduct a systematic evaluation of quitting behavior across 12 state-of-the-art LLMs. Our results demonstrate a highly favorable safety-helpfulness trade-off: agents prompted to quit with explicit instructions improve safety by an average of +0.39 on a 0-3 scale across all models (+0.64 for proprietary models), while maintaining a negligible average decrease of -0.03 in helpfulness. Our analysis demonstrates that simply adding explicit quit instructions proves to be a highly effective safety mechanism that can immed...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Cluster, Route, Escalate: Cascaded Framework for Cost-Aware LLM Serving",
-    "url": "https://arxiv.org/abs/2606.27457",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.27457v1 Announce Type: cross Abstract: Efficient deployment of large language models (LLMs) in production forces a trade-off between accuracy and cost. Operators often default to a single model that is either expensive for easy queries or insufficient for hard ones. To address this challenge, we propose a two-stage cascaded solution. Stage 1 clusters incoming queries and assigns each cluster to its most cost-effective model. The cost budget for this routing process is set by an interpretable hyperparameter, tuned offline. Stage 2 adds a quality estimation (QE) cascade; when an output from Stage 1 is judged low-quality, the query is escalated to a stronger model. This ensures only hard or low-confidence cases reach the expensive models. On the test datasets, the cascaded system retains 97-99% of the strongest model's accuracy while reducing Time Per Output Token (TPOT). It requires only task-correctness labels and adapts to changes in the model pool without manual reconfiguration.",
-    "matched_keywords": [
-      "serving"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Learning to Evict from Key-Value Cache",
-    "url": "https://arxiv.org/abs/2602.10238",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.10238v2 Announce Type: replace Abstract: The growing size of Large Language Models (LLMs) makes efficient inference challenging, primarily due to the memory demands of the autoregressive Key-Value (KV) cache. Existing eviction or compression methods reduce cost but rely on heuristics, such as recency or past attention scores, which serve only as indirect proxies for a token's future utility and introduce computational overhead. We reframe KV cache eviction as a reinforcement learning (RL) problem: learning to rank tokens by their predicted usefulness for future decoding. To this end, we introduce KV Policy (KVP), a framework of lightweight per-head RL agents trained on pre-computed generation traces using only key and value vectors. Each agent learns a specialized eviction policy guided by a holistic reward, derived from future utility, that evaluates the quality of the ranking across all cache budgets, requiring no modifications to the underlying LLM or additional inference. Evaluated across two model families on the long-context benchmark RULER (up to 128K tokens) and the multi-turn dialogue benchmark OASST2-4k, KVP significantly outperforms strong baselines. Zero-sho...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "inference",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.15.2a1：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.2a1",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-30T20:18:03+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Repoint template commands to crewAIInc-fde org - Support inline skill definitions - Define stream frame protocol for flows - Add type tool and app in CrewDefinition - Add generated Flow Definition authoring skill ### Bug Fixes - Cut docs version navigation from Edge to prevent new pages from being dropped ### Documentation - Document Cost Limit rule type in Agent Control Plane - Drop CREWAI_LOG_FORMAT references from Datadog guide ## Contributors @danielfsbarreto, @joaomdmoura, @lorenzejay, @lucasgomide, @vinibrsl",
-    "matched_keywords": [
-      "Agent",
-      "CrewAI"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 46,
-    "release_version": "1.15.2a1",
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Introducing GeneBench-Pro",
-    "url": "https://openai.com/index/introducing-genebench-pro",
-    "source_name": "OpenAI News",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-30T00:00:00+00:00",
-    "summary_or_excerpt": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets.",
-    "matched_keywords": [
-      "benchmark",
-      "OpenAI"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-07-01T08:08:55.121912+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenSBI OpenSBI Version 1.9：This release has the following changes.",
-    "url": "https://github.com/riscv-software-src/opensbi/releases/tag/v1.9",
-    "source_name": "OpenSBI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-01T12:22:40+00:00",
-    "summary_or_excerpt": "This release has the following changes. General: * Initialize stack guard using Zkr extension * Improved irqchip framework to handle wired interrupts and MSIs * Added unit test for string operations * Added NMI support using Smrnmi extension * Added timer events support * Added Vector context save/restore in domain switch * Added Floating-point context save/restore in domain switch * Added Common PMP encoding/decoding helper functions * Added UBSan support * Improved misaligned vector load/store emulation Platforms: * Added SiFive development platform support * Removed kendryte/k210 platform * Added Tenstorrent Atlantis platform support Drivers: * Added Andes last level cache controller driver * Added Andes ATCSMU suspend driver * Added Altera JTAG UART driver * Added MPXY client driver for RPMI MM service group * Added minimal SpacemiT I2C driver * Added SpacemiT P1 PMIC reset driver * Added Litex SoC reset driver",
-    "matched_keywords": [
-      "OpenSBI",
-      "release",
-      "SiFive",
-      "SoC",
-      "SpacemiT"
-    ],
-    "tags": [
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 44,
-    "release_version": "v1.9",
-    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage [R]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uk713d/reap_automatic_curation_of_coding_agent",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-01T00:50:50+00:00",
-    "summary_or_excerpt": "submitted by /u/julian88888888 [link] [comments]",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search",
-    "url": "https://arxiv.org/abs/2606.27669",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-06-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.27669v1 Announce Type: new Abstract: Search agents powered by large language models (LLMs) are increasingly used to solve complex information-seeking tasks, requiring multi-step retrieval and reasoning to fulfill user goals. However, existing benchmarks often assume that user queries are complete and explicit, overlooking the fact that real-world search requests are frequently vague, underspecified, or even factually incorrect. In deep search scenarios, such ambiguity can propagate along multi-step reasoning chains and lead agents toward incorrect search trajectories. To address this gap, we introduce DiscoBench, a benchmark for clarification-aware deep search, designed to evaluate whether search agents can proactively identify ambiguity, ask effective clarification questions, and recover correct reasoning paths through user interaction. DiscoBench contains 211 samples and 463 ambiguity instances across 11 real-world domains, covering four ambiguity types. We further design a user simulator for multi-turn interaction and evaluate model performance from four perspectives: task utility, ambiguity detection, interaction strategy, and cost efficiency. Experiments on represe...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
       "open_source",
       "rag_data"
     ],
-    "score": 44,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enterprises can default to auto model selection",
-    "url": "https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-01T22:27:16+00:00",
-    "summary_or_excerpt": "Enterprise administrators can now set model to auto in the enterprise managed-settings.json to make Copilot auto model selection the default for new conversations. Add auto to .github-private/.github/copilot/managed-settings.json in your source… The post Enterprises can default to auto model selection appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
+    "score": 60,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "HP Inc. launches Frontier strategic partnership with OpenAI",
-    "url": "https://openai.com/index/hp-frontier-partnership",
-    "source_name": "OpenAI News",
+    "title": "ALEE: Any-Language Evaluation of Embeddings via English-Centric Minimal Pairs",
+    "url": "https://arxiv.org/abs/2607.00171",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-28T17:00:00+00:00",
-    "summary_or_excerpt": "HP Inc. scales its OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations.",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.00171v1 Announce Type: new Abstract: Text embeddings are standard for semantic similarity tasks, yet their evaluation remains an open challenge. Current benchmarks are static, cover only a limited set of languages, are often domain-specific, susceptible to overfitting, and poorly representative of low-resource languages. To address these limitations, we introduce ALEE, a framework that extends Sentence Smith (Li et al., 2025) to the cross-lingual and paragraph level. ALEE uses Abstract Meaning Representations (AMR) to generate English minimal pairs with controlled, fine-grained semantic shifts, which are paired with translations in target languages. This approach enables targeted diagnostics for models in any language with English parallel data. We conduct a large-scale empirical study across a diverse set of embedding models and 275+ languages spanning three parallel datasets. On ALEE, performance varies substantially across languages, text lengths, and linguistic phenomena, exposing persistent gaps in cross-lingual semantic representation that track language prevalence in training resources and subword tokenization. We release ALEE at https://github.com/Andrian0s/any-...",
     "matched_keywords": [
-      "customer",
-      "OpenAI",
-      "partnership"
-    ],
-    "tags": [
-      "business",
-      "model"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Open WebUI v0.10.1：Fixed",
-    "url": "https://github.com/open-webui/open-webui/releases/tag/v0.10.1",
-    "source_name": "Open WebUI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-29T19:38:44+00:00",
-    "summary_or_excerpt": "### Fixed - 🤝 **Shared folder read-only chats no longer sign users out.** Opening or reading chats from shared folders now keeps the current session active when a resource-level access error is returned, instead of incorrectly showing \"Session expired. Please sign in again.\"",
-    "matched_keywords": [
-      "Open WebUI"
-    ],
-    "tags": [
-      "ai_app"
-    ],
-    "score": 42,
-    "release_version": "v0.10.1",
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Ollama v0.30.12：* tools: ignore braces inside JSON strings when detecting tool call end by @aditya-786 in",
-    "url": "https://github.com/ollama/ollama/releases/tag/v0.30.12-rc0",
-    "source_name": "Ollama",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-29T17:45:08+00:00",
-    "summary_or_excerpt": "## What's Changed * tools: ignore braces inside JSON strings when detecting tool call end by @aditya-786 in https://github.com/ollama/ollama/pull/16937 * mlx: bump dependency by @dhiltgen in https://github.com/ollama/ollama/pull/16935 * llama.cpp update by @dhiltgen in https://github.com/ollama/ollama/pull/16960 ## New Contributors * @aditya-786 made their first contribution in https://github.com/ollama/ollama/pull/16937 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.30.11...v0.30.12-rc0",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "Llama",
-      "llama.cpp",
-      "Ollama"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "v0.30.12-rc0",
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ESP-IDF ESP-IDF Pre-release v6.1-beta1：Documentation for IDF v6.1-beta1 is available at https://docs.espressif.com/projects/esp-i",
-    "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-beta1",
-    "source_name": "ESP-IDF",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-06-29T12:07:01+00:00",
-    "summary_or_excerpt": "Documentation for IDF v6.1-beta1 is available at https://docs.espressif.com/projects/esp-idf/en/v6.1-beta1/ ESP-IDF v6.1-beta1 is a minor update for ESP-IDF v6.0. Release v6.1 is mostly compatible with apps written for ESP-IDF v6.0. Release v6.0.2 is the latest stable release at the time of writing. We highly recommend referring to our [migration guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/migration-guides/release-6.x/6.1/index.html) while moving your apps from ESP-IDF v6.0 to v6.1 release. # Obtaining v6.1-beta1 For full installation instructions, see the [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/v6.1-beta1/get-started/index.html). The source files attached to this release will _not_ work due to our use of git submodules. Use one of the following methods instead: ## Using git To get this release, use the following commands: ``` git clone -b v6.1-beta1 --recursive https://github.com/espressif/esp-idf.git esp-idf-v6.1-beta1 cd esp-idf-v6.1-beta1/ ``` This is the recommended way of obtaining v6.1-beta1 of ESP-IDF. ## Download an archive with submodules included Attached to this release is an `esp-idf-v6.1-beta1.zip` archive. It...",
-    "matched_keywords": [
-      "ESP-IDF",
-      "ESP32",
-      "Espressif",
+      "embeddings",
       "GitHub",
       "release"
     ],
     "tags": [
-      "embedded_edge_ai",
-      "open_source"
+      "open_source",
+      "rag_data"
     ],
-    "score": 38,
-    "release_version": "v6.1-beta1",
-    "first_seen_at": "2026-06-30T08:03:02.917714+08:00",
-    "last_seen_at": "2026-07-02T08:10:08.672125+08:00",
-    "backlog_source": "backlog",
+    "score": 46,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout",
+    "url": "https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-02T03:34:48+00:00",
+    "summary_or_excerpt": "As AI moves from model development to production inference, compute demand is accelerating and shifting toward continuously operating AI factories that generate tokens at scale. This shift requires access to large‑scale, multi‑tenant accelerated computing that can come online quickly, stay highly utilized and support the economics of token‑scale AI services. Emerging AI companies historically have […]",
+    "matched_keywords": [
+      "inference",
+      "NVIDIA"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Dual-Confidence Contrastive Decoding for Retrieval-Augmented Generation",
+    "url": "https://arxiv.org/abs/2607.00570",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.00570v1 Announce Type: new Abstract: Retrieval-augmented generation (RAG) increasingly requires models to answer questions from multiple retrieved documents, where only some sources are relevant and the retrieved bundle may contain stale, noisy, or conflicting evidence. Existing contrastive decoding methods primarily focus on resolving conflicts between the model's internal memory and the retrieved context. In contrast, we study the complementary problem of intra-context conflict in multi-document RAG. To evaluate this setting, we introduce DRQA, a factual-conflict question answering benchmark derived from enterprise deep-research scenarios, where answers are grounded in synthetic enterprise-specific facts that are designed not to be recoverable from the model's internal memory. We further propose Dual-Confidence Contrastive Decoding (DCCD), a training-free decoding method that combines document-level confidence, which estimates whether a document appears sufficient for answering the question, with token-level confidence, which estimates whether that document supports a confident next-token prediction. DCCD selects positive and negative document-conditioned streams usin...",
+    "matched_keywords": [
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "last_seen_at": "2026-07-03T08:05:08.128576+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

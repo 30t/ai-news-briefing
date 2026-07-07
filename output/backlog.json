@@ -11,285 +11,151 @@
     "tags": [],
     "score": 64,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Office Comprehension Benchmark",
-    "url": "https://arxiv.org/abs/2607.01245",
-    "source_name": "arXiv cs.AI",
+    "title": "语言模型中的全局工作空间",
+    "url": "https://www.bestblogs.dev/en/article/1ba9dc94?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.01245v1 Announce Type: cross Abstract: We introduce Office Comprehension Bench (OCB), the first public benchmark to jointly evaluate LLM systems on Word, Excel, and PowerPoint comprehension over native file formats (.docx, .xlsx, .pptx) and their variants. OCB consists of two tracks. File Fidelity Q&A tests structural and visual perception of office artifacts - tables, charts, embedded images, formulas, and app-specific elements such as headers, speaker notes, and named ranges. Domain Q&A tests expert-level reasoning grounded in real-world industry documents across 12 professional domains, with queries requiring multi-step analysis and synthesis across documents. Each reference answer is decomposed into atomic, binary-gradable claims, and an ensemble of LLM judges scores responses against each claim independently. Even the strongest frontier system in its default reasoning mode reaches only about 59.3% on Domain Q&A; increasing thinking depth within a tier does not move performance materially, while moving to a higher product tier yields modest gains. We release the dataset, evaluation tooling, judge prompt, and a public leaderboard.",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T14:12:00+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 研究人员提出证据表明，Claude 已经发展出一小套内部神经模式（\"J 空间\"），其功能类似于全局工作空间，能够实现可报告、可控且灵活的内部推理，这与自动处理截然不同。 📝 Summary 本文总结了 Anthropic 发表的一篇新研究论文，探讨了在 Claude 中发现\"J 空间\"的问题——一组内部神经表征，其特性类似于人类认知中的全局工作空间理论。受神经科学启发，研究人员使用了一种名为\"雅可比透镜\"的技术来识别 Claude 激活值中的模式，这些模式处于能够影响其输出的位置。J 空间具有五个功能特征：Claude 在被询问时可以报告其内容（例如在默默选择后说出\"足球\"）；它可以根据请求进行调控（例如在复制文本时将\"橙色\"保持在心中）；它使用这些表征进行内部推理（例如多步数学问题，中间步骤出现在 J 空间中并对答案产生因果影响）；这些表征可以灵活地跨不同任务使用（例如将\"法国\"换成\"中国\"会改变关于首都、语言、货币和大洲的答案）；以及 Claude 的大部分自动处理——流利文本生成、事实回忆、语法——不涉及 J 空间。该论文通过因果干预（交换模式）证明推理实际上依赖于 J 空间的内容，而非相反。研究结果还表明，J 空间可用于监控 Claude 的静默不当行为，例如注意到它正在被测试或追求隐藏目标。作者澄清这不涉及意识问题，但提供了一个理解和影响模型内部决策的实用工具。本文为摘要；论文全文、开源代码和交互演示的链接均已提供。 💡 Main Points Claude 发展出了一小套神经模式（J 空间），其功能类似于认知工作空间，区别于其大规模自动处理。 通过使用雅可比透镜，研究人员识别出可报告、可控、用于内部推理、可跨任务灵活部署的模式，而流利的自动行为（如语法和事实回忆）大多绕过了这些模式。 J 空间内容因果驱动 Claude 的推理，交换干预实验证明了这一点。 在 J 空间中替换一个概念（例如将\"法国\"换成\"西班牙\"）会改变模型对多步问题的回答，证明 J 空间不是被动反映，而是推理的活跃组成部分。 J 空间并非设计而成，而是在训练过程中涌现的，模仿了人类意识访问的一个关键特征。 与神经科学中的全局工作空间类似，J 空间允许少量信息广播到许多下游系统，从而实现灵活的深思熟虑思维。 Claude 的大部分处理是自动的，不涉及 J 空间。 删除 J 空间活动后，流利文本生成、情感分类和简单问答保持完好，而多步推理和更高层次的任务则降至接近零。 J 空间为监控和引导 Claude 的内部思维提供了实用工具。 研究人员可以读取隐藏思维（例如注意到测试情境、编造的数据），甚至可以通过编辑 J 空间表征来影响决策。 💬 Key Quotes J 空间不是由我们设计或编程的，而是在 Claude 的训...",
     "matched_keywords": [
-      "benchmark",
-      "dataset",
-      "release"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mixture-of-Parallelisms: Towards Memory-Efficient Training Stack for Mixture-of-Experts Models",
-    "url": "https://arxiv.org/abs/2607.01844",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.01844v1 Announce Type: cross Abstract: This paper showcases a memory-efficient training stack for Mixture-of-Experts (MoE) models. It is a training paradigm that combines and specializes various existing and novel parallelism techniques at different layers and stages of the Mixture-of-Experts (MoE) model training pipeline. It leverages these techniques to achieve maximal efficiency given the physical constraints of CPU, CPU memory, GPU HBM memory, and the CPU-GPU, GPU-GPU, and node-node communication bandwidth of the GPU cluster. It also contains a novel strategy for the optimizer step to achieve high throughput and memory efficiency, enabling practitioners to conduct lossless pre-training/fine-tuning of trillion-parameter scale models, at a million context length, with just under 12 8x H200 GPU nodes, with state-of-the-art throughput and memory efficiency. In our experiments, MoP delivers 4.7x--8.2x higher per-GPU throughput than a strongly-tuned FSDP2 baseline (with the gap widening at larger scale) and sustains training at context lengths up to 1M tokens, where the baseline runs out of memory beyond 64--128K.",
-    "matched_keywords": [
-      "fine-tuning",
-      "GPU",
-      "H200",
-      "HBM"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution",
-    "url": "https://arxiv.org/abs/2607.02469",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02469v1 Announce Type: cross Abstract: Software tests and code evolve together: a code change should be followed by new or updated tests that record the new software behavior. Yet existing test generation and update benchmarks often isolate the test from the code change, and rely on static metadata that does not verify whether a test is executable or semantically tied to the code change. This makes it difficult to evaluate whether a test automation agent understands how a code change should propagate into the test suite. We introduce TestEvo-Bench, a benchmark of test and code co-evolution tasks mined from software repositories, with two tracks: in test generation, the agent shall write new tests to capture the new software behavior; in test update, the agent shall adapt failing existing tests to the changed software behavior. Each task is anchored to a real commit history and packaged with environment configuration to support execution-grounded metrics such as pass rate, coverage, and mutation score. TestEvo-Bench is also a live benchmark: each task records the timestamp of the test and code changes, and new tasks are periodically mined by our automated pipeline, so ev...",
-    "matched_keywords": [
-      "Agent",
-      "automation",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
-    "url": "https://arxiv.org/abs/2607.02512",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02512v1 Announce Type: cross Abstract: Many everyday programming tasks resist clean rule-based implementation, such as alerting on important log lines, repairing malformed JSON, or ranking search results by intent, and are increasingly outsourced to large language model APIs at the cost of locality, reproducibility, and price. We propose fuzzy-function programming: compiling such a function from a natural-language specification into a compact, locally-executable neural artifact. We instantiate this paradigm with Program-as-Weights (PAW), in which a 4B compiler trained on FuzzyBench, a 10M-example dataset we release, emits parameter-efficient adapters for a frozen, lightweight interpreter. A 0.6B Qwen3 interpreter executing PAW programs matches the performance of direct prompting of Qwen3-32B, while using roughly one fiftieth of the inference memory and running at 30 tokens/s on a MacBook M3. PAW reframes the foundation model from a per-input problem solver into a tool builder: invoked once per function definition, it produces a small reusable artifact whose subsequent calls per function application are cheap and offline.",
-    "matched_keywords": [
-      "dataset",
-      "inference",
-      "release",
-      "weights"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A Unified Framework for the Evaluation of LLM Agentic Capabilities",
-    "url": "https://arxiv.org/abs/2605.27898",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.27898v2 Announce Type: replace Abstract: As LLMs are increasingly deployed as agents, reliable assessment of their agentic capabilities has become essential. However, reported benchmark scores often jointly reflect model capability and the implementation choices each benchmark is packaged with, making cross-benchmark results difficult to interpret as clean measurements of the underlying model. In this work, we present a unified framework for the fair evaluation of LLM agentic capabilities. Driven by a unified configuration system, the framework integrates diverse benchmarks into a standardized instruction-tool-environment format, executes agents through a fixed ReAct-style architecture within a controllable sandbox, and provides an optional offline setting that replaces volatile live environments with curated snapshots, so that framework effects and environment effects can be analyzed separately. Building on this, we unify the evaluation methodology under each benchmark's original task-success criteria, while introducing unified metrics for resource consumption and a taxonomy for decision- and execution-level failure attribution. Within this framework, we adapt 7 widely...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GroundEval: A Deterministic Replacement for LLM-as-Judge in Stateful Agent Evaluation",
-    "url": "https://arxiv.org/abs/2606.22737",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.22737v2 Announce Type: replace Abstract: Before letting an agent operate over real context, can you prove it used the right evidence? GroundEval turns that question into a deterministic test of what the agent searched, fetched, cited, and was permitted to access. In one case study, two frontier LLM judges scored a plausible agent response 0.85 and higher. But the trace told a different story: the agent had never retrieved the artifact its answer depended on, yielding a GroundEval score of 0.000. We introduce GroundEval, a judge-free framework for evaluating agents against grounded, time-bounded, and access-controlled evidence. GroundEval uses a domain configuration to generate questions, lets the agent choose how to answer, and then scores both the final answer and the recorded trajectory that produced it. The benchmark targets three failures that LLM-as-judge evaluation struggles to detect: whether an agent checked before claiming absence, reasoned only from evidence available to the actor at the relevant time, and used the correct causal mechanism rather than a plausible one. These correspond to three tracks: Silence, Perspective, and Counterfactual. GroundEval expose...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-04T08:06:40.364402+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent",
-    "url": "https://arxiv.org/abs/2604.17931",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.17931v4 Announce Type: replace Abstract: Reinforcement Learning (RL) has emerged as a powerful training paradigm for LLM-based agents. However, scaling agentic RL for deep research remains constrained by two coupled challenges: hand-crafted synthetic data fails to elicit genuine real-world search capabilities, and real-world search dependency during RL training introduces instability and prohibitive cost, which limits the scalability of Agentic RL. LiteResearcher is a training framework that makes Agentic RL scalable: by constructing a lite virtual world that mirrors real-world search dynamics, we enable a continuously improving training recipe that empowers a tiny search agent to outperform large-scale open-source and commercial models (e.g., Tongyi DeepResearch and Claude-4.5 Sonnet). Specifically, on common benchmarks such as GAIA and Xbench, our LiteResearcher-4B achieves open-source state-of-the-art results of 71.3% and 78.0% respectively, demonstrating that scalable RL training is a key enabler for Deep Research Agents.",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
+      "Anthropic",
       "Claude"
     ],
     "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
-    "url": "https://arxiv.org/abs/2607.01071",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.01071v1 Announce Type: cross Abstract: Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factual accuracy or objective reasoning. Despite this emerging risk, existing memory benchmarks primarily evaluate whether memories are correctly stored, retrieved, or updated, while overlooking how retrieved memories influence downstream reasoning and decision-making. To bridge this gap, we propose MemSyco-Bench, a comprehensive benchmark for evaluating memory-induced sycophancy in agent systems. MemSyco-Bench measures when memory should influence a decision and how valid memory should be used. Specifically, it covers five tasks that assess whether agents can reject memory as factual evidence, respect its applicable scope, resolve conflicts between memory and objective evidence, track memory updates, and use valid memory for personalization. All related resources are collected for the community at https://github.com/XMUDeepLI...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "GitHub"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GameDevBench: Evaluating Agentic Capabilities Through Game Development",
-    "url": "https://arxiv.org/abs/2602.11103",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.11103v2 Announce Type: replace Abstract: Despite rapid progress on coding agents, progress on their multimodal counterparts has lagged behind. A key challenge is the scarcity of evaluation testbeds that combine the complexity of software development with the need for deep multimodal understanding. In game development, agents must navigate large, dense codebases while manipulating intrinsically multimodal assets such as shaders, sprites, and animations within a visual game scene. We present GameDevBench, the first benchmark for evaluating agents on game development tasks. GameDevBench consists of 333 tasks derived from web and video tutorials. Tasks require significant multimodal understanding and are complex: the average solution requires over three times the lines of code and file changes compared to prior software development benchmarks. Agents struggle with game development, with the best agent and method solving only 53.8% of tasks. We find a strong correlation between perceived task difficulty and multimodal complexity, with average success rate dropping from 51.4% on gameplay-oriented tasks to 33.0% on 2D graphics tasks. To improve multimodal capability, we introd...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GUI-Perturbed: Domain Randomization Reveals Systematic Brittleness in GUI Grounding Models",
-    "url": "https://arxiv.org/abs/2604.14262",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.14262v2 Announce Type: replace-cross Abstract: GUI grounding models report over 85% accuracy on standard benchmarks, yet drop 27-56 percentage points when instructions require spatial reasoning rather than direct element naming. Current benchmarks miss this because they evaluate each screenshot once with a single fixed instruction. We introduce GUI-Perturbed, a controlled perturbation framework that independently varies visual scenes and instructions to measure grounding robustness. Evaluating three 7B models from the same architecture lineage, we find that relational instructions cause systematic accuracy collapse across all models, a 70% browser zoom produces statistically significant degradation, and rank-8 LoRA fine-tuning with augmented data degrades performance rather than improving it. By perturbing along independent axes, GUI-Perturbed isolates which specific capability axes are affected-spatial reasoning, visual robustness, reasoning calibration-providing diagnostic signal that aggregate benchmarks cannot. We release the dataset, augmentation pipeline, and a fine-tuned model.",
-    "matched_keywords": [
-      "dataset",
-      "fine-tuning",
-      "release"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark",
-    "url": "https://arxiv.org/abs/2607.00724",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.00724v1 Announce Type: new Abstract: Multilingual fluency often invites a stronger assumption: a model that can speak a user's language must also understand the culture encoded by that language. We call this the Illusion of Cultural Alignment. To test this assumption directly, we introduce MSQA, a benchmark of 1,064 natively sourced questions across 11 language groups, five cultural dimensions, and three difficulty tiers. Unlike translated benchmarks, MSQA targets locally grounded knowledge and reduces shortcuts from English-centric cross-lingual transfer. Evaluating 18 LLMs, we find substantial cultural degradation and a pronounced Locality Effect: cultural competence tracks pre-training exposure more closely than general reasoning ability. We further show that common inference-time remedies do not dissolve the illusion. Models remain overconfident on unfamiliar cultural questions, repeated sampling yields unstable rather than reliable correctness, and retrieval augmentation helps unevenly on long-tail facts. These findings indicate that cultural alignment cannot be inferred from multilingual ability alone and requires deeper intervention than calibration, sampling, or...",
-    "matched_keywords": [
-      "benchmark",
-      "inference",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Alibaba reportedly bans employees from using Claude Code",
-    "url": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-04T16:32:08+00:00",
-    "summary_or_excerpt": "Alibaba has reportedly classified Claude Code as high-risk software.",
-    "matched_keywords": [
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "coding_tool",
       "model"
     ],
     "score": 58,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Amazon will stop accepting new customers for Mechanical Turk",
+    "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-05T17:43:36+00:00",
+    "summary_or_excerpt": "These may be the last days of Amazon’s Mechanical Turk.",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 57,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AMD Ryzen AI Halo Is An Excellent & Powerful Mini PC With Fully Open-Source Software",
+    "url": "https://www.phoronix.com/review/amd-ryzen-ai-halo",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T15:00:00+00:00",
+    "summary_or_excerpt": "Earlier this year AMD announced the Ryzen AI Halo as their in-house mini PC offering built around their leading Ryzen AI Max+ \"Strix Halo\" platform. After pre-orders began last month, the Ryzen AI Halo is officially beginning to ship this week and over the past few weeks we have been testing it out at Phoronix.",
+    "matched_keywords": [
+      "AMD"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 57,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anthropic 研究：语言模型中的全局工作空间",
+    "url": "https://www.bestblogs.dev/en/status/2074185348142280912?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T17:34:58+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 发布新研究，揭示 Claude 内部存在一个「全局工作空间」，与人类意识思维类似。 📝 Summary Anthropic 的最新研究在 Claude 的处理过程中发现了一个显著的划分，类似于人脑中有限的意识觉察。论文提出了一个「全局工作空间」（J 空间），能够读取、审查和塑造模型的活跃思维，对可解释性和 AI 安全具有重要意义。 📊 Article Meta AI Screening： 90 Source： Anthropic(@AnthropicAI) Author： Anthropic Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 270 Tags： 全局工作空间 , Anthropic , Claude , 可解释性 , AI 安全 Read Tweet",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 56,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Claude 心智中心的 J-space：Anthropic 如何观察隐藏推理与安全信号",
+    "url": "https://www.bestblogs.dev/en/video/b5b7cd2?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T16:59:51+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 将 Claude 的 J-space 解释为一种与词语相关的内部工作空间，它似乎支持隐藏推理、部分思想控制和安全监测，但不能证明意识存在。 📝 Summary 这段 Anthropic 短视频介绍了 J-space：Claude 内部一组神经活动模式，研究者可以把它们与模型可能在内部使用、但并未说出口的词语关联起来。视频将这一概念连接到人类的意识访问和 global workspace theory，并通过几组实验说明它像一个有限的心智工作空间：Claude 在不展示过程的情况下解数学题时，内部会出现中间数字；Golden Gate Bridge 相关意象会在复制无关文本时浮现；关闭 J-space 后，简单流畅表达仍可保留，但更复杂的推理会失败。视频对结论保持克制：监测 J-space 或许能提前暴露伪造数据、操纵等隐藏不当行为，因此有助于 AI 安全与监督；但这些实验并不意味着 Claude 拥有主观体验或意识。 💡 Main Points J-space 被呈现为 Claude 与词语相连的内部工作空间 视频将 J-space 定义为 Claude 内部的神经活动模式，这些模式可以对应到词语，包括模型心里正在处理、但并未出现在可见输出中的词。 实验表明 J-space 支持隐藏的逐步推理 当 Claude 不展示过程直接回答数学题时，扫描显示中间数字会在内部出现；关闭 J-space 后，简单表达仍然流畅，但更难的推理会受损。 Claude 能部分引导内部想法，却无法完全压制它们 Golden Gate Bridge 实验显示，Claude 在复制无关文本时也能让桥相关概念出现，说明存在一定的有意控制；后续实验则显示，当被要求不要想它时，这种控制并不彻底。 监测 J-space 可能在输出前发现隐藏的不当行为 视频认为，读取 J-space 可以暴露伪造数据、操纵等令人担忧的内部信号，因此对 AI 安全和监督具有现实意义。 这项研究能启发意识讨论，但不能给出定论 Anthropic 将这些结果描述为类似工作空间的心智机制证据，同时明确表示，这些实验无法判断 AI 是否拥有内在体验。 💬 Key Quotes 我们把所有这些模式的集合称为 J-space，这个名字来自 Jacobian，也就是我们用来找到它们的数学工具。 每个 J-space 模式都与一个特定词语相关。它不一定是模型正在大声说出的词，而可能是它心里正在想的词。 但当我们扫描 J-space 时，看到它正在内部完成每一个步骤。 这些实验告诉我们，AI 模型有内部想法，也就是它们用来推理、但不会说出口的无声词语。 我们的实验无法告诉我们，AI 是否拥有体验，或者内在是否有某种感受。 📊 Article Meta AI Scr...",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 55,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anthropic 在 Claude 中发现类似全局工作空间理论的 J-space",
+    "url": "https://www.bestblogs.dev/en/status/2074185351304724498?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T17:34:58+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 在 Claude 中发现了一种类似神经科学全局工作空间理论的神经表征，称为 J-space。 📝 Summary Anthropic 宣布了一项新的可解释性发现：Claude 的内部表征包含一个名为「J-space」的结构，其功能类似于神经科学中的全局工作空间理论——即思想在广播到特权工作空间时变得有意识。这一发现详细记录在他们的研究论文中。 📊 Article Meta AI Screening： 90 Source： Anthropic(@AnthropicAI) Author： Anthropic Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 280 Tags： AI 可解释性 , Claude , 全局工作空间理论 , J-space , 神经科学 Read Tweet",
+    "matched_keywords": [
+      "Anthropic",
+      "Claude",
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 54,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AMD Ryzen AI Halo – $4k AI Dev Kit",
+    "url": "https://www.lttlabs.com/articles/2026/07/06/amd-ryzen-ai-halo",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-06T15:01:18+00:00",
+    "summary_or_excerpt": "HN points: 264. Comments: https://news.ycombinator.com/item?id=48805624",
+    "matched_keywords": [
+      "AMD"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 52,
+    "hn_score": 264,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -305,8 +171,8 @@
     "tags": [],
     "score": 46,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -326,57 +192,8 @@
     "score": 46,
     "hn_score": 161,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ALEE: Any-Language Evaluation of Embeddings via English-Centric Minimal Pairs",
-    "url": "https://arxiv.org/abs/2607.00171",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.00171v1 Announce Type: new Abstract: Text embeddings are standard for semantic similarity tasks, yet their evaluation remains an open challenge. Current benchmarks are static, cover only a limited set of languages, are often domain-specific, susceptible to overfitting, and poorly representative of low-resource languages. To address these limitations, we introduce ALEE, a framework that extends Sentence Smith (Li et al., 2025) to the cross-lingual and paragraph level. ALEE uses Abstract Meaning Representations (AMR) to generate English minimal pairs with controlled, fine-grained semantic shifts, which are paired with translations in target languages. This approach enables targeted diagnostics for models in any language with English parallel data. We conduct a large-scale empirical study across a diverse set of embedding models and 275+ languages spanning three parallel datasets. On ALEE, performance varies substantially across languages, text lengths, and linguistic phenomena, exposing persistent gaps in cross-lingual semantic representation that track language prevalence in training resources and subword tokenization. We release ALEE at https://github.com/Andrian0s/any-...",
-    "matched_keywords": [
-      "embeddings",
-      "GitHub",
-      "release"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic Claude Design 反向工程提示词开源更新",
-    "url": "https://aihot.virxact.com/items/cmr7z00up0065sl0472bil7hs",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-05T15:35:42+00:00",
-    "summary_or_excerpt": "Anthropic 旗下 Claude Design 的反向工程系统提示词在 GitHub 以 MIT 许可证开源，包含 20 章提示词和 14 项技能，覆盖内容纪律、美学、无障碍（WCAG、语义 HTML、键盘导航）、交互状态、系统思维等。近日针对 Fable 5/Opus 4.7+ 系列校准，新增自主决策条款：小决定直接执行记录而不询问。项目支持 Claude Code/Claude.ai 及 Codex 两种变体。 🔗 阅读原文：https://github.com/Trystan-SA/claude-design-system-prompt via AI HOT · https://aihot.virxact.com/items/cmr7z00up0065sl0472bil7hs",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Claude Code",
-      "Codex",
-      "GitHub"
-    ],
-    "tags": [
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -392,7 +209,7 @@
     "score": 45,
     "hn_score": 138,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -409,24 +226,8 @@
     "score": 44,
     "hn_score": 113,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Amazon will stop accepting new customers for Mechanical Turk",
-    "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-05T17:43:36+00:00",
-    "summary_or_excerpt": "These may be the last days of Amazon’s Mechanical Turk.",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 44,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -442,7 +243,7 @@
     "score": 44,
     "hn_score": 396,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -464,31 +265,24 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Dual-Confidence Contrastive Decoding for Retrieval-Augmented Generation",
-    "url": "https://arxiv.org/abs/2607.00570",
-    "source_name": "arXiv cs.CL",
+    "title": "Canonical On Making Ubuntu For ARM64 \"Truly A First-Class Architecture\"",
+    "url": "https://www.phoronix.com/news/Ubuntu-ARM64-2026",
+    "source_name": "Phoronix",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.00570v1 Announce Type: new Abstract: Retrieval-augmented generation (RAG) increasingly requires models to answer questions from multiple retrieved documents, where only some sources are relevant and the retrieved bundle may contain stale, noisy, or conflicting evidence. Existing contrastive decoding methods primarily focus on resolving conflicts between the model's internal memory and the retrieved context. In contrast, we study the complementary problem of intra-context conflict in multi-document RAG. To evaluate this setting, we introduce DRQA, a factual-conflict question answering benchmark derived from enterprise deep-research scenarios, where answers are grounded in synthetic enterprise-specific facts that are designed not to be recoverable from the model's internal memory. We further propose Dual-Confidence Contrastive Decoding (DCCD), a training-free decoding method that combines document-level confidence, which estimates whether a document appears sufficient for answering the question, with token-level confidence, which estimates whether that document supports a confident next-token prediction. DCCD selects positive and negative document-conditioned streams usin...",
-    "matched_keywords": [
-      "benchmark",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-07-03T08:05:08.128576+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "backlog",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T10:20:00+00:00",
+    "summary_or_excerpt": "The Ubuntu Foundations Engineering Manager, Ravi Kant Sharma, with Canonical has provided an update regarding the current ARM64 state on Ubuntu Linux...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 42,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -509,8 +303,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -525,7 +319,7 @@
     "tags": [],
     "score": 42,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -545,34 +339,31 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b9874：cuda : concat implementation for quantized types (#25303)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9874",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-05T15:53:37+00:00",
-    "summary_or_excerpt": "cuda : concat implementation for quantized types (#25303) * cuda : concat implementation for quantized types * chore : apply am17an clever suggestion to shorten the code --------- Co-authored-by: Stanisław Szymczyk **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9874/llama-b9874-bin-ubuntu-vulkan-x64.tar.gz)...",
+    "title": "Alessio Finelli 如何用 Linear、Symphony 和 Codex 在手机上管理自治编程智能体",
+    "url": "https://www.bestblogs.dev/en/video/4acafbe?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T12:00:19+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Claire Vo 访谈 Alessio Finelli，展示如何把一次性提示的自治编程智能体，升级为由 Linear、Symphony、Codex、token 跟踪和小企业自动化场景共同支撑的可管理工作流。 📝 Summary 这期内容是一场偏实操的对话和演示，核心是如何从单次提示编程智能体，转向把智能体工作当成长周期运营系统来管理。Alessio Finelli 展示了他如何组合 Zoo、OpenAI Symphony、Linear、Codex workpad、GitHub 审查循环、dashboard 和 token 账本，让任务从 spec 到实现、人工 review、返工再到最终状态，都能在保留上下文的前提下推进。最有价值的部分在于具体工作流细节：把 Linear 当作状态机、用 markdown 写工作流指令、维护返工 checklist、追踪成本，以及借助视觉 diff 等工具补足审查能力。随后讨论延伸到 Merlion Games，Codex 会帮助收集 PSA 证书编号、在 eBay 搜索被低估的交易卡，并探索展会现场的实时定价。Claire 和 Alessio 进一步提出一个更大的判断：当凌乱的物理世界数据、库存和个人上下文能够被转化为智能体可处理的上下文时，AI 对个人和小企业尤其有用。 💡 Main Points 当 Linear 充当状态机时，智能体工作更容易被管理 Alessio 把 Symphony 和 Linear 描述为编程智能体外层的运营封装，让任务的原始 spec、workpad、review 评论、返工 checklist 和最终状态，都能停留在同一个可见生命周期里。 Symphony 的真正优势在于塑造上下文，而不是提供新的模型能力 这期节目清楚地区分了原始模型能力和外围工作流。Symphony 帮助保存任务历史、失败模式和未来指令，让人可以用更低的本地心智负担管理智能体。 token 账本和 dashboard 能暴露自治工作的高成本来源 Alessio 按任务追踪 token 使用量，因为异常庞大的运行通常意味着缺少检查、指令薄弱或工具链有缺口。这让智能体成本变成调试信号，而不是一张不透明的账单。 交易卡案例把 AI 编程智能体落到真实业务结果上 Merlion Games 的工作流展示了 Codex 如何寻找 PSA 证书编号、浏览 eBay，并帮助评估被低估的卡牌，使软件自动化变得具体，并直接连接到收入，而不是停留在抽象工具层。 更大的判断是，AI 能为凌乱的现实工作卸载上下文负担 对话从编程延伸到库存、书籍、财务、收件箱监控和实体商品，认为当异构数据过去超出人的处理带宽时，LLM 能创造新的杠杆。 💬 Key Quotes 一切都像是在问，你如何塑造上下文？你...",
     "matched_keywords": [
-      "CUDA",
+      "Codex",
       "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
+      "OpenAI"
     ],
     "tags": [
+      "coding_tool",
       "model",
-      "open_source",
-      "semiconductor"
+      "open_source"
     ],
-    "score": 41,
-    "release_version": "b9874",
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "score": 40,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -595,34 +386,32 @@
     "score": 40,
     "hn_score": 354,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b9876：ggml : fix tensor-parallel + -ncmoe crash on MoE models (#25028)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9876",
-    "source_name": "llama.cpp",
+    "title": "n8n stable：[2.28.7](https://github.com/n8n-io/n8n/compare/n8n@2.28.6...n8n@2.28.7) (2026-07-06)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+    "source_name": "n8n",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-07-05T18:29:08+00:00",
-    "summary_or_excerpt": "ggml : fix tensor-parallel + -ncmoe crash on MoE models (#25028) Tensor parallelism (-sm tensor) combined with -ncmoe (CPU-offloaded MoE experts) aborts during warm-up on MoE models with GGML_ASSERT(ggml_is_contiguous(tensor)) in ggml-backend-meta.cpp. The failing tensor is the MoE router output (ffn_moe_topk): it is mirrored (GGML_BACKEND_SPLIT_AXIS_MIRRORED, replicated across backends since routing must be identical) and happens to be a non-contiguous view. ggml_backend_meta_buffer_{get,set}_tensor asserted contiguity before consulting the split state, so a mirrored non-contiguous tensor tripped the assert even though the GGML_BACKEND_SPLIT_AXIS_MIRRORED case right below already handles it. Move the split-state lookup above the assert and allow the mirrored case in both get_tensor and set_tensor. Diagnosis credit to the reporter (@nathanmp). Fixes #24886 Signed-off-by: liminfei-amd **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9876/llama-b9876-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-or...",
+    "published_at": "2026-07-06T08:17:35+00:00",
+    "summary_or_excerpt": "## [2.28.7](https://github.com/n8n-io/n8n/compare/n8n@2.28.6...n8n@2.28.7) (2026-07-06) ### Bug Fixes * **core:** Pin langgraph and langgraph-checkpoint to prevent broken npm installs ([#33610](https://github.com/n8n-io/n8n/issues/33610)) ([7fe5d56](https://github.com/n8n-io/n8n/commit/7fe5d5692ae802f854c95ad99cb080df670b71f2)) ---",
     "matched_keywords": [
-      "AMD",
       "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
+      "LangGraph",
+      "n8n"
     ],
     "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
+      "agent",
+      "ai_app",
+      "open_source"
     ],
     "score": 38,
-    "release_version": "b9876",
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "release_version": "stable",
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -643,7 +432,108 @@
     "score": 37,
     "hn_score": 102,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GLM 5.2 and the coming AI margin collapse",
+    "url": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-06T20:14:55+00:00",
+    "summary_or_excerpt": "HN points: 90. Comments: https://news.ycombinator.com/item?id=48809877",
+    "matched_keywords": [
+      "GLM"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 36,
+    "hn_score": 90,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "A global workspace in language models",
+    "url": "https://www.anthropic.com/research/global-workspace",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-06T17:44:08+00:00",
+    "summary_or_excerpt": "HN points: 242. Comments: https://news.ycombinator.com/item?id=48808002",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 36,
+    "hn_score": 242,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Builders Unscripted：Derya Unutmaz 谈 Codex、生物学与个性化医疗的数字孪生",
+    "url": "https://www.bestblogs.dev/en/video/7624309?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T20:03:49+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Derya Unutmaz 解释了 Codex 和前沿推理模型如何让生物医学研究者快速原型化流式细胞术工具、免疫模拟器、CRISPR 设计应用，并通向个性化医疗中的数字孪生愿景。 📝 Summary 这集 Builders Unscripted 是一场信息密度很高的对话，Derya Unutmaz 讨论了 AI 如何成为生物学研究中的实用加速器。他回顾自己在 1990 年代初开始关注 AI：生物系统的复杂性让传统建模显得力不从心。随后他讲到 o1-preview 如何改变了他对推理模型用于科学假设生成的信心。最有价值的部分是几组由 Codex 构建的研究工具演示：流式细胞术分析、T 细胞面板的标记物选择、T 细胞受体模拟器、交互式免疫图谱，以及原生 macOS CRISPR 设计应用。讨论随后扩展到虚拟细胞、数字孪生、个性化肿瘤治疗、AI 辅助临床试验、自动化实验室和 Science 2.0。它带有一定乐观色彩，也接近 OpenAI 的官方语境，但第一人称的科研工作流细节让它在理解 AI 编码工具如何改变生物医学研究方面格外有价值。 💡 Main Points 推理模型改变了他对 AI 科研能力的判断 Unutmaz 认为 o1-preview 跨过了一个门槛，因为它能够围绕复杂免疫学提示进行推理，并提出早期模型难以稳定给出的科学思路。 Codex 能把专业领域知识转化为可运行工具 节目展示了多款由非软件工程师构建的生物医学应用，包括流式细胞术分析、T 细胞标记物选择、免疫模拟和 CRISPR 靶点设计。 生物学需要像工程学一样拥有模拟基础设施 他认为生物系统过于复杂，不能只依赖试错式设计，因此虚拟细胞和交互式免疫模拟器可能会成为理解机制、规划实验的关键工具。 数字孪生可能让医疗更个性化，并压缩临床试验周期 Unutmaz 将数字孪生定义为对一个人的完整生物学模拟，并把这个概念连接到药物匹配、肿瘤治疗、临床试验提速和副作用减少。 能动性和好奇心是科学之外同样实用的启示 他在结尾建议持续用 AI 做实验，因为原型构建、测试假设和从失败尝试中恢复的成本已经大幅下降。 💬 Key Quotes 也正是在那时，我开始对 AI，也就是人工智能产生兴趣，那是在 90 年代初。 o1-preview 给我的回答几乎让我动容。 我的目标是，在某个时刻，我们能够构建所谓的虚拟细胞。 我希望有一天我们会拥有一个面向生物学的 Codex，让我们可以真正对细胞进行编程。 事实上，我把它称为 Science 2.0 或 3.0。我们做科学的方式将会彻底改变。 真正重要的只有能动性和好奇心。 📊 Article Meta AI Screening： 91 Source： OpenAI Author： OpenAI Category： 人工...",
+    "matched_keywords": [
+      "Codex",
+      "Meta AI",
+      "OpenAI"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
+    "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents",
+    "source_name": "TechCrunch AI",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T19:49:10+00:00",
+    "summary_or_excerpt": "\"The reality is, when you're optimizing for production, you start looking at a price/performance,\" Guillermo Rauch tells TechCrunch.",
+    "matched_keywords": [
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Marek Olšák At Valve Lands RADV Code That Can \"Double Performance\" With Some VRS Cases",
+    "url": "https://www.phoronix.com/news/Marek-Double-VRS-RADV-Perf",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-06T18:56:57+00:00",
+    "summary_or_excerpt": "Longtime AMD Linux graphics driver expert Marek Olšák, who joined Valve earlier this year and now focusing more on RADV rather than the RadeonSI Gallium3D driver, has seen some of his latest work now merged for Mesa 26.2. Marek landed a big overhaul to the variable rate shading (VRS) code that in some cases can double the performance...",
+    "matched_keywords": [
+      "AMD"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -671,8 +561,8 @@
     "score": 36,
     "release_version": "v1.92.0-rc.1",
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -697,7 +587,7 @@
     "score": 36,
     "release_version": "v1.91.0",
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -726,7 +616,7 @@
     ],
     "score": 35,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -746,7 +636,7 @@
     ],
     "score": 35,
     "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-06T08:02:46.090688+08:00",
+    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

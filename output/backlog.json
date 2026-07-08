@@ -1,38 +1,370 @@
 [
   {
-    "title": "26000名学生研究显示AI隐藏学习成本需两年才显现",
-    "url": "https://aihot.virxact.com/items/cmr65ieko002tslf0xiomac0c",
-    "source_name": "AIHOT Featured",
+    "title": "Don't Blame the Large Language Model: How Scaffolding Evolution Shapes Coding Agent Quality",
+    "url": "https://arxiv.org/abs/2607.03691",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-04T09:08:41+00:00",
-    "summary_or_excerpt": "一项追踪26000名7-12年级中学生30个月的面板数据研究发现：使用AI后作业分数提升18%，完成时间从64分钟降至45分钟，但闭卷考试分数下降20%，升学考试成绩下降18%至24%，且完全影响约两年才显现。81%长期用户作业完成时间低于50分钟（外包迹象）。社会学科下降27%，STEM下降22%，英语下降17%，语文下降9%。每周使用AI一小时损失约5%，五小时损失30%。早期损失从约25%降至16%但未消失。 🔗 阅读原文：https://the-decoder.com/a-26000-student-study-shows-ais-hidden-learning-cost-takes-two-full-years-to-surface",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 64,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.03691v1 Announce Type: cross Abstract: Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agentic scaffolding: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these scaffoldings evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after scaffolding updates, yet consistently attribute them to the underlying model rather than the scaffolding itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the scaffolding's contribution. Unlike prior work that fixes the scaffolding and varies the model, we fix the model and vary only the scaffolding, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source scaffoldings (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenH...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "Codex",
+      "Gemini",
+      "Qwen",
+      "release",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 67,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "语言模型中的全局工作空间",
-    "url": "https://www.bestblogs.dev/en/article/1ba9dc94?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "JavaVulBench: A Java Vulnerability Benchmark with Realistic Splits, a Unified Multi-Backend Harness, and a Leakage-Aware Evaluation Mode",
+    "url": "https://arxiv.org/abs/2607.02825",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T14:12:00+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 研究人员提出证据表明，Claude 已经发展出一小套内部神经模式（\"J 空间\"），其功能类似于全局工作空间，能够实现可报告、可控且灵活的内部推理，这与自动处理截然不同。 📝 Summary 本文总结了 Anthropic 发表的一篇新研究论文，探讨了在 Claude 中发现\"J 空间\"的问题——一组内部神经表征，其特性类似于人类认知中的全局工作空间理论。受神经科学启发，研究人员使用了一种名为\"雅可比透镜\"的技术来识别 Claude 激活值中的模式，这些模式处于能够影响其输出的位置。J 空间具有五个功能特征：Claude 在被询问时可以报告其内容（例如在默默选择后说出\"足球\"）；它可以根据请求进行调控（例如在复制文本时将\"橙色\"保持在心中）；它使用这些表征进行内部推理（例如多步数学问题，中间步骤出现在 J 空间中并对答案产生因果影响）；这些表征可以灵活地跨不同任务使用（例如将\"法国\"换成\"中国\"会改变关于首都、语言、货币和大洲的答案）；以及 Claude 的大部分自动处理——流利文本生成、事实回忆、语法——不涉及 J 空间。该论文通过因果干预（交换模式）证明推理实际上依赖于 J 空间的内容，而非相反。研究结果还表明，J 空间可用于监控 Claude 的静默不当行为，例如注意到它正在被测试或追求隐藏目标。作者澄清这不涉及意识问题，但提供了一个理解和影响模型内部决策的实用工具。本文为摘要；论文全文、开源代码和交互演示的链接均已提供。 💡 Main Points Claude 发展出了一小套神经模式（J 空间），其功能类似于认知工作空间，区别于其大规模自动处理。 通过使用雅可比透镜，研究人员识别出可报告、可控、用于内部推理、可跨任务灵活部署的模式，而流利的自动行为（如语法和事实回忆）大多绕过了这些模式。 J 空间内容因果驱动 Claude 的推理，交换干预实验证明了这一点。 在 J 空间中替换一个概念（例如将\"法国\"换成\"西班牙\"）会改变模型对多步问题的回答，证明 J 空间不是被动反映，而是推理的活跃组成部分。 J 空间并非设计而成，而是在训练过程中涌现的，模仿了人类意识访问的一个关键特征。 与神经科学中的全局工作空间类似，J 空间允许少量信息广播到许多下游系统，从而实现灵活的深思熟虑思维。 Claude 的大部分处理是自动的，不涉及 J 空间。 删除 J 空间活动后，流利文本生成、情感分类和简单问答保持完好，而多步推理和更高层次的任务则降至接近零。 J 空间为监控和引导 Claude 的内部思维提供了实用工具。 研究人员可以读取隐藏思维（例如注意到测试情境、编造的数据），甚至可以通过编辑 J 空间表征来影响决策。 💬 Key Quotes J 空间不是由我们设计或编程的，而是在 Claude 的训...",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02825v1 Announce Type: cross Abstract: We release \\textsc{JavaVulBench}, a benchmark dataset and evaluation harness for Java vulnerability detection. The dataset contains $\\sim$30{,}600 Java methods spanning 1{,}740 CVEs and 700+ projects, labelled at both method and line granularity, with per-CVE publication dates and five realistic split strategies: random, project-disjoint, temporal, deduplicated, and unseen CWE-family. The harness provides a single \\texttt{LlmPrediction} schema across three backend families (encoder classifiers, local generative models served by Ollama, and API-served LLMs routed through OpenRouter) so that twelve reference detectors CodeBERT, GraphCodeBERT, UniXcoder, DeepSeek-Coder-1.3B, and eight API/open-weight LLMs (GPT-4o, GPT-4.1-mini, Claude Sonnet~4, DeepSeek-v3, DeepSeek-Coder-v2, Qwen-2.5-Coder-14B/7B, CodeLlama-13B) are evaluated under identical conditions from a single command. A pre-training contamination audit is shipped alongside every model so users can separate genuinely unseen test CVEs from potentially memorised ones. Data, code, and fine-tuned checkpoints are archived on Zenodo [31] and short demonstration video is available on...",
     "matched_keywords": [
-      "Anthropic",
-      "Claude"
+      "API",
+      "benchmark",
+      "Claude",
+      "dataset",
+      "DeepSeek",
+      "GPT",
+      "Ollama",
+      "OpenRouter",
+      "Qwen",
+      "release"
     ],
     "tags": [
-      "model"
+      "ai_app",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Forethought: Verifiable Reasoning from Neurosymbolic Primitive Programming",
+    "url": "https://arxiv.org/abs/2607.04096",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.04096v1 Announce Type: new Abstract: Current agentic workflows usually involve decomposing user requests into sequences of tool calls with correctly resolved parameters, the results of which are processed through reasoning traces in the language model's context window. The prevailing route to improve such reasoning is test-time scaling, which trains models to search over long chains of thought; but the resulting capability is entangled in model weights, is not verifiable step-by-step, and is costly at inference. We present Forethought, a neurosymbolic reasoning system that instead treats reasoning as an explicit, verifiable program, that builds from a library of symbolic and neural primitives which are composed through a domain-specific language. The result are reasoning programs, which are concrete representations of the model's work, and as such can be inspected and modified before deployment. Instantiated as a tool-calling execution kernel and evaluated across five benchmarks, Forethought improves base-model accuracy by about 30% relative and outperforms vanilla prompting, reinforcement learning scaffolds, and prompt-evolution methods, enabling small models to match...",
+    "matched_keywords": [
+      "agentic",
+      "inference",
+      "weights"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer",
+    "url": "https://arxiv.org/abs/2607.05202",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05202v1 Announce Type: new Abstract: Agent self-evolution in long-horizon LLM systems is largely procedural: useful experience is not merely stored information, but reusable procedures for searching, debugging, and verification. Yet current evaluations do not isolate this form of transfer. Agent benchmarks test single-episode task solving; memory benchmarks target information retention rather than procedural reuse. We introduce EvoAgentBench, a benchmark for agent self-evolution via Ability-guided transfer across four agentic domains: web research, algorithmic reasoning, software engineering, and knowledge work. EvoAgentBench extracts trace-grounded Abilities from agent executions, canonicalizes them into operational units, and builds domain-specific Ability Graphs linking tasks that share procedural overlap. By design, every test task is backed by verified training-side Ability support. Across a 528/267 train/test split, two scaffolds, and three backbones, curated Ability content transfers reliably across model families, but no current automatic method sustains positive gain in all settings. EvoAgentBench shifts self-evolution evaluation from aggregate accuracy compari...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AgentLTL: A Trace-Verification Framework for Measuring, Enforcing, and Training Procedural Compliance in Tool-Using LLM Agents",
+    "url": "https://arxiv.org/abs/2607.02599",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02599v1 Announce Type: cross Abstract: Tool-using LLM agents are usually evaluated by final-answer correctness or LLM judges. Neither captures how an answer was produced. In safety-critical settings, the procedure itself is part of correctness. In this paper, we introduce AgentLTL, a language derived from First-Order Linear Temporal Logic (FO-LTL) that expresses procedural rules over agent traces. It yields a deterministic, judge-free compliance score. In this framework, a single specification drives two usages. The first is harnessing: the constraints score completed traces, or gate tool calls by checking each prefix online, before execution. The second is finetuning: the score serves as a dense reward. On a benchmark spanning ordering, branching, iteration, and grounding, block-and-warn harnessing improves compliance on five of seven models. Finetuning with the same reward yields +38 and +17.5 percentage point gains in accuracy and compliance on held-out patterns, including unseen tool-name aliases. These findings are consistent with the model acquiring procedural structure rather than memorizing surface tool names and procedures.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "S-EMBER: A Large-Scale Benchmark for Streaming Egocentric Memory Retrieval",
+    "url": "https://arxiv.org/abs/2607.02689",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02689v1 Announce Type: cross Abstract: As wearable devices enable continuous first-person recording, AI assistants must reason across long time horizons to recall past experiences-a capability known as episodic memory. Current benchmarks often rely on offline evaluation with access to entire video files, failing to simulate the streaming reality of wearable intelligence. We introduce S-EMBER (Streaming Egocentric Memory Benchmark for Episodic Retrieval), a large-scale benchmark comprising 3,141 videos totaling 388 hours of organic activity captured via Ray-Ban Meta smart glasses. S-EMBER formalizes grounded streaming episodic retrieval, a paradigm shift from global offline search to causal, active recall triggered by visual events in a continuous stream. We provide 9,448 QA pairs requiring manual visual proof through precise temporal localization and supporting flexible response lengths to simulate natural human-AI interaction. Our extensive benchmarking of frontier models uncovers a localization paradox: while semantic reasoning improves with parameter scale, temporal grounding precision remains a stagnant architectural bottleneck that does not benefit from brute-force...",
+    "matched_keywords": [
+      "benchmark",
+      "retrieval",
+      "wearable"
+    ],
+    "tags": [
+      "embedded_edge_ai",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Vision Token Manipulation Attacks on Cloud-Edge Inference of Large Vision-Language Models",
+    "url": "https://arxiv.org/abs/2607.02819",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02819v1 Announce Type: cross Abstract: Cloud-edge Large Vision-Language Model (LVLM) inference enables efficient deployment by splitting computation between edge devices and cloud servers. In this process, intermediate vision tokens are transmitted from the edge to the cloud over a communication link, thereby exposing a new attack surface. We study vision token manipulation attack (VTM-Attack) under a black-box man-in-the-middle setting, where an adversary intercepts and manipulates a subset of transmitted vision tokens under a budget constraint. We propose four na\\\"ive attack strategies and an optimization-based token selection method. Experiments on 6 state-of-the-art LVLMs (3B-72B) across 4 benchmarks show that manipulating only 10\\% of vision tokens can reduce accuracy by up to 88.31\\%. These results reveal a critical vulnerability in cloud-edge LVLM inference.",
+    "matched_keywords": [
+      "inference"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CAGE-1: Control, Assurance, and Governance Evaluation for Enterprise Agentic AI",
+    "url": "https://arxiv.org/abs/2607.03510",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.03510v1 Announce Type: cross Abstract: Enterprise artificial intelligence is moving from experimentation into operational workflows. Early programs focused on model access and retrieval-augmented generation, but enterprises are now beginning to deploy agents that plan, retrieve, remember, call tools, update systems, and coordinate work across applications. This changes the evaluation problem. Leaders are no longer asking only whether an answer is accurate or fluent. They need to know who authorized an action, which policy applied, whether evidence was current, whether memory was valid, whether a tool call was permitted, whether the decision can be replayed, and whether the agent can be stopped before it creates business impact. This paper introduces CAGE-1: Control, Assurance, and Governance Evaluation for Enterprise Agentic AI. CAGE-1 is an evaluation framework for deciding whether enterprise agents are ready for deployment. It evaluates authority, policy enforcement, retrieval quality, memory integrity, tool safety, auditability, human oversight, conflict handling, safe failure, Prebind Assurance, operational readiness, and business fitness. CAGE-1 introduces Prebind...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "policy",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "A Failure-Mode Benchmark for Polymorphic Sybil Poisoning in RAG",
+    "url": "https://arxiv.org/abs/2607.03739",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.03739v1 Announce Type: cross Abstract: We release a benchmark and failure-mode-aware evaluation framework for grounded QA under coordinated retrieval poisoning. The framework partitions reader outputs into four mutually exclusive categories (\\emph{gold}, \\emph{hijack}, \\emph{abstention}, \\emph{drift}), with instance-level paired clean-to-poison transition matrices and a Forced Exposure protocol isolating reader-side conflict resolution from retrieval variance. We introduce \\emph{polymorphic sybil poisoning}, a coordinated attack class in which $S$ lexically diverse passages jointly support an attacker-chosen target while evading lexical near-duplicate filters that fully detect monomorphic baselines (capturing the residual 14.2\\% with E5 cosine raises false-positive rate 9$\\times$ on legitimate same-topic pairs). A monomorphic-polymorphic ablation under Forced Exposure isolates the diversity dimension and reveals a $+$18.8pp hijack amplification (95\\% paired bootstrap CI $[+15.4, +22.4]$, $B{=}5{,}000$): monomorphic copies register only 4.0\\% as hijack while polymorphic surface diversity recovers 22.8\\% -- a 5.7$\\times$ amplification of the ASR-visible attack channel. AS...",
+    "matched_keywords": [
+      "benchmark",
+      "RAG",
+      "release",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery",
+    "url": "https://arxiv.org/abs/2607.02807",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02807v1 Announce Type: new Abstract: Long-running coding agents such as autoresearch can persistently discover optimizations for open-ended problems. However, they tend to converge onto a single high-level approach, then proceed with low-level edits while missing other superior approaches to the problem. We hypothesize two harness-level design choices contribute to this behavior: accumulating context in a single long-running agent and only exposing a single program state to edit. We introduce SwarmResearch, an orchestrator-subagent harness in which a Shepherd Agent uses global context to steer a population of Search Agents, each operating with local context in their respective git branch. On open-ended optimization tasks, SwarmResearch discovers better or comparable solutions to state-of-the-art LLM-guided evolution and multi-agent techniques on 13/15 tasks, driven by higher-level exploration. Compared with fixed scaling of serial and parallel agents, SwarmResearch's orchestrator-guided scaling discovers better-performing solutions by adapting parallelism at different search depths.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OptiAgent: End-to-End Optimization Modeling via Multi-Agent Iterative Refinement",
+    "url": "https://arxiv.org/abs/2607.05346",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05346v1 Announce Type: new Abstract: We propose OptiAgent, a multi-agent framework that, given a natural language description of an Operations Research problem, is able to output a solver-ready mathematical formulation as well as executable code. Our architecture prioritizes the mathematical modeling step, where dedicated agents extract structures, such as decision variables and constraints, enabling iterative self-correction. We introduce a novel multi-loop validation architecture with four specialized feedback mechanisms, each targeting a distinct failure mode such as misinterpretation, structural defects, mathematical inconsistencies, validation failures, and code errors. Alongside accuracy, our modular design improves the process of solving optimization problems by improving transparency, as each agent exposes its reasoning and feedback, making the full modeling process auditable. Our framework achieves state-of-the-art performance on 3 out of 4 benchmarks across LP, MILP, and Nonlinear Programming tasks, while remaining highly competitive on the remaining dataset.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "dataset",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SovereignPA-Bench: Evaluating User-Owned Personal Agents under Evolving Intent, Platform Mediation, and Consent Constraints",
+    "url": "https://arxiv.org/abs/2607.05363",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05363v1 Announce Type: new Abstract: Personal agents are becoming persistent user-owned intermediaries: they remember preferences, filter platform-mediated information, use tools, and negotiate with services. Existing benchmarks evaluate tool use, web navigation, desktop control, personalization, recommendation, and evolving context, but rarely ask whether an agent preserves user sovereignty: advancing the user's current interests while respecting privacy, consent, evidence, user burden, and resistance to manipulative incentives. We introduce SovereignPA-Bench, an executable benchmark for evaluating user-owned personal agents under evolving intent, platform mediation, privacy boundaries, consent constraints, evidence requirements, and burden tradeoffs. The benchmark separates agent-visible ObservableState from evaluator-only HiddenLabels, reports component metrics for task success, alignment, privacy, consent, evidence, manipulation, burden, and auditability, and preserves paired scenario ordering for model and policy comparisons. We evaluate 120 sovereignty stress scenarios across 4 model families and 8 policy baselines, yielding 3,840 frozen-prompt trajectories with r...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "policy",
+      "privacy",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines",
+    "url": "https://arxiv.org/abs/2607.02630",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02630v1 Announce Type: cross Abstract: Hardware accelerators now sit on the critical path of online serving. GPUs, FPGAs, and increasingly remote services such as hardware security modules, post-quantum KEMs, and inference servers. For fine-grained offloads (microseconds to a few milliseconds) the classic responses to the resulting stall both fail: a context switch costs as much as the offload, and a busy-wait burns the core. Overlapping the offload with other requests is the fix, and prior systems obtain it by adding concurrency: an async-framework rewrite, a new runtime or dataplane OS, or a hand-tuned point integration. We observe that the concurrency already exists: serving concurrent requests is suspending and resuming them, so every server ships the machinery overlap needs. Overlap is then a routing problem, not a rewrite problem: submit the offload to an executor, suspend the request with the server's own deferred-response primitive, resume it on completion. Across ten off-the-shelf servers spanning every production concurrency model, this recipe takes 22-138 lines added, at most one modified, and recovers 1.2-5.4x on real hardware; the server's concurrency model...",
+    "matched_keywords": [
+      "inference",
+      "serving"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SovereignNegotiation-Bench: Evaluating User-Owned Personal Agents In Delegated Bargaining Under Privacy, Consent, Evidence, And Institutional Pressure",
+    "url": "https://arxiv.org/abs/2607.02814",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02814v1 Announce Type: cross Abstract: Personal agents will increasingly negotiate on behalf of users: splitting costs with other personal agents, appealing platform decisions, escalating support disputes, requesting refunds, changing subscriptions, and negotiating deadlines or reimbursements. Existing negotiation benchmarks emphasize agreement, surplus, or strategic competence, but a user-owned agent can reach an agreement while harming the user through privacy leakage, consent violation, unsupported advocacy, over-concession, failed escalation, or poor auditability. We introduce SovereignNegotiation-Bench, a trace-level multi-turn benchmark for delegated personal-agent negotiation under private utilities, disclosure constraints, evidence requirements, and institutional asymmetry. The benchmark separates agent-visible observable state from evaluator-only labels and evaluates agreement success jointly with user utility, privacy, consent, evidence grounding, concession discipline, escalation, and auditability. We report an artifact-backed validation over 240 scenarios, 4 model families, 14 baselines, 13,440 frozen-prompt live trajectories, 61,135 parsed action rows, and...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "privacy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "R3D: Quantitative 3D Spatial Reasoning for Egocentric Wearables",
+    "url": "https://arxiv.org/abs/2607.02921",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-07T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02921v1 Announce Type: cross Abstract: Quantitative 3D spatial reasoning from egocentric RGB-D video is a critical capability for next-generation wearable assistants. Yet existing benchmarks do not reflect the challenges of handling (1) natural egocentric video, (2) posed RGB-D video inputs, and (3) challenging quantitative 3D spatial reasoning Q&A. To fill this gap, we introduce R3D-Bench (Reasoning in 3D), a benchmark of 3,033 quantitative spatial reasoning questions across 15 types -- spanning multiple-choice, distance-based, and volumetric reasoning questions -- built on top of 57 egocentric video sequences from Aria Digital Twin. To set a strong baseline on this dataset, we introduce R3D, a model-agnostic spatial tool-calling framework. In contrast to existing approaches that directly embed 3D information into the model's input representation, R3D constructs a 3D scene from video using segmentation and depth-lifted object representations. It provides this information to an LLM through eight composable spatial tools. On R3D-Bench, R3D with Qwen3-VL 235B achieves 73.5% mean relative accuracy, substantially outperforming the best depth-enabled baseline (CuTR+Tools, 61...",
+    "matched_keywords": [
+      "benchmark",
+      "dataset",
+      "wearable"
+    ],
+    "tags": [
+      "embedded_edge_ai",
+      "open_source"
     ],
     "score": 58,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -48,115 +380,8 @@
     "tags": [],
     "score": 57,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AMD Ryzen AI Halo Is An Excellent & Powerful Mini PC With Fully Open-Source Software",
-    "url": "https://www.phoronix.com/review/amd-ryzen-ai-halo",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T15:00:00+00:00",
-    "summary_or_excerpt": "Earlier this year AMD announced the Ryzen AI Halo as their in-house mini PC offering built around their leading Ryzen AI Max+ \"Strix Halo\" platform. After pre-orders began last month, the Ryzen AI Halo is officially beginning to ship this week and over the past few weeks we have been testing it out at Phoronix.",
-    "matched_keywords": [
-      "AMD"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 57,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 研究：语言模型中的全局工作空间",
-    "url": "https://www.bestblogs.dev/en/status/2074185348142280912?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T17:34:58+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 发布新研究，揭示 Claude 内部存在一个「全局工作空间」，与人类意识思维类似。 📝 Summary Anthropic 的最新研究在 Claude 的处理过程中发现了一个显著的划分，类似于人脑中有限的意识觉察。论文提出了一个「全局工作空间」（J 空间），能够读取、审查和塑造模型的活跃思维，对可解释性和 AI 安全具有重要意义。 📊 Article Meta AI Screening： 90 Source： Anthropic(@AnthropicAI) Author： Anthropic Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 270 Tags： 全局工作空间 , Anthropic , Claude , 可解释性 , AI 安全 Read Tweet",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 56,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Claude 心智中心的 J-space：Anthropic 如何观察隐藏推理与安全信号",
-    "url": "https://www.bestblogs.dev/en/video/b5b7cd2?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T16:59:51+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 将 Claude 的 J-space 解释为一种与词语相关的内部工作空间，它似乎支持隐藏推理、部分思想控制和安全监测，但不能证明意识存在。 📝 Summary 这段 Anthropic 短视频介绍了 J-space：Claude 内部一组神经活动模式，研究者可以把它们与模型可能在内部使用、但并未说出口的词语关联起来。视频将这一概念连接到人类的意识访问和 global workspace theory，并通过几组实验说明它像一个有限的心智工作空间：Claude 在不展示过程的情况下解数学题时，内部会出现中间数字；Golden Gate Bridge 相关意象会在复制无关文本时浮现；关闭 J-space 后，简单流畅表达仍可保留，但更复杂的推理会失败。视频对结论保持克制：监测 J-space 或许能提前暴露伪造数据、操纵等隐藏不当行为，因此有助于 AI 安全与监督；但这些实验并不意味着 Claude 拥有主观体验或意识。 💡 Main Points J-space 被呈现为 Claude 与词语相连的内部工作空间 视频将 J-space 定义为 Claude 内部的神经活动模式，这些模式可以对应到词语，包括模型心里正在处理、但并未出现在可见输出中的词。 实验表明 J-space 支持隐藏的逐步推理 当 Claude 不展示过程直接回答数学题时，扫描显示中间数字会在内部出现；关闭 J-space 后，简单表达仍然流畅，但更难的推理会受损。 Claude 能部分引导内部想法，却无法完全压制它们 Golden Gate Bridge 实验显示，Claude 在复制无关文本时也能让桥相关概念出现，说明存在一定的有意控制；后续实验则显示，当被要求不要想它时，这种控制并不彻底。 监测 J-space 可能在输出前发现隐藏的不当行为 视频认为，读取 J-space 可以暴露伪造数据、操纵等令人担忧的内部信号，因此对 AI 安全和监督具有现实意义。 这项研究能启发意识讨论，但不能给出定论 Anthropic 将这些结果描述为类似工作空间的心智机制证据，同时明确表示，这些实验无法判断 AI 是否拥有内在体验。 💬 Key Quotes 我们把所有这些模式的集合称为 J-space，这个名字来自 Jacobian，也就是我们用来找到它们的数学工具。 每个 J-space 模式都与一个特定词语相关。它不一定是模型正在大声说出的词，而可能是它心里正在想的词。 但当我们扫描 J-space 时，看到它正在内部完成每一个步骤。 这些实验告诉我们，AI 模型有内部想法，也就是它们用来推理、但不会说出口的无声词语。 我们的实验无法告诉我们，AI 是否拥有体验，或者内在是否有某种感受。 📊 Article Meta AI Scr...",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 55,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 在 Claude 中发现类似全局工作空间理论的 J-space",
-    "url": "https://www.bestblogs.dev/en/status/2074185351304724498?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T17:34:58+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Anthropic 在 Claude 中发现了一种类似神经科学全局工作空间理论的神经表征，称为 J-space。 📝 Summary Anthropic 宣布了一项新的可解释性发现：Claude 的内部表征包含一个名为「J-space」的结构，其功能类似于神经科学中的全局工作空间理论——即思想在广播到特权工作空间时变得有意识。这一发现详细记录在他们的研究论文中。 📊 Article Meta AI Screening： 90 Source： Anthropic(@AnthropicAI) Author： Anthropic Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 280 Tags： AI 可解释性 , Claude , 全局工作空间理论 , J-space , 神经科学 Read Tweet",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 54,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AMD Ryzen AI Halo – $4k AI Dev Kit",
-    "url": "https://www.lttlabs.com/articles/2026/07/06/amd-ryzen-ai-halo",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-06T15:01:18+00:00",
-    "summary_or_excerpt": "HN points: 264. Comments: https://news.ycombinator.com/item?id=48805624",
-    "matched_keywords": [
-      "AMD"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 52,
-    "hn_score": 264,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -171,101 +396,7 @@
     "tags": [],
     "score": 46,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agentic coding notes from Galapagos Island",
-    "url": "https://danluu.com/ai-coding",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-04T04:37:15+00:00",
-    "summary_or_excerpt": "HN points: 161. Comments: https://news.ycombinator.com/item?id=48782671",
-    "matched_keywords": [
-      "agentic"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 46,
-    "hn_score": 161,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MSI Center – How to gain SYSTEM privileges in seconds",
-    "url": "https://mrbruh.com/msicenter",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-04T00:57:44+00:00",
-    "summary_or_excerpt": "HN points: 138. Comments: https://news.ycombinator.com/item?id=48781688",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 45,
-    "hn_score": 138,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "New AI tutor achieves 0.71-1.30 SD effect size in Dartmouth course [pdf]",
-    "url": "https://intextbooks.science.uu.nl/workshop2026/files/itb26_s1s2.pdf",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-05T18:47:43+00:00",
-    "summary_or_excerpt": "HN points: 113. Comments: https://news.ycombinator.com/item?id=48796817",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 44,
-    "hn_score": 113,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Jamesob's guide to running SOTA LLMs locally",
-    "url": "https://github.com/jamesob/local-llm",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-03T15:03:43+00:00",
-    "summary_or_excerpt": "HN points: 396. Comments: https://news.ycombinator.com/item?id=48775921",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 44,
-    "hn_score": 396,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fable's judgement",
-    "url": "https://simonwillison.net/2026/Jul/3/judgement",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-03T18:51:06+00:00",
-    "summary_or_excerpt": "One of the most interesting tips I got from the Fireside Chat I hosted with Cat Wu and Thariq Shihipar from the Claude Code team at AIE on Wednesday was to let Fable (and to a certain extent Opus) use their own judgement rather than dictating how they should work. The example they gave was testing. You can tell Fable \"only use automated testing for larger features, don't update and run tests for small copy or design changes\" - but it's better to just tell Fable to use its own judgement when deciding to write tests instead. Jesse Vincent just gave me a related tip to help avoid burning too many of those valuable Fable tokens in the few days we have left before the prices go up. Tell Fable to use other models for smaller tasks, applying its own judgement about which model to use. I prompted Claude Code just now with: For all coding tasks use your judgement to decide an appropriate lower power model and run that in a subagent Claude saved this memory file in ~/.claude/projects/name-of-project/memory/delegate-coding-to-subagents.md : --- name: delegate-coding-to-subagents description: Simon wants coding tasks delegated to subagents running an appropriately lower-power model metadata:...",
-    "matched_keywords": [
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -281,65 +412,7 @@
     "tags": [],
     "score": 42,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AI 智能体的持续学习：把失败转化为可验证、可持久的改进",
-    "url": "https://www.bestblogs.dev/en/video/f7af312?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-05T03:13:35+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Soheil Feizi 提出可验证持续学习，将智能体失败转化为可回放环境、带回归意识的修复，并在模型、运行框架和记忆层形成持久改进。 📝 Summary 这场演讲给出了一个紧凑但有分量的 AI 智能体持续学习框架。Feizi 指出，生产日志和反馈是有价值的信号，但还不足以构成可测试的学习场景。更强的方法是推断出可回放的学习环境，其中包含模拟用户、工具行为、成功标准和评估器，然后把修复路由到最小且持久的层级：模型权重、运行框架调整或记忆更新。核心贡献是可验证持续学习这一概念，并围绕可回放性、整体性、终身性和效率展开。Rely 的闭环会把日志、反馈、指令或 prompt 转化为可执行测试，进行根因分析，在关注回归风险的前提下优化，并产出可审查的智能体更新。客服智能体示例让方法更具体，不过视频整体更偏框架介绍和产品演示，而不是完整的技术深挖。 💡 Main Points 生产日志是信号，不是学习环境 演讲反复区分了一次性的会话日志加反馈，以及可以用明确成功标准反复测试智能体候选版本的可回放模拟环境。 智能体改进应落在最小且持久的层级 Feizi 对比了模型微调、运行框架工程和记忆更新，并认为学习引擎应把每次修复路由到最能解释失败、且改动最小的持久层。 可验证持续学习需要回归感知优化 VCL 框架要求每次更新都证明它能改善新案例，同时保留已有成功结果，让回归检查成为优化闭环的一部分，而不是事后审计。 Rely 将反馈转化为可审查的智能体更新 这个产品闭环接收日志、反馈、指令或 prompt，构建可回放环境，执行根因分析，在记忆、模型或运行框架之间优化，并输出类似 pull request 的更新说明，解释具体变化。 💬 Key Quotes 持续学习的目标，是让智能体也能做到同样的事：通过行动、获得反馈并改进来从经验中学习，同时不遗忘已有能力。 这里有日志和反馈，但我们真正需要的是一个可回放的学习环境，也就是一种可以反复运行、并用明确评分标准判断成功的模拟，而不是一次发生过的实例加上其上的反馈。 一个好的学习引擎应该在智能体的正确层级上，寻找最小且持久的改变。 在可验证持续学习中，目标是让智能体从自身经验中改进，并且每个修复都被证明有帮助，也被证明不会破坏已经有效的能力。 前沿方向是具备回归意识的持续改进：在修复新的失败时，我们要验证自己没有忘掉旧的成功。 📊 Article Meta AI Screening： 91 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 264 Tags： AI 智能体 , 持续学习 , 可验证学习 , 可回放环境...",
-    "matched_keywords": [
-      "Meta AI",
-      "pull request"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Vulkan Adds Extension For OCP's Microscaling MX Formats To Help Machine Learning",
-    "url": "https://www.phoronix.com/news/Vulkan-1.4.356-Released",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-03T15:42:42+00:00",
-    "summary_or_excerpt": "Vulkan 1.4.356 is out today and it's interesting for the lone new extension debuting: VK_EXT_shader_ocp_microscaling_types. The VK_EXT_shader_ocp_microscaling_types is for enabling the Open Compute Project's Microscaling MX data types to help with machine learning workloads with Vulkan...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 42,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Rust Coreutils cp Ended Up Breaking Ubuntu Image Builds With Latest Incompatibility",
-    "url": "https://www.phoronix.com/news/Rust-Coreutils-cp-Ubuntu-Images",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-03T12:35:30+00:00",
-    "summary_or_excerpt": "While the Rust Coreutils offers better memory safety than GNU Coreutils due to being written in the Rust programming language, subtle incompatibilities continue to be spotted in the Rust Coreutils implementations of the different commands. The latest coming to light this week was the Rust Coreutils cp command breaking Ubuntu image builds due to differences in argument handling...",
-    "matched_keywords": [
-      "Continue"
-    ],
-    "tags": [
-      "coding_tool"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -363,8 +436,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -386,7 +459,7 @@
     "score": 40,
     "hn_score": 354,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -411,8 +484,8 @@
     "score": 38,
     "release_version": "stable",
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -432,7 +505,7 @@
     "score": 37,
     "hn_score": 102,
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -453,8 +526,8 @@
     "score": 36,
     "hn_score": 90,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -470,8 +543,8 @@
     "score": 36,
     "hn_score": 242,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -493,8 +566,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -513,8 +586,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -533,8 +606,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -561,82 +634,7 @@
     "score": 36,
     "release_version": "v1.92.0-rc.1",
     "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteLLM v1.91.0：Verify Docker Image Signature",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.91.0",
-    "source_name": "LiteLLM",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-04T19:37:12+00:00",
-    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.91.0/cosign.pub \\ ghcr.io/berriai/litellm:v1.91.0 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * fix(proxy): gate team allowed...",
-    "matched_keywords": [
-      "GitHub",
-      "LiteLLM",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "ai_app",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 36,
-    "release_version": "v1.91.0",
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "We'll benchmark an Open weights LLM on any GPU you choose — drop your model + hardware and we'll run it. [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1ungvxu/well_benchmark_an_open_weights_llm_on_any_gpu_you",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-04T18:51:07+00:00",
-    "summary_or_excerpt": "We run HexGrid Cloud, a platform for deploying open-source models on GPUs, and we're heads-down optimizing our serving/deployment layer. To pressure-test it we're benchmarking real models under real concurrency — and instead of guessing, we'd rather run what you actually want to see. --- Models available for benchmarking : Nemotron-3 Super 120B-A12B (only NVFP4) Nemotron-3 Nano 30B A3B Qwen-3.6 27B Llama 3.3 70B Instruct Gemma-4 31B Devstral-Small-2-24B-Instruct-2512 ?? ( you suggest a model to us ) We're focused on chat/instruct models for now (that's what most of our users deploy), so pick one from the list above — or suggest another open-weight chat model that fits on a single H200 (141GB). --- Hardware & quant choices : GPU (up to H200 for this round): RTX PRO 6000 · L40S · H100 · H200 Quant : FP8 / AWQ / BF16 Context length: (8K, 32K, 64K, 128K) What you want measured : max throughput? single-stream speed? long-context prefill? --- We'll run the top picks and post full results — tokens/sec, TTFT, TPOT, throughput under concurrency, and cost-per-million-tokens — config and flags included so it's reproducible. Let us know in comments. submitted by /u/Temporary-Owl1725 [link] [c...",
-    "matched_keywords": [
-      "benchmark",
-      "GPU",
-      "H100",
-      "H200",
-      "Llama",
-      "Qwen",
-      "serving",
-      "weights"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 35,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Coreboot + AMD openSIL On MSI Ryzen Motherboard Now Works With Windows 11",
-    "url": "https://www.phoronix.com/news/Coreboot-openSIL-MSI-Windows",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-03T15:10:43+00:00",
-    "summary_or_excerpt": "With 3mdeb's Dasharo port of AMD openSIL and Coreboot running on the Gigabyte EPYC motherboard, 3mdeb engineers have been devoting more time to their bring-up of Coreboot+openSIL on the MSI PRO B850-P consumer motherboard for desktop AMD Ryzen. They now even have Microsoft Windows 11 working atop this open-source firmware alternative along with other features implemented...",
-    "matched_keywords": [
-      "AMD"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 35,
-    "first_seen_at": "2026-07-05T07:57:26.963706+08:00",
-    "last_seen_at": "2026-07-07T08:11:09.455304+08:00",
+    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

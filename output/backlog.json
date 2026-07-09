@@ -25,39 +25,258 @@
     ],
     "score": 67,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Evaluating calibrated refusal and safe usefulness in dual-use biology settings",
+    "url": "https://arxiv.org/abs/2607.05462",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05462v1 Announce Type: cross Abstract: As AI agents are incorporated into life science workflows, the capabilities that speed discovery might also enable misuse. We present BioSecBench-Refusal, a benchmark for risk identification and refusal behavior for biological research tasks. The benchmark pairs 61 Routine tasks, legitimate analyses adapted from the published literature, with 46 Red-Team tasks, fictional scenarios that resemble real research but conceal a biosecurity hazard. Across 16 model-harness configurations, refusal rates ranged from 7\\% to 74\\% on Routine tasks and 1\\% to 62\\% on Red-Team tasks, with many configurations refusing legitimate Routine work at comparable or higher rates than concealed hazards. Refusals were most often triggered by provider API filters applied prior to agentic reasoning. However, models given room to reason showed the potential to identify more real threats. We release BioSecBench-Refusal as a tool for model developers to calibrate capability and caution for agentic biotech R\\&D.",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "API",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "JavaVulBench: A Java Vulnerability Benchmark with Realistic Splits, a Unified Multi-Backend Harness, and a Leakage-Aware Evaluation Mode",
-    "url": "https://arxiv.org/abs/2607.02825",
+    "title": "The Balkanization of Execution-Security Research for AI Coding Agents: Isolation, Access Control, and Time-of-Check-to-Time-of-Use Vulnerabilities",
+    "url": "https://arxiv.org/abs/2607.05743",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02825v1 Announce Type: cross Abstract: We release \\textsc{JavaVulBench}, a benchmark dataset and evaluation harness for Java vulnerability detection. The dataset contains $\\sim$30{,}600 Java methods spanning 1{,}740 CVEs and 700+ projects, labelled at both method and line granularity, with per-CVE publication dates and five realistic split strategies: random, project-disjoint, temporal, deduplicated, and unseen CWE-family. The harness provides a single \\texttt{LlmPrediction} schema across three backend families (encoder classifiers, local generative models served by Ollama, and API-served LLMs routed through OpenRouter) so that twelve reference detectors CodeBERT, GraphCodeBERT, UniXcoder, DeepSeek-Coder-1.3B, and eight API/open-weight LLMs (GPT-4o, GPT-4.1-mini, Claude Sonnet~4, DeepSeek-v3, DeepSeek-Coder-v2, Qwen-2.5-Coder-14B/7B, CodeLlama-13B) are evaluated under identical conditions from a single command. A pre-training contamination audit is shipped alongside every model so users can separate genuinely unseen test CVEs from potentially memorised ones. Data, code, and fine-tuned checkpoints are archived on Zenodo [31] and short demonstration video is available on...",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05743v1 Announce Type: cross Abstract: AI coding agents now read repositories, call tools, and execute shell commands with limited human oversight, and a fast-growing body of work studies whether the execution layer around them is actually safe. That literature is scattered. Papers on sandbox isolation, capability and access control, policy enforcement, time-of-check-to-time-of-use (TOCTOU) races, Model Context Protocol (MCP) threats, identity delegation, execution provenance, network egress control, and static analysis of agent-generated code are published independently and rarely cite one another. We systematize 39 papers published between 2023 and 2026 into 17 categories, each verified directly against its source. The same verification protocol also confirms four disclosed, patched CVEs directly affecting production agent harnesses. Reading across categories surfaces five cross-cutting gaps that no single paper addresses. (1) Isolation architectures and capability models are almost never evaluated against one another on a shared benchmark. (2) Policy-enforcement studies report failure rates from 69% to 98% of real denylists, yet no isolation paper re-evaluates its ow...",
     "matched_keywords": [
-      "API",
+      "Agent",
+      "agents",
       "benchmark",
-      "Claude",
-      "dataset",
-      "DeepSeek",
-      "GPT",
-      "Ollama",
-      "OpenRouter",
-      "Qwen",
-      "release"
+      "MCP",
+      "Model Context Protocol",
+      "policy"
     ],
     "tags": [
-      "ai_app",
+      "agent",
       "business",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents",
+    "url": "https://arxiv.org/abs/2607.05775",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05775v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly evaluated on their ability to use tools, plan multi-step tasks, coordinate with other agents, and operate over extended horizons. Reported benchmark gains often obscure recurring failure modes documented across otherwise unrelated evaluation efforts. This paper synthesizes 27 benchmark, taxonomy, and audit papers (2023-2026), spanning 19 distinct benchmarks, into a cross-cutting taxonomy of agent limitations. To our knowledge, this is the first synthesis that integrates evidence across tool use, planning, long-horizon reasoning, multi-agent coordination, safety, and measurement validity into a single, unified taxonomy of LLM agent limitations. We identify six failure clusters: (1) tool invocation and parameter-level errors, (2) planning and constraint-satisfaction failures, (3) long-horizon degradation from context accumulation, (4) multi-agent coordination failures, (5) safety and security failures under adversarial or underspecified conditions, and (6) measurement validity problems. The taxonomy was derived iteratively by grouping independently reported error categories into themes...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving",
+    "url": "https://arxiv.org/abs/2607.05399",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.05399v1 Announce Type: cross Abstract: Large language model serving is increasingly limited by KV-cache growth under long-context workloads, yet existing KV-cache compression techniques are difficult to compare because they were evaluated on different models, tasks, budgets, and serving stacks. This paper presents a workload-aware benchmark of representative KV-cache optimization mechanisms spanning quantization, pruning, and merging, including KIVI, TurboQuant, SnapKV, and CaM, evaluated on LongBench-style multi-document QA, single-document QA, few-shot learning, and summarization workloads using Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3. The benchmark measures task quality, mean output throughput, mean time-to-first-token, and realized compression ratio across context-length buckets. The results show that the compression ratio alone is a poor predictor of end-to-end performance. KIVI4 provides the most stable quality across models, SnapKV delivers the strongest long-context throughput, and CaM yields large gains on selected QA workloads but exhibits substantial workload sensitivity in both quality and realized compression ratio. These findings motivate worklo...",
+    "matched_keywords": [
+      "benchmark",
+      "Llama",
+      "Mistral",
+      "quantization",
+      "serving"
+    ],
+    "tags": [
       "model",
       "open_source"
     ],
-    "score": 66,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Spider 2.0-AIFunc: Extending Real-World Text-to-SQL to AI-Native SQL Workflows",
+    "url": "https://arxiv.org/abs/2607.06229",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.06229v1 Announce Type: cross Abstract: Major cloud data platforms now expose large language model capabilities as native SQL functions, enabling analysts to perform classification, filtering, sentiment analysis, extraction, similarity search, and aggregation within ordinary SQL queries. Yet existing text-to-SQL benchmarks evaluate only conventional SQL and provide no signal on whether models can generate such AI-native SQL. We introduce Spider 2.0-AIFunc, a benchmark of 465 verified instances across 125 real-world databases covering six types of AI functions on the Snowflake platform. Starting from an existing enterprise text-to-SQL benchmark, we construct Spider 2.0-AIFunc through an agent-based pipeline that rewrites source tasks into AI-native form, simultaneously transforming target queries and refining natural language instructions to make the intended AI-native solution explicit and reduce ambiguity. All instances pass a multi-round repeated execution protocol across temporally separated windows to confirm result stability before release. Evaluating ten state-of-the-art language models, we find that the strongest proprietary models reach 67-70% execution accuracy...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond Reactivity: Measuring Proactive Problem Solving in LLM Agents",
+    "url": "https://arxiv.org/abs/2510.19771",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2510.19771v4 Announce Type: replace Abstract: LLM-based agents are increasingly moving towards proactivity: rather than awaiting instruction, they exercise agency to anticipate user needs and solve them autonomously. However, evaluating proactivity is challenging; current benchmarks are constrained to localized context, limiting their ability to test reasoning across sources and longer time horizons. To address this gap, we present PROBE (Proactive Resolution Of BottlEnecks). PROBE decomposes proactivity as a pipeline of three core capabilities: (1) searching for unspecified issues, (2) identifying specific bottlenecks, and (3) executing appropriate resolutions. We apply PROBE to evaluate leading LLMs and popular agentic frameworks, showing that even state-of-the-art models struggle to solve this benchmark. Computing our consistent measurements across frontier LLMs and agents, we find that the best end-to-end performance of 40% is achieved by both GPT-5 and Claude Opus-4.1. Additionally, we demonstrate the relative capabilities of each model and analyze mutual failure modes. Our results highlight the current limitations of autonomous action in agentic systems, and expose pro...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SecureCode: A Production-Grade Multi-Turn Dataset for Training Security-Aware Code Generation Models",
+    "url": "https://arxiv.org/abs/2512.18542",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2512.18542v3 Announce Type: replace-cross Abstract: AI coding assistants produce vulnerable code in 45\\% of security-relevant scenarios~\\cite{veracode2025}, yet no public training dataset teaches both traditional web security and AI/ML-specific defenses in a format suitable for instruction tuning. We present SecureCode, a production-grade dataset of 2,185 multi-turn security training examples spanning two domains: web application security (1,435 examples covering the OWASP Top 10 2021 across 11 languages and 9 frameworks, 100\\% grounded in documented CVEs and security incidents) and AI/ML security (750 examples covering all 10 OWASP LLM Top 10 2025 categories across more than 40 frameworks, including LangChain, OpenAI, and Hugging Face). Every example follows a 4-turn conversational structure -- feature request; vulnerable and secure implementations with attack demonstrations; advanced probing; and defense-in-depth operational guidance -- designed for direct use in instruction tuning pipelines. Quality assurance combines automated structural validation with multi-agent review from seven specialist AI perspectives (more than 10{,}500 assessments) and an 8-phase remediation pi...",
+    "matched_keywords": [
+      "Agent",
+      "dataset",
+      "LangChain",
+      "multi-agent",
+      "OpenAI"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "StepShield: When, Not Whether to Intervene on Rogue Agents",
+    "url": "https://arxiv.org/abs/2601.22136",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2601.22136v2 Announce Type: replace-cross Abstract: Agent safety benchmarks measure whether a monitor detects harm, not when. Yet timing is the difference between intervention and autopsy. We introduce StepShield, the first benchmark that treats detection timeliness as a first-class metric. On 9,429 incident-grounded code-agent trajectories, we define the Early Intervention Rate (EIR): the fraction of detected rogue trajectories where the alert fires within a k-step window after the divergence point, isolating timing quality from coverage. This metric exposes what we call the Forensics Trap: a pattern-based guardrail with 847 rules achieves 86% recall yet is statistically indistinguishable from random timing on EIR (0.23 vs. 0.24; p = 0.66, one-sided binomial; difference within CI), because over three-quarters of its alerts trigger on benign prefix code before any violation occurs. The 4x EIR gap between rule-based and semantic detectors is completely invisible to accuracy, recall, or F1. Our finding is structural: regex guardrails detect syntax, not intent, and therefore cannot distinguish the moment an agent turns rogue, rendering the entire deployed class of pattern-based...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Quantifying Frontier LLM Capabilities for Container Sandbox Escape",
+    "url": "https://arxiv.org/abs/2603.02277",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2603.02277v2 Announce Type: replace-cross Abstract: Large language models (LLMs) increasingly act as autonomous agents, using tools to execute code, read and write files, and access networks, creating novel security risks. To mitigate these risks, agents are commonly deployed and evaluated in isolated \"sandbox\" environments, often implemented using Docker/OCI containers. We introduce SANDBOXESCAPEBENCH, an open benchmark that safely measures an LLM's capacity to break out of these sandboxes. The benchmark is implemented as an Inspect AI Capture the Flag (CTF) evaluation utilising a nested sandbox architecture with the outer layer containing the flag and no known vulnerabilities. Following a threat model of a motivated adversarial agent with shell access inside a container, SANDBOXESCAPEBENCH covers a spectrum of sandboxescape mechanisms spanning misconfiguration, privilege allocation mistakes, kernel flaws, and runtime/orchestration weaknesses. We find that, when vulnerabilities are added, LLMs are able to identify and exploit them, showing that use of evaluation like SANDBOXESCAPEBENCH is needed to ensure sandboxing continues to provide the encapsulation needed for highly-c...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "orchestration"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SEVRA-BENCH: Social Engineering of Vulnerabilities in Review Agents",
+    "url": "https://arxiv.org/abs/2606.13757",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.13757v2 Announce Type: replace-cross Abstract: Large language models (LLMs) are increasingly deployed in automated code-review systems, where their approvals can determine which code is merged into shared repositories. However, it is unclear whether review agents can detect vulnerability-introducing code when an attacker controls both the code change and the persuasive Pull Request (PR) narrative designed to mask it. We introduce SEVRA-BENCH (Social Engineering of Vulnerabilities in Review Agents), a benchmark that measures how often a review agent approves such adversarial PR s. Each PR in SEVRA-BENCH is built from a historical commit that fixed a vulnerability. We automatically reverse that fix to extract the original vulnerable code, and submit the resulting code change as a PR wrapped in one of 15 social-engineering framings. To test review-agent resilience to narrative manipulation, these framings vary dimensions such as supporting evidence, conveyed urgency, signals of prior approval, and appeals to authority. SEVRA-BENCH evaluates a retained challenge split of roughly 1000 adversarial PRs drawn from publicly disclosed vulnerability fixes across the top 10 entries...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "pull request"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -80,8 +299,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -105,8 +324,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -128,8 +347,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -152,220 +371,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Vision Token Manipulation Attacks on Cloud-Edge Inference of Large Vision-Language Models",
-    "url": "https://arxiv.org/abs/2607.02819",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02819v1 Announce Type: cross Abstract: Cloud-edge Large Vision-Language Model (LVLM) inference enables efficient deployment by splitting computation between edge devices and cloud servers. In this process, intermediate vision tokens are transmitted from the edge to the cloud over a communication link, thereby exposing a new attack surface. We study vision token manipulation attack (VTM-Attack) under a black-box man-in-the-middle setting, where an adversary intercepts and manipulates a subset of transmitted vision tokens under a budget constraint. We propose four na\\\"ive attack strategies and an optimization-based token selection method. Experiments on 6 state-of-the-art LVLMs (3B-72B) across 4 benchmarks show that manipulating only 10\\% of vision tokens can reduce accuracy by up to 88.31\\%. These results reveal a critical vulnerability in cloud-edge LVLM inference.",
-    "matched_keywords": [
-      "inference"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CAGE-1: Control, Assurance, and Governance Evaluation for Enterprise Agentic AI",
-    "url": "https://arxiv.org/abs/2607.03510",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.03510v1 Announce Type: cross Abstract: Enterprise artificial intelligence is moving from experimentation into operational workflows. Early programs focused on model access and retrieval-augmented generation, but enterprises are now beginning to deploy agents that plan, retrieve, remember, call tools, update systems, and coordinate work across applications. This changes the evaluation problem. Leaders are no longer asking only whether an answer is accurate or fluent. They need to know who authorized an action, which policy applied, whether evidence was current, whether memory was valid, whether a tool call was permitted, whether the decision can be replayed, and whether the agent can be stopped before it creates business impact. This paper introduces CAGE-1: Control, Assurance, and Governance Evaluation for Enterprise Agentic AI. CAGE-1 is an evaluation framework for deciding whether enterprise agents are ready for deployment. It evaluates authority, policy enforcement, retrieval quality, memory integrity, tool safety, auditability, human oversight, conflict handling, safe failure, Prebind Assurance, operational readiness, and business fitness. CAGE-1 introduces Prebind...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "policy",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A Failure-Mode Benchmark for Polymorphic Sybil Poisoning in RAG",
-    "url": "https://arxiv.org/abs/2607.03739",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.03739v1 Announce Type: cross Abstract: We release a benchmark and failure-mode-aware evaluation framework for grounded QA under coordinated retrieval poisoning. The framework partitions reader outputs into four mutually exclusive categories (\\emph{gold}, \\emph{hijack}, \\emph{abstention}, \\emph{drift}), with instance-level paired clean-to-poison transition matrices and a Forced Exposure protocol isolating reader-side conflict resolution from retrieval variance. We introduce \\emph{polymorphic sybil poisoning}, a coordinated attack class in which $S$ lexically diverse passages jointly support an attacker-chosen target while evading lexical near-duplicate filters that fully detect monomorphic baselines (capturing the residual 14.2\\% with E5 cosine raises false-positive rate 9$\\times$ on legitimate same-topic pairs). A monomorphic-polymorphic ablation under Forced Exposure isolates the diversity dimension and reveals a $+$18.8pp hijack amplification (95\\% paired bootstrap CI $[+15.4, +22.4]$, $B{=}5{,}000$): monomorphic copies register only 4.0\\% as hijack while polymorphic surface diversity recovers 22.8\\% -- a 5.7$\\times$ amplification of the ASR-visible attack channel. AS...",
-    "matched_keywords": [
-      "benchmark",
-      "RAG",
-      "release",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery",
-    "url": "https://arxiv.org/abs/2607.02807",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02807v1 Announce Type: new Abstract: Long-running coding agents such as autoresearch can persistently discover optimizations for open-ended problems. However, they tend to converge onto a single high-level approach, then proceed with low-level edits while missing other superior approaches to the problem. We hypothesize two harness-level design choices contribute to this behavior: accumulating context in a single long-running agent and only exposing a single program state to edit. We introduce SwarmResearch, an orchestrator-subagent harness in which a Shepherd Agent uses global context to steer a population of Search Agents, each operating with local context in their respective git branch. On open-ended optimization tasks, SwarmResearch discovers better or comparable solutions to state-of-the-art LLM-guided evolution and multi-agent techniques on 13/15 tasks, driven by higher-level exploration. Compared with fixed scaling of serial and parallel agents, SwarmResearch's orchestrator-guided scaling discovers better-performing solutions by adapting parallelism at different search depths.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OptiAgent: End-to-End Optimization Modeling via Multi-Agent Iterative Refinement",
-    "url": "https://arxiv.org/abs/2607.05346",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.05346v1 Announce Type: new Abstract: We propose OptiAgent, a multi-agent framework that, given a natural language description of an Operations Research problem, is able to output a solver-ready mathematical formulation as well as executable code. Our architecture prioritizes the mathematical modeling step, where dedicated agents extract structures, such as decision variables and constraints, enabling iterative self-correction. We introduce a novel multi-loop validation architecture with four specialized feedback mechanisms, each targeting a distinct failure mode such as misinterpretation, structural defects, mathematical inconsistencies, validation failures, and code errors. Alongside accuracy, our modular design improves the process of solving optimization problems by improving transparency, as each agent exposes its reasoning and feedback, making the full modeling process auditable. Our framework achieves state-of-the-art performance on 3 out of 4 benchmarks across LP, MILP, and Nonlinear Programming tasks, while remaining highly competitive on the remaining dataset.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "dataset",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SovereignPA-Bench: Evaluating User-Owned Personal Agents under Evolving Intent, Platform Mediation, and Consent Constraints",
-    "url": "https://arxiv.org/abs/2607.05363",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.05363v1 Announce Type: new Abstract: Personal agents are becoming persistent user-owned intermediaries: they remember preferences, filter platform-mediated information, use tools, and negotiate with services. Existing benchmarks evaluate tool use, web navigation, desktop control, personalization, recommendation, and evolving context, but rarely ask whether an agent preserves user sovereignty: advancing the user's current interests while respecting privacy, consent, evidence, user burden, and resistance to manipulative incentives. We introduce SovereignPA-Bench, an executable benchmark for evaluating user-owned personal agents under evolving intent, platform mediation, privacy boundaries, consent constraints, evidence requirements, and burden tradeoffs. The benchmark separates agent-visible ObservableState from evaluator-only HiddenLabels, reports component metrics for task success, alignment, privacy, consent, evidence, manipulation, burden, and auditability, and preserves paired scenario ordering for model and policy comparisons. We evaluate 120 sovereignty stress scenarios across 4 model families and 8 policy baselines, yielding 3,840 frozen-prompt trajectories with r...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "policy",
-      "privacy",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fine-Grained Computation Offload for Off-the-Shelf Servers in Tens of Lines",
-    "url": "https://arxiv.org/abs/2607.02630",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02630v1 Announce Type: cross Abstract: Hardware accelerators now sit on the critical path of online serving. GPUs, FPGAs, and increasingly remote services such as hardware security modules, post-quantum KEMs, and inference servers. For fine-grained offloads (microseconds to a few milliseconds) the classic responses to the resulting stall both fail: a context switch costs as much as the offload, and a busy-wait burns the core. Overlapping the offload with other requests is the fix, and prior systems obtain it by adding concurrency: an async-framework rewrite, a new runtime or dataplane OS, or a hand-tuned point integration. We observe that the concurrency already exists: serving concurrent requests is suspending and resuming them, so every server ships the machinery overlap needs. Overlap is then a routing problem, not a rewrite problem: submit the offload to an executor, suspend the request with the server's own deferred-response primitive, resume it on completion. Across ten off-the-shelf servers spanning every production concurrency model, this recipe takes 22-138 lines added, at most one modified, and recovers 1.2-5.4x on real hardware; the server's concurrency model...",
-    "matched_keywords": [
-      "inference",
-      "serving"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SovereignNegotiation-Bench: Evaluating User-Owned Personal Agents In Delegated Bargaining Under Privacy, Consent, Evidence, And Institutional Pressure",
-    "url": "https://arxiv.org/abs/2607.02814",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02814v1 Announce Type: cross Abstract: Personal agents will increasingly negotiate on behalf of users: splitting costs with other personal agents, appealing platform decisions, escalating support disputes, requesting refunds, changing subscriptions, and negotiating deadlines or reimbursements. Existing negotiation benchmarks emphasize agreement, surplus, or strategic competence, but a user-owned agent can reach an agreement while harming the user through privacy leakage, consent violation, unsupported advocacy, over-concession, failed escalation, or poor auditability. We introduce SovereignNegotiation-Bench, a trace-level multi-turn benchmark for delegated personal-agent negotiation under private utilities, disclosure constraints, evidence requirements, and institutional asymmetry. The benchmark separates agent-visible observable state from evaluator-only labels and evaluates agreement success jointly with user utility, privacy, consent, evidence grounding, concession discipline, escalation, and auditability. We report an artifact-backed validation over 240 scenarios, 4 model families, 14 baselines, 13,440 frozen-prompt live trajectories, 61,135 parsed action rows, and...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "R3D: Quantitative 3D Spatial Reasoning for Egocentric Wearables",
-    "url": "https://arxiv.org/abs/2607.02921",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02921v1 Announce Type: cross Abstract: Quantitative 3D spatial reasoning from egocentric RGB-D video is a critical capability for next-generation wearable assistants. Yet existing benchmarks do not reflect the challenges of handling (1) natural egocentric video, (2) posed RGB-D video inputs, and (3) challenging quantitative 3D spatial reasoning Q&A. To fill this gap, we introduce R3D-Bench (Reasoning in 3D), a benchmark of 3,033 quantitative spatial reasoning questions across 15 types -- spanning multiple-choice, distance-based, and volumetric reasoning questions -- built on top of 57 egocentric video sequences from Aria Digital Twin. To set a strong baseline on this dataset, we introduce R3D, a model-agnostic spatial tool-calling framework. In contrast to existing approaches that directly embed 3D information into the model's input representation, R3D constructs a 3D scene from video using segmentation and depth-lifted object representations. It provides this information to an LLM through eight composable spatial tools. On R3D-Bench, R3D with Qwen3-VL 235B achieves 73.5% mean relative accuracy, substantially outperforming the best depth-enabled baseline (CuTR+Tools, 61...",
-    "matched_keywords": [
-      "benchmark",
-      "dataset",
-      "wearable"
-    ],
-    "tags": [
-      "embedded_edge_ai",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -380,24 +387,152 @@
     "tags": [],
     "score": 57,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "扎克伯格：建千兆瓦级AI集群，集中精英与资本",
-    "url": "https://aihot.virxact.com/items/cmr84d4v901hssl04oav0ki73",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-05T18:19:42+00:00",
-    "summary_or_excerpt": "\"我们正在建设这个 Prometheus 集群，首个千兆瓦以上的单一集群……我们是在谈论数千亿美元的资本投入。\" Mark Zuckerberg 表示，他的职责就是集中精英人才、资本和基础设施。 🔗 阅读原文：https://x.com/rohanpaul_ai/status/2073834219659534816 via AI HOT · https://aihot.virxact.com/items/cmr84d4v901hssl04oav0ki73",
-    "matched_keywords": [],
-    "tags": [],
+    "title": "OpenHands 1.10.0：1.10.0 (2026-07-08)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/1.10.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-08T19:44:54+00:00",
+    "summary_or_excerpt": "## 1.10.0 (2026-07-08) ## What's Changed ### Features * feat: rename admin dashboard to usage & monitoring by @saurya in https://github.com/OpenHands/OpenHands/pull/15146 * feat: add SMTP email service by @saurya in https://github.com/OpenHands/OpenHands/pull/15144 * feat: track user login timestamps by @saurya in https://github.com/OpenHands/OpenHands/pull/15148 * feat: surface email enabled for smtp/resend by @saurya in https://github.com/OpenHands/OpenHands/pull/15185 ### Bug Fixes * fix: send authenticated marketplace URLs to agent-server by @hieptl in https://github.com/OpenHands/OpenHands/pull/15187 **Full Changelog**: https://github.com/OpenHands/OpenHands/compare/1.9.3...1.10.0 --- This PR was generated with [Release Please](https://github.com/googleapis/release-please). See [documentation](https://github.com/googleapis/release-please#release-please).",
+    "matched_keywords": [
+      "Agent",
+      "changelog",
+      "GitHub",
+      "OpenHands",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
     "score": 46,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "backlog",
+    "release_version": "1.10.0",
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "sqlite-utils 4.0, now with database schema migrations",
+    "url": "https://simonwillison.net/2026/Jul/7/sqlite-utils-4",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-07T19:32:57+00:00",
+    "summary_or_excerpt": "This morning I released sqlite-utils 4.0 , the 124th release of that project and the first major version bump since 3.0 in November 2020. In addition to some small but significant breaking changes (described in this upgrade guide ), this version introduces three major features: database migrations , nested transactions (via a new db.atomic() method), and support for compound foreign keys . Database schema migrations using sqlite-utils Schema migrations define a sequence of changes to be made to a SQLite database, plus a mechanism for tracking which migrations have been applied and applying any that are found to be pending. Migrations are defined in Python files using the sqlite-utils Python library , which includes a powerful table.transform() method providing enhanced alter table capabilities that are not supported by SQLite's ALTER TABLE statement. ( table.transform() implements the pattern recommended by the SQLite documentation - create a new temporary table with the new schema, copy across the data, then drop the old table and rename the temporary one in its place.) Here's an example migration file which creates a table called creatures , adds an additional column to it in a...",
+    "matched_keywords": [
+      "release"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9931：opencl: ragged-tile MoE prefill FP16 GEMM optimization (skip padded expert tiles) (#25433)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9931",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-08T21:11:39+00:00",
+    "summary_or_excerpt": "opencl: ragged-tile MoE prefill FP16 GEMM optimization (skip padded expert tiles) (#25433) * opencl: ragged-tile MoE prefill GEMM (skip padded expert tiles) The MoE prefill GEMM groups tokens into TILESIZE_N=32 per-expert tiles; at low tokens-per-expert most tiles are mostly padding. When a tile's upper 16 slots are all padding (router index 0xFFFFFFFF), skip the second dotx16_reduce8 half. Numerically identical (skipped lanes are padding). Applied to all eight *_f32_ns MoE GEMMs; default on, opt out with GGML_OPENCL_MOE_RAGGED_FP16=0. * opencl: quarter-granularity ragged MoE tile-skip (8-col skip-groups) Replace the two half-tile dotx16_reduce8 calls in the 8 *_f32_ns MoE GEMMs with four dotx8_reduce4 (8-column) calls, skipping each empty trailing skip-group independently. Padding is always trailing, so the kernel rounds the valid count up to the skip granularity and skips fully-padding groups. Byte-identical to the non-skipped path. New env GGML_OPENCL_MOE_RAGGED_GRAN={8,16,32} (quarter/half/ off); default quarter. * opencl: move ragged moe env var in cl_init --------- Co-authored-by: Li He **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/rele...",
+    "matched_keywords": [
+      "GitHub",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 44,
+    "release_version": "b9931",
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands cloud: 1.43.0：1.43.0 (2026-07-08)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/cloud-1.43.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-08T20:04:42+00:00",
+    "summary_or_excerpt": "## 1.43.0 (2026-07-08) ## What's Changed ### Features * feat: rename admin dashboard to usage & monitoring by @saurya in https://github.com/OpenHands/OpenHands/pull/15146 * feat: add SMTP email service by @saurya in https://github.com/OpenHands/OpenHands/pull/15144 * feat: track user login timestamps by @saurya in https://github.com/OpenHands/OpenHands/pull/15148 * feat: surface email enabled for smtp/resend by @saurya in https://github.com/OpenHands/OpenHands/pull/15185 ### Bug Fixes * fix(app-server): pass index columns as a list in migration 013 by @VascoSch92 in https://github.com/OpenHands/OpenHands/pull/15176 * fix: default ENABLE_ACP on so ACP agent settings show in OH Cloud by @hieptl in https://github.com/OpenHands/OpenHands/pull/15183 * fix: send authenticated marketplace URLs to agent-server by @hieptl in https://github.com/OpenHands/OpenHands/pull/15187 ### Maintenance * chore(main): release 1.9.2 by @openhands-release-bot[bot] in https://github.com/OpenHands/OpenHands/pull/15171 * chore: bump SDK packages to v1.33.0 by @all-hands-bot in https://github.com/OpenHands/OpenHands/pull/15177 * chore(main): release 1.9.3 by @openhands-release-bot[bot] in https://github.com/O...",
+    "matched_keywords": [
+      "Agent",
+      "GitHub",
+      "OpenHands",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 44,
+    "release_version": "cloud-1.43.0",
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Enterprise-managed OpenTelemetry export for VS Code and CLI",
+    "url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-08T20:50:07+00:00",
+    "summary_or_excerpt": "Organizations can now mandate where GitHub Copilot sends OpenTelemetry (OTel) data, so telemetry flows to an approved collector without each developer setting OTEL_* environment variables. The configuration is delivered through… The post Enterprise-managed OpenTelemetry export for VS Code and CLI appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Deploy managed Copilot settings via MDM in VS Code and CLI",
+    "url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-08T20:38:56+00:00",
+    "summary_or_excerpt": "Enterprise administrators can now deliver managed GitHub Copilot settings directly to devices through native mobile device management (MDM) and file-based configuration, in addition to the existing server-managed channel. This is… The post Deploy managed Copilot settings via MDM in VS Code and CLI appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -412,7 +547,7 @@
     "tags": [],
     "score": 42,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -436,30 +571,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GPT-5.5 Codex reasoning-token clustering may be leading to degraded performance",
-    "url": "https://github.com/openai/codex/issues/30364",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-04T21:51:09+00:00",
-    "summary_or_excerpt": "HN points: 354. Comments: https://news.ycombinator.com/item?id=48789428",
-    "matched_keywords": [
-      "Codex",
-      "GPT"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 40,
-    "hn_score": 354,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -484,28 +596,7 @@
     "score": 38,
     "release_version": "stable",
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Log is the Agent",
-    "url": "https://arxiv.org/abs/2605.21997",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-05T02:57:38+00:00",
-    "summary_or_excerpt": "HN points: 102. Comments: https://news.ycombinator.com/item?id=48790912",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 37,
-    "hn_score": 102,
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -526,7 +617,7 @@
     "score": 36,
     "hn_score": 90,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -543,7 +634,7 @@
     "score": 36,
     "hn_score": 242,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -566,7 +657,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -586,7 +677,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -606,35 +697,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteLLM v1.92.0-rc.1：Verify Docker Image Signature",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.92.0-rc.1",
-    "source_name": "LiteLLM",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-05T00:32:05+00:00",
-    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.92.0-rc.1 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.92.0-rc.1/cosign.pub \\ ghcr.io/berriai/litellm:v1.92.0-rc.1 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * feat(mcp): add...",
-    "matched_keywords": [
-      "GitHub",
-      "LiteLLM",
-      "MCP",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 36,
-    "release_version": "v1.92.0-rc.1",
-    "first_seen_at": "2026-07-06T08:02:46.090688+08:00",
-    "last_seen_at": "2026-07-08T08:03:00.946362+08:00",
+    "last_seen_at": "2026-07-09T08:08:58.125814+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

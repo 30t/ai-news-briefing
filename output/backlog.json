@@ -1,14 +1,69 @@
 [
   {
-    "title": "Progressive Crystallization: Turning Agent Exploration into Deterministic, Lower-Cost Workflows in Production",
-    "url": "https://arxiv.org/abs/2607.07052",
+    "title": "ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair",
+    "url": "https://arxiv.org/abs/2607.01916",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.07052v1 Announce Type: cross Abstract: AI agents deployed for IT operations are typically permanent cost centers because every execution requires full LLM inference, even for previously solved problems. This paper introduces progressive crystallization, a lifecycle that treats agent exploration as a discovery mechanism rather than a permanent execution model. It defines a three-stage execution taxonomy, from fully agent-orchestrated to hybrid to fully deterministic workflows, together with an evidence-based promotion mechanism that converts repeatedly validated agent behaviors into cheaper and more reproducible deterministic workflows, while automatically demoting workflows that regress. Evaluated on a production cloud networking AIOps system processing tens of thousands of incidents per month, the approach increased deterministic execution from 0% to 45% over eight months, reduced per-incident agent costs by more than 70% despite doubling incident volume, and improved safety through greater reproducibility and auditability. The paper also presents the execution taxonomy, promotion and demotion criteria, trace extraction methodology, economic model, safety consideration...",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.01916v3 Announce Type: replace Abstract: Large language model agents can repair real repository issues, but they often spend large context budgets on whole-file reads, broad searches, and long terminal outputs where useful evidence is mixed with irrelevant code and logs. This paper presents ContextSniper, AntTrail's code-repair module for precision evidence selection in repository-level program repair, part of AntTrail's broader agent-memory engine. AntTrail is available at https://gitcode.com/datagallery/AntTrail. ContextSniper indexes code and action memory as three abstract levels, retrieves candidates with a hybrid ranker, filters long tool output through an intention-aware context gate, and returns compact evidence packets while keeping full source recoverable on demand. In a matched 50-task-per-condition comparison on SWE-bench Lite (same tasks, baseline vs.\\ ContextSniper), ContextSniper reduces total token use by 51.5% and logged cost by 36.4% for OpenClaw, and by 38.9% and 27.3% for Claude Code, with submitted-resolution rates essentially unchanged in both host-agent settings. In a separate five-task comparison, ContextSniper beats existing memory- and RAG-styl...",
     "matched_keywords": [
       "Agent",
+      "agents",
+      "Claude",
+      "Claude Code",
+      "RAG",
+      "repository",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "rag_data"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Does Mixture-of-Experts Actually Help Inference on Consumer and Edge Hardware? An Empirical Study",
+    "url": "https://arxiv.org/abs/2606.21428",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.21428v3 Announce Type: replace-cross Abstract: Mixture-of-Experts (MoE) language models are often described as ideal for resource-constrained inference. Each token activates only a small subset of experts, so the per-token compute cost, in floating-point operations (FLOPs), resembles that of a much smaller dense model. Whether that FLOP advantage survives in practice is far less clear. We ask whether MoE models actually run faster and cheaper than comparable dense models on consumer-grade and edge hardware. We benchmark OLMoE-1B-7B (1.3 B active of 6.9 B total) against three dense baselines on an Apple M2 Pro and an NVIDIA Jetson Orin Nano 8 GB through llama$.$cpp, measuring throughput, memory, and on-device energy. The answer is device-dependent: OLMoE's active-parameter advantage is only partly realised on the laptop (~10% behind the same-active Llama-3.2-1B) and erodes on the edge device (~31% behind, at 2.1$\\times$ the energy per token, with peak memory at the 8 GB ceiling). Patching llama$.$cpp to time the decode graph node-by-node shows routing accounts for under 9% of MoE-block compute on the cleaner edge backend, so the gap reflects total-parameter memory footpr...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "Llama",
+      "NVIDIA"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
+    "url": "https://arxiv.org/abs/2607.08010",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08010v1 Announce Type: new Abstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools return compact structured verdicts, they also enable a simpler direct-call architecture, reducing p50 latency by a further 62% in a controlled ablation. Versioned tools also improve auditability and e...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
       "agents",
       "inference"
     ],
@@ -16,9 +71,9 @@
       "agent",
       "open_source"
     ],
-    "score": 72,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "score": 68,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -44,8 +99,8 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -71,7 +126,31 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling",
+    "url": "https://arxiv.org/abs/2607.08565",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08565v1 Announce Type: cross Abstract: LLM scheduling is critical to serving, yet it remains unclear how well existing designs fit agentic serving--with LLM requests issued by agents instead of humans. This shifts the workload in two ways: (1) agents act only on complete responses, making the cluster's tokens per second (TPS) the primary goal and relaxing--not eliminating--per-token latency requirements; and (2) requests share much of their KV\\$-reuse exceeds 80% of request tokens in a production trace from BAILIAN, versus 54-62% in chat. This paper first contributes a systematic study of request scheduling for agents on two real-world traces. We find that to increase KV\\$ reuse, existing schedulers overly prioritize routing requests to instances caching their KV\\$, overloading a few while leaving the rest idle, capping TPS. We thus present two key insights: (1) load balance need not sacrifice all KV\\$ reuse, thanks to the global-tier KV\\$ store and (2) by utilizing the workload's intra-session locality, balancing a small fraction of requests--the first request in each agent session--suffices to balance the cluster without sacrificing most KV\\$ reuse on local instances....",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "serving"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 67,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -101,8 +180,54 @@
     ],
     "score": 67,
     "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Infinity-Parser2 Technical Report",
+    "url": "https://arxiv.org/abs/2607.07836",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.07836v1 Announce Type: new Abstract: We present Infinity-Parser2, a large multimodal model that couples a controllable data-synthesis pipeline with multi-task reinforcement learning for end-to-end document parsing, addressing the persistent scarcity of faithfully annotated parsing corpora. Our contributions are threefold. First, we build a scalable synthesis engine, pairing a controllable rendering framework with an iterative refinement loop, and use it to construct and open-source Infinity-Doc2-5M: a 5-million-sample bilingual (Chinese/English) corpus spanning diverse document types, annotated with element bounding boxes, canonical content forms (Markdown, HTML, LaTeX, SMILES, structured charts), and full-page reading order. Second, we introduce a verifiable, multi-task reward system that enables Joint Reinforcement Learning across eight co-trained objectives (document parsing, layout analysis, table parsing, math formula parsing, chart parsing, chemical formula parsing, document VQA, and general multimodal understanding), unifying perception, structure, and reasoning in a single optimization signal. Third, we release two variants under a shared architecture: Infinity-...",
+    "matched_keywords": [
+      "release"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Distributed Attacks in Persistent-State AI Control",
+    "url": "https://arxiv.org/abs/2607.02514",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.02514v2 Announce Type: replace Abstract: As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its payload for the PR with the best natural cover. To study the resulting dynamics, we introduce Iterative VibeCoding, a setting for AI control, the study of safely deploying capable but potentially untrusted AI. In Iterative VibeCoding, a coding agent builds software over a sequence of PRs in a persistent codebase while pursuing a covert side task. Our benchmark includes two task families: CLI tools and Flask web services, across 20 total task variations. We use Claude Sonnet 4.5 as the attack agent and GPT-4o as the monitor. We compare gradual attacks, which distribute the side task across PRs, against non-gradual attacks concentrated in a single PR. No single monitor is robust to both: which strategy evades best (success while evading the monitor) depends on the monitor type, so a defender cannot close off both gradual and non-gradual attacks with any one...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -127,35 +252,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents",
-    "url": "https://arxiv.org/abs/2607.07405",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.07405v1 Announce Type: new Abstract: Tool-using LLM agents can violate the very policies they are deployed to enforce while appearing to complete the task successfully. In policy-permissive environments, a tool may execute any well-formed call even when the corresponding state transition is forbidden by domain policy. The result is a silent wrong state (a booking cancelled, a passenger count changed, a claim acted on without verification) that neither the tool nor the agent's self-report exposes. We study this failure mode in the $\\tau^2$-bench airline domain. On a budget agent, 78% of observed failures are silent wrong-state failures with no tool error, and the aggregate failure rate is reproducible across disjoint seeds, not sampling noise. We then evaluate a lightweight intervention: deterministic, read-only pre-execution gates that inspect the proposed call and current state before allowing a write. A four-gate suite raises full-benchmark success from 29.6% to 42.0% on gpt-4o-mini (+12.4pp; paired task-level bootstrap P=0.0012), and the lift reproduces on a disjoint 15-seed set (+12.3pp; P=0.0008). The effect is concentrated where the gates fire: on the 26/50 firing...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "GPT",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -178,8 +276,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -203,7 +301,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -228,7 +326,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -251,7 +349,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -277,7 +375,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -304,80 +402,32 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "StepShield: When, Not Whether to Intervene on Rogue Agents",
-    "url": "https://arxiv.org/abs/2601.22136",
-    "source_name": "arXiv cs.AI",
+    "title": "DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment",
+    "url": "https://arxiv.org/abs/2607.07820",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.22136v2 Announce Type: replace-cross Abstract: Agent safety benchmarks measure whether a monitor detects harm, not when. Yet timing is the difference between intervention and autopsy. We introduce StepShield, the first benchmark that treats detection timeliness as a first-class metric. On 9,429 incident-grounded code-agent trajectories, we define the Early Intervention Rate (EIR): the fraction of detected rogue trajectories where the alert fires within a k-step window after the divergence point, isolating timing quality from coverage. This metric exposes what we call the Forensics Trap: a pattern-based guardrail with 847 rules achieves 86% recall yet is statistically indistinguishable from random timing on EIR (0.23 vs. 0.24; p = 0.66, one-sided binomial; difference within CI), because over three-quarters of its alerts trigger on benign prefix code before any violation occurs. The 4x EIR gap between rule-based and semantic detectors is completely invisible to accuracy, recall, or F1. Our finding is structural: regex guardrails detect syntax, not intent, and therefore cannot distinguish the moment an agent turns rogue, rendering the entire deployed class of pattern-based...",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.07820v1 Announce Type: new Abstract: Training tool-use agents to improve from their own experience remains challenging, as supervised fine-tuning relies on fixed teacher-distilled trajectories, while sparse-reward reinforcement learning provides weak supervision for long-horizon interactions. We present DeepSearch-Evolve, a self-distillation framework for web agents built on DeepSearch-World, a deterministic and verifiable environment with reproducible search and page-reading tools. DeepSearch-World contains 420K multi-hop QA tasks constructed from entity-level random walks and supports key agentic cognitive behaviors useful for self-evolving, including progress verification, grounded reflection, and failure recovery. DeepSearch-Evolve iteratively performs trajectory generation, filtering, data mixing, and fine-tuning to train stronger agents. Without distillation from more capable models, DeepSearch-World-9B achieves competitive performance compared with open-source agents, reaching 31.2% on BrowseComp, 61.5% on GAIA, and 93.4% on HotpotQA, showing that verifiable environments enable scalable self-evolution for long-horizon web agents. We will release the environment,...",
     "matched_keywords": [
-      "Agent",
+      "agentic",
       "agents",
-      "benchmark"
+      "fine-tuning",
+      "release"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Quantifying Frontier LLM Capabilities for Container Sandbox Escape",
-    "url": "https://arxiv.org/abs/2603.02277",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.02277v2 Announce Type: replace-cross Abstract: Large language models (LLMs) increasingly act as autonomous agents, using tools to execute code, read and write files, and access networks, creating novel security risks. To mitigate these risks, agents are commonly deployed and evaluated in isolated \"sandbox\" environments, often implemented using Docker/OCI containers. We introduce SANDBOXESCAPEBENCH, an open benchmark that safely measures an LLM's capacity to break out of these sandboxes. The benchmark is implemented as an Inspect AI Capture the Flag (CTF) evaluation utilising a nested sandbox architecture with the outer layer containing the flag and no known vulnerabilities. Following a threat model of a motivated adversarial agent with shell access inside a container, SANDBOXESCAPEBENCH covers a spectrum of sandboxescape mechanisms spanning misconfiguration, privilege allocation mistakes, kernel flaws, and runtime/orchestration weaknesses. We find that, when vulnerabilities are added, LLMs are able to identify and exploit them, showing that use of evaluation like SANDBOXESCAPEBENCH is needed to ensure sandboxing continues to provide the encapsulation needed for highly-c...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "orchestration"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SEVRA-BENCH: Social Engineering of Vulnerabilities in Review Agents",
-    "url": "https://arxiv.org/abs/2606.13757",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.13757v2 Announce Type: replace-cross Abstract: Large language models (LLMs) are increasingly deployed in automated code-review systems, where their approvals can determine which code is merged into shared repositories. However, it is unclear whether review agents can detect vulnerability-introducing code when an attacker controls both the code change and the persuasive Pull Request (PR) narrative designed to mask it. We introduce SEVRA-BENCH (Social Engineering of Vulnerabilities in Review Agents), a benchmark that measures how often a review agent approves such adversarial PR s. Each PR in SEVRA-BENCH is built from a historical commit that fixed a vulnerability. We automatically reverse that fix to extract the original vulnerable code, and submit the resulting code change as a PR wrapped in one of 15 social-engineering framings. To test review-agent resilience to narrative manipulation, these framings vary dimensions such as supporting evidence, conveyed urgency, signals of prior approval, and appeals to authority. SEVRA-BENCH evaluates a retained challenge split of roughly 1000 adversarial PRs drawn from publicly disclosed vulnerability fixes across the top 10 entries...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "pull request"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -396,8 +446,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -421,8 +471,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -442,90 +492,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Amazon will stop accepting new customers for Mechanical Turk",
-    "url": "https://techcrunch.com/2026/07/05/amazon-will-stop-accepting-new-customers-for-mechanical-turk",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-05T17:43:36+00:00",
-    "summary_or_excerpt": "These may be the last days of Amazon’s Mechanical Turk.",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 57,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands 1.11.0：1.11.0 (2026-07-09)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/1.11.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-09T19:37:16+00:00",
-    "summary_or_excerpt": "## 1.11.0 (2026-07-09) ## What's Changed ### Features * feat: pass repository metadata to observability traces by @neubig in https://github.com/OpenHands/OpenHands/pull/14431 * feat(enterprise): Agent Profiles on the cloud/SaaS backend (#15044) by @simonrosenberg in https://github.com/OpenHands/OpenHands/pull/15060 * feat(backend): Add Budgets dashboard and expand Usage Dashboard by @saurya in https://github.com/OpenHands/OpenHands/pull/15149 * feat: budgets and usage monitoring UI by @saurya in https://github.com/OpenHands/OpenHands/pull/15186 * feat: surface email enabled for smtp/resend by @saurya in https://github.com/OpenHands/OpenHands/pull/15214 ### Bug Fixes * fix: prevent webhook-driven DB connection leaks by @tofarr in https://github.com/OpenHands/OpenHands/pull/15212 ### Maintenance * chore(main): release cloud 1.43.0 by @openhands-release-bot[bot] in https://github.com/OpenHands/OpenHands/pull/15178 * chore: bump SDK packages to v1.34.0 by @all-hands-bot in https://github.com/OpenHands/OpenHands/pull/15200 * chore(main): release cloud 1.44.0 by @openhands-release-bot[bot] in https://github.com/OpenHands/OpenHands/pull/15201 * chore(main): release cloud 1.45.0 by @openh...",
-    "matched_keywords": [
-      "Agent",
-      "GitHub",
-      "OpenHands",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 49,
-    "release_version": "1.11.0",
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LLMs Silently Correct African American English: Auditing and Mitigating Dialect Bias via Activation Steering",
-    "url": "https://arxiv.org/abs/2607.06845",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.06845v1 Announce Type: new Abstract: African American English (AAE), a rule-governed dialect spoken by over 30 million people, is routinely misinterpreted and \"corrected\" by large language models (LLMs). Across six instruction-tuned LLMs (14B to 70B), we show that state-of-the-art models systematically prefer Standard American English (SAE) continuations even when the preceding context is in AAE, effectively rewriting AAE into SAE. We present an end-to-end framework to audit and mitigate this bias. For auditing, we introduce conditional Dialect Group Invariance (cDGI), which isolates true model bias from translator-induced artifacts, and a feature-level localization analysis that identifies which AAE markers most strongly trigger bias; we find that syntactic constructions, especially negative concord (e.g., \"ain't nobody\"), are universal triggers across all models. For mitigation, we introduce, to our knowledge, the first application of activation steering to dialect bias: a training-free, test-time method that extracts dialect directions via causal tracing and injects them into bias-relevant layers. Activation steering reduces bias 5 to 20 times more than prompting whi...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 47,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MTEB-BR: A Text Embedding Benchmark for Brazilian Portuguese",
-    "url": "https://arxiv.org/abs/2607.04581",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.04581v2 Announce Type: replace Abstract: Text embeddings for Portuguese have no dedicated benchmark: evaluation rests on translated corpora such as English MS MARCO or on thin multilingual coverage, with native tasks scattered and unconsolidated. We introduce MTEB-BR, a benchmark of 22 native Brazilian-Portuguese tasks across seven categories (classification, multilabel classification, pair classification, semantic textual similarity, clustering, retrieval, and reranking), admitting only data created or found in Portuguese and excluding translations by construction. We evaluate 93 models spanning 23M to 27B parameters: 73 open-weight and 20 closed commercial APIs. Alongside the leaderboard we report a statistical layer for every headline comparison: per-task bootstrap confidence intervals, paired-bootstrap significance, a task- and instance-level discrimination analysis (how sharply each task separates models) adapted from Item Response Theory, and a cross-leaderboard correlation. Three findings stand out. The benchmark cleanly separates about a dozen tiers of models, though the top six are statistically too close to order. An openly licensed, self-hostable model reache...",
-    "matched_keywords": [
-      "benchmark",
-      "embeddings",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -551,7 +519,7 @@
     "score": 46,
     "release_version": "1.10.0",
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -571,7 +539,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -597,8 +565,8 @@
     "score": 44,
     "release_version": "b9946",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -621,7 +589,7 @@
     "score": 44,
     "release_version": "b9931",
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -646,7 +614,7 @@
     "score": 44,
     "release_version": "cloud-1.43.0",
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -670,8 +638,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -694,23 +662,7 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Canonical On Making Ubuntu For ARM64 \"Truly A First-Class Architecture\"",
-    "url": "https://www.phoronix.com/news/Ubuntu-ARM64-2026",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T10:20:00+00:00",
-    "summary_or_excerpt": "The Ubuntu Foundations Engineering Manager, Ravi Kant Sharma, with Canonical has provided an update regarding the current ARM64 state on Ubuntu Linux...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 42,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -736,32 +688,102 @@
     "score": 41,
     "release_version": "b9939",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection detection",
+    "url": "https://github.blog/changelog/2026-07-10-codeql-2-26-0-adds-kotlin-2-4-0-support-and-ai-prompt-injection-detection",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-10T20:40:56+00:00",
+    "summary_or_excerpt": "CodeQL is the static analysis engine behind GitHub code scanning, which finds and remediates security issues in your code. We’ve recently released CodeQL 2.26.0, which adds support for Kotlin 2.4.0,… The post CodeQL 2.26.0 adds Kotlin 2.4.0 support and AI prompt injection detection appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Alessio Finelli 如何用 Linear、Symphony 和 Codex 在手机上管理自治编程智能体",
-    "url": "https://www.bestblogs.dev/en/video/4acafbe?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T12:00:19+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Claire Vo 访谈 Alessio Finelli，展示如何把一次性提示的自治编程智能体，升级为由 Linear、Symphony、Codex、token 跟踪和小企业自动化场景共同支撑的可管理工作流。 📝 Summary 这期内容是一场偏实操的对话和演示，核心是如何从单次提示编程智能体，转向把智能体工作当成长周期运营系统来管理。Alessio Finelli 展示了他如何组合 Zoo、OpenAI Symphony、Linear、Codex workpad、GitHub 审查循环、dashboard 和 token 账本，让任务从 spec 到实现、人工 review、返工再到最终状态，都能在保留上下文的前提下推进。最有价值的部分在于具体工作流细节：把 Linear 当作状态机、用 markdown 写工作流指令、维护返工 checklist、追踪成本，以及借助视觉 diff 等工具补足审查能力。随后讨论延伸到 Merlion Games，Codex 会帮助收集 PSA 证书编号、在 eBay 搜索被低估的交易卡，并探索展会现场的实时定价。Claire 和 Alessio 进一步提出一个更大的判断：当凌乱的物理世界数据、库存和个人上下文能够被转化为智能体可处理的上下文时，AI 对个人和小企业尤其有用。 💡 Main Points 当 Linear 充当状态机时，智能体工作更容易被管理 Alessio 把 Symphony 和 Linear 描述为编程智能体外层的运营封装，让任务的原始 spec、workpad、review 评论、返工 checklist 和最终状态，都能停留在同一个可见生命周期里。 Symphony 的真正优势在于塑造上下文，而不是提供新的模型能力 这期节目清楚地区分了原始模型能力和外围工作流。Symphony 帮助保存任务历史、失败模式和未来指令，让人可以用更低的本地心智负担管理智能体。 token 账本和 dashboard 能暴露自治工作的高成本来源 Alessio 按任务追踪 token 使用量，因为异常庞大的运行通常意味着缺少检查、指令薄弱或工具链有缺口。这让智能体成本变成调试信号，而不是一张不透明的账单。 交易卡案例把 AI 编程智能体落到真实业务结果上 Merlion Games 的工作流展示了 Codex 如何寻找 PSA 证书编号、浏览 eBay，并帮助评估被低估的卡牌，使软件自动化变得具体，并直接连接到收入，而不是停留在抽象工具层。 更大的判断是，AI 能为凌乱的现实工作卸载上下文负担 对话从编程延伸到库存、书籍、财务、收件箱监控和实体商品，认为当异构数据过去超出人的处理带宽时，LLM 能创造新的杠杆。 💬 Key Quotes 一切都像是在问，你如何塑造上下文？你...",
+    "title": "llama.cpp b9957：server: improve tools, remove apply_diff (#25498)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9957",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-10T20:17:38+00:00",
+    "summary_or_excerpt": "server: improve tools, remove apply_diff (#25498) * server: improve tools, remove apply_diff * improve edit tool * add tools_io abstraction * add tools_io_basic * fix build * move utils to class member * add const **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9957/llama-b9957-bin-ubuntu-vulkan-x64.tar.gz) -...",
     "matched_keywords": [
-      "Codex",
       "GitHub",
-      "OpenAI"
+      "Intel",
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
-      "coding_tool",
       "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b9957",
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n n8n@2.30.3：[2.30.3](https://github.com/n8n-io/n8n/compare/n8n@2.30.2...n8n@2.30.3) (2026-07-10)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.3",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-10T07:59:16+00:00",
+    "summary_or_excerpt": "## [2.30.3](https://github.com/n8n-io/n8n/compare/n8n@2.30.2...n8n@2.30.3) (2026-07-10) ### Bug Fixes * **editor:** Keep AI Assistant thread state intact on editor hand-off ([#33924](https://github.com/n8n-io/n8n/issues/33924)) ([ee10d01](https://github.com/n8n-io/n8n/commit/ee10d01e96a1a621efb5cb671b8af0ed0436bb91)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
       "open_source"
     ],
-    "score": 40,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
+    "score": 38,
+    "release_version": "n8n@2.30.3",
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n stable：[2.29.10](https://github.com/n8n-io/n8n/compare/n8n@2.29.9...n8n@2.29.10) (2026-07-10)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-10T07:57:17+00:00",
+    "summary_or_excerpt": "## [2.29.10](https://github.com/n8n-io/n8n/compare/n8n@2.29.9...n8n@2.29.10) (2026-07-10) ### Bug Fixes * **editor:** Keep AI Assistant thread state intact on editor hand-off ([#33925](https://github.com/n8n-io/n8n/issues/33925)) ([3934a83](https://github.com/n8n-io/n8n/commit/3934a83e4757fac493446bc505d1edd3804c27c2)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "stable",
+    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -783,133 +805,7 @@
     "score": 38,
     "release_version": "n8n@2.30.2",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n stable：[2.28.7](https://github.com/n8n-io/n8n/compare/n8n@2.28.6...n8n@2.28.7) (2026-07-06)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-06T08:17:35+00:00",
-    "summary_or_excerpt": "## [2.28.7](https://github.com/n8n-io/n8n/compare/n8n@2.28.6...n8n@2.28.7) (2026-07-06) ### Bug Fixes * **core:** Pin langgraph and langgraph-checkpoint to prevent broken npm installs ([#33610](https://github.com/n8n-io/n8n/issues/33610)) ([7fe5d56](https://github.com/n8n-io/n8n/commit/7fe5d5692ae802f854c95ad99cb080df670b71f2)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "LangGraph",
-      "n8n"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "stable",
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GLM 5.2 and the coming AI margin collapse",
-    "url": "https://martinalderson.com/posts/the-upcoming-ai-margin-collapse-part-1-glm-5-2",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-06T20:14:55+00:00",
-    "summary_or_excerpt": "HN points: 90. Comments: https://news.ycombinator.com/item?id=48809877",
-    "matched_keywords": [
-      "GLM"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 36,
-    "hn_score": 90,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A global workspace in language models",
-    "url": "https://www.anthropic.com/research/global-workspace",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-06T17:44:08+00:00",
-    "summary_or_excerpt": "HN points: 242. Comments: https://news.ycombinator.com/item?id=48808002",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 36,
-    "hn_score": 242,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Builders Unscripted：Derya Unutmaz 谈 Codex、生物学与个性化医疗的数字孪生",
-    "url": "https://www.bestblogs.dev/en/video/7624309?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T20:03:49+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Derya Unutmaz 解释了 Codex 和前沿推理模型如何让生物医学研究者快速原型化流式细胞术工具、免疫模拟器、CRISPR 设计应用，并通向个性化医疗中的数字孪生愿景。 📝 Summary 这集 Builders Unscripted 是一场信息密度很高的对话，Derya Unutmaz 讨论了 AI 如何成为生物学研究中的实用加速器。他回顾自己在 1990 年代初开始关注 AI：生物系统的复杂性让传统建模显得力不从心。随后他讲到 o1-preview 如何改变了他对推理模型用于科学假设生成的信心。最有价值的部分是几组由 Codex 构建的研究工具演示：流式细胞术分析、T 细胞面板的标记物选择、T 细胞受体模拟器、交互式免疫图谱，以及原生 macOS CRISPR 设计应用。讨论随后扩展到虚拟细胞、数字孪生、个性化肿瘤治疗、AI 辅助临床试验、自动化实验室和 Science 2.0。它带有一定乐观色彩，也接近 OpenAI 的官方语境，但第一人称的科研工作流细节让它在理解 AI 编码工具如何改变生物医学研究方面格外有价值。 💡 Main Points 推理模型改变了他对 AI 科研能力的判断 Unutmaz 认为 o1-preview 跨过了一个门槛，因为它能够围绕复杂免疫学提示进行推理，并提出早期模型难以稳定给出的科学思路。 Codex 能把专业领域知识转化为可运行工具 节目展示了多款由非软件工程师构建的生物医学应用，包括流式细胞术分析、T 细胞标记物选择、免疫模拟和 CRISPR 靶点设计。 生物学需要像工程学一样拥有模拟基础设施 他认为生物系统过于复杂，不能只依赖试错式设计，因此虚拟细胞和交互式免疫模拟器可能会成为理解机制、规划实验的关键工具。 数字孪生可能让医疗更个性化，并压缩临床试验周期 Unutmaz 将数字孪生定义为对一个人的完整生物学模拟，并把这个概念连接到药物匹配、肿瘤治疗、临床试验提速和副作用减少。 能动性和好奇心是科学之外同样实用的启示 他在结尾建议持续用 AI 做实验，因为原型构建、测试假设和从失败尝试中恢复的成本已经大幅下降。 💬 Key Quotes 也正是在那时，我开始对 AI，也就是人工智能产生兴趣，那是在 90 年代初。 o1-preview 给我的回答几乎让我动容。 我的目标是，在某个时刻，我们能够构建所谓的虚拟细胞。 我希望有一天我们会拥有一个面向生物学的 Codex，让我们可以真正对细胞进行编程。 事实上，我把它称为 Science 2.0 或 3.0。我们做科学的方式将会彻底改变。 真正重要的只有能动性和好奇心。 📊 Article Meta AI Screening： 91 Source： OpenAI Author： OpenAI Category： 人工...",
-    "matched_keywords": [
-      "Codex",
-      "Meta AI",
-      "OpenAI"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 36,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Vercel CEO Guillermo Rauch on the fight to split off models from agents",
-    "url": "https://techcrunch.com/2026/07/06/vercel-ceo-guillermo-rauch-on-the-fight-to-split-off-models-from-agents",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T19:49:10+00:00",
-    "summary_or_excerpt": "\"The reality is, when you're optimizing for production, you start looking at a price/performance,\" Guillermo Rauch tells TechCrunch.",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 36,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Marek Olšák At Valve Lands RADV Code That Can \"Double Performance\" With Some VRS Cases",
-    "url": "https://www.phoronix.com/news/Marek-Double-VRS-RADV-Perf",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-06T18:56:57+00:00",
-    "summary_or_excerpt": "Longtime AMD Linux graphics driver expert Marek Olšák, who joined Valve earlier this year and now focusing more on RADV rather than the RadeonSI Gallium3D driver, has seen some of his latest work now merged for Mesa 26.2. Marek landed a big overhaul to the variable rate shading (VRS) code that in some cases can double the performance...",
-    "matched_keywords": [
-      "AMD"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 36,
-    "first_seen_at": "2026-07-07T08:11:09.455304+08:00",
-    "last_seen_at": "2026-07-10T08:06:38.926167+08:00",
+    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

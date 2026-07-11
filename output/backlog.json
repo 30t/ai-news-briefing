@@ -1,30 +1,25 @@
 [
   {
-    "title": "ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair",
-    "url": "https://arxiv.org/abs/2607.01916",
-    "source_name": "arXiv cs.AI",
+    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
+    "url": "https://arxiv.org/abs/2607.08010",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.01916v3 Announce Type: replace Abstract: Large language model agents can repair real repository issues, but they often spend large context budgets on whole-file reads, broad searches, and long terminal outputs where useful evidence is mixed with irrelevant code and logs. This paper presents ContextSniper, AntTrail's code-repair module for precision evidence selection in repository-level program repair, part of AntTrail's broader agent-memory engine. AntTrail is available at https://gitcode.com/datagallery/AntTrail. ContextSniper indexes code and action memory as three abstract levels, retrieves candidates with a hybrid ranker, filters long tool output through an intention-aware context gate, and returns compact evidence packets while keeping full source recoverable on demand. In a matched 50-task-per-condition comparison on SWE-bench Lite (same tasks, baseline vs.\\ ContextSniper), ContextSniper reduces total token use by 51.5% and logged cost by 36.4% for OpenClaw, and by 38.9% and 27.3% for Claude Code, with submitted-resolution rates essentially unchanged in both host-agent settings. In a separate five-task comparison, ContextSniper beats existing memory- and RAG-styl...",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08010v1 Announce Type: new Abstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools return compact structured verdicts, they also enable a simpler direct-call architecture, reducing p50 latency by a further 62% in a controlled ablation. Versioned tools also improve auditability and e...",
     "matched_keywords": [
       "Agent",
+      "agentic",
       "agents",
-      "Claude",
-      "Claude Code",
-      "RAG",
-      "repository",
-      "terminal"
+      "inference"
     ],
     "tags": [
       "agent",
-      "coding_tool",
-      "model",
-      "rag_data"
+      "open_source"
     ],
     "score": 68,
-    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -49,57 +44,7 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
-    "url": "https://arxiv.org/abs/2607.08010",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.08010v1 Announce Type: new Abstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools return compact structured verdicts, they also enable a simpler direct-call architecture, reducing p50 latency by a further 62% in a controlled ablation. Versioned tools also improve auditability and e...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
-    "url": "https://arxiv.org/abs/2607.06624",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.06624v1 Announce Type: new Abstract: We present AgentLens, a production-assessed benchmark for interactive code agents. Most code-agent benchmarks reduce a run to a single bit -- did the task pass? -- but the people who actually use these agents experience the entire trajectory: how the agent follows instructions, uses its tools, verifies its own work, recovers from mistakes, and talks to them along the way. AgentLens evaluates that whole trajectory. It pairs formal verification, where an objective check exists, with LLM-written trajectory reviews and side-by-side comparisons, so that each run yields a readable explanation of why the score is what it is. This makes AgentLens useful for more than ranking models: we use it to diagnose model behavior, compare successive versions of our own agent, and catch product regressions in a nightly evaluation pipeline. We release the benchmark as open source at https://github.com/agent-lens/agent-lens-bench.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "GitHub",
-      "open source",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -126,7 +71,7 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -150,37 +95,7 @@
     ],
     "score": 67,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Don't Blame the Large Language Model: How Scaffolding Evolution Shapes Coding Agent Quality",
-    "url": "https://arxiv.org/abs/2607.03691",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.03691v1 Announce Type: cross Abstract: Coding agents, autonomous systems that use large language models (LLMs) to resolve software engineering tasks, rely on agentic scaffolding: a middleware layer in between a developer and a large language model that orchestrates system prompts, tool execution, context management, and iterative reasoning loops. While these scaffoldings evolve at extreme velocities, no study has examined how this evolution affects agent quality (i.e., effectiveness and efficiency) over time. Practitioners regularly report quality regressions after scaffolding updates, yet consistently attribute them to the underlying model rather than the scaffolding itself. In this paper, we address this gap by conducting the first controlled longitudinal study that isolates the scaffolding's contribution. Unlike prior work that fixes the scaffolding and varies the model, we fix the model and vary only the scaffolding, evaluating 35 sequential releases to measure their impact on agent effectiveness and efficiency. We first empirically study the development and release evolution of five major open-source scaffoldings (i.e., Codex, Qwen Code, Gemini, OpenCode, and OpenH...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "Codex",
-      "Gemini",
-      "Qwen",
-      "release",
-      "software engineering"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 67,
-    "first_seen_at": "2026-07-08T08:03:00.946362+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -200,7 +115,29 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Uncertainty-gated selection for block-sparse attention",
+    "url": "https://arxiv.org/abs/2607.07724",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.07724v1 Announce Type: cross Abstract: Block-sparse attention scales long-context language models by replacing the O(N^2) softmax with a per-query top-k selection over key blocks. This cutoff is myopic: when the k-th and (k+1)-th blocks are nearly tied in score, the selector commits without spending extra budget, and a dropped block carrying answer evidence is unrecoverable downstream. We propose a value-of-information router that measures, for each query, how decisively the top-k cut was made, and doubles the kept set for the queries where that gap is smallest; the rule is backbone-agnostic and stacks with existing block-scoring methods such as Quest. On LongBench-v2 medium at n=215 (the entire dataset subset), router-on-Quest reaches paired recall 0.75 vs. top-k 0.47 -- +28 pp over the SSA-style baseline (McNemar p<0.01) -- and lands within 2 pp of dense on RULER NIAH multikey at the same context. The lift reproduces on four models from three architectures (Qwen2.5, Mistral-Nemo, Qwen3.6). At 128K, the router preserves 0.81 and 0.89 of dense accuracy on Qwen2.5-7B-1M and Qwen3.6 (vs. SSA-style top-k at 0.09 on the former) while the fused selection-plus-kernel pipeline...",
+    "matched_keywords": [
+      "dataset",
+      "Mistral"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -226,8 +163,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -252,7 +189,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -276,7 +213,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -301,7 +238,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -326,7 +263,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -349,7 +286,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -375,7 +312,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -402,7 +339,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -412,7 +349,7 @@
     "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-10T04:00:00+00:00",
+    "published_at": "2026-07-11T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.07820v1 Announce Type: new Abstract: Training tool-use agents to improve from their own experience remains challenging, as supervised fine-tuning relies on fixed teacher-distilled trajectories, while sparse-reward reinforcement learning provides weak supervision for long-horizon interactions. We present DeepSearch-Evolve, a self-distillation framework for web agents built on DeepSearch-World, a deterministic and verifiable environment with reproducible search and page-reading tools. DeepSearch-World contains 420K multi-hop QA tasks constructed from entity-level random walks and supports key agentic cognitive behaviors useful for self-evolving, including progress verification, grounded reflection, and failure recovery. DeepSearch-Evolve iteratively performs trajectory generation, filtering, data mixing, and fine-tuning to train stronger agents. Without distillation from more capable models, DeepSearch-World-9B achieves competitive performance compared with open-source agents, reaching 31.2% on BrowseComp, 61.5% on GAIA, and 93.4% on HotpotQA, showing that verifiable environments enable scalable self-evolution for long-horizon web agents. We will release the environment,...",
     "matched_keywords": [
       "agentic",
@@ -425,148 +362,175 @@
       "open_source"
     ],
     "score": 60,
-    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Max Out GRPO Signal: Adaptive Trace Prefix Control for Hard Reasoning Problems",
-    "url": "https://arxiv.org/abs/2607.07674",
+    "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+    "url": "https://arxiv.org/abs/2607.08768",
     "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.07674v1 Announce Type: cross Abstract: Group Relative Policy Optimization (GRPO) stalls on a model's hardest problems: when no rollout in a group succeeds, the group-relative advantages vanish and the problem contributes no gradient, wasting the frontier examples we most want to learn from. Prepending a correct prefix of a reference solution raises the success rate, making prefix length a continuous knob on difficulty. Concurrent methods set the knob once; AdaPrefix-GRPO turns it into a feedback controller: throughout training it adjusts how much of the solution each problem gets, holding its success rate near 50%, where GRPO's gradient signal is largest, then withdraws the assistance entirely, so the deployed model solves problems unaided. On hard math, at matched training FLOPs, it more than doubles GRPO's accuracy on held-out problems from the training distribution for a 0.6B model (2.1x), with 1.6x on Qwen3-1.7B and 1.7x on AIME, while roughly halving trace length. The method is implemented in data preparation plus a loss mask on prefix tokens; the trainer is otherwise stock. The smaller the model, the larger the gain.",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08768v1 Announce Type: new Abstract: The rapid development of large language models and multimodal large language models has accelerated the emergence of proactive agents capable of operating everyday tools and assisting users in real-world environments. However, existing benchmarks struggle to evaluate such agents effectively, as they often rely on sandboxed environments and single-turn evaluation paradigms. Moreover, their scenario-based task taxonomies mix multiple model capabilities within the same task category, making it difficult to identify the root causes of agent failures. To address these limitations, we introduce UniClawBench, the first capability-driven benchmark designed to evaluate proactive agents in dynamic, real-world settings. UniClawBench is built around five foundational model capabilities: Skill Usage, Exploration, Long-Context Reasoning, Multimodal Understanding, and Cross-Platform Coordination. Based on these capabilities, we design 400 bilingual real-world tasks. Unlike previous benchmarks that rely on static, pre-recorded answers, our benchmark evaluates agents in live Docker containers using fine-grained, step-by-step completion checkpoints. F...",
     "matched_keywords": [
-      "policy"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "RIMRULE: Improving Tool-Using Language Agents via MDL-Guided Rule Learning",
-    "url": "https://arxiv.org/abs/2601.00086",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.00086v3 Announce Type: replace Abstract: Large language models (LLMs) often struggle to use tools reliably in domain-specific settings, where APIs may be idiosyncratic, under-documented, or tailored to private workflows. This highlights the need for effective adaptation to task-specific tools. We propose RIMRULE, a neuro-symbolic approach for LLM adaptation based on dynamic rule injection. Compact, interpretable rules are distilled from failure traces and injected into the prompt during inference to improve task performance. These rules are proposed by the LLM itself and consolidated using a Minimum Description Length (MDL) objective that favors generality and conciseness. Each rule is stored in both natural language and a structured symbolic form, supporting efficient retrieval at inference time. Experiments on tool-use benchmarks show that this approach improves accuracy on both seen and unseen tools without modifying LLM weights. It outperforms prompting-based adaptation methods and complements finetuning. Moreover, rules learned from one LLM can be reused to improve others, including long reasoning LLMs, highlighting the portability of symbolic knowledge across arch...",
-    "matched_keywords": [
+      "Agent",
       "agents",
-      "inference",
-      "retrieval",
-      "weights"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "open_source",
-      "rag_data"
+      "open_source"
     ],
-    "score": 58,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Are GUI Agents Focused Enough? Automated Distraction via Semantic-level UI Element Injection",
-    "url": "https://arxiv.org/abs/2604.07831",
+    "title": "SPL: Orchestrating Workflows with Declarative Deterministic-Probabilistic Composition",
+    "url": "https://arxiv.org/abs/2607.07727",
     "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.07831v2 Announce Type: replace-cross Abstract: Existing red-teaming studies on GUI agents face two fundamental limitations: adversarial perturbations require white-box access unavailable in commercial deployments, while prompt injection is increasingly neutralized by stronger safety alignment. To study robustness under a more practical threat model, we propose Semantic-level UI Element Injection, a black-box red-teaming paradigm that overlays safety-aligned and harmless UI elements onto screenshots to misdirect the agent's visual grounding. Our method couples a modular Editor--Overlapper--Victim pipeline with iterative search that samples multiple candidate edits, keeps the best cumulative overlay, and adapts future prompt strategies based on previous failures. Experiments across 19 victim models spanning 8 model families show that strategic optimization substantially outperforms random injection (3.5-6.9x on the most robust victims) and transfers near-perfectly across architectures, confirming model-agnostic visual-semantic vulnerabilities. After the first successful attack, the victim still clicks the attacker-controlled icon in over 15\\% of subsequent independent tri...",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.07727v1 Announce Type: cross Abstract: We present SPL (Structured Prompt Language), a declarative language that composes deterministic and probabilistic computation modes in a single specification. While existing frameworks separate these -- orchestration systems (AutoGen, CrewAI, LangGraph) for LLM calls, symbolic tools (SymPy, SageMath, Lean) for computation -- SPL unifies them. It provides GENERATE/EVALUATE for probabilistic computation and SOLVE/ASSERT for deterministic computation, sharing syntax, variable bindings, and runtime routing. A .spl specification runs unchanged across local nodes (Ollama), cloud APIs (OpenRouter, Anthropic), and distributed grids (Momagrid), with model and verifier selection deferred to invocation time. We validate SPL through an extensive 78-recipe cookbook and a controlled 1,200-run experiment (10 models x 20 problems x 2 arms x 3 repetitions; the 20 problems span 6 difficulty tiers). The solver arm achieves 82-93% machine-verified correctness (sonnet-4-6: 85%, gemma4:e2b: 93%) while the LLM-only arm measures output production without mathematical verification, making the comparison one of verified correctness against unverified fluenc...",
+    "matched_keywords": [
+      "Anthropic",
+      "AutoGen",
+      "CrewAI",
+      "LangGraph",
+      "Ollama",
+      "OpenRouter",
+      "orchestration"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
+    "url": "https://arxiv.org/abs/2607.08093",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08093v1 Announce Type: cross Abstract: Large language models (LLMs) increasingly act as integrated data-science agents, combining abstract reasoning with advanced tool use. Yet the relevant benchmark landscape largely divides into symbolic causal reasoning benchmarks without realistic data analysis or data analysis benchmarks without a principled causal data-generating structure. Furthermore, existing causal evaluation datasets are often restricted to curated examples from existing sources, with diversity coming from limited templatized variations rather than from systematic generation of novel synthetic causal structures. We introduce CausalDS, a benchmark for evaluating causal reasoning in agentic data-science workflows. Each benchmark instance is a scene consisting of a sampled structural causal model (SCM) with generated observational data and an accompanying synthetic natural-language story grounded in a realistic domain. We optionally ground the composition of the benchmark components in empirical distributions obtained from real-world datasets, thus retaining empirical structure while reducing the \"causal parrot\" risk through completely synthetic generation. From...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+    "url": "https://arxiv.org/abs/2607.08716",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08716v1 Announce Type: cross Abstract: In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed beyond it, failing to influence decisions when needed. We call this failure mode \"behavioral state decay\". We study memory as an active intervention mechanism rather than passive retrieval. A separate memory agent runs alongside an unmodified action agent, updating a structured memory bank from the recent trajectory and deciding whether to inject a memory-grounded reminder or remain silent. The module is plug-and-play with frontier action agents and existing agent harnesses. Across Terminal-Bench 2.0 and $\\tau^2$-Bench, it improves pass@1 for both weaker and stronger action agents, with gains of +8.3 pp on Terminal-Bench and +6.8 pp on $\\tau^2$-Bench. Ablations show that selective intervention outperforms passive bank exposure, always-on injection, advisor-only guidance, and general retrieval. As an early step toward open-weight memory poli...",
     "matched_keywords": [
       "Agent",
-      "agents"
+      "agents",
+      "retrieval",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "rag_data"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AdaPlanBench: Evaluating Adaptive Planning in Large Language Model Agents under World and User Constraints",
+    "url": "https://arxiv.org/abs/2606.05622",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.05622v2 Announce Type: replace Abstract: Planning for real-world problems by language models often involves both world and user constraints, which may not be fully specified upfront and are progressively disclosed through interaction. However, existing benchmarks still underexplore adaptive planning under such progressively revealed dual constraints. To address this gap, we introduce AdaPlanBench, a dynamic interactive benchmark for evaluating whether Large Language Model (LLM) agents can adaptively plan and re-plan under progressively revealed world and user constraints. AdaPlanBench is built on 307 household tasks, with a scalable constraint construction pipeline that augments each task with dual constraints. At runtime, agents interact with the environment in a multi-turn protocol where hidden constraints are revealed only when the agent proposes a plan that violates them, requiring iterative plan revision under accumulating feedback. This makes planning challenging, as agents must infer and track constraints from feedback while re-planning effectively. Experiments on ten leading LLMs show that adaptive planning under dual constraints remains challenging, with the be...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Show HN: Reame – a CPU inference server that gets faster as it runs",
+    "url": "https://github.com/swellweb/reame",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-11T16:27:44+00:00",
+    "summary_or_excerpt": "HN points: 30. Comments: https://news.ycombinator.com/item?id=48873417",
+    "matched_keywords": [
+      "inference",
+      "inference server"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 46,
+    "hn_score": 30,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "蚂蚁集团 Robbyant 发布 LingBot-VA 2.0，首个原生具身基础模型",
+    "url": "https://aihot.virxact.com/items/cmrg3dsyt00g4iha7og0687tc",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T07:56:11+00:00",
+    "summary_or_excerpt": "蚂蚁集团旗下具身智能团队 Robbyant 发布 LingBot-VA 2.0，首个原生具身基础模型。该模型采用因果 DiT 架构，视频专家约 13.0B 参数（约 1.9B 激活），训练规模约 15.3B 参数，推理时每 token 约 2.5B 激活。模型引入多块预测（MCP）实现 2.3 倍训练加速，并通过前瞻推理将推理延迟降至 142 ms/chunk。在 RoboTwin 2.0 的 50 个任务上，干净与随机演示数据平均成功率分别达 93.8% 和 93.4%。 🔗 阅读原文：https://www.marktechpost.com/2026/07/11/ant-groups-robbyant-unveils-lingbot-va-2-0 via AI HOT · https://aihot.virxact.com/items/cmrg3dsyt00g4iha7og0687tc",
+    "matched_keywords": [
+      "MCP"
     ],
     "tags": [
       "agent"
     ],
-    "score": 58,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands 1.10.0：1.10.0 (2026-07-08)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/1.10.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-08T19:44:54+00:00",
-    "summary_or_excerpt": "## 1.10.0 (2026-07-08) ## What's Changed ### Features * feat: rename admin dashboard to usage & monitoring by @saurya in https://github.com/OpenHands/OpenHands/pull/15146 * feat: add SMTP email service by @saurya in https://github.com/OpenHands/OpenHands/pull/15144 * feat: track user login timestamps by @saurya in https://github.com/OpenHands/OpenHands/pull/15148 * feat: surface email enabled for smtp/resend by @saurya in https://github.com/OpenHands/OpenHands/pull/15185 ### Bug Fixes * fix: send authenticated marketplace URLs to agent-server by @hieptl in https://github.com/OpenHands/OpenHands/pull/15187 **Full Changelog**: https://github.com/OpenHands/OpenHands/compare/1.9.3...1.10.0 --- This PR was generated with [Release Please](https://github.com/googleapis/release-please). See [documentation](https://github.com/googleapis/release-please#release-please).",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "GitHub",
-      "OpenHands",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "1.10.0",
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "sqlite-utils 4.0, now with database schema migrations",
-    "url": "https://simonwillison.net/2026/Jul/7/sqlite-utils-4",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-07T19:32:57+00:00",
-    "summary_or_excerpt": "This morning I released sqlite-utils 4.0 , the 124th release of that project and the first major version bump since 3.0 in November 2020. In addition to some small but significant breaking changes (described in this upgrade guide ), this version introduces three major features: database migrations , nested transactions (via a new db.atomic() method), and support for compound foreign keys . Database schema migrations using sqlite-utils Schema migrations define a sequence of changes to be made to a SQLite database, plus a mechanism for tracking which migrations have been applied and applying any that are found to be pending. Migrations are defined in Python files using the sqlite-utils Python library , which includes a powerful table.transform() method providing enhanced alter table capabilities that are not supported by SQLite's ALTER TABLE statement. ( table.transform() implements the pattern recommended by the SQLite documentation - create a new temporary table with the new schema, copy across the data, then drop the old table and rename the temporary one in its place.) Here's an example migration file which creates a table called creatures , adds an additional column to it in a...",
-    "matched_keywords": [
-      "release"
-    ],
-    "tags": [
-      "open_source"
-    ],
     "score": 45,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9946：hexagon: tiling, tracing and optimizations for unary ops (#25474)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9946",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-09T22:20:35+00:00",
-    "summary_or_excerpt": "hexagon: tiling, tracing and optimizations for unary ops (#25474) * hexagon: tile wide rows in pointwise unary ops to avoid VTCM overflow * unary: reject permuted tensors for now (not used by models) * hex-unary: replace divs with fastdiv * hex-unary: add vtcm layout and host computed kernel params * hex-unary: move fastdiv init into kernel params * hex-unary: add specialized thread functions to improve generated code * hex-unary: tracing instrumentation for unary ops * hex-unary: factor out hvx kernels, streamline and remove more duplication * ggml-hexagon: fix std::min collision with Windows min macro * hex-cmake: make lto build happy --------- Co-authored-by: Max Krasnyansky **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9946/llama-b9946-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9946/llama-b9946-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9946/llama-b9946-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 44,
-    "release_version": "b9946",
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -589,7 +553,7 @@
     "score": 44,
     "release_version": "b9931",
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -614,7 +578,7 @@
     "score": 44,
     "release_version": "cloud-1.43.0",
     "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -638,7 +602,7 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -662,8 +626,50 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "会做梦的工厂：100 人的 Machinecraft 如何打造企业大脑",
+    "url": "https://www.bestblogs.dev/en/video/c60d1c05f?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T20:00:27+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Rushabh Doshi 讲述一家拥有 100 名员工的工厂如何把私人企业史转化为以记忆为核心、由专业智能体协作且由人控制沟通的 AI 运营系统。 📝 Summary Rushabh Doshi 介绍 Machinecraft 如何保存一家拥有三代积累、100 名员工的热成型机工厂所沉淀的实践知识。团队没有训练新模型，而是把报价、图纸、排期、邮件及其他私有记录处理为事实、向量表示和图关系。由此形成的企业大脑结合了分层记忆、显著性筛选、修正优先级、夜间巩固，以及负责销售、定价、机器规格、事实核查和外联的专业智能体。系统可以支持客户简报、报价单、入站回复和唤醒沉睡线索等具体的市场拓展工作，同时坚持由 AI 起草、由人发送。演讲还将治理规则与 Jain 商业原则联系起来，并介绍 Brain OS：一个空白且可分叉的架构，其他公司可以用自己的知识填充它。 💡 Main Points 企业持久的优势在于积累下来的运营知识 Machinecraft 认为员工流动会带走客户历史、报价、定制方案和决策记录，因此组织记忆是一个具体的业务问题，而不是抽象的 AI 用例。 有用的企业智能来自有组织的记忆，而不是训练模型 系统使用现成模型从私有记录中提取事实，再用向量和图关系保存其中的含义，展示了区别于微调或构建新基础模型的实用路径。 专业智能体让系统成为一支协同运营团队 不同智能体分别负责编排、销售、定价、机器规格、事实核查和修正，并围绕日常市场拓展任务协作，而不是依赖一个负担过重的超级提示词。 记忆与治理和智能体层同样重要 演讲将工作记忆、固定事实、事件记录、关系热度、显著性筛选、修正优先级、休眠周期、来源交叉核查和人工审批视为保证连续性及可信行动的安全机制。 💬 Key Quotes 但真正的公司，真正重要的那一部分，不是机器，而是知识。 我们从未训练过模型。 企业大脑并不是一个更聪明的模型。它其实是一套组织得非常非常好的记忆。 一个智能体，一个任务。它是一支团队，而不是一个英雄。 Eira 负责起草，人来发送。 📊 Article Meta AI Screening： 91 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 313 Tags： AI 智能体 , 企业记忆 , Brain OS , 知识图谱 , 市场拓展自动化 Play Full Video",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Nvidia, CoreWeave, and Nebius: Inside the Circular Financing of the GPU Boom",
+    "url": "https://io-fund.com/ai-stocks/nvidia-coreweave-nebius-circular-financing-gpu-boom",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-11T17:21:49+00:00",
+    "summary_or_excerpt": "HN points: 126. Comments: https://news.ycombinator.com/item?id=48873836",
+    "matched_keywords": [
+      "GPU",
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 41,
+    "hn_score": 126,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -688,8 +694,29 @@
     "score": 41,
     "release_version": "b9939",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Apple sues OpenAI, accuses ex-employees of stealing trade secrets",
+    "url": "https://9to5mac.com/2026/07/10/apple-sues-openai-trade-secret-theft",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-10T20:47:09+00:00",
+    "summary_or_excerpt": "HN points: 1565. Comments: https://news.ycombinator.com/item?id=48865019",
+    "matched_keywords": [
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 40,
+    "hn_score": 1565,
+    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -710,8 +737,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -736,8 +763,8 @@
     "score": 38,
     "release_version": "b9957",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -759,8 +786,8 @@
     "score": 38,
     "release_version": "n8n@2.30.3",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -782,8 +809,8 @@
     "score": 38,
     "release_version": "stable",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -805,7 +832,7 @@
     "score": 38,
     "release_version": "n8n@2.30.2",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-11T07:56:31.626182+08:00",
+    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

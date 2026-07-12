@@ -1,29 +1,5 @@
 [
   {
-    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
-    "url": "https://arxiv.org/abs/2607.08010",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.08010v1 Announce Type: new Abstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools return compact structured verdicts, they also enable a simpler direct-call architecture, reducing p50 latency by a further 62% in a controlled ablation. Versioned tools also improve auditability and e...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "Does Mixture-of-Experts Actually Help Inference on Consumer and Edge Hardware? An Empirical Study",
     "url": "https://arxiv.org/abs/2606.21428",
     "source_name": "arXiv cs.AI",
@@ -44,34 +20,7 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic AI",
-    "url": "https://arxiv.org/abs/2607.06906",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.06906v1 Announce Type: new Abstract: Agentic AI development today runs on token maxing: buying capability with tokens -- longer reasoning traces, more turns, wider tool payloads, bigger replayed contexts -- so tokens per task grow faster than task value. Falling per-token prices mask the pattern; total spend rises anyway. We argue the decisive lever against token maxing is the harness: the orchestration layer that assembles context, exposes tools, sequences turns, delegates work, and carries enterprise observability and governance. We isolate it with a controlled swap: 22 locked evaluation tasks, six foundation models (Claude Sonnet 4.6, Gemini 3.1, Gemini Flash 3.5, Qwen 3.6, GLM 5.1, Palmyra X6), changing only the orchestration layer -- a frozen conventional production loop versus the Writer Agent Harness. Holding models constant, the harness cuts blended cost per task 41% ($0.21->$0.12), median wall-clock 44% (48s->27s), and tokens per task 38% (14.2k->8.8k), with task-completion quality at parity (0.78->0.81, directional at this sample size). Efficiency is model-invariant -- every model gets cheaper (33-61%) -- while quality gains are capability-dependent: a model's...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "Claude",
-      "Gemini",
-      "GLM",
-      "orchestration",
-      "Qwen"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -95,7 +44,7 @@
     ],
     "score": 67,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -115,8 +64,24 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "纳德拉提出\"反向信息悖论\"：企业使用AI时需保护自身知识",
+    "url": "https://aihot.virxact.com/items/cmrhyer8a01q3biidlr8xr6rm",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T15:09:57+00:00",
+    "summary_or_excerpt": "微软CEO萨提亚·纳德拉提出\"反向信息悖论\"：AI时代，买家为使用AI支付金钱，同时必须暴露专有知识（提示词、工具使用、纠正反馈等），这些\"智力废气\"被模型学习，导致信息不对称向卖家倾斜。企业需要真正的信任边界，确保自身数据、痕迹、评估、适配权重和记忆在边界内积累，未经同意不得外泄。纳德拉呼吁企业拥有私有评估、保留组织记忆所有权，并主张企业应有权使用模型输出微调或训练自有模型，以控制自身学习循环。 🔗 阅读原文：https://x.com/satyanadella/status/2076323181154230284 via AI HOT · https://aihot.virxact.com/items/cmrhyer8a01q3biidlr8xr6rm",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 64,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -137,8 +102,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -163,7 +128,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -189,7 +154,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -213,134 +178,108 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents",
-    "url": "https://arxiv.org/abs/2607.05775",
-    "source_name": "arXiv cs.AI",
+    "title": "为委派而设计垂直 AI：让智能体在后台持续完成工作",
+    "url": "https://www.bestblogs.dev/en/video/8dedadce0?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.05775v1 Announce Type: new Abstract: Large language model (LLM) agents are increasingly evaluated on their ability to use tools, plan multi-step tasks, coordinate with other agents, and operate over extended horizons. Reported benchmark gains often obscure recurring failure modes documented across otherwise unrelated evaluation efforts. This paper synthesizes 27 benchmark, taxonomy, and audit papers (2023-2026), spanning 19 distinct benchmarks, into a cross-cutting taxonomy of agent limitations. To our knowledge, this is the first synthesis that integrates evidence across tool use, planning, long-horizon reasoning, multi-agent coordination, safety, and measurement validity into a single, unified taxonomy of LLM agent limitations. We identify six failure clusters: (1) tool invocation and parameter-level errors, (2) planning and constraint-satisfaction failures, (3) long-horizon degradation from context accumulation, (4) multi-agent coordination failures, (5) safety and security failures under adversarial or underspecified conditions, and (6) measurement validity problems. The taxonomy was derived iteratively by grouping independently reported error categories into themes...",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T17:30:06+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Atul Ramachandran 认为，垂直 AI 应围绕把长期任务委派给可监督的智能体来设计，而不是让用户一直停留在同步聊天界面中。 📝 Summary Filed 的 CTO 兼联合创始人 Atul Ramachandran 解释了为什么仅有聊天界面和引用，并不能兑现垂直 AI 所承诺的时间与成本节省。更有效的路径是从员工代办服务，发展到数字自助服务，再进入智能体委派阶段：用户分配长期、可重复的任务，让智能体在自己离开后继续工作。产品应像一条传送带，智能体负责执行，用户负责监督。为了让这种模式值得信任，团队应优先寻找耗时超过一两个小时的任务，通过技能让智能体掌握用户特定的工作方式，展示任务状态与执行轨迹，并保留必要的干预点。对于高风险或不可逆的操作，应先提供审批计划。最后，他建议用每周活跃会话，也就是人或智能体完成的任务数，衡量产品价值，而不是每周活跃用户数或用户在产品中停留的时间。 💡 Main Points 聊天和引用无法兑现垂直 AI 的承诺 聊天会让客户停留在同步交互循环中，引用虽然提升了验证能力，却仍把检查结果的责任留给客户。两种界面都没有真正消除产品承诺要节省的工作。 智能体产品应被设计成由人监督的传送带 智能体像传送带上的工人一样执行任务，产品提供基础设施，用户则扮演主管，负责委派任务，而不是亲自操作每一个步骤。 选择足够耗时且可重复委派的任务 团队应寻找可重复或大体可重复、且需要超过一小时或几小时的工作，让后台执行真正移除一部分有意义的人力投入。 技能、轨迹和控制机制让委派值得信任 产品必须记录用户的工作方式，展示长期任务的进度和推理轨迹，并允许用户暂停任务、修正假设，或在危险的不可逆操作前审批计划。 衡量已完成的工作，而不是产品使用痕迹 每周活跃会话统计人或智能体完成的任务，更能反映实际交付的价值。随着客户逐渐信任委派，即使每周活跃用户数下降，这项指标也可能继续上升。 💬 Key Quotes 聊天和引用救不了你的垂直 AI。 聊天是同步的。仔细想想，即使你在写代码，也是在等待智能体回应。 归根结底，要为委派而设计，而不是为参与而设计。 理想情况下，你应该能够暂停传送带、修正问题，然后重新启动它。 这里更合适的衡量指标是每周活跃会话。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count： 238 Tags： 垂直 AI , 智能体委派 , AI 智能体 , 产品设计 , 长期任务 Play Full Video",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "multi-agent",
-      "tool use"
+      "Meta AI"
     ],
     "tags": [
-      "agent",
-      "open_source"
+      "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
+    "score": 61,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving",
-    "url": "https://arxiv.org/abs/2607.05399",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.05399v1 Announce Type: cross Abstract: Large language model serving is increasingly limited by KV-cache growth under long-context workloads, yet existing KV-cache compression techniques are difficult to compare because they were evaluated on different models, tasks, budgets, and serving stacks. This paper presents a workload-aware benchmark of representative KV-cache optimization mechanisms spanning quantization, pruning, and merging, including KIVI, TurboQuant, SnapKV, and CaM, evaluated on LongBench-style multi-document QA, single-document QA, few-shot learning, and summarization workloads using Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3. The benchmark measures task quality, mean output throughput, mean time-to-first-token, and realized compression ratio across context-length buckets. The results show that the compression ratio alone is a poor predictor of end-to-end performance. KIVI4 provides the most stable quality across models, SnapKV delivers the strongest long-context throughput, and CaM yields large gains on selected QA workloads but exhibits substantial workload sensitivity in both quality and realized compression ratio. These findings motivate worklo...",
+    "title": "Old and new apps, via modern coding agents",
+    "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-12T11:09:42+00:00",
+    "summary_or_excerpt": "HN points: 395. Comments: https://news.ycombinator.com/item?id=48880170",
     "matched_keywords": [
-      "benchmark",
-      "Llama",
-      "Mistral",
-      "quantization",
-      "serving"
+      "agents"
     ],
     "tags": [
-      "model",
-      "open_source"
+      "agent"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "hn_score": 395,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Spider 2.0-AIFunc: Extending Real-World Text-to-SQL to AI-Native SQL Workflows",
-    "url": "https://arxiv.org/abs/2607.06229",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.06229v1 Announce Type: cross Abstract: Major cloud data platforms now expose large language model capabilities as native SQL functions, enabling analysts to perform classification, filtering, sentiment analysis, extraction, similarity search, and aggregation within ordinary SQL queries. Yet existing text-to-SQL benchmarks evaluate only conventional SQL and provide no signal on whether models can generate such AI-native SQL. We introduce Spider 2.0-AIFunc, a benchmark of 465 verified instances across 125 real-world databases covering six types of AI functions on the Snowflake platform. Starting from an existing enterprise text-to-SQL benchmark, we construct Spider 2.0-AIFunc through an agent-based pipeline that rewrites source tasks into AI-native form, simultaneously transforming target queries and refining natural language instructions to make the intended AI-native solution explicit and reduce ambiguity. All instances pass a multi-round repeated execution protocol across temporally separated windows to confirm result stability before release. Evaluating ten state-of-the-art language models, we find that the strongest proprietary models reach 67-70% execution accuracy...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
+    "title": "Mesh LLM: distributed AI computing on iroh",
+    "url": "https://www.iroh.computer/blog/mesh-llm",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-11T22:38:57+00:00",
+    "summary_or_excerpt": "HN points: 332. Comments: https://news.ycombinator.com/item?id=48876505",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 60,
+    "hn_score": 332,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Beyond Reactivity: Measuring Proactive Problem Solving in LLM Agents",
-    "url": "https://arxiv.org/abs/2510.19771",
-    "source_name": "arXiv cs.AI",
+    "title": "OpenAI GPT-5.6 Sol Ultra 一小时证明 50 年图论猜想",
+    "url": "https://aihot.virxact.com/items/cmrh4d5cj009ubir7yazlez7q",
+    "source_name": "AIHOT Featured",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2510.19771v4 Announce Type: replace Abstract: LLM-based agents are increasingly moving towards proactivity: rather than awaiting instruction, they exercise agency to anticipate user needs and solve them autonomously. However, evaluating proactivity is challenging; current benchmarks are constrained to localized context, limiting their ability to test reasoning across sources and longer time horizons. To address this gap, we present PROBE (Proactive Resolution Of BottlEnecks). PROBE decomposes proactivity as a pipeline of three core capabilities: (1) searching for unspecified issues, (2) identifying specific bottlenecks, and (3) executing appropriate resolutions. We apply PROBE to evaluate leading LLMs and popular agentic frameworks, showing that even state-of-the-art models struggle to solve this benchmark. Computing our consistent measurements across frontier LLMs and agents, we find that the best end-to-end performance of 40% is achieved by both GPT-5 and Claude Opus-4.1. Additionally, we demonstrate the relative capabilities of each model and analyze mutual failure modes. Our results highlight the current limitations of autonomous action in agentic systems, and expose pro...",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T00:44:43+00:00",
+    "summary_or_excerpt": "OpenAI 宣布其 GPT-5.6 Sol Ultra 模型在不到一小时内生成了图论难题\"循环双覆盖猜想\"的完整证明。该猜想由数学家 George Szekeres 和 Paul Seymour 于 1970 年代提出，悬而未决超过 50 年。模型通过调用 64 个并行子智能体及对抗智能体，在预留的 8 小时计算时间内仅用约 1 小时完成证明。OpenAI 已将证明及提示词以 PDF 形式发布。该证明尚未经同行评审，也未使用 Lean 等形式化工具验证。若通过验证，这将是 LLM 首次独立解决维基百科\"未解决数学问题\"列表中的难题。 🔗 阅读原文：https://www.ithome.com/0/975/646.htm via AI HOT · https://aihot.virxact.com/items/cmrh4d5cj009ubir7yazlez7q",
     "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "Claude",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SecureCode: A Production-Grade Multi-Turn Dataset for Training Security-Aware Code Generation Models",
-    "url": "https://arxiv.org/abs/2512.18542",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2512.18542v3 Announce Type: replace-cross Abstract: AI coding assistants produce vulnerable code in 45\\% of security-relevant scenarios~\\cite{veracode2025}, yet no public training dataset teaches both traditional web security and AI/ML-specific defenses in a format suitable for instruction tuning. We present SecureCode, a production-grade dataset of 2,185 multi-turn security training examples spanning two domains: web application security (1,435 examples covering the OWASP Top 10 2021 across 11 languages and 9 frameworks, 100\\% grounded in documented CVEs and security incidents) and AI/ML security (750 examples covering all 10 OWASP LLM Top 10 2025 categories across more than 40 frameworks, including LangChain, OpenAI, and Hugging Face). Every example follows a 4-turn conversational structure -- feature request; vulnerable and secure implementations with attack demonstrations; advanced probing; and defense-in-depth operational guidance -- designed for direct use in instruction tuning pipelines. Quality assurance combines automated structural validation with multi-agent review from seven specialist AI perspectives (more than 10{,}500 assessments) and an 8-phase remediation pi...",
-    "matched_keywords": [
-      "Agent",
-      "dataset",
-      "LangChain",
-      "multi-agent",
+      "GPT",
       "OpenAI"
     ],
     "tags": [
-      "agent",
-      "ai_app",
-      "model",
-      "open_source"
+      "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenAI 发布 GPT-5.6 系列医疗评估结果",
+    "url": "https://aihot.virxact.com/items/cmrglvcki024uih2edvsk7pef",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T16:46:22+00:00",
+    "summary_or_excerpt": "OpenAI 发布 GPT-5.6 系列在医疗领域的评估结果。最小变体 GPT-5.6 Luna 在最低推理强度下即超越最高推理强度的 GPT-5.5，且成本低 25 倍；最大变体 GPT-5.6 Sol 树立新标杆。在涵盖患者端与临床端的多样化任务中，专科医生被要求以无限时间和网络访问权限撰写回答，随后由其他医生盲评。评估基于准确性、沟通、完整性、指令遵循及健康决策帮助性五个维度，共 20000 次评分。结果显示，所有 GPT-5.6 模型表现均显著优于医生，且医生发现 GPT-5.6 回答中的缺陷少于医生自己撰写的回答。 🔗 阅读原文：https://x.com/sama/status/2075985056846451123 via AI HOT · https://aihot.virxact.com/items/cmrglvcki024uih2edvsk7pef",
+    "matched_keywords": [
+      "GPT",
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -363,8 +302,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -386,8 +325,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -414,8 +353,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -438,8 +377,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -463,8 +402,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -486,30 +425,120 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "别再用 50 年代的方法评估模型：用心理测量学重构 LLM 基准测试",
+    "url": "https://www.bestblogs.dev/en/video/74462c078?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T08:00:21+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Alejandro Vidal 介绍如何借助心理测量学和项目反应理论，替代笼统的 LLM 基准分数，更细致地衡量题目难度、模型能力、数据泄漏、公平性与模型之间的关系。 📝 Summary Alejandro Vidal 指出，单一的基准测试准确率会掩盖许多关键假设：每道题都同样有用，相关性与噪声无关紧要，而模型总分足以代表它的能力。他提出使用项目反应理论，在保留完整题目与模型响应矩阵的同时，估计题目难度、模型能力 theta、区分度和置信区间。这些估计可以区分原始分数相近的模型，找出有噪声或答案标注错误的题目，检测异常推理行为，并在保留有效信号的前提下缩减基准测试。演讲还介绍了自适应测试、锚定题集和组织专属指纹题集，用于控制题目曝光并调查基准测试泄漏。残差模式既能支持公平性分析，也能揭示模型之间的共享检查点、蒸馏关系、模型家族与互补能力。未来还可以合并多个基准测试，把 token 数量和延迟作为次级信号，并建立多维智能模型。 💡 Main Points 原始基准测试准确率掩盖了题目的难度与信息价值 把每道题视为同等权重，可能掩盖题目之间的相关性、有噪声的题目、错误标注的答案，以及对目标任务更重要的问题。保留响应矩阵，才能分析这些差异。 IRT 同时估计模型能力与每道题的质量 项目反应理论把题目难度和模型能力 theta 放在同一尺度上；区分度表示题目能提供多少有效信息，置信区间则传达估计中的不确定性。 残差可以审计基准测试并暴露数据泄漏 异常正确或错误的回答可能暴露错误标注、不稳定的推理行为或已经泄漏的题目。自适应选题、锚定题集和组织专属指纹题集，可以让泄漏调查更有针对性。 残差相关性揭示模型之间的关系 相关的错误模式可能意味着模型共享检查点、存在蒸馏关系、属于同一模型家族或来自相关代际；这些信息还能帮助选择能力互补的模型，构建更稳健的系统。 💬 Key Quotes 这场演讲尝试真正借鉴心理测量学中的思想 每道题都应该以相同权重计入这项测量 我们要估计两个数字。对于每道题，我会估计 B，也就是这道题的难度等级。 我们实际上可以检测一道题是否被有意泄漏 我们可以使用自适应测试，也就是说，我会按需为你挑选合适的题目。 我们可以分析模型，并检测出例如一个模型是否由另一个模型蒸馏而来 📊 Article Meta AI Screening： 91 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count： 201 Tags： 心理测量学 , LLM 评测 , 项目反应理论 , 基准测试审计 , 基准测试泄漏 Play Full Video",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 48,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Show HN: Reame – a CPU inference server that gets faster as it runs",
-    "url": "https://github.com/swellweb/reame",
+    "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
+    "url": "https://github.com/cosmtrek/mindwalk",
     "source_name": "Hacker News",
     "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-07-11T16:27:44+00:00",
-    "summary_or_excerpt": "HN points: 30. Comments: https://news.ycombinator.com/item?id=48873417",
+    "published_at": "2026-07-12T05:51:32+00:00",
+    "summary_or_excerpt": "HN points: 145. Comments: https://news.ycombinator.com/item?id=48878682",
     "matched_keywords": [
-      "inference",
-      "inference server"
+      "Agent"
     ],
     "tags": [
-      "open_source",
-      "semiconductor"
+      "agent"
+    ],
+    "score": 47,
+    "hn_score": 145,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Fable gets another bump",
+    "url": "https://simonwillison.net/2026/Jul/12/bump",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-12T21:20:07+00:00",
+    "summary_or_excerpt": "One of the consequences of GPT-5.6 Sol being clearly a Fable/Mythos class model is that Anthropic have, once again, bumped the date that Fable stops being available in their Claude Max plans: We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19. As before, you can use up to half of your weekly usage limit on Fable 5. After that, you can continue using Fable 5 with usage credits, or switch to another model to keep working within your remaining limits. Anthropic's original rationale for this was compute constraints - they wanted a better idea of both demand and compute availability before committing to keeping the new model cheap for subscribers. OpenAI appear confident that they won't need to restrict access to GPT-5.6 in the same way. Here's Tibo this morning : The last 48 hours of Codex and ChatGPT Work have been intense! Three important updates: Temporarily removing the 5 hour usage limit restriction for all Plus, Business and Pro plans Rolling out changes that will make GPT 5.6 Sol more efficient across the board and that will be reflected in less usage being used so that it can take you further...",
+    "matched_keywords": [
+      "Anthropic",
+      "ChatGPT",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "Continue",
+      "GPT",
+      "OpenAI"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
     ],
     "score": 46,
-    "hn_score": 30,
-    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Linux 7.2 Enabling UltraRISC RISC-V Support In The Default Kernel Build",
+    "url": "https://www.phoronix.com/news/Linux-7.2-UltraRISC-RISC-V",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T20:25:10+00:00",
+    "summary_or_excerpt": "Similar to Linux 7.2 enabling Eswin SoC support by default in the RISC-V \"defconfig\" kernel build, UltraRISC RISC-V coverage is also now being enabled by default for RISC-V kernel builds in Linux 7.2...",
+    "matched_keywords": [
+      "RISC-V",
+      "SoC"
+    ],
+    "tags": [
+      "riscv_stack"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "在可信代理后使用 OpenClaw 构建安全的 MCP 应用",
+    "url": "https://www.bestblogs.dev/en/video/bf4759607?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T22:30:06+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Nick Taylor 讲解 OpenClaw 的可信代理认证，并演示如何通过手机驱动的工作流安全地构建 MCP 应用。 📝 Summary Nick Taylor 介绍 OpenClaw 的可信代理认证模式：当身份感知代理已经保护控制平面时，OpenClaw 可以信任代理传入的请求头，无需额外的 websocket token，也不必反复为设备配对。他说明了具体配置，包括可信代理 IP 地址、用户请求头、必需请求头和可选访问控制，同时强调策略执行仍由代理负责。演讲还分享了开源项目的实践经验，例如测试遗漏、社区修复，以及在快速迭代项目中反复 rebase 带来的维护负担。在现场演示中，Taylor 通过 Discord 操作 OpenClaw 编辑工作区文件，并在 ChatGPT 中迭代构建已注册的 MCP 应用。这个 React 和 Vite 界面先加入回显组件，再增加由 speaker.json 支持的演讲者搜索，最后加入可调用 LLM 的更多按钮。结尾既肯定个人软件的灵活性，也提醒开发者必须为本地托管工具设置访问门槛，避免无意暴露。 💡 Main Points 可信代理认证消除了 OpenClaw 中重复的配对步骤 如果身份感知代理已经对控制平面完成认证，OpenClaw 就可以信任代理请求头，不再要求用户粘贴 websocket token，也不必为每台设备逐一配对。 配置将代理信任关系明确限定为策略控制 配置会指定可信代理的 IP 地址，并设置用户请求头和必需请求头；可选的允许用户检查则可以交给代理的身份系统和策略引擎处理。 OpenClaw 能把聊天工作流转化为迭代式应用开发 Taylor 通过 Discord 指挥 OpenClaw 操作工作区文件，再从 ChatGPT 编辑 React 和 Vite MCP 应用，加入回显组件、演讲者搜索和由 LLM 驱动的详情操作。 快速开源迭代需要测试和维护纪律 一次遗漏的配对边界情况后来由另一位贡献者修复，而项目快速增长也迫使团队反复 rebase，体现出活跃社区开发的价值与运维成本。 本地工具只能在有意设置访问控制后对外暴露 演示依赖一个受保护的公开 URL，结尾的警告强调，忽视代理配置和安全边界、图方便暴露本地工具，可能导致严重的数据丢失。 💬 Key Quotes 「你拥有一个身份提供商、一个策略引擎和一个反向代理。」 「这意味着 websocket 连接不再需要 token，也不再需要配对设备。」 「我提交这项贡献时，实际上就是用 OpenClaw 完成了这项贡献。」 「只有使用某种代理，才能做到这一点。」 「一定要把安全因素考虑进去。」 📊 Article Meta AI Screening： 90 Source： AI Engineer Aut...",
+    "matched_keywords": [
+      "ChatGPT",
+      "MCP",
+      "Meta AI"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -529,104 +558,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9931：opencl: ragged-tile MoE prefill FP16 GEMM optimization (skip padded expert tiles) (#25433)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9931",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-08T21:11:39+00:00",
-    "summary_or_excerpt": "opencl: ragged-tile MoE prefill FP16 GEMM optimization (skip padded expert tiles) (#25433) * opencl: ragged-tile MoE prefill GEMM (skip padded expert tiles) The MoE prefill GEMM groups tokens into TILESIZE_N=32 per-expert tiles; at low tokens-per-expert most tiles are mostly padding. When a tile's upper 16 slots are all padding (router index 0xFFFFFFFF), skip the second dotx16_reduce8 half. Numerically identical (skipped lanes are padding). Applied to all eight *_f32_ns MoE GEMMs; default on, opt out with GGML_OPENCL_MOE_RAGGED_FP16=0. * opencl: quarter-granularity ragged MoE tile-skip (8-col skip-groups) Replace the two half-tile dotx16_reduce8 calls in the 8 *_f32_ns MoE GEMMs with four dotx8_reduce4 (8-column) calls, skipping each empty trailing skip-group independently. Padding is always trailing, so the kernel rounds the valid count up to the skip granularity and skips fully-padding groups. Byte-identical to the non-skipped path. New env GGML_OPENCL_MOE_RAGGED_GRAN={8,16,32} (quarter/half/ off); default quarter. * opencl: move ragged moe env var in cl_init --------- Co-authored-by: Li He **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/rele...",
-    "matched_keywords": [
-      "GitHub",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 44,
-    "release_version": "b9931",
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands cloud: 1.43.0：1.43.0 (2026-07-08)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/cloud-1.43.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-08T20:04:42+00:00",
-    "summary_or_excerpt": "## 1.43.0 (2026-07-08) ## What's Changed ### Features * feat: rename admin dashboard to usage & monitoring by @saurya in https://github.com/OpenHands/OpenHands/pull/15146 * feat: add SMTP email service by @saurya in https://github.com/OpenHands/OpenHands/pull/15144 * feat: track user login timestamps by @saurya in https://github.com/OpenHands/OpenHands/pull/15148 * feat: surface email enabled for smtp/resend by @saurya in https://github.com/OpenHands/OpenHands/pull/15185 ### Bug Fixes * fix(app-server): pass index columns as a list in migration 013 by @VascoSch92 in https://github.com/OpenHands/OpenHands/pull/15176 * fix: default ENABLE_ACP on so ACP agent settings show in OH Cloud by @hieptl in https://github.com/OpenHands/OpenHands/pull/15183 * fix: send authenticated marketplace URLs to agent-server by @hieptl in https://github.com/OpenHands/OpenHands/pull/15187 ### Maintenance * chore(main): release 1.9.2 by @openhands-release-bot[bot] in https://github.com/OpenHands/OpenHands/pull/15171 * chore: bump SDK packages to v1.33.0 by @all-hands-bot in https://github.com/OpenHands/OpenHands/pull/15177 * chore(main): release 1.9.3 by @openhands-release-bot[bot] in https://github.com/O...",
-    "matched_keywords": [
-      "Agent",
-      "GitHub",
-      "OpenHands",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 44,
-    "release_version": "cloud-1.43.0",
-    "first_seen_at": "2026-07-09T08:08:58.125814+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enterprise-managed OpenTelemetry export for VS Code and CLI",
-    "url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-08T20:50:07+00:00",
-    "summary_or_excerpt": "Organizations can now mandate where GitHub Copilot sends OpenTelemetry (OTel) data, so telemetry flows to an approved collector without each developer setting OTEL_* environment variables. The configuration is delivered through… The post Enterprise-managed OpenTelemetry export for VS Code and CLI appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Deploy managed Copilot settings via MDM in VS Code and CLI",
-    "url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-08T20:38:56+00:00",
-    "summary_or_excerpt": "Enterprise administrators can now deliver managed GitHub Copilot settings directly to devices through native mobile device management (MDM) and file-based configuration, in addition to the existing server-managed channel. This is… The post Deploy managed Copilot settings via MDM in VS Code and CLI appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -644,31 +576,71 @@
     "tags": [
       "model"
     ],
-    "score": 42,
-    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "score": 44,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Nvidia, CoreWeave, and Nebius: Inside the Circular Financing of the GPU Boom",
-    "url": "https://io-fund.com/ai-stocks/nvidia-coreweave-nebius-circular-financing-gpu-boom",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-11T17:21:49+00:00",
-    "summary_or_excerpt": "HN points: 126. Comments: https://news.ycombinator.com/item?id=48873836",
+    "title": "苹果起诉OpenAI挖角窃密，分析师称即使指控未证实也可能重创其硬件计划",
+    "url": "https://aihot.virxact.com/items/cmrh8o88501e4bir7wzxmfpfm",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T02:37:22+00:00",
+    "summary_or_excerpt": "苹果在美国起诉OpenAI，指控其挖角400名员工、窃取工程机和机密文件。分析师Paolo Pescatore认为，即使指控最终无法证实，OpenAI的硬件计划仍可能受拖累，双方本就脆弱的合作关系将进一步削弱。斯坦福大学教授Mark Lemley指出，若前苹果员工确实带走机密文件并在OpenAI使用，问题将变得严重。该案涉及消费级硬件产品，预计未来将有更多信息曝光。 🔗 阅读原文：https://www.ithome.com/0/975/666.htm via AI HOT · https://aihot.virxact.com/items/cmrh8o88501e4bir7wzxmfpfm",
     "matched_keywords": [
-      "GPU",
-      "NVIDIA"
+      "OpenAI"
     ],
     "tags": [
-      "semiconductor"
+      "model"
     ],
-    "score": 41,
-    "hn_score": 126,
-    "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "score": 44,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "HFI BIOS Aims To Provide A POST-Like Power On Screen & BIOS Setup Utility For RISC-V",
+    "url": "https://www.phoronix.com/news/Harmonic-Firmware-Initiative",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T10:50:22+00:00",
+    "summary_or_excerpt": "The Harmonic Firmware Initiative \"HFI\" is trying to provide a generic, standardized power-on firmware experience for RISC-V boards. Akin to the x86 world with having immediate graphics card initialization to provide a display while the system is booting and also having a BIOS setup utility for system configuration, HFI is trying to do the same for the RISC-V world...",
+    "matched_keywords": [
+      "RISC-V"
+    ],
+    "tags": [
+      "riscv_stack"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "智能体网络与 AI 集市时代：Project Nanda 的开放基础设施",
+    "url": "https://www.bestblogs.dev/en/video/a52dcb75b?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T14:00:07+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Project Nanda 通过 NANDA index 和 Nanda Town，构建覆盖发现、身份、信任、交易、协作与仿真的开放智能体基础设施栈。 📝 Summary Project Nanda 认为，智能体网络需要类似开放网络的基础设施，才能摆脱 AOL 式封闭平台。演讲先将智能体定义为循环使用工具的模型，再介绍 NANDA index 如何通过 agent card 发布智能体身份、能力、端点、路由信息和经过签名的事实。借助可迁移的身份与信任机制，智能体可以在不同组织之间被发现、委托任务、完成支付并协同工作。Nanda Town 则是一个开源离散事件仿真沙盒，研究者可以在真实部署前测试市场、拍卖、投票、共识、供应链、故障和协议变更等场景。 💡 Main Points 智能体网络需要超越封闭平台的开放基础设施 当智能体跨越不同供应商和组织运行时，共享发现、可迁移身份、信任、消息传递、支付与协作能力都是不可或缺、但目前仍缺失的基础。 NANDA index 为分布式智能体提供统一的发现层 Agent card 描述智能体的身份、能力、联系方式和消息路由位置，也记录可供验证的身份或权限事实。 Nanda Town 让智能体网络基础设施在部署前变得可测试 这个开源离散事件模拟器能将智能体和流量注入可重复的场景，帮助研究者比较不同协议，并观察协作、故障和规模变化。 Project Nanda 将发现、交易与协作连接成一套技术栈 Project Nanda 将系统划分为发现、可迁移身份与信任、开放协作协议等层次，并通过市场、拍卖、投票和供应链等实验验证这些能力。 💬 Key Quotes 「我的理解是，智能体就是一个循环使用工具的模型。」 「NANDA index 是智能体网络的发现层。」 「它为智能体提供了一个共享空间，让它们发布自己的身份、能力，以及其他智能体如何联系它们。」 「Nanda Town 以离散事件仿真的方式运行。」 「你可以用一个简短的 YAML 文件定义场景，注入智能体和流量，测试平台会将整个过程运行一遍，从而测量端到端实际发生的情况。」 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count： 219 Tags： Project Nanda , 智能体网络 , AI 智能体 , NANDA index , 多智能体系统 Play Full Video",
+    "matched_keywords": [
+      "Agent",
+      "Meta AI"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -694,8 +666,34 @@
     "score": 41,
     "release_version": "b9939",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9979：mtmd: fix silent prompt truncation on embedded NUL (#25548)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9979",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-12T23:36:43+00:00",
+    "summary_or_excerpt": "mtmd: fix silent prompt truncation on embedded NUL (#25548) * mtmd: fix silent prompt truncation on embedded NUL mtmd_input_text carried the prompt as a bare const char* with no length, so a NUL byte in message content cut the prompt at the tokenizer boundary and dropped every later message plus the assistant marker, with no log. Add an explicit text_len and thread it through, matching llama_tokenize and the text only path. * cleanup --------- Co-authored-by: Xuan Son Nguyen **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9979/llama-b9979-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9979/llama-b9979-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9979/llama-b9979-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9979/llama-b9979-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9979/llama-b9979-bin-ubuntu...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 40,
+    "release_version": "b9979",
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -715,7 +713,92 @@
     "score": 40,
     "hn_score": 1565,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "如何评估通用机器人策略在实际部署中的表现",
+    "url": "https://www.bestblogs.dev/en/article/4ea6f3a98a?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T01:20:49+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本文指出了当前机器人策略评估中的关键缺陷，并引入了 RoboLab——一个模拟基准测试平台，具备机器无关的任务、诊断指标和敏感性分析——以实现严格且可扩展的实际部署评估。 📝 Summary 这篇来自 NVIDIA 技术博客的文章认为，评估通用机器人策略是机器人领域最难解决的问题之一。文章指出了现有基准测试的四个主要不足：训练和评估之间的视觉域重叠、固定任务集导致的基准饱和、二元成功/失败分数无法解释策略失败原因的诊断缺口，以及统计可信度不足（例如，70 次运行产生 15 个百分点的置信区间）。为了解决这些问题，作者提出了 RoboLab，一个基于三个原则构建的模拟基准测试平台：机器无关的评估、快速生成新任务以避免饱和（包括智能体 AI 工作流），以及全面的分析工具（分级任务分数、轨迹质量指标如 SPARC、失败事件日志，以及使用神经后验估计的敏感性分析）。RoboLab 支持能力特定任务（视觉、程序、关系），并测试对语言复杂度、场景杂乱度和任务长度变化的鲁棒性。文章总结说，评估必须与其所衡量的模型同步发展，而 RoboLab 为走向诊断性机器人评估建立了一条可扩展的路径。 💡 Main Points 当前基准测试存在视觉域重叠、基准饱和、诊断缺口和统计严谨性不足的问题。 在同一视觉域中训练和测试的模型奖励的是记忆而非泛化；静态任务集导致快速饱和；二元的成功/失败分数无法解释失败的成因；而小样本量会产生宽置信区间。 RoboLab 引入机器无关且快速生成的任务，以应对基准停滞。 通过允许用户带入任何机器人形态并在几分钟内（或通过智能体 AI）创建新任务，该基准测试保持新鲜度，避免现有测试集的静态天花板。 诊断工具（分级分数、轨迹质量、失败日志、敏感性分析）提供了超越通过/失败的可操作见解。 分级分数给予部分正确奖励；轨迹平滑度（SPARC）和速度捕捉运动质量；失败日志精确定位执行出错环节；敏感性分析识别哪些环境变量对性能影响最大。 💬 Key Quotes 但随着这些模型能力越来越强，对其进行严格评估已成为该领域最难解决的问题之一。 一次 N 次运行的单一成功率几乎无法告诉你对一个策略真实表现该有多大的信心。 前进的道路需要评估与其所衡量的模型同步发展：基准测试要扩展而非饱和，度量标准要诊断而非简单打分。 📊 Article Meta AI Screening： 90 Featured： Yes Source： NVIDIA Technical Blog Author： Brad Nemire Category： 人工智能 Language： 英文 Read Time： 11 min Word Count： 2737 Tags： 机器人策略评估 , 模拟基准测试 , 基础模型 , RoboLab , 评估指标...",
+    "matched_keywords": [
+      "Meta AI",
+      "NVIDIA"
+    ],
+    "tags": [
+      "model",
+      "semiconductor"
+    ],
+    "score": 39,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Tibo 分享通过 CLIProxyAPI 将 Claude Code 后端模型切换为 GPT-5.6 Sol 的方法",
+    "url": "https://aihot.virxact.com/items/cmrh57xvj00gvbir7awab8dgb",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-12T01:40:04+00:00",
+    "summary_or_excerpt": "用户 Tibo 分享了一种通过 CLIProxyAPI 将 Claude Code 后端模型切换为 GPT-5.6 Sol 的方法。只需三步：安装 CLIProxyAPI、连接认证、设置环境变量别名 `claudex`。该别名配置了子智能体模型、始终启用 Effort、最大并发工具调用数等参数。引用推文作者 Theo 补充，若已配置好代理，仅需约 2 条提示词即可完成设置。Tibo 称整个过程约 5 分钟，若被封锁可重置。 🔗 阅读原文：https://x.com/thsottiaux/status/2076119366647894371 via AI HOT · https://aihot.virxact.com/items/cmrh57xvj00gvbir7awab8dgb",
+    "matched_keywords": [
+      "Claude",
+      "Claude Code",
+      "GPT"
+    ],
+    "tags": [
+      "coding_tool",
+      "model"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "彭博社揭秘苹果起诉 OpenAI 内幕：前员工一句\"哈哈\"成窃密关键",
+    "url": "https://aihot.virxact.com/items/cmrgzykqg00jabid4acp6zpjm",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T23:21:57+00:00",
+    "summary_or_excerpt": "苹果起诉 OpenAI，指控前工程师 Chang Liu 离职时带走未归还的 MacBook、一名可分享内情的员工，并利用软件漏洞持续访问苹果内网。他发现漏洞后向同事分享\"哈哈，我发现我还能访问网络存储\"，后者协助其获取更多机密。苹果称 OpenAI 试图复制 iPhone 产品研发体系，核心从非法窃取的商业机密腐烂。目前已有超 400 名苹果员工跳槽至 OpenAI，包括前苹果高管、现任 OpenAI 首席硬件官 Tang Tan。苹果曾于今年 2 月尝试私了，但 OpenAI 未回应。 🔗 阅读原文：https://www.ithome.com/0/975/634.htm via AI HOT · https://aihot.virxact.com/items/cmrgzykqg00jabid4acp6zpjm",
+    "matched_keywords": [
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "为什么现在正是让 AI 回到本地的时机",
+    "url": "https://www.bestblogs.dev/en/video/f2dadc462?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-11T16:30:06+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本地 AI 之所以重新变得引人注目，是因为模型能力、智能体工具链、隐私需求、成本可预测性和实用的边缘硬件同时取得了进展。 📝 Summary 这场圆桌讨论认为，本地 AI 已经来到一个转折点，因为两层能力正在同步提升：模型本身更强了，连接模型与文件、命令行工具、外设、智能体及业务流程的工具链也更成熟了。推动本地运行的理由并非意识形态，而是现实需求。常驻运行的智能体可能接触健康信息、家庭摄像头或企业数据，而本地推理既能让信息留在设备上，也能让持续产生的 Token 成本更容易预测。嘉宾通过个人电脑、手机、视觉系统、机器人、工作站和专用硬件说明，离线运行与低延迟有时和基准测试中的原始性能同样重要。视觉场景尤其典型：推理往往需要靠近摄像头和机器完成，而这些设备的网络连接可能并不稳定。讨论也指出了普及的障碍：普通用户不应该被迫理解量化、模型选择、扩展组件或部署基础设施。一套好用的本地技术栈应能识别现有硬件，为任务匹配合适的模型，并通过简单界面完成操作。展望未来，嘉宾将本地部署与专用模型、微调、持续学习、持久化记忆和开放生态联系起来。核心结论是，开源与本地控制相互强化，让人们能够研究、改造并定制自己掌控的智能能力。 💡 Main Points 本地 AI 同时回应了隐私与成本问题 常驻运行的智能体会扩大敏感数据的暴露范围，也可能带来持续的 Token 成本；在本地运行模型可以加强数据控制，并让运营成本更容易预测。 真正有用的 AI 依赖模型之外的工具链 文件、CLI、外设、智能体和部署软件让模型能够参与真实工作流，因此 AI 的实际能力不仅取决于模型，也取决于它周围的系统。 视觉场景最具体地体现了边缘计算的价值 摄像头和机器人通常需要在数据源附近完成低延迟推理，有时还要应对不稳定的网络连接，因此更适合高效的专用模型和本地执行。 面向大众的普及必须隐藏部署复杂性 用户不应该亲自选择量化版本或扩展组件；软件应当自动识别硬件、选择合适的模型，并提供点击即可使用的智能体体验。 开放生态让专业化和长期控制成为可能 当人们可以检查、修改并在自己掌控的基础设施上运行模型时，模型路由、微调、持续学习和持久化记忆都会拥有更大的灵活性。 💬 Key Quotes 模型变得非常好，连接模型与现实世界的工具也变得非常好。 所以，本地运行对这两件事都非常理想。 他们希望这成为一种只需点击播放、发消息、使用智能体就完成的替代方案。 如果你认为本地 AI 很重要，那么你也会认为开源 AI 很重要。 📊 Article Meta AI Screening： 91 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count：...",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -737,7 +820,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -763,7 +846,7 @@
     "score": 38,
     "release_version": "b9957",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -786,7 +869,7 @@
     "score": 38,
     "release_version": "n8n@2.30.3",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -809,7 +892,7 @@
     "score": 38,
     "release_version": "stable",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -832,8 +915,34 @@
     "score": 38,
     "release_version": "n8n@2.30.2",
     "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-12T07:50:33.227349+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LiteLLM v1.92.0：Verify Docker Image Signature",
+    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.92.0",
+    "source_name": "LiteLLM",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-12T01:55:00+00:00",
+    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.92.0 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.92.0/cosign.pub \\ ghcr.io/berriai/litellm:v1.92.0 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * fix(proxy): gate team allowed...",
+    "matched_keywords": [
+      "GitHub",
+      "LiteLLM",
+      "release",
+      "repository"
+    ],
+    "tags": [
+      "ai_app",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 36,
+    "release_version": "v1.92.0",
+    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

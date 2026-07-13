@@ -20,32 +20,30 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling",
-    "url": "https://arxiv.org/abs/2607.08565",
+    "title": "Attention to Detail: Evaluating Energy, Performance, and Accuracy Trade-offs Across vLLM Configurations",
+    "url": "https://arxiv.org/abs/2607.09172",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.08565v1 Announce Type: cross Abstract: LLM scheduling is critical to serving, yet it remains unclear how well existing designs fit agentic serving--with LLM requests issued by agents instead of humans. This shifts the workload in two ways: (1) agents act only on complete responses, making the cluster's tokens per second (TPS) the primary goal and relaxing--not eliminating--per-token latency requirements; and (2) requests share much of their KV\\$-reuse exceeds 80% of request tokens in a production trace from BAILIAN, versus 54-62% in chat. This paper first contributes a systematic study of request scheduling for agents on two real-world traces. We find that to increase KV\\$ reuse, existing schedulers overly prioritize routing requests to instances caching their KV\\$, overloading a few while leaving the rest idle, capping TPS. We thus present two key insights: (1) load balance need not sacrifice all KV\\$ reuse, thanks to the global-tier KV\\$ store and (2) by utilizing the workload's intra-session locality, balancing a small fraction of requests--the first request in each agent session--suffices to balance the cluster without sacrificing most KV\\$ reuse on local instances....",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09172v1 Announce Type: cross Abstract: Large Language Models are reshaping how software is developed and maintained. They are typically deployed in production using inference engines such as vLLM, which can efficiently serve pre-trained, highly configurable models. While prior work has focused on model architectures and hardware acceleration, the impact of inference engine configuration on energy consumption, performance, and output quality remains poorly understood. In this paper, we present a large-scale controlled study of three selected vLLM configuration options: attention kernel type, prefix caching, and chunked prefill. We evaluate all combinations of these configurations across 5 open-weight LLMs and 5 diverse inference tasks, totaling $9,000$ runs and $93,600$ measures. We analyze energy consumption, latency, and accuracy, and examine both main effects and interaction effects between configuration options and tasks. Our results show that the studied configuration options significantly impact energy and performance, mainly driven by attention type and prefix caching, while chunked prefill has a limited effect under the default vLLM serving configuration and eval...",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "serving"
+      "inference",
+      "serving",
+      "vLLM"
     ],
     "tags": [
-      "agent",
       "open_source"
     ],
-    "score": 67,
-    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
+    "score": 66,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -64,8 +62,101 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+    "url": "https://arxiv.org/abs/2607.08964",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08964v1 Announce Type: new Abstract: AI agents have become capable of autonomously completing short, well-specified tasks. However, existing terminal benchmarks largely focus on simple problems that finish within minutes and are evaluated only by their final outcome. This setup overlooks intermediate progress and partial solutions, yielding sparse reward signals and an incomplete picture of agent capability. We introduce Long-Horizon-Terminal-Bench, a terminal benchmark of 46 long-horizon tasks spanning nine categories, including experiment reproduction, software engineering, multimodal analysis, interactive games, and scientific computing. Each task follows a Terminal-Bench-style setup with a reference solution or simulation engine, but is further decomposed into fine-grained graded subtasks. This design enables dense intermediate rewards and partial credit, allowing evaluation to capture not only whether an agent reaches the final goal, but also how far it progresses on open-ended workflows. Tasks in Long-Horizon-Terminal-Bench typically require hundreds of episodes and minutes to hours of execution, stressing long-horizon planning, long-context management, and iterat...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "software engineering",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Patchwork Problem in LLM-Generated Code",
+    "url": "https://arxiv.org/abs/2607.08981",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08981v1 Announce Type: cross Abstract: LLM-generated code often compiles, passes tests, and appears correct, yet breaks once deployed. The root cause is frequently structural rather than logical. A generated endpoint references configuration keys never declared in the project, an import targets a package that does not exist in any registry, or a new route omits the authentication guard applied to every sibling endpoint. Each patch is locally valid but globally incoherent, and standard CI toolchains rarely surface these failures. As LLM-powered coding tools see widespread adoption, this blind spot poses a growing risk to software quality. We call this the \\textbf{patchwork problem}. This paper formalizes structural coherence as consistency invariants over graph representations of repository artifacts, including import, call, dependency, configuration, schema, resource, control-flow, and routing graphs, and introduces an eight-category failure taxonomy distinguishing defects specific to LLM generation from those merely amplified by it. We present a hybrid verification framework that delegates to mature static analysis tools where they already excel and deploys purpose-bui...",
+    "matched_keywords": [
+      "repository"
+    ],
+    "tags": [
+      "coding_tool"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
+    "url": "https://arxiv.org/abs/2607.09349",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09349v1 Announce Type: cross Abstract: Retrieval-augmented generation evaluation checks whether model claims are factually grounded in retrieved documents. It does not check whether retrieved evidence is attributed to the correct entity. A clinical RAG response can pass every automated check (zero hallucinations, near-perfect faithfulness, real citations) while presenting drug Y's clinical evidence as evidence about queried drug X. We term this deceptive grounding (DG): a failure invisible to faithfulness, hallucination, and citation checks because every claim is sourced from a real document, about the wrong entity. Using a controlled factorial benchmark across 13 models, we find DG rates spanning 8-87% at peak adversarial conditions. Medical and biomedical fine-tuned models reach up to 86.7%; domain specialization amplifies the failure rather than mitigating it. A controlled ablation identifies the mechanism: removing entity-specific clinical evidence from retrieved documents eliminates entity-attribution failure entirely, shifting all failures to confabulation. The two failure modes respond to the same trigger, taking different paths. Production measurement across 740...",
+    "matched_keywords": [
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SWE-Milestone: Evaluating AI Agents on Continuous Software Evolution",
+    "url": "https://arxiv.org/abs/2603.13428",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2603.13428v3 Announce Type: replace-cross Abstract: Real-world software must continuously evolve to meet ever-changing and open-ended requirements. AI agents, increasingly deployed as long-running systems, are now entrusted to drive this evolution. Yet, existing benchmarks evaluate agents on isolated, one-off coding tasks, neglecting the temporal dependencies and technical debt inherent in real-world software evolution. To bridge this gap, we introduce DeepCommit, an agentic pipeline that reconstructs verifiable Milestone DAGs from noisy commit logs, where milestones are defined as functionally cohesive development goals. These executable sequences enable SWE-Milestone, a benchmark that evaluates agents on streams of milestone-level tasks, requiring them to sustain system integrity and limit error accumulation, dimensions of long-term software evolution largely missing from current benchmarks. Our evaluation of 12 frontier models across 4 agent frameworks reveals a critical vulnerability: overall performance scores drop significantly from >80% on isolated tasks to at most 38% in continuous settings, exposing agents' profound struggle with long-term maintenance and error prop...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -80,8 +171,8 @@
     "tags": [],
     "score": 64,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -102,183 +193,89 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Distributed Attacks in Persistent-State AI Control",
-    "url": "https://arxiv.org/abs/2607.02514",
+    "title": "Eluna: An Agentic LLM System for Automating Warehouse Operations with Reasoning and Task Execution",
+    "url": "https://arxiv.org/abs/2607.08960",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.02514v2 Announce Type: replace Abstract: As AI coding agents become more autonomous, they increasingly ship code iteratively, with the codebase persisting across sessions. This persistence creates a new attack surface: a misaligned or prompt-injected agent can distribute attacks across pull requests (PRs) and time its payload for the PR with the best natural cover. To study the resulting dynamics, we introduce Iterative VibeCoding, a setting for AI control, the study of safely deploying capable but potentially untrusted AI. In Iterative VibeCoding, a coding agent builds software over a sequence of PRs in a persistent codebase while pursuing a covert side task. Our benchmark includes two task families: CLI tools and Flask web services, across 20 total task variations. We use Claude Sonnet 4.5 as the attack agent and GPT-4o as the monitor. We compare gradual attacks, which distribute the side task across PRs, against non-gradual attacks concentrated in a single PR. No single monitor is robust to both: which strategy evades best (success while evading the monitor) depends on the monitor type, so a defender cannot close off both gradual and non-gradual attacks with any one...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "Claude",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Cost-Effective Agent Harnesses for Abstract Reasoning and Generalization on ARC-AGI-1",
-    "url": "https://arxiv.org/abs/2607.06764",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.06764v1 Announce Type: new Abstract: Recent progress on ARC-AGI-1 from disclosed architectures has come broadly from two regimes: heavy test-time compute over frontier models (evolutionary search, exhaustive sampling, extended chain-of-thought), or benchmark-specific training in which small models are fine-tuned on ARC data, often with task-specialized architectures. We study a third regime: an open-weight model in non-thinking mode (DeepSeek V3.2) under a strict budget, with no ARC-specific fine-tuning. We study what is recoverable through architecture alone, building agentic harnesses that decompose pattern-discovery and program-synthesis stages explicitly. First, we introduce an Explorer-Definer Pipeline that separates pattern discovery from executable transformation synthesis, implemented as a two-stage agent pipeline. Next, we present the Reflective Orchestrator, which augments the pipeline with autonomous exploration of new transformations when previous hypotheses fail on training pairs. On the ARC-AGI-1 public 400-task evaluation set, the pipeline reaches 57.50% pass@2 at \\$0.25 per task, and the orchestrator reaches 67.25% pass@2 at \\$0.62 per task. Together the...",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.08960v1 Announce Type: cross Abstract: Warehouse operations are governed by Standard Operating Procedures (SOPs) that encode complex, multi-system decision logic, which must be executed reliably under strict time constraints, yet LLM agents lack mechanisms to enforce procedural compliance and degrade under the context overload full SOP specifications introduce. We present Eluna, a production-deployed agentic system for reliable SOP execution. Eluna is a graph-guided, multi-agent framework that encodes SOPs as directed acyclic graphs with progressive disclosure and delegates independent tasks to parallel sub-agents, each with persistent code execution and live data access. To meet production latency and accuracy needs, we use asymmetric episodic distillation where a strong teacher is improved through episodic error memories, then a smaller student is fine-tuned on the corrected trajectories with memory stripped, internalizing corrections without inference-time overhead. On a 13-task benchmark and two production applications, our fine-tuned models match or exceed their teacher, beat all larger off-the-shelf baselines, and reach 94% expert agreement on the ticket processin...",
     "matched_keywords": [
       "Agent",
       "agentic",
+      "agents",
       "benchmark",
-      "DeepSeek",
-      "fine-tuning"
+      "inference",
+      "multi-agent"
     ],
     "tags": [
       "agent",
-      "model",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Health System Scale Semantic Search Across Unstructured Clinical Notes",
-    "url": "https://arxiv.org/abs/2604.25605",
+    "title": "STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD's XDNA NPU",
+    "url": "https://arxiv.org/abs/2607.09385",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-09T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.25605v2 Announce Type: replace-cross Abstract: Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keywords, offers advantages for retrieval of clinical information. However, deploying semantic search across health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented institutional adoption. Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million embedding vectors) from 1.68 million patients. The system uses instruction-tuned qwen3-embedding-0.6B embeddings, stores vectors with storage-optimized indexing, maintains full-text metadata in a low-latency key-value store, and operates within a HIPAA-compliant governance framework. We evaluated the system by optimizing the model and chunking strategy using a physician-authored benchmark, characterizing full-scale performance (cost, latency, retrieval quality), and assessing clinical utility via chart abstraction efficiency and comparison to ICD-10 cohort generation. Results: The system delivers sub-second query latency w...",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09385v1 Announce Type: cross Abstract: The growing adoption of large language model-based agents within operating system workflows has increased the importance of energy-efficient inference on laptop-class systems-on-chip (SoCs). While cloud offloading remains common, it introduces reliability and privacy concerns that are particularly problematic for agentic workloads. Recent laptop SoCs, therefore, incorporate neural processing engines (NPUs) optimized for energy efficiency; however, effectively mapping attention mechanisms onto NPUs remains challenging due to architectural diversity and explicit data-movement programming models. In this work, we present STEEL, the first open-source implementation of FlashAttention targeting XDNA-like NPUs. STEEL introduces a dataflow formulation of prefill attention, enabling efficient exploitation of spatial parallelism and on-chip memory. Furthermore, STEEL addresses the load imbalance induced by the causal mask by leveraging a sparsity-aware pipeline placement onto the NPU array, reducing synchronization overhead and improving utilization. We evaluate STEEL on the AMD Ryzen AI 9 HX 370 SoC and compare its performance against optim...",
     "matched_keywords": [
-      "benchmark",
-      "embeddings",
-      "retrieval",
-      "semantic search"
+      "agentic",
+      "agents",
+      "AMD",
+      "inference",
+      "privacy",
+      "SoC"
     ],
     "tags": [
+      "agent",
+      "business",
+      "open_source",
+      "riscv_stack",
+      "semiconductor"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AgentKGV: Agentic LLM-RAG Framework with Two-Stage Training for the Fact Verification of Knowledge Graphs",
+    "url": "https://arxiv.org/abs/2607.09092",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09092v1 Announce Type: new Abstract: Knowledge graphs (KGs) are often automatically constructed from large-scale corpora, but they inevitably contain factual errors due to noisy sources and extraction failures, and verifying them reliably at industrial scale remains a critical challenge. To address this, we propose AgentKGV, the Agentic LLM-RAG framework for KG fact Verification, that integrates dynamic routing and iterative query rewriting, which handles surface-form mismatch in document-level retrieval. To make this framework more accurate and cost-efficient for industrial deployment, we further introduce a two-stage training strategy: turn-level distillation-based SFT that transfers reasoning ability from a large teacher model into a small model for stable query rewriting and reasoning, and trajectory-level GRPO that optimizes the search policy to reduce unnecessary retrieval at scale. On the long-tail-predicate split of the open-domain T-REx benchmark, our framework improves macro-F1 over single-turn RAG by 5.5 \\%p, and two-stage training does it further by 9.4 \\%p. GRPO also cuts the average number of search calls from 3.24 to 1.63 without lowering accuracy.",
+    "matched_keywords": [
+      "agentic",
+      "benchmark",
+      "policy",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
       "open_source",
       "rag_data"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "为委派而设计垂直 AI：让智能体在后台持续完成工作",
-    "url": "https://www.bestblogs.dev/en/video/8dedadce0?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-11T17:30:06+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Atul Ramachandran 认为，垂直 AI 应围绕把长期任务委派给可监督的智能体来设计，而不是让用户一直停留在同步聊天界面中。 📝 Summary Filed 的 CTO 兼联合创始人 Atul Ramachandran 解释了为什么仅有聊天界面和引用，并不能兑现垂直 AI 所承诺的时间与成本节省。更有效的路径是从员工代办服务，发展到数字自助服务，再进入智能体委派阶段：用户分配长期、可重复的任务，让智能体在自己离开后继续工作。产品应像一条传送带，智能体负责执行，用户负责监督。为了让这种模式值得信任，团队应优先寻找耗时超过一两个小时的任务，通过技能让智能体掌握用户特定的工作方式，展示任务状态与执行轨迹，并保留必要的干预点。对于高风险或不可逆的操作，应先提供审批计划。最后，他建议用每周活跃会话，也就是人或智能体完成的任务数，衡量产品价值，而不是每周活跃用户数或用户在产品中停留的时间。 💡 Main Points 聊天和引用无法兑现垂直 AI 的承诺 聊天会让客户停留在同步交互循环中，引用虽然提升了验证能力，却仍把检查结果的责任留给客户。两种界面都没有真正消除产品承诺要节省的工作。 智能体产品应被设计成由人监督的传送带 智能体像传送带上的工人一样执行任务，产品提供基础设施，用户则扮演主管，负责委派任务，而不是亲自操作每一个步骤。 选择足够耗时且可重复委派的任务 团队应寻找可重复或大体可重复、且需要超过一小时或几小时的工作，让后台执行真正移除一部分有意义的人力投入。 技能、轨迹和控制机制让委派值得信任 产品必须记录用户的工作方式，展示长期任务的进度和推理轨迹，并允许用户暂停任务、修正假设，或在危险的不可逆操作前审批计划。 衡量已完成的工作，而不是产品使用痕迹 每周活跃会话统计人或智能体完成的任务，更能反映实际交付的价值。随着客户逐渐信任委派，即使每周活跃用户数下降，这项指标也可能继续上升。 💬 Key Quotes 聊天和引用救不了你的垂直 AI。 聊天是同步的。仔细想想，即使你在写代码，也是在等待智能体回应。 归根结底，要为委派而设计，而不是为参与而设计。 理想情况下，你应该能够暂停传送带、修正问题，然后重新启动它。 这里更合适的衡量指标是每周活跃会话。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count： 238 Tags： 垂直 AI , 智能体委派 , AI 智能体 , 产品设计 , 长期任务 Play Full Video",
-    "matched_keywords": [
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Old and new apps, via modern coding agents",
-    "url": "https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-12T11:09:42+00:00",
-    "summary_or_excerpt": "HN points: 395. Comments: https://news.ycombinator.com/item?id=48880170",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
     "score": 60,
-    "hn_score": 395,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mesh LLM: distributed AI computing on iroh",
-    "url": "https://www.iroh.computer/blog/mesh-llm",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-11T22:38:57+00:00",
-    "summary_or_excerpt": "HN points: 332. Comments: https://news.ycombinator.com/item?id=48876505",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 60,
-    "hn_score": 332,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI GPT-5.6 Sol Ultra 一小时证明 50 年图论猜想",
-    "url": "https://aihot.virxact.com/items/cmrh4d5cj009ubir7yazlez7q",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-12T00:44:43+00:00",
-    "summary_or_excerpt": "OpenAI 宣布其 GPT-5.6 Sol Ultra 模型在不到一小时内生成了图论难题\"循环双覆盖猜想\"的完整证明。该猜想由数学家 George Szekeres 和 Paul Seymour 于 1970 年代提出，悬而未决超过 50 年。模型通过调用 64 个并行子智能体及对抗智能体，在预留的 8 小时计算时间内仅用约 1 小时完成证明。OpenAI 已将证明及提示词以 PDF 形式发布。该证明尚未经同行评审，也未使用 Lean 等形式化工具验证。若通过验证，这将是 LLM 首次独立解决维基百科\"未解决数学问题\"列表中的难题。 🔗 阅读原文：https://www.ithome.com/0/975/646.htm via AI HOT · https://aihot.virxact.com/items/cmrh4d5cj009ubir7yazlez7q",
-    "matched_keywords": [
-      "GPT",
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI 发布 GPT-5.6 系列医疗评估结果",
-    "url": "https://aihot.virxact.com/items/cmrglvcki024uih2edvsk7pef",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-11T16:46:22+00:00",
-    "summary_or_excerpt": "OpenAI 发布 GPT-5.6 系列在医疗领域的评估结果。最小变体 GPT-5.6 Luna 在最低推理强度下即超越最高推理强度的 GPT-5.5，且成本低 25 倍；最大变体 GPT-5.6 Sol 树立新标杆。在涵盖患者端与临床端的多样化任务中，专科医生被要求以无限时间和网络访问权限撰写回答，随后由其他医生盲评。评估基于准确性、沟通、完整性、指令遵循及健康决策帮助性五个维度，共 20000 次评分。结果显示，所有 GPT-5.6 模型表现均显著优于医生，且医生发现 GPT-5.6 回答中的缺陷少于医生自己撰写的回答。 🔗 阅读原文：https://x.com/sama/status/2075985056846451123 via AI HOT · https://aihot.virxact.com/items/cmrglvcki024uih2edvsk7pef",
-    "matched_keywords": [
-      "GPT",
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -302,7 +299,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -325,7 +322,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -353,7 +350,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -377,7 +374,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -402,7 +399,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -425,27 +422,75 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "别再用 50 年代的方法评估模型：用心理测量学重构 LLM 基准测试",
-    "url": "https://www.bestblogs.dev/en/video/74462c078?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
+    "url": "https://arxiv.org/abs/2607.09322",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-12T08:00:21+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Alejandro Vidal 介绍如何借助心理测量学和项目反应理论，替代笼统的 LLM 基准分数，更细致地衡量题目难度、模型能力、数据泄漏、公平性与模型之间的关系。 📝 Summary Alejandro Vidal 指出，单一的基准测试准确率会掩盖许多关键假设：每道题都同样有用，相关性与噪声无关紧要，而模型总分足以代表它的能力。他提出使用项目反应理论，在保留完整题目与模型响应矩阵的同时，估计题目难度、模型能力 theta、区分度和置信区间。这些估计可以区分原始分数相近的模型，找出有噪声或答案标注错误的题目，检测异常推理行为，并在保留有效信号的前提下缩减基准测试。演讲还介绍了自适应测试、锚定题集和组织专属指纹题集，用于控制题目曝光并调查基准测试泄漏。残差模式既能支持公平性分析，也能揭示模型之间的共享检查点、蒸馏关系、模型家族与互补能力。未来还可以合并多个基准测试，把 token 数量和延迟作为次级信号，并建立多维智能模型。 💡 Main Points 原始基准测试准确率掩盖了题目的难度与信息价值 把每道题视为同等权重，可能掩盖题目之间的相关性、有噪声的题目、错误标注的答案，以及对目标任务更重要的问题。保留响应矩阵，才能分析这些差异。 IRT 同时估计模型能力与每道题的质量 项目反应理论把题目难度和模型能力 theta 放在同一尺度上；区分度表示题目能提供多少有效信息，置信区间则传达估计中的不确定性。 残差可以审计基准测试并暴露数据泄漏 异常正确或错误的回答可能暴露错误标注、不稳定的推理行为或已经泄漏的题目。自适应选题、锚定题集和组织专属指纹题集，可以让泄漏调查更有针对性。 残差相关性揭示模型之间的关系 相关的错误模式可能意味着模型共享检查点、存在蒸馏关系、属于同一模型家族或来自相关代际；这些信息还能帮助选择能力互补的模型，构建更稳健的系统。 💬 Key Quotes 这场演讲尝试真正借鉴心理测量学中的思想 每道题都应该以相同权重计入这项测量 我们要估计两个数字。对于每道题，我会估计 B，也就是这道题的难度等级。 我们实际上可以检测一道题是否被有意泄漏 我们可以使用自适应测试，也就是说，我会按需为你挑选合适的题目。 我们可以分析模型，并检测出例如一个模型是否由另一个模型蒸馏而来 📊 Article Meta AI Screening： 91 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 1 min Word Count： 201 Tags： 心理测量学 , LLM 评测 , 项目反应理论 , 基准测试审计 , 基准测试泄漏 Play Full Video",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09322v1 Announce Type: new Abstract: In this work, we introduce LongMedBench, a real-world EHR-based benchmark for long-horizon clinical decision-making. Prior evaluations of LLM-based medical agents have largely emphasized short-context knowledge QA and tool use. However, real-world medical care is inherently longitudinal, and clinicians must aggregate evidence across repeated visits, tests, and evolving treatments. Therefore, long-horizon interaction is essential for realistic assessment. LongMedBench is constructed via a reproducible pipeline that integrates MIMIC-IV admission records and clinical notes into time-series event streams and long-context memory datasets, enabling long-horizon, multi-session interactions between agents and a clinical environment. It comprises 335 patients, with 19.72 inpatient visits per patient on average and 44.91 medical events per visit. Guided by the long-horizon decision process, we propose an evaluation taxonomy with three suites: fact-based QA, temporal reasoning, and long-horizon decision-making. This taxonomy measures how agents understand and leverage historical patient information over extended horizons. Our experiments show t...",
     "matched_keywords": [
-      "Meta AI"
+      "agents",
+      "benchmark",
+      "tool use"
     ],
     "tags": [
-      "model"
+      "agent",
+      "open_source"
     ],
-    "score": 48,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "score": 58,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ProofCouncil: An LLM Agent for Solving Open Mathematical Problems",
+    "url": "https://arxiv.org/abs/2607.09474",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09474v1 Announce Type: new Abstract: Large language models (LLMs) have shown increasing promise in solving open problems in mathematics. However, their performance can be further improved through agentic workflows tailored to real-world mathematical practice. To this end, we introduce ProofCouncil, a mathematical agent that is designed to tackle open problems using an author-critic architecture. ProofCouncil served as a submission to the second batch of FirstProof, a challenge consisting of 10 real-world mathematical problems that agents must solve autonomously. Its submissions for 6 of the 10 problems were judged by the referees to be correct up to at most minor revisions, showing the best performance among participating teams. We also evaluate ProofCouncil on 30 open problems collected from mathematical researchers. Among the 21 solutions that received human feedback, 5 were judged completely correct, 2 more were judged promising pending final verification, and a further 8 contained useful partial progress. In this short paper, we describe the development of ProofCouncil and the agent-building library used to create it, which we release as open source to the community.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "open source",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "WILDTRACE: Benchmarking Natural Evidence Trails in Long-Context Reasoning",
+    "url": "https://arxiv.org/abs/2607.09328",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.09328v1 Announce Type: cross Abstract: Answering complex questions over long documents frequently requires integrating evidence that the source itself disperses naturally across distant passages. In an incident report, the operating condition, design flaw, and missed safety check that jointly explain a disaster may appear dozens of sections apart; in a novel, a character's true motive may surface only through scenes far removed from the moment it becomes relevant. This source-internal evidence integration is central to real-world long-document analysis, yet existing benchmarks largely sidestep it. Needle probes, planted facts, and reverse-engineered multi-hop chains embed evidence that may differ from the host text in distribution, placement, or register, making it unclear whether strong performance reflects genuine source reasoning or distributional artifacts. We introduce WILDTRACE, a benchmark of 481 tasks over 214 naturally occurring long-form sources such as technical incident reports and lesser-known literary narratives, where all evidence trails arise from the document's own causal, temporal, and narrative logic. Drawing on Pearl's causal hierarchy and prior mult...",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -466,8 +511,8 @@
     "score": 47,
     "hn_score": 145,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -477,7 +522,7 @@
     "source_type": "rss",
     "source_level": "tech_community",
     "published_at": "2026-07-12T21:20:07+00:00",
-    "summary_or_excerpt": "One of the consequences of GPT-5.6 Sol being clearly a Fable/Mythos class model is that Anthropic have, once again, bumped the date that Fable stops being available in their Claude Max plans: We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19. As before, you can use up to half of your weekly usage limit on Fable 5. After that, you can continue using Fable 5 with usage credits, or switch to another model to keep working within your remaining limits. Anthropic's original rationale for this was compute constraints - they wanted a better idea of both demand and compute availability before committing to keeping the new model cheap for subscribers. OpenAI appear confident that they won't need to restrict access to GPT-5.6 in the same way. Here's Tibo this morning : The last 48 hours of Codex and ChatGPT Work have been intense! Three important updates: Temporarily removing the 5 hour usage limit restriction for all Plus, Business and Pro plans Rolling out changes that will make GPT 5.6 Sol more efficient across the board and that will be reflected in less usage being used so that it can take you further...",
+    "summary_or_excerpt": "One of the consequences of GPT-5.6 Sol being clearly a Fable/Mythos class model is that Anthropic have, once again, bumped the date that Fable stops being available in their Claude Max plans: We're extending Claude Fable 5 access on all paid plans, as well as keeping Claude Code’s weekly rate limits 50% higher, through July 19. As before, you can use up to half of your weekly usage limit on Fable 5. After that, you can continue using Fable 5 with usage credits, or switch to another model to keep working within your remaining limits. Anthropic's original rationale for this was compute constraints - they wanted a better idea of both demand and compute availability before committing to keeping the new model cheap for subscribers. OpenAI appear confident that they won't need to restrict access to GPT-5.6 in the same way. Here's Thibault Sottiaux this morning : The last 48 hours of Codex and ChatGPT Work have been intense! Three important updates: Temporarily removing the 5 hour usage limit restriction for all Plus, Business and Pro plans Rolling out changes that will make GPT 5.6 Sol more efficient across the board and that will be reflected in less usage being used so that it can tak...",
     "matched_keywords": [
       "Anthropic",
       "ChatGPT",
@@ -493,8 +538,8 @@
       "model"
     ],
     "score": 46,
-    "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -515,8 +560,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -538,8 +583,8 @@
     ],
     "score": 45,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -558,8 +603,34 @@
     ],
     "score": 45,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Hundreds of papers hit arXiv every day and maybe 3 matter to my research, so I built an open-source tool that finds them [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uvcdf7/hundreds_of_papers_hit_arxiv_every_day_and_maybe",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-13T13:59:17+00:00",
+    "summary_or_excerpt": "Left: Telegram digest (optional); Right: detailed digest on HTML Like probably everyone here, my to-read list only grows. Skimming arXiv listings or my feeds takes 30-60 minutes a day, 95% of it is irrelevant to what I actually work on, and newsletters don't really help: they surface what's popular , not what's relevant to my research. So I built Research Radar , a daily cron job that: Fetches every new paper in your arXiv categories (RSS + API, deduped) Scores every abstract 1-10 against a markdown file describing your research interests (cheap model, batched) Deep-reads the top scorers: downloads the PDF, extracts full text, and a strong model writes a summary, key insights, limitations, and how it relates to your own work Delivers a morning HTML digest + optional Telegram ping with the must-reads Design decisions: Nothing domain-specific in the code. Your interests live in one markdown file. Edit it and the same pipeline works for ML, physics, bio, econ, whatever Only the two scoring passes touch a model. Fetching, dedup, PDF extraction, and rendering are deterministic Python Model-agnostic backend layer: Claude Code / Codex CLIs run it on the subscription you already pay for (...",
+    "matched_keywords": [
+      "API",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "subscription"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "model"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -578,8 +649,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -598,8 +669,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -618,8 +689,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -640,18 +711,46 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b9992：CUDA: refactor MMQ kernel configuration (#24127)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9992",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-13T21:04:47+00:00",
+    "summary_or_excerpt": "CUDA: refactor MMQ kernel configuration (#24127) * CUDA: refactor MMQ kernel configuration * fix Blackwell config * remove legacy code **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/downloa...",
+    "matched_keywords": [
+      "Blackwell",
+      "CUDA",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 41,
+    "release_version": "b9992",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b9939：metal : add CONV_2D_DW (depthwise convolution) support (#21565)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9939",
+    "title": "llama.cpp b9990：spec: add Minimax2 eagle3 support",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9990",
     "source_name": "llama.cpp",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-07-09T10:58:24+00:00",
-    "summary_or_excerpt": "metal : add CONV_2D_DW (depthwise convolution) support (#21565) * metal : add CONV_2D_DW (depthwise 2D convolution) support * test : add perf cases for CONV_2D_DW * metal : use 3D dispatch for CONV_2D_DW kernel * metal : add channel-tiled CONV_2D_DW kernel for non-contiguous layouts * metal : simplify CONV_2D_DW dispatch and trim comments * metal : merge duplicate CONV_2D_DW pipeline getters * tests : add F16 CONV2D_DW tests * cpu : fix F16 kernel support for CONV_2D_DW * tests : remove commented-out CONV_2D_DW test block --------- Co-authored-by: Georgi Gerganov **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9939/llama-b9939-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9939/llama-b9939-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9939/llama-b9939-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9939/llama-b9939-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (...",
+    "published_at": "2026-07-13T19:51:41+00:00",
+    "summary_or_excerpt": "spec: add Minimax2 eagle3 support * Fix nullptr in minimax2 EAGLE3 * minor : add newline --------- Co-authored-by: Georgi Gerganov **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9...",
     "matched_keywords": [
       "GitHub",
       "Intel",
@@ -664,10 +763,10 @@
       "semiconductor"
     ],
     "score": 41,
-    "release_version": "b9939",
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
+    "release_version": "b9990",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -692,8 +791,8 @@
     "score": 40,
     "release_version": "b9979",
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -713,7 +812,7 @@
     "score": 40,
     "hn_score": 1565,
     "first_seen_at": "2026-07-12T07:50:33.227349+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -735,7 +834,53 @@
     ],
     "score": 39,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n beta：[2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/beta",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-13T08:02:30+00:00",
+    "summary_or_excerpt": "## [2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13) ### Bug Fixes * **core:** Decouple executions visibility from the sharing license feature ([#33986](https://github.com/n8n-io/n8n/issues/33986)) ([2cfd956](https://github.com/n8n-io/n8n/commit/2cfd9560f0efffb63cf112c9fd44e0b6c326619e)) * **core:** Settle webhook execution promise on early errors ([#33996](https://github.com/n8n-io/n8n/issues/33996)) ([254a1e5](https://github.com/n8n-io/n8n/commit/254a1e56284a5728a5058f59fdd40d90b73d77f2)) * **Notion Node:** Restore ASCII simplified property keys on earlier node versions ([#34003](https://github.com/n8n-io/n8n/issues/34003)) ([540e246](https://github.com/n8n-io/n8n/commit/540e2464aef148a0a4f69d3c5830e694d5c4e12b)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "beta",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n n8n@1.123.65：[1.123.65](https://github.com/n8n-io/n8n/compare/n8n@1.123.64...n8n@1.123.65) (2026-07-13)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%401.123.65",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-13T07:57:25+00:00",
+    "summary_or_excerpt": "## [1.123.65](https://github.com/n8n-io/n8n/compare/n8n@1.123.64...n8n@1.123.65) (2026-07-13) ### Bug Fixes * **core:** Settle webhook execution promise on early errors ([#33998](https://github.com/n8n-io/n8n/issues/33998)) ([ec985f4](https://github.com/n8n-io/n8n/commit/ec985f4bf5cd771b18ab4e922c5da350884ebc55)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "n8n@1.123.65",
+    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -758,8 +903,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -778,8 +923,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -798,8 +943,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -820,7 +965,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -846,7 +991,7 @@
     "score": 38,
     "release_version": "b9957",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -869,7 +1014,7 @@
     "score": 38,
     "release_version": "n8n@2.30.3",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -892,30 +1037,7 @@
     "score": 38,
     "release_version": "stable",
     "first_seen_at": "2026-07-11T07:56:31.626182+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n n8n@2.30.2：[2.30.2](https://github.com/n8n-io/n8n/compare/n8n@2.30.1...n8n@2.30.2) (2026-07-09)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.2",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-09T08:03:18+00:00",
-    "summary_or_excerpt": "## [2.30.2](https://github.com/n8n-io/n8n/compare/n8n@2.30.1...n8n@2.30.2) (2026-07-09) ### Bug Fixes * **core:** Acquire expression isolate when resolving node inputs ([#33771](https://github.com/n8n-io/n8n/issues/33771)) ([ae7c66c](https://github.com/n8n-io/n8n/commit/ae7c66c3c09c71caff8baffa2a1c725a21292745)) * **core:** Acquire expression isolate when resolving node parameters ([#33770](https://github.com/n8n-io/n8n/issues/33770)) ([26068c9](https://github.com/n8n-io/n8n/commit/26068c9d5061eff692b9704b205af012fe108182)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "n8n"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "n8n@2.30.2",
-    "first_seen_at": "2026-07-10T08:06:38.926167+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -941,8 +1063,8 @@
     "score": 36,
     "release_version": "v1.92.0",
     "first_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "last_seen_at": "2026-07-13T07:47:51.832933+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-14T07:50:46.495958+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

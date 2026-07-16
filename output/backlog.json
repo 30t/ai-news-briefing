@@ -20,73 +20,76 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Infinity-Parser2 Technical Report",
-    "url": "https://arxiv.org/abs/2607.07836",
+    "title": "SingGuard-NSFA: Extensible Guardrails for Agentic AI via Generative Reasoning and Real-Time Classification",
+    "url": "https://arxiv.org/abs/2607.13081",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.07836v2 Announce Type: replace Abstract: We present Infinity-Parser2, a large multimodal model that couples a controllable data-synthesis pipeline with multi-task reinforcement learning for end-to-end document parsing, addressing the persistent scarcity of faithfully annotated parsing corpora. Our contributions are threefold. First, we build a scalable synthesis engine, pairing a controllable rendering framework with an iterative refinement loop, and use it to construct and open-source Infinity-Doc2-5M: a 5-million-sample bilingual (Chinese/English) corpus spanning diverse document types, annotated with element bounding boxes, canonical content forms (Markdown, HTML, LaTeX, SMILES, structured charts), and full-page reading order. Second, we introduce a verifiable, multi-task reward system that enables Joint Reinforcement Learning across eight co-trained objectives (document parsing, layout analysis, table parsing, math formula parsing, chart parsing, chemical formula parsing, document VQA, and general multimodal understanding), unifying perception, structure, and reasoning in a single optimization signal. Third, we release two variants under a shared architecture: Infin...",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.13081v1 Announce Type: cross Abstract: We present nsfaguard, a guardrail framework for securing agentic AI systems against operational threats, such as prompt injection, sensitive information extraction, malicious code requests, dangerous tool misuse, and resource exhaustion. We first introduce the NSFA taxonomy, which organizes 185 risk variants into a CIA-triad-grounded hierarchy and is cross-validated against three well-established OWASP guidelines. Based on this taxonomy, we construct a benchmark suite spanning 133 languages, comprising over 93K purpose-built samples targeting both user queries and agent responses, along with 3,435 cross-source samples adapted from five public agent-security datasets. To detect these operational threats in practice, we develop a dual-mode approach combining SFT-based generative reasoning for interpretable offline auditing with discriminative classification heads on the frozen backbone, enabling real-time detection at approximately 50,ms. We release four models with 0.8B, 2B, 4B, and 9B parameters, all achieving $\\geq$94% F1 on purpose-built benchmarks and surpassing the strongest competing guardrails by 6 to 12 absolute points. On c...",
     "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
       "release"
     ],
     "tags": [
+      "agent",
       "open_source"
     ],
     "score": 66,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Speculate with Memory: Lossless Acceleration for LLM Agents",
-    "url": "https://arxiv.org/abs/2607.12236",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.12236v1 Announce Type: cross Abstract: Speculative execution accelerates LLM agents by using a smaller, cheaper model to predict and pre-launch the next step while the environment is idle. However, existing speculators are stateless and discard all information between tasks, preventing prediction quality from improving with experience. We equip the speculator with three online memory systems that learn from past agent trajectories: a contrastive transition table tracking action-sequence statistics, an episodic memory retrieving contextually similar segments, and a confusion tracker suppressing recurring errors. We evaluate this approach on six benchmarks spanning three speculation types: action prediction, observation prediction, and chained prediction. Memory-augmented speculation yields a 19--39\\% relative accuracy improvement on action prediction and up to a $2.5\\times$ increase on observation prediction tasks with repetitive action spaces. These gains grow continuously as memory accumulates and generalize across speculator models of varying cost. All speculation is lossless because it runs during idle time at zero added wall-clock cost, and the actor's trajectory is...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "launch"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Attention to Detail: Evaluating Energy, Performance, and Accuracy Trade-offs Across vLLM Configurations",
-    "url": "https://arxiv.org/abs/2607.09172",
+    "title": "Full-Pipeline Inference Optimization for MiMo-V2.5 Series: Pushing Hybrid SWA Efficiency to the Limit",
+    "url": "https://arxiv.org/abs/2607.13095",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.09172v1 Announce Type: cross Abstract: Large Language Models are reshaping how software is developed and maintained. They are typically deployed in production using inference engines such as vLLM, which can efficiently serve pre-trained, highly configurable models. While prior work has focused on model architectures and hardware acceleration, the impact of inference engine configuration on energy consumption, performance, and output quality remains poorly understood. In this paper, we present a large-scale controlled study of three selected vLLM configuration options: attention kernel type, prefix caching, and chunked prefill. We evaluate all combinations of these configurations across 5 open-weight LLMs and 5 diverse inference tasks, totaling $9,000$ runs and $93,600$ measures. We analyze energy consumption, latency, and accuracy, and examine both main effects and interaction effects between configuration options and tasks. Our results show that the studied configuration options significantly impact energy and performance, mainly driven by attention type and prefix caching, while chunked prefill has a limited effect under the default vLLM serving configuration and eval...",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.13095v1 Announce Type: cross Abstract: We present a full-pipeline inference optimization for the MiMo-V2.5 model family, which combines Hybrid Sliding Window Attention (Hybrid SWA), sparse Mixture-of-Experts (MoE), and multimodal encoders. While Hybrid SWA can ideally reduce both attention compute and KVCache storage significantly compared to Full Attention, realizing these gains in production requires substantial engineering effort. We systematically optimize the KVCache system with layerwise prefetch, SWA-aware prefix cache trees, and specialized placement strategies, achieving strict $O(W)$ SWA storage and high cache hit rates. We further build GCache, a high-performance distributed cache infrastructure with RDMA-optimized networking, and develop a KVCache-affinity router to reduce computation while preserving load balancing. We also optimize for multimodal inputs, including GPU image preprocessing, parallel video decoding, and multimodal cache sharing. Together, these optimizations constitute the first large-scale LLM serving system in production that efficiently covers the Hybrid SWA + MoE + multimodal composite architecture.",
     "matched_keywords": [
+      "GPU",
       "inference",
-      "serving",
-      "vLLM"
+      "serving"
     ],
     "tags": [
-      "open_source"
+      "open_source",
+      "semiconductor"
     ],
-    "score": 66,
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
+    "score": 64,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Mind the Gap: Action Rebinding Attacks against Android GUI Agents",
+    "url": "https://arxiv.org/abs/2601.12349",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2601.12349v3 Announce Type: replace-cross Abstract: Large multimodal model powered GUI agents are emerging as high-privilege operators on mobile platforms, entrusted to perceive screen content and inject inputs across application boundaries. While these agents aim to automate complex tasks, we demonstrate that their design introduces a fundamental conflict with Android's strict application sandboxing. We present a novel cross-application Action Rebinding attack, which allows a malicious application with zero dangerous permissions to hijack the agent's execution and perform privileged operations on behalf of the attacker. Our attack exploits the inevitable observation-action gap inherent in the agent's reasoning pipeline. A malicious app can render a benign ``contextual carrier'' to elicit a planned action, and then swap the foreground to a sensitive target application during the reasoning latency. The agent, unaware of the transition, unwittingly executes the action in the privileged context. We further advance this attack by weaponizing the agent's own task-recovery logic to create programmable, multi-step exploit loops , and introducing an Intent Alignment Strategy (IAS) t...",
+    "matched_keywords": [
+      "Agent",
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -108,8 +111,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -131,8 +134,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -161,8 +164,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -181,8 +184,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -208,8 +211,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -231,7 +234,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -257,54 +260,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
-    "url": "https://arxiv.org/abs/2607.09349",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.09349v1 Announce Type: cross Abstract: Retrieval-augmented generation evaluation checks whether model claims are factually grounded in retrieved documents. It does not check whether retrieved evidence is attributed to the correct entity. A clinical RAG response can pass every automated check (zero hallucinations, near-perfect faithfulness, real citations) while presenting drug Y's clinical evidence as evidence about queried drug X. We term this deceptive grounding (DG): a failure invisible to faithfulness, hallucination, and citation checks because every claim is sourced from a real document, about the wrong entity. Using a controlled factorial benchmark across 13 models, we find DG rates spanning 8-87% at peak adversarial conditions. Medical and biomedical fine-tuned models reach up to 86.7%; domain specialization amplifies the failure rather than mitigating it. A controlled ablation identifies the mechanism: removing entity-specific clinical evidence from retrieved documents eliminates entity-attribution failure entirely, shifting all failures to confabulation. The two failure modes respond to the same trigger, taking different paths. Production measurement across 740...",
-    "matched_keywords": [
-      "benchmark",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SWE-Milestone: Evaluating AI Agents on Continuous Software Evolution",
-    "url": "https://arxiv.org/abs/2603.13428",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.13428v3 Announce Type: replace-cross Abstract: Real-world software must continuously evolve to meet ever-changing and open-ended requirements. AI agents, increasingly deployed as long-running systems, are now entrusted to drive this evolution. Yet, existing benchmarks evaluate agents on isolated, one-off coding tasks, neglecting the temporal dependencies and technical debt inherent in real-world software evolution. To bridge this gap, we introduce DeepCommit, an agentic pipeline that reconstructs verifiable Milestone DAGs from noisy commit logs, where milestones are defined as functionally cohesive development goals. These executable sequences enable SWE-Milestone, a benchmark that evaluates agents on streams of milestone-level tasks, requiring them to sustain system integrity and limit error accumulation, dimensions of long-term software evolution largely missing from current benchmarks. Our evaluation of 12 frontier models across 4 agent frameworks reveals a critical vulnerability: overall performance scores drop significantly from >80% on isolated tasks to at most 38% in continuous settings, exposing agents' profound struggle with long-term maintenance and error prop...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -324,8 +280,8 @@
     ],
     "score": 63,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -344,8 +300,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -370,35 +326,56 @@
     ],
     "score": 62,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities",
+    "url": "https://arxiv.org/abs/2607.13705",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.13705v1 Announce Type: new Abstract: As Large Language Models (LLMs) evolve into autonomous agents, the need for unified evaluation infrastructure becomes critical. However, current evaluation pipelines remain highly fragmented and tightly coupled, hindering reproducibility and causing redundant engineering. To address this, we introduce AgentCompass, an open-source, lightweight, and extensible infrastructure for evaluating LLM-based agents. AgentCompass organizes the evaluation process around three independent components, namely Benchmark, Harness, and Environment, thereby enabling flexible configurations without requiring the reimplementation of complex execution logic. Furthermore, it features a fault-tolerant asynchronous runtime and comprehensive trajectory analysis tools to transparently diagnose nuanced failure modes like reward-hacking. Natively supporting over 20 benchmarks across five capability dimensions, AgentCompass provides the community with a scalable and reproducible infrastructure for advancing agent research.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "AgentKGV: Agentic LLM-RAG Framework with Two-Stage Training for the Fact Verification of Knowledge Graphs",
-    "url": "https://arxiv.org/abs/2607.09092",
+    "title": "Scaling Point-in-Time Language Models",
+    "url": "https://arxiv.org/abs/2607.11889",
     "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.09092v1 Announce Type: new Abstract: Knowledge graphs (KGs) are often automatically constructed from large-scale corpora, but they inevitably contain factual errors due to noisy sources and extraction failures, and verifying them reliably at industrial scale remains a critical challenge. To address this, we propose AgentKGV, the Agentic LLM-RAG framework for KG fact Verification, that integrates dynamic routing and iterative query rewriting, which handles surface-form mismatch in document-level retrieval. To make this framework more accurate and cost-efficient for industrial deployment, we further introduce a two-stage training strategy: turn-level distillation-based SFT that transfers reasoning ability from a large teacher model into a small model for stable query rewriting and reasoning, and trajectory-level GRPO that optimizes the search policy to reduce unnecessary retrieval at scale. On the long-tail-predicate split of the open-domain T-REx benchmark, our framework improves macro-F1 over single-turn RAG by 5.5 \\%p, and two-stage training does it further by 9.4 \\%p. GRPO also cuts the average number of search calls from 3.24 to 1.63 without lowering accuracy.",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.11889v1 Announce Type: new Abstract: Large language models trained on unrestricted internet corpora inevitably embed information from the future, introducing lookahead bias that compromises the validity of backtests and causal inference in finance and the social sciences. Point-in-time language models--trained exclusively on text available up to each calendar date--eliminate this leakage by construction, but existing efforts typically produce models that lag substantially behind their unconstrained counterparts. We show that this performance gap can be substantially narrowed through scale. Training decoder-only transformers with up to 4 billion parameters on 1 trillion chronologically filtered tokens from FineWeb, we construct a sequence of monthly model checkpoints spanning 2013-2024. Across a range of common-sense reasoning and language understanding benchmarks, our models approach the performance of leading open-weight models of comparable size (e.g., Gemma-3-4B and LLaMA-7B) trained on temporally unrestricted data, although a performance gap remains on several tasks. Instruction fine-tuning via LoRA further improves downstream usability. We release the complete pipe...",
     "matched_keywords": [
-      "agentic",
-      "benchmark",
-      "policy",
-      "RAG",
-      "retrieval"
+      "fine-tuning",
+      "inference",
+      "Llama",
+      "release",
+      "Transformers"
     ],
     "tags": [
-      "agent",
-      "business",
-      "open_source",
-      "rag_data"
+      "model",
+      "open_source"
     ],
-    "score": 60,
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
+    "score": 58,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -417,8 +394,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -440,7 +417,38 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Transforming LLMs into Efficient Cross-Encoders via Knowledge Distillation for RAG Reranking",
+    "url": "https://arxiv.org/abs/2607.11933",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.11933v1 Announce Type: new Abstract: Cross-encoders achieve high reranking accuracy in Retrieval-Augmented Generation (RAG) pipelines but impose quadratic inference costs that limit real-time deployment. We address this by fine-tuning LLaMA 3 (8B) as a drop-in reranker using a two-stage pipeline: supervised fine-tuning on a custom query-document relevance dataset via the Unsloth framework with LoRA adapters, followed by 4-bit quantization for efficient inference. The resulting model replaces the cross-encoder in a dual-retriever RAG pipeline combining BM25 and dense vector search. Evaluated on a domain-specific question-answering benchmark using the RAGAS framework, our fine-tuned LLaMA 3 reranker achieves gains of 14% in answer relevancy, 16% in context precision, 19% in answer similarity, and 21% in answer correctness over the cross-encoder baseline, while reducing inference overhead through 4-bit quantization. These results demonstrate that instruction-tuned LLMs can be adapted into accurate, efficient rerankers without the quadratic complexity of traditional cross-encoders.",
+    "matched_keywords": [
+      "benchmark",
+      "dataset",
+      "fine-tuning",
+      "inference",
+      "Llama",
+      "quantization",
+      "RAG",
+      "reranker",
+      "retrieval",
+      "vector search"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 57,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -462,7 +470,80 @@
     ],
     "score": 57,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "All major robotics and VLA papers, ranked and benchmarked in a single place [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uxa7ak/all_major_robotics_and_vla_papers_ranked_and",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-15T16:05:04+00:00",
+    "summary_or_excerpt": "Hi folks, There is now a dedicated Robotics page on Papers with Code that lists the major benchmarks, trending papers with linked code, and open-source artifacts. Find it here: https://paperswithcode.co/tasks/robotics https://preview.redd.it/wvhcgu1q1fdh1.png?width=3034&format=png&auto=webp&s=9a43021f7b8e1b840b09f55bb8aee0c4b2d54215 Major benchmarks that most papers report evaluations on are: - LIBERO , as well as its subsets like LIBERO-Long and LIBERO-Spatial - SimplerEnv WidowX - RoboTwin and more. Currently, we have about 110 entries on each benchmark. Each benchmark's progress is visualized over time: https://preview.redd.it/myl3ysvv2fdh1.png?width=2880&format=png&auto=webp&s=3fae2b73d592f2c7ddd3118ec2c5a0d5c5e93b65 We also show which models are open source and which aren't. Let me know which others I missed. I'd be happy to add them. Also happy to hear any feedback, new tasks, or features to add! Kind regards, Niels ML Engineer @ HF submitted by /u/NielsRogge [link] [comments]",
+    "matched_keywords": [
+      "benchmark",
+      "open source"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 54,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ComfyUI v0.28.0：* Add AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14696",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.28.0",
+    "source_name": "ComfyUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-15T15:37:18+00:00",
+    "summary_or_excerpt": "## What's Changed * Add AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14696 * Add some more stuff to AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14704 * Fix Qwen3-VL tokenizer crash with custom embeddings by @silveroxides in https://github.com/Comfy-Org/ComfyUI/pull/14713 * Update AGENTS.md with more stuff. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14725 * [Partner Nodes] chore(Ideogram): remove IdeogramV1 and IdeogramV2 nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14712 * Update AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14726 * security: fix four vulnerabilities (GHSA-779p-m5rp-r4h4) by @mattmillerai in https://github.com/Comfy-Org/ComfyUI/pull/14734 * Update AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14733 * [Partner Nodes] feat(ByteDance): add support for Seed Audio 1.0 by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14731 * Update workflow templates to v0.11.2 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/14741 * [Partner Nodes] chore(StabilityAI): remove StabilityAI nodes by @bigcat88 in htt...",
+    "matched_keywords": [
+      "agents",
+      "ComfyUI",
+      "embeddings",
+      "GitHub",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 46,
+    "release_version": "v0.28.0",
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Launch HN: Coasty (YC S26) – An API for computer-use agents",
+    "url": "https://coasty.ai/docs",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-15T15:51:20+00:00",
+    "summary_or_excerpt": "HN points: 42. Comments: https://news.ycombinator.com/item?id=48922706",
+    "matched_keywords": [
+      "agents",
+      "API",
+      "launch"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 46,
+    "hn_score": 42,
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -490,7 +571,7 @@
     "score": 46,
     "release_version": "n8n@2.31.0",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -516,8 +597,33 @@
     "score": 46,
     "release_version": "b9994",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10052：hexagon: L2 cache handling rework (dirty bit tracking with lazy flushing) and more MUL_MAT",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10052",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-16T21:22:47+00:00",
+    "summary_or_excerpt": "hexagon: L2 cache handling rework (dirty bit tracking with lazy flushing) and more MUL_MAT updates (#25762) * hex-mm: fix artificial limit in the solver that restricted number of act-prep threads * hex-mm: fix warning * hex-prof: do not apply --top to the timeline report * hmx-mm: add suport for tiled act-processing to better distribute hvx work * hex-l2: add tracing for l2flush events * workqueue: redo the legacy workpool api to match hmx-queue and dma-queue * hmx-mm: fix f32 activation buffer alignmnet for nhvx=5,6,7 * hex-work: minor cleanup for work-queue apis * hex-work: further cleanup of the work-queue api * hex-l2: optimize l2flushes at the opbatch level * hex-work: remove unused mask * hex-work: no need to drop hvx ctx in the work-queue * hex-work: add explicit wakeup/suspend and make threads spin * hex-bufs: mark any non-weight tensor as compute * hex-dma: dma-queue support for alias queues and cached dma * hex-l2: track tensor aliases and delay or skip flushes as much as possible * hex-l2: simplify tensor alias handling * hex-l2: handle overlapping views as a circular list of aliases * hex-tens: add flags helper * hex-l2: add helper for marking tensors clearn/dirty * he...",
+    "matched_keywords": [
+      "API",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 41,
+    "release_version": "b10052",
+    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -543,8 +649,8 @@
     "score": 41,
     "release_version": "b10032",
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -566,107 +672,7 @@
     "score": 41,
     "release_version": "stable",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9992：CUDA: refactor MMQ kernel configuration (#24127)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9992",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-13T21:04:47+00:00",
-    "summary_or_excerpt": "CUDA: refactor MMQ kernel configuration (#24127) * CUDA: refactor MMQ kernel configuration * fix Blackwell config * remove legacy code **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9992/llama-b9992-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/downloa...",
-    "matched_keywords": [
-      "Blackwell",
-      "CUDA",
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 41,
-    "release_version": "b9992",
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9990：spec: add Minimax2 eagle3 support",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9990",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-13T19:51:41+00:00",
-    "summary_or_excerpt": "spec: add Minimax2 eagle3 support * Fix nullptr in minimax2 EAGLE3 * minor : add newline --------- Co-authored-by: Georgi Gerganov **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9990/llama-b9990-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 41,
-    "release_version": "b9990",
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n beta：[2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/beta",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-13T08:02:30+00:00",
-    "summary_or_excerpt": "## [2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13) ### Bug Fixes * **core:** Decouple executions visibility from the sharing license feature ([#33986](https://github.com/n8n-io/n8n/issues/33986)) ([2cfd956](https://github.com/n8n-io/n8n/commit/2cfd9560f0efffb63cf112c9fd44e0b6c326619e)) * **core:** Settle webhook execution promise on early errors ([#33996](https://github.com/n8n-io/n8n/issues/33996)) ([254a1e5](https://github.com/n8n-io/n8n/commit/254a1e56284a5728a5058f59fdd40d90b73d77f2)) * **Notion Node:** Restore ASCII simplified property keys on earlier node versions ([#34003](https://github.com/n8n-io/n8n/issues/34003)) ([540e246](https://github.com/n8n-io/n8n/commit/540e2464aef148a0a4f69d3c5830e694d5c4e12b)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "n8n"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "beta",
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n n8n@1.123.65：[1.123.65](https://github.com/n8n-io/n8n/compare/n8n@1.123.64...n8n@1.123.65) (2026-07-13)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%401.123.65",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-13T07:57:25+00:00",
-    "summary_or_excerpt": "## [1.123.65](https://github.com/n8n-io/n8n/compare/n8n@1.123.64...n8n@1.123.65) (2026-07-13) ### Bug Fixes * **core:** Settle webhook execution promise on early errors ([#33998](https://github.com/n8n-io/n8n/issues/33998)) ([ec985f4](https://github.com/n8n-io/n8n/commit/ec985f4bf5cd771b18ab4e922c5da350884ebc55)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "n8n"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "n8n@1.123.65",
-    "first_seen_at": "2026-07-14T07:50:46.495958+08:00",
-    "last_seen_at": "2026-07-16T07:56:42.627024+08:00",
+    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

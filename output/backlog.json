@@ -1,30 +1,5 @@
 [
   {
-    "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
-    "url": "https://arxiv.org/abs/2607.13034",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.13034v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly automate multi-step engineering and informatics workflows, yet they rarely ask how much effort a task actually requires. They often follow a maximum-context-first strategy--re-reading files and dependencies they have already seen--turning a one-line edit into a small code-base audit. We argue the missing capability is task-aware execution-scope estimation: judging a task's difficulty, the information it truly needs, and the shortest reliable path before committing budget. We formalize minimum-sufficient execution and the Agent Cognitive Redundancy Ratio (ACRR), and propose E3 (Estimate, Execute, Expand): the agent estimates an initial operating point, executes a minimum viable path, and expands scope only when verification fails. On MSE-Bench--a deterministic benchmark of 121 edits in a capability-controlled simulator--E3 matches the strongest baseline's 100% success while cutting cost by 85%, tokens by 91%, and inspected files by 92%, and further beats a strong adaptive retrieval baseline by 16%; the gains survive held-out instruction wording and essentially every cost weighting. A comp...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
     "title": "SingGuard-NSFA: Extensible Guardrails for Agentic AI via Generative Reasoning and Real-Time Classification",
     "url": "https://arxiv.org/abs/2607.13081",
     "source_name": "arXiv cs.AI",
@@ -44,7 +19,181 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Are LLM-Generated GPU Kernels Production-Ready? A Trace-Driven Benchmark and Optimization Agent",
+    "url": "https://arxiv.org/abs/2607.14541",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14541v1 Announce Type: new Abstract: Existing GPU kernel generation benchmarks draw problems from synthetic or curated sources that diverge from deployed workloads. We present Atrex-Bench, a benchmark whose 30 operators and 440 shapes are sampled directly from full-cluster production inference traces of compute-limited, memory-rich GPUs. Each problem carries an importance weight derived from its share of observed GPU time, weighted by application card-hours and computed separately for the serving phases in which it runs, together with a per-problem roofline ceiling, so the aggregate score emphasizes the kernels that consume the most serving time. Evaluating six frontier coding agents on Atrex-Bench shows that even the best vanilla model reaches only ${\\sim}10\\%$ of the hardware roofline on production operators; and correctness alone overstates capability, since much of the apparent pass rate comes from PyTorch fallbacks rather than kernels the model wrote. To close this gap, we co-release Atrex-Kernel-Agent (AKA), a profile-driven kernel-optimization agent that combines iterative measure-revise search, optimization dropout for escaping stalled search contexts, and a lay...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "GPU",
+      "inference",
+      "release",
+      "serving"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents",
+    "url": "https://arxiv.org/abs/2607.14573",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14573v1 Announce Type: new Abstract: Payment integration is a demanding repository-level software task: agents must select a suitable product, implement coordinated client-server flows, verify payment outcomes, and preserve consistency between transaction and business states. We introduce Alipay-PIBench, a benchmark for evaluating coding agents on realistic Alipay payment integration. It contains nine product-specific projects and 18 task instances, each organized into Basic functional-completion and Advanced risk-aware hardening scenarios. Scenario-specific rubrics support deterministic static, unit, integration, and end-to-end checks, supplemented by LLM-assisted assessment for semantic requirements. We evaluate six coding-agent models and report rubric pass rate (RPR). Under the with-skill condition, mean RPR ranges from 68.58% to 91.37%. Access to the alipay-payment-integration skill improves mean RPR by 10.31 percentage points on average relative to the without-skill condition, with gains varying across models, products, and scenarios. Method-level results distinguish source-level completion, executable payment behavior, and payment-domain requirements. Alipay-PIBe...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers",
+    "url": "https://arxiv.org/abs/2607.14642",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14642v1 Announce Type: new Abstract: As Model Context Protocol (MCP) servers emerge as the core infrastructure for connecting LLMs with external tools, existing benchmarks leverage real-world MCP servers to evaluate LLM agents' tool-using capabilities. However, these benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers, resulting in flawed assessments that fail to capture the agent's adaptability in changing tool landscapes. To bridge this gap, we introduce \\textbf{MCPEvol-Bench}, a novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution. Inspired by large-scale empirical study, we propose 11 mutation operators to simulate realistic tool evolution within 123 MCP servers. We benchmark 12 state-of-the-art LLMs on multiple versions of MCP servers, revealing that even frontier models struggle to adapt to evolving tools. For instance, GPT-5.4 and Claude-Sonnet-4-6 exhibit performance declines of 13.7\\% and 14.4\\% in evolved MCP servers, respectively, accompanied by substantial increases in planning and reasoning errors. These findings highlight the vulnerability of LLM-driven...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space",
+    "url": "https://arxiv.org/abs/2607.15218",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.15218v1 Announce Type: new Abstract: Large language models (LLMs) increasingly serve as high-level planners for embodied agents, where linguistically benign instructions can become unsafe once grounded in the physical world. We study whether this physically grounded danger is the same safety problem as ordinary text-level content danger. Through hidden-state direction analysis and random-split null tests, we show that content danger (CD) and physical danger (PD) form separable signals in LLM representations across Qwen2.5-3B/7B/14B/32B, Phi-3.5 and SmolLM2. Building on the CD/PD separability, we propose PRISM, a single-layer L2-regularized logistic probe over full hidden states. PRISM achieves 86.2--87.7\\% accuracy on SafeAgentBench with 11.7--13.7\\% FPR, while same-scale LLM judges over-block safe tasks at 24.7--39.0\\% FPR. We further introduce PhysicalSafetyBench-1K (PSB-1K), a contrastive benchmark of 1{,}000 physical-risk pairs without direct harm keywords, to test whether methods detect physically grounded danger rather than explicit unsafe wording. On PSB-1K, PRISM reaches 99.6\\% accuracy and 0.7\\% FPR, whereas a Qwen2.5-3B judge rejects 67.8\\% of safe tasks. PRIS...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "NexForge: Scaling Executable Agent Tasks via Requirement-First Synthesis",
+    "url": "https://arxiv.org/abs/2607.14186",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14186v1 Announce Type: cross Abstract: Scaling executable agent training data is bottlenecked by substrate-first methods that tie task generation to predefined tools, repositories, or skill graphs: expanding coverage requires manual expansion of the substrate, each new domain demands a bespoke pipeline, and the resulting task distributions often reflect substrate convenience rather than real-world demand. We introduce NexForge, a requirement-first framework that compiles free-form capability requirements into executable agent training data. NexForge first performs research-based demand discovery to identify representative task forms, realistic scenarios, and their relative prevalence. It then applies distribution-aware task compilation and automatically retrieves or constructs the files, repositories, dependencies, and runtime configurations required to materialize each task, followed by teacher rollout collection and trajectory distillation. The same pipeline, without any domain-specific infrastructure, produces 3,600 terminal tasks and 2,000 office tasks, improving Qwen3.5-35B-A3B Base from 22.5% to 52.0% on Terminal-Bench 2.0 and from 813 to 1338 Elo on GDPval; scali...",
+    "matched_keywords": [
+      "Agent",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ToolAlignBench: Investigating Alignment Conflicts in Tool-Calling Enabled LLMs",
+    "url": "https://arxiv.org/abs/2607.14285",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14285v1 Announce Type: cross Abstract: Safety alignment in LLMs aims to align models with human values, but which values take precedence when they conflict? We investigate this question in the context of tool-calling LLM agents deployed in regulated industries, where agents processing confidential documents may encounter content that triggers safety-trained values (e.g., public welfare) that conflict with deployment-context instructions (e.g., internal logging). To empirically verify this phenomenon, we build a benchmark of 128 scenarios across 16 domains. We find that safety-aligned open-source models override their deployment instructions up to 43.4% of the time, engaging in whistleblowing, data exfiltration, and evidence tampering when processing documents that suggest organizational wrongdoing. We also find that abliteration reduces rates of external whistleblowing. These results reveal a fundamental tension in pluralistic alignment, where the same safety training that protects users can cause agents to act against deployment instructions in ways that create unpredictable liability risks. We release our benchmark as a framework to support evaluation of agent behavio...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents",
+    "url": "https://arxiv.org/abs/2607.14651",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14651v1 Announce Type: cross Abstract: Persistent external memory enhances agent continuity but introduces persistent security vulnerabilities: adversarial content can be injected via standard interaction channels, retained across turns, and later distort downstream behavior. To address this challenge, we propose MemPoison, a comprehensive benchmark and analysis framework featuring 1227 hand-validated cases across four attack types, three injection channels, and three representative memory substrates, evaluated on seven open-weight and three closed-weight model families. We introduce a three-tier taxonomy: (L1) direct single-record corruption, (L2) compositional multi-record corruption and (L3) context-triggered dormant corruption. Our evaluations reveal a distinct defense frontier: while baseline write-time defenses, such as consistency checks, substantially suppress direct L1 attacks, they fail to reliably suppress L2 and L3 attacks. Through mechanistic influence decomposition (MID), we demonstrate structural blind spots in write-time defenses, which admit seemingly benign records that later become harmful through joint retrieval composition or trigger-conditioned act...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -67,8 +216,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -88,8 +237,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -111,7 +260,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -134,7 +283,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -164,7 +313,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -184,7 +333,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -211,146 +360,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Opti-Agent-Bench: Benchmarking End-to-End Optimization R&D Agents on Real-World Business Problems",
-    "url": "https://arxiv.org/abs/2607.10768",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.10768v1 Announce Type: new Abstract: LLM-based agents are increasingly deployed to solve optimization problems, yet existing benchmarks evaluate them on pre-structured mathematical formulations that bypass the most critical challenge: translating complex business requirements into correct models and solve efficiently. We introduce Opti-Agent-Bench, an end-to-end benchmark that evaluates Large Language Models (LLMs) across the complete optimization R&D pipeline, from understanding business-language descriptions through mathematical modeling, algorithm selection, and code implementation, to solution report generation. Our design rests on three pillars: (1) businesssemantic authenticity with anti-template traps that defeat pattern matching; (2) modular evaluation with cross-module consistency checking across Problem Understanding, Formal Modeling, Implementation, and Reporting; and (3) the ORAC bi-level validity framework that simultaneously ensures task quality and scoring integrity. Across several industrialscale tasks spanning integer programming, robust optimization, stochastic programming, and non-convex optimization, we expose critical failure modes of current models...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SETA: Scaling Environments for Terminal Agents",
-    "url": "https://arxiv.org/abs/2607.10891",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.10891v1 Announce Type: new Abstract: Large language models (LLMs) are rapidly shifting toward agents that solve tasks through diverse interfaces, including web and graphical user interfaces (GUIs). Among these, the terminal command line provides a text-based, general-purpose interface, covering tasks from system operations to data science and machine learning. However, scaling terminal-agent training remains challenging, as it requires diverse and coherent task instructions, executable environments, and reliable verification, while lacking naturally grounded supervision data. In this work, we propose SETA, a scalable framework for generating verifiable terminal environments for reinforcement learning (RL). The framework consists of two pipelines sharing a unified verification mechanism: SETA-Synth converts diverse sources into standardized RL environments, and SETA-Evol further expands from existing environments with adaptive control of difficulty and diversity. Together, we construct and release SETA-Env, the largest open-source verifiable terminal RL dataset to date, containing over 4,500 environments. We evaluate our dataset by training Qwen3-8B with GRPO on SETA-Env...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "dataset",
-      "release",
-      "terminal"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Evolution Strategies at Scale: LLM Fine-Tuning Beyond Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2509.24372",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2509.24372v3 Announce Type: replace-cross Abstract: Fine-tuning large language models (LLMs) for downstream tasks is an essential stage of modern AI deployment. Reinforcement learning (RL) has emerged as the dominant fine-tuning paradigm, underpinning many state-of-the-art LLMs. In contrast, evolution strategies (ES) has largely been overlooked due to the widespread belief that it does not scale to modern model sizes. This paper overturns this assumption by demonstrating the first successful application of ES to full-parameter fine-tuning of LLMs at the billion-parameter scale, without dimensionality reduction. ES can indeed search over extremely high-dimensional parameter spaces and outperform established RL implementations across multiple axes, including improved tolerance to long-horizon and delayed rewards, robustness across diverse base LLMs, reduced susceptibility to reward hacking, and improved training stability. These findings suggest that ES is not merely a viable alternative to RL, but a fundamentally different and powerful backpropagation-free post-training paradigm that opens a new direction for LLM fine-tuning beyond current RL-based approaches.",
-    "matched_keywords": [
-      "fine-tuning"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 63,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Adaptive Testing for LLM Evaluation: A Psychometric Alternative to Static Benchmarks",
-    "url": "https://arxiv.org/abs/2511.04689",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2511.04689v3 Announce Type: replace-cross Abstract: Evaluating large language models (LLMs) typically requires thousands of benchmark items, making the process expensive, slow, and increasingly impractical at scale. Existing evaluation protocols rely on average accuracy over fixed item sets, treating all items as equally informative despite substantial variation in difficulty and discrimination. We introduce ATLAS, an adaptive testing framework based on Item Response Theory (IRT) that estimates model ability using Fisher information-guided item selection. ATLAS reduces the number of required items by up to 90% while maintaining measurement precision. For instance, it matches whole-bank ability estimates using only 41 items (0.157 MAE) on HellaSwag (5,600 items). We further reconstruct accuracy from ATLAS's ability estimates and find that reconstructed accuracies closely match raw accuracies across all five benchmarks, indicating that ability ${\\theta}$ preserves the global performance structure. At the same time, ${\\theta}$ provides finer discrimination within accuracy-equivalent models: among more than 3,000 evaluated models, 23-31% shift by more than 10 rank positions, and...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "First, do NOHARM: a medical safety benchmark and randomized study of physician and AI teaming on clinical consultations",
-    "url": "https://arxiv.org/abs/2512.01241",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2512.01241v4 Announce Type: replace-cross Abstract: Large language models (LLMs) and medical AI tools are routinely used by physicians and patients for medical advice, yet their clinical safety profiles remain poorly characterized. We present NOHARM (Numerous Options Harm Assessment for Risk in Medicine), a 1,100-task benchmark of primary care-to-specialist consultation cases to measure the frequency and severity of potentially harmful errors from LLM-generated medical consultation recommendations. NOHARM covers 10 specialties, with 12,747 expert annotations for 4,249 clinical management options. Across 20 notable LLMs and 4 widely used retrieval-augmented generation (RAG) clinical AI tools, direct application of recommendations carried potential for severe harm in up to 24.6% of cases, with errors of omission accounting for more than 80% of severe errors. Harm potential was not uniform across systems, with clinical AI tools outperforming generalist LLMs, and multi-agent AI teaming further improving performance in generalist models. In a randomized study of 101 U.S.-licensed generalist physicians, AI assistance improved physician performance compared to conventional resource...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "multi-agent",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities",
-    "url": "https://arxiv.org/abs/2607.13705",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.13705v1 Announce Type: new Abstract: As Large Language Models (LLMs) evolve into autonomous agents, the need for unified evaluation infrastructure becomes critical. However, current evaluation pipelines remain highly fragmented and tightly coupled, hindering reproducibility and causing redundant engineering. To address this, we introduce AgentCompass, an open-source, lightweight, and extensible infrastructure for evaluating LLM-based agents. AgentCompass organizes the evaluation process around three independent components, namely Benchmark, Harness, and Environment, thereby enabling flexible configurations without requiring the reimplementation of complex execution logic. Furthermore, it features a fault-tolerant asynchronous runtime and comprehensive trajectory analysis tools to transparently diagnose nuanced failure modes like reward-hacking. Natively supporting over 20 benchmarks across five capability dimensions, AgentCompass provides the community with a scalable and reproducible infrastructure for advancing agent research.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -374,8 +385,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -394,7 +405,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -417,7 +428,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -448,8 +459,8 @@
     ],
     "score": 57,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -470,8 +481,33 @@
     ],
     "score": 57,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EU AI Act OpenRAG: 933 legally structured chunks and BGE-M3 embeddings in one SQLite file [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uytlac/eu_ai_act_openrag_933_legally_structured_chunks",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-17T08:18:09+00:00",
+    "summary_or_excerpt": "I have released EU AI Act OpenRAG, a downloadable corpus of Regulation (EU) 2024/1689 designed for RAG and legal-NLP experimentation. Instead of sliding character windows, the corpus chunks on the Regulation’s legal structure: one chunk per article paragraph one per recital one per Article 3 definition one per annex point chapter, section and provision metadata stored separately The resulting SQLite database contains 933 chunks and a normalized 1024-dimensional BGE-M3 embedding for every chunk. It also includes exact EUR-Lex links, Article 113 application-date metadata and deliberately narrow derived labels. Direct textual classification is stored separately from broader regulatory-regime association, and ambiguous cases remain NULL. I evaluated it against the AI Act Evaluation Benchmark using a like-for-like whole-unit baseline: scenario article recall@20: 0.541 structural vs 0.449 baseline QA article hit@10: 0.927 structural vs 0.898 baseline overall RAG classification remained close and was slightly lower on the structural corpus, suggesting that generator behaviour dominates that task more than chunk granularity I have published the full results, limitations, derivation method...",
+    "matched_keywords": [
+      "benchmark",
+      "embeddings",
+      "RAG",
+      "regulation"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 56,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -491,7 +527,50 @@
     ],
     "score": 54,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Kimi K3, and what we can still learn from the pelican benchmark",
+    "url": "https://simonwillison.net/2026/Jul/16/kimi-k3",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-17T14:21:51+00:00",
+    "summary_or_excerpt": "HN points: 246. Comments: https://news.ycombinator.com/item?id=48947717",
+    "matched_keywords": [
+      "benchmark",
+      "Kimi"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 50,
+    "hn_score": 246,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "A scorecard for the AI age",
+    "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
+    "source_name": "OpenAI News",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-17T10:00:00+00:00",
+    "summary_or_excerpt": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute.",
+    "matched_keywords": [
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -519,8 +598,8 @@
     "score": 46,
     "release_version": "v0.28.0",
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -543,8 +622,8 @@
     "score": 46,
     "hn_score": 42,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -571,7 +650,7 @@
     "score": 46,
     "release_version": "n8n@2.31.0",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -597,8 +676,35 @@
     "score": 46,
     "release_version": "b9994",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitHub Mobile: Fix pull request comments with Copilot cloud agent",
+    "url": "https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-17T19:47:45+00:00",
+    "summary_or_excerpt": "You can now select Fix with Copilot directly from Copilot code review pull request comments in GitHub Mobile. The button is available both on the pull request’s main view and… The post GitHub Mobile: Fix pull request comments with Copilot cloud agent appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "Agent",
+      "changelog",
+      "code review",
+      "GitHub",
+      "pull request"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -622,8 +728,8 @@
     "score": 41,
     "release_version": "b10052",
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -649,7 +755,7 @@
     "score": 41,
     "release_version": "b10032",
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -672,7 +778,7 @@
     "score": 41,
     "release_version": "stable",
     "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-17T07:57:02.231635+08:00",
+    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

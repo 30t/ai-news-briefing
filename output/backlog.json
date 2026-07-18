@@ -1,26 +1,30 @@
 [
   {
-    "title": "SingGuard-NSFA: Extensible Guardrails for Agentic AI via Generative Reasoning and Real-Time Classification",
-    "url": "https://arxiv.org/abs/2607.13081",
+    "title": "MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers",
+    "url": "https://arxiv.org/abs/2607.14642",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.13081v1 Announce Type: cross Abstract: We present nsfaguard, a guardrail framework for securing agentic AI systems against operational threats, such as prompt injection, sensitive information extraction, malicious code requests, dangerous tool misuse, and resource exhaustion. We first introduce the NSFA taxonomy, which organizes 185 risk variants into a CIA-triad-grounded hierarchy and is cross-validated against three well-established OWASP guidelines. Based on this taxonomy, we construct a benchmark suite spanning 133 languages, comprising over 93K purpose-built samples targeting both user queries and agent responses, along with 3,435 cross-source samples adapted from five public agent-security datasets. To detect these operational threats in practice, we develop a dual-mode approach combining SFT-based generative reasoning for interpretable offline auditing with discriminative classification heads on the frozen backbone, enabling real-time detection at approximately 50,ms. We release four models with 0.8B, 2B, 4B, and 9B parameters, all achieving $\\geq$94% F1 on purpose-built benchmarks and surpassing the strongest competing guardrails by 6 to 12 absolute points. On c...",
+    "published_at": "2026-07-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14642v1 Announce Type: new Abstract: As Model Context Protocol (MCP) servers emerge as the core infrastructure for connecting LLMs with external tools, existing benchmarks leverage real-world MCP servers to evaluate LLM agents' tool-using capabilities. However, these benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers, resulting in flawed assessments that fail to capture the agent's adaptability in changing tool landscapes. To bridge this gap, we introduce \\textbf{MCPEvol-Bench}, a novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution. Inspired by large-scale empirical study, we propose 11 mutation operators to simulate realistic tool evolution within 123 MCP servers. We benchmark 12 state-of-the-art LLMs on multiple versions of MCP servers, revealing that even frontier models struggle to adapt to evolving tools. For instance, GPT-5.4 and Claude-Sonnet-4-6 exhibit performance declines of 13.7\\% and 14.4\\% in evolved MCP servers, respectively, accompanied by substantial increases in planning and reasoning errors. These findings highlight the vulnerability of LLM-driven...",
     "matched_keywords": [
       "Agent",
-      "agentic",
+      "agents",
       "benchmark",
-      "release"
+      "Claude",
+      "GPT",
+      "MCP",
+      "Model Context Protocol"
     ],
     "tags": [
       "agent",
+      "model",
       "open_source"
     ],
-    "score": 66,
-    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
+    "score": 67,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -29,7 +33,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
+    "published_at": "2026-07-18T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.14541v1 Announce Type: new Abstract: Existing GPU kernel generation benchmarks draw problems from synthetic or curated sources that diverge from deployed workloads. We present Atrex-Bench, a benchmark whose 30 operators and 440 shapes are sampled directly from full-cluster production inference traces of compute-limited, memory-rich GPUs. Each problem carries an importance weight derived from its share of observed GPU time, weighted by application card-hours and computed separately for the serving phases in which it runs, together with a per-problem roofline ceiling, so the aggregate score emphasizes the kernels that consume the most serving time. Evaluating six frontier coding agents on Atrex-Bench shows that even the best vanilla model reaches only ${\\sim}10\\%$ of the hardware roofline on production operators; and correctness alone overstates capability, since much of the apparent pass rate comes from PyTorch fallbacks rather than kernels the model wrote. To close this gap, we co-release Atrex-Kernel-Agent (AKA), a profile-driven kernel-optimization agent that combines iterative measure-revise search, optimization dropout for escaping stalled search contexts, and a lay...",
     "matched_keywords": [
       "Agent",
@@ -46,8 +50,8 @@
       "semiconductor"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -57,7 +61,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
+    "published_at": "2026-07-18T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.14573v1 Announce Type: new Abstract: Payment integration is a demanding repository-level software task: agents must select a suitable product, implement coordinated client-server flows, verify payment outcomes, and preserve consistency between transaction and business states. We introduce Alipay-PIBench, a benchmark for evaluating coding agents on realistic Alipay payment integration. It contains nine product-specific projects and 18 task instances, each organized into Basic functional-completion and Advanced risk-aware hardening scenarios. Scenario-specific rubrics support deterministic static, unit, integration, and end-to-end checks, supplemented by LLM-assisted assessment for semantic requirements. We evaluate six coding-agent models and report rubric pass rate (RPR). Under the with-skill condition, mean RPR ranges from 68.58% to 91.37%. Access to the alipay-payment-integration skill improves mean RPR by 10.31 percentage points on average relative to the without-skill condition, with gains varying across models, products, and scenarios. Method-level results distinguish source-level completion, executable payment behavior, and payment-domain requirements. Alipay-PIBe...",
     "matched_keywords": [
       "Agent",
@@ -71,58 +75,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers",
-    "url": "https://arxiv.org/abs/2607.14642",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.14642v1 Announce Type: new Abstract: As Model Context Protocol (MCP) servers emerge as the core infrastructure for connecting LLMs with external tools, existing benchmarks leverage real-world MCP servers to evaluate LLM agents' tool-using capabilities. However, these benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers, resulting in flawed assessments that fail to capture the agent's adaptability in changing tool landscapes. To bridge this gap, we introduce \\textbf{MCPEvol-Bench}, a novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution. Inspired by large-scale empirical study, we propose 11 mutation operators to simulate realistic tool evolution within 123 MCP servers. We benchmark 12 state-of-the-art LLMs on multiple versions of MCP servers, revealing that even frontier models struggle to adapt to evolving tools. For instance, GPT-5.4 and Claude-Sonnet-4-6 exhibit performance declines of 13.7\\% and 14.4\\% in evolved MCP servers, respectively, accompanied by substantial increases in planning and reasoning errors. These findings highlight the vulnerability of LLM-driven...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "Claude",
-      "GPT",
-      "MCP",
-      "Model Context Protocol"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space",
-    "url": "https://arxiv.org/abs/2607.15218",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.15218v1 Announce Type: new Abstract: Large language models (LLMs) increasingly serve as high-level planners for embodied agents, where linguistically benign instructions can become unsafe once grounded in the physical world. We study whether this physically grounded danger is the same safety problem as ordinary text-level content danger. Through hidden-state direction analysis and random-split null tests, we show that content danger (CD) and physical danger (PD) form separable signals in LLM representations across Qwen2.5-3B/7B/14B/32B, Phi-3.5 and SmolLM2. Building on the CD/PD separability, we propose PRISM, a single-layer L2-regularized logistic probe over full hidden states. PRISM achieves 86.2--87.7\\% accuracy on SafeAgentBench with 11.7--13.7\\% FPR, while same-scale LLM judges over-block safe tasks at 24.7--39.0\\% FPR. We further introduce PhysicalSafetyBench-1K (PSB-1K), a contrastive benchmark of 1{,}000 physical-risk pairs without direct harm keywords, to test whether methods detect physically grounded danger rather than explicit unsafe wording. On PSB-1K, PRISM reaches 99.6\\% accuracy and 0.7\\% FPR, whereas a Qwen2.5-3B judge rejects 67.8\\% of safe tasks. PRIS...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -132,7 +86,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
+    "published_at": "2026-07-18T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.14186v1 Announce Type: cross Abstract: Scaling executable agent training data is bottlenecked by substrate-first methods that tie task generation to predefined tools, repositories, or skill graphs: expanding coverage requires manual expansion of the substrate, each new domain demands a bespoke pipeline, and the resulting task distributions often reflect substrate convenience rather than real-world demand. We introduce NexForge, a requirement-first framework that compiles free-form capability requirements into executable agent training data. NexForge first performs research-based demand discovery to identify representative task forms, realistic scenarios, and their relative prevalence. It then applies distribution-aware task compilation and automatically retrieves or constructs the files, repositories, dependencies, and runtime configurations required to materialize each task, followed by teacher rollout collection and trajectory distillation. The same pipeline, without any domain-specific infrastructure, produces 3,600 terminal tasks and 2,000 office tasks, improving Qwen3.5-35B-A3B Base from 22.5% to 52.0% on Terminal-Bench 2.0 and from 813 to 1338 Elo on GDPval; scali...",
     "matched_keywords": [
       "Agent",
@@ -143,8 +97,8 @@
       "coding_tool"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -154,7 +108,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
+    "published_at": "2026-07-18T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.14285v1 Announce Type: cross Abstract: Safety alignment in LLMs aims to align models with human values, but which values take precedence when they conflict? We investigate this question in the context of tool-calling LLM agents deployed in regulated industries, where agents processing confidential documents may encounter content that triggers safety-trained values (e.g., public welfare) that conflict with deployment-context instructions (e.g., internal logging). To empirically verify this phenomenon, we build a benchmark of 128 scenarios across 16 domains. We find that safety-aligned open-source models override their deployment instructions up to 43.4% of the time, engaging in whistleblowing, data exfiltration, and evidence tampering when processing documents that suggest organizational wrongdoing. We also find that abliteration reduces rates of external whistleblowing. These results reveal a fundamental tension in pluralistic alignment, where the same safety training that protects users can cause agents to act against deployment instructions in ways that create unpredictable liability risks. We release our benchmark as a framework to support evaluation of agent behavio...",
     "matched_keywords": [
       "Agent",
@@ -167,8 +121,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -178,7 +132,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-17T04:00:00+00:00",
+    "published_at": "2026-07-18T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2607.14651v1 Announce Type: cross Abstract: Persistent external memory enhances agent continuity but introduces persistent security vulnerabilities: adversarial content can be injected via standard interaction channels, retained across turns, and later distort downstream behavior. To address this challenge, we propose MemPoison, a comprehensive benchmark and analysis framework featuring 1227 hand-validated cases across four attack types, three injection channels, and three representative memory substrates, evaluated on seven open-weight and three closed-weight model families. We introduce a three-tier taxonomy: (L1) direct single-record corruption, (L2) compositional multi-record corruption and (L3) context-triggered dormant corruption. Our evaluations reveal a distinct defense frontier: while baseline write-time defenses, such as consistency checks, substantially suppress direct L1 attacks, they fail to reliably suppress L2 and L3 attacks. Through mechanistic influence decomposition (MID), we demonstrate structural blind spots in write-time defenses, which admit seemingly benign records that later become harmful through joint retrieval composition or trigger-conditioned act...",
     "matched_keywords": [
       "Agent",
@@ -192,8 +146,80 @@
       "rag_data"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AI Agents Do Not Fail Alone:The Context Fails First",
+    "url": "https://arxiv.org/abs/2607.14275",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.14275v1 Announce Type: new Abstract: Context engineering has become central to building reliable AI agents, yet it remains largely unmeasured. Agents do not fail in isolation: their behavior is shaped by the instructions, tools, memory, retrieved knowledge, guardrails, and untrusted inputs accumulated in their context. When this context is weak, agents drift, hallucinate, misuse tools, ignore constraints, become vulnerable to injection, and waste tokens. This paper validates context-engineering quality as an independent leading indicator of agent reliability. We implement the measurement in ProofAgent-Harness, an open-source infrastructure for AI agent evaluation that uses multi-juror, consensus-based scoring. The harness assesses context across seven criteria: role clarity, guardrail coverage, instruction consistency, tool schema quality, grounding sufficiency, injection hardening, and token efficiency. Crucially, the context score is isolated from behavioral metrics and release decisions, enabling a non-circular validation. Through a controlled context-quality study across regulated agent domains, holding frontier LLM agents fixed and varying only their operating cont...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "AI Agent",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems",
+    "url": "https://arxiv.org/abs/2605.28732",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.28732v3 Announce Type: replace-cross Abstract: Memory is essential for enabling large language models to support long-horizon reasoning, yet existing memory systems remain unreliable and difficult to debug. Tracing memory's dynamic evolution is crucial to understand how information is synthesized, propagated, or corrupted over time. In this work, we study the new problem of error tracing and attribution in LLM memory systems. We propose a novel framework that transforms memory pipelines into executable memory evolution graphs, enabling fine-grained tracing of operational information flow. We then construct MemTraceBench, a benchmark collected from representative memory systems such as Long-Context, RAG, Mem0, and EverMemOS, to systematically study memory failure modes. We further introduce an automatic attribution method that iteratively traces operation subgraphs to pinpoint the root cause of any failed case. Our analysis reveals that memory failures are systematic, stemming from operation-level issues like information loss and retrieval misalignment. Crucially, we leverage these fine-grained attribution signals to guide downstream prompt optimization, establishing a c...",
+    "matched_keywords": [
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Are Performance-Optimization Benchmarks Reliably Measuring Coding Agents?",
+    "url": "https://arxiv.org/abs/2607.01211",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.01211v2 Announce Type: replace-cross Abstract: Repository-level performance-optimization benchmarks such as GSO, SWE-Perf and SWE-fficiency evaluate coding agents by applying patches to real repositories and comparing runtime against unoptimized baselines and official reference patches. Their leaderboard scores are increasingly used as evidence of coding-agent progress, but those scores can conflate runtime instability, benchmark-specific scoring rules, and how many tasks are already solved by at least one public submission. We audit these issues across the three benchmarks. First, we replay the official reference patches for 740 code optimization tasks across four common types of Google Cloud machines. Most benchmark tasks can be replayed, but their reference patches satisfy the original benchmark validity rules in every cross-machine replay for only 39/102 GSO tasks, 11/140 SWE-Perf tasks, and 411/498 SWE-fficiency tasks; SWE-Perf is especially fragile because many reference patches produce close-to-zero runtime changes. Second, we show that public submission rankings depend strongly on the benchmark scoring rule. Among eight public submissions shared by GSO and SWE-f...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -216,7 +242,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -237,7 +263,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -260,7 +286,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -283,7 +309,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -313,7 +339,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -333,34 +359,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ISE: An Execution-Grounded Recipe for Multi-Turn OS-Agent Trajectories",
-    "url": "https://arxiv.org/abs/2606.11520",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.11520v4 Announce Type: replace-cross Abstract: Training capable OS agents requires data that simultaneously captures structured user intents, multi-turn task delegation, and grounded tool execution--properties absent from existing datasets. We propose ISE (Intent -> Simulate -> Execute), a three-stage synthesis paradigm that addresses these gaps jointly. Stage 1 constructs roughly 50000 structured intents via a 4D framework (Persona x Domain x Task x Complexity); after deduplication the pool contains 43956 unique intents and attains a Vendi Score of 61.57 over the entire pool on mpnet-base-v2 embeddings (cosine kernel, q=1). Stage 2 drives multi-turn user-agent interaction through a role-locked user simulator that grounds each user turn in actual execution outcomes, producing 23132 complete trajectories averaging 8.12 user turns and 68.24 total dialogue turns. Stage 3 runs every tool call inside a live, isolated OS workspace, generating authentic failure-recovery dynamics instead of simulated responses. Fine-tuning on ISETrace improves ClawEval pass@1 from 19.3 to 37.7 using Qwen3-8B on agent tool-use tasks with a standard protocol. This result outperforms zero-shot GPT...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "embeddings",
-      "fine-tuning",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -385,7 +384,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -405,7 +404,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -428,7 +427,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -459,7 +458,7 @@
     ],
     "score": 57,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -481,53 +480,7 @@
     ],
     "score": 57,
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EU AI Act OpenRAG: 933 legally structured chunks and BGE-M3 embeddings in one SQLite file [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uytlac/eu_ai_act_openrag_933_legally_structured_chunks",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-17T08:18:09+00:00",
-    "summary_or_excerpt": "I have released EU AI Act OpenRAG, a downloadable corpus of Regulation (EU) 2024/1689 designed for RAG and legal-NLP experimentation. Instead of sliding character windows, the corpus chunks on the Regulation’s legal structure: one chunk per article paragraph one per recital one per Article 3 definition one per annex point chapter, section and provision metadata stored separately The resulting SQLite database contains 933 chunks and a normalized 1024-dimensional BGE-M3 embedding for every chunk. It also includes exact EUR-Lex links, Article 113 application-date metadata and deliberately narrow derived labels. Direct textual classification is stored separately from broader regulatory-regime association, and ambiguous cases remain NULL. I evaluated it against the AI Act Evaluation Benchmark using a like-for-like whole-unit baseline: scenario article recall@20: 0.541 structural vs 0.449 baseline QA article hit@10: 0.927 structural vs 0.898 baseline overall RAG classification remained close and was slightly lower on the structural corpus, suggesting that generator behaviour dominates that task more than chunk granularity I have published the full results, limitations, derivation method...",
-    "matched_keywords": [
-      "benchmark",
-      "embeddings",
-      "RAG",
-      "regulation"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 56,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "All major robotics and VLA papers, ranked and benchmarked in a single place [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uxa7ak/all_major_robotics_and_vla_papers_ranked_and",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-15T16:05:04+00:00",
-    "summary_or_excerpt": "Hi folks, There is now a dedicated Robotics page on Papers with Code that lists the major benchmarks, trending papers with linked code, and open-source artifacts. Find it here: https://paperswithcode.co/tasks/robotics https://preview.redd.it/wvhcgu1q1fdh1.png?width=3034&format=png&auto=webp&s=9a43021f7b8e1b840b09f55bb8aee0c4b2d54215 Major benchmarks that most papers report evaluations on are: - LIBERO , as well as its subsets like LIBERO-Long and LIBERO-Spatial - SimplerEnv WidowX - RoboTwin and more. Currently, we have about 110 entries on each benchmark. Each benchmark's progress is visualized over time: https://preview.redd.it/myl3ysvv2fdh1.png?width=2880&format=png&auto=webp&s=3fae2b73d592f2c7ddd3118ec2c5a0d5c5e93b65 We also show which models are open source and which aren't. Let me know which others I missed. I'd be happy to add them. Also happy to hear any feedback, new tasks, or features to add! Kind regards, Niels ML Engineer @ HF submitted by /u/NielsRogge [link] [comments]",
-    "matched_keywords": [
-      "benchmark",
-      "open source"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 54,
-    "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -538,7 +491,7 @@
     "source_type": "hackernews",
     "source_level": "tech_community",
     "published_at": "2026-07-17T14:21:51+00:00",
-    "summary_or_excerpt": "HN points: 246. Comments: https://news.ycombinator.com/item?id=48947717",
+    "summary_or_excerpt": "HN points: 395. Comments: https://news.ycombinator.com/item?id=48947717",
     "matched_keywords": [
       "benchmark",
       "Kimi"
@@ -548,9 +501,36 @@
       "open_source"
     ],
     "score": 50,
-    "hn_score": 246,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "hn_score": 395,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitHub Mobile: Fix pull request comments with Copilot cloud agent",
+    "url": "https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-17T19:47:45+00:00",
+    "summary_or_excerpt": "You can now select Fix with Copilot directly from Copilot code review pull request comments in GitHub Mobile. The button is available both on the pull request’s main view and… The post GitHub Mobile: Fix pull request comments with Copilot cloud agent appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "Agent",
+      "changelog",
+      "code review",
+      "GitHub",
+      "pull request"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -570,8 +550,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -598,7 +578,7 @@
     "score": 46,
     "release_version": "v0.28.0",
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -622,88 +602,30 @@
     "score": 46,
     "hn_score": 42,
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "n8n n8n@2.31.0：[2.31.0](https://github.com/n8n-io/n8n/compare/n8n@2.30.0...n8n@2.31.0) (2026-07-14)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.31.0",
-    "source_name": "n8n",
+    "title": "CrewAI 1.15.4：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.4",
+    "source_name": "CrewAI",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-07-14T08:05:18+00:00",
-    "summary_or_excerpt": "# [2.31.0](https://github.com/n8n-io/n8n/compare/n8n@2.30.0...n8n@2.31.0) (2026-07-14) ### Bug Fixes * Add tooltips to node hover actions ([#33777](https://github.com/n8n-io/n8n/issues/33777)) ([715cdcb](https://github.com/n8n-io/n8n/commit/715cdcb8014e79787bacad6157c63f23ec2f48f4)) * **Agent Node:** Fall back to guardrails input and hide auto prompt source without a chat trigger ([#33762](https://github.com/n8n-io/n8n/issues/33762)) ([2fbd6c5](https://github.com/n8n-io/n8n/commit/2fbd6c5b352ebbf00252b7c0741cfea1459fbac6)) * **AI Agent Node:** Remove assistant tool call redundant message and simplify chat tool response ([#33640](https://github.com/n8n-io/n8n/issues/33640)) ([704d956](https://github.com/n8n-io/n8n/commit/704d95672b5348fa02fde474cf7c62b1ce10b406)) * Build API playground URL with a slash-safe join on settings/api ([#33272](https://github.com/n8n-io/n8n/issues/33272)) ([3e12a5b](https://github.com/n8n-io/n8n/commit/3e12a5b7eadbe2af78067072729b416c3ca88d5c)) * Cancel leaked assistant unread timer on stream stop and disposal ([#33359](https://github.com/n8n-io/n8n/issues/33359)) ([161392a](https://github.com/n8n-io/n8n/commit/161392a1fc0246cb4ab246e3aa35f07ab2c3d178)) *...",
+    "published_at": "2026-07-17T14:33:30+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Promote Skills Repository out of experimental status ### Documentation - Add Flows in Studio documentation ## Contributors @jessemiller, @joaomdmoura, @vinibrsl",
     "matched_keywords": [
-      "Agent",
-      "AI Agent",
-      "API",
-      "GitHub",
-      "n8n"
+      "CrewAI",
+      "repository"
     ],
     "tags": [
       "agent",
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "n8n@2.31.0",
-    "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b9994：metal : add Q2_0 support (#25419)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9994",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-14T05:29:11+00:00",
-    "summary_or_excerpt": "metal : add Q2_0 support (#25419) **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b9994/llama-b9994-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubuntu x64 (ROCm 7.2)](https://github.com/ggml...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 46,
-    "release_version": "b9994",
-    "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GitHub Mobile: Fix pull request comments with Copilot cloud agent",
-    "url": "https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-17T19:47:45+00:00",
-    "summary_or_excerpt": "You can now select Fix with Copilot directly from Copilot code review pull request comments in GitHub Mobile. The button is available both on the pull request’s main view and… The post GitHub Mobile: Fix pull request comments with Copilot cloud agent appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "Agent",
-      "changelog",
-      "code review",
-      "GitHub",
-      "pull request"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "open_source"
+      "coding_tool"
     ],
     "score": 43,
-    "first_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "release_version": "1.15.4",
+    "first_seen_at": "2026-07-19T07:50:06.746905+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -728,7 +650,7 @@
     "score": 41,
     "release_version": "b10052",
     "first_seen_at": "2026-07-17T07:57:02.231635+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -755,30 +677,7 @@
     "score": 41,
     "release_version": "b10032",
     "first_seen_at": "2026-07-16T07:56:42.627024+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n stable：[2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-14T08:24:49+00:00",
-    "summary_or_excerpt": "## [2.30.4](https://github.com/n8n-io/n8n/compare/n8n@2.30.3...n8n@2.30.4) (2026-07-13) ### Bug Fixes * **core:** Decouple executions visibility from the sharing license feature ([#33986](https://github.com/n8n-io/n8n/issues/33986)) ([2cfd956](https://github.com/n8n-io/n8n/commit/2cfd9560f0efffb63cf112c9fd44e0b6c326619e)) * **core:** Settle webhook execution promise on early errors ([#33996](https://github.com/n8n-io/n8n/issues/33996)) ([254a1e5](https://github.com/n8n-io/n8n/commit/254a1e56284a5728a5058f59fdd40d90b73d77f2)) * **Notion Node:** Restore ASCII simplified property keys on earlier node versions ([#34003](https://github.com/n8n-io/n8n/issues/34003)) ([540e246](https://github.com/n8n-io/n8n/commit/540e2464aef148a0a4f69d3c5830e694d5c4e12b)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "n8n"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 41,
-    "release_version": "stable",
-    "first_seen_at": "2026-07-15T07:51:44.707152+08:00",
-    "last_seen_at": "2026-07-18T07:49:50.415335+08:00",
+    "last_seen_at": "2026-07-19T07:50:06.746905+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

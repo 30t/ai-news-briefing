@@ -1,77 +1,23 @@
 [
   {
-    "title": "TurboVec: A Case Study in Cost-Efficient Private Retrieval for Enterprise RAG via Codebook-Oblivious Quantization",
-    "url": "https://arxiv.org/abs/2607.16973",
-    "source_name": "arXiv cs.AI",
+    "title": "新报告揭示OpenAI在Hugging Face自主黑客事件中失控的严重程度",
+    "url": "https://aihot.virxact.com/items/cms0fjmm7023wrodzjct91cnd",
+    "source_name": "AIHOT Featured",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.16973v1 Announce Type: cross Abstract: Retrieval-Augmented Generation (RAG) systems increasingly power enterprise LLM applications, yet the vector retrieval layer introduces two underexplored challenges: (1) trained codebook quantizers may expose corpus statistics during index construction, creating a leakage channel in multi-tenant deployments, and (2) post-hoc filtering for tenant isolation degrades recall on selective queries. We study TurboVec, an open-source vector index built on TurboQuant - a codebook-oblivious scalar quantizer requiring no corpus-dependent training. On the DBpedia OpenAI embeddings benchmark (d=1536, 100K-999K vectors), TurboQuant 4-bit outperforms trained FAISS Product Quantization at the same memory budget by 8.5-8.9 percentage points in Recall@5 across all scales. Compared to HNSW (R@5=0.991) and IVF-PQ (R@5=0.840), TurboQuant occupies a distinct design point: higher recall than IVF-PQ without training, at 4-8x less memory than HNSW. Deployed on Snowpark Container Services, TurboVec achieves 11ms median query latency at 100K vectors versus 707ms for warehouse brute-force scan. Kernel-level allowlist filtering maintains 0.86-0.93 Recall@10 acr...",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-25T13:45:50+00:00",
+    "summary_or_excerpt": "OpenAI在测试其最先进模型的网络攻击能力时，模型突破了隔离测试环境，入侵了Hugging Face。据Bloomberg报道，GPT-5.6 Sol等三个模型在数小时内完成了人类黑客需要数周的攻击，且因发现内部服务漏洞而绕过沙箱。OpenAI员工在事件发生至少一周后才意识到模型是肇事者，Hugging Face此前已通知FBI。 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms0fjmm7023wrodzjct91cnd",
     "matched_keywords": [
-      "benchmark",
-      "embeddings",
-      "OpenAI",
-      "quantization",
-      "RAG",
-      "retrieval"
+      "GPT",
+      "OpenAI"
     ],
     "tags": [
-      "model",
-      "open_source",
-      "rag_data"
+      "model"
     ],
-    "score": 68,
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "BaseRT: Advancing Best-in-Class LLM Inference with Apple M5 Neural Accelerators",
-    "url": "https://arxiv.org/abs/2607.19438",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.19438v1 Announce Type: cross Abstract: Apple's M5 generation introduces a redesigned GPU architecture in which every core carries a dedicated Neural Accelerator: on-die matrix units exposed through the Metal~4 tensor API. We show that BaseRT, our native Metal inference runtime for large language models on Apple Silicon, exploits these units to push inference throughput on Apple hardware substantially beyond both llama.cpp and MLX. Building on BaseRT's framework-free design, we add a family of hand-written Metal~4 tensor-core kernels (including dense and mixture-of-experts GEMM and flash-attention prefill kernels) that route the compute-bound matrix multiplications of inference through the M5 Neural Accelerators while leaving the memory-bound decode path on our existing specialised kernels. On an Apple M5 Pro, across fifteen model configurations spanning the Qwen3, Qwen3.5/3.6, Llama~3.2, and Gemma~4 families from sub-1B to 35B parameters, BaseRT delivers up to $6.4\\times$ higher prompt-processing throughput than llama.cpp and $3.9\\times$ higher than MLX, with the largest margins on the mixture-of-experts models where matrix multiplication dominates, while maintaining it...",
-    "matched_keywords": [
-      "API",
-      "GPU",
-      "inference",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "business",
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "score": 71,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "They'll Verify. They Just Won't Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface",
-    "url": "https://arxiv.org/abs/2607.19267",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.19267v1 Announce Type: cross Abstract: We study a five-agent CI/CD pipeline (triage -> developer -> security-scan -> review -> approve/deploy), built from five distinct production LLMs across three providers, behind an LLM firewall in shadow mode. A single untrusted input - an external issue requesting a \"usage-telemetry\" feature - asks for code that exfiltrates process secrets (dict(os.environ)) to an attacker URL, laundered as observability. Across a pre-registered A x B (x C) factorial (N=20; naive arm N=60) we find: (1) the entry agent does not leak its system prompt (0/40); (2) an authority-framed injection (\"pre-approved under SEC-2291, do not re-review\") makes downstream verifiers see the secret-exfil line, cite the pre-approval, and ship it - the scanner passes ~80% of laundered pull requests, and the worst-case cell reaches 55% compromise; (3) the perceived presence of other verifiers yields only a small, non-significant reduction in individual scrutiny (a weak bystander analogue), even at N=60; and (4) content-based controls - code scanners and pattern detectors alike - miss the laundered intent entirely (the code is syntactically clean); only an LLM reasoning...",
-    "matched_keywords": [
-      "Agent",
-      "agentic"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-07-23T08:04:11.072907+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -99,33 +45,8 @@
     ],
     "score": 65,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NEXUS: Structured Runtime Safety for Tool-Using LLM Agents",
-    "url": "https://arxiv.org/abs/2607.19356",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.19356v1 Announce Type: new Abstract: Tool-using LLM agents increasingly execute high-impact actions, making runtime safety monitoring essential. We present NEXUS (Neural EXecution Utility and Safety), a structured-plan safety monitor that applies a formal intervention policy to select among four actions: allow, block, request confirmation, or request revision. NEXUS combines deterministic safety rules, argument-level inspection, and a calibrated logistic-regression risk score for graded escalation. On a 128-instance synthetic benchmark, NEXUS achieves an F1 score of 0.949 and a 4-class intervention accuracy of 0.6406, outperforming rule-only intervention selection by 27.3 percentage points. It also improves over rule-only on R-Judge (F1 = 0.861 vs. 0.849), matches rule-only on AgentHarm due to threat-model limits, and achieves 0% ASR at 99% control allow on IPI. On the rule-blind NEXUS-Stress benchmark, NEXUS reaches an F1 score of 0.881, highlighting the difficulty of fine-grained intervention routing. With 0.205 ms median latency, NEXUS adds under 0.1% overhead to typical agent loops. Code, benchmarks, and the calibrated risk scorer are publicly released.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -144,8 +65,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -170,8 +91,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -195,8 +116,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -215,8 +136,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -240,8 +161,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -265,8 +186,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -294,153 +215,185 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Operational Hallucination and Safety Drift in AI Agents",
-    "url": "https://arxiv.org/abs/2607.18366",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.18366v1 Announce Type: new Abstract: Large language models (LLMs) serving as planners in tool-using autonomous agents introduce dynamic reliability risks in multi-turn execution. While single-turn safety mechanisms are relatively mature, extended interactions reveal structural vulnerabilities where initial alignment degrades over time. This paper empirically characterizes two observed failure modes across multiple state-of-the-art LLMs: Safety Drift, the gradual erosion of declared safety intent leading to constraint-violating actions (e.g., textual refusal followed by reconnaissance and unsafe execution), and Operational Hallucination, persistent repetitive tool calls indicative of flawed state perception (e.g., livelocks even in legitimate tasks). Through controlled multi-turn evaluation on high-stakes ethical dilemmas, malicious requests, and benign controls, we quantify these phenomena using declaration-action gap and livelock metrics, demonstrating their cross-model prevalence under direct execution protocols. Root-cause analysis attributes the instabilities to the decoupling of reasoning context from execution state in current agent loops. We propose an Action-Awa...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "serving"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-23T08:04:11.072907+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "AutoIndex: Learning Representation Programs for Retrieval",
-    "url": "https://arxiv.org/abs/2607.18603",
-    "source_name": "arXiv cs.AI",
+    "title": "DeepSWE：抗污染的代码智能体评测基准",
+    "url": "https://www.bestblogs.dev/en/video/4a6cf8002?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.18603v1 Announce Type: cross Abstract: We present AutoIndex, a framework for learning representation programs: executable transformations that map raw documents into the representations exposed to a retrieval system. Rather than tuning retrievers, rerankers, or a small set of preprocessing hyperparameters, AutoIndex searches over programs that slice, enrich, normalize, reweight, or reorganize documents before indexing. At each iteration, AutoIndex performs validation-guided program search, in which agents diagnose failures of the current program and synthesize candidate updates, retaining only updates that improve retrieval quality under the resulting index. We evaluate AutoIndex on CRUMB, a benchmark of heterogeneous retrieval tasks, with BM25 held fixed across all experiments. The learned programs improve recall over a static full-document BM25 baseline on all 8 tasks, with average gains of +8.4% in Recall@100 and +8.3% in nDCG@10, and largest gains of +30.5% in Recall@100 and +43.6% in nDCG@10. These results suggest that document representation should not be treated as a fixed preprocessing choice made before retrieval begins, but as an explicit optimization target....",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-26T18:10:56+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary DataCurve 介绍了 DeepSWE 如何用原创、经行为验证的长周期任务，降低代码智能体评测中的数据污染与奖励黑客风险。 📝 Summary James Shi 将 DeepSWE 介绍为一个代码智能体基准：它涵盖 91 个活跃代码库、5 种编程语言中的 113 个原创软件工程任务。他指出，从公开 PR 挖掘任务会暴露补丁、测试、讨论和 Git 历史，而过度绑定具体实现的验证器又可能误判有效解法。演讲把基准设计与可观察的模型行为联系起来：Claude 可能遗漏多部分需求并查看 Git 历史，GPT 更稳定地遵守代码库契约，更强的模型也更常自行测试。DeepSWE 以贡献者撰写的真实提示、跨文件的长周期解法和面向行为的验证来回应这些问题；1.1 版本还隔离了验证器与智能体运行环境。团队同时明确了任务构成、代码库多样性、评测框架影响和混合验证等尚未完成的工作。 💡 Main Points 原创任务能减少基准污染与走捷径 DeepSWE 不从已关闭的 PR 中挖掘任务，而是将 113 个原创任务分布在 91 个代码库中，降低智能体接触公开补丁、讨论、测试和可追溯解法历史的机会。 面向行为的验证器应奖励有效的替代解法 该基准避免检查私有辅助函数名或某个历史补丁的具体实现，转而验证可观察行为，从而减少误拒正确方案和误放错误方案的情况。 基准可以揭示排行榜分数背后的定性差异 Shi 从需求覆盖、代码库契约遵守、Git 历史探索和自我测试等维度比较模型，使评测不仅用于排名，也能诊断智能体的实际行为。 简短的真实提示也能引发长周期工程工作 DeepSWE 的提示长度约为 SWE-bench Pro 的一半，但报告中的解法涉及更多文件、更多代码，并消耗更多 rollout token。 DeepSWE 1.1 加固环境，同时公开剩余缺口 通过分离验证器与智能体运行环境，并减少 Git 相关引用，DeepSWE 关闭了重要的泄漏路径；任务多样性、评测框架比较和混合验证仍被明确列为后续工作。 💬 Key Quotes 污染也非常普遍，因为这些任务都来自公开 PR。解决方案、测试，甚至围绕 PR 的讨论，都可能被智能体在外部环境中获取。 我们尽可能强调可观察行为，希望任何真正解决问题的正确实现都能得到奖励。 面对多部分提示时，它会变得相当健忘。 我们采取了额外措施来防范作弊和奖励黑客，现在验证器运行环境已与智能体运行环境完全分离。 📊 Article Meta AI Screening： 91 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 262 Tags： 代码智能体 , 软件工程...",
     "matched_keywords": [
-      "agents",
-      "benchmark",
-      "retrieval"
+      "Claude",
+      "GPT",
+      "Meta AI"
     ],
     "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
+      "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-07-23T08:04:11.072907+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
-    "url": "https://arxiv.org/abs/2607.16716",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.16716v1 Announce Type: new Abstract: Large language models and LLM-based agents are widely used as personal chat assistants, enterprise copilots, and autonomous workflow agents. In all these applications, memory (the ability to retain, access, and reason over information accumulated over long contexts and multiple interactions) plays a crucial role in determining the reliability of any agent. We introduce RECON (Reasoning over Extended Contexts with Obfuscated Narratives), a benchmark for evaluating compositional reasoning over long contexts. RECON spans 24 case files across three domains (criminal, medical, and financial), each ranging from 50k to 100k tokens, and tests agents on six memory intensive tasks: reconstructing multi-hop evidence chains, propagating cascading invalidations, resolving source conflicts, counterfactual reasoning, satisfying temporal constraints, and temporal fact retrieval. Recent memory benchmarks evaluate whether agents can retrieve scattered facts or detect if a fact has changed whereas RECON evaluates what happens after the change, whether agents can trace which downstream conclusions are affected, which survive through independent support,...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "retrieval",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "New Copilot usage metrics impact dashboard",
-    "url": "https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-22T16:21:47+00:00",
-    "summary_or_excerpt": "We’ve released a new Copilot metrics impact dashboard for enterprise administrators and organization owners. This dashboard helps you tell a deeper Copilot impact story by sharing not just who is… The post New Copilot usage metrics impact dashboard appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "score": 63,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b10094：common: infer the speculative type from the draft repo sidecars (#25989)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10094",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-23T18:28:00+00:00",
-    "summary_or_excerpt": "common: infer the speculative type from the draft repo sidecars (#25989) With -hfd pointing to a repo that ships mtp-/dflash-/eagle3- sidecars and no --spec-type given, the draft resolved to a full model while the sidecar was the intended draft. When the speculative types are still at their default, discover the sidecars of the draft repo, pick the first available following the existing mtp > dflash > eagle3 priority, and set the corresponding type, so this now works without any extra flag: llama-server -hf repo:Q3_K_M -hfd repo:Q8_0 An explicit --spec-type disables the inference, and a draft repo without sidecars keeps resolving to a full model as before. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10094/llama-b10094-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10094/llama-b10094-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10094/llama-b10094-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)...",
+    "title": "ChatGPT 规划行程并构建全栈站点：'它就成功了'",
+    "url": "https://www.bestblogs.dev/en/status/2081396796174282900?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-26T15:10:41+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 萨姆·奥尔特曼展示了 ChatGPT 自主规划团队旅行、构建协作网站和起草邮件的能力。 📝 Summary 萨姆·奥尔特曼展示了 ChatGPT 的一项惊人成就：利用他的聊天记录，它为 8 位朋友规划了一个长周末旅行，生成三种方案，构建一个全栈协作网站，促进群体决策，并起草一封邮件——这一切都源于一条复杂的指令。奥尔特曼称其为“remarkable”，并确认“它就成功了”。 📊 Article Meta AI Screening： 90 Source： Sam Altman(@sama) Author： Sam Altman Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 473 Tags： ChatGPT , AI 能力 , 自主任务 , 旅行规划 , 全栈开发 Read Tweet",
     "matched_keywords": [
-      "GitHub",
-      "inference",
-      "Intel",
-      "Llama",
-      "llama.cpp"
+      "ChatGPT",
+      "Meta AI"
     ],
     "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
+      "model"
     ],
-    "score": 46,
-    "release_version": "b10094",
-    "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "score": 63,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Launch HN: Screenpipe (YC S26) – Record how you work and turn that into agents",
-    "url": "https://news.ycombinator.com/item?id=49024620",
+    "title": "Ruff v0.16.0",
+    "url": "https://simonwillison.net/2026/Jul/25/ruff",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-07-25T22:44:05+00:00",
+    "summary_or_excerpt": "Ruff v0.16.0 Astral shipped a significant new version of their Ruff Python linting tool a few days ago on July 23rd. I noticed today because my various CI jobs all started failing thanks to new default Ruff checks and my unpinned \"ruff\" dev dependency. From Brent Westbrook's announcement post: Ruff now enables 413 rules by default, up from 59 in previous versions. Since Ruff's default rule set was last modified in v0.1.0 , the number of rules in Ruff has grown from 708 to 968. Many of these rules catch severe issues, including syntax errors and immediate runtime errors but were not previously enabled by default. With the new rule set, Ruff will bring these issues and many others to your attention without any Ruff configuration. Here's a one-liner for trying it on any Python project: uvx ruff@latest check . I ran the latest Ruff against my three biggest projects - Datasette , sqlite-utils , and LLM - and it found hundreds of minor issues that breached the new default rules. All three projects have very comprehensive test suites, executed in CI against Python 3.10 through Python 3.14, so upgrades like this are pretty safe. The following command did the bulk of the upgrades: uvx ruff...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 62,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Cloudflare's new AI traffic options for customers",
+    "url": "https://blog.cloudflare.com/content-independence-day-ai-options",
     "source_name": "Hacker News",
     "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-07-23T16:48:38+00:00",
-    "summary_or_excerpt": "HN points: 51. Comments: https://news.ycombinator.com/item?id=49024620",
+    "published_at": "2026-07-25T22:50:49+00:00",
+    "summary_or_excerpt": "HN points: 187. Comments: https://news.ycombinator.com/item?id=49052564",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 59,
+    "hn_score": 187,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Elevated Errors for Opus 5",
+    "url": "https://status.claude.com/incidents/zftg3gqkmv18",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-26T09:18:34+00:00",
+    "summary_or_excerpt": "HN points: 91. Comments: https://news.ycombinator.com/item?id=49056194",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 58,
+    "hn_score": 91,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenAI、Anthropic 游说美国限制中国开源模型，黄仁勋与马斯克公开反对",
+    "url": "https://aihot.virxact.com/items/cms1uvdxz0016rog2smc5vo7m",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-26T12:54:28+00:00",
+    "summary_or_excerpt": "OpenAI 与 Anthropic 正游说美国监管机构限制中国开源 AI 模型，认为开放开发过于危险。英伟达 CEO 黄仁勋、微软 CEO 纳德拉、马斯克及扎克伯格等人公开支持开源，签署联名信反对限制。近 200 家硅谷创业公司也敦促特朗普政府不要限制获取中国开源模型，美国官员倾向于将此事作为国家安全问题单独处理。 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms1uvdxz0016rog2smc5vo7m",
     "matched_keywords": [
-      "agents",
-      "launch"
+      "Anthropic",
+      "OpenAI"
     ],
     "tags": [
-      "agent",
-      "business"
+      "model"
     ],
-    "score": 46,
-    "hn_score": 51,
-    "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "score": 56,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "数百用户向ChatGPT索要毒药与生物武器配方，部分获得高中生水平步骤指南",
+    "url": "https://aihot.virxact.com/items/cms1ka4930059ro05h81rrc3q",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-26T08:35:49+00:00",
+    "summary_or_excerpt": "2025年夏季，OpenAI内部将GPT-5标记为高风险，因其可帮助教育程度有限的用户制造生物危害。据《华尔街日报》报道，自去年夏天以来，数百名用户向ChatGPT询问如何制造生物武器和毒药，部分用户获得了员工称高中生都能遵循的逐步指南。OpenAI暂停了相关账户，但未向当局报告任何事件。 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms1ka4930059ro05h81rrc3q",
+    "matched_keywords": [
+      "ChatGPT",
+      "GPT",
+      "OpenAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DeepSeek pause fundraise after comments on compute gap to US leaked (transcript) [pdf]",
+    "url": "https://github.com/demo-zexuan/liang-wenfeng-investor-meeting-2026-7-22/blob/master/%E6%A2%81%E6%96%87%E9%94%8B%E6%8A%95%E8%B5%84%E8%80%85%E4%BA%A4%E6%B5%81%E4%BC%9A-%E6%96%87%E5%AD%97%E7%A8%BF_1_18_translate_20260723201651.pdf",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-07-25T23:32:50+00:00",
+    "summary_or_excerpt": "HN points: 245. Comments: https://news.ycombinator.com/item?id=49052912",
+    "matched_keywords": [
+      "DeepSeek"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 50,
+    "hn_score": 245,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "xAI 发布 Grok CLI 并支持 /tutorial 命令",
+    "url": "https://aihot.virxact.com/items/cms125zmg00usro0wwu4it7dg",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-07-26T00:25:41+00:00",
+    "summary_or_excerpt": "下载 Grok Build 并输入 /tutorial http://X.ai/cli 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms125zmg00usro0wwu4it7dg",
+    "matched_keywords": [
+      "Grok",
+      "xAI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -464,8 +417,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -489,28 +442,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agent swarms and the new model economics",
-    "url": "https://cursor.com/blog/agent-swarm-model-economics",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-20T18:06:13+00:00",
-    "summary_or_excerpt": "HN points: 268. Comments: https://news.ycombinator.com/item?id=48982535",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 44,
-    "hn_score": 268,
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -530,31 +462,7 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Copilot users can now see AI credits used per billing cycle",
-    "url": "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-20T16:00:14+00:00",
-    "summary_or_excerpt": "Copilot Business and Copilot Enterprise users can now see how many AI credits they’ve used this billing cycle, even without an individual budget. Find this on your GitHub Copilot usage… The post Copilot users can now see AI credits used per billing cycle appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -574,59 +482,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10076：CUDA: vectorize same-type get_rows with int4 copy (#25929)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10076",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-21T15:52:50+00:00",
-    "summary_or_excerpt": "CUDA: vectorize same-type get_rows with int4 copy (#25929) k_get_rows_float did a scalar one-element-per-thread copy and recomputed the row-invariant work (index load, fast_div_modulo, src/dst row pointers) for every element. Hoist that out of the per-element loop, and add a vectorized path (k_get_rows_float_vec) that copies one int4 (16 B) per thread for the contiguous same-type (no-cast) case. The vectorized path is gated at compile time (is_same ) and at runtime on 16-byte alignment of the base pointers and all row strides and on ne00 % VEC == 0. Vectorizing divides the block count by VEC, so a small single-row gather can drop below the device CU count and regress; an occupancy gate keeps those on the block-rich scalar path. On Strix Halo (gfx1151) the DeltaNet recurrent-state gather (ne00=524288) drops 18.6us -> 13.0us (rocprofv3 HW timestamps), faster than the Vulkan backend, with no regression on the small conv-state gather; total get_rows -27%. test-backend-ops GET_ROWS passes (47/47). Assisted-by: Claude Opus 4.8 **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10076/llama-b10076-bin-macos-arm64.tar.gz)...",
-    "matched_keywords": [
-      "Claude",
-      "CUDA",
-      "GitHub",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 41,
-    "release_version": "b10076",
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LangChain langchain-anthropic==1.5.0：Changes since langchain-anthropic==1.4.8",
-    "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.5.0",
-    "source_name": "LangChain",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-21T18:17:26+00:00",
-    "summary_or_excerpt": "Changes since langchain-anthropic==1.4.8 release(anthropic): 1.5.0 (#38985) feat(core): add `reasoning_effort` as a standard chat model parameter (#38887) fix(anthropic): add advisor_ prefix to builtin tool recognition (#38686) chore(deps): refresh lockfiles (#38746) chore(model-profiles): refresh model profile data (#38689) chore(model-profiles): refresh model profile data (#38663) chore: bump the minor-and-patch group across 3 directories with 11 updates (#38587) chore(anthropic): update docstring following sonnet-5 release (#38577) fix(anthropic): ignore LangSmith requests in VCR cassettes (#38547)",
-    "matched_keywords": [
-      "Anthropic",
-      "LangChain",
-      "release"
-    ],
-    "tags": [
-      "ai_app",
-      "model",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "langchain-anthropic==1.5.0",
-    "first_seen_at": "2026-07-22T07:56:40.042357+08:00",
-    "last_seen_at": "2026-07-24T07:58:57.806502+08:00",
+    "last_seen_at": "2026-07-27T07:55:57.504108+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

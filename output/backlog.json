@@ -1,22 +1,27 @@
 [
   {
-    "title": "Solar Open 2 Technical Report",
-    "url": "https://arxiv.org/abs/2607.20062",
-    "source_name": "arXiv cs.CL",
+    "title": "SQBench: A Benchmark for Evaluating Task Delivery by Language-Model Agents in Production-Oriented Workflows",
+    "url": "https://arxiv.org/abs/2607.23123",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.20062v2 Announce Type: replace Abstract: We present Solar Open 2, a 250B-A15B Mixture-of-Experts language model built for long-horizon agentic tasks, scaled up from Solar Open 1 (Solar Open 100B). To hold entire agent trajectories in a single context, Solar Open 2 reaches a 1M-token window through a hybrid attention stack that interleaves one softmax layer among every three linear-attention layers, using no positional encoding and a gated delta rule extended to negative eigenvalues. To train at this scale under a fixed compute budget, we make training efficient in two ways: a stronger starting point, and higher-value data. For the starting point, we initialize Solar Open 2 from Solar Open 1, transferring the 5.69B-parameter shared skeleton that survives the architectural change and learning everything else through full pre-training. For the data, we curate for value per token: quality- and rarity-aware data curation and mixture-ratio optimization refine a 20T pool into a 10T mixture that, at equal token budget, outperforms the Solar Open 1 recipe. To build its agent skills, we train twelve domain specialists across purpose-built scenarios, then consolidate them into a s...",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23123v1 Announce Type: new Abstract: Existing evaluations of large language models cover knowledge, reasoning, coding, and tool use, but they rarely treat a verifiable deliverable produced within a constrained workflow as the unit of evaluation. We introduce SQBench, a benchmark for evaluating production-oriented task delivery by language-model agents. SQBench v1.0 contains 220 standardized tasks organized into L1 atomic capabilities, L2 composite skills, and L3 business scenarios. Each task requires an agent to process input assets, use available tools, and produce an explicitly specified deliverable. The evaluation first computes functional Completion and then derives Risk Penalty and Performance from independently evidenced triggers in a 10D Risk Matrix. A Strict Pass requires Completion = 1 and Risk Penalty = 0. We evaluate 27 model configurations under a common protocol, with one run per configuration-task pair. The highest prespecified Weighted Pass@1 is 60.5%. Mean Strict Pass@1 on L3 is 18.5%, and every configuration performs worse on L3 than on both L1 and L2, indicating that delivery under domain constraints is a shared weakness within the current task set. Of...",
     "matched_keywords": [
       "Agent",
-      "agentic"
+      "agents",
+      "benchmark",
+      "tool use",
+      "workflow"
     ],
     "tags": [
-      "agent"
+      "agent",
+      "ai_app",
+      "open_source"
     ],
-    "score": 67,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "score": 68,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -44,8 +49,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -64,24 +69,117 @@
     ],
     "score": 65,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DeepLens Diagnosis Agent: Agentic Workflow Design Lets a Small Reasoning Model Compete with Frontier LLMs",
+    "url": "https://arxiv.org/abs/2607.22555",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22555v1 Announce Type: new Abstract: Medical diagnosis is a multi-stage process: extract facts, consult knowledge, generate a differential analysis, and select the best diagnosis with explanations. Frontier LLMs are strong generalists, but single-shot prompting often yields brittle diagnostic reasoning. We present the DeepLens Diagnosis Agent, a five-stage harnessing pipeline (combining model capabilities with disciplined process constraints) centered on a small medical reasoning model (JSL Medical Small 7B v2) and retrieval-augmented generation (RAG). The pipeline enforces structured clinical extraction, disciplined retrieval, constrained candidate generation, explicit evidence triangulation, and an auditable final decision. On the 915-case DiagnosisArena benchmark, the agent achieved 60.14% top-1 diagnostic accuracy, the highest among small and medium-sized models. The same model without the agent workflow achieved 23.99%, a +36-point gain from workflow design alone, despite 88.2% on standard medical benchmarks, showing that diagnostic reasoning under uncertainty requires more than knowledge recall. The agent costs USD 0.0072 per case (24K tokens on A100) with 24-seco...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "RAG",
+      "retrieval",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Agentic Evaluation of Copyright Law Compliance",
-    "url": "https://arxiv.org/abs/2607.21799",
-    "source_name": "arXiv cs.CL",
+    "title": "xMIx: High-Performance Serving-Time Platform for Mechanistic Interpretability Apps",
+    "url": "https://arxiv.org/abs/2607.22595",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21799v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly perform commercial tasks that involve retrieving external content such as images and, where appropriate, reproducing that content. LLM agents should comply with the law, including copyright law. Presently, however, we lack adequate frameworks to assess whether they do so in practice. To that end, we introduce \\textbf{Copyright-Bench}, a benchmark designed to evaluate \\textit{LLM agents' compliance with} \\emph{copyright law}. Copyright-Bench is comprised of realistic commercial tasks---website development, merchandise design, and pitch deck production---that involve agents selecting between public-domain content (the use of which is \\textit{legal}) and copyrighted content (the use of which is \\textit{infringing} in this setting).The evaluation introduces prompt variations that simulate different user preferences, as well as time pressure.Comparing state-of-the-art LLM agents against a human baseline, we find that: (1) agents select copyrighted works despite the availability of public-domain alternatives; and (2) for open-weights models, violation rates increase in response to certain user...",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22595v1 Announce Type: new Abstract: Mechanistic interpretability (MI) has emerged as a powerful approach for analyzing and intervening in inference computations, with a growing number of applications such as jailbreak attempt detection, truthfulness evaluation, and hallucination detection. Unfortunately, MI deployment in production model-serving systems is currently not practical, as most existing MI frameworks introduce prohibitively high runtime overheads. The fundamental problem is that MI functions do not compose cleanly with served models: they fragment deployment, often force draining requests and rebuilding serving state, and conflict with critical performance optimizations such as continuous batching and CUDA-graph execution, essential for production deployments. We present xMIx, a serving-native framework for deploying MI applications in production inference serving environments. xMIx enables attaching MI functions to a predefined set of locations in the model runtime, interposing on activations within the layers and residual streams. xMIx supports conditional invocation of MI functions depending on the outputs in preceding model layers. Multiple MI applicatio...",
     "matched_keywords": [
-      "agentic",
-      "agents",
+      "CUDA",
+      "inference",
+      "serving"
+    ],
+    "tags": [
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SymStep: Symbolic Step Verification for Logical Reasoning",
+    "url": "https://arxiv.org/abs/2607.23055",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23055v1 Announce Type: new Abstract: Chain-of-thought (CoT) prompting can fail severely on constraint-dense logical reasoning tasks, where unverified errors accumulate silently across steps. We introduce SymStep: an LLM makes one atomic claim at a time (DEDUCE: Alice, pet, Cat), then a lightweight constraint propagator checks the claim for consistency with prior accepted deductions, rejects contradictions, and cascades implied facts automatically. SymStep+G additionally provides MRV guidance after each accepted step, directing the LLM toward the most constrained unresolved variable. On a 35-puzzle retained subset of ZebraLogicBench, a benchmark of 1,000 Einstein-style logic puzzles, Direct and CoT both achieve 0%, while SymStep+G reaches 97%. On AR-LSAT analytical reasoning problems, SymStep achieves 100% vs. CoT's 87%. On LGP-14, SymStep+G achieves 100% vs. 0% for CoT and Logic-LM, the strongest prior symbolic+LLM baseline we compare against. Ablation studies reveal that MRV guidance is a key mechanism for reducing directionless cycling, while consistency checking provides a safety net against explicit contradictions. Across six benchmarks spanning five task domains, S...",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation",
+    "url": "https://arxiv.org/abs/2607.23386",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23386v1 Announce Type: new Abstract: We document a failure class in frontier large language models -- exception chain collapse -- observed in eligibility evaluation under nested conditional rules of the form \"A is required UNLESS B applies, UNLESS C overrides B\". The failure reproduces at first observation, but its empirical surface is unstable: between March and April 2026 several failure cells closed silently under the same model alias, with no version bump (GPT-5.4 on construction insurance moved from 96.6% to 100%, same prompt and harness). For regulated workflows, frontier-model accuracy is a moving compliance boundary that shifts without notice. We present the Aethis Eligibility Module, a neuro-symbolic architecture in which LLMs author rules from authoritative sources and an SMT-based layer executes them deterministically, consistent with the authored specification regardless of model drift, reasoning-effort defaults, or prompt format. Three evidence bases: (i) a controlled benchmark of 225 scenarios across four regulatory domains documents the pattern and, in replication, the drift that partially closed it; (ii) a 20-scenario adversarial extension on constructio...",
+    "matched_keywords": [
       "benchmark",
-      "copyright",
-      "weights"
+      "GPT"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios",
+    "url": "https://arxiv.org/abs/2607.23722",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23722v1 Announce Type: new Abstract: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps: gathering hidden information, composing tool calls, and committing state changes. We refer to this capability as multi-step tool use. Existing benchmarks have advanced tool-use agent evaluation, but often focus on isolated API calls, short trajectories, or settings that are difficult to scale or control. We introduce E-Bench, a fully synthetic benchmark with 323 state-changing tasks across three product domains: Honor of Kings, QQ Music, and Tencent Meeting. E-Bench decouples environment synthesis from task synthesis: graph-guided database filling builds reusable, orphan-free product environments, while generator-solver asymmetry creates tasks with both an information gap and a tool gap, requiring agents to discover hidden data and compose multiple tool calls before changing state. Outcomes are graded deterministically by database-state diffs. Since both environments and tasks are synthetic, E-Bench is controllable at the environment level and scalable at the task level. Benchmarking 11 cutting-edge LLMs show...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API",
+      "benchmark",
+      "tool use"
     ],
     "tags": [
       "agent",
@@ -89,8 +187,81 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Semalith v1.4: A Calibrated 184M Safety Classifier Achieving State-of-the-Art Prompt-Injection Detection at 44x Fewer Parameters than Llama-Guard-3-8B",
+    "url": "https://arxiv.org/abs/2607.22545",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22545v1 Announce Type: cross Abstract: Deploying large language models in financial-services and agentic settings requires safety classifiers that simultaneously handle prompt injection, regulatory compliance, and general harm, a combination no existing open guardrail addresses in a single inference pass. Semalith v1.4 is a 184M-parameter DeBERTa-v3-base classifier performing simultaneous three-axis safety classification including prompt injection, general harm, and financial-services regulatory compliance, in a single forward pass. Its 22-class head (BENIGN, nine prompt-injection sub-types, general-harm, eleven BFSI labels) is trained with a 4-class auxiliary super-category head under jointly weighted loss, on a 76,204-row corpus mined from 49 public sources with SHA-1 deduplication against every held-out evaluation set, with 21 of 22 benchmarks at zero contamination (max 0.22%). Against Llama-Guard-3-8B on 22 held-out benchmarks, Semalith v1.4 wins every prompt-injection evaluation (7/7) and 11 of 18 benchmarks overall at 44x fewer parameters, with FPR = 0.000 on 208 benign agentic prompts vs 0.063 for Llama-Guard-3-8B. On general-harm benchmarks (WildGuardMix, HEx-PH...",
+    "matched_keywords": [
+      "agentic",
+      "inference",
+      "Llama"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Poster: Rethinking Security in LLM Code Generation through Real-World Risk Scenarios",
+    "url": "https://arxiv.org/abs/2607.23088",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23088v1 Announce Type: cross Abstract: Large Language Models (LLMs) are widely used for code generation, yet their security behavior in realistic development workflows remains underexplored. Existing benchmarks often rely on explicitly specified security requirements, failing to capture real-world scenarios where prompts are frequently ambiguous or incomplete. In this paper, we adopt a developer-centric perspective and identify three representative risk scenarios that commonly lead to security vulnerabilities in LLM-generated code: Ambiguous Requirements, Under-Specified Operational Context, and Security--Functionality Conflict. Based on these scenarios, we construct a large-scale benchmark comprising 2,700 test cases, enabling fine-grained evaluation of LLM security under realistic conditions. Extensive evaluation of eight state-of-the-art LLMs reveals that all models exhibit average vulnerability rates exceeding 56\\% across risk scenarios. We further demonstrate that security-aware prompting can substantially mitigate these risks, achieving up to 45\\% improvement.",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "False Prophets: On the Security of World Models in Agentic Systems",
+    "url": "https://arxiv.org/abs/2607.23147",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23147v1 Announce Type: cross Abstract: Large language models now power autonomous agents capable of complex, multi-step tasks in different environments. Accurate and reliable execution of these tasks requires the agent to predict the results of its actions. Recent research proposes to enhance predictive capabilities via specially trained environment simulators-world models. While world models can improve performance, they can also mislead agents into executing harmful actions, creating significant security and privacy risks. In this paper, we raise security concerns regarding the usage of world models in agentic systems. We discover a range of world model specific vulnerabilities, which can be exploited in terminal-based agents to execute malicious code or extract sensitive data. To facilitate future development, we introduce a security benchmark dataset designed for text-based world models. We argue that some risks are intrinsic to approximate world modeling, and show that attackers can induce mispredictions in agentic pipelines with up to 95% success rate, possibly resulting in unintended command execution, denial of service, drainage of wallet and private information...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "dataset",
+      "privacy",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -113,8 +284,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -129,7 +300,156 @@
     "tags": [],
     "score": 63,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ESF-Bench: Benchmarking Challenging Slot-Filling Scenarios for Real-World Enterprise Applications",
+    "url": "https://arxiv.org/abs/2607.23326",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.23326v1 Announce Type: new Abstract: The rapid rise of large language models (LLMs) has driven transformative adoption across enterprises. However, deploying these models in real-world settings presents unique challenges due to complex system constraints and unexpected user behaviors. Among these applications, slot filling is essential for converting unstructured input into structured, actionable data. In this work, we introduce ESF-Bench, a challenging Enterprise Slot Filling benchmark consisting of 810 multi-turn samples and 6530 slots over 8 unique domains. Curated using a taxonomy of the 57 most challenging slot-filling scenarios observed during real-world enterprise deployments, ESF-Bench exposes notable limitations in current state-of-the-art LLMs, with GPT-OSS-120b low successfully extracting slots for only 20.7% of benchmark samples. To support continued research in this area, we publicly release the benchmark dataset, taxonomy, and accompanying evaluation code on GitHub.",
+    "matched_keywords": [
+      "benchmark",
+      "dataset",
+      "GitHub",
+      "GPT",
+      "release"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SCAIR: Schema-Conditioned Agentic Iterative Reasoning for Enterprise Knowledge Graphs",
+    "url": "https://arxiv.org/abs/2607.22571",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22571v1 Announce Type: new Abstract: Knowledge Graph-based Retrieval-Augmented Generation (KG-RAG) enables natural language interaction with structured enterprise knowledge, yet existing agentic approaches that perform well on public benchmarks often fail to generalize to real-world enterprise Knowledge Graphs (KGs), which are dense, schema-driven, and operationally constrained. To address these limitations, we propose SCAIR (Schema-Conditioned Agentic Iterative Reasoning), a training-free framework that integrates structured planning with controlled iterative reasoning by injecting schema-conditioned structural priors and enforcing schema-aware traversal during multi-hop reasoning. Experiments on an enterprise-oriented benchmark constructed from a real-world Configuration Management DataBase (CMDB) demonstrate that SCAIR substantially improves performance over existing KG-RAG methods. Crucially, our study highlights that reliable enterprise graph reasoning cannot rely on generic agentic designs; instead, it must explicitly incorporate the target domain's structural and operational constraints into the reasoning process. We demonstrate that by aligning agent design with...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Tokengeist: Multi-Turn Attribution Tracing in Agentic Conversations",
+    "url": "https://arxiv.org/abs/2607.22610",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22610v1 Announce Type: new Abstract: When a language model produces a response in a multi-turn conversation, which tokens from prior turns shaped that answer, and how did those dependencies propagate across prior turns? Existing context attribution methods process the full context in a single pass, recovering surface-level dependencies but missing the layered, non-linear structure of real-world dialogues and multi-step reasoning tasks. We introduce multi-turn context attribution (MTCA): given a target span in a model response, the task of tracing attribution backward across turns to identify not only which prior turns were directly relevant, but also how those turns themselves depended on earlier context. We propose Tokengeist, an attribution-method-agnostic and scalable framework that recovers full dependency paths by casting attribution as a recursive traversal of a directed acyclic graph (DAG) over conversation turns. We will release MTCABench, a benchmark of 3,845 target spans across 665 multi-turn conversations, annotated with gold provenance graphs reaching depths of up to 14, across four dependency types. Across four open-weight models, flat attribution methods f...",
+    "matched_keywords": [
+      "agentic",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CRAFT: Learn the Schema, Execute the Plan",
+    "url": "https://arxiv.org/abs/2607.22642",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22642v1 Announce Type: new Abstract: Enterprise coding agents translate natural-language analytical requests into executable code over proprietary APIs, schemas, and metric definitions. Yet the prevailing deployment pattern injecting exhaustive schema and tool documentation into each prompt increases inference overhead, complicates schema evolution, and undermines reliability in multi-turn analysis. We investigate whether stable schema knowledge and tool-use behavior can instead be acquired through post-training while preserving the consistency required for production-facing analytics. We present CRAFT, a two-stage post-training recipe for schema-grounded coding agents. First, schema-stripped PLAN supervised fine-tuning learns domain-structured plans and executable behaviors from validated trajectories without exhaustive prompt-time schema injection. Second, execution-shaped reinforcement learning aligns the policy for tool selection, code quality, plan-code consistency, and recovery from failed executions. Training trajectories are curated through a Tri-Gate filter combining execution validation, data-integrity checks, and LLM-judge reasoning audit. We evaluate CRAFT f...",
+    "matched_keywords": [
+      "agents",
+      "fine-tuning",
+      "inference",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond Sequential Interaction: Benchmarking Parallel Execution and Coordination for GUI Agents",
+    "url": "https://arxiv.org/abs/2607.22689",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22689v1 Announce Type: new Abstract: Graphical user interface (GUI) agents are systems powered by large multimodal models (LMMs). They perceive screen state and execute user instructions through GUI actions such as clicking, typing, and scrolling on desktops and mobile devices. However, current agents scale poorly to long-horizon tasks: actions incur costly LMM inferences, and performance degrades as context grows. Humans divide such workloads among collaborators who complete sub-tasks in parallel. Yet parallel coordination among GUI agents has received little attention. To close this gap, we introduce ParaGUIBench, to our knowledge, the first benchmark dedicated to parallel execution and coordination of multiple GUI agents on separate desktop instances. It consists of three components: a multi-device Docker infrastructure with a shared file system; a dataset of 233 tasks spanning six task categories; and an evaluation system with efficiency metrics, including step reduction ratio and token cost. We further introduce ParaGUI, a planner-worker agent that decomposes GUI tasks and dispatches sub-tasks to concurrent workers on separate desktop instances. On ParaGUIBench, Pa...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "dataset"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LazyMem: Retrieve Broadly, Construct Selectively for Efficient Long-Term Agent Memory",
+    "url": "https://arxiv.org/abs/2607.22690",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.22690v1 Announce Type: new Abstract: Long-term memory lets LLM agents reuse past interactions, but raw dialogue histories are verbose and information-sparse. Retrieving broadly improves evidence coverage yet overwhelms downstream reasoning with noise; compressing at write time reduces noise but irreversibly discards details the future query may need. We introduce LazyMem, which sidesteps this dilemma by deferring all memory construction to query time. A lightweight 4B model processes the retrieved candidate pool in overlapping parallel windows, selectively retaining and compressing only query-relevant content. The model is trained through supervised fine-tuning followed by group-based reinforcement learning with a format-gated composite reward that combines a rule-based action signal measuring selection accuracy with an LLM-judged quality signal measuring source faithfulness and query utility. On the LongMemEval benchmark, LazyMem-4B achieves an LLM-judge accuracy of 0.85 with only 213 memory tokens, 68.7$\\times$ fewer than retrieval-only, and generalizes to LoCoMo (0.68) without target-domain training, while reducing mean latency over the prior query-time baseline. The...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "fine-tuning",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -152,241 +472,53 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Mode",
-    "url": "https://arxiv.org/abs/2607.22083",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22083v1 Announce Type: cross Abstract: We present Nanbeige4.2-3B, a compact general agentic model with 3B non-embedding parameters. It delivers strong performance across code-agent, office-agent, and complex tool-use tasks while maintaining highly competitive reasoning capabilities in mathematics, coding, and science. Nanbeige4.2-3B is pretrained from scratch on 28T tokens with a Looped Transformer that reuses the layer stack to increase capacity without adding parameters. For SFT data and trajectory construction, we expand the diversity of executable environments, task assets, and agentic scaffolds through real-world deployment and large-scale synthesis. Our RL pipeline applies mixed-mode RLHF over Think and Non-Think responses to improve overall model quality and reduce failure cases, length-controlled reasoning RL to balance accuracy and reasoning efficiency, and agentic RL with outcome and process rewards to stabilize long-horizon training. Extensive evaluations show that Nanbeige4.2-3B outperforms larger models, including Qwen3.5-9B and Gemma4-12B, across diverse agentic benchmarks while remaining competitive on reasoning and alignment tasks. Performance with OpenC...",
+    "title": "llama.cpp b10171：opencl: skip the Adreno KQ/KQV image kernels for multi-stream batches (#26189)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10171",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-28T18:53:06+00:00",
+    "summary_or_excerpt": "opencl: skip the Adreno KQ/KQV image kernels for multi-stream batches (#26189) The Adreno KQ/KQV image1d kernels (ggml_cl_mul_mat_kq_kqv_adreno) ignore dim 3 entirely: the sub-buffer covers only nb02*ne02 bytes and the kernel receives no ne03/ne13/nb03/nb13 arguments. With the unified KV cache, multi-sequence batches (e.g. llama-perplexity with its default -b 2048, n_seq=4, or a multi-slot llama-server) present KQ/KQV as 4D tensors with ne3 = n_stream, so every stream past the first reads the first stream's K/V and produces garbage. Flash attention masks the bug where it is enabled; devices where FA is declined (e.g. Adreno 740) hit it with default settings. Route ne03/ne13 > 1 to the general path, which handles dim 3, and honor view_offs when creating the sub-buffers (currently always 0 for tensors reaching this function, but the function would silently misread any future view). Llama-3.2-1B-Instruct Q4_0, wiki.test.raw, 8 chunks, -ngl 99: - Adreno 740, default: PPL 1817.64 -> 15.61 - Adreno 740, -fa 0: PPL 1941.64 -> 15.61 - Adreno 840, -fa 0: PPL 1943.90 -> 15.50 - single-stream (-b 512) results unchanged (15.6090) - test-backend-ops -o MUL_MAT on 740: identical before/after (9...",
     "matched_keywords": [
-      "Agent",
-      "agentic"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "InteractComp: Evaluating Search Agents With Ambiguous Queries",
-    "url": "https://arxiv.org/abs/2510.24668",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2510.24668v2 Announce Type: replace Abstract: Language agents have demonstrated remarkable potential in web search and information retrieval. However, many search-agent benchmarks assume that user queries are complete and unambiguous. This assumption leaves under-tested a practical failure mode: agents may face ambiguous requests where the intended target cannot be identified without clarification. Yet most agents lack interactive mechanisms during the search process, and existing benchmarks cannot assess this capability. To address this gap, we introduce InteractComp, a benchmark designed to evaluate whether search agents can recognize query ambiguity and actively interact to resolve it during search. Following the principle of easy to verify, interact to disambiguate, we construct 210 expert-curated questions across 9 domains through a target-distractor methodology that creates controlled ambiguity resolvable only through interaction. Evaluation of 17 models reveals striking failure: the best model achieves only 13.73% accuracy despite 71.50% with complete context, exposing systematic overconfidence rather than reasoning deficits. Forced interaction produces dramatic gains...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Prompt as a Data Type: In-Database LLM Prompt Management and Rewriting",
-    "url": "https://arxiv.org/abs/2607.21756",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21756v1 Announce Type: cross Abstract: Large Language Models (LLMs) are increasingly used in database-backed applications to classify tuples, filter records using semantic predicates, extract structured attributes, and enrich query results. Yet the prompt that start these computations are typically stored outside the DBMS in unstructured formats, making them invisible to query execution, metadata management, and optimization. Drawing on Stonebraker's QUEL as a Data Type and the principles of reflective programming, this paper introduces PromptDB, a database system that treats prompts as tuple-level database values. PromptDB provides a logical PROMPT datatype whose values store a template, bindings to tuple attributes, model metadata, and task metadata. Relations may contain PROMPT attributes directly in base tables, or expose them through views over joined tuples. Users query prompt-valued attributes through generated evaluation views, while the system internally renders, rewrites, optimizes, and executes prompts through an EVAL operator. Making prompts database-visible creates a new optimization space. The key idea is to bring query-optimizer thinking to prompts: just...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 60,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Open-weight 4B models approach o3-level medical question answering in Swedish [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1v71wds/openweight_4b_models_approach_o3level_medical",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-07-26T11:58:39+00:00",
-    "summary_or_excerpt": "I have been running some experiments with smaller open-weight LLMs on multiple-choice questions of Swedish medical licensing exams. On a dataset called MedQA-SWE, GPT-4 scored 84% accuracy in 2024 and o3 scored 88% in 2025 on a smaller, overlapping dataset. With post-training (SFT) on data from earlier years, I got MedGemma-1.5-4B to a passing score of 60% on the final year’s exam. Find the implementation here: https://github.com/tarolangner/medqaswe_medgemma_sft But even though they were released just three months later, Gemma4-E4B and Qwen3.5-4B are flat out superior already, at 77% with no post-training at all. With reasoning enabled, the latter can get to 87% accuracy. It can even push a bit further if no length cap is put on the reasoning traces, but some of them spiral into repetitive loops about formatting that fill the entire context length without giving any answer. Here, I found it helpful to use an ‘early exit’ thinking intervention proposed in the S-GRPO paper that simply injects a phrase and closes the thinking trace at a predetermined sequence length. I also tried their proposed reinforcement learning method to get shorter reasoning traces, but with only minor gains...",
-    "matched_keywords": [
-      "dataset",
-      "GitHub",
-      "GPT"
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
       "model",
       "open_source"
     ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "score": 56,
+    "release_version": "b10171",
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2607.21653",
-    "source_name": "arXiv cs.CL",
+    "title": "uv 0.12.0",
+    "url": "https://simonwillison.net/2026/Jul/28/uv",
+    "source_name": "Simon Willison",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21653v1 Announce Type: cross Abstract: Agentic reinforcement learning research is constant algorithm modification, new estimators, new pipeline stages, new rollout schemes, and in mainstream frameworks each change threads through layers of trainer, distributed backend, and rollout glue: the cost lands on the researcher at every iteration. Molt is a PyTorch-native training framework built to keep that cost small: a codebase compact and clean enough for a researcher to hold in their head, and for an AI coding assistant to read and reason about in its entirety, so the algorithm flow can be traced and changed end to end. The agent is an ordinary program, and one asynchronous loop trains multimodal and mixture-of-experts policies while never training on a token it did not generate, consistent in tokens, policy versions, and model semantics. Leanness does not cost performance: under a matched, fully asynchronous protocol, Molt is statistically comparable to a state-of-the-art Megatron-based stack. Molt is open source and provides recipes and containers at https://github.com/NVIDIA-NeMo/labs-molt.",
+    "source_level": "tech_community",
+    "published_at": "2026-07-28T21:51:38+00:00",
+    "summary_or_excerpt": "uv 0.12.0 Some interesting breaking changes in this release of uv , in particular to the default project produced by the uv init command. uv init is the uv shortcut for creating a new project. The previous version of uv , version 0.11.x, produced this directory when you ran uv init uv-init . Here's what you get with uv 0.12 . I have a GitHub repository that automatically snapshots the output of uv init , so you can also see the full diff : uv init now defaults to a src/ shaped package, instead of dropping main.py in the root of the project. It also configures the uv_build backend for building wheels and .tar.gz distribution files when you run uv build . Finally, it sets up uv-init as a script alias which, when run with uv run uv-init , executes a new main() function in src/uv_init/__init__.py . I've so far avoided using src layout in my own projects just out of inertia. I think it's time I switched. I wonder when uv will be judged ready for a 1.0 release? Tags: packaging , python , uv",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "coding assistant",
       "GitHub",
-      "NVIDIA",
-      "open source",
-      "policy"
+      "release",
+      "repository"
     ],
     "tags": [
-      "agent",
-      "business",
       "coding_tool",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
-    "url": "https://arxiv.org/abs/2607.22014",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22014v1 Announce Type: cross Abstract: Multimodal Large Language Models (MLLMs) are emerging as core reasoning modules for embodied agents, yet it remains unclear how well general-purpose models can solve long-horizon embodied tasks from a single high-level instruction. We introduce MissionBench, a benchmark for mission-level evaluation of MLLMs in aerial 3D environments. It comprises 120 missions across five simulated 3D environments and four task families. Agents must autonomously plan, navigate, and report outcomes using only egocentric observations and its action history, without aerial-specific fine-tuning. Across 22 open- and closed-source MLLMs, the strongest model succeeds on fewer than 35% of missions compared to 84.4% human performance, highlighting the difficulty of multi-step embodied tasks. Despite large variations between model families, we observe gains from scaling, indicating that larger general-purpose models possess stronger zero-shot embodied capabilities. Our analysis shows that mission-level competence requires coordinating multiple capabilities beyond spatial perception, including multi-step planning and adaptive reasoning. This motivates closed-l...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "fine-tuning"
-    ],
-    "tags": [
-      "agent",
       "open_source"
     ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DBA-Bench: A Production-Fidelity Benchmark for LLM-Based Database Operations Agents",
-    "url": "https://arxiv.org/abs/2607.22165",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22165v1 Announce Type: cross Abstract: LLM-based database agents show promise, but differing task scopes, testbeds, and metrics hinder comparison. We identify four gaps between evaluation and production operations: live-environment fidelity (multi-turn read-write interaction with a running database); observation-space scale and complexity (causal diagnosis across thousands of time series, business logs, and concurrent activity); solution-space openness (multiple remediations with different operational trade-offs); and scenario complexity and coverage (faults cascading across internal mechanisms and operational domains). We present DBA-Bench, a benchmark addressing these gaps through production fidelity, outcome-first evaluation, and controlled scenario reproducibility. It uses instrumented PostgreSQL environments with active workloads, persistent state, and multi-source observations; defines success by measurable recovery or fault elimination under safety constraints; and restores snapshots with scenario-specific checks before each run. The benchmark contains 106 scenarios across seven task domains, with two public difficulty labels based on reference-path diagnostic de...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enjoy Your Talk: A Human-Centered Benchmark for Multi-Turn Dialogue with Decoupled User Simulation, Target Modeling, and Judging",
-    "url": "https://arxiv.org/abs/2607.10428",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.10428v2 Announce Type: replace Abstract: Evaluating large language models (LLMs) as multi-turn conversational partners requires probing capabilities that single-turn benchmarks miss: persona consistency, evolving intent tracking, emotional dynamics, and goal completion across many turns. We introduce EYT-Bench, a human-centered benchmark whose evaluation protocol is built around a decoupled three-party design: a persona-grounded user simulator, a target model evaluated on both intent perception and response generation, and an independent, configurable ensemble of LLM judges. Across 3,400 dialogues with 17 target models, EYT-Bench reveals four findings that previous benchmarks miss: (i) state-of-the-art closed and open-source models are statistically indistinguishable on subjective dimensions, but separate by up to 9x on objective intent-tracking; (ii) reasoning is a phase transition for objective tracking on long-context personas but is essentially flat on subjective scores; (iii) persona format strongly affects trajectory spread, FICR (final-intent completion rate) saturates above 0.95 on Nemotron-USA but ranges from 0.53 to 0.88 on PersonaMem-v2; and (iv) the warm-up...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "One More Turn, Less Regret: A Regret-Based Multi-Turn Benchmark for LLMs' Clarification Policies",
-    "url": "https://arxiv.org/abs/2607.21143",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21143v2 Announce Type: replace Abstract: Ambiguous user requests make clarification a sequential decision problem for conversational LLM assistants: they must decide whether to ask, what to ask, when to stop, and when to answer. We introduce RegretBench, a multi-turn benchmark that evaluates clarification as policy behavior rather than isolated question quality. RegretBench provides a hidden-intent formulation of ambiguity, supports free-form interaction grounded in semantic-state tracking, and introduces a regret-based objective that measures how much value a model loses relative to a reference clarification policy. Experiments on open-domain QA and product recommendation scenarios show that final success alone is insufficient, as models with similar accuracy can differ substantially in efficiency, robustness to user behaviors, and stopping decisions. By jointly measuring intent resolution, interaction cost, ineffective clarification, and regret, RegretBench reveals whether models clarify usefully and efficiently. Our results show that effective clarification requires more than plausible questions: models must ask the right question at the right time and stop once the...",
-    "matched_keywords": [
-      "benchmark",
-      "policy"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Simpson's Paradox in Behavioral Curves: How Aggregation Distorts Parametric Models of User Dynamics",
-    "url": "https://arxiv.org/abs/2605.11017",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.11017v2 Announce Type: replace Abstract: Behavioral curve modeling -- fitting parametric functions to engagement-versus-exposure data -- is standard practice in recommendation, advertising, and clinical dosing. We show that aggregation introduces a systematic distortion: Simpson's paradox in behavioral curves. On Goodreads (3.3M users, 9 genres), individual users peak at n* approximately 11 exposures while the aggregate peaks at n* approximately 34 -- a 3x gap driven by survival bias. Amazon Electronics (18M reviews) shows a 5.3x distortion. MovieLens-25M (D approximately 1) serves as a negative control, confirming that survival bias -- not aggregation per se -- is the operative mechanism. The distortion is robust to category granularity, engagement operationalization, and classifier calibration. We develop Synthetic Null Calibration to address a 32% false positive rate in per-user classification. Our findings apply wherever individual behavioral parameters are estimated from aggregate curves under differential attrition.",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 58,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning",
-    "url": "https://arxiv.org/abs/2511.02130",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2511.02130v2 Announce Type: replace-cross Abstract: We propose Re-FORC, an adaptive reward prediction method that, given a query, enables prediction of the expected future rewards as a function of the number of future thinking tokens. Re-FORC trains a lightweight adapter on reasoning models, demonstrating improved prediction with longer reasoning and larger models. Re-FORC enables: 1) early stopping of unpromising reasoning chains, reducing compute by up to 26\\% compared to fixed-budget cutoffs, while maintaining accuracy, 2) optimized model and thinking length selection that outperforms the largest model alone--- reaching 1.7 percentage points higher peak accuracy while needing up to 12\\% less compute to match the largest model's accuracy, 3) adaptive test-time scaling, which increases accuracy by 9.9 percentage points (on average at maximum compute) over confidence-based baselines. Re-FORC allows dynamic reasoning with length control via cost-per-token thresholds while estimating computation time upfront.",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 57,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "score": 56,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -408,7 +540,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -429,80 +561,32 @@
     "score": 50,
     "hn_score": 245,
     "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "SURE-RAG: Sufficiency and Uncertainty-Aware Evidence Verification for Selective Retrieval-Augmented Generation",
-    "url": "https://arxiv.org/abs/2605.03534",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.03534v2 Announce Type: replace Abstract: Retrieval-augmented generation (RAG) grounds answers in retrieved passages, yet relevance does not guarantee sufficiency: a topical passage may still fail to justify the answer. We study evidence sufficiency verification for selective RAG answering, in which a verifier receives a question, a candidate answer, and retrieved evidence and decides whether the evidence supports, refutes, or is insufficient for the answer, answering only when support is established. We present SURE-RAG, an aggregation protocol that treats evidence sufficiency as a set-level property: missing hops and unresolved conflicts cannot be detected by scoring passages independently. A shared claim-evidence verifier produces a local relation distribution for each (claim, passage) pair, which SURE-RAG aggregates into four interpretable answer-level feature blocks (coverage, relation strength, uncertainty, and retrieval), producing a three-way decision and an auditable selective score. We evaluate on HotpotQA-RAG v3, a controlled multi-hop benchmark, under an artifact-aware protocol (shortcut baselines, counterfactual swaps, no-oracle checks, and GPT-4o audits). C...",
+    "title": "CrewAI 1.15.8：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.8",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-28T15:06:04+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Add WaitTool for pausing on long-running jobs. ### Bug Fixes - Fix FileWriterTool writes and address rough edges in file tool. - Mark E2B_API_KEY as a required env var for E2B tools. ### Documentation - Refresh model availability guidance. ## Contributors @github-actions[bot], @joaomdmoura, @lucasgomide, @oalami, @thiagomoretto",
     "matched_keywords": [
-      "benchmark",
-      "GPT",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agentic coding without the cloud: evaluating open-weight large language models on longitudinal data preparation tasks",
-    "url": "https://arxiv.org/abs/2607.21482",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21482v2 Announce Type: replace-cross Abstract: Large language models (LLMs) and agents are now widely used tools in code development, with data typically sent to third-party cloud-based models. Their adoption in research using personal data is constrained by governance requirements that typically prohibit data transmission to external services. Locally deployable open-weight models offer an alternative since sensitive data never leave the local environment. We introduce an open-source framework for evaluating the efficacy of AI agents powered by open-weight LLMs on one of the most persistent bottlenecks in research on longitudinal population studies: data preparation. The framework comprises: a curated ground-truth dataset (cleaning scripts preparing six sweeps of data from a British cohort study), task definitions encompassing tasks such as category harmonization and multi-wave merging, and automated routines for evaluating the LLM-produced R code and outputted data. We benchmark LLMs across the (consumer grade) deployment spectrum to assess their efficacy in 20 data preparation tasks (creation of 102 variables). Current state-of-the-art, 31-35B parameter models almost...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "dataset"
+      "API",
+      "CrewAI",
+      "GitHub"
     ],
     "tags": [
       "agent",
+      "business",
       "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "FBLayout: Optimizing Memory Layout for Efficient LLM Finetuning on Mobile GPUs",
-    "url": "https://arxiv.org/abs/2607.21624",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.21624v1 Announce Type: cross Abstract: Transformer-based models have enabled unprecedented capabilities across language, vision, and multimodal tasks. On-device fine-tuning of transformer models offers a privacy-preserving path to personalized AI, yet remains inefficient on mobile GPUs due to severe memory constraints and frequent layout transformations in attention mechanism during training. Existing mobile training frameworks either use unified layouts for forward and backward passes -- leading to fragmented memory access and poor GPU utilization during backpropagation -- or rely on explicit layout conversions, which introduce significant transformation overhead. To overcome this, we propose FBLayout, a layout-aware framework that co-designs tensor organization with mobile GPU platforms. FBLayout introduces: (1) a unified R-Tile layout for multi-dimensional reductions across forward/backward passes; (2) tile-based index transformation to eliminate physical data movement; and (3) activation-guided layout selection to propagate efficient layouts globally. Evaluations on seven transformer models across different mobile phones (including ARM Mali and Qualcomm Adreno GPUs)...",
-    "matched_keywords": [
-      "fine-tuning",
-      "GPU",
-      "privacy"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "score": 46,
+    "release_version": "1.15.8",
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -523,8 +607,33 @@
     ],
     "score": 44,
     "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Manage GitHub Copilot app access with a dedicated policy",
+    "url": "https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-27T20:43:37+00:00",
+    "summary_or_excerpt": "The GitHub Copilot app now has its own policy, so you can control who has access to it at the enterprise and organization levels. Until now, access to the Copilot… The post Manage GitHub Copilot app access with a dedicated policy appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "GitHub Copilot",
+      "policy"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -548,33 +657,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Manage GitHub Copilot app access with a dedicated policy",
-    "url": "https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-27T20:43:37+00:00",
-    "summary_or_excerpt": "The GitHub Copilot app now has its own policy, so you can control who has access to it at the enterprise and organization levels. Until now, access to the Copilot… The post Manage GitHub Copilot app access with a dedicated policy appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot",
-      "policy"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -599,8 +683,8 @@
     "score": 38,
     "release_version": "b10154",
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -623,8 +707,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

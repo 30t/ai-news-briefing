@@ -21,7 +21,39 @@
     ],
     "score": 68,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agent Retrieval Bench: Evaluating Repository Context Retrieval for Coding Agents",
+    "url": "https://arxiv.org/abs/2607.24882",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.24882v1 Announce Type: cross Abstract: Modern coding agents are usually evaluated by whether they eventually produce a correct patch, but patch generation depends on an earlier context-acquisition stage: finding the repository files needed for the task. We introduce Agent Retrieval Bench, a file-level benchmark for this upstream retrieval problem. Samples are built from real coding-workflow signals and evaluated against frozen base-commit repositories, with relevance defined by what an agent needs next rather than direct query-file semantic similarity. The benchmark covers four positive-retrieval tasks: code2test, comment2context, trace2code, and edit2ripple; a fifth subset evaluates selective retrieval using natural evidence-backed no-gold cases and counterfactual wrong-repository controls. Agent Retrieval Bench contains 427 samples across 25 repositories: 345 positive examples, 50 natural no-gold examples, and 32 counterfactual controls. The corpus includes 308 base-commit snapshots, 392,000 files, and 7.9 million chunks. We evaluate lexical retrieval, RepoMap, open-source embeddings, selective abstention, and logged agent context selection. No single retrieval family...",
+    "matched_keywords": [
+      "acquisition",
+      "Agent",
+      "agents",
+      "benchmark",
+      "embeddings",
+      "repository",
+      "retrieval",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "business",
+      "coding_tool",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 67,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -49,7 +81,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -69,8 +101,85 @@
     ],
     "score": 65,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PatientAgentBench: A Benchmark Framework for Evaluating Patient-Facing Health AI Agents",
+    "url": "https://arxiv.org/abs/2607.25485",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25485v1 Announce Type: new Abstract: Health AI is evolving from answering questions to agentic systems that converse with patients, reason about health records, and act on their behalf. Primary care guards against diagnostic errors and unsafe care; agents assisting in this domain warrant evaluation against the same risks. Current benchmarks focus on medical knowledge, assessed through isolated question-answering or clinician-facing tasks. PatientAgentBench benchmarks patient-facing agentic healthcare; it evaluates a foundation model, wrapped in an agent with a sandbox of healthcare tools, conversing with a simulated patient. Each conversation is scored by an LLM-as-a-Jury across six dimensions via over a hundred conversation-agnostic, clinician-grounded criteria. To validate alignment, licensed clinicians annotated shared conversations, yielding 79-93% adjacent agreement between jury and expert raters, on par with or exceeding clinician inter-rater agreement. We benchmarked 10 models across four families on the same 1,200 scenarios and found clinical gaps. Triage quality is the most discriminating dimension: pass rates rise from 32% for the weakest models to 88% for the...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+    "url": "https://arxiv.org/abs/2607.25656",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25656v1 Announce Type: new Abstract: Complex tasks often decompose into parallelizable yet interdependent subtasks, making orchestration critical to the performance of multi-agent systems (MAS). Existing evaluations typically rely on end-to-end execution, which conflates orchestration-plan quality with worker capabilities, tool reliability, and environmental noise. Moreover, the time and token costs of real execution grow rapidly with workflow scale, making systematic evaluation expensive. We present OrchBench, a simulation-based benchmark for evaluating multi-agent orchestration plans in isolation. Starting from real-world tasks, OrchBench constructs directed acyclic graphs (DAGs) that encode task dependencies, with controlled sizes and degrees of parallelism. Given a DAG, a per-agent context limit, and an agent budget, the evaluated planner assigns subtasks to agents and specifies cross-agent information transfers and their retention ratios. A deterministic simulator evaluates the resulting plan without invoking worker agents and returns interpretable measures of result quality, makespan, and token cost. The simulated scores produced by OrchBench correlate strongly wi...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent",
+      "orchestration",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation",
+    "url": "https://arxiv.org/abs/2607.25891",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25891v1 Announce Type: new Abstract: Evaluating AI agents in interactive environments is hindered by fragmented tasks, scaffolds, verifiers, and scoring rules. Existing efforts focus on narrow settings, remain limited in scale, or require costly reruns, leaving much of the empirical record incomparable. We introduce Messier, a unified corpus of 957,253 records that span 30 benchmarks, 714 agents, 11,891 tasks, and 74,205 verifiers. Messier consolidates public benchmark scores and supplements them with five-agent runs across six underrepresented professional and scientific domains, including a recent legal benchmark. Each record is standardized by model, scaffold, environment, task, verifier, and aggregation rule, with SOC/NAICS classifications for occupational and industry analysis. Using this corpus, we show frontier progress is uneven across benchmark types, with \"function calling\" saturated, \"programming\" improving the fastest, and \"enterprise workflows\" remaining the most challenging. Furthermore, counterfactual rescoring shows that strict all-pass aggregation in multi-verifier tasks can obscure progress and artificially alter agent rankings. From these standardized...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "function calling",
+      "SoC"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -97,8 +206,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -120,8 +229,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -140,8 +249,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -162,34 +271,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "E-Bench: Benchmarking Multi-Step Tool-Use Agents in Real-World Product Scenarios",
-    "url": "https://arxiv.org/abs/2607.23722",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.23722v1 Announce Type: new Abstract: Large Language Models (LLMs) are increasingly deployed as agents that interact with stateful environments over multiple steps: gathering hidden information, composing tool calls, and committing state changes. We refer to this capability as multi-step tool use. Existing benchmarks have advanced tool-use agent evaluation, but often focus on isolated API calls, short trajectories, or settings that are difficult to scale or control. We introduce E-Bench, a fully synthetic benchmark with 323 state-changing tasks across three product domains: Honor of Kings, QQ Music, and Tencent Meeting. E-Bench decouples environment synthesis from task synthesis: graph-guided database filling builds reusable, orphan-free product environments, while generator-solver asymmetry creates tasks with both an information gap and a tool gap, requiring agents to discover hidden data and compose multiple tool calls before changing state. Outcomes are graded deterministically by database-state diffs. Since both environments and tasks are synthetic, E-Bench is controllable at the environment level and scalable at the task level. Benchmarking 11 cutting-edge LLMs show...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "API",
-      "benchmark",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -212,8 +295,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -232,37 +315,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "False Prophets: On the Security of World Models in Agentic Systems",
-    "url": "https://arxiv.org/abs/2607.23147",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.23147v1 Announce Type: cross Abstract: Large language models now power autonomous agents capable of complex, multi-step tasks in different environments. Accurate and reliable execution of these tasks requires the agent to predict the results of its actions. Recent research proposes to enhance predictive capabilities via specially trained environment simulators-world models. While world models can improve performance, they can also mislead agents into executing harmful actions, creating significant security and privacy risks. In this paper, we raise security concerns regarding the usage of world models in agentic systems. We discover a range of world model specific vulnerabilities, which can be exploited in terminal-based agents to execute malicious code or extract sensitive data. To facilitate future development, we introduce a security benchmark dataset designed for text-based world models. We argue that some risks are intrinsic to approximate world modeling, and show that attackers can induce mispredictions in agentic pipelines with up to 95% success rate, possibly resulting in unintended command execution, denial of service, drainage of wallet and private information...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "dataset",
-      "privacy",
-      "terminal"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -284,7 +338,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -300,7 +354,7 @@
     "tags": [],
     "score": 63,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -325,131 +379,80 @@
     ],
     "score": 61,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "SCAIR: Schema-Conditioned Agentic Iterative Reasoning for Enterprise Knowledge Graphs",
-    "url": "https://arxiv.org/abs/2607.22571",
+    "title": "A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain",
+    "url": "https://arxiv.org/abs/2607.25415",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22571v1 Announce Type: new Abstract: Knowledge Graph-based Retrieval-Augmented Generation (KG-RAG) enables natural language interaction with structured enterprise knowledge, yet existing agentic approaches that perform well on public benchmarks often fail to generalize to real-world enterprise Knowledge Graphs (KGs), which are dense, schema-driven, and operationally constrained. To address these limitations, we propose SCAIR (Schema-Conditioned Agentic Iterative Reasoning), a training-free framework that integrates structured planning with controlled iterative reasoning by injecting schema-conditioned structural priors and enforcing schema-aware traversal during multi-hop reasoning. Experiments on an enterprise-oriented benchmark constructed from a real-world Configuration Management DataBase (CMDB) demonstrate that SCAIR substantially improves performance over existing KG-RAG methods. Crucially, our study highlights that reliable enterprise graph reasoning cannot rely on generic agentic designs; instead, it must explicitly incorporate the target domain's structural and operational constraints into the reasoning process. We demonstrate that by aligning agent design with...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "benchmark",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Tokengeist: Multi-Turn Attribution Tracing in Agentic Conversations",
-    "url": "https://arxiv.org/abs/2607.22610",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22610v1 Announce Type: new Abstract: When a language model produces a response in a multi-turn conversation, which tokens from prior turns shaped that answer, and how did those dependencies propagate across prior turns? Existing context attribution methods process the full context in a single pass, recovering surface-level dependencies but missing the layered, non-linear structure of real-world dialogues and multi-step reasoning tasks. We introduce multi-turn context attribution (MTCA): given a target span in a model response, the task of tracing attribution backward across turns to identify not only which prior turns were directly relevant, but also how those turns themselves depended on earlier context. We propose Tokengeist, an attribution-method-agnostic and scalable framework that recovers full dependency paths by casting attribution as a recursive traversal of a directed acyclic graph (DAG) over conversation turns. We will release MTCABench, a benchmark of 3,845 target spans across 665 multi-turn conversations, annotated with gold provenance graphs reaching depths of up to 14, across four dependency types. Across four open-weight models, flat attribution methods f...",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25415v1 Announce Type: new Abstract: Production LLM agents are increasingly assembled from a frozen model wrapped in a harness: a prompt template, a tool set, a memory/retrieval layer, a planning strategy, and a verification policy. Two 2026 systems, Meta-Harness (Lee et al., 2026) and HyperAgents (Meta AI, 2026), show that this harness can itself be optimized or even self-rewritten by an agentic proposer -- at the cost of either an expensive code-search loop or unconstrained self-modifying code, neither of which is auditable or usable with a fully black-box model API. We take a narrower, more constrained position: treat the harness as a small, fixed, human-legible action space and learn a policy over it online with classic sample-efficient reinforcement learning (an $\\epsilon$-greedy contextual bandit and REINFORCE), scored against a multi-objective reward (task success, verifier score, policy compliance, cost, latency, and an unsupported-claim penalty). We instantiate this control system with DSPy (Khattab et al., 2024) as both the context assembler and the source of the strongest non-adaptive baseline (a DSPy BootstrapFewShot static prompt), and evaluate it across th...",
     "matched_keywords": [
       "agentic",
-      "benchmark",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CRAFT: Learn the Schema, Execute the Plan",
-    "url": "https://arxiv.org/abs/2607.22642",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22642v1 Announce Type: new Abstract: Enterprise coding agents translate natural-language analytical requests into executable code over proprietary APIs, schemas, and metric definitions. Yet the prevailing deployment pattern injecting exhaustive schema and tool documentation into each prompt increases inference overhead, complicates schema evolution, and undermines reliability in multi-turn analysis. We investigate whether stable schema knowledge and tool-use behavior can instead be acquired through post-training while preserving the consistency required for production-facing analytics. We present CRAFT, a two-stage post-training recipe for schema-grounded coding agents. First, schema-stripped PLAN supervised fine-tuning learns domain-structured plans and executable behaviors from validated trajectories without exhaustive prompt-time schema injection. Second, execution-shaped reinforcement learning aligns the policy for tool selection, code quality, plan-code consistency, and recovery from failed executions. Training trajectories are curated through a Tri-Gate filter combining execution validation, data-integrity checks, and LLM-judge reasoning audit. We evaluate CRAFT f...",
-    "matched_keywords": [
       "agents",
-      "fine-tuning",
-      "inference",
-      "policy"
+      "API",
+      "dataset",
+      "Meta AI",
+      "policy",
+      "retrieval"
     ],
     "tags": [
       "agent",
       "business",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Beyond Sequential Interaction: Benchmarking Parallel Execution and Coordination for GUI Agents",
-    "url": "https://arxiv.org/abs/2607.22689",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22689v1 Announce Type: new Abstract: Graphical user interface (GUI) agents are systems powered by large multimodal models (LMMs). They perceive screen state and execute user instructions through GUI actions such as clicking, typing, and scrolling on desktops and mobile devices. However, current agents scale poorly to long-horizon tasks: actions incur costly LMM inferences, and performance degrades as context grows. Humans divide such workloads among collaborators who complete sub-tasks in parallel. Yet parallel coordination among GUI agents has received little attention. To close this gap, we introduce ParaGUIBench, to our knowledge, the first benchmark dedicated to parallel execution and coordination of multiple GUI agents on separate desktop instances. It consists of three components: a multi-device Docker infrastructure with a shared file system; a dataset of 233 tasks spanning six task categories; and an evaluation system with efficiency metrics, including step reduction ratio and token cost. We further introduce ParaGUI, a planner-worker agent that decomposes GUI tasks and dispatches sub-tasks to concurrent workers on separate desktop instances. On ParaGUIBench, Pa...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "dataset"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LazyMem: Retrieve Broadly, Construct Selectively for Efficient Long-Term Agent Memory",
-    "url": "https://arxiv.org/abs/2607.22690",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.22690v1 Announce Type: new Abstract: Long-term memory lets LLM agents reuse past interactions, but raw dialogue histories are verbose and information-sparse. Retrieving broadly improves evidence coverage yet overwhelms downstream reasoning with noise; compressing at write time reduces noise but irreversibly discards details the future query may need. We introduce LazyMem, which sidesteps this dilemma by deferring all memory construction to query time. A lightweight 4B model processes the retrieved candidate pool in overlapping parallel windows, selectively retaining and compressing only query-relevant content. The model is trained through supervised fine-tuning followed by group-based reinforcement learning with a format-gated composite reward that combines a rule-based action signal measuring selection accuracy with an LLM-judged quality signal measuring source faithfulness and query utility. On the LongMemEval benchmark, LazyMem-4B achieves an LLM-judge accuracy of 0.85 with only 213 memory tokens, 68.7$\\times$ fewer than retrieval-only, and generalizes to LoCoMo (0.68) without target-domain training, while reducing mean latency over the prior query-time baseline. The...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "fine-tuning",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
+      "model",
       "open_source",
       "rag_data"
     ],
     "score": 60,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Toward an Organizational Science of Multi-Agent LLM Systems: Decoupling Who, How, and Which Algorithm",
+    "url": "https://arxiv.org/abs/2607.25446",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25446v1 Announce Type: new Abstract: Multi-agent frameworks built on large language models (LLMs) routinely entangle three logically distinct concerns: who is on the team (organization), how members align (coordination), and which algorithm fuses their work (collaboration protocol). IMACS (Intelligent Multi-Agent Collaboration System) separates the three into orthogonal, independently swappable layers. Classic organizational theory (Belbin roles, Mintzberg coordination, RACI accountability) becomes executable, validated configuration, and the framework places six published collaboration algorithms behind a common interface while exposing roles, coordination, and accountability as independently configurable factors. We use this separation to conduct controlled comparisons in which organizational assignments vary while the collaboration protocol is held fixed. It also turns protocol choice into a variable that can be learned: Adaptive Org Routing, a contextual-bandit meta-protocol, selects a protocol per task under an explicit quality-cost tradeoff, outperforms every fixed protocol in a controlled study, and trains online on real benchmark and LLM-judge rewards. The ablat...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agent Skills Matter: Inferring Proprietary Skills from Execution Trajectories",
+    "url": "https://arxiv.org/abs/2607.25560",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-07-29T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.25560v1 Announce Type: new Abstract: Agent skills package reusable procedures that improve downstream performance. Their lightweight, portable form enables marketplace monetization and private deployment behind cloud-hosted agent interfaces, giving providers incentives to keep high-value skills proprietary. Yet hiding the artifacts does not conceal their behavioral effects, which remain observable in execution trajectories and form a behavioral side channel. We define this exposure as Skill Leakage: reconstructing proprietary skills from trajectories elicited by benign queries, without reference answers or success labels. We introduce SigLeak, a black-box framework that exploits recurring skill signatures in agent behavior. It constructs diverse, decision-rich diagnostic tasks, contrasts matched skill-enabled and skill-disabled trajectories, and iteratively refines a reconstructed skill from the isolated patterns. Across five scenarios, three model families, and three agent frameworks, SigLeak outperforms or matches three baselines in nearly every setting. It raises the success rate by 6.88 percentage points over the skill-disabled reference on average and achieves the...",
+    "matched_keywords": [
+      "Agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -472,31 +475,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10171：opencl: skip the Adreno KQ/KQV image kernels for multi-stream batches (#26189)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10171",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-07-28T18:53:06+00:00",
-    "summary_or_excerpt": "opencl: skip the Adreno KQ/KQV image kernels for multi-stream batches (#26189) The Adreno KQ/KQV image1d kernels (ggml_cl_mul_mat_kq_kqv_adreno) ignore dim 3 entirely: the sub-buffer covers only nb02*ne02 bytes and the kernel receives no ne03/ne13/nb03/nb13 arguments. With the unified KV cache, multi-sequence batches (e.g. llama-perplexity with its default -b 2048, n_seq=4, or a multi-slot llama-server) present KQ/KQV as 4D tensors with ne3 = n_stream, so every stream past the first reads the first stream's K/V and produces garbage. Flash attention masks the bug where it is enabled; devices where FA is declined (e.g. Adreno 740) hit it with default settings. Route ne03/ne13 > 1 to the general path, which handles dim 3, and honor view_offs when creating the sub-buffers (currently always 0 for tensors reaching this function, but the function would silently misread any future view). Llama-3.2-1B-Instruct Q4_0, wiki.test.raw, 8 chunks, -ngl 99: - Adreno 740, default: PPL 1817.64 -> 15.61 - Adreno 740, -fa 0: PPL 1941.64 -> 15.61 - Adreno 840, -fa 0: PPL 1943.90 -> 15.50 - single-stream (-b 512) results unchanged (15.6090) - test-backend-ops -o MUL_MAT on 740: identical before/after (9...",
-    "matched_keywords": [
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 56,
-    "release_version": "b10171",
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -517,52 +497,9 @@
       "open_source"
     ],
     "score": 56,
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "数百用户向ChatGPT索要毒药与生物武器配方，部分获得高中生水平步骤指南",
-    "url": "https://aihot.virxact.com/items/cms1ka4930059ro05h81rrc3q",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-26T08:35:49+00:00",
-    "summary_or_excerpt": "2025年夏季，OpenAI内部将GPT-5标记为高风险，因其可帮助教育程度有限的用户制造生物危害。据《华尔街日报》报道，自去年夏天以来，数百名用户向ChatGPT询问如何制造生物武器和毒药，部分用户获得了员工称高中生都能遵循的逐步指南。OpenAI暂停了相关账户，但未向当局报告任何事件。 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms1ka4930059ro05h81rrc3q",
-    "matched_keywords": [
-      "ChatGPT",
-      "GPT",
-      "OpenAI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DeepSeek pause fundraise after comments on compute gap to US leaked (transcript) [pdf]",
-    "url": "https://github.com/demo-zexuan/liang-wenfeng-investor-meeting-2026-7-22/blob/master/%E6%A2%81%E6%96%87%E9%94%8B%E6%8A%95%E8%B5%84%E8%80%85%E4%BA%A4%E6%B5%81%E4%BC%9A-%E6%96%87%E5%AD%97%E7%A8%BF_1_18_translate_20260723201651.pdf",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-07-25T23:32:50+00:00",
-    "summary_or_excerpt": "HN points: 245. Comments: https://news.ycombinator.com/item?id=49052912",
-    "matched_keywords": [
-      "DeepSeek"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 50,
-    "hn_score": 245,
-    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -585,30 +522,65 @@
     ],
     "score": 46,
     "release_version": "1.15.8",
-    "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "xAI 发布 Grok CLI 并支持 /tutorial 命令",
-    "url": "https://aihot.virxact.com/items/cms125zmg00usro0wwu4it7dg",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-07-26T00:25:41+00:00",
-    "summary_or_excerpt": "下载 Grok Build 并输入 /tutorial http://X.ai/cli 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cms125zmg00usro0wwu4it7dg",
+    "title": "Flowise flowise@3.1.4：* Fix Type Validation For Session ID by @yau-wd in https://github.com/FlowiseAI/Flowise/pu",
+    "url": "https://github.com/FlowiseAI/Flowise/releases/tag/flowise%403.1.4",
+    "source_name": "Flowise",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T15:51:25+00:00",
+    "summary_or_excerpt": "## What's Changed * Fix Type Validation For Session ID by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6568 * Fix Flowise 709 Make Custom MCP stdio command allowlist operator-controlled by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6578 * Fix Flowise 610 openai-realtime cross-workspace authorization by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6586 * fix: exports contain variable values by @0xi4o in https://github.com/FlowiseAI/Flowise/pull/6556 * Fix Flowise 722 node load method workspace by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6593 * Fix Flowise 788 Improve Tenant Validation by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6620 * fix: check deny list in webscrappers by @0xi4o in https://github.com/FlowiseAI/Flowise/pull/6559 * fix: check deny list in for certain chat models by @0xi4o in https://github.com/FlowiseAI/Flowise/pull/6589 * fix: update versions for several packages by @0xi4o in https://github.com/FlowiseAI/Flowise/pull/6558 * Fix Flowise 809 Sanitize Organization User by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/6633 * Fix Flowise 849 SSO And Role by @yau-wd in https://github.com/FlowiseAI/Flowise/pull/663...",
     "matched_keywords": [
-      "Grok",
-      "xAI"
+      "Flowise",
+      "GitHub",
+      "MCP",
+      "OpenAI"
     ],
     "tags": [
-      "model"
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-07-27T07:55:57.504108+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "backlog",
+    "score": 46,
+    "release_version": "flowise@3.1.4",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ComfyUI v0.29.0：* fix(Video): stream the video transcode instead of buffering every frame in RAM (CORE-353",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.29.0",
+    "source_name": "ComfyUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T01:19:28+00:00",
+    "summary_or_excerpt": "## What's Changed * fix(Video): stream the video transcode instead of buffering every frame in RAM (CORE-353) (CORE-351) by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14813 * [Partner Nodes] feat(client): send ComfyUI Job Id in request headers by @alexisrolland in https://github.com/Comfy-Org/ComfyUI/pull/14934 * Update AGENTS.md by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14955 * [feat]Add JoyImageEdit native model support by @feice-huang in https://github.com/Comfy-Org/ComfyUI/pull/14428 * [Partner Nodes] feat(OpenAI): add GPT5.6 models by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14957 * Various comfy kitchen optimizations and fixes. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14963 * Speed up anima a bit. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14953 * Support anima lllite control models. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/14954 * [Partner Nodes] feat(Google): add Gemini 3.5 Flash LLM model by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/14972 * chore(openapi): sync shared API contract from cloud@e964994 by @comfy-pr-bot in https://github.com/Comfy-Or...",
+    "matched_keywords": [
+      "agents",
+      "API",
+      "ComfyUI",
+      "Gemini",
+      "GitHub",
+      "OpenAI"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "v0.29.0",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -632,8 +604,8 @@
     ],
     "score": 43,
     "first_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -657,8 +629,157 @@
     ],
     "score": 42,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10181：ggml-cuda : disable MMQ on devices with less than 48 KiB shared memory (#26141)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10181",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T15:09:10+00:00",
+    "summary_or_excerpt": "ggml-cuda : disable MMQ on devices with less than 48 KiB shared memory (#26141) ggml_cuda_should_use_mmq() selects MMQ purely from the quantization type. The current MMQ configurations are designed and maintained against a minimum of 48 KiB per-block shared memory, the limit provided by NVIDIA Pascal GPUs and later. On devices that report less, no supported MMQ tile fits and mul_mat_q_switch_J() aborts when every tile size exceeds the device's per-block shared memory budget. Disable MMQ when smpbo 1) is affected; token generation is fine. After the fix the same device falls back to the BLAS path: Q8_0 pp128 1470.7 t/s, tg8 55.3 t/s (was: abort) FP16 unchanged Q4_K_M unchanged This matches a -DGGML_CUDA_FORCE_CUBLAS=ON build (pp128 1464.2 t/s), which confirms the fallback path is the one being taken. This is not MUSA-specific: any device with less than 48 KiB per-block shared memory is affected. Co-authored-by: KakaruHayate **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10181/llama-b10181-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pul...",
+    "matched_keywords": [
+      "CUDA",
+      "GitHub",
+      "Llama",
+      "llama.cpp",
+      "NVIDIA",
+      "quantization"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 41,
+    "release_version": "b10181",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Default model enablement for Copilot Business and Enterprise",
+    "url": "https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T14:01:07+00:00",
+    "summary_or_excerpt": "We’re introducing a global default enablement policy for generally available Copilot models on Copilot Business and Copilot Enterprise plans. Instead of requiring admins to manually turn on each new model… The post Default model enablement for Copilot Business and Enterprise appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "policy"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n stable：[2.32.6](https://github.com/n8n-io/n8n/compare/n8n@2.32.5...n8n@2.32.6) (2026-07-29)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T08:36:33+00:00",
+    "summary_or_excerpt": "## [2.32.6](https://github.com/n8n-io/n8n/compare/n8n@2.32.5...n8n@2.32.6) (2026-07-29) ### Bug Fixes * **core:** Accept 5-field cron expressions in schedule trigger ([#35013](https://github.com/n8n-io/n8n/issues/35013)) ([0de32f0](https://github.com/n8n-io/n8n/commit/0de32f0cbc4c8af269ecebc30352871d947127bb)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "stable",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n n8n@2.33.1：[2.33.1](https://github.com/n8n-io/n8n/compare/n8n@2.33.0...n8n@2.33.1) (2026-07-29)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.33.1",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-29T08:35:53+00:00",
+    "summary_or_excerpt": "## [2.33.1](https://github.com/n8n-io/n8n/compare/n8n@2.33.0...n8n@2.33.1) (2026-07-29) ### Features * **core:** Expose workflow hook context to lifecycle external hooks ([#35084](https://github.com/n8n-io/n8n/issues/35084)) ([b4ffe0e](https://github.com/n8n-io/n8n/commit/b4ffe0e433b3a173571aa1df99c12677ff0cbb95)) ---",
+    "matched_keywords": [
+      "GitHub",
+      "n8n",
+      "workflow"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "n8n@2.33.1",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitHub Copilot app usage metrics now expand across report rollups",
+    "url": "https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-28T23:35:01+00:00",
+    "summary_or_excerpt": "Copilot app usage is now reported across much more of the Copilot usage metrics API. Individual Copilot app activity is now attributed to users in the enterprise-user and organization-user reports.… The post GitHub Copilot app usage metrics now expand across report rollups appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "API",
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 38,
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LangGraph langgraph==1.2.10：Changes since 1.2.9",
+    "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.10",
+    "source_name": "LangGraph",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-07-28T18:34:14+00:00",
+    "summary_or_excerpt": "Changes since 1.2.9 * release(langgraph): 1.2.10 (#8462) * chore(deps): bump jupyterlab from 4.5.9 to 4.5.10 in /libs/langgraph (#8440) * chore(deps): bump setuptools from 80.9.0 to 83.0.0 in /libs/langgraph (#8435) * feat(langgraph): type v3 stream_events return and native projections (#8389) * revert(langgraph): delete TracePolicy (#8403) * feat(langgraph): drop tags from TracePolicy (#8402) * feat(langgraph): expose `trace_policy` on `add_node` (#8362) * chore(deps): bump mistune from 3.2.1 to 3.3.0 in /libs/langgraph (#8317) * chore(deps): bump soupsieve from 2.8.1 to 2.8.4 in /libs/langgraph (#8318) * chore(cli): allow langgraph-api versions up to 1.0.0 (#8319)",
+    "matched_keywords": [
+      "API",
+      "LangGraph",
+      "policy",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "1.2.10",
+    "first_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -683,7 +804,7 @@
     "score": 38,
     "release_version": "b10154",
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -707,7 +828,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-07-28T08:02:11.684407+08:00",
-    "last_seen_at": "2026-07-29T08:02:05.101879+08:00",
+    "last_seen_at": "2026-07-30T08:02:33.365460+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

@@ -1,5 +1,130 @@
 [
   {
+    "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale",
+    "url": "https://arxiv.org/abs/2608.02613",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.02613v1 Announce Type: cross Abstract: Edge-deployed personal memory assistants must handle private interpersonal conversations on-device with open-weight models. Yet, existing memory benchmarks often under-test the combination of activity-dense interaction, ego-centric perspective, and coherent multi-session worlds. MemArena fills these gaps with a single-world conversational benchmark built with its MASim agent simulator, for 50 agents over 15 days (10.3M dialog-text tokens, 24.1K text-only ego-observed tokens/agent/day). With the interaction history, it co-generates ground truth over six recall, reasoning, and trustworthiness evaluation dimensions. We evaluate five open-weight readers with Vanilla context, BM25-RAG, Oracle retrieval, Memobase, and MemSearch as memory backends. Three results stand out: (1) Memory-backend choice matters more for content accuracy: At Qwen3-0.6B, Memobase-to-MemSearch gains +32.5/+19.2 pp, exceeding MemSearch reader scaling (+10.6/+6.8 pp). (2) Permission-aware access fails universally, with Oracle leaking heavily and other backends too timid to disclose. (3) Search latency bites only at very small reader: on a Spark GB10 edge node, memo...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DataSpace: Benchmarking Data Agents for Verifiable Analytics over Heterogeneous Workspaces",
+    "url": "https://arxiv.org/abs/2608.03451",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03451v1 Announce Type: new Abstract: Data agents enable natural-language analytics over organizational workspaces, where relevant evidence may be scattered across databases, structured files, long documents, and multimedia. Existing benchmarks largely isolate structured querying, retrieval, or open-ended analysis, leaving heterogeneous evidence discovery, complete tabular outputs, and deterministic evaluation insufficiently unified. We introduce DataSpace, a benchmark in which data agents produce verifiable tabular results from task-local heterogeneous workspaces. It contains 410 cross-language tasks and 7,439 artifacts totaling 15.01 GB across CSV, JSON, SQLite, Markdown, PDF, and video. DataSpace also served as the official evaluation benchmark for the KDD Cup 2026 Data Agents for Complex Data Analysis competition. Each agent receives only a question and workspace and returns the complete requested tabular result. We construct DataSpace with DataSpace-Builder, an execution-grounded framework comprising cross-language transformation, constraint-aware relational sampling, modality routing and artifact rendering, and human review and task repair by 11 domain experts. A d...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Instruction Stacking Collapse: A Benchmark and the Capability-Dependent Value of Prompt Compilation",
+    "url": "https://arxiv.org/abs/2608.02639",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.02639v1 Announce Type: cross Abstract: Production prompts rarely carry a single instruction. One system message may require valid JSON, a word limit, three citations, and a fixed tone at the same time. We study how instruction-following degrades as such constraints accumulate. We introduce a benchmark that stacks 24 verifier-checked instructions, one to twenty at a time, and evaluate three production-tier LLMs (Claude Sonnet 4.6, GPT-5-mini, Gemini 2.5 Flash). Instruction-following degrades non-linearly: the follow rate falls from ~96% to as low as 20%, driven by a structured and reproducible set of pairwise conflicts. A single \"output JSON\" constraint, for example, is jointly unsatisfiable with nine others. We then evaluate a training-free remedy: an instruction compiler that rewrites the stacked prompt in a single LLM call and is reused across queries. Its benefit is capability-graded. It recovers up to +11 points of follow rate for weaker models, which are also the models most often deployed at scale, while leaving stronger models, which already internalise the same structure, essentially unchanged. Cluster-robust tests, same-baseline controls, and a within-family sc...",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Gemini",
+      "GPT"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Security-First Evaluation of Text-to-Terraform: Benchmarking LLMs and SLMs for Secure IaC Generation",
+    "url": "https://arxiv.org/abs/2608.02672",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.02672v1 Announce Type: cross Abstract: Cloud misconfiguration remains a leading cause of security incidents, yet whether LLMs and SLMs can generate security-compliant Infrastructure-as-Code is an open question. We benchmark seven models, three closed LLMs (Claude Opus 4, GPT-5.4, Gemini 2.5 Pro) and four open SLMs (Qwen2.5-Coder-14B, WizardCoder-33B, CodeLlama-13B, Magicoder-S-CL-7B), on AWS Terraform generation across 17 scenarios, integrating Checkov and Trivy scanners into a GitLab CI/CD pipeline and evaluating two prompt strategies at three security levels (pass@5). Syntactic validity and security compliance are largely orthogonal properties in LLM-generated IaC, a model that reliably produces well-formed Terraform does not necessarily produce secure Terraform: WizardCoder-33B achieves 77.8% validate rate yet zero Checkov compliance, while Claude Opus 4 reaches 23.1% Checkov and 92.5% Trivy pass rates under detailed security prompting. Consequently, prompt engineering alone is insufficient: automated multi-tool scanning remains a necessary complement to LLM-assisted IaC generation regardless of model family or prompt strategy. All artifacts are publicly available.",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Gemini",
+      "GPT"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Can LLMs Test Terminal User Interfaces?",
+    "url": "https://arxiv.org/abs/2608.03743",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03743v1 Announce Type: cross Abstract: Terminal User Interfaces (TUIs) combine the stateful, screen-oriented behaviour of GUIs with terminal deployment and are now common in developer tools. Yet they lack a dedicated testing methodology. We survey 197 real-world TUI applications: only 12% of test code exercises the interface, and 45% of those tests never send input, checking a static frame instead. We turn these applications into a headless benchmark spanning ratatui/Rust, bubbletea/Go, textual/Python, and ink/TypeScript, packaging each as an instrumented Docker image. We record line and widget coverage where reliable, rendered terminal states, and crashes. Under equal wall-clock budgets, we compare four frontier LLMs with random exploration. No model dominates. Random is a strong time-budgeted baseline, but its crash advantage comes from higher throughput: per interaction, LLM guidance is more efficient and uniquely reaches input-gated faults. Automatically deriving launch inputs yields the largest practical gain, enabling applications that otherwise never start. Line coverage poorly predicts crash discovery, weakening it as a proxy for test effectiveness. Automated TU...",
+    "matched_keywords": [
+      "benchmark",
+      "developer tools",
+      "launch",
+      "terminal"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "To Add Is Machine, To Delete Is Human: Measuring and Mitigating Deletion Avoidance in LLM Code Editing",
     "url": "https://arxiv.org/abs/2607.28887",
     "source_name": "arXiv cs.AI",
@@ -16,55 +141,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SREGym: A Live Benchmark for AI SRE Agents with High-Fidelity Failure Scenarios",
-    "url": "https://arxiv.org/abs/2605.07161",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.07161v3 Announce Type: replace Abstract: AI agents are increasingly used to diagnose and mitigate failures in production systems, known as agentic Site Reliability Engineering (SRE). Current SRE benchmarks are limited to oversimplistic SRE tasks and are unfortunately hard to extend due to bespoke designs. We present SREGym, a high-fidelity benchmark for SRE agents. SREGym exposes a live system environment built atop real-world cloud-native system stacks, where high-fidelity failure scenarios are simulated through fault injectors. SREGym models the complexity of production environments by simulating (1) a wide range of faults at different layers, (2) various ambient noises, and (3) diverse failure modes such as metastable failures and correlated failures. SREGym is architected as a modular, extensible framework that orchestrates fault and noise injectors across stacks. SREGym currently includes 90 realistic, challenging SRE problems. We use SREGym to evaluate frontier agents and show that their capabilities varies significantly in addressing different kinds of failures, with up to 40% differences in end-to-end results. SREGym is actively maintained as an open-source proj...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agentic Harness for Real-World Compilers",
-    "url": "https://arxiv.org/abs/2603.20075",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2603.20075v2 Announce Type: replace-cross Abstract: Compilers are critical to modern computing, yet fixing compiler bugs is difficult. While recent large language model (LLM) advancements enable automated bug repair, compiler bugs pose unique challenges due to their complexity, deep cross-domain expertise requirements, and sparse, non-descriptive bug reports, necessitating compiler-specific harnesses. To bridge the gap, we introduce llvm-harness, the first harness designed to assist LLM agents in understanding and fixing compiler bugs. Our current focus is on the middle end of LLVM, one of the most widely used compiler infrastructures. Central to llvm-harness are agent-friendly LLVM tools, a benchmark llvm-bench of 334 reproducible LLVM middle-end bugs, and a tailored mini agent llvm-autofix-mini for fixing LLVM middle-end bugs automatically. We evaluate five frontier models and find that they exhibit a performance decline when tackling compiler bugs with the state-of-the-art agent. With llvm-harness' enhancement, their performance improves by 62%. Our specialized mini agent llvm-autofix-mini further outperforms the llvm-harness-enhanced state-of-the-art by 22%. This emphasi...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -86,7 +164,126 @@
     ],
     "score": 65,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "VeriTrace: Human-Like Temporal Exploration Completes Agentic Action Space",
+    "url": "https://arxiv.org/abs/2608.02878",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.02878v1 Announce Type: new Abstract: Large language models have shown promise for automated Verilog RTL generation, yet state-of-the-art multi-agent systems plateau at ~95% accuracy on standard benchmarks. We trace this ceiling to an incomplete debugging action space: existing systems restrict which signals the agent can inspect, which time windows it can query, or both, reducing debugging to pattern matching on a narrow, predetermined view of circuit behavior rather than hypothesis-driven root-cause analysis. We present VeriTrace, a multi-agent system whose Inspector agent operates over a complete debugging action space, with independent control over signal selection, time-window bounds, and iteration depth. This capability, which we term Agentic Temporal Exploration, enables the agent to form hypotheses about failure causes, query the waveform for evidence, and refine its understanding iteratively, mirroring the exploratory process of human verification engineers. VeriTrace achieves 100\\% Pass@1 on VerilogEval-V2, the first system to attain perfect functional correctness on this benchmark. On a shared Claude Sonnet 4.0 backbone, VeriTrace outperforms the strongest rep...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "Claude",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Refusal Looks Safe: The Refusal-Cue Shortcut in Safety Guard Models",
+    "url": "https://arxiv.org/abs/2608.03201",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03201v1 Announce Type: new Abstract: Safety guards are widely used to filter harmful content and are typically trained via supervised fine-tuning on labeled prompt-response pairs. We audit two widely used safety-guard training datasets, WildGuardMix and GR-Train, and find that among responses to harmful prompts, refusal expressions co-occur almost exclusively with unharmful labels. This imbalance motivates what we term the refusal-cue shortcut: inserting a refusal cue into a harmful response could flip the guard's verdict from harmful to unharmful. The shortcut affects not only guards trained on these datasets but also officially released models such as LlamaGuard3 and Qwen3Guard whose training data is undisclosed. It persists across response positions and is generally stronger in smaller variants within a family. To mitigate it, we adapt sparse complementary masking as a lightweight post-hoc intervention that identifies and suppresses a small set of shortcut-associated attention heads and MLP neurons without retraining. On two primary benchmarks, the intervention achieves an approximately 79% relative reduction in response-initial detection failures induced by refusal...",
+    "matched_keywords": [
+      "fine-tuning"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
+    "url": "https://arxiv.org/abs/2608.03682",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03682v1 Announce Type: new Abstract: Physical AI policies require inference throughout their lifecycle, including model evaluation, cloud reinforcement learning rollout, edge GPU serving, and onboard deployment. Although these settings share the same checkpoint and action semantics, they often rely on separate inference programs. To unify them, we build PhyAI, a Physical AI inference engine with a single runtime that keeps architecture-specific conditioning, solver, cache, and output logic in model adapters while sharing graph execution, kernels, memory management, and parallel services. The same codebase runs vision-language-action (VLA) models and world-action models (WAMs) on single or multiple GPUs across onboard, edge, and cloud deployments. We used the adapter interface to add MiniCPM-Robot on the day of its release. PhyAI achieves 1.40x-4.65x speedups over the official implementations of pi0, pi0.5, GR00T N1.7, and MiniCPM-Robot. On Cosmos3-Nano-Policy-DROID it reduces latency from 2.46 to 1.18 s on eight H20 GPUs (CFG=2, TP=4), a 2.08x speedup. Specialized runtimes remain faster in several configurations, so our goal is one runtime with competitive latency rathe...",
+    "matched_keywords": [
+      "GPU",
+      "inference",
+      "policy",
+      "release",
+      "serving"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2608.03744",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03744v1 Announce Type: new Abstract: Clinical decision support is moving toward committees of language-model agents deliberating on a shared workspace. We ask whether such committees can be gamed by shortcuts, cues a benchmark rewards but a clinician would ignore. Across seven cohorts on six public datasets spanning text (MedQA-USMLE, MedMCQA, MIMIC-CXR reports), imaging (NIH ChestX-ray14, MIMIC-CXR-JPG, CheXpert) and tabular ICU records (SUPPORT2), Gemini committees resist these cues in isolation (flip 5-16%), yet a socially plausible shortcut spreads: when two peers assert the same wrong answer, the holdout under test adopts it in 38% of cases, as does a false \"pre-screen\" system flag, on both capability tiers. Of three oversight agents, a gate cannot separate adoption from honest agreement (false-positive rate 100%); a same-lineage judge reading only the transcript flags adoption on text (precision 100%, recall 93%) but collapses onto the gate in imaging; a referee that privately re-queries the holdout transfers to imaging (77-88% precision, 13-21% false-positive rate). Tripling a cue's visual salience does not move contagion, whereas a second peer voice raises it by...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Gemini",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Evaluating LLM Trade-offs for Enterprise Automation: Lessons from Workflow Generation in a Production Enterprise Platform",
+    "url": "https://arxiv.org/abs/2608.03311",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03311v1 Announce Type: cross Abstract: Enterprise compliance management requires rapid adaptation to evolving regulatory frameworks (e.g., DORA, AI RMF, FedRAMP) and tight remediation SLAs. Traditional static orchestrators often fail in hybrid cloud environments where event-driven assessments demand that automation code adapt to runtime context in seconds. This paper presents lessons learned from evaluating six large language models for AI-driven workflow generation in a production enterprise platform, benchmarked across 29 real-world IT automation scenarios, two generation pipeline architectures, and eight independent runs per prompt-model-pipeline configuration (2,784 runs total). Our initial pipeline used monolithic workflow generation, achieving 31.5-82.8% structural success rates (JSON schema validity and correct UI rendering), with most models struggling on complex JSON generation. We developed a redesigned piecewise pipeline that decomposes workflow construction into variable scaffolding, base block assembly, and nested block generation, raising structural success to 74.1-97.8% across all models. We analyze production tradeoffs including cost (USD 0.008-0.20 per...",
+    "matched_keywords": [
+      "automation",
+      "workflow"
+    ],
+    "tags": [
+      "ai_app"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -110,8 +307,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -132,8 +329,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -158,31 +355,33 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "When Iterative RAG Beats Ideal Evidence: A Diagnostic Study in Scientific Multi-hop Question Answering",
-    "url": "https://arxiv.org/abs/2601.19827",
+    "title": "Screenshots or Tools? Eliciting Tool Use and Managing Multimodal Context in Hybrid GUI-MCP Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2608.03327",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.19827v5 Announce Type: replace-cross Abstract: Retrieval-Augmented Generation (RAG) extends large language models (LLMs) beyond parametric knowledge, yet it is unclear when iterative retrieval-reasoning loops meaningfully outperform static RAG, particularly in scientific domains requiring multi-hop reasoning over sparse, heterogeneous evidence. We provide the first controlled, mechanism-level diagnostic evaluation of whether synchronized iterative retrieval and reasoning can surpass even an idealized static upper bound (Gold Context) RAG. We benchmark eleven state-of-the-art LLMs under three regimes: (i) No Context, measuring reliance on parametric memory; (ii) Gold Context, where all oracle evidence is supplied at once; and (iii) Iterative RAG, a training-free controller that alternates retrieval, hypothesis refinement, and evidence-aware stopping. Using the chemistry-focused ChemKGMultiHopQA dataset, we isolate questions requiring genuine retrieval and analyze retrieval coverage gaps, anchor carry drop, query quality, composition fidelity, and control calibration. Iterative RAG consistently outperforms Gold Context, with gains up to 25.6 percentage points, especially...",
+    "published_at": "2026-08-05T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03327v1 Announce Type: new Abstract: Hybrid computer-use agents can act through screenshots or call text tools. We find that having a tool available does not settle which way the effect goes. Under one identical GUI-MCP harness on the OSWorld-MCP benchmark (309 tasks), the same MCP tools improve a reasoning model by +4.0pp and degrade a non-reasoning model by -5.9pp (5 runs each, both beyond 2 SE). What separates the two is tool-decision behavior. The non-reasoning policy ignores, misnames, or falsely terminates around tools. The reasoning model avoids these failures, yet still calls a tool on only 55/309 tasks, 23.9% of the tool-reachable ones. We call this shortfall the adoption gap. Both levels of the problem share one cause: the model already has a cheaper route and is never trained to take it. Multi-turn RL probes that cause. At the action level, a dense tool bonus raises spreadsheet adoption 0.03 -> 0.33 and carries into greedy decoding, but held-out accuracy does not follow. Behavior is steerable; competence is not. The bottleneck lies in tool-call semantics. At the context level, a successful tool call often makes the next screenshot redundant. Dropping it and h...",
     "matched_keywords": [
+      "agents",
       "benchmark",
-      "dataset",
-      "RAG",
-      "retrieval"
+      "MCP",
+      "policy",
+      "tool use"
     ],
     "tags": [
-      "open_source",
-      "rag_data"
+      "agent",
+      "business",
+      "open_source"
     ],
     "score": 61,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -204,54 +403,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "From Code Review to Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
-    "url": "https://arxiv.org/abs/2607.29516",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29516v1 Announce Type: cross Abstract: AI coding agents are generating code at volumes that exceed the capacity of traditional peer review. At the same time, existing AI code review tools over-index on low-value suggestions such as style and best practices while under-indexing on the concerns human reviewers prioritize most: correctness, security, and performance. We present ARCTIC, an AI-powered Code Critique system that reframes code review around three capabilities: intent prediction, which infers why a change was made from conversation logs and metadata; drift detection, which measures divergence between the developer's intent and the agent's output via backtranslation; and code spotlight, which ranks the regions of a diff most warranting human scrutiny. We ground these capabilities in a six-theme taxonomy derived from 18,000 code reviews. Offline evaluation shows that intent prediction achieves 0.86 F1, drift detection reaches near-perfect ordinal agreement with human annotators (QWK = 0.907), and spotlight outperforms the baseline AI reviewer by 2.4x on quality estimation at 5x fewer tokens. In the experimental rollout, the drift scores reduces code misalignment b...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "code review"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search",
-    "url": "https://arxiv.org/abs/2607.29055",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29055v1 Announce Type: cross Abstract: Multi-agent systems (MAS) are increasingly deployed to solve complex tasks. In case of incorrect or unsatisfactory outputs, users have to manually locate agent mistakes by inspecting agent trajectories (i.e., {\\em failure attribution}) and provide feedback to refine the outputs (i.e., {\\em repair}). Despite some recent work in MAS failure attribution, automated mechanisms to recover from such mistakes remain largely unexplored. To bridge this gap, we propose MARS, a search-based framework that formulates MAS repair as a Monte Carlo Tree Search (MCTS) process and navigates the vast space of potential repairs via diagnosis-guided expansion with taxonomy-augmented evaluation. Unlike standard MCTS, which evaluates a complete simulation via full rollout, MARS evaluates the agent trajectory using partial rollout to reduce token consumption. Furthermore, we introduce StateMAS, a large-scale MAS repair benchmark with 1,310 replayable multi-agent failure trajectories spanning four types of agent architectures and four LLM backbones. Experiments on StateMAS demonstrate that MARS consistently outperforms state-of-the-art methods, achieving an...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -275,139 +428,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Safety, or Just Capability? A Validity Audit of Agent-Safety Benchmarks",
-    "url": "https://arxiv.org/abs/2607.28685",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28685v1 Announce Type: new Abstract: Agent-safety benchmarks measure different behaviors, and their scores get quoted interchangeably as an agent's safety. We treat four of them (R-Judge, InjecAgent, AgentHarm, AgentDojo) as measurements to be validated, running each under its official implementation and author-provided scorer on up to 22 models, with MMLU and GPQA measured by us under one protocol as a capability composite. The metric is the first problem. On any binary trace-judgment benchmark scored by $F_1$, an ``always positive'' policy attains $F_1 = 2\\pi/(1+\\pi)$; on R-Judge that is $0.690$, above five of the 21 models that actually discriminate. The three broad-coverage benchmarks then rank the same 18 models differently, and the trade-off behind that disagreement is a small-panel artifact: R-Judge specificity against AgentHarm safety correlates $-0.64$ at $n{=}7$ and $+0.02$ at $n{=}18$, and a quarter of random size-7 subsets reach $|\\rho| \\geq 0.5$ around that near-zero value. Held-out validity turns on which outcome you pick. Capability predicts task success ($\\rho{=}{+}0.60$) but correlates negatively with misalignment safety ($\\rho{=}{-}0.44$, $n{=}21$). On...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "WebCoderBench: Benchmarking Web Application Generation with Comprehensive and Interpretable Evaluation Metrics",
-    "url": "https://arxiv.org/abs/2601.02430",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2601.02430v3 Announce Type: replace-cross Abstract: Web applications (web apps) have become a key arena for large language models (LLMs) to demonstrate their code generation capabilities and commercial potential. However, building a benchmark for LLM-generated web apps remains challenging due to the need for real-world user requirements, generalizable evaluation metrics without relying on ground-truth implementations or test cases, and interpretable evaluation results. To address these challenges, we introduce WebCoderBench, the first real-world-collected, generalizable, and interpretable benchmark for web app generation. WebCoderBench comprises 1,572 real user requirements, covering diverse modalities and expression styles that reflect realistic user intentions. WebCoderBench provides 24 fine-grained evaluation metrics across 9 perspectives, combining rule-based and LLM-as-a-judge paradigm for fully automated, objective, and general evaluation. Moreover, WebCoderBench adopts human-preference-aligned weights over metrics to yield interpretable overall scores. Experiments across 12 representative LLMs and 2 LLM-based agents show that there exists no dominant model across all...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "weights"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DRIP-R: A Benchmark for Decision-Making and Reasoning Under Real-World Policy Ambiguity in the Retail Domain",
-    "url": "https://arxiv.org/abs/2605.07699",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.07699v2 Announce Type: replace-cross Abstract: LLM-based agents are increasingly deployed for routine but consequential tasks in real-world domains, where their behavior is governed by inherently ambiguous domain policies that admit multiple valid interpretations. Despite the prevalence of such ambiguities in practice, existing agent benchmarks largely assume unambiguous, well-specified policies, leaving a critical evaluation gap. We introduce DRIP-R, a benchmark that systematically exploits real-world retail policy ambiguities to construct scenarios in which no single correct resolution exists. DRIP-R comprises a curated set of policy-ambiguous return scenarios paired with a realistic customer personas, a full-duplex conversational simulation with tool-calling capabilities and a multi-judge evaluation framework covering policy adherence, dialogue quality, behavioral alignment, and resolution quality. Our experiments show that frontier models fundamentally disagree on identical policy-ambiguous scenarios, confirming that ambiguity poses a genuine and systematic challenge to LLM decision-making.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "customer",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Frontier AI performance across the business disciplines: a case-grounded benchmark of knowledge work and analytical reasoning",
-    "url": "https://arxiv.org/abs/2607.16057",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.16057v3 Announce Type: replace-cross Abstract: Large language models (LLMs) are improving rapidly as reflected in benchmark scores, yet these AI benchmarks largely test capabilities such as factual recall, narrow question answering, mathematical problem-solving, and coding and agentic tool-use. What remains poorly measured is AI progress on the analytical knowledge work white-collar professionals perform daily, including synthesizing complex information, exercising judgment under uncertainty and incomplete information, applying strategic and adversarial thinking in multi-stakeholder settings, weighing trade-offs, and producing defensible, structured analyses. This gap is even more pronounced for subjective components of such work, where success can be challenging to define. The \"case method\" form of education practiced by top business schools provides a natural foundation for addressing this measurement gap, and we construct BusinessCaseBench, a benchmark spanning hundreds of questions drawn from business cases across eighteen disciplines, each paired with a grading rubric derived from the expert-written instructor case solution. On BusinessCaseBench, frontier AI models...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Looks Right, Works Right: A Project-Level Benchmark for Multi-Screen Mobile App Generation",
-    "url": "https://arxiv.org/abs/2607.28645",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28645v1 Announce Type: cross Abstract: Recent multimodal large language models can convert visual designs directly into executable code, but real mobile products require multiple screenshots to become a buildable codebase with shared components and working navigation. This project-level setting exposes three limits of existing design-to-code benchmarks: they focus on single-page generation rather than complete codebases, cannot evaluate cross-page navigation, and do not measure project-wide maintainability. We introduce MobileForge, the first benchmark for project-level multi-screen mobile app generation, comprising real mobile apps, human-reviewed screens, structured page-relationship annotations, and navigation test specifications. MobileForge supports five-axis evaluation of build, navigation, visual fidelity, code maintainability, and efficiency. We also propose state-isolated navigation testing to avoid cascading failures in navigation evaluation and an anchor-referenced list-wise visual evaluation protocol to improve visual-judge reliability. Across end-to-end runs on six frontier multimodal LLMs, current models can build mobile-app projects that compile and reach...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CPInj: Uncovering Prompt Injection Risks in Textual Collaborative Prompt Optimization",
-    "url": "https://arxiv.org/abs/2607.18622",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.18622v2 Announce Type: replace-cross Abstract: Textual Collaborative Prompt Optimization (TCPO) extends TextGrad (Yuksekgonul et al., 2025) to a decentralized setting by allowing multiple clients to jointly improve prompts for large language models (LLMs) while keeping their data locally. Its reliance on free-form textual updating and aggregation introduces a new and largely unexplored attack surface, i.e., malicious instructions can be injected into local prompts and propagated through server-side prompt aggregation. Unlike conventional prompt injection attacks, attacking TCPO targets the collaborative optimization loop in TCPO. This setting is more challenging because malicious instructions must survive aggregation, persist through subsequent benign prompt optimization, and evade server-side defenses. To expose this risk, we propose Collaborative Prompt Injection (CPInj) attack that contaminates the aggregated global prompt with malicious instructions, degrades downstream task performance, resists purification by prompt optimization on benign clients, and evades advanced detection-based defenses on the server. We find that current defense methods are ineffective again...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 58,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -430,7 +452,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -452,8 +474,60 @@
     ],
     "score": 55,
     "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands v1.10.0：1.10.0 (2026-08-05)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.10.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-05T15:54:34+00:00",
+    "summary_or_excerpt": "## 1.10.0 (2026-08-05) ## What's Changed ### Features * feat: set Canvas default model to GLM 5.2 by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16146 * feat: activity log export by @ShashwatXD in https://github.com/OpenHands/OpenHands/pull/16234 * feat: ship the featured automations landing dashboard by @hieptl in https://github.com/OpenHands/OpenHands/pull/16266 * feat(skills): filter the skills page with a faceted rail by @sleeyax in https://github.com/OpenHands/OpenHands/pull/16124 * feat: add manifest-driven sub-pages to the automation interface by @hieptl in https://github.com/OpenHands/OpenHands/pull/16303 ### Bug Fixes * fix: derive automation timeout cap from deployment by @neubig in https://github.com/OpenHands/OpenHands/pull/16233 * fix(backends): pin backend identity on sidebar conversation links by @rishavnaskar in https://github.com/OpenHands/OpenHands/pull/16243 * fix: use IPv4 loopback for local proxy targets by @wangmeiwen in https://github.com/OpenHands/OpenHands/pull/16290 * fix: resolve npm audit vulnerabilities by @hieptl in https://github.com/OpenHands/OpenHands/pull/16264 * fix: preserve MCP credentials during Canvas mutations by @neubig in...",
+    "matched_keywords": [
+      "automation",
+      "GitHub",
+      "GLM",
+      "MCP",
+      "OpenHands"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 52,
+    "release_version": "v1.10.0",
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.15.12：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.12",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-05T22:56:34+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Bump Flow canary on release - Add URLReadTool for reading arbitrary URLs - Add app metadata to platform action tools - Unify scaffolding under `crewai create ` ### Bug Fixes - Clarify conversational route/handler name collision errors ### Documentation - Update scaffold AGENTS.md for unified create CLI ### Breaking Changes - None ## Contributors @Vidit-Ostwal, @joaomdmoura, @lorenzejay, @lucasgomide, @theCyberTech",
+    "matched_keywords": [
+      "agents",
+      "CrewAI",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "1.15.12",
+    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -475,8 +549,8 @@
     "score": 42,
     "hn_score": 77,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -500,191 +574,7 @@
     "score": 42,
     "release_version": "stable",
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agili 的 AIGC 周刊（Y26W30）",
-    "url": "https://aigc-weekly.agi.li/weekly/Y26W30",
-    "source_name": "Agili AIGC Weekly",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-02T12:00:00+00:00",
-    "summary_or_excerpt": "Kimi K3 正式开放 2.8T 参数权重，GPT-5.6 Luna 降价 80%，Claude Mythos 首次在密码学算法层面发现突破性攻击方法，MCP 新规范月下载破 4 亿次。1324 名前沿 AI 员工联署呼吁为自动 AI 研究踩刹车，Chrome AI 自动化修复 1072 个安全 bug，Hugging Face 发布 4.5 天入侵的 9 阶段完整复盘。",
-    "matched_keywords": [
-      "Claude",
-      "GPT",
-      "Kimi",
-      "MCP"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Box64 v0.4.4 Released With New Box64-Configurator App",
-    "url": "https://www.phoronix.com/news/Box64-0.4.4",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-02T10:06:15+00:00",
-    "summary_or_excerpt": "Box64 0.4.4 released today as the newest version of this open-source user-space Linux x86_64 emulator for running binaries on 64-bit ARM, RISC-V, and LoongArch systems...",
-    "matched_keywords": [
-      "RISC-V"
-    ],
-    "tags": [
-      "riscv_stack"
-    ],
-    "score": 39,
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10235：metal : add SILU_BACK (#25982)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10235",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-02T21:02:39+00:00",
-    "summary_or_excerpt": "metal : add SILU_BACK (#25982) * feat(silu_back): implemented silu_back op for f32 * fix(silu_back): removed redundant asserts in ggml-metal-ops.cpp function ggml_metal_op_silu_back. **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10235/llama-b10235-bin-ubuntu-vulkan-x64.tar.gz) - [...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 38,
-    "release_version": "b10235",
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10234：metal : add F16 support for bin ops (#26465)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10234",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-02T20:17:59+00:00",
-    "summary_or_excerpt": "metal : add F16 support for bin ops (#26465) **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10234/llama-b10234-bin-ubuntu-vulkan-arm64.tar.gz) - [Ubun...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 38,
-    "release_version": "b10234",
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10233：opencl: limit local workgroup size for GLU operation (#26383)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10233",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-02T19:39:12+00:00",
-    "summary_or_excerpt": "opencl: limit local workgroup size for GLU operation (#26383) **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10233/llama-b10233-bin-ubuntu-vulkan-arm6...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 38,
-    "release_version": "b10233",
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Linux 7.3 To Support The Qualcomm Adreno 704 & Adreno 722 GPUs",
-    "url": "https://www.phoronix.com/news/Linux-7.3-MSM-DRM-Driver",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-02T10:47:00+00:00",
-    "summary_or_excerpt": "Sent out on Saturday were the Qualcomm MSM DRM kernel graphics/display driver updates to land for the upcoming Linux 7.3 merge window...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 38,
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NetBSD 11.0 Released With RISC-V Support, Enhanced Linux System Call Compatibility",
-    "url": "https://www.phoronix.com/news/NetBSD-11.0",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-01T16:49:21+00:00",
-    "summary_or_excerpt": "NetBSD 11.0 officially shipped today as the nineteenth major release of this popular BSD operating system...",
-    "matched_keywords": [
-      "release",
-      "RISC-V"
-    ],
-    "tags": [
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 38,
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Codex 用 Sol 指挥 Luna Max 省额度翻倍产出",
-    "url": "https://aihot.virxact.com/items/cmsbowa0l0m77rohvw8s15ia1",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-02T10:47:27+00:00",
-    "summary_or_excerpt": "Codex 高阶玩法：让 Sol 在 `~/.codex/agents/` 下创建 `luna-worker.toml` 子代理，模型设 `gpt-5.6-luna`、reasoning effort 设 max，Sol 负责拆任务与审代码，具体实现自动委托给 Luna Max。 🔗 阅读原文 via AI HOT · https://aihot.virxact.com/items/cmsbowa0l0m77rohvw8s15ia1",
-    "matched_keywords": [
-      "agents",
-      "Codex",
-      "GPT"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model"
-    ],
-    "score": 36,
-    "first_seen_at": "2026-08-03T07:54:29.166701+08:00",
-    "last_seen_at": "2026-08-05T08:06:47.016816+08:00",
+    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

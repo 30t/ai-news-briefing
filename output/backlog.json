@@ -1,28 +1,104 @@
 [
   {
-    "title": "MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale",
-    "url": "https://arxiv.org/abs/2608.02613",
+    "title": "ContextWeave: A Real-World Workflow Benchmark",
+    "url": "https://arxiv.org/abs/2608.04830",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.02613v1 Announce Type: cross Abstract: Edge-deployed personal memory assistants must handle private interpersonal conversations on-device with open-weight models. Yet, existing memory benchmarks often under-test the combination of activity-dense interaction, ego-centric perspective, and coherent multi-session worlds. MemArena fills these gaps with a single-world conversational benchmark built with its MASim agent simulator, for 50 agents over 15 days (10.3M dialog-text tokens, 24.1K text-only ego-observed tokens/agent/day). With the interaction history, it co-generates ground truth over six recall, reasoning, and trustworthiness evaluation dimensions. We evaluate five open-weight readers with Vanilla context, BM25-RAG, Oracle retrieval, Memobase, and MemSearch as memory backends. Three results stand out: (1) Memory-backend choice matters more for content accuracy: At Qwen3-0.6B, Memobase-to-MemSearch gains +32.5/+19.2 pp, exceeding MemSearch reader scaling (+10.6/+6.8 pp). (2) Permission-aware access fails universally, with Oracle leaking heavily and other backends too timid to disclose. (3) Search latency bites only at very small reader: on a Spark GB10 edge node, memo...",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.04830v1 Announce Type: new Abstract: Memory is essential as language agents move from isolated tasks to long-horizon, stateful workflows, yet existing evaluations often reduce it to retrieval or question answering. We introduce ContextWeave, a longitudinal benchmark that evaluates whether recalled experience improves downstream agent performance in realistic office-work streams. ContextWeave reconstructs privacy-preserved, multi-month workflows of 14 participants into 1,005 executable tasks, including 568 core evaluation tasks, with instructions, containerized environments, trajectories, and task-specific rubrics. It measures workspace quality and alignment with participant-specific preferences, complemented by diagnostics of relevance, continuity, solvability, and robustness to misleading recall. Across six memory components under a fixed model, the strongest configuration raises Workspace Score from 68.08 to 78.20 and Preference Score from 41.50 to 70.60. With a fixed memory component, recall improves both outcomes for all five tested base models, although gains vary substantially. Our analysis shows that actionable, experience-rich memory supports workflow continuati...",
     "matched_keywords": [
       "Agent",
-      "agentic",
       "agents",
       "benchmark",
-      "RAG",
-      "retrieval"
+      "privacy",
+      "retrieval",
+      "workflow"
     ],
     "tags": [
       "agent",
+      "ai_app",
+      "business",
       "open_source",
       "rag_data"
     ],
-    "score": 68,
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "score": 66,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Active-SWE: Benchmarking Coding Agents for Proactive Bug Fixing without Issue Reports",
+    "url": "https://arxiv.org/abs/2608.04682",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.04682v1 Announce Type: cross Abstract: Coding agents powered by large language models (LLMs) are increasingly adopted in software engineering (SWE) scenarios, capable of fixing a specific bug in large-scale codebase. However, existing SWE benchmarks typically assume that high-quality issue reports with detailed information are always available, which is easily violated in practice due to the complexity of report acquisition and curation. To address this, we introduce Active-SWE, a benchmark for evaluating coding agents on proactively discovering and fixing multiple bugs without report guidance, covering 1,663 tasks across six bug categories and eight languages. Beyond shifting the focus from existing reactive bug fixing to proactive bug fixing, Active-SWE enables a more in-depth evaluation by expanding the scope from fixing a specific recorded bug to multiple-bug fixing and potential bug discovery scenarios. To construct Active-SWE, we propose a novel difficulty-aware task formulation pipeline with a dual-track evaluation framework, facilitating comprehensive evaluation of proactive bug-fixing capability. Extensive experiments reveal that most state-of-the-art coding ag...",
+    "matched_keywords": [
+      "acquisition",
+      "agents",
+      "benchmark",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "What We Observe as LLM Behavior Can Be a Side-effect of Inference Backend",
+    "url": "https://arxiv.org/abs/2608.04714",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.04714v1 Announce Type: cross Abstract: Benchmark scores are reported as properties of a model, yet the inference framework used to produce them, such as HuggingFace, vLLM, or Ollama, are considered non-influential and their names and versions are almost never disclosed. In this work we investigate how much this choice can influence the model output. In a fully-crossed study (three instruction-tuned models x five inference frameworks x six benchmarks x four generation modes) we investigate how different tools (wrappers/backend) influence benchmark scores and how their score changes is influenced by generation hyper-parameters. We find backend to be a non-negligible factor where even under greedy, sampling-noise-free decoding, changing the backend can significantly alter models performance and this effect is structural and strongly model-dependent. Decomposing the variance according to generation mode reveal that considerable portion of the variability (roughly 39\\%) a practitioner sees out-of-the-box can stem from the backend, while the remaining stems from sampling noise and each framework's default generation parameters, both of which are avoidable by disclosing and ma...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "Ollama",
+      "vLLM"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
+    "url": "https://arxiv.org/abs/2607.28545",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.28545v2 Announce Type: replace-cross Abstract: Large language models can write, patch, and search code, but oncall root cause analysis (RCA) demands something different: reasoning over noisy metrics, logs, traces, and source code, starting from ambiguous user-facing reports, often hours after the incident began. We introduce ORCA-bench, a benchmark that puts general-purpose coding agents in a production-fidelity oncall setting. ORCA-bench pairs a live OpenTelemetry-instrumented microservice system--exposing six days of metrics, logs, and traces through real telemetry interfaces (Prometheus, Jaeger, and OpenSearch via Grafana) and full source-code access--with 1,079 RCA tasks that systematically vary report specificity, time-to-detection, and co-occurring fault scenarios. Ground-truth symptoms are curated and signed off by expert SREs, and our LLM-as-judge is independently re-scored by humans (Cohen's $\\kappa_w=0.90$). Across five frontier agents, the best RCA Accuracy is 25.3% on Medium-difficulty tasks (the realistic-input setting) and 10.0% on Hard--a gap that remains even with Claude Fable 5. The weakest model hallucinates an implausible root cause in 40% of incident...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "Claude"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -47,8 +123,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -71,8 +147,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -95,33 +171,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can LLMs Test Terminal User Interfaces?",
-    "url": "https://arxiv.org/abs/2608.03743",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03743v1 Announce Type: cross Abstract: Terminal User Interfaces (TUIs) combine the stateful, screen-oriented behaviour of GUIs with terminal deployment and are now common in developer tools. Yet they lack a dedicated testing methodology. We survey 197 real-world TUI applications: only 12% of test code exercises the interface, and 45% of those tests never send input, checking a static frame instead. We turn these applications into a headless benchmark spanning ratatui/Rust, bubbletea/Go, textual/Python, and ink/TypeScript, packaging each as an instrumented Docker image. We record line and widget coverage where reliable, rendered terminal states, and crashes. Under equal wall-clock budgets, we compare four frontier LLMs with random exploration. No model dominates. Random is a strong time-budgeted baseline, but its crash advantage comes from higher throughput: per interaction, LLM guidance is more efficient and uniquely reaches input-gated faults. Automatically deriving launch inputs yields the largest practical gain, enabling applications that otherwise never start. Line coverage poorly predicts crash discovery, weakening it as a proxy for test effectiveness. Automated TU...",
-    "matched_keywords": [
-      "benchmark",
-      "developer tools",
-      "launch",
-      "terminal"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -141,7 +192,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -164,8 +215,84 @@
     ],
     "score": 65,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Architectural Implications of Agentic AI Workflows",
+    "url": "https://arxiv.org/abs/2608.04458",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.04458v1 Announce Type: new Abstract: Agentic AI is emerging in datacenters, but its architectural implications remain unexplored. We organize agentic workflows in a taxonomy and present its first architectural characterization with a production study at Microsoft Azure and a controlled study of open-source frameworks. We show that agentic execution is fragmented and heterogeneous. Requests expand into a workflow of LLM inferences, tool invocations, and orchestration decisions that repeatedly cross the CPU-GPU boundary. Our taxonomy explains how this fragmentation turns into resource demand. As orchestration and tools run on the host, the CPU sits on the critical path. Execution structure sets the load over time, which stays low with sudden spikes. Model composition sets how evenly the workflow uses the GPUs. Diversity in tasks and tools widens this range even further. These characteristics expose architectural mismatches of conventional uniform servers. Fragmented execution strands CPU and GPU capacity despite bursty demand. Different software roles make homogeneous CPU provisioning inefficient. Finally, multiplexing many agents onto shared cores degrades microarchitect...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "GPU",
+      "orchestration",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "semiconductor"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
+    "url": "https://arxiv.org/abs/2608.03682",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03682v2 Announce Type: replace Abstract: Physical AI policies require inference throughout their lifecycle, including model evaluation, cloud reinforcement learning rollout, edge GPU serving, and onboard deployment. Although these settings share the same checkpoint and action semantics, they often rely on separate inference programs. To unify them, we build PhyAI, a Physical AI inference engine with a single runtime that keeps architecture-specific conditioning, solver, cache, and output logic in model adapters while sharing graph execution, kernels, memory management, and parallel services. The same codebase runs vision-language-action (VLA) models and world-action models (WAMs) on single or multiple GPUs across onboard, edge, and cloud deployments. We used the adapter interface to add MiniCPM-Robot on the day of its release. PhyAI achieves 1.40x-4.65x speedups over the official implementations of pi0, pi0.5, GR00T N1.7, and MiniCPM-Robot. On Cosmos3-Nano-Policy-DROID it reduces latency from 2.46 to 1.18 s on eight H20 GPUs (CFG=2, TP=4), a 2.08x speedup. Specialized runtimes remain faster in several configurations, so our goal is one runtime with competitive latency r...",
+    "matched_keywords": [
+      "GPU",
+      "inference",
+      "policy",
+      "release",
+      "serving"
+    ],
+    "tags": [
+      "business",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+    "url": "https://arxiv.org/abs/2607.29677",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-06T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.29677v2 Announce Type: replace Abstract: Enterprise workflows increasingly rely on agents for \\emph{schema-guided extraction}: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with source evidence as grounding metadata. We present ExtractBench, a benchmark for schema-guided extraction and, to our knowledge, the first to score value accuracy, record completeness at scale, grounding, and measured cost together. The evaluation system contains 4,869 pages across 370 enterprise documents, 8 business domains, and 67 document types, with clear tags differentiating their challenge scenarios. The scalable schema and ground-truth curation pipeline combines independent-system agreement for real documents, known values for synthetic lists, and human verification for forms. We report order-insensitive value F1 for value accuracy, plus two grounding metrics for source traceability: word- and page-level F1. Commercial VLMs perform well on short documents but often truncate record lists on long ones, while coding agents retain higher accuracy at much higher cost. LlamaExtract Agentic Plus ranks first on all three metrics,...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -190,8 +317,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -210,34 +337,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
-    "url": "https://arxiv.org/abs/2608.03682",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03682v1 Announce Type: new Abstract: Physical AI policies require inference throughout their lifecycle, including model evaluation, cloud reinforcement learning rollout, edge GPU serving, and onboard deployment. Although these settings share the same checkpoint and action semantics, they often rely on separate inference programs. To unify them, we build PhyAI, a Physical AI inference engine with a single runtime that keeps architecture-specific conditioning, solver, cache, and output logic in model adapters while sharing graph execution, kernels, memory management, and parallel services. The same codebase runs vision-language-action (VLA) models and world-action models (WAMs) on single or multiple GPUs across onboard, edge, and cloud deployments. We used the adapter interface to add MiniCPM-Robot on the day of its release. PhyAI achieves 1.40x-4.65x speedups over the official implementations of pi0, pi0.5, GR00T N1.7, and MiniCPM-Robot. On Cosmos3-Nano-Policy-DROID it reduces latency from 2.46 to 1.18 s on eight H20 GPUs (CFG=2, TP=4), a 2.08x speedup. Specialized runtimes remain faster in several configurations, so our goal is one runtime with competitive latency rathe...",
-    "matched_keywords": [
-      "GPU",
-      "inference",
-      "policy",
-      "release",
-      "serving"
-    ],
-    "tags": [
-      "business",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -262,127 +363,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Evaluating LLM Trade-offs for Enterprise Automation: Lessons from Workflow Generation in a Production Enterprise Platform",
-    "url": "https://arxiv.org/abs/2608.03311",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03311v1 Announce Type: cross Abstract: Enterprise compliance management requires rapid adaptation to evolving regulatory frameworks (e.g., DORA, AI RMF, FedRAMP) and tight remediation SLAs. Traditional static orchestrators often fail in hybrid cloud environments where event-driven assessments demand that automation code adapt to runtime context in seconds. This paper presents lessons learned from evaluating six large language models for AI-driven workflow generation in a production enterprise platform, benchmarked across 29 real-world IT automation scenarios, two generation pipeline architectures, and eight independent runs per prompt-model-pipeline configuration (2,784 runs total). Our initial pipeline used monolithic workflow generation, achieving 31.5-82.8% structural success rates (JSON schema validity and correct UI rendering), with most models struggling on complex JSON generation. We developed a redesigned piecewise pipeline that decomposes workflow construction into variable scaffolding, base block assembly, and nested block generation, raising structural success to 74.1-97.8% across all models. We analyze production tradeoffs including cost (USD 0.008-0.20 per...",
-    "matched_keywords": [
-      "automation",
-      "workflow"
-    ],
-    "tags": [
-      "ai_app"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
-    "url": "https://arxiv.org/abs/2607.29677",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29677v1 Announce Type: new Abstract: Enterprise workflows increasingly rely on agents for \\emph{schema-guided extraction}: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with source evidence as grounding metadata. We present ExtractBench, a benchmark for schema-guided extraction and, to our knowledge, the first to score value accuracy, record completeness at scale, grounding, and measured cost together. The evaluation system contains 4,869 pages across 370 enterprise documents, 8 business domains, and 67 document types, with clear tags differentiating their challenge scenarios. The scalable schema and ground-truth curation pipeline combines independent-system agreement for real documents, known values for synthetic lists, and human verification for forms. We report order-insensitive value F1 for value accuracy, plus two grounding metrics for source traceability: word- and page-level F1. Commercial VLMs perform well on short documents but often truncate record lists on long ones, while coding agents retain higher accuracy at much higher cost. LlamaExtract Agentic Plus ranks first on all three metrics, wit...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures",
-    "url": "https://arxiv.org/abs/2607.28802",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28802v1 Announce Type: new Abstract: Existing evaluations often reduce agent failures to system-level outcomes, obscuring where the fault originated and which intervention would improve the agent system. This creates a repair-assignment problem: the same visible failure may call for model post-training, harness engineering, environment redesign, or benchmark repair depending on its source. Because agent behavior emerges from interactions among models, harnesses, users, tools, memory, and environments, outcome-level labels are often insufficient for improvement. Most failure taxonomies do little to resolve this problem because they are benchmark-specific and lack a shared structure. We introduce an interaction-centric taxonomy that localizes failures to the interactions in which they originate and identifies the responsible component. It organizes 41 failure modes by assigning each to an edge between two components and a fault side indicating where the repair belongs. This makes the taxonomy actionable: model-side failures identify targets for post-training, harness-side failures point to scaffolding and tool-integration fixes, and environment or grader failures reveal e...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Data Turnstile: A Scalable Open Framework for Function-Calling Data Generation",
-    "url": "https://arxiv.org/abs/2607.29250",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29250v1 Announce Type: new Abstract: Small language models (SLMs) are attractive for agentic deployment due to low latency, reduced cost, and on-device privacy, yet they struggle with tool-use tasks where training data is scarce and noisy. Unlike larger models, SLMs cannot compensate for low-quality supervision through sheer capacity, making data quality the critical bottleneck. We present Data Turnstile, an open-source framework that takes user-defined API specifications and generates high-quality synthetic training data for function calling. Turnstile decomposes multi-turn tool-use interactions into constrained, stepwise generation with validation and error-feedback loops, providing fine-grained control over API diversity, conversation complexity, and output correctness. We demonstrate effectiveness of domain adaptation with Turnstile data on two challenging function calling benchmarks. On the BFCL single-turn benchmark, a Qwen3-0.6B fine-tuned on Turnstile data without chain-of-thought achieves 75.9% overall accuracy (versus 67.4% for the base model with thinking enabled), closing the gap with thinking-enabled Qwen3-1.7B (78.4%) and Qwen3-4B (79.9%) despite being 3$\\...",
-    "matched_keywords": [
-      "agentic",
-      "API",
-      "benchmark",
-      "function calling",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Screenshots or Tools? Eliciting Tool Use and Managing Multimodal Context in Hybrid GUI-MCP Computer-Use Agents",
-    "url": "https://arxiv.org/abs/2608.03327",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-05T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03327v1 Announce Type: new Abstract: Hybrid computer-use agents can act through screenshots or call text tools. We find that having a tool available does not settle which way the effect goes. Under one identical GUI-MCP harness on the OSWorld-MCP benchmark (309 tasks), the same MCP tools improve a reasoning model by +4.0pp and degrade a non-reasoning model by -5.9pp (5 runs each, both beyond 2 SE). What separates the two is tool-decision behavior. The non-reasoning policy ignores, misnames, or falsely terminates around tools. The reasoning model avoids these failures, yet still calls a tool on only 55/309 tasks, 23.9% of the tool-reachable ones. We call this shortfall the adoption gap. Both levels of the problem share one cause: the model already has a cheaper route and is never trained to take it. Multi-turn RL probes that cause. At the action level, a dense tool bonus raises spreadsheet adoption 0.03 -> 0.33 and carries into greedy decoding, but held-out accuracy does not follow. Behavior is steerable; competence is not. The bottleneck lies in tool-call semantics. At the context level, a successful tool call often makes the next screenshot redundant. Dropping it and h...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "MCP",
-      "policy",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -403,7 +385,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -428,82 +410,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Hy-MultiTurn: A Six-Dimensional Benchmark for Deep Multi-Turn Dialogue Understanding",
-    "url": "https://arxiv.org/abs/2607.29196",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29196v1 Announce Type: new Abstract: Long-running multi-turn interactions with chatbots and agents are now common, and a correct response often depends on remembering earlier details, tracking later revisions, identifying intended objects or referents, and withholding action when required conditions are unmet. Existing multi-turn benchmarks typically cover short exchanges and do not fully evaluate these capabilities in long multi-turn interactions, particularly in Chinese, while offering limited insight into how and why models fail. To address these limitations, we analyze real chatbot failures to identify six recurring mechanisms and use them to define six controlled evaluation modes in Hy-MultiTurn, a Chinese benchmark for deep multi-turn dialogue understanding. The six modes evaluate constraint memory, precise execution, constraint synthesis, object localization, action suppression, and reference resolution. Across the six modes, we construct 209 controlled tasks spanning 12-76 turns, with dialogue length, irrelevant-topic distraction, and colloquial phrasing adding further difficulty. Evaluation of 22 frontier model configurations shows that Hy-MultiTurn is broadly...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "chatbot"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Are the Financial Reasoning from LLMs Credible? A Real World Test over Long-Horizon Statements",
-    "url": "https://arxiv.org/abs/2607.28661",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28661v1 Announce Type: new Abstract: Do Large Language Models (LLMs) possess genuine structural reasoning, or merely rely on surface-level pattern matching? The financial domain, demanding numerical precision and multi-step logic over long contexts, is an ideal testbed. Existing benchmarks fail to capture real-world industrial complexity, predominantly relying on multiple-choice questions or single-hop QA over cropped tables while ignoring intricate cross-statement dynamics and temporal de-cumulation. To bridge this gap, we introduce FinIndices, a large-scale benchmark evaluating data-processing fidelity over uncropped financial statements (up to 32K tokens). Utilizing an automated synthesis pipeline with adversarial traps, FinIndices encompasses Single-Index computation and Table-Index tabulation to test complex domain, temporal, and caliber reasoning. Our evaluation reveals two severe LLM vulnerabilities. First, a \"Knowledge Bottleneck\": despite memorizing formulas during pre-training, models demonstrate fragile pattern matching. Removing explicit formula hints causes performance to collapse (e.g., Gemini-3.1-Pro drops from 70.70% to 38.22% on table tasks), exposing f...",
-    "matched_keywords": [
-      "benchmark",
-      "Gemini"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 55,
-    "first_seen_at": "2026-08-04T08:10:18.112096+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands v1.10.0：1.10.0 (2026-08-05)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.10.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-05T15:54:34+00:00",
-    "summary_or_excerpt": "## 1.10.0 (2026-08-05) ## What's Changed ### Features * feat: set Canvas default model to GLM 5.2 by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16146 * feat: activity log export by @ShashwatXD in https://github.com/OpenHands/OpenHands/pull/16234 * feat: ship the featured automations landing dashboard by @hieptl in https://github.com/OpenHands/OpenHands/pull/16266 * feat(skills): filter the skills page with a faceted rail by @sleeyax in https://github.com/OpenHands/OpenHands/pull/16124 * feat: add manifest-driven sub-pages to the automation interface by @hieptl in https://github.com/OpenHands/OpenHands/pull/16303 ### Bug Fixes * fix: derive automation timeout cap from deployment by @neubig in https://github.com/OpenHands/OpenHands/pull/16233 * fix(backends): pin backend identity on sidebar conversation links by @rishavnaskar in https://github.com/OpenHands/OpenHands/pull/16243 * fix: use IPv4 loopback for local proxy targets by @wangmeiwen in https://github.com/OpenHands/OpenHands/pull/16290 * fix: resolve npm audit vulnerabilities by @hieptl in https://github.com/OpenHands/OpenHands/pull/16264 * fix: preserve MCP credentials during Canvas mutations by @neubig in...",
-    "matched_keywords": [
-      "automation",
-      "GitHub",
-      "GLM",
-      "MCP",
-      "OpenHands"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "model",
-      "open_source"
-    ],
-    "score": 52,
-    "release_version": "v1.10.0",
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -525,8 +433,8 @@
     ],
     "score": 46,
     "release_version": "1.15.12",
-    "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -549,7 +457,7 @@
     "score": 42,
     "hn_score": 77,
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -574,7 +482,7 @@
     "score": 42,
     "release_version": "stable",
     "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-06T07:58:36.756332+08:00",
+    "last_seen_at": "2026-08-07T09:50:37.898089+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

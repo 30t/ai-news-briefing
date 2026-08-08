@@ -1,5 +1,28 @@
 [
   {
+    "title": "Same Task, Different Work: Prompt-Induced Waste in Coding Agents",
+    "url": "https://arxiv.org/abs/2608.01347",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.01347v3 Announce Type: replace Abstract: Two prompts can request the same code change and produce the same correct patch, yet cause a coding agent to perform radically different kinds and amounts of work. We study this effect in a preregistered benchmark spanning 4,644 valid runs, 24 deterministic coding tasks, seven reasoning models, and two real agent harnesses. The central finding is that prompt wording does not merely scale total effort; it changes where that effort is spent. Multiple approaches and deep thinking primarily inflate reasoning. Multiple approaches increases reasoning by 2.4x to 7.4x across all six open models and creates about three elaborated but discarded solution branches, while still yielding only one implemented solution and no success gain. Maximum certainty activates a different pathway: repeated verification propagates into extra test runs, tool calls, turns, latency, and context growth. Runs with high redundant verification cost 18x the clean-run median, execute 2.5x more tool calls, and take 3x longer, again without a success gradient. These mechanisms therefore have distinct cost carriers: some prompts are reasoning-heavy and token-borne, wh...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "What We Observe as LLM Behavior Can Be a Side-effect of Inference Backend",
     "url": "https://arxiv.org/abs/2608.04714",
     "source_name": "arXiv cs.AI",
@@ -19,31 +42,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
-    "url": "https://arxiv.org/abs/2607.28545",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-06T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28545v2 Announce Type: replace-cross Abstract: Large language models can write, patch, and search code, but oncall root cause analysis (RCA) demands something different: reasoning over noisy metrics, logs, traces, and source code, starting from ambiguous user-facing reports, often hours after the incident began. We introduce ORCA-bench, a benchmark that puts general-purpose coding agents in a production-fidelity oncall setting. ORCA-bench pairs a live OpenTelemetry-instrumented microservice system--exposing six days of metrics, logs, and traces through real telemetry interfaces (Prometheus, Jaeger, and OpenSearch via Grafana) and full source-code access--with 1,079 RCA tasks that systematically vary report specificity, time-to-detection, and co-occurring fault scenarios. Ground-truth symptoms are curated and signed off by expert SREs, and our LLM-as-judge is independently re-scored by humans (Cohen's $\\kappa_w=0.90$). Across five frontier agents, the best RCA Accuracy is 25.3% on Medium-difficulty tasks (the realistic-input setting) and 10.0% on Hard--a gap that remains even with Claude Fable 5. The weakest model hallucinates an implausible root cause in 40% of incident...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "Claude"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -68,7 +67,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -92,7 +91,7 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -116,29 +115,34 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "To Add Is Machine, To Delete Is Human: Measuring and Mitigating Deletion Avoidance in LLM Code Editing",
-    "url": "https://arxiv.org/abs/2607.28887",
-    "source_name": "arXiv cs.AI",
+    "title": "The Bitter Lesson of Tool Calling",
+    "url": "https://arxiv.org/abs/2608.06370",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28887v1 Announce Type: cross Abstract: Large language models increasingly write and repair production code, yet evidence is mounting that their test-passing patches leave codebases harder to maintain. We identify one concrete source: deletion avoidance, the systematic tendency to retain code that an intended edit requires removing. Across the five leading models on the official SWE-bench Verified leaderboard, deletion recall against the developer patch reaches at most 71.7% even on tasks all five solve, and models reach the right file for over 92% of required deletions but cut the exact line in under 52% of cases. Instead, 29.0% of passing patches wrap the targeted code in a guard or fallback, a pattern we call Guard-and-Go. Such patches pass because the original tests rarely check removal: when we retrofit 34 Verified tasks with tests that fail if the targeted code remains, four frontier models spanning closed and open weights fall from 63.2% to 41.9%. Because real repairs mix removal with addition, we curate CanItDelete, a benchmark of 200 tasks mined from real commits whose entire required edit is deletion. Even with the addition work gone, the best model still fails...",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.06370v1 Announce Type: new Abstract: Tool use transforms LLMs into agents that act beyond their training data, and for code-capable models, programmatic tool calling extends this further by replacing rigid JSON calls with scripts that chain and parallelize naturally. However, a systematic evaluation of tools as code on an established benchmark across current and prior model generations under real-world task conditions has not been conducted. In this work, we empirically compare programmatic tool calling (PTC) to native JSON tool calling across 14 language models on BFCL v4. In the programmatic tool calling paradigm, tools are exposed as typed Python stubs that the model invokes through code, with execution and results handled in a single agent turn. Programmatic tool calling matches or exceeds native JSON tool calling in 11 of 14 models on BFCL v4, with the GPT-5.6 family achieving a 10.6% improvement over the JSON tool calling baseline. Further, it matches or outperforms baseline in 13 of 14 models under parallel fan-out, and holds stable under context rot conditions where baseline degrades 2.3% on average. Our results demonstrate that programmatic tool calling is a vi...",
     "matched_keywords": [
+      "Agent",
+      "agents",
       "benchmark",
-      "weights"
+      "GPT",
+      "tool use"
     ],
     "tags": [
+      "agent",
+      "model",
       "open_source"
     ],
-    "score": 66,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "backlog",
+    "score": 65,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -161,57 +165,8 @@
     ],
     "score": 65,
     "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Tool Specifications Matter: Uncovering and Mitigating Safety Risks in AI Agents",
-    "url": "https://arxiv.org/abs/2607.29254",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29254v1 Announce Type: new Abstract: AI agents extend large language models (LLMs) with external tools, enabling them to perform complex tasks and translate model outputs into consequential real-world actions. Yet LLMs often become substantially less safe when deployed as agents, and the source of this degradation remains poorly understood. In this paper, we identify schema-formatted tool specifications as a primary source of agent safety degradation and show, through white-box representation analysis, that they weaken the model's internal refusal signals and contribute to unsafe tool execution. Building on this finding, we propose SafeKeep, an inference-time safeguard that decouples safety judgment from tool execution: it assesses requests using flattened textual tool specifications while retaining the original schema-formatted specifications for execution. Across two representative benchmarks and four LLMs, including both white-box and black-box models, SafeKeep increases the average refusal rate for harmful requests from 23.8% to 70.6% and reduces the average attack success rate under observation-level prompt injection from 25.6% to 2.5%. It also outperforms existing...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GrandCode: Achieving Grandmaster Level in Competitive Programming via Agentic Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2604.02721",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.02721v3 Announce Type: replace Abstract: Competitive programming remains one of the last few human strongholds in coding against AI. The best AI system to date still underperforms the best humans competitive programming: the most recent best result, Google's Gemini~3 Deep Think, attained 8th place even not being evaluated under live competition conditions. In this work, we introduce GrandCode, a multi-agent RL system designed for competitive programming. The capability of GrandCode is attributed to two key factors: (1) It orchestrates a variety of agentic modules (hypothesis proposal, solver, test generator, summarization, etc) and jointly improves them through post-training and online test-time RL; (2) We introduce Agentic GRPO specifically designed for multi-stage agent rollouts with delayed rewards and the severe off-policy drift that is prevalent in agentic RL. GrandCode is the first AI system that consistently beats all human participants in live contests of competitive programming: in the most recent three Codeforces live competitions, i.e., Round~1087 (Mar 21, 2026), Round~1088 (Mar 28, 2026), and Round~1089 (Mar 29, 2026), GrandCode placed first in all of them,...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "Gemini",
-      "multi-agent",
-      "policy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -233,8 +188,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -259,7 +214,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -282,8 +237,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -308,7 +263,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -332,7 +287,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -358,19 +313,164 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-06T07:58:36.756332+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents",
-    "url": "https://arxiv.org/abs/2608.00009",
+    "title": "CRINN: Contrastive Reinforcement Learning for Approximate Nearest Neighbor Search",
+    "url": "https://arxiv.org/abs/2508.02091",
     "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.00009v1 Announce Type: new Abstract: Long-term memory remains a critical bottleneck for conversational AI agents, whose finite context windows cannot support coherent recall across thousands of turns. We present AgentMemBench, a unified, reproducible benchmark evaluating five memory management strategies under identical conditions: in-context windowing (ICW), external key-value store (EKV), graph-based episodic memory (GEM), compression-based summarisation (CBS), and web-augmented memory (WAM). All are assessed across three public datasets covering long-term multi-session dialogue (LoCoMo), task-oriented document grounding (MultiDoc2Dial), and persona-grounded multi-session chat (MSC), using Recall@k, MRR, nDCG@k, Answer F1, an LLM-judge Faithfulness score, Memory Footprint, and Latency over 491 annotated question turns. Generation and judging both use Qwen2.5-7B-Instruct (4-bit), with greedy decoding for determinism. Our results show that (1) EKV dominates on every quality axis (macro Recall@5 0.792, MRR 0.677, F1 0.156, Faithfulness 0.354); (2) long-range recall is decisive: on LoCoMo, where the gold turn lies many sessions back, ICW, WAM, GEM, and CBS retrieve almost...",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2508.02091v4 Announce Type: replace-cross Abstract: Approximate nearest-neighbor search (ANNS) algorithms have become increasingly critical for recent AI applications, particularly in retrieval-augmented generation (RAG) and agent-based LLM applications. In this paper, we present CRINN, a new paradigm for ANNS algorithms. CRINN treats ANNS optimization as a reinforcement learning problem where execution speed serves as the reward signal. This approach enables the automatic generation of progressively faster ANNS implementations while maintaining accuracy constraints. Our experimental evaluation demonstrates CRINN's effectiveness across six widely-used NNS benchmark datasets. When compared against state-of-the-art open-source ANNS algorithms, CRINN achieves best performance on three of them (GIST-960-Euclidean, MNIST-784-Euclidean, and GloVe-25-angular), and tied for first place on two of them (SIFT-128-Euclidean and GloVe-25-angular). The implications of CRINN's success reach well beyond ANNS optimization: It validates that LLMs augmented with reinforcement learning can function as an effective tool for automating sophisticated algorithmic optimizations that demand specializ...",
     "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EcoAgent-Bench: Evaluating Economic Decision-Making in Budget-Constrained LLM Agents",
+    "url": "https://arxiv.org/abs/2608.05519",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.05519v1 Announce Type: cross Abstract: Agent benchmarks usually measure task completion and treat resource use as an auxiliary statistic. In deployment, however, the choice among a local lookup, broad search, composite research tool, stronger model, or human escalation is part of the task itself. We introduce EcoAgent-Bench, in which every task specifies priced actions and an explicit budget. Its 304 real-derived tasks span five families adapted from GAIA, HotpotQA, and MuSiQue, and test four decisions: avoiding unnecessary escalation, escalating when local evidence is insufficient, selecting a model tier, and stopping on unsupported premises. We evaluate seven LLM agents in tool-API and workspace-CLI settings, together with four oracle scripted controls. Micro-averaged accuracy rewards one-sided policies: always-escalate controls achieve high micro success while failing save-oriented tasks. We therefore also report an economic-consistency score (the worse of accuracy on upgrade-oriented and save-oriented family groups) which exposes this failure. Tool-API agents attain only 3.9-24.0% micro strict success (at most 7.3% economic consistency), often either stopping before...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AI Security Leaderboard: Methodology, Results and Minimal Standard",
+    "url": "https://arxiv.org/abs/2608.03070",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.03070v2 Announce Type: replace-cross Abstract: The AI Security Leaderboard is an independent benchmark that ranks the safeguards of frontier AI models from least to most secure. It tests models against the FAR$.$AI Minimal Standard for Safeguards, which represents a minimum bar for security: meeting it does not guarantee a secure model, but failing to meet it guarantees a lack of state-of-the-art security. Version 1.0 covers severe misuse requests across chemical, biological, radiological, nuclear, and explosive (CBRNE) threats and offensive cybersecurity. In this report, we tested four leading models for universal jailbreaks in the context of this minimal standard, and found more than a hundredfold difference in security. Claude Fable 5 and GPT-5.6 Sol held against every attack we ran, with no universal jailbreak found; we estimate they would likely cost more than \\$14,200 to jailbreak, if it is possible with this methodology at all. Meanwhile, we found hundreds of universal jailbreaks for Grok 4.5 and Gemini 3.1 Pro; each broke for under \\$300, with universal jailbreaks in Grok's weakest domain, cybersecurity, accessible for as little as \\$24. The gap is fixable: ever...",
+    "matched_keywords": [
+      "benchmark",
+      "Claude",
+      "Gemini",
+      "GPT",
+      "Grok"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 59,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India",
+    "url": "https://arxiv.org/abs/2608.06027",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.06027v1 Announce Type: new Abstract: In India, almost every social benefit starts with a form, yet the people who need these benefits most are often unable to read or write. Reaching them requires a spoken conversation. Today that work falls to frontline health workers who enroll beneficiaries one at a time, a poor use of stretched capacity. We built FormBharo (\"fill the form\" in Hindi), a voice agent that fills a structured form over a phone call under tight latency and cost budgets by pairing Large Language Models (LLMs) with deterministic, rule-based validation and flow control. It is being piloted with ARMMAN, an NGO running large-scale maternal and child mobile-health programs in India, to enroll low-income, Hindi-speaking mothers in antenatal and postnatal care. To our knowledge, it is the first voice agent piloted to fill an enrollment form for this population. We openly release FormVoiceAgentBench, a benchmark pairing human-recorded Hindi audio with 3,760 multi-turn conversation tests across 960 simulated calls, to evaluate our agent's components (transcription, extraction, reply generation) and end-to-end form completion under real acoustic variations. Form com...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "release",
+      "voice agent"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LangChoiceBench: Measuring and Explaining Programming-Language Choice in LLMs",
+    "url": "https://arxiv.org/abs/2608.06041",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.06041v1 Announce Type: cross Abstract: Large language models (LLMs) have been shown to exhibit strong Python preferences when generating project-level code, but there is currently no systematic way to measure this behaviour across new models. To bridge this gap, we introduce LangChoiceBench, a project-level code-generation benchmark for measuring Python preference, recommendation-implementation consistency, and language diversity. LangChoiceBench covers 28 projects across seven software areas where Python is often a poor default. We evaluate 25 diverse LLMs and find that Python remains heavily over-selected, recommendation-implementation consistency is low, and smaller open-weight models generally show stronger Python preference and lower language diversity. We further analyse 9,826 reasoning traces and find that most Python choices are automatic or driven primarily by ease, rather than explicit consideration of project requirements. In a smaller but important set of cases, models fabricate contextual support for choosing Python - a failure mode we call phantom evidence - or produce code that contradicts the language selected in their own reasoning.",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Can Deep Research Agents Retrieve and Organize? Evaluating the Synthesis Gap with Expert Taxonomies",
+    "url": "https://arxiv.org/abs/2601.12369",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2601.12369v5 Announce Type: replace Abstract: Deep Research Agents increasingly automate survey writing, yet existing benchmarks do not jointly test whether they retrieve the papers experts consider essential and organize those papers into paper-grounded taxonomies. We introduce TaxoBench, a benchmark built from 72 highly cited LLM surveys, 3,815 cited papers, and their expert-authored taxonomies. TaxoBench evaluates systems in two settings: Deep Research mode measures end-to-end retrieval and organization from a topic, while Bottom-Up mode provides the expert paper set and isolates organization. We evaluate leaf-level assignments with ARI and V-Measure and hierarchy-level structure with US-TED, US-NTED, and Sem-Path. Across 7 Deep Research Agents and 16 LLM configurations, the best agent retrieves only 20.92% of expert-cited papers, and none of 70 standard Bottom-Up runs reaches the experts' average depth of 4.86. A controlled probe shows that models which match this depth do so by fragmenting the taxonomy, reducing alignment with the expert reference. We further find that raw Sem-Path remains near a no-organization floor even when a newer model generation gains 3.68 pp ARI...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Memory in the LLM Era: Modular Architectures and Strategies in a Unified Framework",
+    "url": "https://arxiv.org/abs/2604.01707",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-08T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2604.01707v3 Announce Type: replace Abstract: Memory emerges as the core module in the large language model (LLM)-based agents for long-horizon complex tasks (e.g., multi-turn dialogue, game playing, scientific discovery), where memory can enable knowledge accumulation, iterative reasoning and self-evolution. A number of memory methods have been proposed in the literature. However, these methods have not been systematically and comprehensively compared under the same experimental settings. In this paper, we first summarize a unified framework that covers existing representative agent memory methods from a high-level perspective. We then extensively compare representative agent memory methods on two long-term conversational benchmarks and an agentic memory benchmark, and examine the effectiveness of representative methods, providing a thorough analysis of those methods. As a byproduct of our experimental analysis, we also design a new memory method by exploiting modules in the existing methods, which outperforms the state-of-the-art methods. Finally, based on these findings, we offer promising future research opportunities. We believe that a deeper understanding of the behavi...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
       "agents",
       "benchmark"
     ],
@@ -378,89 +478,57 @@
       "agent",
       "open_source"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Cost-Effective Automated Judging of Natural-Language Mathematical Proofs",
-    "url": "https://arxiv.org/abs/2608.00004",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-04T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.00004v1 Announce Type: new Abstract: Grading natural-language mathematical proofs is a recurring cost in evaluating math-reasoning systems, and frontier LLM judges are expensive. We ask whether cheap open-weight models can serve as reliable judges given a candidate proof, a ground-truth proof, and a human-grading rubric. On a 200-instance validation sample of IMO-GradingBench, three cheap judges (GPT-OSS 120B, DeepSeek-V4 Flash, Gemma-4 31B) agree with human pass/fail decisions at rates statistically indistinguishable from Claude Opus 4.7 and Gemini 3.1 Pro, at up to $100\\times$ lower cost. We had expected a majority vote of the three to be the best budget option; it matched the frontier but did not improve on its strongest member. Extending to the full 1000-instance benchmark and exploring consensus rules, we found that requiring unanimous agreement (all-three-pass) reaches the highest pass-agreement and precision and, on four replicate runs, the smallest run-to-run spread. The headline finding is that cheap judges are competitive with the frontier at one to two orders of magnitude lower cost; as a deployable default we recommend all-three-pass, with the caveat that th...",
-    "matched_keywords": [
-      "benchmark",
-      "Claude",
-      "DeepSeek",
-      "Gemini",
-      "GPT"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Copilot code review effort levels are generally available",
-    "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-07T20:49:26+00:00",
-    "summary_or_excerpt": "Lite and Balanced effort levels for GitHub Copilot code review are now generally available. They let you match the depth of a review to the complexity and risk of a… The post Copilot code review effort levels are generally available appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "code review",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "score": 58,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Copilot usage metrics API adds agent app activity",
-    "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
-    "source_name": "GitHub Changelog",
+    "title": "OpenAI puts the brakes on a new model because it’s supposedly too powerful",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities",
+    "source_name": "The Verge AI",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-07T18:20:47+00:00",
-    "summary_or_excerpt": "Since agent apps arrived on GitHub, teams have been able to run agents from partners like Claude and Codex directly in their GitHub workflows. The Copilot usage metrics API now… The post Copilot usage metrics API adds agent app activity appeared first on The GitHub Blog .",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-07T18:40:34+00:00",
+    "summary_or_excerpt": "OpenAI says it is pausing \"internal activities\" around an in-development AI model, Astra, because it doesn't yet meet new security standards the company is putting in place. The announcement follows its recent disclosure that OpenAI models accidentally hacked Hugging Face. Anthropic and Meta have also since admitted that they had AI models that went rogue […]",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "API",
-      "changelog",
-      "Claude",
-      "Codex",
-      "GitHub"
+      "Anthropic",
+      "OpenAI"
     ],
     "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "model",
-      "open_source"
+      "model"
     ],
-    "score": 50,
-    "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "score": 48,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10330：CUDA: fuse rms_norm + mul + rope (+ view + set_rows) (#26767)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10330",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-08T17:20:30+00:00",
+    "summary_or_excerpt": "CUDA: fuse rms_norm + mul + rope (+ view + set_rows) (#26767) * CUDA: fuse rms_norm + mul + rope (+ view + set_rows) * tests: add broadcast weight case to rms_norm_mul_rope * CUDA: check memory ranges before rms_norm rope fusion * CUDA: check memory ranges in rope set_rows fusion **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10330/llama-b10330-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://git...",
+    "matched_keywords": [
+      "CUDA",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 46,
+    "release_version": "b10330",
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -484,8 +552,80 @@
     "score": 46,
     "release_version": "1.15.12",
     "first_seen_at": "2026-08-07T09:50:37.898089+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Firebird Launches CIS Region’s Largest AI Factory in Armenia",
+    "url": "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-08T10:24:54+00:00",
+    "summary_or_excerpt": "The global buildout of AI infrastructure reached a new milestone today — Firebird, an emerging AI cloud, launched the CIS region’s largest AI factory in Armenia, establishing a new AI computing hub powered by NVIDIA accelerated computing and Dell Technologies high-performance AI infrastructure. Nikol Pashinyan, prime minister of the Republic of Armenia; Zhaslan Madiyev, deputy […]",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "GitHub Copilot weekly releases — August 3",
+    "url": "https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-07T23:16:02+00:00",
+    "summary_or_excerpt": "This week’s updates across GitHub Copilot in the desktop app, CLI, and VS Code help you resume and organize work, review changes, and ask questions without losing context. GitHub Copilot… The post GitHub Copilot weekly releases — August 3 appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 45,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Moonlight & Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra)",
+    "url": "https://simonwillison.net/2026/Aug/7/moonlight-mayhem",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-07T19:18:09+00:00",
+    "summary_or_excerpt": "Moonlight & Mayhem (Raccoon Heist by Codex + GPT-5.6 Sol Ultra) On Wednesday I wrote about One-shotting a Raccoon Heist game using Claude Fable 5 , where I had Claude Fable 5 build a full working game from a premise I generated with GPT-3 and DALL-E four years ago . I decided to pose the exact same prompt to Codex Desktop running GPT-5.6 Sol Ultra - the mode where Sol makes aggressive use of sub-agents - to see how it would do. It produced a much better game! Here's Moonlight & Mayhem - GitHub repository here , including the textures and prompts it generated using gpt-image-2 . Your browser does not support HTML5 video. The original GPT-3 generated game description included: In “Raccoon Heist”, you and your team of thieving raccoons are tasked with pulling off a series of daring heists. From robbing banks to stealing priceless art, no job is too big or too small for your furry crew. Fable's version had you as a single raccoon running around a back yard collecting coins and fish. GPT-5.6 Sol has you in a museum, rescuing your two other raccoon crewmates in order to stack on top of each other and bust the golden sardine out of its case. Much more heisty! There was one catch though:...",
+    "matched_keywords": [
+      "agents",
+      "Claude",
+      "Codex",
+      "GitHub",
+      "GPT",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -507,55 +647,7 @@
     "score": 42,
     "release_version": "n8n@2.34.4",
     "first_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
-    "url": "https://hoplite.sh",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-03T16:32:06+00:00",
-    "summary_or_excerpt": "HN points: 77. Comments: https://news.ycombinator.com/item?id=49157997",
-    "matched_keywords": [
-      "agents",
-      "launch"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 42,
-    "hn_score": 77,
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n stable：[2.33.3](https://github.com/n8n-io/n8n/compare/n8n@2.33.2...n8n@2.33.3) (2026-07-31)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-04T08:20:39+00:00",
-    "summary_or_excerpt": "## [2.33.3](https://github.com/n8n-io/n8n/compare/n8n@2.33.2...n8n@2.33.3) (2026-07-31) ### Bug Fixes * **core:** Import security audit risk reporters with a file extension ([#35275](https://github.com/n8n-io/n8n/issues/35275)) ([6a71142](https://github.com/n8n-io/n8n/commit/6a71142f9d45cb8b9f45ca2bbe0da36bad02cca0)) * **MCP Server Trigger Node:** Save execution data only after tool call completes ([#35284](https://github.com/n8n-io/n8n/issues/35284)) ([77271fa](https://github.com/n8n-io/n8n/commit/77271fa3b20cf66004211b3b76fb44d2df281cdf)) ---",
-    "matched_keywords": [
-      "GitHub",
-      "MCP",
-      "n8n"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 42,
-    "release_version": "stable",
-    "first_seen_at": "2026-08-05T08:06:47.016816+08:00",
-    "last_seen_at": "2026-08-08T07:33:33.418191+08:00",
+    "last_seen_at": "2026-08-09T07:26:56.043537+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

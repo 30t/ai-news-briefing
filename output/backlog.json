@@ -20,8 +20,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -42,55 +42,76 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "WebRider: Persona-Conditioned Intent Controllers for Live-Web Assistance",
-    "url": "https://arxiv.org/abs/2608.06704",
+    "title": "OBLIVION: Workflow-Level Operational Skill Unlearning for Deployed Agents",
+    "url": "https://arxiv.org/abs/2608.08264",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06704v1 Announce Type: new Abstract: Delegating a web task involves more than asking a question; it requires transferring a policy: what to verify, how to handle uncertainty, which preferences matter, and when to stop. Yet, current live-web agents are evaluated solely on the final answer, ignoring the policy constraints that define the delegation. A plausible final answer can conceal violations of that policy. Our full live audit reveals this critical gap: a strong controller completes 99.2% of tasks but honors all policy constraints in only 38.8% of cases. Finishing does not imply fidelity. WebRider bridges this gap by formalizing the delegated policy as an intent contract---an operational record of goals, constraints, evidence obligations, answer form, and task-local persona controls that must hold even as web pages change. WebRider employs a hierarchical architecture: a top-layer controller maintains the contract, a middle layer realizes intentions as guarded executable actions, and a tool layer executes these actions via browser, search, and maps tools. Our benchmark, RiderBench, evaluates this design on 4,096 live-web contracts across 42 public websites, auditing b...",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08264v1 Announce Type: new Abstract: Large language model agents are becoming operational interfaces to files, memories, registries, and external tools. This deployment shift creates a new skill revocation problem: after a skill is removed from an explicit registry, an agent may still reconstruct it from residual carriers such as archives, transcripts, schemas, or memory entries. We study this problem as operational skill unlearning, where the goal is not parameter-level forgetting, but preventing a deployed agent from rebuilding a revoked skill through primitive tools. We introduce OBLIVION, a controlled benchmark and defense harness for revoked-skill resurrection. OBLIVION models each episode as a source-to-sink workflow, applies Cross-Surface Coherent Erasure to reduce residual carriers, and uses frozen workflow remediation near dangerous sinks. On the locked 88 attack episodes, the no-defense arm reaches formal attack success rate 1.0. OBLIVION reduces the rate to 0.114 and impact-weighted exposure to 0.115 while keeping locked utility at 1.0 and benign block rate at 0. In a separate skill-attack-derived sandbox, OBLIVION reduces attack success from 1.0 to 0.2 and i...",
     "matched_keywords": [
+      "Agent",
       "agents",
       "benchmark",
-      "policy"
+      "workflow"
     ],
     "tags": [
       "agent",
-      "business",
+      "ai_app",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Topology-Aware Data Movement for Disaggregated GPU Inference",
-    "url": "https://arxiv.org/abs/2607.28633",
+    "title": "Yesterday's Shield, Today's Spear: A Self-Evolving Safety Guardrail in Production",
+    "url": "https://arxiv.org/abs/2608.08471",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.28633v2 Announce Type: replace-cross Abstract: Disaggregated LLM inference creates a datacenter networking problem that no existing system solves correctly. When prefill and decode run on separate GPU pools, the KV cache must be transferred between them. For a 70B model this is 1.3 GB per request, exceeding 100 GB/s aggregate at production scale. Yet DistServe, Splitwise, and Mooncake all use uniform RDMA, ignoring that bandwidth between two GPUs varies by 72x depending on their physical relationship: 900 GB/s via NVLink 4.0 within a domain (1.8 TB/s on NVLink 5, widening the gap to 144x), 50 GB/s via InfiniBand across nodes, 12.5 GB/s via TCP across data centers. We design a topology-aware transfer orchestrator that discovers interconnect hierarchy at startup and selects optimal transport per transfer. Three mechanisms work together: (1) pipelined layer-by-layer transfer that overlaps transmission with ongoing prefill, hiding 76 to 100 percent of transfer latency behind computation depending on transport, with NVLink and PCIe transfers hidden entirely; (2) NVLink domain-aware placement for Mixture-of-Experts models that co-optimizes expert dispatch with KV cache locali...",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08471v1 Announce Type: new Abstract: Deployed LLM safety guardrails are predominantly static: trained once and frozen at release, while new jailbreak techniques and previously un-addressed harmful categories emerge within days, leaving the defense perpetually a step behind. We present SESG (Self-Evolving Safety Guardrails), a multi-agent system running in production. SESG monitors the live traffic behind a deployed guardrail and surfaces two classes of failure: jailbreaks novel in form and harmful categories novel in content. Once a failure is confirmed, a generation agent synthesizes paired training data targeted at it; a validation agent rebalances the batch toward the direction in which the deployed model errs, so that the model's own mistakes steer its training set; and a routing agent matches the training action to the diagnosed gap and returns the next version to production. Over six rounds of live evolution (V0 to V6), a 1.7B guardrail adapts to a new threat in 16-24 hours, with about 2 hours of human effort, versus the 40-90 hours of the manual process it replaces. On six emerging threats, it outperforms static guardrails from 0.6B to 9B and an adaptive baseline...",
     "matched_keywords": [
-      "GPU",
-      "inference",
-      "startup"
+      "Agent",
+      "multi-agent",
+      "release"
     ],
     "tags": [
-      "business",
-      "open_source",
-      "semiconductor"
+      "agent",
+      "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Not an A11y: How Android Accessibility Exposes Mobile AI Agents to Indirect Prompt Injection",
+    "url": "https://arxiv.org/abs/2608.08939",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08939v1 Announce Type: new Abstract: The rise of autonomous AI agents represents a major paradigm shift in how users interact with mobile devices. Frameworks such as MobileRun and Mobile-Use can autonomously navigate Android applications and execute complex multi-step tasks. To interpret user interfaces, these frameworks rely primarily on Android accessibility (A11y) trees and secondarily on visual screenshots. In this paper, we demonstrate that this architectural dependence on unsanitized accessibility metadata, together with visual input, introduces a systemic vulnerability to indirect prompt injection. We show that adversarial prompts can cause autonomous agents to abandon their original objectives, violate context boundaries, and perform unauthorized device actions. Our empirical evaluation demonstrates goal hijacking, context drift, and unauthorized actions across visually hidden and fully exposed attack scenarios. In aggregate, MobileRun reaches an attack success rate of 0.822 with Gemma4:31B, while Mobile-Use with Qwen3.6:35B reduces this to 0.150 but does not eliminate context drift or unauthorized actions. These findings reveal that current mobile agent framewo...",
+    "matched_keywords": [
+      "Agent",
+      "agents"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -113,7 +134,78 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Your Prompt Is Not the Only Prompt: How Much Do LLMs Weight Structured-Output Schema Descriptions?",
+    "url": "https://arxiv.org/abs/2608.08254",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08254v1 Announce Type: new Abstract: Structured output, where an LLM populates a predefined JSON schema, has become a default mechanism for data labeling and information extraction, but it also introduces a second instruction channel through schema descriptions. We tested whether classification-label definitions are better placed in the system prompt, user prompt, or schema description using a single-field classification task with nonce labels across ten model configurations from two vendors. Schema descriptions did not consistently outperform prompt-based placement; for GPT-4.1 and GPT-5.4 without reasoning, schema placement underperformed system prompts by 11-13 percentage points. Yet schemas are not inert metadata: when prompts and schemas conflicted, incorrect schema instructions caused accuracy drops of 5-45 points, with Claude Haiku 4.5 falling from 52.5% to 7%, indicating that schema instructions can override prompt instructions, and GPT-5.5 falling from 100% to 73%. Further, adding a required intermediate reasoning field before the label field improved schema-only accuracy by 15-24 points when headroom existed, exceeding system-prompt-only performance in every c...",
+    "matched_keywords": [
+      "Claude",
+      "GPT"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LLM within MCP Matters: Measuring Inefficient Resource Utilization Driven by LLMs",
+    "url": "https://arxiv.org/abs/2608.08467",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08467v1 Announce Type: new Abstract: The Model Context Protocol (MCP) standardizes how servers expose data and tools to Large Language Models (LLMs). A common server design embeds frequently used reference data, such as identifier lookup tables, directly in the server instructions: the system-prompt text a server hands to the host application. When a query concerns an entry of the embedded table, the model can act on it immediately instead of re-discovering the same information through a search tool. We test whether client LLMs actually consume such instruction-embedded data, reporting a 54,000-trial study across 24 LLMs (9 Claude, 6 Gemini, 9 GPT) on a production legal-information MCP server. A diagnostic condition that removes the competing search tool shows that failures are dominated by behavioral preference rather than missing capability. With search unavailable, 23 of 24 models read the embedded data reliably (hit ratio at least 98%); with a search tool merely present, 9 models drop below 15%. A 2^3 factorial analysis of three instruction-level interventions reveals strong interaction effects: combining all three restores at least 86% for 20 of 24 models, but indi...",
+    "matched_keywords": [
+      "Claude",
+      "Gemini",
+      "GPT",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "tags": [
+      "agent",
+      "model"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PluginEval: A Diagnostic Benchmark for Fine-Grained Error Attribution in Function Calling",
+    "url": "https://arxiv.org/abs/2608.08700",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08700v1 Announce Type: new Abstract: Reliable evaluation of tool routing is critical as Large Language Models increasingly operate as autonomous agents. Current benchmarks face three structural limitations: data distributions that follow a power law leave rare scenarios underrepresented; the absence of adversarial hard negatives obscures performance differences across models; and annotation pipelines depend on LLM judgments that have not been validated through execution. In this paper, we introduce PluginEval, a benchmark constructed through a two-stage framework that systematically mitigates these limitations. First, we formulate tool routing as a sequence of three decisions and separate generation from verification. LLMs propose candidate calls, while deterministic validation and real API execution provide reliable quality signals. Second, we decompose each plugin by capability, intent, and boundary to identify trigger and exclusion scenarios. We then generate queries at different difficulty levels to fill coverage gaps, including adversarial negatives targeting three failure modes, and return them to the first stage for annotation. This process creates a closed loop...",
+    "matched_keywords": [
+      "agents",
+      "API",
+      "benchmark",
+      "function calling"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -136,7 +228,53 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TelemetrySuffBench: Is Agent Telemetry Sufficient for Failure-Origin Diagnosis?",
+    "url": "https://arxiv.org/abs/2608.07899",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.07899v1 Announce Type: new Abstract: Agent systems increasingly expose execution traces, yet telemetry that reveals a failure may still be inadequate for identifying where that failure originated. We introduce TelemetrySuffBench, a controlled benchmark that separates failure detection, fault-origin localization, and safe abstention under insufficient evidence. The benchmark constructs canonical multi-component traces with delayed-binding faults and renders them as paired coarse views, seven-factor telemetry masks, and exact-equal ambiguous origin pairs. We evaluate five frontier language models using unified protocols, explicit candidate sets, invalid-output accounting, subgroup analyses, and a frozen blind holdout. With full telemetry, origin-step Top-1 accuracy ranges from 33.8% to 97.2% across models. Metadata, OpenTelemetry-compatible, and OpenInference-compatible views retain 99.5% to 100% detection F1 while limiting origin-step accuracy to at most 0.5%, exposing a robust detection-localization gap. Factor ablations further show that removing decision content reduces origin-step accuracy to zero for every model, while provenance removal also causes large model-depe...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ForestBench: A Unified Graph Framework for Evaluating Multi-Agent Collaboration",
+    "url": "https://arxiv.org/abs/2608.08605",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.08605v1 Announce Type: new Abstract: Multi-agent systems (MAS) built on Large Language Models (LLMs) are proliferating rapidly, but their heterogeneous execution traces provide no common basis for evaluation across methods. Outcome-only benchmarks discard collaborations, whereas LLM-as-Judge evaluation requires additional, model-dependent inference and can vary with the LLM and rubric. We introduce a generalizable evaluation framework that maps native MAS traces into a shared space of unified collaboration graphs, enabling different methods to be evaluated under the same representation, reference set, and metric panel. Candidate graphs are compared with a query-specific reference forest. Each forest is a benchmark-provided collection of verified-success graphs: it records diverse ways in which representative MAS methods can complete the task, rather than prescribing a unique optimal process. Instantiating the framework as ForestBench, we filter $844$ collaboration-necessary queries from seven public datasets, precompute ten successful target-conditioned reference graphs per query, and evaluate six representative MAS frameworks. Controlled backbone, reference-constructio...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "inference",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -156,8 +294,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -179,56 +317,31 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CRINN: Contrastive Reinforcement Learning for Approximate Nearest Neighbor Search",
-    "url": "https://arxiv.org/abs/2508.02091",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2508.02091v4 Announce Type: replace-cross Abstract: Approximate nearest-neighbor search (ANNS) algorithms have become increasingly critical for recent AI applications, particularly in retrieval-augmented generation (RAG) and agent-based LLM applications. In this paper, we present CRINN, a new paradigm for ANNS algorithms. CRINN treats ANNS optimization as a reinforcement learning problem where execution speed serves as the reward signal. This approach enables the automatic generation of progressively faster ANNS implementations while maintaining accuracy constraints. Our experimental evaluation demonstrates CRINN's effectiveness across six widely-used NNS benchmark datasets. When compared against state-of-the-art open-source ANNS algorithms, CRINN achieves best performance on three of them (GIST-960-Euclidean, MNIST-784-Euclidean, and GloVe-25-angular), and tied for first place on two of them (SIFT-128-Euclidean and GloVe-25-angular). The implications of CRINN's success reach well beyond ANNS optimization: It validates that LLMs augmented with reinforcement learning can function as an effective tool for automating sophisticated algorithmic optimizations that demand specializ...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "EcoAgent-Bench: Evaluating Economic Decision-Making in Budget-Constrained LLM Agents",
-    "url": "https://arxiv.org/abs/2608.05519",
-    "source_name": "arXiv cs.CL",
+    "title": "TRACE: TRajectory Attribution for Automated Context Engineering",
+    "url": "https://arxiv.org/abs/2608.09153",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.05519v1 Announce Type: cross Abstract: Agent benchmarks usually measure task completion and treat resource use as an auxiliary statistic. In deployment, however, the choice among a local lookup, broad search, composite research tool, stronger model, or human escalation is part of the task itself. We introduce EcoAgent-Bench, in which every task specifies priced actions and an explicit budget. Its 304 real-derived tasks span five families adapted from GAIA, HotpotQA, and MuSiQue, and test four decisions: avoiding unnecessary escalation, escalating when local evidence is insufficient, selecting a model tier, and stopping on unsupported premises. We evaluate seven LLM agents in tool-API and workspace-CLI settings, together with four oracle scripted controls. Micro-averaged accuracy rewards one-sided policies: always-escalate controls achieve high micro success while failing save-oriented tasks. We therefore also report an economic-consistency score (the worse of accuracy on upgrade-oriented and save-oriented family groups) which exposes this failure. Tool-API agents attain only 3.9-24.0% micro strict success (at most 7.3% economic consistency), often either stopping before...",
+    "published_at": "2026-08-11T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.09153v1 Announce Type: new Abstract: Production AI agents fail when their context sources -- system prompts, knowledge bases, tool descriptions, and procedural skills -- contain errors or gaps. Current maintenance relies on manual log review and ad-hoc debugging, creating a scalability bottleneck as interaction volume grows. We present TRACE (TRajectory Attribution for Automated Context Engineering), an automated feedback loop that mines historical agent trajectories to diagnose and remediate context failures. Our key insight is that trajectories are rich with implicit dissatisfaction signals -- user corrections, rephrasing, abandonment cues -- that reveal precisely where context sources failed, without explicit feedback collection. Unlike model fine-tuning, TRACE operates on the context layer, enabling rapid iteration without retraining. We make four contributions: (1) a trajectory mining framework that systematically extracts diagnostic information from historical agent executions; (2) multi-component causal attribution that extends textual gradients from monolithic prompt optimization to heterogeneous context sources (skills, knowledge bases, tools, prompts); (3) exp...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "API"
+      "fine-tuning"
     ],
     "tags": [
       "agent",
-      "business"
+      "open_source"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -252,8 +365,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -280,8 +393,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -305,170 +418,27 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AI Security Leaderboard: Methodology, Results and Minimal Standard",
-    "url": "https://arxiv.org/abs/2608.03070",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-08T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03070v2 Announce Type: replace-cross Abstract: The AI Security Leaderboard is an independent benchmark that ranks the safeguards of frontier AI models from least to most secure. It tests models against the FAR$.$AI Minimal Standard for Safeguards, which represents a minimum bar for security: meeting it does not guarantee a secure model, but failing to meet it guarantees a lack of state-of-the-art security. Version 1.0 covers severe misuse requests across chemical, biological, radiological, nuclear, and explosive (CBRNE) threats and offensive cybersecurity. In this report, we tested four leading models for universal jailbreaks in the context of this minimal standard, and found more than a hundredfold difference in security. Claude Fable 5 and GPT-5.6 Sol held against every attack we ran, with no universal jailbreak found; we estimate they would likely cost more than \\$14,200 to jailbreak, if it is possible with this methodology at all. Meanwhile, we found hundreds of universal jailbreaks for Grok 4.5 and Gemini 3.1 Pro; each broke for under \\$300, with universal jailbreaks in Grok's weakest domain, cybersecurity, accessible for as little as \\$24. The gap is fixable: ever...",
-    "matched_keywords": [
-      "benchmark",
-      "Claude",
-      "Gemini",
-      "GPT",
-      "Grok"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 59,
-    "first_seen_at": "2026-08-09T07:26:56.043537+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "TRACE: A Multi-Layer Benchmark for Human AI Controller Coordination Under Drift and Failure",
-    "url": "https://arxiv.org/abs/2608.06657",
-    "source_name": "arXiv cs.AI",
+    "title": "Daybreak models are now available on AWS",
+    "url": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+    "source_name": "OpenAI News",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06657v1 Announce Type: new Abstract: Modern cyber-physical and AI-assisted systems couple human operators, AI decision modules, and automated controllers in a single control loop, so trustworthiness depends on the whole loop, not any one model. Yet no standard benchmark captures time-aligned, multi-layer traces of how drift and failures propagate across these layers, so we cannot diagnose where coordination breaks down, why, or how to recover. This paper targets one facet of that gap: drift, a deviation that can originate in any stack layer and that conventional single-modality monitoring cannot localize to a layer or pin to an onset time. We construct a benchmark by injecting controlled drift into traces derived from ALFRED, a grounded-instruction benchmark for everyday household tasks, yielding 1,918 drifted traces. Each trace is a time-aligned sequence of per-step records across five execution layers (state, observation, decision, rules, control), labeled with the drift type, affected layer, onset time, responsible actor, and causal mechanism, and validated by independent raters with inter-annotator agreement reported. We pair the dataset with a leak-aware protocol t...",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-11T10:00:00+00:00",
+    "summary_or_excerpt": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows.",
     "matched_keywords": [
-      "benchmark",
-      "dataset"
+      "OpenAI"
     ],
     "tags": [
-      "open_source"
+      "model"
     ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Long-Horizon Agent Trajectory Attribution: A Unified Benchmark and Fine-Grained Annotation Framework",
-    "url": "https://arxiv.org/abs/2608.06909",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06909v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly operate through long-horizon trajectories involving user instructions, tool use, external observations, and memory. Existing benchmarks primarily evaluate behavioral outcomes but provide limited support for fine-grained attribution analysis. We introduce trajectory attribution and develop a benchmark and annotation framework for this task. The benchmark organizes heterogeneous trajectories under a unified component schema and provides annotations of the primary attribution component, together with attack and execution chains where applicable. Instantiating the benchmark with trajectories from AgentDojo and the Stage and Canary settings of Agent3Sigma yields more than 1,300 annotated trajectories covering task-aligned actions, unsafe actions, and safety refusals. The benchmark defines two evaluation tasks, primary attribution localization and attribution-chain recovery, and provides reference baselines based on incremental trajectory contribution and component-level leave-one-out perturbation. It captures diverse attribution settings, including local and long-range attribution as well as...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "FinRank: An Evidence-Grounded Benchmark for Financial Question Answering and Retrieval over SEC Filings",
-    "url": "https://arxiv.org/abs/2608.07400",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.07400v1 Announce Type: new Abstract: Financial question answering is typically evaluated by answer correctness, yet in SEC filings a plausible and even numerically correct answer can be grounded in the wrong evidence. Similar facts and disclosures recur across sections of a filing, across reporting periods of the same firm, and across comparable firms. FinRank targets this provenance-sensitive retrieval problem by requiring systems to identify evidence for the intended entity, reporting period, and disclosure context. The benchmark contains 1185 manually authored question-answer records over the 10-K and 10-Q filings of 22 companies. Each record includes a reference answer, gold supporting passages, and hand-curated hard negatives drawn from confusable passages within filings, across reporting periods, and across comparable firms. FinRank evaluates passage retrieval, reranking, and hard-negative discrimination as separately measured tasks. Baseline results demonstrate the difficulty of this setting: among the evaluated systems, even a 7B instruction-tuned embedder reaches only 44.8% Recall@10 on the pooled evidence corpus; sub-billion-parameter encoders gain at most 3.5...",
-    "matched_keywords": [
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A Picture is Worth a Thousand Tokens: How Vision Language Models Cut AI Energy Costs While Improving Accuracy",
-    "url": "https://arxiv.org/abs/2608.07427",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.07427v1 Announce Type: new Abstract: LLM inference accounts for over 90% of AI operational energy, scaling directly with input token count---a critical inefficiency for telecom network analytics and numerical time-series data analysis (NTSDA), where raw multivariate KPI windows from 4G/5G cell sites expand into thousands of floating-point tokens. Vision-Language Models (VLMs) eliminate this mismatch by encoding time-series as 2D plots, achieving 3.6-10.4x input token reduction across Llama-3.2-90B, Qwen2.5-VL-72B, and Pixtral-12B architectures. This translates to 1.8-2.5x measured inference energy reduction, saving approximately 7.2 MJ/day at telecom edge deployments and CloudRAN that monitor 200 cells per 15-minute interval. Critically, efficiency gains do not sacrifice accuracy: a fine-tuned Llama-3.2-90B-Vision VLM achieves 220.7% higher precision than its text-only counterpart and outperforms LSTM and ARIMA baselines by over 144% on telecom anomaly detection. On public benchmarks, Pixtral-12B achieves a 20.6x improvement in J/F1 score at mean F1 = 0.82. At 24 KPIs, text representations exceed the 128K context window of most production LLMs, rendering text-only proce...",
-    "matched_keywords": [
-      "anomaly detection",
-      "inference",
-      "Llama"
-    ],
-    "tags": [
-      "embedded_edge_ai",
-      "model",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
-    "url": "https://arxiv.org/abs/2608.07437",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.07437v1 Announce Type: new Abstract: Reliable hypothesis testing is the foundation of many empirical scientific claims. Large language model (LLM) agents are increasingly used to automate this process, as they can inspect datasets, generate code, and produce analyses end-to-end. However, we show that they frequently make subtle inferential errors that lead to incorrect conclusions despite correctly executed analyses. Existing benchmarks fail to capture this failure mode, as they rarely assess whether a reported p-value is statistically valid given the assumptions underlying the data. We address this gap by building P-Bench, a benchmark comprising 425 open-ended, realistic hypothesis-testing tasks spanning economics, biology, and medicine. Each task requires an agent to select a statistical method, compute a p-value, and draw a conclusion given only a scientific hypothesis and a dataset. We further introduce Fisher-R1, an open-weight LLM agent trained for rigorous hypothesis testing using synthetic tasks and reinforcement learning. On P-Bench, Fisher-R1-14B substantially improves over its backbone and outperforms strong proprietary and open-source baselines, including GP...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "dataset"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CyberForge: Verified Vulnerability Injection at Repository Level for Cybersecurity Agent Training",
-    "url": "https://arxiv.org/abs/2608.06471",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06471v1 Announce Type: cross Abstract: Despite recent advances, frontier large language model (LLM) agents remain limited in discovering and patching complex vulnerabilities in real-world software. Generally available agents can already aid attackers, who only need to find one exploitable weakness, while defenders must continuously identify and patch all vulnerabilities across fast-growing codebases. Stronger defensive agents would help close this gap, yet the scarcity of security training data with reproducible build and execution environments remains a bottleneck. We present CyberForge, a framework that synthesizes executable, repository-level security training data by injecting vulnerabilities into real C/C++ projects. It validates each instance dynamically: the injected build must pass the project's unit tests, and generated proof-of-vulnerability (PoV) must trigger on the injected build and not on the clean one. CyberForge is not limited by the availability of disclosed vulnerabilities, therefore it can scale in comparison to data augmentation techniques which rely on historic CVE data. The resulting corpus holds 1034 validated vulnerabilities across 80 projects an...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "score": 56,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -484,8 +454,63 @@
     "tags": [],
     "score": 56,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Upcoming deprecation of MAI-Code-1-Flash",
+    "url": "https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-11T18:50:42+00:00",
+    "summary_or_excerpt": "With the launch of MAI-Code-1.1-Flash, we will deprecate MAI-Code-1-Flash across all GitHub Copilot experiences on September 10, 2026: Model Deprecation date Suggested alternative MAI-Code-1-Flash 9-10-2026 MAI-Code-1.1-Flash Please update your workflows… The post Upcoming deprecation of MAI-Code-1-Flash appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub",
+      "GitHub Copilot",
+      "launch"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 54,
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ComfyUI v0.32.0：* Make it easier to debug nested tensors. by @comfyanonymous in https://github.com/Comfy-O",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.32.0",
+    "source_name": "ComfyUI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-11T21:56:20+00:00",
+    "summary_or_excerpt": "## What's Changed * Make it easier to debug nested tensors. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15383 * Update workflow templates to v0.11.37 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/15415 * Minimum officially supported pytorch is now 2.7 by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15413 * fix: make Create Layered Image discoverable and its flags self-explanatory by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI/pull/15429 * Fix upscale models breaking on non dynamic vram low vram. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15437 * Add previewable_outputs_count to /api/jobs (backend half of Media Assets badge fix) by @claude[bot] in https://github.com/Comfy-Org/ComfyUI/pull/15148 * Extend ER-SDE noise scaler by scaling h(t) by @chaObserv in https://github.com/Comfy-Org/ComfyUI/pull/15428 * Make a context manager for cast_bias_weight and use it. by @blepping in https://github.com/Comfy-Org/ComfyUI/pull/14750 * Optimize MiniMax-H3 VAE by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/15446 * [Partner Nodes] feat(Qwen): add Qwen-Image 3.0 Pro by @bigcat88 in https://github.com/Comfy-Org/...",
+    "matched_keywords": [
+      "API",
+      "Claude",
+      "ComfyUI",
+      "GitHub",
+      "MiniMax",
+      "Qwen",
+      "workflow"
+    ],
+    "tags": [
+      "ai_app",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "v0.32.0",
+    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -510,8 +535,8 @@
     "score": 46,
     "release_version": "b10344",
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -537,8 +562,8 @@
     "score": 45,
     "release_version": "b10355",
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -554,7 +579,7 @@
     "score": 44,
     "hn_score": 90,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -575,7 +600,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -595,7 +620,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -615,7 +640,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -637,8 +662,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -658,8 +683,8 @@
     "score": 42,
     "hn_score": 60,
     "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -678,7 +703,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -704,7 +729,7 @@
     "score": 40,
     "release_version": "v1.97.0-rc.1",
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -724,7 +749,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -749,7 +774,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -777,7 +802,7 @@
     "score": 38,
     "release_version": "b10333",
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -801,7 +826,7 @@
     "score": 38,
     "release_version": "1.15.14",
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -827,7 +852,7 @@
     "score": 38,
     "release_version": "b10329",
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -843,7 +868,7 @@
     "tags": [],
     "score": 38,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -869,7 +894,7 @@
     "score": 36,
     "release_version": "b10331",
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -890,7 +915,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -910,7 +935,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -931,7 +956,7 @@
     "score": 36,
     "hn_score": 74,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -954,7 +979,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-10T07:26:15.172334+08:00",
-    "last_seen_at": "2026-08-11T07:34:58.902665+08:00",
+    "last_seen_at": "2026-08-12T07:41:47.054804+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

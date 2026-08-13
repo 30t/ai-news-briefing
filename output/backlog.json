@@ -1,12 +1,12 @@
 [
   {
-    "title": "REDAgentBench: Executable Red Teaming and Faithful Measurement of LLM Agent Systems",
-    "url": "https://arxiv.org/abs/2608.10669",
+    "title": "InfraBench: Evaluating Infrastructure Agents Across Layers, Lifecycle, and Risk",
+    "url": "https://arxiv.org/abs/2608.11234",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.10669v1 Announce Type: new Abstract: Large language model (LLM) agents combine language-based reasoning with external tools to perform complex tasks. Adversarial inputs can exploit interactions between the agent and its environment, causing the agent to violate safety policies during execution. Yet existing evaluations often reduce agent safety to a single attack success rate (ASR), collapsing exposure, execution, observation, and adjudication and potentially conflating actual violations with evidence visibility. We introduce REDAgentBench, an executable framework for autonomous red-teaming and faithful measurement. It derives attacks from explicit safety constraints and associated agent-system vulnerabilities, runs them in isolated service sandboxes, and verifies harmful effects from service receipts and final-state changes. The benchmark contains 1,661 cases across five service surfaces. Across six models and three agent harnesses, macro-average ASR is 65.69%; reported ASR varies with harness and evidence view, while evaluation-context disclosure changes execution behavior. In a state-grounded diagnostic cohort, almost one in five confirmed violations with resolved ac...",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.11234v1 Announce Type: new Abstract: Managing modern computing infrastructure has become a steadily harder problem due to the ever-increasing complexity. Recent advances in AI agents create a timely opportunity to automate infrastructure management tasks, but it remains unclear how well such agents can handle real-world infrastructure complexity. We present InfraBench, a benchmark suite for evaluating AI agents on realistic infrastructure tasks across the full system stack and full operational lifecycle with fine-grained risk assessment. Experiments with 15 agent-model configurations show that even the strongest agent cannot secure a full score across all tasks. Mean effective scores range from roughly 40% to 88% (with per-configuration standard errors of 6-12 points), repeating every task three times reveals that top configurations still pass only a fraction of their attempts, and per-check scoring exposes a general failure pattern: agents may routinely satisfy short-term objectives while leaving non-durable changes, broken distributed invariants, unsafe side effects, and uncleaned state behind. INFRABENCH, including its live leaderboard, tasks, and evaluation harness,...",
     "matched_keywords": [
       "Agent",
       "agents",
@@ -17,8 +17,80 @@
       "open_source"
     ],
     "score": 66,
-    "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Benchmarking LLM Judges for Mobile Agent Evaluation",
+    "url": "https://arxiv.org/abs/2608.11434",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.11434v1 Announce Type: new Abstract: Mobile agent benchmarks increasingly rely on LLM-based judges to evaluate task completion, yet the reliability of these judges on mobile agent trajectories remains largely unexamined. We introduce MobileJudgeBench, a benchmark for systematically evaluating LLM-as-judge methods on mobile agent trajectories. Our benchmark comprises 931 human-annotated trajectories spanning 6 mobile agent benchmarks, 4 agent models, and 68 apps. We evaluate 6 judge methods (five adapted from SPA-Bench, A3 with two modes, AndroidArena, and AgentRewardBench, plus a simple baseline we design) across multiple LLM backends. Our experiments reveal three key findings. First, a simple baseline judge with sampled screenshots is competitive with, and often exceeds, purpose-built methods, indicating that more elaborate judge pipelines do not consistently improve judge quality; among competitive methods, the LLM backbone is the primary driver. Second, benchmark quality metrics reliably predict real-world judge utility: they correlate with both agent ranking fidelity for evaluation and downstream performance when judges serve as reward signals for on-policy reinforc...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EnterpriseRAG: Benchmarking LLM Instruction Adherence and Robustness under Non-Ideal Enterprise Retrieval",
+    "url": "https://arxiv.org/abs/2608.11584",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.11584v1 Announce Type: new Abstract: Enterprise RAG deployments face a critical reliability gap: while LLMs satisfy 80% of individual constraints, only 26.8% of responses meet all requirements simultaneously, revealing a 57-point orchestration gap. Existing benchmarks assume clean retrieval with simple queries, failing to capture production conditions where noisy documents and multi-dimensional constraints coexist. We introduce EnterpriseRAG, a benchmark of 983 expert-validated samples across six domains that systematically simulates three failure modes absent from prior work: retrieval noise, knowledge gaps, and factual conflicts, coupled with complex instructions. Evaluation of 13 state-of-the-art LLMs reveals a severe instruction adherence collapse, where high per-constraint satisfaction masks low holistic compliance. Critical findings expose deep barriers under knowledge gaps and factual conflicts, even with reasoning-enhanced inference, indicating production RAG requires explicit context-aware protocols and calibrated judgment. EnterpriseRAG provides a reproducible foundation for measuring and closing these gaps, directly informing deployment decisions for enterpri...",
+    "matched_keywords": [
+      "benchmark",
+      "inference",
+      "orchestration",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "BrowseSafe: Understanding and Preventing Prompt Injection Within AI Browser Agents",
+    "url": "https://arxiv.org/abs/2511.20597",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2511.20597v2 Announce Type: replace-cross Abstract: The integration of artificial intelligence (AI) agents into web browsers introduces security challenges that go beyond traditional web application threat models. Prior work has identified prompt injection as a new attack vector for web agents, yet the resulting impact within real-world environments remains insufficiently understood. In this work, we examine the landscape of prompt injection attacks and synthesize a benchmark of attacks embedded in realistic HTML payloads. Our benchmark goes beyond prior work by emphasizing injections that can influence real-world actions rather than mere text outputs, and by presenting attack payloads with complexity and distractor frequency similar to what real-world agents encounter. We leverage this benchmark to conduct a comprehensive empirical evaluation of existing defenses, assessing their effectiveness across a suite of frontier AI models. We propose a multi-layered defense strategy comprising both architectural and model-based defenses to protect against evolving prompt injection attacks. Our work offers a blueprint for designing practical, secure web agents through a defense-in-de...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -43,7 +115,35 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "FrontierFinance: A Challenging Benchmark for Measuring Frontier Intelligence of Finance Agents",
+    "url": "https://arxiv.org/abs/2608.11683",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.11683v1 Announce Type: new Abstract: AI agents are increasingly deployed for professional investment research, yet no benchmark captures the complexity of the full investor workflow. Existing benchmarks mainly target financial data extraction, a narrow slice that current models have largely saturated, while reference-based metrics and generic LLM-as-a-judge scoring fall short on the open-ended, long-form answers that real analyst queries demand. We introduce FrontierFinance, a fully open benchmark of 220 expert-crafted queries and 11,543 source-attributed rubrics spanning six crucial use cases across the full investor workflow. FrontierFinance is both broader and harder than existing public finance benchmarks. Evaluating frontier models and agent systems under a common harness restricted to publicly available data, we find that the tool harness, not the model alone, strongly shapes quality and efficiency; that Samaya's in-house system leads at 56.0%, ahead of the strongest frontier model (Claude Fable 5, 49.2%) at roughly 2.2x lower cost; and that the best open-weight model (Kimi K3, 46.4%) nearly matches the best proprietary model at 4.5x lower cost. Screening & Discov...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "Kimi",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -63,35 +163,35 @@
     ],
     "score": 65,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Self-evolving Agentic Customer Support System at LinkedIn",
-    "url": "https://arxiv.org/abs/2608.10224",
+    "title": "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies",
+    "url": "https://arxiv.org/abs/2608.12282",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.10224v1 Announce Type: new Abstract: Enterprise support agents operate in rapidly changing environments where policies, product capabilities, and knowledge bases evolve continuously, making static assistants brittle and costly to maintain. We present LinkedIn's self-evolving agentic support system, which integrates retrieval-augmented generation with evolutionary auto-prompting and a modular, production-aligned evaluation framework to enable safe, continuous improvement without retraining foundation models. The system treats prompts, retrieval, and evaluation as a closed-loop, versioned workflow with operational guardrails. Offline simulations and ablations show clear quality gains over vanilla RAG and baseline agents, including reduced hallucinations and improved response completeness. In a two-week user-randomized A/B test on LinkedIn's production support traffic, the integrated self-evolved workflow increased QA self-serve by 9.0 percentage points, cancellation self-serve by 4.8 points, and routing accuracy by 30.6 points. These results demonstrate a practical path to scalable, self-evolving AI agents in real-world enterprise settings.",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.12282v1 Announce Type: new Abstract: Agents deployed in enterprise settings must reason across structured APIs and document collections, yet existing benchmarks evaluate these capabilities in isolation. We introduce VAKRA (e\\textbf{V}aluating \\textbf{A}PI and \\textbf{K}nowledge \\textbf{R}etrieval \\textbf{A}gents), a benchmark of over $8{,}000$ executable APIs across $62$ domains with tasks spanning three settings of increasing difficulty: diverse API interaction styles, multi-hop reasoning over structured APIs, and multi-source reasoning with natural-language tool-use policy constraints. Correctness is verified by re-executing predicted tool calls against live APIs, accommodating multiple valid paths. Using a fixed ReAct harness to isolate model capabilities from agent architecture, we evaluate frontier and open-weight models and find that even the best model achieves only 70.4\\% on single-hop endpoint-style tasks and drops to 50--51\\% on compositional APIs; performance degrades by over 50\\% as reasoning depth increases, and policy-constrained questions expose severe failures (as low as 2.4\\% on unanswerable queries). Trace analysis shows failures concentrate at languag...",
     "matched_keywords": [
-      "agentic",
+      "Agent",
       "agents",
-      "customer",
-      "RAG",
-      "retrieval",
-      "workflow"
+      "API",
+      "benchmark",
+      "policy",
+      "retrieval"
     ],
     "tags": [
       "agent",
-      "ai_app",
       "business",
+      "open_source",
       "rag_data"
     ],
     "score": 64,
-    "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -116,7 +216,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -139,7 +239,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -160,31 +260,32 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Quantization Damage Is Multiplicative, Not Additive",
-    "url": "https://arxiv.org/abs/2608.06564",
-    "source_name": "arXiv cs.CL",
+    "title": "VICBench: A Multi-Language Benchmark for Code Vulnerability Detection",
+    "url": "https://arxiv.org/abs/2608.12246",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06564v1 Announce Type: cross Abstract: Quantization is how large language models are actually deployed, and below four bits it is known to hurt. What nobody can say is which of the model's decisions will change at a given bit-width. The damage is silent: a compressed agent stops calling its tools, then loses half its safety refusals, yet benchmark scores barely move. Prior work assumes quantization adds noise of a roughly fixed size, which would make confident decisions safe. We measure the decision itself instead. The margin of a two-way decision is the model's score for the option it picks minus the score of its best alternative; we track it before and after quantization across 16 models from 8 model families, three quantization methods, and bit-widths from 8 down to 2. Quantization does not add fixed-size noise to the margin. It multiplies the margin by a factor that collapses with bit-width (median 0.86 at 4 bits, 0.33 at 3, 0.00 at 2); we call this margin shrinkage. This contraction reduces the protection a large margin affords; the model's own small biases pick the direction of failure: at 3 bits the decision to call a tool collapses toward inaction while the choi...",
+    "published_at": "2026-08-13T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.12246v1 Announce Type: cross Abstract: Evaluating security vulnerability detection tools requires benchmark datasets with vulnerability-inducing commits (VICs) - the commits that first introduce vulnerabilities into codebases. VICs are essential for determining the full range of vulnerable software versions. Existing vulnerability datasets suffer from limited programming language coverage, restricted patch complexity, and narrow project scope. Through our dual annotation by human experts and an agentic workflow, we create a benchmark - VICBench - of 100 verified VICs for 100 CVEs across 88 projects in Python, Java, and C++, covering 48 CWE types. VICBench features complex real-world vulnerability fixes averaging 38.6 lines and corresponding VICs of 252.5 lines - significantly larger than prior work. Our evaluation shows that state-of-the-art algorithms V-SZZ and LLM4SZZ achieve only 33.3%-40.1% F1, confirming that using existing approaches still entails significant manual effort. VICBench enables robust evaluation of vulnerability detection approaches.",
     "matched_keywords": [
-      "Agent",
+      "agentic",
       "benchmark",
-      "quantization"
+      "workflow"
     ],
     "tags": [
       "agent",
+      "ai_app",
       "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
+    "score": 62,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -206,8 +307,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -228,8 +329,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -252,177 +353,83 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Your Prompt Is Not the Only Prompt: How Much Do LLMs Weight Structured-Output Schema Descriptions?",
-    "url": "https://arxiv.org/abs/2608.08254",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.08254v1 Announce Type: new Abstract: Structured output, where an LLM populates a predefined JSON schema, has become a default mechanism for data labeling and information extraction, but it also introduces a second instruction channel through schema descriptions. We tested whether classification-label definitions are better placed in the system prompt, user prompt, or schema description using a single-field classification task with nonce labels across ten model configurations from two vendors. Schema descriptions did not consistently outperform prompt-based placement; for GPT-4.1 and GPT-5.4 without reasoning, schema placement underperformed system prompts by 11-13 percentage points. Yet schemas are not inert metadata: when prompts and schemas conflicted, incorrect schema instructions caused accuracy drops of 5-45 points, with Claude Haiku 4.5 falling from 52.5% to 7%, indicating that schema instructions can override prompt instructions, and GPT-5.5 falling from 100% to 73%. Further, adding a required intermediate reasoning field before the label field improved schema-only accuracy by 15-24 points when headroom existed, exceeding system-prompt-only performance in every c...",
-    "matched_keywords": [
-      "Claude",
-      "GPT"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "LLM within MCP Matters: Measuring Inefficient Resource Utilization Driven by LLMs",
-    "url": "https://arxiv.org/abs/2608.08467",
-    "source_name": "arXiv cs.AI",
+    "title": "Arduino App Lab 0.10: Meet Agentic Mode",
+    "url": "https://blog.arduino.cc/2026/08/12/arduino-app-lab-0-10-meet-agentic-mode",
+    "source_name": "Arduino Blog",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.08467v1 Announce Type: new Abstract: The Model Context Protocol (MCP) standardizes how servers expose data and tools to Large Language Models (LLMs). A common server design embeds frequently used reference data, such as identifier lookup tables, directly in the server instructions: the system-prompt text a server hands to the host application. When a query concerns an entry of the embedded table, the model can act on it immediately instead of re-discovering the same information through a search tool. We test whether client LLMs actually consume such instruction-embedded data, reporting a 54,000-trial study across 24 LLMs (9 Claude, 6 Gemini, 9 GPT) on a production legal-information MCP server. A diagnostic condition that removes the competing search tool shows that failures are dominated by behavioral preference rather than missing capability. With search unavailable, 23 of 24 models read the embedded data reliably (hit ratio at least 98%); with a search tool merely present, 9 models drop below 15%. A 2^3 factorial analysis of three instruction-level interventions reveals strong interaction effects: combining all three restores at least 86% for 20 of 24 models, but indi...",
-    "matched_keywords": [
-      "Claude",
-      "Gemini",
-      "GPT",
-      "MCP",
-      "Model Context Protocol"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PluginEval: A Diagnostic Benchmark for Fine-Grained Error Attribution in Function Calling",
-    "url": "https://arxiv.org/abs/2608.08700",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.08700v1 Announce Type: new Abstract: Reliable evaluation of tool routing is critical as Large Language Models increasingly operate as autonomous agents. Current benchmarks face three structural limitations: data distributions that follow a power law leave rare scenarios underrepresented; the absence of adversarial hard negatives obscures performance differences across models; and annotation pipelines depend on LLM judgments that have not been validated through execution. In this paper, we introduce PluginEval, a benchmark constructed through a two-stage framework that systematically mitigates these limitations. First, we formulate tool routing as a sequence of three decisions and separate generation from verification. LLMs propose candidate calls, while deterministic validation and real API execution provide reliable quality signals. Second, we decompose each plugin by capability, intent, and boundary to identify trigger and exclusion scenarios. We then generate queries at different difficulty levels to fill coverage gaps, including adversarial negatives targeting three failure modes, and return them to the first stage for annotation. This process creates a closed loop...",
-    "matched_keywords": [
-      "agents",
-      "API",
-      "benchmark",
-      "function calling"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-12T07:41:47.054804+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LLMRouter: Unified Infrastructure for Developing, Evaluating, and Deploying LLM Routers",
-    "url": "https://arxiv.org/abs/2608.06867",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.06867v1 Announce Type: new Abstract: No single large language model (LLM) is optimal across all queries and budget constraints, making model routing essential for cost-effective deployment. Existing routers adopt diverse formulations and implementations, making fair comparison and extension difficult. We present a unified formulation of LLM routing as a sequential decision process characterized by five components: context encoders, model encoders, scoring functions, decision rules, and learning signals, covering single-turn, multi-turn, and personalized routing. Based on this formulation, we develop an automated pipeline for constructing routing supervision and evaluating routers jointly on response quality and inference cost. The resulting benchmark, xRouteBench, spans generic LLM, memory-augmented, vision, time-series, and personalized routing tasks. We further introduce LLMRouter, an open-source modular infrastructure with more than 16 representative routers. Our empirical study shows that learned routers outperform the strongest fixed-model baseline by 14.6% relatively, lightweight routers become more competitive under tight cost constraints, and user-conditioned ro...",
-    "matched_keywords": [
-      "benchmark",
-      "inference",
-      "model routing"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ForestBench: A Unified Graph Framework for Evaluating Multi-Agent Collaboration",
-    "url": "https://arxiv.org/abs/2608.08605",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.08605v2 Announce Type: replace Abstract: Multi-agent systems (MAS) built on Large Language Models (LLMs) are proliferating rapidly, but their heterogeneous execution traces provide no common basis for evaluation across methods. Outcome-only benchmarks discard collaborations, whereas LLM-as-Judge evaluation requires additional, model-dependent inference and can vary with the LLM and rubric. We introduce a generalizable evaluation framework that maps native MAS traces into a shared space of unified collaboration graphs, enabling different methods to be evaluated under the same representation, reference set, and metric panel. Candidate graphs are compared with a query-specific reference forest. Each forest is a benchmark-provided collection of verified-success graphs: it records diverse ways in which representative MAS methods can complete the task, rather than prescribing a unique optimal process. Instantiating the framework as ForestBench, we filter $844$ collaboration-necessary queries from seven public datasets, precompute ten successful target-conditioned reference graphs per query, and evaluate six representative MAS frameworks. Controlled backbone, reference-constru...",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-12T11:53:06+00:00",
+    "summary_or_excerpt": "We’re thrilled to announce Arduino App Lab 0.10, our biggest release yet. With this update, you can now build applications alongside an AI agent that actively works on your project, not one that just answers questions about it. Powered by MCP and integrated with App CLI, Agentic Mode understands your workspace, creates and edits files, […] The post Arduino App Lab 0.10: Meet Agentic Mode appeared first on Arduino Blog .",
     "matched_keywords": [
       "Agent",
-      "benchmark",
-      "inference",
-      "multi-agent"
+      "agentic",
+      "AI Agent",
+      "Arduino",
+      "MCP",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "embedded_edge_ai",
+      "open_source"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10419：OpenVINO: Qwen3.5, memory optimization, and test-recurrent-state-rollback (#26952)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10419",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-13T22:11:34+00:00",
+    "summary_or_excerpt": "OpenVINO: Qwen3.5, memory optimization, and test-recurrent-state-rollback (#26952) * OpenVINO backend: 1) enable gpt-oss moe on OV bk; 2) enable mxfp4 support * OpenVINO backend: disable TOPK_MOE op test * OpenVINO Backend: Add op FILL support * OpenVINO backend: enable set rows with multi dims * fix the name missmatch in setrow + view * OpenVINO backend: enable op GGML_UNARY_OP_SIGMOID * OpenVINO Backend: enable SQR & SQRT * OpenVINO backend: 1) ensure unique node names for OpenVINO; 2) add org_src to recorde the src ggml tensor for OpenVINO dynamic shape infer * OpenVINO backend: enable fallback for openVINO to CPU backend * OpenVINO backend: fix accurace issue in gemma3n arch test * fix mpt failed case * OpenVINO backend: clean nodeinfo * OpenVINO Backend: enable zero-size copy for view * add concat ssm_conv in compute_dynamic_dim enable qwen35 Fix after rebase remove logging * OpenVINO backend: disable EXP with FP32, which failed in op test. Root reason: the backend test initializes unary op inputs over a wide range, [-150, 150]. For FP32, exp(x) overflows around x ~= 88.7, so this test can randomly generate values right in or beyond the overflow region * OpenVINO backend: fix...",
+    "matched_keywords": [
+      "GPT",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "release_version": "b10419",
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands v1.13.0：1.13.0 (2026-08-13)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.13.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-13T01:57:00+00:00",
+    "summary_or_excerpt": "## 1.13.0 (2026-08-13) ## What's Changed ### Features * feat(conversations): add client-side conversation archive by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16100 * feat(chat): add inline markdown artifact previews by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16185 * feat: add ready-for-dev issue readiness gate with type-specific criteria by @all-hands-bot in https://github.com/OpenHands/OpenHands/pull/16449 * feat: context window usage meter, usage drawer, and manual compaction by @georgeglarson in https://github.com/OpenHands/OpenHands/pull/16311 ### Bug Fixes * fix: add postinstall message showing how to start agent-canvas by @all-hands-bot in https://github.com/OpenHands/OpenHands/pull/16338 * fix: configure agent-server telemetry in Canvas launchers by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/16348 * fix: make overflow menus usable on touch devices by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16101 * fix: make sidebar \"Load more\" discover folders, not folder contents by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16179 * fix: disable chat input drag-resize when not bottom-anch...",
+    "matched_keywords": [
+      "Agent",
+      "GitHub",
+      "OpenHands"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "score": 46,
+    "release_version": "v1.13.0",
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "UserToolBench: A User-Profile-Hidden Benchmark for Personalized Decision Making in Tool-Use LLMs",
-    "url": "https://arxiv.org/abs/2608.10042",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.10042v1 Announce Type: cross Abstract: Tool-use LLMs are increasingly asked to act on users' behalf, but existing benchmarks usually focus on profile recall, style imitation, generic tool use, or response-level personalization. We introduce UserToolBench , a benchmark for personalized decision making in tool-use LLMs. UserToolBench tests whether a model can infer latent user preferences from interaction history, recognize when clarification is needed, and produce user-aligned tool-call trajectories under incomplete information. The benchmark is built from privacy-sanitized real interaction traces and combines structured persona profiles, public API-style tool ecosystems, and long-horizon multi-turn trajectories. It includes 10 user profiles, 36 tool sets, 1,065 turns, 170 unique tools, and evaluation-focused task types covering lack-of-information, single-tool, and multi-tool settings. Experiments with strong tool-use LLMs show that current models still have difficulty with personalized delegation. Multi-tool coordination, missing-constraint inference, and long-horizon behavioral consistency remain major bottlenecks. These results suggest that personalization evaluation...",
-    "matched_keywords": [
-      "API",
-      "benchmark",
-      "inference",
-      "privacy",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference",
-    "url": "https://arxiv.org/abs/2608.02515",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.02515v2 Announce Type: replace Abstract: Long-running assistants and agents consume interaction streams that eventually outgrow the context. Existing context retention, summarization, and retrieval preserve access to selected history, but do not provide a persistent state over the full lifecycle when working context changes. We formulate this missing inference capability as \\emph{state continuity under context turnover}: carrying computation forward through a fixed-capacity memory state whose lifetime is independent of the active context. We introduce an intrinsic memory method, \\textbf{LiveMem}, which augments a pretrained full-attention LLM with a memory state that preserves the historical information over the whole lifecycle while the main attention path retains a bounded KV window. Context turnover and memory state maintaining, memory-oriented post-training, and state-aware serving jointly make this memory state load bearing after its originating tokens are released. Our experiments show that LiveMem achieves leading overall performance among evaluated systems and other intrinsic memory methods. Experiments on LongMemEval show that LiveMem is able to answer the ques...",
-    "matched_keywords": [
-      "agents",
-      "inference",
-      "retrieval",
-      "serving"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -446,8 +453,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -471,18 +478,18 @@
     "score": 46,
     "release_version": "v0.32.10-rc1",
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b10344：model: add MTP support for Nemotron model (#26725)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10344",
+    "title": "llama.cpp b10418：[SYCL] Support host pinned mem to improve SYCL Host-to-Device Memory Access (#26789)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10418",
     "source_name": "llama.cpp",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-08-10T16:24:12+00:00",
-    "summary_or_excerpt": "model: add MTP support for Nemotron model (#26725) * model: add MTP support for Nemotron Nano model * model: add mtp_flags for nemotron model * address review comments **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10344/llama-b10344-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (V...",
+    "published_at": "2026-08-13T21:36:06+00:00",
+    "summary_or_excerpt": "[SYCL] Support host pinned mem to improve SYCL Host-to-Device Memory Access (#26789) * support host pinned mem, ggml_backend_sycl_host_buffer_type_get_max_size, * fix the thread-safe issue **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10418/llama-b10418-bin-ubuntu-vulkan-x64.tar.g...",
     "matched_keywords": [
       "GitHub",
       "Intel",
@@ -494,11 +501,11 @@
       "open_source",
       "semiconductor"
     ],
-    "score": 46,
-    "release_version": "b10344",
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
+    "score": 45,
+    "release_version": "b10418",
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -524,35 +531,24 @@
     "score": 45,
     "release_version": "b10369",
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b10355：llama : support multi-output backend sampling (#25532)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10355",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-10T23:15:19+00:00",
-    "summary_or_excerpt": "llama : support multi-output backend sampling (#25532) * Enable backend sampling with token speculation * Clamp the mask sum before converting it into the sampled index * Add a numeric context parameter declaring the maximum outputs one sequence * More fixes * Don't reuse memory for output views. * Match dist between CPU and GPU * Fix CPU and backend sampling mismatches * Simpify some of the changes * Fix tests on Vulkan * More test fixes * Rebase changes * Rebase and address review comments * Address review comments * Address review comments * Update src/llama-sampler.cpp Co-authored-by: Georgi Gerganov --------- Co-authored-by: Georgi Gerganov **Website:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10355/llama-b10355-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10355/llama-b10355-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10355/llama-b10355-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://g...",
-    "matched_keywords": [
-      "GitHub",
-      "GPU",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 45,
-    "release_version": "b10355",
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
+    "title": "worldproof: diagnosing where world-model predictions break and a measurement of when pixel metrics stop being able to rank models at all [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1vnliv7/worldproof_diagnosing_where_worldmodel",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-13T19:58:03+00:00",
+    "summary_or_excerpt": "I've been building an open-source tool for diagnosing world models, the kind that predict future frames from a starting context and a sequence of actions. It compares a rollout against ground truth and against physical invariants, then tells you where and why the prediction falls apart. It doesn't score task success or planning quality on purpose, since there are already benchmarks for those. While validating it I ran into something I think is more interesting than the tool itself. ## Pixel metrics on real robot video often can't rank models at all I ran a copy the last frame baseline, which is to say \"predict that nothing changes\", against a real SO-101 arm recording. 30fps, three cameras, 64 rollouts, 6 step horizon, scored only on the moving regions so a static background can't inflate the numbers. It gets 0.983 SSIM and 53.9 dB PSNR. But the part that actually matters is that the error doesn't grow with the horizon: step 1 2 3 4 5 6 SSIM 0.972 0.923 0.893 0.943 0.920 0.950 That's flat. It wanders, it doesn't degrade. And if predicting 6 steps ahead is no harder than predicting 1 step ahead, then there's nothing for a good model to be better at. Every model lands in the same pl...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 44,
+    "first_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -581,8 +577,8 @@
     "score": 43,
     "release_version": "v0.32.0",
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -604,50 +600,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Using the GitHub Copilot SDK for Java",
-    "url": "https://github.blog/engineering/using-the-github-copilot-sdk-for-java",
-    "source_name": "GitHub Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-10T19:30:00+00:00",
-    "summary_or_excerpt": "Enterprise Java developers have a new superpower—drive GitHub Copilot from idiomatic Java code with annotations, virtual threads, and more. The post Using the GitHub Copilot SDK for Java appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Launch HN: Stoa Markets (YC S26) – A Marketplace for GPUs and AI Servers",
-    "url": "https://www.stoaexchange.com",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-10T16:35:27+00:00",
-    "summary_or_excerpt": "HN points: 60. Comments: https://news.ycombinator.com/item?id=49246057",
-    "matched_keywords": [
-      "launch"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 42,
-    "hn_score": 60,
-    "first_seen_at": "2026-08-11T07:34:58.902665+08:00",
-    "last_seen_at": "2026-08-13T07:38:44.513777+08:00",
+    "last_seen_at": "2026-08-14T07:40:13.892504+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

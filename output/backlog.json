@@ -1,5 +1,100 @@
 [
   {
+    "title": "When Agentic Executions Fail: Detecting and Localizing Runtime Faults from Telemetry",
+    "url": "https://arxiv.org/abs/2608.14680",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.14680v1 Announce Type: new Abstract: Reliability in LLM-based agentic systems is a property of the whole execution (its tool calls, model calls, guardrails, and inter-agent messages), not of the final answer alone, yet evaluating only task outcomes reveals little about how or why a run fails. We present AGENTCHAOSBENCH, a benchmark for detecting and localizing runtime faults in agentic systems from their execution telemetry. We run five heterogeneous applications that coordinate agents over the Agent-to-Agent protocol and call tools through the Model Context Protocol, and inject ten types of operational fault (unavailable or slow tools, corrupted or oversized responses, and delayed, looped, or misrouted delegations and bypassed guardrails) at their tool, model, guardrail, and inter-agent boundaries, alongside a no-fault control. The resulting dataset contains 275 sanitized traces: 250 faulty executions spanning ten fault types and 25 no-fault controls. Each faulty trace is aligned with the no-fault execution of the same input; fault-type labels and, where applicable, location labels are held out from diagnosis. On structured single-trace inputs, a first set of zero-shot...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "dataset",
+      "Model Context Protocol"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OGX: An Open-Source, Vendor-Neutral Generative AI Application Server",
+    "url": "https://arxiv.org/abs/2608.14580",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.14580v1 Announce Type: new Abstract: OGX (Open GenAI Stack) is an open-source AI application server and Python library that implements the APIs of major frontier labs (OpenAI, Anthropic, Google) with pluggable backend providers. Developers building agentic AI applications--such as retrieval-augmented generation pipelines, multi-turn agents, and tool-calling workflows--can develop against a single API surface and deploy with any combination of inference engine, vector database, and safety backend, without changing application code. OGX's primary focus is the Responses API for server-side agentic orchestration, conforming to the Open Responses specification. The server also supports the Anthropic Messages API and Google GenAI Interactions API, decoupling SDK choice from model and deployment decisions. With over 20 inference providers, 13 vector store backends, and a companion Kubernetes Operator for production deployment, OGX serves as the self-hosted, model-agnostic backend for AI-powered developer tools including Claude Code, Codex CLI, OpenCode, and OpenHands. The project has over 8,400 GitHub stars, 242 contributors, and 4,000 commits across nearly two years of public...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "AI application",
+      "Anthropic",
+      "API",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "developer tools",
+      "GitHub",
+      "inference",
+      "OpenAI",
+      "OpenHands",
+      "orchestration",
+      "retrieval",
+      "vector database"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "business",
+      "coding_tool",
+      "model",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Governance at the Boundary: How Agent Decomposition Degrades Policy Compliance",
+    "url": "https://arxiv.org/abs/2608.16055",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.16055v1 Announce Type: new Abstract: Existing agent benchmarks ask whether the agent finished the task. We ask whether it finished it within policy. We introduce Fiducia-bench, a benchmark for the governability of financial agents---whether they escalate when obligated, abstain when required, and leave an auditable trail---and use it to study a question no prior benchmark addresses: does decomposing an agent into components degrade its governance? It does, and the mechanism is specific. Policy-relevant facts discovered by one component are attenuated at the handoff boundary before reaching the component that must act on them. In a 626-episode experiment across 100 KYC/AML task variants, two models, and three architectures, a 32B open-weights model attenuated 0% of discovered facts under a single-loop baseline, 56% under a fixed pipeline, and 85% under an orchestrator-subagent architecture (all at constraint distance 2). A stronger model (gpt-4.1-mini) attenuated 3-6% under the same conditions, suggesting the governance cost of decomposition is partly a function of model capability. Critically, the same mechanism produces both under-escalation and over-escalation, depend...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "GPT",
+      "policy",
+      "weights"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
     "url": "https://arxiv.org/abs/2608.03682",
     "source_name": "arXiv cs.AI",
@@ -21,30 +116,114 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Anatomy of a Quantized Agent: VRAM Stability and Forecasting in Code-Synthesis Agentic Workloads",
+    "url": "https://arxiv.org/abs/2608.15117",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.15117v1 Announce Type: new Abstract: Analytical models of peak VRAM consumption for LLM inference decompose memory into weight-storage, KV-cache, and activation terms parameterized by step count, tool invocations, and context expansion. We evaluate this decomposition empirically within a strictly scoped measurement study: a LangGraph-based CUDA-kernel-synthesis agent (AgentK), a 4-bit quantization family (Q4 K M), a single NVIDIA H100 GPU, and four LLM backbones across 1,920 trajectories. Focusing on peak-memory forecasting behavior, we report two primary observations. First, closed-form analytical models achieve competitive accuracy when provided with two empirical constants: loaded-weight VRAM and a fixed activation-memory overhead. Supplied with live GPU readings and ground-truth trajectory parameters, the closed-form model matches or outperforms the best learned baseline on three of the four backbones (test MAPE 2.2-4.4% vs. 3.4-6.5%, p = 0.76). The exception is the smallest backbone (Phi-4-mini), where minimal VRAM variance (CV 0.3%) causes dynamic modeling to underperform simple regression. Second, compile success strictly bifurcates by backbone capacity (from 5.7...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "CUDA",
+      "GPU",
+      "H100",
+      "inference",
+      "LangGraph",
+      "NVIDIA",
+      "quantization"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Specification-first convergence with an AI coding agent: a case study of dismantling a core architectural invariant across 189 files in a 717k-line codebase with no test oracle and no human code review",
-    "url": "https://arxiv.org/abs/2608.12440",
+    "title": "LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures",
+    "url": "https://arxiv.org/abs/2608.15242",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.12440v1 Announce Type: cross Abstract: This paper reports a single, fully instrumented case study of a large-scale architectural refactoring by an AI coding agent under a specification-first protocol, with no human review of the generated code and no pre-existing oracle to validate the target behaviour. The task, dismantling a central invariant across a large interdependent codebase, was assessed by the author as effectively infeasible through incremental refactoring, the kind of change that conventionally calls for a rewrite instead. Under the protocol described here, the agent completed it successfully. The system is a 717,725-line production TypeScript application across 3,648 files. The task required dismantling a core lifetime invariant: the guarantee that a UI panel remains open for the duration of an AI request. The target behaviour was that a streaming generation survives the closing of its panel and can be reattached, on reopening, to the same live stream with no loss or duplication. The protocol: formal specification by the agent, 14 refinement cycles auditing that specification against the source code, atomic implementation, a compile/test feedback loop, then...",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.15242v1 Announce Type: new Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the need to...",
     "matched_keywords": [
       "Agent",
-      "code review"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "coding_tool"
+      "open_source"
     ],
-    "score": 62,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
+    "score": 61,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Navigation-Informed Embeddings: Dense-Retriever Adaptation from Agent Search Traces",
+    "url": "https://arxiv.org/abs/2608.15956",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.15956v1 Announce Type: new Abstract: Agentic retrieval workflows produce query, retrieval, and stopping traces as a byproduct of answering questions. We study how these traces can adapt a deployed dense retriever to changing workflow distributions without new relevance labels, synthetic queries, or LLM judgments. We introduce Navigation-Informed Embeddings (NIE), a family of trace-derived objectives. NIE-Stop turns the stopping document into a soft positive; NIE-Path additionally uses preceding path documents as hard comparisons and imposes ordinal constraints with geometric decay. A BGE encoder adapted from retained source trajectories improves support Recall@20 on an independent target benchmark from 72.2 to 78.0 overall. NIE-Stop reaches 76.9 overall and 52.3 on long paths; NIE-Path raises long-path performance to 55.4, compared with 46.7 for the unadapted encoder. A shuffled-order control under the full path objective loses 3.2 points. Without public-benchmark training, the same adapter also improves nDCG@10 by 1.9 points on standard BEIR HotpotQA. NIE therefore provides a lightweight adaptation channel for settings where trajectories are already retained, with zero...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "embeddings",
+      "retrieval",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Evaluating Agentic Code Repair Capabilities in Distributed Systems",
+    "url": "https://arxiv.org/abs/2608.14863",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.14863v1 Announce Type: cross Abstract: LLM-based coding agents have advanced rapidly on single-process SWE tasks, with frontier models now clustering in the high-70s on SWE-bench Verified. Distributed-system debugging, however, remains an under-explored regime: bugs span processes, nodes, and protocol interactions, with root causes rarely recoverable from source alone and brute-force exploration intractable across non-deterministic interleavings. This leaves two gaps in LLM and agent evaluation: no code-repair benchmark targets distributed-system bugs, and no controlled study isolates how much externally provided debugging context changes agent success on them. We introduce DDBench, a code-repair benchmark of 60 historical bugs mined from 13 open-source distributed systems, partitioned into three difficulty tiers. DDBench evaluates every case under two matched conditions: a symptom-only condition where the agent receives only the bug symptom and repository, and a context-augmented condition where it additionally receives a bounded debugging context (logs, traces, runtime state, and targeted code-investigation notes), isolating the effect of debugging context from model...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -67,8 +246,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -92,33 +271,62 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Do LLM Agents Negotiate Rationally? A Mechanism-Design Framework for Verifiable Multi-Agent Interaction over A2A/MCP",
+    "url": "https://arxiv.org/abs/2608.14613",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.14613v1 Announce Type: new Abstract: Modern LLM-agent frameworks increasingly interoperate through standards such as Anthropic's Model Context Protocol (MCP) for agent-to-tool access and Google's Agent2Agent (A2A) protocol for agent delegation and negotiation. However, these protocols specify transport and discovery rather than strategic correctness and do not guarantee efficient, individually rational, or strategy-proof outcomes. We introduce a framework that (i) encodes classical negotiation mechanisms, including alternating-offers bargaining and Vickrey-Clarke-Groves-style auctions, as constraints over A2A message schemas; (ii) provides a lightweight runtime verification and repair layer that checks messages against protocol invariants; and (iii) offers a benchmark of negotiation and allocation tasks with known optimal solutions for measuring deviations from game-theoretic predictions. We evaluate multiple LLM backbones using unstructured dialogue, structured protocols, and structured protocols with verification. Across negotiation trials (N=30 per condition), verification reduces outcome variance, while structured protocols achieve 100 percent success for both model...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Anthropic",
+      "benchmark",
+      "MCP",
+      "Model Context Protocol",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Alipay-PIBench: A Realistic Payment Integration Benchmark for Coding Agents",
-    "url": "https://arxiv.org/abs/2607.14573",
+    "title": "DumpsterCluster: From Dumpster Diving to Serving LLaMA-70B on $60 GPUs",
+    "url": "https://arxiv.org/abs/2608.14614",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.14573v4 Announce Type: replace Abstract: Payment integration is a demanding repository-level software task: agents must select a suitable product, implement coordinated client-server flows, verify payment outcomes, and preserve consistency between transaction and business states. We introduce Alipay-PIBench, a benchmark for evaluating coding agents on realistic Alipay payment integration. It contains nine product-specific projects and 18 task instances, each organized into Basic functional-completion and Advanced risk-aware hardening scenarios. Scenario-specific rubrics support deterministic static, unit, integration, and end-to-end checks, supplemented by LLM-assisted assessment for semantic requirements. We evaluate six coding-agent models and report rubric pass rate (RPR). Under the with-skill condition, mean RPR ranges from 68.58% to 91.37%. Access to the alipay-payment-integration skill improves mean RPR by 10.31 percentage points on average relative to the without-skill condition, with gains varying across models, products, and scenarios. Method-level results distinguish source-level completion, executable payment behavior, and payment-domain requirements. Alipay-...",
+    "published_at": "2026-08-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.14614v1 Announce Type: cross Abstract: As AI datacenters retire functional GPUs, vast quantities of still capable accelerators enter secondary markets. This paper investigates whether these retired GPUs can find a productive afterlife to form a DumpsterCluster that can serve modern LLM inference, and under what conditions such repurposing is economically viable and environmentally sustainable. We physically built a 128-GPU DumpsterCluster from scratch using only second-hand components and ran it for one year. At current market prices (\\$22K for the DumpsterCluster vs. \\$600K for an 8-GPU B200 system), the economic advantages are substantial. Through pipeline-parallel optimizations, our V100 based DumpsterCluster achieves competitive LLaMA-70B throughput, validating production viability. However, our deployment reveals critical context dependencies. Older GPUs consume significantly more energy per token, making total cost of ownership favorable only in regions with inexpensive electricity. Under grid-average carbon intensity, second-hand systems can produce approximately 4x higher total carbon emissions per token for 8B models, and over 40x for 70B models, compared to cu...",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "repository"
+      "B200",
+      "GPU",
+      "inference",
+      "Llama",
+      "serving"
     ],
     "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
+      "model",
+      "open_source",
+      "semiconductor"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -142,8 +350,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -166,8 +374,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -191,8 +399,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -214,169 +422,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Not All Tokens Are Equal: Inflation-Aware Routing for Agentic LLM Systems",
-    "url": "https://arxiv.org/abs/2608.13571",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.13571v1 Announce Type: cross Abstract: When a language model fails to answer a query on the first attempt, an agentic system retries, consuming additional tokens each time. This retry overhead creates a gap between what a model's per-token price implies and what a full workflow actually costs. We call this gap \\emph{token inflation} and define it as the ratio of true workflow cost to single-call cost. Systems like FrugalGPT route based on the latter, which can underestimate real cost by more than $2\\times$ on difficult tasks. We address this with InflationAgent, a four-stage router that (1) measures token inflation systematically across model tiers and task types, finding inflation as high as $4.25\\times$ for a 7B model on multi-hop question answering; (2) introduces CoT Branching Entropy (CBE), a pre-execution difficulty signal computed entirely from local inference, which predicts high inflation with AUROC 0.887; and (3) selects models by maximizing a Semantic Exchange Rate (SER) that divides expected accuracy by predicted true cost, with a fresh-escalation policy that discards failed chains before routing to a stronger model. On GSM8K under a fixed budget, InflationA...",
-    "matched_keywords": [
-      "agentic",
-      "inference",
-      "policy",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "From Code Review to Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
-    "url": "https://arxiv.org/abs/2607.29516",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.29516v2 Announce Type: replace-cross Abstract: AI coding agents are generating code at volumes that exceed the capacity of traditional peer review. At the same time, existing AI code review tools over-index on low-value suggestions such as style and best practices while under-indexing on the concerns human reviewers prioritize most: correctness, security, and performance. We present ARCTIC, an AI-powered Code Critique system that reframes code review around three capabilities: intent prediction, which infers why a change was made from conversation logs and metadata; drift detection, which measures divergence between the developer's intent and the agent's output via backtranslation; and code spotlight, which ranks the regions of a diff most warranting human scrutiny. We ground these capabilities in a six-theme taxonomy derived from 18,000 code reviews. Offline evaluation shows that intent prediction achieves 0.86 F1, drift detection reaches near-perfect ordinal agreement with human annotators (QWK = 0.907), and spotlight outperforms the baseline AI reviewer by 2.4x on quality estimation at 5x fewer tokens. In the experimental rollout, the drift scores reduces code misali...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "code review"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AgenticCANN: Automated Ascend C Operator Generation via Knowledge-Augmented Agentic Evolution",
-    "url": "https://arxiv.org/abs/2607.26661",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.26661v3 Announce Type: replace Abstract: Ascend C operator optimization is critical for NPU (Neural Processing Unit) inference performance but requires deep hardware expertise. While large language models (LLMs) have shown promise in automated CUDA kernel generation, the fundamentally different programming model of Ascend C introduces unique challenges that remain unexplored. In this paper, we propose AgenticCANN, a knowledge-augmented agentic evolution framework specifically tailored for automated Ascend C operator synthesis in low-corpus NPU environments. To overcome the severe platform knowledge deficit on unfamiliar hardware, AgenticCANN incorporates a knowledge-orchestrated generation system that delivers structured, multi-level domain insights across the development lifecycle to resolve the upstream feasibility bottleneck. Building on this foundation, it features a stage-adaptive agentic evolution strategy that dynamically aligns LLM interaction modes with specific generation and evolution phases, balancing high-exploration candidate discovery with high-convergence performance tuning. Extensive experiments on Huawei Ascend 910B across six operators spanning five p...",
-    "matched_keywords": [
-      "agentic",
-      "CUDA",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OEIS Open: How many conjectures can language models turn into theorems?",
-    "url": "https://arxiv.org/abs/2608.11941",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.11941v2 Announce Type: replace Abstract: We construct OEIS Open, a benchmark based on 492 open mathematical conjectures from the OEIS, formalized in Lean by Tsoukalas et al. Whereas these conjectures had previously been attempted only with a bespoke agent, our open-source evaluation code runs any generic language model (LM) against them, and is secure against LM cheating attempts. We find that LMs equipped with a minimal set of tools resolve 147 of these conjectures with a budget of \\$50 per attempt, scoring 30% on OEIS Open. OEIS Open Lite is a random subset of 100 conjectures for cheaper evaluation. When evaluated with a budget of \\$200 per attempt, the best current LM scores 44% on OEIS Open Lite. Giving LMs access to the mathematics literature via 476,000 papers from arXiv did not increase performance on OEIS Open Lite, and nor did using more sophisticated agent loops. The conjectures covered in this work are of uncertain mathematical significance, and most have likely received little previous attention. Nevertheless, our results show that LMs can resolve open research conjectures autonomously and at modest cost.",
-    "matched_keywords": [
-      "Agent",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SPADE: Speculative Decoding for Precise and Low Cost Distributed Edge Cloud Inference",
-    "url": "https://arxiv.org/abs/2608.13076",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.13076v1 Announce Type: new Abstract: Large Language Models (LLMs) have achieved remarkable success in natural language understanding and generation, but their deployment is constrained by high computational demands. Deploying smaller LLMs directly on the edge can circumvent this, but with degraded accuracy. Deploying smaller cloud-based big LLMs preserves performance, but at the cost of expensive per-token computation. We present a distributed inference framework, \\our{}, that integrates speculative decoding (SD) across edge and cloud. A compact draft model deployed on the edge generates candidate tokens rapidly, and a large verifier model on the cloud validates these tokens in parallel. Accepted tokens are retained, while only rejections trigger verifier correction, substantially reducing the number of cloud queries. Our plug-and-play design shifts the bulk of computation to the edge, significantly lowers inference time and cloud cost, and preserves the accuracy of the big model without any retraining requirement. Our approach demonstrates a practical path toward scalable, cost-efficient, and accurate deployment of LLMs in real-world environments. Experimental results...",
-    "matched_keywords": [
-      "inference"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A Year in LLM Serving: Workload Evolution, Caching and Load-Balancing",
-    "url": "https://arxiv.org/abs/2608.13573",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.13573v1 Announce Type: new Abstract: Large Language Model (LLM) serving has become a critical cloud workload, and realistic traces are essential for motivating and benchmarking serving systems. However, existing LLM serving workload studies remain limited in scale and scope. They often observe short time periods and provide limited visibility into how users interact with models in production. As a result, they do not fully capture how LLM serving workloads evolve over time or how user-model interactions shape production traffic. In this work, we further the understanding of real-world LLM serving workloads through both a global characterization and a longitudinal study of a one-year production trace from Chutes. Unlike prior studies, our trace captures full production behavior across many models and users, including both popular and long-tail models. We analyze the workload from aggregate, temporal, model-level, and user-level perspectives, revealing workload evolution and user-model structure that are typically hidden behind aggregate views. To support future research, we will release the full one-year trace with the paper, enabling downstream studies of production beh...",
-    "matched_keywords": [
-      "release",
-      "serving"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "TimeSage-EV: A Live Benchmark for Agentic Time Series Analysis in Evolving Environments",
-    "url": "https://arxiv.org/abs/2608.14270",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.14270v1 Announce Type: new Abstract: Time series analysis in high-stakes domains relies on recurring data releases, where new observations can alter the evidence base and the validity of later conclusions. Existing time series QA benchmarks mostly rely on fixed snapshots, leaving temporal validity and cutoff-aware evidence use unevaluated. We introduce TimeSage-EV, a live benchmark for agentic time series analysis in evolving environments. It tracks 60 real institutional scenarios across 6 domains, comprising 1,485 scenario-period QA pairs from Feb 2023 to May 2026 and spanning monthly, weekly, daily, and irregular release cadences. At each period, large language model (LLM) agents receive time series data and source reports, while the withheld target release provides ground truth. TimeSage-EV evaluates state identification, data summarization, and outlook reasoning. Experiments with frontier LLM agents and TimeSage-1.0, a novel self-evolving agent with a reusable analytical skill library, reveal significant performance gaps across model tiers and recurring failures in temporal validity, exogenous context use, and adaptation. We release TimeSage-EV as a research resourc...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -391,7 +438,7 @@
     "tags": [],
     "score": 56,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -415,34 +462,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands v1.14.0：1.14.0 (2026-08-17)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.14.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-17T21:41:36+00:00",
-    "summary_or_excerpt": "## 1.14.0 (2026-08-17) ## What's Changed ### Features * feat(canvas): present structured error outcomes by @neubig in https://github.com/OpenHands/OpenHands/pull/16231 * feat: add LLM pre-flight validation to prevent saving misconfigured profiles by @neubig in https://github.com/OpenHands/OpenHands/pull/16417 * feat(automations): add a Git Sync page by @VascoSch92 in https://github.com/OpenHands/OpenHands/pull/16521 * feat: set Canvas default model to Kimi K3 and tag it free by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16657 ### Bug Fixes * fix(onboarding): preselect OpenHands LLM provider after picking OpenHands agent by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16531 * fix: preserve backend scope in conversation links by @neubig in https://github.com/OpenHands/OpenHands/pull/16091 * fix(dev): stop baking absolute VITE_BACKEND_BASE_URL in npm run dev by @neubig in https://github.com/OpenHands/OpenHands/pull/16605 * fix(automations): set local responder URL from browser origin by @adbcodes in https://github.com/OpenHands/OpenHands/pull/16332 * fix: show full workspace file tree in Files tab on cloud backends (OHE-3053) by @lilagrc in https:/...",
-    "matched_keywords": [
-      "Agent",
-      "GitHub",
-      "Kimi",
-      "OpenHands"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 45,
-    "release_version": "v1.14.0",
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -462,24 +483,53 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp v0.1.2：> [!NOTE]",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.1.2",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-18T10:23:10+00:00",
+    "summary_or_excerpt": "> [!NOTE] > Semantic versioning is still work in progress. > More info can be found in https://github.com/ggml-org/ggml/discussions/1579 **Nightly build:** [b10485](https://github.com/ggml-org/llama.cpp/releases/tag/b10485) ## Change log since v0.1.1 1511ce3bc sync : ggml da786dc23 ggml : bump version to 0.20.2 (ggml/1589) 27e345b57 build : fix xcframework + cmake clean-up (#27304) 8b8640097 ci : create pre-release with change log and nightly link in make-release (#27302) 25ae3a9b3 CUDA: MMVQ nwarps=8 for bs=1 for dense models on DGX Spark (#26843) 01818e495 ui: enforce alphabetical enum member ordering (#27272) 0021a77de ui: Refactor Built-In Tools naming (Server/Browser) (#27271) 058df671b ci: more optimizations (#26983) 087f94d82 doc: document MCP stdio servers and CORS defaults in the server README [no release] [no ci] (#26847) 533b18257 server: save processed mtmd chunks as placeholder (#27278) ed1c3a20f mtmd: use sha256 for input hashing (#27274) d8df12ebc vocab : support integer tokenizer scores (#27260) b75ecd197 mtmd : skip thumbnail for non-tiled LFM2 images (#27246) 60eeeb608 cuda : skip UMA override for HIP builds (#27083) 39be55c97 vendor: move hash to vendor (#27262)",
+    "matched_keywords": [
+      "CUDA",
+      "GitHub",
+      "Llama",
+      "llama.cpp",
+      "MCP",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 41,
+    "release_version": "v0.1.2",
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Ollama v0.32.14：* llm: transcode WebP images for llama-server",
-    "url": "https://github.com/ollama/ollama/releases/tag/v0.32.14",
-    "source_name": "Ollama",
+    "title": "n8n stable：[2.35.3](https://github.com/n8n-io/n8n/compare/n8n@2.35.2...n8n@2.35.3) (2026-08-14)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+    "source_name": "n8n",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-08-15T19:41:23+00:00",
-    "summary_or_excerpt": "## What's Changed * llm: transcode WebP images for llama-server * renderers/qwen: tolerate non-leading system messages **Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.13...v0.32.14",
+    "published_at": "2026-08-18T09:44:27+00:00",
+    "summary_or_excerpt": "## [2.35.3](https://github.com/n8n-io/n8n/compare/n8n@2.35.2...n8n@2.35.3) (2026-08-14) ### Bug Fixes * **core:** Allow `details` field in `continueErrorOutput` mode ([#36228](https://github.com/n8n-io/n8n/issues/36228)) ([e58a680](https://github.com/n8n-io/n8n/commit/e58a68016b881f29b2509f6c9d1ba093edf7b83b)) * **core:** Bound workflow publication outbox record processing with an abort deadline ([#36286](https://github.com/n8n-io/n8n/issues/36286)) ([69140c0](https://github.com/n8n-io/n8n/commit/69140c0610754ef3a8da66d23fb2f8b00e1d256d)) * **editor:** Update ready-to-run demo templates to a current OpenAI model ([#36201](https://github.com/n8n-io/n8n/issues/36201)) ([66ba995](https://github.com/n8n-io/n8n/commit/66ba995eed583cf0eb782dcba8e0872bc3b270be)) * **Google Ads Node:** Migrate from sunset v21 API to v25 ([#36259](https://github.com/n8n-io/n8n/issues/36259)) ([75780ec](https://github.com/n8n-io/n8n/commit/75780ec66f08e5de10327cc2bd445dd4fd4ae56c)) * **Microsoft Teams Node:** Restore Group.ReadWrite.All OAuth2 scope ([#36186](https://github.com/n8n-io/n8n/issues/36186)) ([0eba018](https://github.com/n8n-io/n8n/commit/0eba018529593012d5d21b2723c3a3accc02bac6)) ### Features *...",
     "matched_keywords": [
-      "changelog",
+      "API",
       "GitHub",
-      "Llama",
-      "Ollama",
-      "Qwen"
+      "n8n",
+      "OpenAI",
+      "workflow"
     ],
     "tags": [
       "ai_app",
@@ -487,100 +537,11 @@
       "model",
       "open_source"
     ],
-    "score": 42,
-    "release_version": "v0.32.14",
-    "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
-    "url": "https://www.latent.space/p/flue-2",
-    "source_name": "Latent Space",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-15T15:46:22+00:00",
-    "summary_or_excerpt": "Flue 2 takes its inspiration from React. Creator Fred Schott, of Astro fame, tells Latent Space why he added hooks and why agents are defined by their harnesses.",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "新兴多智能体系统的模式与问题",
-    "url": "https://aihot.virxact.com/items/cmsvptx2m061frovmjoavsi0l",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-16T11:17:57+00:00",
-    "summary_or_excerpt": "随着AI智能体在共享代码库、市场等社会系统中承担更多任务，智能体间的真实交互将激增，其交互量可能超过人机交互。Anthropic实验显示，协调式智能体群在2700万token运行中发现266个漏洞，远超独立并行方法的21个，但两者互补性明显。智能体虽擅长工具使用，但在长期协作与协调方面仍面临挑战。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmsvptx2m061frovmjoavsi0l",
-    "matched_keywords": [
-      "Anthropic"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CORS Chat",
-    "url": "https://simonwillison.net/2026/Aug/15/cors-chat",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-15T14:49:54+00:00",
-    "summary_or_excerpt": "Tool: CORS Chat I built this today ( with GPT-5.6-Sol xhigh ) to help test Qwen 3.8 27B running in LM Studio on both my M5 MacBook Pro and an NVIDIA DGX Spark. It provides a web UI for exercising an OpenAI-Responses-compatible chat endpoint. I've tried it against LM Studio with the --cors option and OpenRouter, and both work fine. Conversations are persisted in the browser and can be exported as copy-pasted JSON. One fun detail is that it notices SVG images that are being generated and progressively renders them in the chat while the tokens are still streaming in. Tags: svg , ai , generative-ai , llms , cors , openrouter , lm-studio",
-    "matched_keywords": [
-      "GPT",
-      "NVIDIA",
-      "OpenAI",
-      "OpenRouter",
-      "Qwen"
-    ],
-    "tags": [
-      "ai_app",
-      "model",
-      "semiconductor"
-    ],
     "score": 41,
-    "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Linux 7.1, Linux 7.2 Performance On The Intel Xeon 600 Series",
-    "url": "https://www.phoronix.com/review/intel-xeon-6-linux-72",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-14T15:18:11+00:00",
-    "summary_or_excerpt": "With Linux 7.2 expected for its stable release this weekend, today's testing has some additional testing of the Linux 7.2 Git kernel as well as Linux 7.1 stable compared to Linux 7.0 as used by default on Ubuntu 26.04 LTS. Phoronix testing previously conducted of Linux 7.2 have shown benefits for Intel Arc B390 Xe3 in some configurations, faster poll performance on AMD Ryzen Threadripper and other hardware, and some nice I/O performance gains on AMD EPYC Turin. Today's kernel benchmarks are with the Intel Xeon 678X Granite Rapids WS currently in the lab as part of the HP Z4 G6i workstation testing.",
-    "matched_keywords": [
-      "AMD",
-      "Intel",
-      "release"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 41,
-    "first_seen_at": "2026-08-16T07:19:35.756963+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "backlog_source": "backlog",
+    "release_version": "stable",
+    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -605,7 +566,7 @@
     "score": 40,
     "release_version": "v1.98.0-rc.1",
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -631,7 +592,7 @@
     "score": 38,
     "release_version": "b10452",
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -657,7 +618,7 @@
     "score": 38,
     "release_version": "b10451",
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -677,7 +638,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -701,7 +662,7 @@
     ],
     "score": 37,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -723,7 +684,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -740,7 +701,7 @@
     "score": 35,
     "hn_score": 74,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -760,7 +721,7 @@
     ],
     "score": 35,
     "first_seen_at": "2026-08-17T07:15:37.916165+08:00",
-    "last_seen_at": "2026-08-18T07:22:07.635794+08:00",
+    "last_seen_at": "2026-08-19T07:23:29.773599+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

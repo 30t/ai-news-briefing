@@ -1,29 +1,5 @@
 [
   {
-    "title": "HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety",
-    "url": "https://arxiv.org/abs/2608.17597",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.17597v1 Announce Type: cross Abstract: Large language models are increasingly deployed through agent harnesses that manage tools, extensions, persistent state, permissions, and external actions. Existing safety benchmarks mainly target individual attack mechanisms or a limited subset of operational settings, making it difficult to compare how safety failures emerge across different harness responsibilities. We present HarnessRisk, a lifecycle oriented benchmark that organizes agent harness safety into six operational phases including Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. HarnessRisk contains 128 sandboxed cases, each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact. We evaluate each trajectory using Utility, Attack Success Rate, Persistence, and Detection. Across three harnesses, six language models, and 14 model and harness configurations, attack success ranges from 12.6% to 80.9%, while Utility remains between 75.0% and 97.6%. Harness Configuration is the most vulnerable phase across all three harnesses, showing that attacks can...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "Benchmarking Automated Security Patch Backporting: How Far Are We?",
     "url": "https://arxiv.org/abs/2608.17671",
     "source_name": "arXiv cs.AI",
@@ -44,8 +20,8 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -70,8 +46,59 @@
     ],
     "score": 66,
     "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "FraudBench: Stress-Testing Policy-Grounded Banking Agents Against Adaptive Fraud",
+    "url": "https://arxiv.org/abs/2608.18136",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.18136v1 Announce Type: new Abstract: Conversational agents now act for end users through tools while holding access to customer databases and internal policy documents that a caller can reach through dialogue alone. Banking is the clearest case: the same agent that answers a question can also change contact details, reset a PIN, or move money, so ordinary customer service is inseparable from authorization, fraud detection, and policy compliance. Existing financial-fraud benchmarks classify static transactions or messages, and general agent-safety benchmarks target prompt injection or generic harmful use; none test whether a policy-grounded banking agent safely acts when a caller manipulates identity, authorization, and trust over a conversation. We introduce FraudBench, an executable benchmark built on the $\\tau^2$-bench dual-control framework and the $\\tau$-Knowledge banking environment. Both the agent and the simulated caller act through tools over shared, mutable account state, and the agent may grant the caller access to selected tools; the environment exposes a 698-document internal policy corpus that the agent must retrieve from. FraudBench contains 150 authored a...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "customer",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+    "url": "https://arxiv.org/abs/2608.18423",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.18423v1 Announce Type: new Abstract: Language model agents now execute bounded tasks reliably. Whether they can sustain effective decision-making over long horizons, where actions have cumulative consequences and the environment responds to their choices, remains largely unmeasured. FM-Bench (Football Management Benchmark) measures this. An LLM agent runs a football club for 20 in-game years through 26 tools and roughly 340 to 400 decision stops. It drafts a squad on the same budget as every rival, trades players, negotiates contracts, invests in facilities and youth, sets lineups, and answers to a board that can fire it, while a deterministic engine accumulates every year into one final score with no LLM judge or human rater. The solo track plays each of 15 frontier models against a frozen scripted world, and the Arena places the same models plus a scripted anchor in one shared 20-year world; to our knowledge, the first head-to-head evaluation at this scale. We measure six behavioral capabilities behind the score. Across three seeds, all 15 models complete every horizon while the blind scripted baselines die out in most of theirs, and claude-fable-5 tops the solo board...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -100,39 +127,63 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair",
+    "url": "https://arxiv.org/abs/2607.01916",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.01916v5 Announce Type: replace Abstract: Large language model agents can repair real repository issues, but they often spend large context budgets on whole-file reads, broad searches, and long terminal outputs where useful evidence is mixed with irrelevant code and logs. This paper presents ContextSniper, AntTrail's code-repair module for precision evidence selection in repository-level program repair, part of AntTrail's broader agent-memory engine. AntTrail is available at https://gitcode.com/datagallery/AntTrail. ContextSniper indexes code and action memory as three abstract levels, retrieves candidates with a hybrid ranker, filters long tool output through an intention-aware context gate, and returns compact evidence packets while keeping full source recoverable on demand. In a matched 50-task-per-condition comparison on SWE-bench Lite (same tasks, baseline vs.\\ ContextSniper), ContextSniper reduces total token use by 51.5% and logged cost by 36.4% for OpenClaw, and by 38.9% and 27.3% for Claude Code, with submitted-resolution rates essentially unchanged in both host-agent settings. In a separate five-task comparison, ContextSniper beats existing memory- and RAG-styl...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Claude",
+      "Claude Code",
+      "RAG",
+      "repository",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "rag_data"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "KernelArc: A Multi-Agent Framework for GPU Kernel Optimization",
-    "url": "https://arxiv.org/abs/2608.17071",
+    "title": "Jailbreaking in the Haystack",
+    "url": "https://arxiv.org/abs/2511.04707",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.17071v1 Announce Type: new Abstract: We present KernelArc, a multi-agent framework for autonomous GPU kernel optimization across heterogeneous workloads. Strategy-specialized agents run in parallel and coordinate through conclusions-only shared memory, a deterministic benchmark guard, and read-only cross-agent state with plateau-triggered drafting. We evaluate \\kernelarc{} on NVIDIA H100 and B200 GPUs using category-representative SOL-ExecBench workloads. The resulting implementations span custom BF16 GEMM, static cuBLASLt Expert-API configuration tables, fused mixture-of-experts backward, shape-gated decoder-layer fusion, native NVFP4 grouped-query attention, and paged prefill attention. At the public SOL-ExecBench leaderboard snapshot recorded on July~30, 2026, these submissions ranked first on representative L1, L2, Quantization, and FlashInfer tasks. The trajectories support the paper's central motivation: shared multi-agent search can broaden exploration and reach stronger incumbents within a fixed candidate budget, while the value of individual coordination features depends on the kernel and optimization stage.",
+    "published_at": "2026-08-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2511.04707v2 Announce Type: replace-cross Abstract: Recent advances in long-context language models (LMs) have enabled million-token inputs, expanding their capabilities across complex tasks like computer-use agents. Yet, the safety implications of these extended contexts remain unclear. To bridge this gap, we introduce NINJA (short for Needle-in-haystack jailbreak attack), a method that jailbreaks aligned LMs by appending benign, model-generated content to harmful user goals. Critical to our method is the observation that the position of harmful goals play an important role in safety. Experiments on standard safety benchmark, HarmBench, show that NINJA significantly increases attack success rates across state-of-the-art open and proprietary models, including LLaMA, Qwen, Mistral, and Gemini. Unlike prior jailbreaking methods, our approach is low-resource, transferable, and less detectable. Moreover, we show that NINJA is compute-optimal -- under a fixed compute budget, increasing context length can outperform increasing the number of trials in best-of-N jailbreak. These findings reveal that even benign long contexts -- when crafted with careful goal positioning -- introduce...",
     "matched_keywords": [
-      "Agent",
       "agents",
-      "API",
-      "B200",
       "benchmark",
-      "GPU",
-      "H100",
-      "multi-agent",
-      "NVIDIA",
-      "quantization"
+      "Gemini",
+      "Llama",
+      "Mistral",
+      "Qwen"
     ],
     "tags": [
       "agent",
-      "business",
-      "open_source",
-      "semiconductor"
+      "model",
+      "open_source"
     ],
-    "score": 64,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "score": 62,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -153,34 +204,35 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
-    "url": "https://arxiv.org/abs/2608.03682",
+    "title": "ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents",
+    "url": "https://arxiv.org/abs/2608.18307",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.03682v3 Announce Type: replace Abstract: Physical AI policies require inference throughout their lifecycle, including model evaluation, cloud reinforcement learning rollout, edge GPU serving, and onboard deployment. Although these settings share the same checkpoint and action semantics, they often rely on separate inference programs. To unify them, we build PhyAI, a Physical AI inference engine with a single runtime that keeps architecture-specific conditioning, solver, cache, and output logic in model adapters while sharing graph execution, kernels, memory management, and parallel services. The same codebase runs vision-language-action (VLA) models and world-action models (WAMs) on single or multiple GPUs across onboard, edge, and cloud deployments. We used the adapter interface to add MiniCPM-Robot on the day of its release. PhyAI achieves 1.40x-4.65x speedups over the official implementations of pi0, pi0.5, GR00T N1.7, and MiniCPM-Robot. On Cosmos3-Nano-Policy-DROID it reduces latency from 2.46 to 1.18 s on eight H20 GPUs (CFG=2, TP=4), a 2.08x speedup. Specialized runtimes remain faster in several configurations, so our goal is one runtime with competitive latency r...",
+    "published_at": "2026-08-20T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.18307v1 Announce Type: new Abstract: Current evaluation of computer-use agents is split between long-horizon workflow benchmarks and atomic GUI-grounding tests. This leaves an under-instrumented middle layer: realistic component-centered interactions (e.g., toggle a button set) that are short enough to diagnose and rich enough to capture the burdens of modern interfaces. We present ComponentBench, a benchmark and diagnostic pipeline for component-level evaluation of computer-use agents on modern web UIs. ComponentBench is organized around a library-agnostic ontology of 97 canonical UI components instantiated as 2,910 programmatically verified tasks across widely used component libraries, paired with cleaned human reference trajectories that enable evaluation of both task success and interaction efficiency. Beyond task collection, we introduce a scalable pipeline for auditing realized structural difficulty after implementation and synthesizing structured failure analyses across tasks and component families. Evaluating seven models -- GPT-5.4, Gemini 3 Flash, GPT-5.4 mini, GPT-5 mini, Gemini 3.1 Flash-Lite, Qwen3-VL-235B, and UI-TARS-1.5-7B -- across four observation and...",
     "matched_keywords": [
-      "GPU",
-      "inference",
-      "policy",
-      "release",
-      "serving"
+      "agents",
+      "benchmark",
+      "Gemini",
+      "GPT",
+      "workflow"
     ],
     "tags": [
-      "business",
-      "open_source",
-      "semiconductor"
+      "agent",
+      "ai_app",
+      "model",
+      "open_source"
     ],
-    "score": 62,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
+    "score": 61,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -205,8 +257,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -228,8 +280,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -253,8 +305,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -278,8 +330,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -308,7 +360,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -330,86 +382,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Navigation-Informed Embeddings: Dense-Retriever Adaptation from Agent Search Traces",
-    "url": "https://arxiv.org/abs/2608.15956",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.15956v1 Announce Type: new Abstract: Agentic retrieval workflows produce query, retrieval, and stopping traces as a byproduct of answering questions. We study how these traces can adapt a deployed dense retriever to changing workflow distributions without new relevance labels, synthetic queries, or LLM judgments. We introduce Navigation-Informed Embeddings (NIE), a family of trace-derived objectives. NIE-Stop turns the stopping document into a soft positive; NIE-Path additionally uses preceding path documents as hard comparisons and imposes ordinal constraints with geometric decay. A BGE encoder adapted from retained source trajectories improves support Recall@20 on an independent target benchmark from 72.2 to 78.0 overall. NIE-Stop reaches 76.9 overall and 52.3 on long paths; NIE-Path raises long-path performance to 55.4, compared with 46.7 for the unadapted encoder. A shuffled-order control under the full path objective loses 3.2 points. Without public-benchmark training, the same adapter also improves nDCG@10 by 1.9 points on standard BEIR HotpotQA. NIE therefore provides a lightweight adaptation channel for settings where trajectories are already retained, with zero...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "benchmark",
-      "embeddings",
-      "retrieval",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Evaluating Agentic Code Repair Capabilities in Distributed Systems",
-    "url": "https://arxiv.org/abs/2608.14863",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-18T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.14863v1 Announce Type: cross Abstract: LLM-based coding agents have advanced rapidly on single-process SWE tasks, with frontier models now clustering in the high-70s on SWE-bench Verified. Distributed-system debugging, however, remains an under-explored regime: bugs span processes, nodes, and protocol interactions, with root causes rarely recoverable from source alone and brute-force exploration intractable across non-deterministic interleavings. This leaves two gaps in LLM and agent evaluation: no code-repair benchmark targets distributed-system bugs, and no controlled study isolates how much externally provided debugging context changes agent success on them. We introduce DDBench, a code-repair benchmark of 60 historical bugs mined from 13 open-source distributed systems, partitioned into three difficulty tiers. DDBench evaluates every case under two matched conditions: a symptom-only condition where the agent receives only the bug symptom and repository, and a context-augmented condition where it additionally receives a bounded debugging context (logs, traces, runtime state, and targeted code-investigation notes), isolating the effect of debugging context from model...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
-    "url": "https://arxiv.org/abs/2608.13756",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.13756v1 Announce Type: new Abstract: Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable. We test that assumption: holding the checkpoint, prompts, hardware, inference engine, decoding, and quantization configuration fixed, we swap only the INT8 linear kernel (CUTLASS versus Triton) inside vLLM. At 1.7B each arm reproduces itself bit-for-bit across cold restarts, yet the arms agree on no sequence in any end-to-end comparison we ran (0/8, 0/16, and 0/64). What makes this more than a benchmark discrepancy is an integer alibi: for shared INT8 operands under a verified no-overflow bound, the INT32 dot product is exact and order-independent, so the accumulator cannot be the source of any difference. Feeding both kernels identical operands from every linear layer of Qwen3-1.7B and 8B (196 and 252 layers), we find bit-identical outputs under power-of-two scales, confirming a pinned prediction list 196/196 and 252/252 (pre-registered at 1.7B, pinned but not blind at 8B), and observed differences of at most one bfloat16 spacing under the checkpoints' real scales. This localizes the divergence to scale application and output rou...",
-    "matched_keywords": [
-      "benchmark",
-      "GPU",
-      "inference",
-      "quantization",
-      "vLLM"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -433,8 +406,8 @@
     ],
     "score": 58,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -460,82 +433,63 @@
     ],
     "score": 46,
     "release_version": "v0.14.24",
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "n8n n8n@1.123.73：[1.123.73](https://github.com/n8n-io/n8n/compare/n8n@1.123.72...n8n@1.123.73) (2026-08-19)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%401.123.73",
-    "source_name": "n8n",
+    "title": "CrewAI 1.15.17：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.17",
+    "source_name": "CrewAI",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-08-19T06:05:53+00:00",
-    "summary_or_excerpt": "## [1.123.73](https://github.com/n8n-io/n8n/compare/n8n@1.123.72...n8n@1.123.73) (2026-08-19) ### Bug Fixes * **core:** Acquire expression isolate for dynamic node parameter requests ([#36494](https://github.com/n8n-io/n8n/issues/36494)) ([4ee48e6](https://github.com/n8n-io/n8n/commit/4ee48e61a16e5730306556f1e79f1b4f32c8104f)) ### Features * **core:** Make the vm expression engine the default on 1.x ([#36498](https://github.com/n8n-io/n8n/issues/36498)) ([75bedd8](https://github.com/n8n-io/n8n/commit/75bedd8eaf5ff2a04504c9973d019b787cb6c149))",
-    "matched_keywords": [
-      "GitHub",
-      "n8n"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "n8n@1.123.73",
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ESP-IDF ESP-IDF Pre-release v6.1-rc1：Documentation for IDF v6.1-rc1 is available at https://docs.espressif.com/projects/esp-idf",
-    "url": "https://github.com/espressif/esp-idf/releases/tag/v6.1-rc1",
-    "source_name": "ESP-IDF",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-18T15:26:58+00:00",
-    "summary_or_excerpt": "Documentation for IDF v6.1-rc1 is available at https://docs.espressif.com/projects/esp-idf/en/v6.1-rc1/ ESP-IDF v6.1-rc1 is a minor update for ESP-IDF v6.0. Release v6.1 is mostly compatible with apps written for ESP-IDF v6.0. Release v6.0.2 is the latest stable release at the time of writing. We highly recommend referring to our [migration guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/migration-guides/release-6.x/6.1/index.html) while moving your apps from ESP-IDF v6.0 to v6.1 release. # Obtaining v6.1-rc1 For full installation instructions, see the [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/v6.1-rc1/get-started/index.html). The source files attached to this release will _not_ work due to our use of git submodules. Use one of the following methods instead: ## Using git To get this release, use the following commands: ``` git clone -b v6.1-rc1 --recursive https://github.com/espressif/esp-idf.git esp-idf-v6.1-rc1 cd esp-idf-v6.1-rc1/ ``` This is the recommended way of obtaining v6.1-rc1 of ESP-IDF. ## Download an archive with submodules included Attached to this release is an `esp-idf-v6.1-rc1.zip` archive. It includes `.git` dir...",
-    "matched_keywords": [
-      "ESP-IDF",
-      "ESP32",
-      "Espressif",
-      "GitHub",
-      "release"
-    ],
-    "tags": [
-      "embedded_edge_ai",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "v6.1-rc1",
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks",
-    "url": "https://arxiv.org/abs/2604.11753",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2604.11753v3 Announce Type: replace Abstract: We study parallel test-time scaling for long-horizon agentic tasks such as agentic search and deep research, where multiple rollouts are generated in parallel and aggregated into a final response. While such scaling has proven effective for chain-of-thought reasoning, agentic tasks pose unique challenges: trajectories are long, multi-turn, and tool-augmented, and outputs are often open-ended. Aggregating only final answers discards rich information from trajectories, while concatenating all trajectories exceeds the model's context window. To address this, we propose AggAgent, an aggregation agent that treats parallel trajectories as an environment. We equip it with lightweight tools to inspect candidate solutions and search across trajectories, enabling it to navigate and synthesize information on demand. Across six benchmarks and three model families (GLM-4.7, Qwen3.5, MiniMax-M2.5), AggAgent outperforms all existing aggregation methods-by up to 5.3% absolute on average and 10.3% on two deep research tasks-while adding minimal overhead, as the aggregation cost remains bounded by a single agentic rollout. Our findings establish a...",
+    "published_at": "2026-08-20T00:27:23+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Add declarative conversational flows documentation - Synthesize built-in conversational methods for declarations - Enable declarations to drive conversational mode - Make conversational opt-in unmistakable - Carry the AMP slug on tools resolved from a slug reference - Handle oversized single messages during chunking ### Bug Fixes - Fix usage of the URL hostname as MCP HTTP and SSE server_name - Close the agent scope on every failed attempt - Attribute tool errors to the tool that failed - Pin SSRF checks to each redirect hop and peer IP - Resolve issues with native tool calls broken over OpenAI Responses API ### Documentation - Update documentation with a snapshot and changelog for v1.15.16 ## Contributors @Copilot, @Vidit-Ostwal, @github-code-quality[bot], @joaomdmoura, @lorenzejay, @lucasgomide, @theCyberTech",
     "matched_keywords": [
       "Agent",
-      "agentic",
-      "GLM",
-      "MiniMax"
+      "API",
+      "changelog",
+      "CrewAI",
+      "GitHub",
+      "MCP",
+      "OpenAI"
     ],
     "tags": [
       "agent",
-      "model"
+      "business",
+      "model",
+      "open_source"
     ],
     "score": 46,
-    "first_seen_at": "2026-08-18T07:22:07.635794+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
+    "release_version": "1.15.17",
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10514：model : GraniteSWAForCausalLM / GraniteMoeSWAForCausalLM (#25505)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10514",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-20T11:17:28+00:00",
+    "summary_or_excerpt": "model : GraniteSWAForCausalLM / GraniteMoeSWAForCausalLM (#25505) * feat(convert): Add conversion for GraniteSWAForCausalLM Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(llama): Add granite_swa support Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(conversion): Add conversion infra for rope_pattern array NOTE: There is other work also targeting this, so this may be removed depending on merge order. Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * fix(conversion): Fix SWA pattern logic and support for non-rope layers Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat(conversion): Add support for GraniteMoeSWA Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add llama_hparams::has_rope and arch constants NOTE: This shadows the work done for Granite Speech https://github.com/ggml-org/llama.cpp/pull/25107 Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add support for per-layer rope determination Branch: GraniteS...",
+    "matched_keywords": [
+      "GitHub",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 45,
+    "release_version": "b10514",
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -557,8 +511,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -580,8 +534,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -591,7 +545,7 @@
     "source_type": "hackernews",
     "source_level": "tech_community",
     "published_at": "2026-08-19T16:29:02+00:00",
-    "summary_or_excerpt": "HN points: 47. Comments: https://news.ycombinator.com/item?id=49363710",
+    "summary_or_excerpt": "HN points: 85. Comments: https://news.ycombinator.com/item?id=49363710",
     "matched_keywords": [
       "Agent",
       "launch"
@@ -600,10 +554,34 @@
       "agent",
       "business"
     ],
-    "score": 43,
-    "hn_score": 47,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "score": 42,
+    "hn_score": 85,
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "n8n stable：[2.35.5](https://github.com/n8n-io/n8n/compare/n8n@2.35.4...n8n@2.35.5) (2026-08-20)",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
+    "source_name": "n8n",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-20T08:21:56+00:00",
+    "summary_or_excerpt": "## [2.35.5](https://github.com/n8n-io/n8n/compare/n8n@2.35.4...n8n@2.35.5) (2026-08-20) ### Bug Fixes * **core:** Avoid restarting task runners that are only slow ([#36610](https://github.com/n8n-io/n8n/issues/36610)) ([7ee5295](https://github.com/n8n-io/n8n/commit/7ee5295ed58ccf2b7921ac22a6fc89a315b11bfe)) * **core:** Only init the expression engine for commands that evaluate expressions ([#36648](https://github.com/n8n-io/n8n/issues/36648)) ([af53a1a](https://github.com/n8n-io/n8n/commit/af53a1a71c8ec3428ef130e524bcc645a82d4ddf)) * **core:** Release test-webhook isolate only after teardown completes ([#36632](https://github.com/n8n-io/n8n/issues/36632)) ([17926a0](https://github.com/n8n-io/n8n/commit/17926a0e8b665bc99a71ef8b7baa35ec85494c65)) * **editor:** Restore Edit Fields type selector styles ([#36628](https://github.com/n8n-io/n8n/issues/36628)) ([f97d74f](https://github.com/n8n-io/n8n/commit/f97d74fc039da374eaa2b4e701b19f8c0a1e8ad9))",
+    "matched_keywords": [
+      "GitHub",
+      "n8n",
+      "release"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 41,
+    "release_version": "stable",
+    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -632,35 +610,7 @@
     "score": 41,
     "release_version": "v0.1.2",
     "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "n8n stable：[2.35.3](https://github.com/n8n-io/n8n/compare/n8n@2.35.2...n8n@2.35.3) (2026-08-14)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
-    "source_name": "n8n",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-18T09:44:27+00:00",
-    "summary_or_excerpt": "## [2.35.3](https://github.com/n8n-io/n8n/compare/n8n@2.35.2...n8n@2.35.3) (2026-08-14) ### Bug Fixes * **core:** Allow `details` field in `continueErrorOutput` mode ([#36228](https://github.com/n8n-io/n8n/issues/36228)) ([e58a680](https://github.com/n8n-io/n8n/commit/e58a68016b881f29b2509f6c9d1ba093edf7b83b)) * **core:** Bound workflow publication outbox record processing with an abort deadline ([#36286](https://github.com/n8n-io/n8n/issues/36286)) ([69140c0](https://github.com/n8n-io/n8n/commit/69140c0610754ef3a8da66d23fb2f8b00e1d256d)) * **editor:** Update ready-to-run demo templates to a current OpenAI model ([#36201](https://github.com/n8n-io/n8n/issues/36201)) ([66ba995](https://github.com/n8n-io/n8n/commit/66ba995eed583cf0eb782dcba8e0872bc3b270be)) * **Google Ads Node:** Migrate from sunset v21 API to v25 ([#36259](https://github.com/n8n-io/n8n/issues/36259)) ([75780ec](https://github.com/n8n-io/n8n/commit/75780ec66f08e5de10327cc2bd445dd4fd4ae56c)) * **Microsoft Teams Node:** Restore Group.ReadWrite.All OAuth2 scope ([#36186](https://github.com/n8n-io/n8n/issues/36186)) ([0eba018](https://github.com/n8n-io/n8n/commit/0eba018529593012d5d21b2723c3a3accc02bac6)) ### Features *...",
-    "matched_keywords": [
-      "API",
-      "GitHub",
-      "n8n",
-      "OpenAI",
-      "workflow"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 41,
-    "release_version": "stable",
-    "first_seen_at": "2026-08-19T07:23:29.773599+08:00",
-    "last_seen_at": "2026-08-20T07:23:06.831294+08:00",
+    "last_seen_at": "2026-08-21T07:25:25.018772+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

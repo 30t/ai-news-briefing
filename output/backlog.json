@@ -1,28 +1,5 @@
 [
   {
-    "title": "MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection",
-    "url": "https://arxiv.org/abs/2608.19901",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19901v1 Announce Type: cross Abstract: Agent Skills extend LLM agents with reusable instruction packages that may also include scripts, resources, and service configuration. This creates a direct distribution channel for malicious behavior, yet existing malicious-Skill datasets are fragmented across sources, artifact formats, evidence regimes, and benign coverage; duplicated and structurally related content further complicates direct aggregation and evaluation. We present MaliciousSkillBench, a comprehensive benchmark for malicious Agent Skill detection. We consolidate 13 public sources, 11 of which contribute Core malicious artifacts, and reduce 8,414 raw malicious records to 7,539 normalized-unique identities in 4,588 operational structural families. After conservative cross-label conflict exclusion, the primary benchmark contains 9,740 Skills: 7,505 malicious and 2,235 benign. To characterize its coverage, we harmonize 11 attack categories for 4,983 malicious identities with supported source-native mappings and find substantial differences in threat composition across sources. We then evaluate three learned text detectors and three off-the-shelf Skill scanners. Learn...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
     "title": "蚂蚁百灵为SGLang推出权重缓存守护进程",
     "url": "https://aihot.virxact.com/items/cmt3wt4qm13utro6t0hb6ga3y",
     "source_name": "AIHOT Featured",
@@ -34,37 +11,7 @@
     "tags": [],
     "score": 64,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
-    "url": "https://arxiv.org/abs/2608.19799",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19799v1 Announce Type: new Abstract: Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce \\textbf{SWE-bench Science}, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, \\textbf{Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%}, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. W...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "Claude",
-      "Claude Code",
-      "GitHub",
-      "repository",
-      "software engineering"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -89,38 +36,28 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "GxP-Agent: Process-DAG Topology for Reliable Clinical Trial Programming with LLM Agents",
-    "url": "https://arxiv.org/abs/2608.16890",
-    "source_name": "arXiv cs.AI",
+    "title": "为什么说智能体框架有害：从后台自动化到可审计运行时",
+    "url": "https://www.bestblogs.dev/en/video/4b3c69a2e?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.16890v1 Announce Type: new Abstract: Clinical trial programming -- transforming study protocols into analysis-ready datasets under CDISC standards -- is a bottleneck in regulatory submissions, yet LLM-based code generation fails catastrophically on this task: across 11 single-shot attempts with five frontier models, none produces a valid subject-level analysis dataset. We introduce GxP-Agent, a multi-agent system that encodes regulatory process ordering as a directed acyclic graph (DAG), decomposing monolithic dataset generation into 15 domain-specific nodes executed by worker agents with pharmaverse skill context, validation gates, and conditional retry. On CDISC-Bench, a new execution-based benchmark built from the FDA pilot submission CDISCPilot01 (254 subjects, 49 ground-truth ADSL variables), GxP-Agent with Claude Sonnet 4.6 achieves 100% structural match (49/49 variables, 254 correct records) across three independent runs, compared to 59.2% for the best retrieval-augmented baseline and 0% for all single-agent and flat multi-agent approaches. The DAG topology also enables weaker models: GPT-4.1 achieves 59.2% mean structural match under the same DAG, where it score...",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-22T16:30:39+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 可靠的后台智能体需要的不是又一个重代码框架，而是由事件、持久日志、内容寻址 Prompt、精确回放和类型化边界组成的类操作系统运行时。 📝 Summary Rémi Louf 用两周时间自动化自己的晨间工作流，最终形成了一套具体的智能体基础设施主张。声明式 Markdown 定义、定时任务和类型化事件，让智能体无需维护显式应用图也能自由组合。Slack 重复发帖、语音笔记丢失以及无法追溯的 Prompt 回归等真实故障，又迫使运行时加入队列、尝试次数追踪、仅追加的因果事件日志，以及内容寻址的 Prompt 组件。这种表示方式让模型输入可以被审计、比较，并能跨模型精确回放。Louf 最终把智能体类比为进程，把 Markdown 视为用户空间，把运行时视为内核；内核的职责不是降低无效工具调用和智能体间错误事件的概率，而是从结构上让它们无法发生。演讲还给出了约 20 个内部智能体的落地证据，并建议在购买平台前先自行构建一个窄范围版本。 💡 Main Points 声明式智能体与事件可以替代代码定义的工作流图 智能体定义可以保存在可版本化的 Markdown 中，定时任务与事件订阅则自然形成拓扑和扇入扇出，无需人工维护图的边。 运行故障暴露的仍是熟悉的分布式系统需求 重复执行、输入丢失和 Prompt 回归会直接导向持久日志、队列、尝试次数追踪、因果链与版本化产物，而非全新的 AI 专属抽象。 内容寻址 Prompt 让模型行为可审计、可回放 对系统 Prompt、技能、工具描述、用户消息和响应逐一做哈希，可以保存每次运行的精确上下文，并支持组件差异比较、请求重建、评估与跨模型回放。 运行时应像内核，而不是应用框架 运行时负责调度、隔离并记录智能体进程，同时保持声明式前端可替换，从而把持久执行原语与用户侧智能体定义分离。 类型化工具调用与事件应从结构上阻止无效操作 可靠自动化要求在外部工具和智能体间通信两类边界上采用严格 Schema，不能只依赖模型以概率方式遵循格式。 💬 Key Quotes 日志是系统的记忆。没有任何东西会丢失，一切都能被观察。 内核的职责应当是让错误操作无法发生，而不只是让它们不太可能发生。 最困难的部分仍然是那些熟悉的工程问题。 我现在的建议是，购买之前先自己构建。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 9 min Word Count： 2040 Tags： 智能体运行时 , 事件驱动架构 , 内容寻址 Prompt , 可观测性 , 结构化输出 Play Full Video",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "Claude",
-      "dataset",
-      "GPT",
-      "multi-agent",
-      "retrieval"
+      "Meta AI"
     ],
     "tags": [
-      "agent",
-      "model",
-      "open_source",
-      "rag_data"
+      "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
+    "score": 63,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -148,7 +85,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -175,28 +112,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Token Optimization and Context Window Management in Multi-Agent AI Workflows",
-    "url": "https://arxiv.org/abs/2608.17188",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.17188v1 Announce Type: cross Abstract: Multi-agent AI workflows are limited not only by model quality but by token cost, latency, and context-window quality. This paper presents a practitioner framework for token optimization and context-window management, grounded in an internal production dashboard that extracts structured work items from meetings, email, and chat with LLMs and routes summaries across workstreams. Six patterns are described: context stratification, fetch-once/process-locally architecture, schema-contracted prompts, token-aware fallback chains, semantic caching, and inter-agent communication compression. In production they cut measured cold-load latency to 61-116 seconds (six timed runs) from an operational baseline of roughly 3.5-10.5 minutes, with an estimated 60-70% token reduction. It also reports a controlled context-composition study: 2,420 confirmatory trials across 11 model configurations, using 661 anonymized workplace items scored for relevance. Holding the prompt at a fixed ten items, replacing some high-relevance items with same-domain low-relevance items improves the model's relevance-score concordance on the target items, versus high-rele...",
-    "matched_keywords": [
-      "Agent",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -222,7 +138,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -251,7 +167,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -273,7 +189,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -298,7 +214,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -325,81 +241,29 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "MobileWorldSafety: Benchmarking GUI Agent Safety Against Environmental Injection Attacks in Android Apps",
-    "url": "https://arxiv.org/abs/2608.17659",
-    "source_name": "arXiv cs.AI",
+    "title": "给智能体一份预算，而不是一枚 Token —— Sachin Malhotra，Anthropic",
+    "url": "https://www.bestblogs.dev/en/video/3f3390ccc?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.17659v1 Announce Type: cross Abstract: LLM-powered GUI agents that autonomously operate smartphones are rapidly transitioning from research prototypes to early real-world deployment. However, because these agents routinely process untrusted environmental content, they are highly vulnerable to environmental injection attacks, which include indirect prompt injections and adversarial instructions. Such attacks can manipulate the behavior of agents without user awareness through diverse channels encountered in everyday mobile use. Despite these risks, existing benchmarks often fail to capture everyday user scenarios, lacking a systematic evaluation of GUI agents under environmental injection attacks on mobile devices. To address this gap, we introduce MobileWorldSafety, a benchmark of 142 risk tasks built on real Android applications. For each task, we define a programmatically verifiable risk indicator over the final system state and evaluate outcomes with a two-stage pipeline: rule-based verification handles unambiguous cases, while an LLM judge adjudicates ambiguous ones. This distinguishes safety failures from capability failures and enables objective and reproducible a...",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-22T14:00:06+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 生产级智能体需要由可信基础设施强制执行的多维预算，将非对称权限、可恢复限流、聚合式预警线，以及面向不可逆操作的撤销测试组合起来。 📝 Summary Anthropic CI 工程师 Sachin Malhotra 从一次真实生产事故出发，提出智能体有限自治的实践框架。一名清理智能体在 90 秒内误删约 200 个 workload，影响约 20 名工程师；这说明静态 Token 权限过于二元：范围太窄会让智能体失去作用，太宽则可能引发事故。他的方法区分会显性失败与藏在绿色检查结果背后的静默失败，为每次写操作设置可恢复的速率上限，用预警线观察聚合行为，并通过撤销测试判断何时必须由人类持有第二把钥匙。提示词负责解释意图，确定性的代理层则强制执行上限、写入不可篡改的智能体与会话身份、向子任务传递来源信息，并阻止智能体通过声称新身份来重置预算。 💡 Main Points Token 是二元权限，安全自治需要预算 有效控制必须表达智能体可以做多少、以多快速度执行、哪些结果能够自行撤销，以及行动后由谁观察或审批。 权限设计应依据失败的非对称性 智能体可以独立处理错误可见且容易恢复的动作；如果失败会静默发生或影响巨大，就应要求人类审批和可审计的第二把钥匙。 每次写操作都需要可恢复的上限 速率限制让智能体在时间窗口内保持自治，同时约束失控循环；共享资源应采用更小额度，例外操作的绕过权只交给人类。 预警线通过聚合行为改进策略 带可信身份的操作记录能够暴露单看合理、聚合后却异常的模式，团队据此可向智能体上下文补充针对性的纠偏指引。 可信基础设施必须掌握身份与强制执行 代理层持有真实凭证，分配不可篡改的智能体与会话来源，并执行确定性限制，避免提示词或调用方自定义请求头绕过规则。 💬 Key Quotes Token 从根本上说是二元的：它包含一组静态权限范围，调用方要么拥有权限，要么没有。 把失败会响亮暴露且可观察的操作交给智能体；如果错误可能悄无声息，就让人类参与。 文本塑造智能体想做什么，基础设施则限定它最多能错到什么程度。 所有这些机制的底层都是可信身份。身份必须来自基础设施，而不是请求本身。这条规则如果正确，其余都只是调优。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 软件编程 Language： 英文 Read Time： 10 min Word Count： 2270 Tags： 智能体安全 , 有限自治 , 速率限制 , 身份与来源 , CI 基础设施 Play Full Video",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
+      "Anthropic",
+      "Meta AI"
     ],
     "tags": [
-      "agent",
-      "open_source"
+      "model"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding",
-    "url": "https://arxiv.org/abs/2607.27155",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.27155v2 Announce Type: replace Abstract: Large language model (LLM) agents are increasingly expected to assist users in completing tasks. However, existing benchmarks provide limited support for evaluating whether agents can carry out office-suite workflows at a reasonable cost. We introduce OmegaUse-OfficeVal, a benchmark for evaluating LLM agents on long-horizon office-suite tasks with task-level economic grounding. The benchmark comprises 100 tasks derived from office-suite requests proposed by practitioners and adapted through a privacy-preserving process. On average, these tasks require 2.32 hours of human labor to complete. An important feature of the benchmark is that each task is paired with two economic signals: human labor time and task price proxy. These signals enable direct comparisons between human costs and LLM inference costs, as well as value-weighted evaluation. To support stable evaluation, we develop code-based verifiers from fine-grained rubrics. We evaluate several frontier LLMs together with a human baseline. Although all evaluated LLMs are substantially cheaper and faster than human workers, they have not yet approached human-level deliverable qu...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "inference",
-      "privacy"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents",
-    "url": "https://arxiv.org/abs/2606.03895",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-19T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.03895v3 Announce Type: replace-cross Abstract: Large language model (LLM) agents can persist across tasks, acquire memory, activate Skills, synthesize tools, fork child processes, attach remote resources, and commit checkpoints as reusable images. These mechanisms expand the action surface after deployment and create authority-escalation and data-exfiltration risks when visibility is mistaken for permission. We present Agent libOS, an agent-native library OS substrate that separates three planes. Operation admission combines process identity, Task Authority ceilings, typed Capabilities, policy or Human approval, budgets, and concrete primitives. Information-flow admission propagates labels and immutable source references, resolves Host-registered Sinks, and requires an exact one-shot Human release for conditional high-sensitivity egress. Durable causal evidence records intent, outcomes, accounting, and causal links but never grants authority. Thus, the model-visible action surface may evolve without implicitly expanding resource authority or permitted information flows. The implementation provides persistent processes, Object Memory, Skills, syscall-mediated JIT Tools,...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "policy",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-20T07:23:06.831294+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -419,8 +283,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -443,7 +307,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -465,7 +329,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -480,8 +344,28 @@
     "matched_keywords": [],
     "tags": [],
     "score": 59,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "深入 847 份生产临床 AI 病历：如何发现看似正确的危险错误｜Sebastian Fox",
+    "url": "https://www.bestblogs.dev/en/video/a6015d9e0?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-22T17:00:32+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary Sebastian Fox 说明合理的遗漏与意图偏移为何能逃过静态 LLM Judge，并提出由真实失败、专家判断和案例检索驱动的持续评估闭环。 📝 Summary Sebastian Fox 通过生产环境中的临床 AI 病历错误指出，高风险 AI 最危险的时刻往往是输出看起来完全合理。他区分了转录错误，以及生成阶段对信息的新增、修改和遗漏，并强调真正困难的任务不是发现文本差异，而是判断某个差异在具体临床情境中是否重要。静态 Rubric 只能承载可显式表达的规则，微调后的模型权重则容易过时，也难以解释判断依据。他提出持续运行的三段式评估闭环：从真实输出中发现失败模式并建立本体，捕获专家的推理和纠正而不只是标签，再为每个新输出检索相似已评案例、适用纠正、参考资料和指南，动态组装专属标准。演讲用漏掉下颌疼痛红旗、把已否决治疗方案写成最终决定，以及法国与马拉维湖旅行史具有完全不同临床意义等案例，把抽象论证落到实处。该框架也适用于法务、客服等任何「自信地犯错」会带来重大成本的场景，但演讲没有完整展开若干流行率和性能比较数据的方法学细节。 💡 Main Points 最危险的 AI 错误可能看起来完全正确 一份临床上合理的病历可能漏掉唯一会改变紧急程度和治疗方案的红旗，因此语言流畅度不能代表安全性。 评估系统失败在于无法判断什么真正重要 通用 Judge 能比较转录与病历，但只有结合情境、隐性且持续变化的领域判断，才能区分无害差异与危险错误。 静态 Rubric 与模型权重都不适合保存领域判断 Rubric 只包含专家能写出的规则；微调权重容易过时、更新成本高，也无法清楚解释是哪条先例改变了分数。 把领域判断保存在可检索案例中 将历史专家判断、纠正、相似案例与指南动态组装成案例专属标准，无需重新训练模型，也能为 Judge 提供相关上下文。 评估必须持续发现、捕获并校准 真实生产输出揭示未知失败模式，聚焦式专家评论沉淀隐性判断，每一个已评案例又会改善下一次评估可用的上下文。 💬 Key Quotes 最严重的失败，往往正是那些看起来完全没问题的结果。 模型通常知道医学事实，它缺少的是对这个具体案例中什么真正重要的判断。 预先指定的 Rubric 只能包含我们能够表达出来的判断。 病历完全相同，唯一改变的是 Judge 看到了什么。 评估不是你拥有的某样东西，而是你需要持续去做的事情。 📊 Article Meta AI Screening： 92 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 11 min Word Count： 2641 Tags： AI 评估 , 临床 AI ,...",
+    "matched_keywords": [
+      "Meta AI"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -501,181 +385,46 @@
     ],
     "score": 58,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Anthropic appears to be A/B testing reduced effort levels in Claude Code",
-    "url": "https://twitter.com/argofowl/status/2091150597374537729",
+    "title": "NanoGPT Speedrun Frontier",
+    "url": "https://www.primeintellect.ai/research/nanogpt-speedrun",
     "source_name": "Hacker News",
     "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-08-22T16:58:49+00:00",
-    "summary_or_excerpt": "HN points: 155. Comments: https://news.ycombinator.com/item?id=49401549",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 49,
-    "hn_score": 155,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "published_at": "2026-08-22T22:14:27+00:00",
+    "summary_or_excerpt": "HN points: 136. Comments: https://news.ycombinator.com/item?id=49404380",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 50,
+    "hn_score": 136,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "I built an open-source roguelike specifically for training game-playing agents [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1vvii1j/i_built_an_opensource_roguelike_specifically_for",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
+    "title": "My agent.md to improve LLM-assisted code quality",
+    "url": "https://fabiensanglard.net/agent.md/index.html",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
     "source_level": "tech_community",
-    "published_at": "2026-08-22T17:32:17+00:00",
-    "summary_or_excerpt": "Hey everyone! I wanted to share something I’ve been working on. I was inspired by projects from DeepMind and OpenAI, but noticed that most games are prohibitively difficult to integrate with an agent harness. So I built DelveRL from the ground up as a human-playable game with a structured API, deterministic simulation, procedural levels, partial observability, and enough strategic headroom for agents to compete and improve. It’s an endless turn-based roguelike where agents must explore, manage risk and resources, fight enemies, and escape each floor. Everything runs locally, including batched renderer-free environments and a recurrent PPO trainer. The included baseline reaches a median floor of 18, with extended runs reaching floor 33. The game, training code, checkpoint, bridge documentation, and raw benchmarks are all open source. I’d love to see what approaches people try - and how quickly the baseline gets crushed submitted by /u/SnyderConsulting [link] [comments]",
+    "published_at": "2026-08-23T17:59:52+00:00",
+    "summary_or_excerpt": "HN points: 108. Comments: https://news.ycombinator.com/item?id=49410932",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "API",
-      "DeepMind",
-      "open source",
-      "OpenAI"
+      "Agent"
     ],
     "tags": [
-      "agent",
-      "business",
-      "model",
-      "open_source"
+      "agent"
     ],
-    "score": 48,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "score": 47,
+    "hn_score": 108,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llm 0.33",
-    "url": "https://simonwillison.net/2026/Aug/22/llm",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-22T17:01:16+00:00",
-    "summary_or_excerpt": "Release: llm 0.33 My highlights from this release: Upgraded to the OpenAI Python library 3.x and switched the HTTP client dependency from httpx to httpx2 . #1608 , #1631 I shipped a quick 0.32.1 fix for this yesterday, but this is the more comprehensive fix. llm embed and llm embed-multi now accept --key . The Python EmbeddingModel.embed() , EmbeddingModel.embed_multi() , Collection.embed() and Collection.embed_multi() methods accept key= too, passing the resolved per-call key to embedding plugins without changing shared model state. Existing plugins that read self.key continue to work through a compatibility fallback. Thanks, ChrisJr404 . #757 , #1620 The embedding models now use the same pattern for keys that regular LLM models do. llm prompt -t/--template can now be repeated to combine templates in order. This allows model configuration and options from one template to be used with a prompt from another. This unlocks a neat pattern where you can create templates that package a model with a set of default options: llm -m gpt-5.6-luna -o reasoning_effort high --save lhigh llm \"Generate an SVG of a pelican riding a bicycle\" --save pelican # Combine and run the templates llm -t lhi...",
-    "matched_keywords": [
-      "Continue",
-      "GPT",
-      "OpenAI",
-      "release"
-    ],
-    "tags": [
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
-    "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-21T19:43:39+00:00",
-    "summary_or_excerpt": "Nvidia research shows that AI agents can perform well, and not go off the deep end, through fine-tuning, even if the AI model isn't that great at the task.",
-    "matched_keywords": [
-      "agents",
-      "fine-tuning",
-      "NVIDIA"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands v1.15.0：1.15.0 (2026-08-21)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.15.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-21T14:01:34+00:00",
-    "summary_or_excerpt": "## 1.15.0 (2026-08-21) ## What's Changed ### Features * feat(sidebar): add getting started checklist with settings toggle by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16182 * feat: show workspace path in Files view by @HurrairaBaloch in https://github.com/OpenHands/OpenHands/pull/16362 * feat(automations): install a catalog entry that ships a script bundle by @VascoSch92 in https://github.com/OpenHands/OpenHands/pull/16680 * feat: add LLM provider-connections UI (local agent-server) by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16616 * feat: polish automations dashboard, recommended rail, and Add/Import flow by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16688 * feat(conversation): add overview panel and unified commits drawer by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16230 * feat: send template provenance for versioned setup entries by @hieptl in https://github.com/OpenHands/OpenHands/pull/16458 * feat: instrument onboarding checklist link clicks by @hieptl in https://github.com/OpenHands/OpenHands/pull/16777 ### Bug Fixes * fix: prevent silent agent profile downgrade by @neubig in https://github.c...",
-    "matched_keywords": [
-      "Agent",
-      "GitHub",
-      "OpenHands"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 45,
-    "release_version": "v1.15.0",
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llm-openrouter 0.7",
-    "url": "https://simonwillison.net/2026/Aug/21/llm-openrouter",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T16:58:19+00:00",
-    "summary_or_excerpt": "Release: llm-openrouter 0.7 Now that this plugin is compatible with LLM 0.32 it can display the reasoning traces for LLMs available through OpenRouter. Updated for compatibility with LLM 0.32 . Models now use OpenRouter's implementation of the Responses API . Three new server-side tools: Shell , WebFetch , and WebSearch . Enable these with options like -T WebSearch . Tags: llm , openrouter",
-    "matched_keywords": [
-      "API",
-      "OpenRouter",
-      "release"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10514：model : GraniteSWAForCausalLM / GraniteMoeSWAForCausalLM (#25505)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10514",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-20T11:17:28+00:00",
-    "summary_or_excerpt": "model : GraniteSWAForCausalLM / GraniteMoeSWAForCausalLM (#25505) * feat(convert): Add conversion for GraniteSWAForCausalLM Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(llama): Add granite_swa support Branch: GraniteSWAForCausalLM AI-usage: full (Bob, OpenCode + Qwen3.6-35b) Signed-off-by: Gabe Goodhart * feat(conversion): Add conversion infra for rope_pattern array NOTE: There is other work also targeting this, so this may be removed depending on merge order. Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * fix(conversion): Fix SWA pattern logic and support for non-rope layers Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat(conversion): Add support for GraniteMoeSWA Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add llama_hparams::has_rope and arch constants NOTE: This shadows the work done for Granite Speech https://github.com/ggml-org/llama.cpp/pull/25107 Branch: GraniteSWAForCausalLM AI-usage: full (Bob) Signed-off-by: Gabe Goodhart * feat: Add support for per-layer rope determination Branch: GraniteS...",
-    "matched_keywords": [
-      "GitHub",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 45,
-    "release_version": "b10514",
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -689,28 +438,8 @@
     "matched_keywords": [],
     "tags": [],
     "score": 44,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "repo2nb 0.2.0, convert a GitHub repo into a Kaggle/Colab notebook (dependency resolution, reverse mode, incremental sync) [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1vuni29/repo2nb_020_convert_a_github_repo_into_a",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T17:53:36+00:00",
-    "summary_or_excerpt": "repo2nb is an open-source CLI that converts a GitHub repo into a runnable Kaggle or Colab notebook: walks the file tree, resolves dependencies, and generates cells, instead of you doing that by hand for a repo you didn't write (a paper's code, a tutorial, someone else's experiment). 0.2.0 highlights: Dependency resolution tries poetry export, then uv export, then requirements.txt, then falls back to an AST import scan if none of those exist. Output is always a plain %pip install cell regardless of which path it took, so poetry/uv are only ever needed locally at generation time, not on Kaggle/Colab. Reverse mode ( repo2nb reverse <notebook> ) reconstructs the original repo from a generated notebook, using the per-cell path/hash metadata every generated cell now carries. Validates against directory traversal and won't write into a non-empty directory without --force . Incremental sync ( repo2nb sync <repo> ) does one-directional (repo to notebook) updates: added files get new cells, edited files update in place, deleted files get removed. --dry-run previews the diff. Added a Colab target with its own auth cell (google.colab.userdata.get) rather than reusing the Kaggle secrets flow....",
-    "matched_keywords": [
-      "GitHub"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -731,10 +460,51 @@
       "agent",
       "coding_tool"
     ],
-    "score": 43,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "score": 44,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I spent $266 and four AI models to own my tablet. GLM-5.3 finished it in a day",
+    "url": "https://ericpardee.github.io/fire-hd-ownership",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-08-23T14:23:09+00:00",
+    "summary_or_excerpt": "HN points: 595. Comments: https://news.ycombinator.com/item?id=49409073",
+    "matched_keywords": [
+      "GLM"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 44,
+    "hn_score": 595,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "repo2nb 0.2.0, convert a GitHub repo into a Kaggle/Colab notebook (dependency resolution, reverse mode, incremental sync) [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1vuni29/repo2nb_020_convert_a_github_repo_into_a",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-21T17:53:36+00:00",
+    "summary_or_excerpt": "repo2nb is an open-source CLI that converts a GitHub repo into a runnable Kaggle or Colab notebook: walks the file tree, resolves dependencies, and generates cells, instead of you doing that by hand for a repo you didn't write (a paper's code, a tutorial, someone else's experiment). 0.2.0 highlights: Dependency resolution tries poetry export, then uv export, then requirements.txt, then falls back to an AST import scan if none of those exist. Output is always a plain %pip install cell regardless of which path it took, so poetry/uv are only ever needed locally at generation time, not on Kaggle/Colab. Reverse mode ( repo2nb reverse <notebook> ) reconstructs the original repo from a generated notebook, using the per-cell path/hash metadata every generated cell now carries. Validates against directory traversal and won't write into a non-empty directory without --force . Incremental sync ( repo2nb sync <repo> ) does one-directional (repo to notebook) updates: added files get new cells, edited files update in place, deleted files get removed. --dry-run previews the diff. Added a Colab target with its own auth cell (google.colab.userdata.get) rather than reusing the Kaggle secrets flow....",
+    "matched_keywords": [
+      "GitHub"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 44,
+    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -744,13 +514,35 @@
     "source_type": "hackernews",
     "source_level": "tech_community",
     "published_at": "2026-08-22T18:14:16+00:00",
-    "summary_or_excerpt": "HN points: 121. Comments: https://news.ycombinator.com/item?id=49402232",
+    "summary_or_excerpt": "HN points: 471. Comments: https://news.ycombinator.com/item?id=49402232",
     "matched_keywords": [],
     "tags": [],
     "score": 42,
-    "hn_score": 121,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "hn_score": 471,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "使用 deepDoctection 构建端到端文档智能流水线",
+    "url": "https://www.bestblogs.dev/en/article/329334f441?entry=rss_article_item",
+    "source_name": "BestBlogs AI High Score",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-23T07:51:23+00:00",
+    "summary_or_excerpt": "📌 One-Sentence Summary 本教程演示了如何使用 deepDoctection 1.2.x 构建一个全面的文档智能流水线，将布局检测、表格识别、OCR 和自定义实体提取整合到一个单一的工作流程中。 📝 Summary 本文指导读者使用 deepDoctection 构建文档智能流水线的过程，涵盖布局检测、表格结构识别和 OCR 服务的配置。解释了如何检查生成的页面对象以获取文本、图形、表格和关系，并展示了如何通过注册自定义对象类型和实现自定义流水线组件来扩展框架以进行实体提取。教程最后介绍了如何序列化处理后的页面并将注解转换为 JSONL 块以供下游使用。 💡 Main Points 本教程使用 deepDoctection 1.2.x 实现文档智能流水线，将布局检测、表格结构识别、OCR 和阅读顺序重建整合到一个单一的工作流程中。 该流水线配置为使用特定模型（DocLayNet 用于布局，Table Transformer 用于表格，DocTR 用于 OCR），并在示例 PDF 和图像上进行演示。检查生成的页面对象以理解 deepDoctection 如何表示各种文档元素及其关系。 通过注册自定义对象类型和实现自定义流水线组件来扩展框架，以提取货币和日期实体。 文章展示了如何定义自定义摘要键（如 MONEY_MENTIONS 和 DATE_MENTIONS）并创建分析页面文本以填充这些字段的服务。这允许提取特定领域相关信息，超出标准注解范围。 最终部分涵盖处理后页面的序列化以及将文档注解转换为有序 JSONL 块以供下游使用的转换。 教程解释了如何将处理后的页面数据保存为 JSON 文件，以及如何将提取的文本块和表格 HTML 转换为适用于检索增强生成（RAG）或其他下游处理系统的 JSONL 格式。 💬 Key Quotes LLM 是一个助手，而不是一个自主可靠的编码者。我是高级开发工程师；LLM 的作用是加速我，而不是取代我的判断。 代码之前先制定规范：在编写任何一行实现代码之前，先头脑风暴需求并制定逐步计划。 📊 Article Meta AI Screening： 90 Source： MarkTechPost Author： Sana Hassan Category： 人工智能 Language： 英文 Read Time： 6 min Word Count： 1456 Tags： 文档智能 , deepDoctection , 布局检测 , 表格识别 , OCR Read Full Article",
+    "matched_keywords": [
+      "Meta AI",
+      "RAG"
+    ],
+    "tags": [
+      "model",
+      "rag_data"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -771,8 +563,8 @@
     "score": 42,
     "hn_score": 239,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -794,117 +586,71 @@
     "score": 42,
     "hn_score": 100,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Open-Source Etnaviv Driver Now Able To Run YOLOX",
-    "url": "https://www.phoronix.com/news/Etnaviv-YOLOX",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T10:06:04+00:00",
-    "summary_or_excerpt": "The open-source, reverse-engineered Etnaviv driver stack that began for providing accelerated graphics support on Vivante GPU IP and since expanded to handle Vivante NPUs as well is now able to handle YOLOX object detection...",
-    "matched_keywords": [
-      "GPU"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Launch HN: OneCLI (YC S26) – OSS sandboxed agent harness for teams",
-    "url": "https://github.com/onecli/onecli",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-19T16:29:02+00:00",
-    "summary_or_excerpt": "HN points: 85. Comments: https://news.ycombinator.com/item?id=49363710",
-    "matched_keywords": [
-      "Agent",
-      "launch"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 42,
-    "hn_score": 85,
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "n8n stable：[2.35.5](https://github.com/n8n-io/n8n/compare/n8n@2.35.4...n8n@2.35.5) (2026-08-20)",
-    "url": "https://github.com/n8n-io/n8n/releases/tag/stable",
-    "source_name": "n8n",
+    "title": "llama.cpp b10595：server : add LLAMA_SERVER_SLOTS_N_DIFF (#27600)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10595",
+    "source_name": "llama.cpp",
     "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-08-20T08:21:56+00:00",
-    "summary_or_excerpt": "## [2.35.5](https://github.com/n8n-io/n8n/compare/n8n@2.35.4...n8n@2.35.5) (2026-08-20) ### Bug Fixes * **core:** Avoid restarting task runners that are only slow ([#36610](https://github.com/n8n-io/n8n/issues/36610)) ([7ee5295](https://github.com/n8n-io/n8n/commit/7ee5295ed58ccf2b7921ac22a6fc89a315b11bfe)) * **core:** Only init the expression engine for commands that evaluate expressions ([#36648](https://github.com/n8n-io/n8n/issues/36648)) ([af53a1a](https://github.com/n8n-io/n8n/commit/af53a1a71c8ec3428ef130e524bcc645a82d4ddf)) * **core:** Release test-webhook isolate only after teardown completes ([#36632](https://github.com/n8n-io/n8n/issues/36632)) ([17926a0](https://github.com/n8n-io/n8n/commit/17926a0e8b665bc99a71ef8b7baa35ec85494c65)) * **editor:** Restore Edit Fields type selector styles ([#36628](https://github.com/n8n-io/n8n/issues/36628)) ([f97d74f](https://github.com/n8n-io/n8n/commit/f97d74fc039da374eaa2b4e701b19f8c0a1e8ad9))",
+    "published_at": "2026-08-23T13:44:15+00:00",
+    "summary_or_excerpt": "server : add LLAMA_SERVER_SLOTS_N_DIFF (#27600) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10595/llama-b10595-bin-ubuntu-vulka...",
     "matched_keywords": [
       "GitHub",
-      "n8n",
-      "release"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 41,
-    "release_version": "stable",
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llm 0.32.1",
-    "url": "https://simonwillison.net/2026/Aug/21/llm",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T17:16:13+00:00",
-    "summary_or_excerpt": "Release: llm 0.32.1 Fresh installs of LLM stopped working the other day because the OpenAI Python library dropped its usage of httpx , and it turned out LLM depended on that library but only installed it via a transitive openai dependency. This dot-release fixes that for the moment by pinning to openai<3 , and a soon-to-drop 0.33 release will switch from httpx to httpx2 . Tags: httpx , openai , llm",
-    "matched_keywords": [
-      "OpenAI",
-      "release"
+      "Intel",
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
       "model",
-      "open_source"
+      "open_source",
+      "semiconductor"
     ],
-    "score": 40,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "score": 41,
+    "release_version": "b10595",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "What happens when a GPU reads memory",
-    "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T16:16:42+00:00",
-    "summary_or_excerpt": "HN points: 109. Comments: https://news.ycombinator.com/item?id=49390308",
+    "title": "Linux 7.3 Delivers Graphics Driver Improvements From Old GPUs To Next-Gen Hardware",
+    "url": "https://www.phoronix.com/news/Linux-7.3-DRM",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-23T18:10:13+00:00",
+    "summary_or_excerpt": "The Direct Rendering Manager (DRM) subsystem updates have been merged for the ongoing Linux 7.3 merge window. There is a lot of exciting GPU kernel driver improvements this cycle ranging from some notable enhancements to old AMD Radeon graphics hardware up through enabling support for some next-generation AMD graphics IP blocks to over on the Intel side where Nova Lake S graphics are being enabled by default...",
     "matched_keywords": [
-      "GPU"
+      "AMD",
+      "GPU",
+      "Intel"
     ],
     "tags": [
       "semiconductor"
     ],
-    "score": 40,
-    "hn_score": 109,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "score": 41,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Linux 7.3 Introduces New AES Encryption APIs - Will Open Up More Performance",
+    "url": "https://www.phoronix.com/news/Linux-7.3-New-Crypto-AES-APIs",
+    "source_name": "Phoronix",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-23T10:42:14+00:00",
+    "summary_or_excerpt": "Eric Biggers of Google continues carrying out great work on the Linux kernel crypto code. For Linux 7.3 he's landed work on new library APIs for most of the AES encryption modes used within the kernel. Moving forward this will open the door to more performance optimizations, reducing code duplication, and other enhancements...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 41,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -928,9 +674,115 @@
       "model"
     ],
     "score": 40,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LiteLLM v1.98.0：Verify Docker Image Signature",
+    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.98.0",
+    "source_name": "LiteLLM",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-23T00:28:24+00:00",
+    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.98.0 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.98.0/cosign.pub \\ ghcr.io/berriai/litellm:v1.98.0 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * fix(bedrock): drop toolSpec.s...",
+    "matched_keywords": [
+      "GitHub",
+      "LiteLLM",
+      "release",
+      "repository"
+    ],
+    "tags": [
+      "ai_app",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 40,
+    "release_version": "v1.98.0",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I gave Qwen 3.8 27B a reverse-engineering job and it finished in 30 minutes",
+    "url": "https://www.xda-developers.com/qwen-3-8-27b-reverse-engineering-job-frontier-model",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-08-23T10:02:51+00:00",
+    "summary_or_excerpt": "HN points: 305. Comments: https://news.ycombinator.com/item?id=49407507",
+    "matched_keywords": [
+      "Qwen"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 40,
+    "hn_score": 305,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llm 0.32.1",
+    "url": "https://simonwillison.net/2026/Aug/21/llm",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-21T17:16:13+00:00",
+    "summary_or_excerpt": "Release: llm 0.32.1 Fresh installs of LLM stopped working the other day because the OpenAI Python library dropped its usage of httpx , and it turned out LLM depended on that library but only installed it via a transitive openai dependency. This dot-release fixes that for the moment by pinning to openai<3 , and a soon-to-drop 0.33 release will switch from httpx to httpx2 . Tags: httpx , openai , llm",
+    "matched_keywords": [
+      "OpenAI",
+      "release"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "What happens when a GPU reads memory",
+    "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-08-21T16:16:42+00:00",
+    "summary_or_excerpt": "HN points: 109. Comments: https://news.ycombinator.com/item?id=49390308",
+    "matched_keywords": [
+      "GPU"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 40,
+    "hn_score": 109,
+    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型",
+    "url": "https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
+    "source_name": "AIHOT Featured",
+    "source_type": "rss",
+    "source_level": "needs_verification",
+    "published_at": "2026-08-21T13:01:13+00:00",
+    "summary_or_excerpt": "面壁智能 OpenBMB 推出 MathForm，一个面向 Lean 4 数学自动形式化的开源框架、数据集与模型。其 FormalVerse 数据集含 367K+ 已验证示例；在匹配 100K 预算下，基于其训练的模型 Consistency Check 达 60.32%，优于 FineLeanCorpus（46.53%）与 NuminaMath-LEAN（41.49%）。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 39,
+    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -949,25 +801,63 @@
       "business",
       "model"
     ],
-    "score": 40,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "score": 38,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型",
-    "url": "https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-21T13:01:13+00:00",
-    "summary_or_excerpt": "面壁智能 OpenBMB 推出 MathForm，一个面向 Lean 4 数学自动形式化的开源框架、数据集与模型。其 FormalVerse 数据集含 367K+ 已验证示例；在匹配 100K 预算下，基于其训练的模型 Consistency Check 达 60.32%，优于 FineLeanCorpus（46.53%）与 NuminaMath-LEAN（41.49%）。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 39,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "title": "llama.cpp b10598：mtmd: use pillow-accurate algo, correct resize_algo for all models (#27594)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10598",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-23T17:16:10+00:00",
+    "summary_or_excerpt": "mtmd: use pillow-accurate algo, correct resize_algo for all models (#27594) * mtmd: use pillow-accurate resize algo, correct resize_algo for all models * speed optimization **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10598/llama-b10598-bin-ubuntu-vulkan-x64.t...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b10598",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10594：common : skip device_info loop if it's not going to be printed (#26692)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10594",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-23T13:21:44+00:00",
+    "summary_or_excerpt": "common : skip device_info loop if it's not going to be printed (#26692) The device_info loop iterates over the discovered devices and gets the available and total memory counts. With the CUDA backend (and possibly others too) this requires creating a GPU context, which, in case of CUDA, results in a 550 MB VRAM allocation. For this information to be used in any way, the log verbosity must be set to LOG_LEVEL_TRACE. If it's not, including in the default configuration, the contexts get created, memory sizes get queried, then the log function quietly discards the data. In certain cases the user may not want to use any GPU resources. The device_loop iteration is the only place touching the GPU that cannot be skipped. Fix by checking the verbosity level and skipping the loop if there would be no output. **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10594/llama-b10594-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10594/llama-b10594-...",
+    "matched_keywords": [
+      "CUDA",
+      "GitHub",
+      "GPU",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b10594",
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -993,8 +883,8 @@
     "score": 38,
     "release_version": "b10587",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1019,8 +909,8 @@
     "score": 38,
     "release_version": "b10585",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1042,8 +932,8 @@
     "score": 38,
     "release_version": "b10584",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1064,7 +954,31 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When an AI agent says “done” how do you know it actually happened? [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1vwa9ap/when_an_ai_agent_says_done_how_do_you_know_it",
+    "source_name": "Reddit r/MachineLearning",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-23T15:32:09+00:00",
+    "summary_or_excerpt": "i’m testing an early concept called agentuptime. there’s no product or sdk yet. the idea came from something that keeps bothering me with agents: an agent saying “done” doesn’t necessarily mean the thing actually happened. a tool can return success, the trace can look fine, and the external system can still end up in the wrong state. so i’m experimenting with a small “receipt” concept where the agent’s claim is separate from an independently checked outcome. something like: database write → can the record actually be read back? api action → does the provider now show the expected state? agent handoff → did the other agent actually receive it? i’m trying to figure out whether this deserves its own layer or whether tracing + custom checks already solve it well enough. if you run agents with real side effects, what action would be hardest to verify? https://agentuptime.dev submitted by /u/singed_of_a_down3 [link] [comments]",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "AI Agent",
+      "API"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 37,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -1080,7 +994,35 @@
     "tags": [],
     "score": 37,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-23T07:17:43.073915+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "第279期 - 风之谷泉",
+    "url": "https://weekly.tw93.fun/posts/279",
+    "source_name": "TW93 Weekly",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-08-24T00:00:00+00:00",
+    "summary_or_excerpt": "封面图拍摄于周末去临安风之谷带娃玩水，这地方很空旷，不过周末小孩和大人都很多，娃倒是挺喜欢。远处看，水难得有蓝绿色的感觉，照片拍的是外面的一个大湖。 记录每周看到的接地气的潮流技术，筛选后发布于此，觉得不错可关注此周刊，方便获取更新通知 潮流工具 Cumora：这个很不错的 Agent 团队协作工具居然开源了 https://github.com/yetone/cumora 来自 yetone，又是一个「没有想到」系列，居然开源了。在目前的开源方案里，这应该是我看过做得很不错的 Agent 团队协作工具，客户端本身很完整，代码的处理也很值得学习。 Omarchy：最近很火的漂亮且现代的 Linux 系统 https://omarchy.org/ Omarchy 是一个基于 Arch 的 omakase Linux 发行版，采用平铺式窗口管理器 Hyprland 和桌面构建工具包 Quickshell，预装了不少 AI 时代生产力工作需要的工具，好评挺多的，有空闲机器的小伙伴可以去试试看。 MicroLighter：一个非常小的代码语法高亮库 https://davatron5000.github.io/microlighter/ 居然 gzip 后才 2.05 KB，用起来看着也很简单。不过我让我的 Agent 判断了一下，是否可以替换潮流周刊的语法高亮库，被婉拒了，哈哈。假如你在做新项目，可以试试看。 iGhostty：越狱 iPhone 上的命令行终端 https://github.com/OwnGoalStudio/iGhostty 从砍砍的推特看到的，还挺好看。假如你的 iPhone 已经越狱，想在手机上用终端，可以看看这个。 随便看看 Claude Code 创业公司指南 https://claude.com/blog/claude-code-guide-for-startups?ref=aiposthub.com Anthropic 官方发布的，复盘了 15 家高增长初创公司如何通过 Agentic Coding，像规模大十倍的团队一样交付，可以看看。 Omarchy：AI 友好开箱即用的神级 Linux 操作系统教程 https://xiangyangqiaomu.feishu.cn/docx/ZH7td7nKVoC5Y0x3UAAcEG3TnPd 基于上面聊到的 Omarchy 这个对 AI 很友好的 Linux 操作系统，乔木用 AI 写了一个教程，有兴趣可以一起看看。 叁缺壹，这次我来了 https://www.lizhinb.com/jlpgl/ 错过了前面 2 次，这次就不错过了，激动，高兴，启动！ 随便写写：我是如何给产品取名字的 突然想跟大伙聊聊，我是怎么给自己的产品取名字的，这个过程很有趣，或许你也可以结合自己的性格和喜好，给...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "Anthropic",
+      "Claude",
+      "Claude Code",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   }

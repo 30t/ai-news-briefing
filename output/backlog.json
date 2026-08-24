@@ -11,109 +11,123 @@
     "tags": [],
     "score": 64,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
-    "url": "https://arxiv.org/abs/2608.18423",
+    "title": "When Retrieval Fails Before It Begins: Structurally Indirect Prerequisite Eviction as a Retention Failure in Agentic Memory",
+    "url": "https://arxiv.org/abs/2608.20400",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.18423v1 Announce Type: new Abstract: Language model agents now execute bounded tasks reliably. Whether they can sustain effective decision-making over long horizons, where actions have cumulative consequences and the environment responds to their choices, remains largely unmeasured. FM-Bench (Football Management Benchmark) measures this. An LLM agent runs a football club for 20 in-game years through 26 tools and roughly 340 to 400 decision stops. It drafts a squad on the same budget as every rival, trades players, negotiates contracts, invests in facilities and youth, sets lineups, and answers to a board that can fire it, while a deterministic engine accumulates every year into one final score with no LLM judge or human rater. The solo track plays each of 15 frontier models against a frozen scripted world, and the Arena places the same models plus a scripted anchor in one shared 20-year world; to our knowledge, the first head-to-head evaluation at this scale. We measure six behavioral capabilities behind the score. Across three seeds, all 15 models complete every horizon while the blind scripted baselines die out in most of theirs, and claude-fable-5 tops the solo board...",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20400v1 Announce Type: new Abstract: Agentic memory under a fixed budget involves two stages: retention and retrieval. Existing retrieval-centered paradigms implicitly assume necessary evidence survives eviction, but we challenge this by isolating a pre-retrieval failure mode: structurally indirect prerequisite eviction, in which upstream blocks weakly aligned with the query are discarded under budget pressure. We provide an operational definition of this failure, a reproducible deterministic benchmark, and per-seed trace diagnostics. Finally, we evaluate Dependency-aware Semantic Garbage Collection (DSGC), a one-hop graph-aware rule. In our main suite, DSGC improves full-chain retention from 0.03 to 0.90 under a lexical encoder and from 0.23 to 1.00 under a sentence encoder. Robustness checks then identify the budget and scaling regimes where the one-hop rule holds or degrades. Our released pipeline and failure postmortem support mechanistic analysis of retention before retrieval as a distinct failure boundary.",
     "matched_keywords": [
-      "Agent",
-      "agents",
+      "agentic",
       "benchmark",
-      "Claude"
+      "retrieval"
     ],
     "tags": [
       "agent",
-      "model",
-      "open_source"
+      "open_source",
+      "rag_data"
     ],
-    "score": 64,
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "为什么说智能体框架有害：从后台自动化到可审计运行时",
-    "url": "https://www.bestblogs.dev/en/video/4b3c69a2e?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T16:30:39+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary 可靠的后台智能体需要的不是又一个重代码框架，而是由事件、持久日志、内容寻址 Prompt、精确回放和类型化边界组成的类操作系统运行时。 📝 Summary Rémi Louf 用两周时间自动化自己的晨间工作流，最终形成了一套具体的智能体基础设施主张。声明式 Markdown 定义、定时任务和类型化事件，让智能体无需维护显式应用图也能自由组合。Slack 重复发帖、语音笔记丢失以及无法追溯的 Prompt 回归等真实故障，又迫使运行时加入队列、尝试次数追踪、仅追加的因果事件日志，以及内容寻址的 Prompt 组件。这种表示方式让模型输入可以被审计、比较，并能跨模型精确回放。Louf 最终把智能体类比为进程，把 Markdown 视为用户空间，把运行时视为内核；内核的职责不是降低无效工具调用和智能体间错误事件的概率，而是从结构上让它们无法发生。演讲还给出了约 20 个内部智能体的落地证据，并建议在购买平台前先自行构建一个窄范围版本。 💡 Main Points 声明式智能体与事件可以替代代码定义的工作流图 智能体定义可以保存在可版本化的 Markdown 中，定时任务与事件订阅则自然形成拓扑和扇入扇出，无需人工维护图的边。 运行故障暴露的仍是熟悉的分布式系统需求 重复执行、输入丢失和 Prompt 回归会直接导向持久日志、队列、尝试次数追踪、因果链与版本化产物，而非全新的 AI 专属抽象。 内容寻址 Prompt 让模型行为可审计、可回放 对系统 Prompt、技能、工具描述、用户消息和响应逐一做哈希，可以保存每次运行的精确上下文，并支持组件差异比较、请求重建、评估与跨模型回放。 运行时应像内核，而不是应用框架 运行时负责调度、隔离并记录智能体进程，同时保持声明式前端可替换，从而把持久执行原语与用户侧智能体定义分离。 类型化工具调用与事件应从结构上阻止无效操作 可靠自动化要求在外部工具和智能体间通信两类边界上采用严格 Schema，不能只依赖模型以概率方式遵循格式。 💬 Key Quotes 日志是系统的记忆。没有任何东西会丢失，一切都能被观察。 内核的职责应当是让错误操作无法发生，而不只是让它们不太可能发生。 最困难的部分仍然是那些熟悉的工程问题。 我现在的建议是，购买之前先自己构建。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 9 min Word Count： 2040 Tags： 智能体运行时 , 事件驱动架构 , 内容寻址 Prompt , 可观测性 , 结构化输出 Play Full Video",
-    "matched_keywords": [
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 63,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "score": 62,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair",
-    "url": "https://arxiv.org/abs/2607.01916",
+    "title": "Towards Query-Agnostic RAG Evaluation via Query Coverage and Claim Verifiability",
+    "url": "https://arxiv.org/abs/2608.11238",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.01916v5 Announce Type: replace Abstract: Large language model agents can repair real repository issues, but they often spend large context budgets on whole-file reads, broad searches, and long terminal outputs where useful evidence is mixed with irrelevant code and logs. This paper presents ContextSniper, AntTrail's code-repair module for precision evidence selection in repository-level program repair, part of AntTrail's broader agent-memory engine. AntTrail is available at https://gitcode.com/datagallery/AntTrail. ContextSniper indexes code and action memory as three abstract levels, retrieves candidates with a hybrid ranker, filters long tool output through an intention-aware context gate, and returns compact evidence packets while keeping full source recoverable on demand. In a matched 50-task-per-condition comparison on SWE-bench Lite (same tasks, baseline vs.\\ ContextSniper), ContextSniper reduces total token use by 51.5% and logged cost by 36.4% for OpenClaw, and by 38.9% and 27.3% for Claude Code, with submitted-resolution rates essentially unchanged in both host-agent settings. In a separate five-task comparison, ContextSniper beats existing memory- and RAG-styl...",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.11238v2 Announce Type: replace Abstract: Retrieval-augmented generation improves the factuality of large language models by grounding responses in retrieved evidence, yet existing evaluation frameworks struggle to provide consistent, fine-grained diagnostics across the diverse spectrum of user queries, ranging from close-ended fact-seeking to open-ended explanatory requests. We propose Q-CARE, a query-agnostic and fully reference-free framework that enables fine-grained assessment by decomposing queries into sub-queries and answers into atomic claims. Q-CARE establishes a unified evaluation principle based on query coverage and claim verifiability, yielding coverage-aware retriever metrics (C-Prec@k, C-nDCG@k) and claim-level generator metrics (Completeness, Conciseness, and Verifiableness). On a human-annotated benchmark spanning eight datasets, Q-CARE achieves higher correlation with human judgments than four existing RAG evaluation metrics, including RAGEval and RAGChecker, proving its effectiveness as a reliable, automated evaluation framework. Code and data are publicly available at https://github.com/DISL-Lab/Q-CaRE-COLM-26.",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "Claude",
-      "Claude Code",
+      "benchmark",
+      "GitHub",
       "RAG",
-      "repository",
-      "terminal"
+      "retrieval"
     ],
     "tags": [
-      "agent",
-      "coding_tool",
-      "model",
+      "open_source",
       "rag_data"
     ],
     "score": 62,
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Jailbreaking in the Haystack",
-    "url": "https://arxiv.org/abs/2511.04707",
+    "title": "LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures",
+    "url": "https://arxiv.org/abs/2608.15242",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2511.04707v2 Announce Type: replace-cross Abstract: Recent advances in long-context language models (LMs) have enabled million-token inputs, expanding their capabilities across complex tasks like computer-use agents. Yet, the safety implications of these extended contexts remain unclear. To bridge this gap, we introduce NINJA (short for Needle-in-haystack jailbreak attack), a method that jailbreaks aligned LMs by appending benign, model-generated content to harmful user goals. Critical to our method is the observation that the position of harmful goals play an important role in safety. Experiments on standard safety benchmark, HarmBench, show that NINJA significantly increases attack success rates across state-of-the-art open and proprietary models, including LLaMA, Qwen, Mistral, and Gemini. Unlike prior jailbreaking methods, our approach is low-resource, transferable, and less detectable. Moreover, we show that NINJA is compute-optimal -- under a fixed compute budget, increasing context length can outperform increasing the number of trials in best-of-N jailbreak. These findings reveal that even benign long contexts -- when crafted with careful goal positioning -- introduce...",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.15242v3 Announce Type: replace Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the nee...",
     "matched_keywords": [
-      "agents",
-      "benchmark",
-      "Gemini",
-      "Llama",
-      "Mistral",
-      "Qwen"
+      "Agent",
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "model",
       "open_source"
     ],
-    "score": 62,
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
+    "score": 61,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DreamBench-SWE: A Multi-Session Memory-Hygiene Benchmark for Software Agents",
+    "url": "https://arxiv.org/abs/2608.20664",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20664v1 Announce Type: new Abstract: DreamBench-SWE is a multi-session benchmark for software-agent memory hygiene in which later software tasks depend on non-inferable evidence from earlier sessions and are scored by executable hidden oracles. We report the original scaled v2 fold and a separately preregistered v2.1 successor audit designed after that study but frozen before successor outcome inspection. The successor run completed 360/360 work units and 720/720 S3 cells across four conditions. In the original fold, the primary DF-hybrid--B5 contrast was null (95/180 versus 89/180; clustered p=.518, Holm p=1), not evidence of equivalence, and C9/C10 retained B0-headroom limitations. In the successor, no external memory achieved 21/180 passes (rate 0.1167), deterministic verbatim event memory 82/180 (rate 0.4556), the typed-plus-raw reference probe 83/180 (rate 0.4611), and one pinned hosted Mem0 literal-storage configuration 97/180 (rate 0.5389). The registered six-slot Family A retained unavailable slots at p=1; all three available comparisons against no memory rejected after Holm correction. Both preregistered mechanism contrasts were unavailable after pre-evaluation...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MM-ToolSandBox: A Unified Framework for Evaluating Visual Tool-Calling Agents",
+    "url": "https://arxiv.org/abs/2607.11818",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2607.11818v2 Announce Type: replace-cross Abstract: We introduce MM-ToolSandBox, a benchmark and evaluation framework for visually grounded tool-calling agents. The framework provides a stateful execution environment spanning 500+ tools across 16 application domains, supporting multi-image, multi-turn tasks where agents must ground progressively arriving visual inputs into executable tool calls while handling realistic conversational phenomena (goal revisions, error corrections, state mutations). An automated scenario generation pipeline produces diverse, visually grounded scenarios through information-flow-guided planning and multi-stage quality filtering, yielding 258 human-verified nominal scenarios and 50 variants targeting interactive UI applications. Evaluating 12 state-of-the-art models, from 4B open-weight to frontier proprietary systems, shows that current models still lack robust visual tool-calling capability: even the best model achieves below 50% success rate. Our failure analysis further reveals that visual precision, not only planning, is a primary bottleneck for capable models: 53% of failures stem from incorrect information extraction from images despite oth...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -138,7 +152,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -167,29 +181,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LongRCA Bench: Diagnosing Responsible Roles and Root Causes in Long-Horizon Agent Failures",
-    "url": "https://arxiv.org/abs/2608.15242",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.15242v2 Announce Type: replace Abstract: When a long-horizon agent execution fails, outcome-level evaluation reveals the unsuccessful result but not where the decisive error entered the trajectory. Developers must then inspect the full execution to identify the responsible role and localize the earliest decisive root-cause step. Existing failure-attribution benchmarks largely focus on shorter traces, leaving diagnosis across hundreds of recorded steps underexplored. We introduce LongRCA Bench, comprising 1,140 failed trajectories across five domains without injected errors. It provides independently scored human labels for the responsible role and earliest decisive root-cause step. The median trajectory contains 145 steps, and the strongest baseline reaches only 13.2% exact root-step accuracy. We further present Root-Cause Trajectory Attribution (RCTA), a training-free method that retrieves candidate error steps from segment summaries and traces them to available earlier handoff instructions. Using the same backbone, benchmark instances, and scoring protocol, RCTA reaches 51.1% responsible-role accuracy and 24.1% exact root-step accuracy. These results highlight the nee...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -214,77 +206,40 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "ComponentBench: Diagnosing Component-Level Failures in Computer-Use Agents",
-    "url": "https://arxiv.org/abs/2608.18307",
+    "title": "KernelArc: A Multi-Agent Framework for GPU Kernel Optimization",
+    "url": "https://arxiv.org/abs/2608.17071",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-20T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.18307v1 Announce Type: new Abstract: Current evaluation of computer-use agents is split between long-horizon workflow benchmarks and atomic GUI-grounding tests. This leaves an under-instrumented middle layer: realistic component-centered interactions (e.g., toggle a button set) that are short enough to diagnose and rich enough to capture the burdens of modern interfaces. We present ComponentBench, a benchmark and diagnostic pipeline for component-level evaluation of computer-use agents on modern web UIs. ComponentBench is organized around a library-agnostic ontology of 97 canonical UI components instantiated as 2,910 programmatically verified tasks across widely used component libraries, paired with cleaned human reference trajectories that enable evaluation of both task success and interaction efficiency. Beyond task collection, we introduce a scalable pipeline for auditing realized structural difficulty after implementation and synthesizing structured failure analyses across tasks and component families. Evaluating seven models -- GPT-5.4, Gemini 3 Flash, GPT-5.4 mini, GPT-5 mini, Gemini 3.1 Flash-Lite, Qwen3-VL-235B, and UI-TARS-1.5-7B -- across four observation and...",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.17071v2 Announce Type: replace Abstract: We present KernelArc, a multi-agent framework for autonomous GPU kernel optimization across heterogeneous workloads. Strategy-specialized agents run in parallel and coordinate through conclusions-only shared memory, a deterministic benchmark guard, and read-only cross-agent state with plateau-triggered drafting. We evaluate KernelArc on NVIDIA H100 and B200 GPUs using category-representative SOL-ExecBench workloads. The resulting implementations span custom BF16 GEMM, static cuBLASLt Expert-API configuration tables, fused mixture-of-experts backward, shape-gated decoder-layer fusion, native NVFP4 grouped-query attention, and paged prefill attention. In the public SOL-ExecBench leaderboard snapshot recorded on August~20, 2026, KernelArc ranked first on every representative L1, L2, Quantization, and FlashInfer task evaluated. The trajectories support the paper's central motivation: shared multi-agent search can broaden exploration and reach stronger incumbents within a fixed candidate budget, while the value of individual coordination features depends on the kernel and optimization stage.",
     "matched_keywords": [
+      "Agent",
       "agents",
+      "API",
+      "B200",
       "benchmark",
-      "Gemini",
-      "GPT",
-      "workflow"
+      "GPU",
+      "H100",
+      "multi-agent",
+      "NVIDIA",
+      "quantization"
     ],
     "tags": [
       "agent",
-      "ai_app",
-      "model",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-21T07:25:25.018772+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "给智能体一份预算，而不是一枚 Token —— Sachin Malhotra，Anthropic",
-    "url": "https://www.bestblogs.dev/en/video/3f3390ccc?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T14:00:06+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary 生产级智能体需要由可信基础设施强制执行的多维预算，将非对称权限、可恢复限流、聚合式预警线，以及面向不可逆操作的撤销测试组合起来。 📝 Summary Anthropic CI 工程师 Sachin Malhotra 从一次真实生产事故出发，提出智能体有限自治的实践框架。一名清理智能体在 90 秒内误删约 200 个 workload，影响约 20 名工程师；这说明静态 Token 权限过于二元：范围太窄会让智能体失去作用，太宽则可能引发事故。他的方法区分会显性失败与藏在绿色检查结果背后的静默失败，为每次写操作设置可恢复的速率上限，用预警线观察聚合行为，并通过撤销测试判断何时必须由人类持有第二把钥匙。提示词负责解释意图，确定性的代理层则强制执行上限、写入不可篡改的智能体与会话身份、向子任务传递来源信息，并阻止智能体通过声称新身份来重置预算。 💡 Main Points Token 是二元权限，安全自治需要预算 有效控制必须表达智能体可以做多少、以多快速度执行、哪些结果能够自行撤销，以及行动后由谁观察或审批。 权限设计应依据失败的非对称性 智能体可以独立处理错误可见且容易恢复的动作；如果失败会静默发生或影响巨大，就应要求人类审批和可审计的第二把钥匙。 每次写操作都需要可恢复的上限 速率限制让智能体在时间窗口内保持自治，同时约束失控循环；共享资源应采用更小额度，例外操作的绕过权只交给人类。 预警线通过聚合行为改进策略 带可信身份的操作记录能够暴露单看合理、聚合后却异常的模式，团队据此可向智能体上下文补充针对性的纠偏指引。 可信基础设施必须掌握身份与强制执行 代理层持有真实凭证，分配不可篡改的智能体与会话来源，并执行确定性限制，避免提示词或调用方自定义请求头绕过规则。 💬 Key Quotes Token 从根本上说是二元的：它包含一组静态权限范围，调用方要么拥有权限，要么没有。 把失败会响亮暴露且可观察的操作交给智能体；如果错误可能悄无声息，就让人类参与。 文本塑造智能体想做什么，基础设施则限定它最多能错到什么程度。 所有这些机制的底层都是可信身份。身份必须来自基础设施，而不是请求本身。这条规则如果正确，其余都只是调优。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 软件编程 Language： 英文 Read Time： 10 min Word Count： 2270 Tags： 智能体安全 , 有限自治 , 速率限制 , 身份与来源 , CI 基础设施 Play Full Video",
-    "matched_keywords": [
-      "Anthropic",
-      "Meta AI"
-    ],
-    "tags": [
-      "model"
+      "business",
+      "open_source",
+      "semiconductor"
     ],
     "score": 60,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AI 原生 SDLC 实战手册：Anthropic 如何用 Claude 重塑软件开发生命周期",
-    "url": "https://aihot.virxact.com/items/cmt31oi0x0ehyro6tui3xycqe",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-21T14:28:27+00:00",
-    "summary_or_excerpt": "Anthropic 发布 AI 原生 SDLC 实战手册，提出将传统六阶段软件开发生命周期重构为 AI 嵌入各环节的闭环流程。手册指出，当代码不再是瓶颈时，规划、审查、部署等人速环节成为新约束，需通过 Claude 将需求压缩为 intent.md、以技能编码标准、用持续评测替代阶段门禁，并保留人工对关键代码的审查。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt31oi0x0ehyro6tui3xycqe",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -307,7 +262,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -329,7 +284,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -345,27 +300,159 @@
     "tags": [],
     "score": 59,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TRACE: Agentic Catalog Enrichment with Multi-source Evidence Grounding",
+    "url": "https://arxiv.org/abs/2608.20844",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20844v1 Announce Type: new Abstract: Product catalogs underpin search, discovery, and recommendation in e-commerce, yet they are often attribute-sparse: the attributes shoppers and downstream systems rely on are either buried in unstructured content such as titles and images or missing from the catalog altogether. Manually enriching e-commerce catalogs is impractical given their scale and rapid growth. This paper introduces TRACE, a novel framework for automated catalog attribute enrichment using agentic Large Language Models (LLMs). A ScoutAgent triangulates multimodal evidence across merchant catalogs, syndicated feeds, and identity-matched web search to propose candidate attribute values with supporting evidence, while a JudgeAgent verifies the proposed value for each attribute value against its supporting evidence and decides whether to publish it or route it to human review. On an offline human evaluation dataset, TRACE's proposed attribute values were 98.2% accurate at 74.7% attribute coverage. Deployed in production on an industry-scale catalog, TRACE increased impression-weighted enrichment coverage across four business verticals by 90.4%. An online experiment s...",
+    "matched_keywords": [
+      "agentic",
+      "dataset"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "深入 847 份生产临床 AI 病历：如何发现看似正确的危险错误｜Sebastian Fox",
-    "url": "https://www.bestblogs.dev/en/video/a6015d9e0?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "MGAL: A Multilingual Granularity-Aware Long-Context Benchmark",
+    "url": "https://arxiv.org/abs/2608.20853",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T17:00:32+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Sebastian Fox 说明合理的遗漏与意图偏移为何能逃过静态 LLM Judge，并提出由真实失败、专家判断和案例检索驱动的持续评估闭环。 📝 Summary Sebastian Fox 通过生产环境中的临床 AI 病历错误指出，高风险 AI 最危险的时刻往往是输出看起来完全合理。他区分了转录错误，以及生成阶段对信息的新增、修改和遗漏，并强调真正困难的任务不是发现文本差异，而是判断某个差异在具体临床情境中是否重要。静态 Rubric 只能承载可显式表达的规则，微调后的模型权重则容易过时，也难以解释判断依据。他提出持续运行的三段式评估闭环：从真实输出中发现失败模式并建立本体，捕获专家的推理和纠正而不只是标签，再为每个新输出检索相似已评案例、适用纠正、参考资料和指南，动态组装专属标准。演讲用漏掉下颌疼痛红旗、把已否决治疗方案写成最终决定，以及法国与马拉维湖旅行史具有完全不同临床意义等案例，把抽象论证落到实处。该框架也适用于法务、客服等任何「自信地犯错」会带来重大成本的场景，但演讲没有完整展开若干流行率和性能比较数据的方法学细节。 💡 Main Points 最危险的 AI 错误可能看起来完全正确 一份临床上合理的病历可能漏掉唯一会改变紧急程度和治疗方案的红旗，因此语言流畅度不能代表安全性。 评估系统失败在于无法判断什么真正重要 通用 Judge 能比较转录与病历，但只有结合情境、隐性且持续变化的领域判断，才能区分无害差异与危险错误。 静态 Rubric 与模型权重都不适合保存领域判断 Rubric 只包含专家能写出的规则；微调权重容易过时、更新成本高，也无法清楚解释是哪条先例改变了分数。 把领域判断保存在可检索案例中 将历史专家判断、纠正、相似案例与指南动态组装成案例专属标准，无需重新训练模型，也能为 Judge 提供相关上下文。 评估必须持续发现、捕获并校准 真实生产输出揭示未知失败模式，聚焦式专家评论沉淀隐性判断，每一个已评案例又会改善下一次评估可用的上下文。 💬 Key Quotes 最严重的失败，往往正是那些看起来完全没问题的结果。 模型通常知道医学事实，它缺少的是对这个具体案例中什么真正重要的判断。 预先指定的 Rubric 只能包含我们能够表达出来的判断。 病历完全相同，唯一改变的是 Judge 看到了什么。 评估不是你拥有的某样东西，而是你需要持续去做的事情。 📊 Article Meta AI Screening： 92 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 11 min Word Count： 2641 Tags： AI 评估 , 临床 AI ,...",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20853v1 Announce Type: new Abstract: Evaluation of long-context Large Language Models (LLMs) has advanced rapidly. However, most existing benchmarks are limited to the document level and focus mainly on high-resource languages, leaving many fine-grained challenges insufficiently evaluated. To address this gap, we present MGAL, the first multilingual, granularity- and position-aware long-context benchmark. MGAL is constructed from United Nations (UN) reports spanning 8K to 128K tokens across the six official UN languages. It covers four coherent levels of linguistic granularity (word, sentence, paragraph, and document) and further stratifies entries by their position within the document (begin, middle, and end), indexed at both the document and paragraph levels. This design enables systematic diagnosis of multilingual long-context comprehension across different granularities. Through extensive experiments and analyses, we find that: (1) LLMs perform well at word-level tasks but struggle with coarser-grained ones; and (2) Closed-source models retain a clear performance advantage in lower-resource languages. We further identify two new challenges: (1) Under local semantic...",
     "matched_keywords": [
-      "Meta AI"
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "UpgradeBench: A Decision-Centric Benchmark for Upgrading Fine-Tuned LLM Specialists",
+    "url": "https://arxiv.org/abs/2608.20918",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20918v1 Announce Type: new Abstract: Organizations maintain task-specific adapters for open-weight language models, and each new base-model release forces a migration decision: retain existing specialists, port adapters, refresh from preserved behavior, or retrain. Prior transfer work evaluates isolated model pairs, without studying these choices across real model release sequences. We present UpgradeBench, a decision-driven longitudinal benchmark covering four consecutive Qwen releases, one continuation checkpoint, six tasks, and two model sizes, augmented by OLMo checkpoints with known training lineage. The benchmark disentangles three core questions: whether a new checkpoint improves fixed-recipe retrained specialist performance, whether specialization assets transfer across versions, and what recovery resources are usable. We observe upgrade gains differ across task-scale-release episodes: some retrained baselines improve while others stay within training noise, with durability ranging from under one release interval for text-to-SQL to over fourteen months for intent classification. Direct adapter copying depends neither on architecture nor model family: on OLMo, re...",
+    "matched_keywords": [
+      "benchmark",
+      "Qwen",
+      "release"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Do LLMs Replace Fine-Tuned NLU? A Decision Framework for Intent Detection in Production Conversational Systems",
+    "url": "https://arxiv.org/abs/2608.20371",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20371v1 Announce Type: cross Abstract: A common claim is that zero-shot large language models (LLMs) can replace fine-tuned NLU classifiers for intent detection. We test this claim head-to-head and find that the honest answer is: it depends on the intent space. On full ATIS and CLINC150 we compare a fine-tuned RoBERTa, a TF-IDF+logistic-regression baseline, sentence-embedding kNN, and Claude Haiku zero-shot, reporting bootstrap 95% confidence intervals and paired significance tests. When abundant in-domain labels exist, fine-tuned RoBERTa is as good or better and three orders of magnitude cheaper and faster: on ATIS it beats Claude zero-shot by 11.8 points (95.9 vs. 84.1, p<0.001). On the broad 150-intent CLINC150 schema the two are statistically tied (89.1 vs. 88.5, p=0.24): the LLM matches a fully supervised model with no training data. The LLM's advantages appear in three production-relevant regimes: out-of-scope detection (OOS recall 85.6 vs. 58.1 for RoBERTa); robustness to realistic ASR noise via a controlled text-to-speech to noise to Whisper pipeline (92.5 vs. 80.0 at 0 dB); and dynamic per-deployment schemas, where a classifier trained on one app's intents scor...",
+    "matched_keywords": [
+      "Claude"
     ],
     "tags": [
       "model"
     ],
     "score": 58,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EditPPT: Faithful Long-Deck Slide Editing via Structured Tool-Using Multi-Agent with Dual-Modal Validators",
+    "url": "https://arxiv.org/abs/2608.20381",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20381v1 Announce Type: cross Abstract: Automating slide editing requires simultaneously satisfying modification accuracy, preservation fidelity, and robustness to deck length. Existing LLM-based systems often fail on real-world presentation files because they rely on idealized intermediate representations or open-ended code generation, which are prone to cascading errors in long decks. We introduce EditPPT, a multi-agent framework that reformulates slide editing as a constrained tool-selection problem. By executing localized shape-level operations through the native PowerPoint COM interface, EditPPT narrows the LLM action space while preserving the application-resolved structure of user-authored decks. By separating validation across modalities, our dual-modal validation provides more robust assessment of both instruction fidelity and visual quality. We also present DeckEdit-Bench, a benchmark with 28 human-authored decks, 582 slides, and 183 editing prompts across short, medium, and long deck tiers. Experiments show that EditPPT achieves a 99.5% execution rate, 88.7% slide-targeting F1, 82.5% instruction following, and 91.5% object preservation overall, while maintaini...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Making Deployments Safe at Meta: Health Checks for Continuous Change-Safety",
+    "url": "https://arxiv.org/abs/2608.20513",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20513v1 Announce Type: cross Abstract: Continuous deployment to large scale production systems creates a tension between release velocity and reliability. Every change is a potential reliability incident, yet every delay is a missed opportunity. This paper describes the deployment time health check infrastructure that Meta uses to mediate this tension across thousands of heterogeneous services. We summarize the architecture of this prevention based distributed system's service called Service Health Checker, explain how check authors compose templated metric queries, thresholds, and workflow predicates; and discuss how the system is integrated with tiered and phased rollouts so that regressions trigger automatic rollback. We then describe the operational problems that emerged at scale, such as noise, alert fatigue, drift, and uncovered regressions, and the program of measurement, tooling, and improved defaults we deployed to address them. We close with lessons learned from years of operating deployment health checks at Meta, and the directions we are exploring next, including AI assisted health check tuning. Index Terms: deployment safety, continuous deployment, monitori...",
+    "matched_keywords": [
+      "release",
+      "workflow"
+    ],
+    "tags": [
+      "ai_app",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Multilingual Verifier Bias in RLVR: Benchmark, Rollout Diagnosis, and the Cross-Lingual Selection Bottleneck",
+    "url": "https://arxiv.org/abs/2608.20362",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.20362v1 Announce Type: new Abstract: Reinforcement learning with verifiable rewards (RLVR) is a standard recipe for training large language models on mathematical reasoning, where an answer verifier serves as a language-neutral reward function. We show that this assumption fails in multilingual settings: an exact-match verifier turns format and script variation into language-dependent false-negative reward noise. We introduce a reusable protocol for auditing multilingual RLVR rewards: a verifier-robustness suite, a rollout-diagnosis procedure, and language-conditioned reward-error metrics for Japanese, English, and Chinese answers. On MGSM rollouts with k=8, the exact-match proxy rejects trusted-correct answers at sharply different rates by language across Qwen3-4B, Qwen3-8B, and Llama-3.1-8B-Instruct; for Qwen3-8B, the false-negative rate reaches 0.642 on JP against 0.122 on EN and 0.073 on CN. A plain-numeric probe localizes the mechanism to the final-answer interface: an interface model drives reward-error VLB to zero while the residual accuracy gap is unchanged. We then expose a cross-lingual selection bottleneck: on MGSM250 rollouts, a target-local aggregation rule...",
+    "matched_keywords": [
+      "benchmark",
+      "Llama"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -385,105 +472,30 @@
     ],
     "score": 58,
     "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "NanoGPT Speedrun Frontier",
-    "url": "https://www.primeintellect.ai/research/nanogpt-speedrun",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-22T22:14:27+00:00",
-    "summary_or_excerpt": "HN points: 136. Comments: https://news.ycombinator.com/item?id=49404380",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 50,
-    "hn_score": 136,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "My agent.md to improve LLM-assisted code quality",
-    "url": "https://fabiensanglard.net/agent.md/index.html",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-23T17:59:52+00:00",
-    "summary_or_excerpt": "HN points: 108. Comments: https://news.ycombinator.com/item?id=49410932",
+    "title": "llama.cpp b10614：metal: per-op source split + parallel compile (#26561)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10614",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-24T21:23:31+00:00",
+    "summary_or_excerpt": "metal: per-op source split + parallel compile (#26561) * metal : per-op source split + parallel compile (#24021) * preliminary extract common header * op source split * split metallib into 8 libs && load in parallel * derive kernel->library routing from functionNames * x-macro lib list + underscore filenames, dedup QK_NL, MRC fixes * op source split 8 to 20 * improve robustness of source fallback * clean up * change bool -> atomic_bool * only prepend headers that source actually includes * no semaphore, use GCD global queue * dedup library compile path, fix NSError lifetime, rename gla * relocate upstream concat/rope_back/repeat kernel changes into split files * move ggml-common.h from common.h into dequantize.h to shrink binary size --------- Co-authored-by: lvyichen * metal: add col2im_1d op (f32/f16/bf16) (#25176) * metal : add set_rows with src0 f16 (#25434) * metal : add CONV_2D_DW (depthwise convolution) support (#21565) * metal : add Q2_0 support (#25419) * metal: fuse snake activation (mul, sin, sqr, mul, add) (#25459) * ggml-metal: FWHT kernel for metal backend (#25924) * metal : port new kernels into the split sources Move the kernels added on master after the split (lig...",
     "matched_keywords": [
-      "Agent"
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
-      "agent"
+      "model",
+      "open_source"
     ],
-    "score": 47,
-    "hn_score": 108,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Quoting Linus Torvalds",
-    "url": "https://simonwillison.net/2026/Aug/22/linus-torvalds",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-22T21:04:26+00:00",
-    "summary_or_excerpt": "And this was a debug session from hell, enormously helped by an AI doing much of the grunt-work. I'd like to call it my tireless helper, but the AI several times stated flat out that this was impossible and unsolvable and that we should just write a report about it. I suspect those things have been trained by people who may not be quite as stubborn as I am. But while the AI was ready to give up several times, it did keep adding debug code and analyzing it faithfully when I pushed. So credit where credit is due and I let the AI write the commit message above. — Linus Torvalds , drm/xe: Don't hand out the flat CCS storage as usable VRAM Tags: linus-torvalds , linux , generative-ai , ai-assisted-programming , ai , llms",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 44,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "More than just code review",
-    "url": "https://simonwillison.net/2026/Aug/22/more-than-just-code-review",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-22T15:56:54+00:00",
-    "summary_or_excerpt": "The key skill required to make productive use of coding agents is being able to confidently instruct them on how to make changes and then confidently verify that those changes have been applied in the correct way. Sometimes this involves reviewing every line of code they have written, but there are other ways to achieve that goal. Eyeballing every line of code has never been the most effective way to validate a chance to a piece of software. Tags: code-review , coding-agents , generative-ai , agentic-engineering , ai , llms",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "code review"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "I spent $266 and four AI models to own my tablet. GLM-5.3 finished it in a day",
-    "url": "https://ericpardee.github.io/fire-hd-ownership",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-23T14:23:09+00:00",
-    "summary_or_excerpt": "HN points: 595. Comments: https://news.ycombinator.com/item?id=49409073",
-    "matched_keywords": [
-      "GLM"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 44,
-    "hn_score": 595,
-    "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "score": 46,
+    "release_version": "b10614",
+    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -503,7 +515,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -520,8 +532,8 @@
     "score": 42,
     "hn_score": 471,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -542,8 +554,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -563,7 +575,7 @@
     "score": 42,
     "hn_score": 239,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -586,7 +598,7 @@
     "score": 42,
     "hn_score": 100,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -612,8 +624,8 @@
     "score": 41,
     "release_version": "b10595",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -634,8 +646,8 @@
     ],
     "score": 41,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -650,8 +662,8 @@
     "tags": [],
     "score": 41,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -675,8 +687,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -701,8 +713,8 @@
     "score": 40,
     "release_version": "v1.98.0",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -722,8 +734,8 @@
     "score": 40,
     "hn_score": 305,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -744,7 +756,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -765,7 +777,7 @@
     "score": 40,
     "hn_score": 109,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -781,7 +793,7 @@
     "tags": [],
     "score": 39,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -803,8 +815,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -829,8 +841,8 @@
     "score": 38,
     "release_version": "b10598",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -857,8 +869,8 @@
     "score": 38,
     "release_version": "b10594",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -883,7 +895,7 @@
     "score": 38,
     "release_version": "b10587",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -909,7 +921,7 @@
     "score": 38,
     "release_version": "b10585",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -932,7 +944,7 @@
     "score": 38,
     "release_version": "b10584",
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -954,7 +966,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -978,8 +990,8 @@
     ],
     "score": 37,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -994,7 +1006,7 @@
     "tags": [],
     "score": 37,
     "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1022,8 +1034,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

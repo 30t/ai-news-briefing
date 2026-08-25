@@ -1,18 +1,132 @@
 [
   {
-    "title": "蚂蚁百灵为SGLang推出权重缓存守护进程",
-    "url": "https://aihot.virxact.com/items/cmt3wt4qm13utro6t0hb6ga3y",
-    "source_name": "AIHOT Featured",
+    "title": "MEMORY Wins All: Indirect Bias Injection Attacks via Social Media Feeds",
+    "url": "https://arxiv.org/abs/2608.22061",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T04:36:59+00:00",
-    "summary_or_excerpt": "今天，我们为 SGLang 推出 Weight Cache Daemon。🚀 在 Ling-2.6-1T FP8 上，它将权重加载时间缩短至约 0.63 秒，比磁盘加载快约 780 倍，并将引擎总启动时间从 8.8 分钟缩短至约 0.53 分钟。其工作原理如下。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt3wt4qm13utro6t0hb6ga3y",
-    "matched_keywords": [],
-    "tags": [],
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.22061v1 Announce Type: new Abstract: Personal AI agents routinely consume external content while performing tasks such as web browsing, email processing, and SNS feed summarization, and they retain selected information or execution results in persistent memory for later use. We show that this ordinary ingestion of external content opens an indirect path for manipulating subsequent agent behavior. Based on this observation, we present IBIA, an Indirect Bias Injection Attack that plants an adversary-aligned stance on a specific topic into a victim agent's memory through external content, without direct access to the agent, its memory, or future user queries. For this, IBIA combines three mechanisms: comment cloaking, which keeps the crafted content consistent with the surrounding discussion, comment watermarking, which enables lightweight identification during curation, and category anchoring, which makes the retained stance salient under later related requests. We evaluate IBIA on BiasBench, a benchmark of 6,000 adversary-crafted social comments and 120 email instances. The watermark-based curation identifies 95.9% of the injected comments. Under the OpenClaw setting, IB...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LLM4LLM: Bridging Kernel Benchmarks and Real Deployment via Closed-Loop Agentic Optimization",
+    "url": "https://arxiv.org/abs/2608.21836",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.21836v1 Announce Type: new Abstract: Large language models have become increasingly capable agents for low-level code and kernel optimization, but isolated kernel benchmarks provide only a proxy for the deployment behavior that matters in language-model inference. We identify a benchmark-to-deployment gap: candidate kernels that appear correct and fast in standalone harnesses can exhibit different performance, safety, or phase behavior after integration into a real inference workload. We introduce LLM4LLM, a deployment-aware closed-loop optimization framework that starts from a target inference script, extracts phase-aware optimization tasks, searches with an experience-guided episodic agent, and accepts patches through in-model validation. Across ten language-model inference workloads on A100 and H100 GPUs, LLM4LLM improves end-to-end latency for every evaluated model, achieving 3.91$\\times$/6.98$\\times$ geometric-mean speedups on A100/H100; as supporting kernel-level evidence, it also attains up to 2.745$\\times$ GeoMean speedup on KernelBench Level 2.",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "H100",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "semiconductor"
+    ],
     "score": 64,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "From SQL Generation to Tool Selection: A Domain-Oriented Pattern for MCP Servers",
+    "url": "https://arxiv.org/abs/2608.22063",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.22063v1 Announce Type: new Abstract: Agents built on Large Language Models (LLMs) increasingly reach enterprise data through the Model Context Protocol (MCP), and many MCP database servers maximize flexibility by exposing a single generic SQL execution tool. This paper proposes the Domain-Oriented Tooling Pattern: instead of generating SQL at query time, the model selects from a small set of domain-aligned tools whose parameterized queries encapsulate schema navigation, joins and business rules on the server side. We formalize the pattern around three architectural invariants and introduce Model Demotion, the observation that replacing SQL synthesis with intent classification lowers the model tier required to serve routine requests. As a reference implementation we present MCP Blueprint, an open-source framework in which domain tools are defined declaratively as YAML metadata plus external parameterized SQL files. We evaluate the pattern with a public reproducibility benchmark comparing three MCP server designs - raw SQL execution, a thin generic tool pack, and a verticalized domain pack - on four local models (3B-8B) across seventeen customer-facing tasks over the Saki...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "customer",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ClawProBench: Trace-Aware Evaluation of AI Agents with Runtime Coverage and Frozen Workplace-Style Holdouts",
+    "url": "https://arxiv.org/abs/2608.22510",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.22510v1 Announce Type: new Abstract: Agent benchmarks often evaluate only final answers even when agents run on stateful runtimes. We argue this under-specifies what is being evaluated: the proper unit is a declared model-plus-runtime configuration whose failures can occur in evidence acquisition, runtime routing, safety boundaries, or repeated execution. We present ClawProBench, a trace-aware benchmark for runtime-native agent evaluation instantiated on OpenClaw, a live agent runtime with workspace tools and native surfaces for browsing, memory, messaging, scheduling, skills, and subagents. ClawProBench defines two tracks: a 102-scenario full profile with live workspace and native-runtime routing tasks, and a frozen 68-scenario holdout with closed-world JSON output contracts for robust ranking. Trials are scored from execution traces via a safety-gated formula combining correctness, process quality, and efficiency, preserving failure evidence for audit. Our anonymous artifact includes benchmark definitions, scoring code, manifests and sanitized traces. We evaluate 68 configurations on the full profile and 37 on holdout. The top safety-gated average trace score is 0.767...",
+    "matched_keywords": [
+      "acquisition",
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Compaction Cliff in Long-Running AI Agent Memory",
+    "url": "https://arxiv.org/abs/2608.22752",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.22752v1 Announce Type: new Abstract: A safety rule and an episodic log compete for the same tokens in an AI agent's context. When the budget overflows, both are summarized at the same rate; only the rule needs exact wording to remain enforceable. On 20 production agent configurations, Claude Code's /compact prompt on Sonnet 4.6 preserves 53\\% of safety rules after one compaction round and 10\\% after five. We name this the Compaction Cliff. We address it with Knowledge Triage, a framework that classifies each line of an agent's knowledge base by type and routes each type through its own retention policy. Three deterministic operators implement this triage across the three context-management operations: TypeCompact rewrites items in place under per-type fidelity, TypeDecompose partitions a topic too large to compact safely, replicating in-scope safety rules across partitions, and TypeRetrieve fetches items from external storage with in-scope rules pinned ahead of relevance. On five public corpora, TypeCompact preserves 2--4$\\times$ more safety rules than the strongest single-shot LLM compactor at every ratio, with 96\\% recall over five rounds. TypeDecompose reaches 0\\% lo...",
+    "matched_keywords": [
+      "Agent",
+      "AI Agent",
+      "Claude",
+      "Claude Code",
+      "knowledge base",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "model",
+      "rag_data"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -35,8 +149,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -59,8 +173,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -81,8 +195,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -104,8 +218,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -126,88 +240,109 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "KVBoost: Chunk-Level Key-Value Cache Reuse with Deviation-Guided Recomputation for Efficient Large Language Model Inference",
+    "url": "https://arxiv.org/abs/2608.21362",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.21362v1 Announce Type: new Abstract: Transformer-based large language models (LLMs) incur high prefill latency because key-value (KV) tensors must be recomputed for each request. Existing prefix-caching systems reduce this cost but require prompts to share a leading contiguous prefix, limiting effectiveness when shared content appears at arbitrary positions. We present KVBoost, a chunk-level KV cache reuse system for HuggingFace-compatible decoder models that enables reuse regardless of content position. KVBoost introduces a dual-hash keying scheme that separates positional identity (prefix hash) from content identity (content hash), supporting both exact and approximate cache matches. To address attention boundary errors from independently cached chunks, KVBoost employs two repair strategies: SelectiveRecompute, which re-encodes boundary regions, and CacheBlendRecompute, which identifies and recomputes high-deviation tokens after a probe pass. The system further incorporates asymmetric KV quantization (int8/int4), adaptive chunk boundary splitting, and importance-weighted eviction under a fixed memory budget. Evaluated on Qwen/Qwen2.5-3B over 1,000 bug-localization sam...",
+    "matched_keywords": [
+      "inference",
+      "quantization",
+      "Qwen"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "PTXBench: Benchmark and Adapt LLMs for GPU Kernel Optimization with Architecture-specific PTX",
-    "url": "https://arxiv.org/abs/2608.17379",
+    "title": "Repo2Skill-Evo: Repository Skills Go Stale in Silence",
+    "url": "https://arxiv.org/abs/2608.21964",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.17379v2 Announce Type: replace-cross Abstract: We introduce PTXBench, a benchmark for evaluating and adapting large language models (LLMs) to use architecture-specific PTX for GPU kernel optimization. PTXBench measures functional correctness, whether selected target instructions execute at runtime, and speedup over frontier libraries across GEMM and attention workloads on H100 and B200 GPUs. Our evaluation shows that architecture-specific PTX capability remains uneven: success rates fall substantially on complex attention backward workloads, and executing the target instructions does not necessarily translate into competitive performance. No evaluated model consistently matches frontier libraries across the suite. We further adapt Qwen3.6-27B using supervised fine-tuning. Repair-conditioned training improves several tasks, but generalization remains uneven; data coverage, balance, and the quality of the reasoning teacher matter in addition to dataset size. PTXBench provides an auditable testbed for measuring and improving LLMs' ability to exploit evolving GPU architectures.",
-    "matched_keywords": [
-      "B200",
-      "benchmark",
-      "dataset",
-      "fine-tuning",
-      "GPU",
-      "H100"
-    ],
-    "tags": [
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can Agent Memory Systems Track Evolving State?",
-    "url": "https://arxiv.org/abs/2608.19652",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19652v1 Announce Type: new Abstract: As LLM-based agents are deployed for longer and higher-stakes tasks, their memory systems continue to have crucial gaps. While existing memory benchmarks focus largely on recall-shaped tasks, we argue an effective memory system must track the evolving state of the world; as facts, constraints, and decisions are revised over a long interaction, answers must reflect the current state and not a superseded one. We define this capability as state tracking and instantiate it in StateMemBench, a benchmark of 234 multi-session scenarios spanning two conversation-length regimes. Its closed-pool grading scores whether an answer reflects the current state, the superseded state, or fails otherwise, separating state-tracking failures from other errors by construction. Our analysis shows that this task is challenging for existing memory systems, retrieval-augmented baselines, and long-context baselines. We then present StateMem, a state-first memory method that explicitly tracks supersession and relational dependencies, and show it improves current-state accuracy over the strongest same-backbone baseline by 1.8x (0.205 -> 0.363) on DeepSeek-V4-Fla...",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.21964v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly operate over evolving software repositories, where success depends on repository-specific procedural knowledge: which APIs to call, which scripts to run, and which conventions the current release expects. Agent skills externalize this knowledge into reusable units, and prior work shows that they can improve agent performance. What remains unclear is whether that improvement is durable. The same version specificity that makes a skill useful also makes it fragile: after a release, it may become stale without raising any explicit signal, while continuing to provide obsolete guidance. Externalizing knowledge into a skill can therefore make its decay invisible. We study whether agents can keep this externalized knowledge current. Repo2Skill-Evo casts each release transition as a skill-maintenance task: given a V1 skill set and the official V1-to-V2 patch, an agent must update obsolete skill content while preserving guidance that remains valid. Across 57 real-world repositories and 105 selected release transitions, every evaluated transition invalidates part of the V1 skill set. Yet six fronti...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "benchmark",
-      "Continue",
-      "DeepSeek",
-      "retrieval"
+      "release",
+      "repository"
     ],
     "tags": [
       "agent",
       "coding_tool",
-      "model",
-      "open_source",
-      "rag_data"
+      "open_source"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Right Family, Wrong Skill: Benchmarking Risk Exposure in Agent Skill Retrieval",
-    "url": "https://arxiv.org/abs/2606.10388",
+    "title": "MCP-Universe RL: A Framework for Training MCP Tool-Use Agents via Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2608.22167",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.10388v2 Announce Type: replace-cross Abstract: Agent skill libraries are becoming routable software assets: a retrieved skill can contribute instructions, scripts, resource bindings, and execution assumptions to an agent. This makes retrieval failures more specific than broad irrelevance. A system can find the right capability family yet expose the wrong same-capability representative. We study this failure as same-capability risk-exposure retrieval. Each benchmark unit pairs a helpful skill with a query-specific risky sibling that shares the capability family but differs on an execution-controlling contract, such as the required resource, precondition, procedure, or artifact. We introduce SameCapRisk-Bench, an auditable benchmark with 1,190 skill-risk units and 1,686 evaluation query cases: 694 marked-sibling units under public library pressure and 496 hard role-flip units where the same two skills swap helpful/risky roles across paired queries. The release records admission evidence, cue/leakage checks, source hashes, family relations, and fixed candidate pools. The benchmark reports helpful ranking together with harmful sibling rate (HSR@K), the top-K exposure of the...",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.22167v1 Announce Type: new Abstract: Reinforcement learning (RL) has become an effective way to improve the tool-use ability of large language models (LLMs), but most existing RL frameworks stop at the policy update. For every new domain, the user is left with two hard systems problems: standing up an isolated environment for each of hundreds of concurrent trajectories and connecting it to training, and scheduling the rollout so that the GPU stays busy across long, multi-turn episodes that spend much of their time stalled on slow tool calls. We present MCP-Universe RL (MCP-U RL), an open-source framework that takes over both. It uses the Model Context Protocol (MCP) as the interface to the environment, so any tool already exposed as an MCP server plugs into training with no RL-specific integration code. It builds the two missing layers once and reuses them across domains: an environment-orchestration layer that provisions, isolates, and recycles the MCP environments over a pluggable container backend, and a rollout-orchestration layer whose staged pipeline overlaps trajectories to keep the GPU busy while episodes wait on tools. A backend-agnostic training layer then app...",
     "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "release",
-      "retrieval"
+      "agents",
+      "GPU",
+      "MCP",
+      "Model Context Protocol",
+      "orchestration",
+      "policy"
     ],
     "tags": [
       "agent",
-      "open_source",
-      "rag_data"
+      "business",
+      "semiconductor"
     ],
-    "score": 61,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
+    "score": 60,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MobilePA-Bench: Benchmarking Mobile Planner Agents on Complex Real-World Tasks",
+    "url": "https://arxiv.org/abs/2608.23035",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-25T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.23035v1 Announce Type: new Abstract: As on-device LLM agents evolve into personal copilots, the mobile operating system has become a key testbed for this paradigm, making rigorous capability evaluation essential. Yet existing benchmarks fall into two camps, each with a critical blind spot: GUI-centric benchmarks test surface-level screen manipulation while overlooking background tool use and long-horizon planning, whereas static function-calling benchmarks rely on offline API matching that is detached from real runtime constraints. To close this gap, we present \\textbf{MobilePA-Bench}, an interactive, stateful, and tool-centric benchmark for evaluating the tool-calling and planning abilities of mobile planning agents. MobilePA-Bench runs on an executable sandbox that maintains live application databases and returns structured feedback, spanning $13$ functional domains and $212$ realistic mobile tools. Beyond basic tool use, it evaluates a central planning agent along three advanced dimensions: \\emph{(1)~Sub-agent Collaboration}---decomposing a complex task and delegating specialized work to capable sub-agents; \\emph{(2)~Memory Usage}---recalling stored memories, user pr...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API",
+      "benchmark",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -238,53 +373,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ReCache: Efficient KV Cache Reuse and Compression for Tool-Augmented LLM Agents",
-    "url": "https://arxiv.org/abs/2608.19662",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19662v1 Announce Type: new Abstract: Agentic language models repeatedly encode tool and skill schemas that recur across requests in different combinations and orders, preventing standard prefix caching from reusing their key--value (KV) states. We introduce \\textbf{ReCache}, a framework for independently caching resource representations while reducing their inference-time computational and memory overhead. Resource-wise attention removes cross-resource interactions and assigns resource-local positions, producing composition-invariant KV blocks. ReCache then restricts resource visibility to contribution-selected layer--KV-head-group routes and retains only invocation-critical fields through structural and semantic pruning. We evaluate ReCache on a benchmark assembled from seven public tool- and skill-use datasets, including resource-disjoint tests. Resource-wise attention matches dense invocation performance (82.3\\% versus 82.4\\% Inv-F1) while providing a 3.655$\\times$ time-to-first-token speedup. The complete framework reduces allocated KV-tensor memory by 92.43\\% and accelerates attention by 1.423$\\times$. These results show that separating reusable schema encoding fro...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
-    "url": "https://arxiv.org/abs/2608.19758",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19758v1 Announce Type: new Abstract: Long-context modeling is a pivotal capability for Large Language Models, yet the quadratic complexity of attention remains a critical bottleneck, particularly during the compute-intensive prefilling phase. Our previous work, FlashPrefill, mitigates this cost through instantaneous pattern discovery and max-based dynamic thresholding; however, it remains an algorithmic prototype that is still distant from production deployment. In this paper, we present FlashPrefill V2, which evolves FlashPrefill from a prototype toward practical long-context serving along three dimensions. First, we introduce a mean correction term that effectively suppresses the approximation error, keeping performance degradation manageable even at extreme sparsity levels. Second, we redesign the sparse attention operator with PackGQA memory access, warp specialization, and pingpong pipelining, fully aligning with the latest FlashAttention-3/4 implementations and supporting FP8 inference to meet practical quantization requirements. Third, FlashPrefill V2 natively supports paged KV cache and continuous batching, allowing integration as an attention backend in modern...",
-    "matched_keywords": [
-      "inference",
-      "quantization",
-      "serving"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -300,138 +389,8 @@
     "tags": [],
     "score": 59,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "TRACE: Agentic Catalog Enrichment with Multi-source Evidence Grounding",
-    "url": "https://arxiv.org/abs/2608.20844",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20844v1 Announce Type: new Abstract: Product catalogs underpin search, discovery, and recommendation in e-commerce, yet they are often attribute-sparse: the attributes shoppers and downstream systems rely on are either buried in unstructured content such as titles and images or missing from the catalog altogether. Manually enriching e-commerce catalogs is impractical given their scale and rapid growth. This paper introduces TRACE, a novel framework for automated catalog attribute enrichment using agentic Large Language Models (LLMs). A ScoutAgent triangulates multimodal evidence across merchant catalogs, syndicated feeds, and identity-matched web search to propose candidate attribute values with supporting evidence, while a JudgeAgent verifies the proposed value for each attribute value against its supporting evidence and decides whether to publish it or route it to human review. On an offline human evaluation dataset, TRACE's proposed attribute values were 98.2% accurate at 74.7% attribute coverage. Deployed in production on an industry-scale catalog, TRACE increased impression-weighted enrichment coverage across four business verticals by 90.4%. An online experiment s...",
-    "matched_keywords": [
-      "agentic",
-      "dataset"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MGAL: A Multilingual Granularity-Aware Long-Context Benchmark",
-    "url": "https://arxiv.org/abs/2608.20853",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20853v1 Announce Type: new Abstract: Evaluation of long-context Large Language Models (LLMs) has advanced rapidly. However, most existing benchmarks are limited to the document level and focus mainly on high-resource languages, leaving many fine-grained challenges insufficiently evaluated. To address this gap, we present MGAL, the first multilingual, granularity- and position-aware long-context benchmark. MGAL is constructed from United Nations (UN) reports spanning 8K to 128K tokens across the six official UN languages. It covers four coherent levels of linguistic granularity (word, sentence, paragraph, and document) and further stratifies entries by their position within the document (begin, middle, and end), indexed at both the document and paragraph levels. This design enables systematic diagnosis of multilingual long-context comprehension across different granularities. Through extensive experiments and analyses, we find that: (1) LLMs perform well at word-level tasks but struggle with coarser-grained ones; and (2) Closed-source models retain a clear performance advantage in lower-resource languages. We further identify two new challenges: (1) Under local semantic...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "UpgradeBench: A Decision-Centric Benchmark for Upgrading Fine-Tuned LLM Specialists",
-    "url": "https://arxiv.org/abs/2608.20918",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20918v1 Announce Type: new Abstract: Organizations maintain task-specific adapters for open-weight language models, and each new base-model release forces a migration decision: retain existing specialists, port adapters, refresh from preserved behavior, or retrain. Prior transfer work evaluates isolated model pairs, without studying these choices across real model release sequences. We present UpgradeBench, a decision-driven longitudinal benchmark covering four consecutive Qwen releases, one continuation checkpoint, six tasks, and two model sizes, augmented by OLMo checkpoints with known training lineage. The benchmark disentangles three core questions: whether a new checkpoint improves fixed-recipe retrained specialist performance, whether specialization assets transfer across versions, and what recovery resources are usable. We observe upgrade gains differ across task-scale-release episodes: some retrained baselines improve while others stay within training noise, with durability ranging from under one release interval for text-to-SQL to over fourteen months for intent classification. Direct adapter copying depends neither on architecture nor model family: on OLMo, re...",
-    "matched_keywords": [
-      "benchmark",
-      "Qwen",
-      "release"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When Do LLMs Replace Fine-Tuned NLU? A Decision Framework for Intent Detection in Production Conversational Systems",
-    "url": "https://arxiv.org/abs/2608.20371",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20371v1 Announce Type: cross Abstract: A common claim is that zero-shot large language models (LLMs) can replace fine-tuned NLU classifiers for intent detection. We test this claim head-to-head and find that the honest answer is: it depends on the intent space. On full ATIS and CLINC150 we compare a fine-tuned RoBERTa, a TF-IDF+logistic-regression baseline, sentence-embedding kNN, and Claude Haiku zero-shot, reporting bootstrap 95% confidence intervals and paired significance tests. When abundant in-domain labels exist, fine-tuned RoBERTa is as good or better and three orders of magnitude cheaper and faster: on ATIS it beats Claude zero-shot by 11.8 points (95.9 vs. 84.1, p<0.001). On the broad 150-intent CLINC150 schema the two are statistically tied (89.1 vs. 88.5, p=0.24): the LLM matches a fully supervised model with no training data. The LLM's advantages appear in three production-relevant regimes: out-of-scope detection (OOS recall 85.6 vs. 58.1 for RoBERTa); robustness to realistic ASR noise via a controlled text-to-speech to noise to Whisper pipeline (92.5 vs. 80.0 at 0 dB); and dynamic per-deployment schemas, where a classifier trained on one app's intents scor...",
-    "matched_keywords": [
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EditPPT: Faithful Long-Deck Slide Editing via Structured Tool-Using Multi-Agent with Dual-Modal Validators",
-    "url": "https://arxiv.org/abs/2608.20381",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20381v1 Announce Type: cross Abstract: Automating slide editing requires simultaneously satisfying modification accuracy, preservation fidelity, and robustness to deck length. Existing LLM-based systems often fail on real-world presentation files because they rely on idealized intermediate representations or open-ended code generation, which are prone to cascading errors in long decks. We introduce EditPPT, a multi-agent framework that reformulates slide editing as a constrained tool-selection problem. By executing localized shape-level operations through the native PowerPoint COM interface, EditPPT narrows the LLM action space while preserving the application-resolved structure of user-authored decks. By separating validation across modalities, our dual-modal validation provides more robust assessment of both instruction fidelity and visual quality. We also present DeckEdit-Bench, a benchmark with 28 human-authored decks, 582 slides, and 183 editing prompts across short, medium, and long deck tiers. Experiments show that EditPPT achieves a 99.5% execution rate, 88.7% slide-targeting F1, 82.5% instruction following, and 91.5% object preservation overall, while maintaini...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Making Deployments Safe at Meta: Health Checks for Continuous Change-Safety",
-    "url": "https://arxiv.org/abs/2608.20513",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-24T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.20513v1 Announce Type: cross Abstract: Continuous deployment to large scale production systems creates a tension between release velocity and reliability. Every change is a potential reliability incident, yet every delay is a missed opportunity. This paper describes the deployment time health check infrastructure that Meta uses to mediate this tension across thousands of heterogeneous services. We summarize the architecture of this prevention based distributed system's service called Service Health Checker, explain how check authors compose templated metric queries, thresholds, and workflow predicates; and discuss how the system is integrated with tiered and phased rollouts so that regressions trigger automatic rollback. We then describe the operational problems that emerged at scale, such as noise, alert fatigue, drift, and uncovered regressions, and the program of measurement, tooling, and improved defaults we deployed to address them. We close with lessons learned from years of operating deployment health checks at Meta, and the directions we are exploring next, including AI assisted health check tuning. Index Terms: deployment safety, continuous deployment, monitori...",
-    "matched_keywords": [
-      "release",
-      "workflow"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -452,71 +411,28 @@
     ],
     "score": 58,
     "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Compliance, Capability, and Conflict: Benchmarking Multimodal LLMs under System Messages",
-    "url": "https://arxiv.org/abs/2608.19207",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.19207v1 Announce Type: new Abstract: Production deployments of Multimodal Large Language Models (MLLMs) increasingly rely on system messages to govern model behavior. Yet existing benchmarks either evaluate constraints in text only or embed them into the user turn, leaving system-message adherence in multimodal contexts largely unmeasured; they also leave open whether compliance comes at the cost of foundational vision-language capabilities. We introduce VSysBench, a benchmark built on MMVet-v2 that organizes constraints into 5 main categories and 22 sub-categories, ranging from textual directives in visual contexts to fully vision-grounded ones, each paired with a misaligned counterpart that stress-tests the instructional hierarchy. VSysBench scores each response jointly along two axes, constraint compliance and answer correctness, via the Joint Satisfaction Rate (JSR) and Cross-Constraint Sensitivity (CCS). Across 16 MLLMs, we find that imposing system messages substantially erodes base task accuracy, that compliance collapses under user conflict for open-weight models while remaining stable for top proprietary ones, and that vision-grounded constraints are the hardes...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-08-22T07:24:04.179468+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b10614：metal: per-op source split + parallel compile (#26561)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10614",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-24T21:23:31+00:00",
-    "summary_or_excerpt": "metal: per-op source split + parallel compile (#26561) * metal : per-op source split + parallel compile (#24021) * preliminary extract common header * op source split * split metallib into 8 libs && load in parallel * derive kernel->library routing from functionNames * x-macro lib list + underscore filenames, dedup QK_NL, MRC fixes * op source split 8 to 20 * improve robustness of source fallback * clean up * change bool -> atomic_bool * only prepend headers that source actually includes * no semaphore, use GCD global queue * dedup library compile path, fix NSError lifetime, rename gla * relocate upstream concat/rope_back/repeat kernel changes into split files * move ggml-common.h from common.h into dequantize.h to shrink binary size --------- Co-authored-by: lvyichen * metal: add col2im_1d op (f32/f16/bf16) (#25176) * metal : add set_rows with src0 f16 (#25434) * metal : add CONV_2D_DW (depthwise convolution) support (#21565) * metal : add Q2_0 support (#25419) * metal: fuse snake activation (mul, sin, sqr, mul, add) (#25459) * ggml-metal: FWHT kernel for metal backend (#25924) * metal : port new kernels into the split sources Move the kernels added on master after the split (lig...",
-    "matched_keywords": [
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 46,
-    "release_version": "b10614",
-    "first_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "repo2nb 0.2.0, convert a GitHub repo into a Kaggle/Colab notebook (dependency resolution, reverse mode, incremental sync) [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1vuni29/repo2nb_020_convert_a_github_repo_into_a",
-    "source_name": "Reddit r/MachineLearning",
+    "title": "How to evaluate LLMs before production",
+    "url": "https://github.blog/ai-and-ml/llms/how-to-evaluate-llms-before-production",
+    "source_name": "GitHub Blog",
     "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T17:53:36+00:00",
-    "summary_or_excerpt": "repo2nb is an open-source CLI that converts a GitHub repo into a runnable Kaggle or Colab notebook: walks the file tree, resolves dependencies, and generates cells, instead of you doing that by hand for a repo you didn't write (a paper's code, a tutorial, someone else's experiment). 0.2.0 highlights: Dependency resolution tries poetry export, then uv export, then requirements.txt, then falls back to an AST import scan if none of those exist. Output is always a plain %pip install cell regardless of which path it took, so poetry/uv are only ever needed locally at generation time, not on Kaggle/Colab. Reverse mode ( repo2nb reverse <notebook> ) reconstructs the original repo from a generated notebook, using the per-cell path/hash metadata every generated cell now carries. Validates against directory traversal and won't write into a non-empty directory without --force . Incremental sync ( repo2nb sync <repo> ) does one-directional (repo to notebook) updates: added files get new cells, edited files update in place, deleted files get removed. --dry-run previews the diff. Added a Colab target with its own auth cell (google.colab.userdata.get) rather than reusing the Kaggle secrets flow....",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-25T21:35:11+00:00",
+    "summary_or_excerpt": "These are the lessons we learned evaluating LLMs for real-world secret scanning. The post How to evaluate LLMs before production appeared first on The GitHub Blog .",
     "matched_keywords": [
       "GitHub"
     ],
     "tags": [
       "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
+    "score": 47,
+    "first_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -532,7 +448,7 @@
     "score": 42,
     "hn_score": 471,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -554,51 +470,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Munder Difflin – Agent harness to run an office of your clones",
-    "url": "https://munderdiffl.in/",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-22T09:49:14+00:00",
-    "summary_or_excerpt": "HN points: 239. Comments: https://news.ycombinator.com/item?id=49398152",
-    "matched_keywords": [
-      "Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 42,
-    "hn_score": 239,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "A week of using Codex more than Claude",
-    "url": "https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T19:51:48+00:00",
-    "summary_or_excerpt": "HN points: 100. Comments: https://news.ycombinator.com/item?id=49393051",
-    "matched_keywords": [
-      "Claude",
-      "Codex"
-    ],
-    "tags": [
-      "coding_tool",
-      "model"
-    ],
-    "score": 42,
-    "hn_score": 100,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -624,7 +496,7 @@
     "score": 41,
     "release_version": "b10595",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -646,7 +518,7 @@
     ],
     "score": 41,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -662,7 +534,7 @@
     "tags": [],
     "score": 41,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -687,7 +559,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -713,7 +585,7 @@
     "score": 40,
     "release_version": "v1.98.0",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -734,66 +606,7 @@
     "score": 40,
     "hn_score": 305,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llm 0.32.1",
-    "url": "https://simonwillison.net/2026/Aug/21/llm",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T17:16:13+00:00",
-    "summary_or_excerpt": "Release: llm 0.32.1 Fresh installs of LLM stopped working the other day because the OpenAI Python library dropped its usage of httpx , and it turned out LLM depended on that library but only installed it via a transitive openai dependency. This dot-release fixes that for the moment by pinning to openai<3 , and a soon-to-drop 0.33 release will switch from httpx to httpx2 . Tags: httpx , openai , llm",
-    "matched_keywords": [
-      "OpenAI",
-      "release"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 40,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "What happens when a GPU reads memory",
-    "url": "https://blog.doubleword.ai/what-happens-when-a-gpu-reads-memory",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T16:16:42+00:00",
-    "summary_or_excerpt": "HN points: 109. Comments: https://news.ycombinator.com/item?id=49390308",
-    "matched_keywords": [
-      "GPU"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 40,
-    "hn_score": 109,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型",
-    "url": "https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-21T13:01:13+00:00",
-    "summary_or_excerpt": "面壁智能 OpenBMB 推出 MathForm，一个面向 Lean 4 数学自动形式化的开源框架、数据集与模型。其 FormalVerse 数据集含 367K+ 已验证示例；在匹配 100K 预算下，基于其训练的模型 Consistency Check 达 60.32%，优于 FineLeanCorpus（46.53%）与 NuminaMath-LEAN（41.49%）。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 39,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -815,7 +628,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -841,7 +654,7 @@
     "score": 38,
     "release_version": "b10598",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -869,104 +682,7 @@
     "score": 38,
     "release_version": "b10594",
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10587：vulkan : added the PAD_REFLECT_1D operation (#26586)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10587",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-22T20:11:39+00:00",
-    "summary_or_excerpt": "vulkan : added the PAD_REFLECT_1D operation (#26586) * vulkan : added PAD_REFLECT_1D operation Implemented the GGML_OP_PAD_REFLECT_1D operation for the Vulkan backend Changes: - pad_reflect_1d.comp: implemented the GLSL compute shader with reflection logic - vulkan-shaders-gen.cpp: register the shader for SPIR-V compilation - ggml-vulkan.cpp: pushed constants struct, pipeline creation, supports_op, dispatch function, compute switch and debug validation Tested the PAD_REFLECT_1D on Intel Iris Xe (Vulkan 1.4, Mesa 25.2.8): Correctness: PAD_REFLECT_1D(type=f32,ne_a=[512,34,2,1],pad_0=10,pad_1=9) = Pass PAD_REFLECT_1D(type=f32,ne_a=[3000,384,4,1],pad_0=10,pad_1=9) = Pass 2/2 tests passed - All test are passed Performance: ne_a=[512,34,2,1] -> 5.38 us/run, 24.55 GB/s ne_a=[3000,80,1,1] -> 30.09 us/run, 59.62 GB/s ne_a=[3000,384,4,1] -> 158.31 us/run, 54.39 GB/s * Update ggml/src/ggml-vulkan/vulkan-shaders/pad_reflect_1d.comp Co-authored-by: Jeff Bolz --------- Co-authored-by: Jeff Bolz **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10587/llama-b10587-bin-macos-arm64.tar.gz) - macOS Apple Silicon...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 38,
-    "release_version": "b10587",
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10585：common: add json.h abstraction (#27511)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10585",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-22T15:40:46+00:00",
-    "summary_or_excerpt": "common: add json.h abstraction (#27511) * add common/json * migrate common * adapt jinja * migrate server * big wip * migrate tests * wip * revert some excessive changes * wip * wip 2 * revert redundant changes * fix server crash * various fixes * fix ci * harden a bit * clean up * rm json-shim * add some comments * rm redundant decl **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10585/llama-b10585-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10585/llama-b10585-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10585/llama-b10585-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10585/llama-b10585-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10585/llama-b10585-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b1058...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 38,
-    "release_version": "b10585",
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10584：fit: also take into account n_streams (#27496)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10584",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-22T15:06:15+00:00",
-    "summary_or_excerpt": "fit: also take into account n_streams (#27496) * fit: also take into account n_streams * server: make the draft context follow the target context With a non-unified KV cache the target context now holds n_ctx_train tokens per sequence, while the draft context was still created with n_ctx = 0 and fell back to n_ctx_train / n_streams per sequence. A slot filled beyond that point makes the draft batch fail to decode, and the server answers 500 on the request. The draft context now takes its size from the target context, so both hold the same number of tokens per sequence. Contexts that share their cells with the target no longer need the kv_size override. The memory reserved for the draft model before fitting is measured at the largest context the target can take, since the draft context grows with the target and a fixed byte margin cannot express that. * fit: take an optional second model into account Illustrates the alternative discussed on the draft context fix. The memory of a draft or MTP context is currently handed to the fit as a fixed byte margin, which cannot express a memory that grows with the context the fit is still deciding on. common_fit_params now takes an optional se...",
-    "matched_keywords": [
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 38,
-    "release_version": "b10584",
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Stop Making TUIs",
-    "url": "https://simonwillison.net/2026/Aug/21/stop-making-tuis",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-08-21T16:07:32+00:00",
-    "summary_or_excerpt": "Stop Making TUIs Thomas Ptacek advocates for building real native user interfaces for even the smallest of personal tools, because coding agents have reduced the cost of getting a usable-enough GUI up and running to almost nothing. I wrote about my vibe-coded bandwidth and GPU monitoring macOS task bar apps back in March , and I'm still using both of those on a daily basis. I'm not habitually knocking out real UIs for my other projects yet, but I'm running out of excuses! Thomas: If you haven’t tried your hand at turning one of your 500 throwaway CLIs into a native app, you’re doing yourself a disservice. Go build a native UI. It’ll probably change the way you think. Tags: thomas-ptacek , ai , generative-ai , llms , vibe-coding , coding-agents",
-    "matched_keywords": [
-      "agents",
-      "GPU"
-    ],
-    "tags": [
-      "agent",
-      "semiconductor"
-    ],
-    "score": 38,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -990,23 +706,7 @@
     ],
     "score": 37,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "第二届世界人形机器人运动会开幕：2056 台机器人齐聚\"冰丝带\"，666 支队伍竞技 51 赛项",
-    "url": "https://aihot.virxact.com/items/cmt4gz31f1l1qro6tprhfg5ys",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-22T14:13:48+00:00",
-    "summary_or_excerpt": "第二届世界人形机器人运动会今晚在国家速滑馆\"冰丝带\"开幕，666 支队伍、2056 台机器人参赛，队伍数量较首届增长 138%，机器人数量翻了两番。天工 Ultra 在百米预赛跑出 9.39 秒，打破博尔特 9.58 秒的人类世界纪录；荣耀\"闪电\"以 41.95 秒完成 400 米，同样破人类纪录。本届赛项增至 51 项，多项竞技赛取消人工遥控，全程全自主运行。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmt4gz31f1l1qro6tprhfg5ys",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 37,
-    "first_seen_at": "2026-08-23T07:17:43.073915+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1034,7 +734,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-24T07:15:51.155644+08:00",
-    "last_seen_at": "2026-08-25T07:22:50.544953+08:00",
+    "last_seen_at": "2026-08-26T07:27:23.130936+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

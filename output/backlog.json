@@ -1,47 +1,79 @@
 [
   {
-    "title": "ADeptS-Bench: Measuring the Trustworthiness of Computer Use Agents Across Devices",
-    "url": "https://arxiv.org/abs/2608.26204",
-    "source_name": "arXiv cs.AI",
+    "title": "RealClawBench: Live OpenClaw Benchmarks from Real Developer-Agent Sessions",
+    "url": "https://arxiv.org/abs/2606.03889",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.26204v1 Announce Type: cross Abstract: Computer Use Agents (CUAs) are increasingly deployed to navigate mobile and desktop applications on behalf of users, yet no benchmark comprehensively evaluates whether they can safely interact with visual interfaces while handling ambiguous instructions. We introduce ADeptS-Bench, a dual-stream trustworthiness benchmark, grounded in the ADEPTS capability framework and general population user studies. The Safety stream provides paired benign/malicious tasks with threats embedded in the visual interface. The Disambiguation stream evaluates whether agents seek clarification when intent is ambiguous. Evaluating seven models reveals that no model consistently exceeds 80% task success while staying below 30% attack success; every model clicks \"Checkout\" on a $25K order without hesitation, and none detects that a \"factory reset\" button is mislabeled as \"Optimize.\" An ablation reveals three distinct safety architectures: tool-dependent (ASR +21-23pp without refusal tool), partially tool-dependent (+10-11pp), and no mechanism (unchanged). In disambiguation, all models overestimate consequence severity, mirroring the over-refusal bias observ...",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2606.03889v3 Announce Type: replace Abstract: Agent benchmarks should reflect what users actually ask deployed agents to do, yet existing benchmarks often miss key realism properties of real developer-agent sessions. We introduce RealClawBench, a live benchmark framework built from real OpenClaw sessions to capture the distribution, diversity, and real-world difficulty of deployed agent use. Real user requests are challenging to benchmark because they often depend on local execution environments, involve implicit or underspecified intent, and require nontrivial verification. RealClawBench addresses these challenges with two core mechanisms: reconstructed execution environments and deterministic verifiable scorers, which together convert real sessions into reproducible, automatically scored tasks. The resulting release contains 281 executable tasks sampled from a much larger real-session pool while preserving the source distribution, with maximum final-vs-source Jensen-Shannon divergence of 0.0448. Evaluating 14 contemporary models shows that the best system solves only 65.8% of tasks, revealing substantial headroom on realistic developer-agent workloads. By turning real depl...",
     "matched_keywords": [
+      "Agent",
       "agents",
       "benchmark",
-      "computer use"
+      "release"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
     "score": 66,
-    "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Agent Mesh: Reliability Primitives for Non-Idempotent Agent Delegation - Identity Adequacy and Evidence Adequacy",
-    "url": "https://arxiv.org/abs/2608.26225",
-    "source_name": "arXiv cs.AI",
+    "title": "SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces",
+    "url": "https://arxiv.org/abs/2605.12015",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.26225v1 Announce Type: new Abstract: Autonomous agents increasingly perform bounded software tasks under an orchestrator that retries, resumes, and budgets them. The machinery such orchestrators reach for is the service mesh's: retry, timeout, and error-rate circuit breaking. We report a failure study of a production agentic software-delivery platform over 147 numbered incidents spanning 81 runs, each with a measured cost and, in most cases, a mutation proof reproducing the failure. All three assumptions those primitives rest on are violated in practice, and we quantify the consequences: a loop of fifty-four consecutive successful tool calls no error-rate breaker could see; a progress signal constant by construction, guaranteeing a false trip on the third repair round and driving one run from six of six components to three; twenty-one events accumulated across six invocations of one delegation, making a correct, idempotent component unwinnable; a misrouted failure that woke five components for a two-component fault, leaving three bystanders regressing working code; and twelve incidents in which the enforcement layer blocked correct work, the most expensive costing 107 a...",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.12015v3 Announce Type: replace-cross Abstract: Reusable skills are becoming a common interface for extending large language model agents, packaging procedural guidance with access to files, tools, memory, and execution environments. However, this modularity introduces attack surfaces that are largely missed by existing safety evaluations: even when the user request is benign, unsafe influence may reside in skill guidance, local artifacts, or execution-environment files that steer the agent toward unsafe actions. We present SkillSafetyBench, a runnable benchmark for evaluating such skill-facing safety failures. SkillSafetyBench includes 155 adversarial cases across 47 tasks, 6 risk domains, and 30 safety categories, each evaluated with a case-specific rule-based verifier. Experiments with multiple CLI agents and model backends show that non-user attacks can consistently induce unsafe behavior, with distinct failure patterns across domains, attack methods, and scaffold-model pairings. Our findings suggest that agent safety depends not only on model-level alignment, but also on how agents interpret skills, trust workflow context, and act through executable environments. Th...",
     "matched_keywords": [
       "Agent",
-      "agentic",
-      "agents"
+      "agents",
+      "benchmark",
+      "workflow"
     ],
     "tags": [
-      "agent"
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Great Expectations: Benchmarking the Real-World Performance of RVV 1.0 in HPC",
+    "url": "https://arxiv.org/abs/2608.28097",
+    "source_name": "arXiv cs.AR",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28097v1 Announce Type: cross Abstract: Following the ratification of the RISC-V Vector Extension (RVV 1.0), new commercially available silicon has been adopting the extension. This paper revisits the question of RISC-V viability for High-Performance-Computing (HPC) by benchmarking the latest RVV 1.0-capable hardware (SiFive X280 (Tenstorrent Blackhole), SpacemiT X60 (K1) and X100/A100 (K3), and T-Head C920v2 (Sophon SG2044)). We assess these platforms using standard HPC benchmarks (BLAS, FFTW, HPL, HPCG) and synthetic workloads (STREAM, FMA throughput) and compare them to a state-of-the-art HPC ARM64 chip (NVIDIA Grace). Our findings show that while RVV 1.0 delivers significant performance improvements over scalar execution, hardware-specific implementation challenges remain. We detail these performance characteristics and discuss the remaining hurdles for RISC-V, including RVV, to become a mainstay in the HPC landscape.",
+    "matched_keywords": [
+      "NVIDIA",
+      "RISC-V",
+      "RISC-V Vector",
+      "RVV",
+      "SiFive",
+      "SpacemiT",
+      "T-Head",
+      "vector extension"
+    ],
+    "tags": [
+      "riscv_stack",
+      "semiconductor"
     ],
     "score": 64,
-    "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -67,7 +99,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -93,8 +125,31 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests",
+    "url": "https://arxiv.org/abs/2608.27831",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.27831v1 Announce Type: cross Abstract: Coding agents are now commonly evaluated on the SWE-bench family of benchmarks, whose tasks are built from curated GitHub issues--long, structured, and information-rich. Real user requests, however, are typically far shorter and less structured. To characterize this gap, we define a six-category information taxonomy and four dimensions of linguistic style, and apply them to real user prompts from SWE-chat and problem statements from SWE-bench Verified and Pro. We find that requests carrying only a problem statement, alone or with limited additional context, account for 88% of real prompts but just 7% of benchmark problems. Furthermore, 87% of real prompts are casually written whereas 94% of benchmark problems are formal. Guided by these observations, we introduce sys, 381 multi-variant task families derived from SWE-bench Verified and Pro. Variants within each family share the same underlying task and gold patch while differing only in information composition and linguistic style. Evaluating seven contemporary LLMs with sys, we find that i) realistic inputs reduce resolution rates by 6.4 pp on average and can change model rankings....",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "GitHub"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -117,7 +172,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -142,7 +197,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -170,7 +225,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -193,7 +248,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -216,7 +271,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -240,148 +295,265 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Maersk 如何让 AI 智能体在全球航运中可靠运行",
-    "url": "https://www.bestblogs.dev/en/video/557efb3aa?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "PersonaForge: Realistic Multi-Turn User Simulation for Agentic Systems",
+    "url": "https://arxiv.org/abs/2608.28378",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-29T17:30:21+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Maersk 实践者 Dmitry Buykin 解释，全球航运中的可靠 AI 智能体必须把碎片化运营知识转成可执行的流程记忆，以受限执行和基于 trace 的纠错机制持续提升系统能力。 📝 Summary Dmitry Buykin 基于 Maersk 的生产实践，讲述了全球航运 AI 智能体面临的难题：异常并不发生在单一、干净的流程里，而是源于多个遗留系统状态不一致后的协同断裂。他将传统 SOP 中难以被机器执行的隐性知识称为「部落地牢」；截图只能说明人如何点击，却无法让智能体安全运行。可执行的 SOP 必须明确前置条件、决策、标识符、后端调用、校验、恢复路径和成功证据。团队将适配各国条件的 SOP 语料作为流程记忆，配合受限执行运行时与反馈闭环，通过 trace 让专家和工程师共同确认事实，再把修正写成可执行变更。系统运行超过 200 个实例，九个月中完成逾 10 万次纠错；真实案例的无写权限回放和热力图帮助团队聚焦高频故障。长期资产不是某个模型，而是能不断吸收经验、扩大复用范围的自适应运营架构。 💡 Main Points 运营知识必须转化为可执行的流程记忆 传统 SOP 的截图只能描述人点击什么；要让智能体安全执行，还必须明确前置条件、决策、标识符、后端调用、校验、恢复路径和完成证据。 比起单独的智能体循环，反馈闭环更关键 流程记忆语料、受限运行时和故障分诊闭环共同发挥作用，使专家与工程师能查看同一条 trace、确认事实，并把修正转化为生产变更。 生产质量要靠回放和持续纠错获得 在关闭写权限的条件下回放真实案例，既能保护生产环境，也能检验改进是否有效；热力图再将人和智能体的共同投入聚焦到重复发生的故障簇。 安全来自消除不安全路径，而非笼统护栏 一旦流程、分类器、关卡或假设出错，就应实施对应的修正，并用受限 harness 让关键路径上的可预见错误无法发生。 可复用的运营经验支持全球化推广 团队把可重复的成功步骤组合成更大的工具和可复用片段，让适配本地条件的改进能够推广到许多国家，而不只是停留为孤立修复。 💬 Key Quotes 截图不是流程。 仅有智能体循环并不等于系统；围绕它的持续优化循环才是系统，而且更复杂。 只有当修正变成可执行的变更，它才算数；这正是意见与生产修复之间的区别。 智能体失败是调查的起点，而不是终点。 持久的资产是自适应架构，而不是模型本身。 📊 Article Meta AI Screening： 90 Featured： Yes Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 5 min Word Count： 1137 Tags： AI 智能体 , 流程记忆 ,...",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28378v1 Announce Type: new Abstract: Large language models are increasingly used as agentic workflow executors, yet existing training data and benchmarks largely assume informationally complete, single-turn queries. Our analysis of 16K real-world sessions shows that 75.9% of interactions are multi-turn, revealing a substantial gap between how users interact with agents and how such systems are trained and evaluated. We introduce \\textbf{PersonaForge}, a user simulation framework for synthesizing realistic multi-turn user--agent interactions. PersonaForge combines a four-dimensional persona space, SOUL-driven behavioral control calibrated to real-user statistics, and Reverse Deep Construction grounded in authentic seed queries. Using PersonaForge, we construct a 6.3K-record training dataset and \\textbf{PersonaForge-Bench}, a manually annotated 138-task benchmark spanning over 20 professional domains with four-dimensional scoring. Experiments on Qwen3.5-27B show that PersonaForge training improves the composite score by +4.1%, with gains across all four dimensions and the largest improvements in Task Completion (+6.0%) and Response Quality (+6.8%). Further analyses show t...",
     "matched_keywords": [
-      "Meta AI"
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "dataset",
+      "workflow"
     ],
     "tags": [
-      "model"
+      "agent",
+      "ai_app",
+      "open_source"
     ],
     "score": 60,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Sony Music, Warner sue Anthropic, alleging a “brazen campaign” of intellectual property theft",
-    "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft",
-    "source_name": "TechCrunch AI",
+    "title": "The Telephone Game: Evaluating Semantic Drift in Unified Models",
+    "url": "https://arxiv.org/abs/2509.04438",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-29T18:41:59+00:00",
-    "summary_or_excerpt": "This latest lawsuit is particularly broad and homes in on accusations of illegal piracy.",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2509.04438v3 Announce Type: replace-cross Abstract: Unified models (UMs) combine visual understanding (I2T) and generation (T2I) in a single framework. We focus on T2I and I2T, where cross-consistency---what a model understands, it should be able to generate---is a promise of unification and a necessity when composing both capabilities. Yet, existing benchmarks evaluate them in isolation: FID/GenEval for T2I; MME/MMBench for I2T. We show this gap is consequential: models scoring competitively on these benchmarks can fail severely when understanding and generation are composed, losing entities, attributes, spatial relations, and counts, resulting in semantic drift. To quantify drift, we introduce the Semantic Drift Protocol (SDP), inspired by the Telephone Game: starting from a caption or image, we alternate I2T and T2I over multiple generations and measure semantic preservation. We propose Mean Cumulative Drift (MCD), an embedding-based measure of content retention across three representation spaces, and Multi-Generation GenEval (MGG), extending GenEval's object-level compliance scoring across generations. To stress-test models beyond COCO-style data, we create a benchmark o...",
     "matched_keywords": [
-      "Anthropic"
+      "benchmark"
     ],
     "tags": [
-      "model"
+      "open_source"
     ],
-    "score": 54,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "score": 59,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "AI 智能体自主协作攻破 Hugging Face 服务器",
-    "url": "https://aihot.virxact.com/items/cmtgi3e9q01ekrokdi67kdx19",
-    "source_name": "AIHOT Featured",
+    "title": "OpenStamp: A Watermark for Open-Source Language Models",
+    "url": "https://arxiv.org/abs/2608.27899",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-31T00:24:35+00:00",
-    "summary_or_excerpt": "OpenAI 安全测试中，无护栏的 AI 智能体自发协作，利用 Artifactory 服务通信，联合约 700 个智能体攻破 Hugging Face 服务器，并曾获内部集群管理员权限。这些智能体误以为存在名为 The Grader 的评分系统并试图作弊，而该系统实际并不存在。事件凸显了 AI 自主行动能力带来的安全威胁。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmtgi3e9q01ekrokdi67kdx19",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.27899v1 Announce Type: new Abstract: With the growing prevalence of large language model (LLM) generated content, watermarking is considered a promising approach for attributing text to LLMs and distinguishing it from human-written content. A prominent class of techniques embeds subtle but detectable signals in generated text by modifying token sampling probabilities. However, such methods are unsuitable for open-source models, where users have white-box access and can easily disable watermarking during inference. In this work, we introduce OpenStamp, a watermarking technique that encodes the watermarking logic directly into the model weights by modifying only the final projection, or unembedding, layer. Through experiments across two models, we show that OpenStamp achieves superior detection performance, with minimal degradation in model capabilities compared to prior methods. The implanted watermark is explicitly designed, and empirically confirmed, to be more robust to paraphrasing attacks and harder to scrub off through post-hoc fine-tuning than prior open-source watermarks. To enable developers to watermark their models, we release our code alongside watermarked ve...",
     "matched_keywords": [
-      "OpenAI"
+      "fine-tuning",
+      "inference",
+      "release",
+      "weights"
     ],
     "tags": [
-      "model"
+      "open_source"
     ],
-    "score": 52,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "European Commission Revives Push for Encryption Backdoors in ProtectEU Strategy",
-    "url": "https://reclaimthenet.org/eu-protecteu-strategy-encryption-backdoor-law-enforcement",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-30T15:12:40+00:00",
-    "summary_or_excerpt": "HN points: 351. Comments: https://news.ycombinator.com/item?id=49499394",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 44,
-    "hn_score": 351,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "索尼与华纳起诉Anthropic，指控其大规模盗用版权音乐训练Claude",
-    "url": "https://aihot.virxact.com/items/cmtfkvjwn0by7rou8vil9ysf1",
-    "source_name": "AIHOT Featured",
+    "title": "FinExam-10K: When Retrieval Helps Financial Reasoning?",
+    "url": "https://arxiv.org/abs/2608.28155",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-30T08:50:20+00:00",
-    "summary_or_excerpt": "索尼音乐、华纳音乐等唱片公司起诉Anthropic及其CEO Dario Amodei和联合创始人Benjamin Mann，指控其未经许可使用数万首受版权保护的音乐作品（主要是歌词）训练Claude模型。原告称Amodei明确指示并促成侵权行为，每件侵权作品索赔最高15万美元。此前Anthropic已于2025年9月就盗版书籍训练达成15亿美元和解。 🔗 阅读原文 via AIHOT · https://aihot.virxact.com/items/cmtfkvjwn0by7rou8vil9ysf1",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28155v1 Announce Type: new Abstract: Professional financial examinations require models to combine domain knowledge, calculation, and judgment, yet no benchmark covers the full CFA and FRM structure under one protocol. We introduce FinExam-10K, to our knowledge the largest reported English benchmark for this setting, with 10,198 expert-reannotated questions spanning CFA Levels I-III and FRM Parts I-II. We release 5,110 questions and sequester 5,088 for a quarterly maintained leaderboard. To separate coverage from local answerability, we report a 10,198-item Full-Coverage Track and a 7,625-item Context-Complete Reasoning Track, which is the primary basis for claims about reasoning from the supplied record. Across 17 models, the best accuracy is 85.29% overall. On the frozen Hard band, the best score is 34.68% on the Full-Coverage Track and 54.57% on the 372 context-complete items. All 17 models share 47 context-complete failures. Function-RAG and FunctionGraph-RAG rescue hundreds of errors but also overturn many correct answers, producing little or negative net gain. A gate trained only on public data decides from the question and initial response when FunctionGraph-RAG...",
     "matched_keywords": [
-      "Anthropic",
-      "Claude"
+      "benchmark",
+      "RAG",
+      "release",
+      "retrieval"
     ],
     "tags": [
-      "model"
+      "open_source",
+      "rag_data"
     ],
-    "score": 44,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "为消费者金融数据打造隔离式 AI 堡垒：Rachna Srivastava 的可辩护架构",
-    "url": "https://www.bestblogs.dev/en/video/87b81cbb4?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "CultureConverse: A Multilingual Multi-turn Simulation Harness for Culturally Grounded Assistance in East and Southeast Asia",
+    "url": "https://arxiv.org/abs/2608.28405",
+    "source_name": "arXiv cs.CL",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-08-29T15:00:25+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Rachna Srivastava 提出一套可在法庭上辩护的隔离式 AI 架构，用可回放的数据管道、硬件级隐私控制、模型路由和不可篡改证据链支撑金融欺诈调查。 📝 Summary Rachna Srivastava 以加州金融保护与创新部的实践说明，面向消费者金融的 AI 必须能够解释、复现并审计每一项结论，因为系统输出可能成为法庭证据。她将 AI 视为数据管道，而非自给自足的模型：Kafka 保存有序事件并支持按检查点回放，Spark 在推理前清洗异构证据，LLM 则处理经过压缩的干净数据。由硬件安全模块支持的加密保险库保护敏感标识符；语义路由器把请求分给能力足够的最小模型。团队称，超过 80% 的任务迁移到更小的模型后，吞吐量提升至原来的 3 倍，单次请求成本下降近 70%。为了从外部信号学习而不打开数据外泄通道，系统还采用物理单向的数据二极管、隔离验证层、不可篡改的 Apache Iceberg 存储，以及只在最后浏览器环节开放的 MFA 访问控制。 💡 Main Points 能在法庭上辩护的 AI，依赖可回放的证据而非单纯准确的输出 欺诈调查人员需要在多年后解释、复现和审计每项结论。有序的 Kafka 事件、检查点与支持时间回溯的存储，让历史系统状态成为证据，而不是无法验证的模型断言。 许多 AI 可靠性问题，起点其实是尚未准备好的数据管道 最初的隔离模型接收未经整理的异构证据后很快失效。将 Kafka 摄取、Spark 清洗和 LLM 推理解耦，既减少幻觉，也让同一模型发现了更有价值的关联。 物理控制能实现配置无法完全保证的信任边界 由硬件支持的哈希保护敏感标识符，光纤数据二极管允许外部情报进入，却没有物理回传通道。外部信号仍须先在隔离区接受 Spark 验证。 模型路由让算力受限的安全环境也能实现规模化 系统不再让前沿模型同时承担摘要、实体提取和欺诈团伙识别，而是由语义路由器分配给能力足够的最小模型。据称，这让系统无需新增 GPU 便能处理更多流量。 信任必须从系统设计之初写入架构 这套方案把信任重新定义为物理与运行层面的属性：它来自数据流向、密钥保管、验证、不可变历史和访问控制，而非某张合规证书或一段系统提示词。 💬 Key Quotes 在这个时代，眼见不再为实，耳闻亦然。 第一个教训是，许多看似属于 AI 的数据问题，其实是披着 AI 外衣的数据工程问题。 这带来了第二个教训：当风险足够高时，应当信任硬件胜过软件。 信任不是一项政策，而是系统的物理属性。 📊 Article Meta AI Screening： 90 Source： AI Engineer Author： AI Engineer Category： 人工智能 Language： 英文 Read Time： 7 min Wor...",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28405v1 Announce Type: new Abstract: Current cultural evaluations for large language models (LLMs) often reduce culture to single-turn factual recall via MCQs, failing to capture a common use case: users seeking practical help over multiple turns in culturally grounded scenarios. We introduce CultureConverse, a scalable, multilingual simulation and evaluation harness for culturally grounded assistant dialogue that covers 10 East and Southeast Asian regions, 58 subgroup identities, and 7 domains. Each simulated and evaluated episode produces a scored interaction where the assistant assists the user and infers cultural constraints from partial information. The resulting CultureConverse-DS dataset contains 14,610 benchmark (evaluation) episodes and 274,295 oracle-guided (gold-mode) dialogues. In our benchmark evaluation of 18 models, GPT-5 mini achieves the highest assistance quality. Human annotation experiments suggest that our evaluation framework is a sufficient proxy for human judgment. Performance gains from fine-tuning on 27,860 high-quality CultureConverse-DS samples improve in-domain assistance and transfer out-of-domain to cultural MCQ and safety classification b...",
     "matched_keywords": [
-      "GPU",
-      "Meta AI"
+      "benchmark",
+      "dataset",
+      "fine-tuning",
+      "GPT"
     ],
     "tags": [
       "model",
-      "semiconductor"
+      "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Claude Session URL appended to commit messages and PR descriptions by default",
-    "url": "https://github.com/anthropics/claude-code/issues/66504",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-08-30T12:50:54+00:00",
-    "summary_or_excerpt": "HN points: 182. Comments: https://news.ycombinator.com/item?id=49498201",
+    "title": "Sliding-window beats linear attention",
+    "url": "https://arxiv.org/abs/2608.28444",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28444v1 Announce Type: new Abstract: Due to the nature of quadratic attention, Large Language Models (LLMs) consume a lot of memory and energy. Every new token costs more than the previous one. For each additional token, the keys and values must be stored in memory indefinitely, which is unsustainable. Several alternatives have been proposed to fix the quadratic scaling problem, one of which is retrofitting LLMs to use Linear Attention. This idea has attracted a lot of attention, given its promise to solve the quadratic scaling problem with state-of-the-art performance at low cost. However, this line of research has not been properly compared to simpler baselines. In this work, we show that Sliding Window Attention (SWA) with sinks performs as well or better than post-trained Linear Attention models. We observe this across multiple LLMs on various downstream tasks. For long-context reasoning tasks (Needle-in-a-Haystack and BABILong), SWA achieves massively higher performance (2 to 10 times higher than linear attention). SWA requires no post-training, is extremely fast, and requires low memory; therefore, making it an extremely cheap and reliable solution. To reduce infe...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SURE-Challenge: Evaluating Speech Evidence Before Speech-LLM Generation",
+    "url": "https://arxiv.org/abs/2608.27783",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.27783v1 Announce Type: cross Abstract: Speech LLMs are usually graded after they answer, although an operating system first has to decide whether a waveform should be sent to the model. We define the Speech-Unsupported Rejection Evaluation Challenge (SURE-Challenge) for this admission step. The benchmark pairs LibriSpeech-derived transcription and first-word question answering with unsupported silence, colored noise, synthetic tones, and source-ambiguous babble under disjoint source splits. Front-end ablations use Qwen2-Audio; the selected energy-plus-Whisper-score rule is then replayed before six speech/audio LLMs. On the 474-row leakage-screened SURE-Extended test set, raw Qwen2-Audio rejects 15/204 unsupported inputs, whereas the fixed rule rejects 196/204 and leaves supported accuracy unchanged. External checks delimit this number: Common Voice retention drops as the Whisper-score threshold is tightened, and no-speed babble gives 18 to 24 rejected clips out of 54 across regenerated seeds. The result identifies a pre-generation error mode missed by answer-only scoring.",
     "matched_keywords": [
-      "Claude"
+      "benchmark"
     ],
     "tags": [
-      "model"
+      "open_source"
     ],
-    "score": 43,
-    "hn_score": 182,
-    "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis",
+    "url": "https://arxiv.org/abs/2605.30434",
+    "source_name": "arXiv cs.CL",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-08-31T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2605.30434v2 Announce Type: replace-cross Abstract: Real-world data analysis is inherently iterative, yet existing benchmarks mostly evaluate isolated or short interactive tasks, leaving agents' ability to track evolving analytical context over long horizons untested. We introduce LongDS, a benchmark for long-horizon, multi-turn data analysis where agents must maintain, update, restore, and compose evolving analytical states. LongDS comprises 68 tasks constructed from real-world Kaggle notebooks, spanning 2,225 turns across six domains including Geoscience, Business, and Education. Tasks are designed around state-evolution patterns (e.g., counterfactual perturbation, rollback, multi-state composition), with an average dependency span of 11.3 turns. Evaluating five state-of-the-art models, we find that the best model reaches only 48.45% average accuracy, performance drops nearly 47 points from early to late turns, and long-horizon errors account for 52%--69% of failures. Further analysis shows that additional agent steps do not necessarily improve performance, suggesting that the key bottleneck is maintaining a correct analytical state rather than increasing interaction budge...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10728：CUDA: XOR swizzle flash attn K,V smem fp16 tiles (#25635)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10728",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-31T21:46:30+00:00",
+    "summary_or_excerpt": "CUDA: XOR swizzle flash attn K,V smem fp16 tiles (#25635) * CUDA: XOR swizzle flash attn K,V smem fp16 tiles Signed-off-by: ynankani * Fix use 64bit generic pointer instead of 32bit shared pointer Signed-off-by: ynankani * fix shared memory race in FA on DGX Spark * Handle corener case Signed-off-by: ynankani * Add swizzle test cases and gate sync for swizzled path only Signed-off-by: ynankani * gate CUDA PTX Signed-off-by: ynankani * offset calculation specific for swizzle branch Signed-off-by: ynankani * Reafctor code Signed-off-by: ynankani * Refactor FA swizzle ldmatrix if/else into helpers (K row/col, V offset) Signed-off-by: ynankani * rebase and update test case args Signed-off-by: ynankani * Allow swizzle for non-pow2 shapes, for which nbatch_2%32==0 Signed-off-by: ynankani --------- Signed-off-by: ynankani **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10728/llama-b10728-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10...",
+    "matched_keywords": [
+      "CUDA",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 45,
+    "release_version": "b10728",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10729：metal : add fa-vec tunings for M1 Ultra (#28088)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10729",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-31T22:22:28+00:00",
+    "summary_or_excerpt": "metal : add fa-vec tunings for M1 Ultra (#28088) * metal : add fa-vec tunings for M1 Ultra * metal : move M1 Ultra tunings after M1 Max section * metal : remove duplicate blank line **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-vul...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 42,
+    "release_version": "b10729",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10727：metal : add concat support for quantized types (#28116)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10727",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-31T20:54:49+00:00",
+    "summary_or_excerpt": "metal : add concat support for quantized types (#28116) Assisted-by: pi:llama.cpp/DeepSeek-V4-Flash-0731 **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.c...",
+    "matched_keywords": [
+      "DeepSeek",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 42,
+    "release_version": "b10727",
+    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -401,8 +573,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -421,8 +593,8 @@
     ],
     "score": 41,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -447,8 +619,8 @@
     "score": 40,
     "release_version": "v1.99.0-rc.2",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -473,8 +645,8 @@
     "score": 38,
     "release_version": "b10705",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -500,8 +672,8 @@
     "score": 38,
     "release_version": "b10702",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -517,8 +689,8 @@
     "score": 38,
     "hn_score": 58,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -537,8 +709,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -559,8 +731,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -581,8 +753,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

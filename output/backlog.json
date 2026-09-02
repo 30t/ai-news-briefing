@@ -1,50 +1,54 @@
 [
   {
-    "title": "RealClawBench: Live OpenClaw Benchmarks from Real Developer-Agent Sessions",
-    "url": "https://arxiv.org/abs/2606.03889",
-    "source_name": "arXiv cs.CL",
+    "title": "APIFlow-Bench: Measuring Whether Agents Survive Long, Dependent API Workflows",
+    "url": "https://arxiv.org/abs/2608.29128",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.03889v3 Announce Type: replace Abstract: Agent benchmarks should reflect what users actually ask deployed agents to do, yet existing benchmarks often miss key realism properties of real developer-agent sessions. We introduce RealClawBench, a live benchmark framework built from real OpenClaw sessions to capture the distribution, diversity, and real-world difficulty of deployed agent use. Real user requests are challenging to benchmark because they often depend on local execution environments, involve implicit or underspecified intent, and require nontrivial verification. RealClawBench addresses these challenges with two core mechanisms: reconstructed execution environments and deterministic verifiable scorers, which together convert real sessions into reproducible, automatically scored tasks. The resulting release contains 281 executable tasks sampled from a much larger real-session pool while preserving the source distribution, with maximum final-vs-source Jensen-Shannon divergence of 0.0448. Evaluating 14 contemporary models shows that the best system solves only 65.8% of tasks, revealing substantial headroom on realistic developer-agent workloads. By turning real depl...",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.29128v1 Announce Type: new Abstract: Tool-using agents are commonly evaluated by a single bit: whether an end-to-end workflow completed. This metric fails to distinguish failures that matter in production, such as expired credentials, malformed payloads, or correct execution followed by incorrect final delivery. We introduce APIFlow-Bench, a fully auditable benchmark for long-horizon, dependent REST-API workflows that decomposes performance into seven engineering capabilities and requires agents to produce answers supported by the actual call path. We generate synthetic API worlds forward, subtask by subtask; each subtask is admitted only after a zero-LLM self-test triad verifies its grader and an oracle establishes solvability, and an adversarial audit identified and fixed six grader exploits. Grading is deterministic and provenance-sensitive: a state check traces a mock-minted canary through the API data flow to the response the answer must originate from, and a typed answer card is verified field by field. We release all answer keys and 44,362 unredacted execution transcripts. Across 19 frontier and open-weight models under one neutral scaffold, we find: (1) longer d...",
     "matched_keywords": [
-      "Agent",
       "agents",
+      "API",
       "benchmark",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 66,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces",
-    "url": "https://arxiv.org/abs/2605.12015",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.12015v3 Announce Type: replace-cross Abstract: Reusable skills are becoming a common interface for extending large language model agents, packaging procedural guidance with access to files, tools, memory, and execution environments. However, this modularity introduces attack surfaces that are largely missed by existing safety evaluations: even when the user request is benign, unsafe influence may reside in skill guidance, local artifacts, or execution-environment files that steer the agent toward unsafe actions. We present SkillSafetyBench, a runnable benchmark for evaluating such skill-facing safety failures. SkillSafetyBench includes 155 adversarial cases across 47 tasks, 6 risk domains, and 30 safety categories, each evaluated with a case-specific rule-based verifier. Experiments with multiple CLI agents and model backends show that non-user attacks can consistently induce unsafe behavior, with distinct failure patterns across domains, attack methods, and scaffold-model pairings. Our findings suggest that agent safety depends not only on model-level alignment, but also on how agents interpret skills, trust workflow context, and act through executable environments. Th...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
+      "release",
       "workflow"
     ],
     "tags": [
       "agent",
       "ai_app",
+      "business",
       "open_source"
     ],
     "score": 66,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Terminal-Bench-LILT: Multilingual Agentic Coding Benchmark Grounded in Language, Region, and Culture",
+    "url": "https://arxiv.org/abs/2608.28641",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28641v1 Announce Type: cross Abstract: Most evaluations for coding agents are conducted exclusively in English, which does not reflect real-world multilingual deployment. We present Terminal-Bench-LILT, a suite of 300 authentic coding tasks in ten languages: Arabic, Czech, German, Spanish, Hindi, Japanese, Korean, Serbian, Turkish, and Chinese. Each task targets issues specific to non-English software development that have no direct English equivalent, e.g., internationalization, encoding, text normalization, and cultural conventions. All tasks are authored by native-speaker programmers and validated through a multi-stage quality control pipeline. Evaluation of six frontier models reveals that even the strongest model reaches only 63.1\\% pass rate, with many tasks unsolved by any model. Performance varies substantially by language and does not track general coding benchmark rankings, highlighting that multilingual coding competence is a distinct and underexplored capability axis. Sample tasks are available at https://github.com/lilt/terminal-bench-lilt",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "GitHub",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -72,8 +76,8 @@
     ],
     "score": 64,
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -99,7 +103,7 @@
     ],
     "score": 64,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -125,8 +129,59 @@
     ],
     "score": 62,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SearchWiki: Learning to Build and Navigate Knowledge Wikis for Active Information Seeking",
+    "url": "https://arxiv.org/abs/2608.29953",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.29953v1 Announce Type: new Abstract: Flat retrieval-augmented generation treats a corpus as a bag of chunks, discarding document hierarchy and cross document structure. We introduce SearchWiki, a harness framework that synthesizes a corpus into a hierarchical, typed, navigable wiki and trains an agent, WikiResearcher-9B, to retrieve information through multi-turn tool use. The wiki organizes knowledge into three layers - document overviews, cross- document topic pages, and page-level source records; enabling progressive refinement of retrieval when initial lookup misses. We optimize the agent's navigation policy with on-policy reinforcement learning with a multi-component reward function balancing answer correctness, retrieval quality and trajectory efficiency. Evaluation on ViDoRe-V3 (8 domains), FinanceBench, and memory benchmarks (LoCoMo, LongMemEval, PersonaMem-v2) shows that WikiResearcher- 9B which is our RL-tuned Qwen 9B model, significantly outperforms same-size untrained baselines and exceeds or matches larger external models. SearchWiki paired with WikiResearcher-9B demonstrates that learned navigation over structured corpora is a superior alternative to flat...",
+    "matched_keywords": [
+      "Agent",
+      "policy",
+      "Qwen",
+      "retrieval",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The reach of a verification tool decides its value: A controlled study of verification surface, artifact quality, and cost in AI coding agents",
+    "url": "https://arxiv.org/abs/2608.28795",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.28795v1 Announce Type: cross Abstract: Modern artificial-intelligence coding agents can be equipped with tools for checking their own work e.g. a linter, a boot probe, a shell, a screenshot tool. We call this set the agent's verification surface. This study asks whether increasing only that surface, with everything else held fixed, produces a matching growth in the quality of the software the agent ships. We built a minimal coding agent whose tool list is the single controlled variable and used it to implement 1,116 web applications across six models and eight tool configurations. A condition-blind human graded every application against a frozen rubric, and automatic probes stress-tested the API-observable behaviors. Verification's cheapest benefit arrives first, which is to make sure that the application comes up. Without any tools, about one build in seven fails to launch at all and a single boot probe removes nearly all of these failures at roughly 35 percent of a full shell's token cost, while the full shell multiplies the no-tools cost by 2.35. Screenshots help most where mistakes are visible (e.g. element placement, interaction), though even there the gain over a...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API",
+      "launch"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -148,8 +203,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -172,7 +227,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -197,7 +252,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -225,7 +280,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -248,7 +303,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -271,7 +326,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -295,8 +350,74 @@
     ],
     "score": 61,
     "first_seen_at": "2026-08-30T09:03:10.528169+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TRACER: Per-Tool Context Retention for LLM Agents via Consequence-Attributed Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2608.29363",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.29363v1 Announce Type: new Abstract: Enterprise data agents answer business queries by chaining many tool calls over multiple reasoning steps, routinely accumulating hundreds of thousands of context tokens per session. Existing compression strategies typically allocate retention budgets without accounting for the downstream consequences of removing individual tool outputs. Aggressive compression may therefore trigger costly tool re-invocations that offset the initial savings. We call this the compression--consequence gap. To close it, we propose TRACER, which formulates compression as a sequential per-tool decision problem. A lightweight REINFORCE policy assigns query-conditioned retention ratios using only information available at each compression event. Its consequence-aware objective jointly accounts for task success, total token consumption, and post-compression tool re-invocations. To improve credit assignment, TRACER uses a learned outcome model to compare the predicted consequences of the selected retention ratio with those of fully retaining each tool output. On held-out production queries across three compressor backends, TRACER reduces total token consumption...",
+    "matched_keywords": [
+      "agents",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EvoSkill Injection: Red-Teaming Autonomous Skill Generation and Evolution in Self-Evolving Agents",
+    "url": "https://arxiv.org/abs/2608.30429",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.30429v1 Announce Type: new Abstract: LLM-based agent systems increasingly adopt skill-based architectures to reduce repetitive reasoning costs and improve stable, efficient task execution. Recent studies propose self-evolving agents that autonomously generate, refine, and reuse skills from past experiences to enable continuous capability evolution. However, autonomous skill evolution introduces a new attack surface in which malicious capabilities are generated, stored, and reused as legitimate skills. In this paper, we define EvoSkill Injection as a threat model targeting the autonomous skill generation and evolution pipeline of self-evolving agents. We further propose SARGE (Red-teaming Autonomous Skill Generation and Evolution in self-evolving agents), a red-teaming framework for evaluating this threat model through iterative generation, escalation, and reinforcement interactions. To support our framework, we construct EvoSkillBench, a benchmark dataset of malicious interaction trajectories for inducing malicious skill formation in self-evolving agents, and introduce EvoSkillSafetyBench, a post-attack benchmark for evaluating whether injected malicious skills are subs...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "dataset"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ScienceArena: Benchmarking LLMs on Latest Scientific Olympiad Competitions",
+    "url": "https://arxiv.org/abs/2608.30517",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-01T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2608.30517v1 Announce Type: new Abstract: Benchmark saturation and data contamination increasingly obscure genuine scientific reasoning in frontier LLMs. We introduce \\textsc{ScienceArena}, an olympiad-style benchmark from thirteen public science competitions in physics, chemistry, and biology, including IPhO and IChO 2025--2026, IBO 2023, USAPhO 2026, and USNCO 2025. Its open-ended, multi-step problems use process-credit rubrics, making faithful scoring difficult. We build ScienceArena through an expert-audited digitization pipeline that converts official exams, figures, solutions, and rubrics into structured items verified by olympiad medalists. To scale evaluation beyond costly human grading, we calibrate LLM-as-judge against medalist ground truth on archived answers from five models across IPhO and IChO; two strong judges stay within one point of expert total scores. Medalist notes show that failures often stem from visual grounding, structure fidelity, and global problem control rather than missing terminology. Evaluating fourteen recent LLMs with interleaved solving, we find that top models obtain medal-equivalent rubric scores on several public international exams, wh...",
+    "matched_keywords": [
+      "benchmark"
+    ],
+    "tags": [
+      "open_source"
+    ],
+    "score": 60,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -322,8 +443,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -342,8 +463,8 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -365,115 +486,99 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "FinExam-10K: When Retrieval Helps Financial Reasoning?",
-    "url": "https://arxiv.org/abs/2608.28155",
-    "source_name": "arXiv cs.CL",
+    "title": "Python 3.15.0 candidate 2 is here!",
+    "url": "https://simonwillison.net/2026/Sep/1/python-315-rc-2",
+    "source_name": "Simon Willison",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.28155v1 Announce Type: new Abstract: Professional financial examinations require models to combine domain knowledge, calculation, and judgment, yet no benchmark covers the full CFA and FRM structure under one protocol. We introduce FinExam-10K, to our knowledge the largest reported English benchmark for this setting, with 10,198 expert-reannotated questions spanning CFA Levels I-III and FRM Parts I-II. We release 5,110 questions and sequester 5,088 for a quarterly maintained leaderboard. To separate coverage from local answerability, we report a 10,198-item Full-Coverage Track and a 7,625-item Context-Complete Reasoning Track, which is the primary basis for claims about reasoning from the supplied record. Across 17 models, the best accuracy is 85.29% overall. On the frozen Hard band, the best score is 34.68% on the Full-Coverage Track and 54.57% on the 372 context-complete items. All 17 models share 47 context-complete failures. Function-RAG and FunctionGraph-RAG rescue hundreds of errors but also overturn many correct answers, producing little or negative net gain. A gate trained only on public data decides from the question and initial response when FunctionGraph-RAG...",
+    "source_level": "tech_community",
+    "published_at": "2026-09-01T14:59:18+00:00",
+    "summary_or_excerpt": "Python 3.15.0 candidate 2 is here! Hugo van Kemenade (release manager for Python 3.14 and 3.15) announces the final release candidate for Python 3.15, scheduled for release in October: Entering the release candidate phase, only reviewed code changes which are clear bug fixes are allowed between this release candidate and the final release. [...] We strongly encourage maintainers of third-party Python projects to prepare their projects for 3.15 during this phase, and publish Python 3.15 wheels on PyPI to be ready for the final release of 3.15.0, and to help other projects do their own testing. Any binary wheels built against Python 3.15.0 release candidates will work with future versions of Python 3.15. Back in 2021 I found a bug in Python 3.10 by running my test suites against it... but I hadn't done this during the RC period, so that bug had already shipped! Since then I've always paid much closer attention to these RCs. The new RC isn't available for GitHub Actions just yet - keep an eye on actions/python-versions for that. For the moment though you can add this to a testing matrix: strategy : matrix : python-version : [\"3.14\", \"3.15\"] steps : - uses : actions/setup-python@v7 wi...",
     "matched_keywords": [
-      "benchmark",
-      "RAG",
-      "release",
-      "retrieval"
+      "GitHub",
+      "release"
     ],
     "tags": [
-      "open_source",
-      "rag_data"
+      "open_source"
     ],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "score": 55,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "CultureConverse: A Multilingual Multi-turn Simulation Harness for Culturally Grounded Assistance in East and Southeast Asia",
-    "url": "https://arxiv.org/abs/2608.28405",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.28405v1 Announce Type: new Abstract: Current cultural evaluations for large language models (LLMs) often reduce culture to single-turn factual recall via MCQs, failing to capture a common use case: users seeking practical help over multiple turns in culturally grounded scenarios. We introduce CultureConverse, a scalable, multilingual simulation and evaluation harness for culturally grounded assistant dialogue that covers 10 East and Southeast Asian regions, 58 subgroup identities, and 7 domains. Each simulated and evaluated episode produces a scored interaction where the assistant assists the user and infers cultural constraints from partial information. The resulting CultureConverse-DS dataset contains 14,610 benchmark (evaluation) episodes and 274,295 oracle-guided (gold-mode) dialogues. In our benchmark evaluation of 18 models, GPT-5 mini achieves the highest assistance quality. Human annotation experiments suggest that our evaluation framework is a sufficient proxy for human judgment. Performance gains from fine-tuning on 27,860 high-quality CultureConverse-DS samples improve in-domain assistance and transfer out-of-domain to cultural MCQ and safety classification b...",
+    "title": "llama.cpp b10751：cuda: fuse MoE weighted expert reduction (#25952)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10751",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-01T20:13:53+00:00",
+    "summary_or_excerpt": "cuda: fuse MoE weighted expert reduction (#25952) * cuda : fuse MoE weighted reduction (mul + view + add) The MoE combine tail currently writes weighted expert outputs to global memory before reducing them. That intermediate global-memory traffic is the main cost. The production baseline generally runs two physical fused kernels; this path runs one. This change matches the full expert-weighting plus ordered-reduction subgraph and replaces it with one weighted-reduction kernel. Supported graphs: - unscaled: experts * router_weights - scaled: (experts * expert_scale) * router_weights k = 2..15 is handled by one runtime-k kernel. Matching is structural: op sequence, shapes, strides, expert views, and the left-to-right ADD chain. The fused kernel keeps that same reduction order. Results are not claimed bit-identical; CUDA FP32 contraction can change rounding slightly. Allocator integration uses add_alloc_dep from the graph-optimizer API so experts, router weights, and optional expert scales stay live until the fused destination is written. Memory ranges are rechecked before the fused kernel runs. Unrecognized or unsafe graphs are left alone and keep the existing per-op path. Set GGML_...",
     "matched_keywords": [
-      "benchmark",
-      "dataset",
-      "fine-tuning",
-      "GPT"
+      "API",
+      "CUDA",
+      "Llama",
+      "llama.cpp",
+      "weights"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 52,
+    "release_version": "b10751",
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "I trained a small transformer in 1.5hrs and it beats many LLMs",
+    "url": "https://mvakde.github.io/blog/44-on-arc-1",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-09-01T09:52:45+00:00",
+    "summary_or_excerpt": "HN points: 562. Comments: https://news.ycombinator.com/item?id=49519939",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 50,
+    "hn_score": 562,
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10750：kv-cells: look up the n-gram history in the sequence position index (#28040)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10750",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-01T19:21:42+00:00",
+    "summary_or_excerpt": "kv-cells: look up the n-gram history in the sequence position index (#28040) get_prev_tokens() rebuilt a (seq, pos) -> token hash map on every ubatch by walking all used cells, while llama_kv_cells already keeps an ordered index of the positions of each sequence in seq_pos, updated on every cell mutation to serve seq_pos_min() and seq_pos_max(). The index now stores (pos, cell) pairs in a std::set instead of a position -> count map, so a repeated position (cache reuse via rm + add, vision inputs with shared positions) yields distinct entries and the removal of a cell erases its own pair. The new seq_pos_tok_le() returns the token of the cell at the largest position 72.7 t/s (+4.9%), pp unchanged at ~2720 t/s, greedy output identical, needle retrieved. **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10750/llama-b10750-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10750/llama-b10750-bin-macos-x64.tar.gz) - [iOS XCFramework](https:...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
       "model",
-      "open_source"
+      "open_source",
+      "semiconductor"
     ],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Sliding-window beats linear attention",
-    "url": "https://arxiv.org/abs/2608.28444",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.28444v1 Announce Type: new Abstract: Due to the nature of quadratic attention, Large Language Models (LLMs) consume a lot of memory and energy. Every new token costs more than the previous one. For each additional token, the keys and values must be stored in memory indefinitely, which is unsustainable. Several alternatives have been proposed to fix the quadratic scaling problem, one of which is retrofitting LLMs to use Linear Attention. This idea has attracted a lot of attention, given its promise to solve the quadratic scaling problem with state-of-the-art performance at low cost. However, this line of research has not been properly compared to simpler baselines. In this work, we show that Sliding Window Attention (SWA) with sinks performs as well or better than post-trained Linear Attention models. We observe this across multiple LLMs on various downstream tasks. For long-context reasoning tasks (Needle-in-a-Haystack and BABILong), SWA achieves massively higher performance (2 to 10 times higher than linear attention). SWA requires no post-training, is extremely fast, and requires low memory; therefore, making it an extremely cheap and reliable solution. To reduce infe...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SURE-Challenge: Evaluating Speech Evidence Before Speech-LLM Generation",
-    "url": "https://arxiv.org/abs/2608.27783",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.27783v1 Announce Type: cross Abstract: Speech LLMs are usually graded after they answer, although an operating system first has to decide whether a waveform should be sent to the model. We define the Speech-Unsupported Rejection Evaluation Challenge (SURE-Challenge) for this admission step. The benchmark pairs LibriSpeech-derived transcription and first-word question answering with unsupported silence, colored noise, synthetic tones, and source-ambiguous babble under disjoint source splits. Front-end ablations use Qwen2-Audio; the selected energy-plus-Whisper-score rule is then replayed before six speech/audio LLMs. On the 474-row leakage-screened SURE-Extended test set, raw Qwen2-Audio rejects 15/204 unsupported inputs, whereas the fixed rule rejects 196/204 and leaves supported accuracy unchanged. External checks delimit this number: Common Voice retention drops as the Whisper-score threshold is tightened, and no-speed babble gives 18 to 24 rejected clips out of 54 across regenerated seeds. The result identifies a pre-generation error mode missed by answer-only scoring.",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis",
-    "url": "https://arxiv.org/abs/2605.30434",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.30434v2 Announce Type: replace-cross Abstract: Real-world data analysis is inherently iterative, yet existing benchmarks mostly evaluate isolated or short interactive tasks, leaving agents' ability to track evolving analytical context over long horizons untested. We introduce LongDS, a benchmark for long-horizon, multi-turn data analysis where agents must maintain, update, restore, and compose evolving analytical states. LongDS comprises 68 tasks constructed from real-world Kaggle notebooks, spanning 2,225 turns across six domains including Geoscience, Business, and Education. Tasks are designed around state-evolution patterns (e.g., counterfactual perturbation, rollback, multi-state composition), with an average dependency span of 11.3 turns. Evaluating five state-of-the-art models, we find that the best model reaches only 48.45% average accuracy, performance drops nearly 47 points from early to late turns, and long-horizon errors account for 52%--69% of failures. Further analysis shows that additional agent steps do not necessarily improve performance, suggesting that the key bottleneck is maintaining a correct analytical state rather than increasing interaction budge...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "score": 45,
+    "release_version": "b10750",
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -500,7 +605,33 @@
     "score": 45,
     "release_version": "b10728",
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CircuitPython CircuitPython 10.3.0：This is **CircuitPython 10.3.0**, a minor revision of CircuitPython, and is a new stable r",
+    "url": "https://github.com/adafruit/circuitpython/releases/tag/10.3.0",
+    "source_name": "CircuitPython",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-08-31T13:33:59+00:00",
+    "summary_or_excerpt": "This is **CircuitPython 10.3.0**, a minor revision of CircuitPython, and is a new stable release. ## Notable additions, changes, and fixes in 10.3.0 from 10.2.1 ### Gaming and Display - `picogame` game engine module, a performant game-oriented alternative to `displayio`. - E-ink display quality improvements, including on MagTag 2025. ### Audio - `audio.AudioOut`, using DAC, now available on STM. - `audio_i2sin`, available on Espressif and RP2xxx. - `audiofilewriter`, to send an audio pipeline stream to a file. - `audiodelays.Flanger`, `audiodelays.GranularPitchShift`. - `audiospeed.Resampler`. - `audiodelays`, `audiofilters`, and `audiofreeverb` now available on RP2xxx. - `synthio.Biquad` filters now available in `audiodelays.Echo` and `audiofreeverb.Freeverb`. - `usb_audio.USBMicrophone` and `usb_audio.USBSpeaker`, which provide audio source and sink USB devices. - Duplex I2S. ### `settings.toml` - `CIRCUITPY_BLE_WORKFLOW` toggle. - `CIRCUITPY_HEAP_SRAM_SIZE`. - `CIRCUITPY_SAFE_MODE_DELAY` time value. - `CIRCUITPY_SDCARD_USB` toggle. - `CIRCUITPY_WIFI_HOSTNAME`. - Float values can now be specified. ### Storage - `sdioio` now available on RP2xxx. - `storage.unsafe_disable_usb_driv...",
+    "matched_keywords": [
+      "CircuitPython",
+      "Espressif",
+      "release",
+      "workflow"
+    ],
+    "tags": [
+      "ai_app",
+      "embedded_edge_ai",
+      "open_source"
+    ],
+    "score": 43,
+    "release_version": "10.3.0",
+    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -526,8 +657,8 @@
     "score": 42,
     "release_version": "b10729",
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -553,8 +684,8 @@
     "score": 42,
     "release_version": "b10727",
     "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -573,7 +704,7 @@
     ],
     "score": 42,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -593,7 +724,7 @@
     ],
     "score": 41,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -619,7 +750,7 @@
     "score": 40,
     "release_version": "v1.99.0-rc.2",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -645,7 +776,7 @@
     "score": 38,
     "release_version": "b10705",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -672,7 +803,7 @@
     "score": 38,
     "release_version": "b10702",
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -689,7 +820,7 @@
     "score": 38,
     "hn_score": 58,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -709,7 +840,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -731,7 +862,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -753,7 +884,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-08-31T09:04:31.871667+08:00",
-    "last_seen_at": "2026-09-01T09:40:18.601640+08:00",
+    "last_seen_at": "2026-09-02T08:51:42.708575+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

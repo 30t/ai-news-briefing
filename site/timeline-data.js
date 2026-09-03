@@ -1,7 +1,6 @@
 window.TIMELINE_DATA = {
   "window_days": 30,
   "generated_from": [
-    "2026-08-04",
     "2026-08-05",
     "2026-08-06",
     "2026-08-07",
@@ -30,7 +29,8 @@ window.TIMELINE_DATA = {
     "2026-08-30",
     "2026-08-31",
     "2026-09-01",
-    "2026-09-02"
+    "2026-09-02",
+    "2026-09-03"
   ],
   "companies": [
     "OpenAI/GPT",
@@ -45,1357 +45,6 @@ window.TIMELINE_DATA = {
     "NVIDIA"
   ],
   "items": [
-    {
-      "id": "2026-08-04-https-github-com-comfy-org-comfyui-releases-tag-v0-30-0",
-      "date": "2026-08-03",
-      "time": "11:48",
-      "title": "ComfyUI v0.30.0：* Update comfy-kitchen package version to 0.2.23 by @comfyanonymous in https://github.com/",
-      "headline": "ComfyUI v0.30.0 发布：新增int8卷积嵌入查找、MRU权重加载策略及数据集安全限制",
-      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.30.0",
-      "source_name": "ComfyUI",
-      "source_level": "official_confirmed",
-      "source_level_label": "官方确认",
-      "source_type": "GitHub",
-      "source_channel": "GitHub Releases",
-      "keywords": [
-        "ComfyUI",
-        "dataset",
-        "GitHub",
-        "policy",
-        "weights"
-      ],
-      "category": "商业与产业",
-      "event_type": "更新",
-      "score": 43,
-      "decision": "maybe",
-      "content_type": "minor_release",
-      "risk_level": "官方确认",
-      "reason": "该版本包含多项实用改进（如int8卷积嵌入查找、MRU权重加载策略、数据集文件夹安全限制），对ComfyUI用户有一定价值，但整体属于常规版本更新，未达到行业级重要性。",
-      "summary": "## What's Changed * Update comfy-kitchen package version to 0.2.23 by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15112 * Support int8 convrot embedding lookup (CORE-371) by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/15035 * Load weights to process RAM with MRU policy using pinning infrastructure by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/15027 * Add configurable DETAIL logg...",
-      "company": null,
-      "decision_title": "ComfyUI v0.30.0 发布：新增int8卷积嵌入查找、MRU权重加载策略及数据集安全限制",
-      "key_change": "## What's Changed * Update comfy-kitchen package version to 0.2.23 by @comfyanonymous in https://github.com/C…",
-      "why_important": "该版本包含多项实用改进（如int8卷积嵌入查找、MRU权重加载策略、数据集文件夹安全限制），对ComfyUI用户有一定价值，但整体属于常规版本更新，未达到行业级重要性。",
-      "impact_objects": [
-        "商业与产业",
-        "本地推理",
-        "RAG / 数据",
-        "AI 安全"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29677",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
-      "headline": "ExtractBench：面向企业文档的Schema引导抽取基准，评估准确率、完整性与成本",
-      "url": "https://arxiv.org/abs/2607.29677",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agentic",
-        "agents",
-        "benchmark"
-      ],
-      "category": "商业与产业",
-      "event_type": "基准",
-      "score": 0,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该基准针对企业文档抽取这一实际应用场景，提供了量化评估和成本对比，对RAG和Agent工作流有直接参考价值，值得进入日报。",
-      "summary": "arXiv:2607.29677v1 Announce Type: new Abstract: Enterprise workflows increasingly rely on agents for \\emph{schema-guided extraction}: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with source evidence as grounding metadata. We present ExtractBench, a benchmark for schema-guided extraction and, to our knowledge, the first to score value accuracy, rec...",
-      "company": null,
-      "decision_title": "ExtractBench：面向企业文档的Schema引导抽取基准，评估准确率、完整性与成本",
-      "key_change": "arXiv:2607.29677v1 Announce Type: new Abstract: Enterprise workflows increasingly rely on agents for \\emph{sc…",
-      "why_important": "该基准针对企业文档抽取这一实际应用场景，提供了量化评估和成本对比，对RAG和Agent工作流有直接参考价值，值得进入日报。",
-      "impact_objects": [
-        "商业与产业",
-        "Agent 工作流",
-        "企业部署",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 2
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28788",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "EarlyDx: An Admission-Anchored Benchmark for Open-Ended Generation of Evidence-Supported ED-Encounter Diagnoses",
-      "headline": "EarlyDx：面向急诊入院诊断的开放生成基准，评估模型在有限证据下的诊断能力",
-      "url": "https://arxiv.org/abs/2607.28788",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 42,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出了一个针对急诊入院诊断的开放生成基准，具有实际应用价值，但属于早期研究信号，且与个人核心关注领域关联度一般。",
-      "summary": "arXiv:2607.28788v1 Announce Type: new Abstract: Clinical diagnosis at hospital admission must be made rapidly from limited, incomplete evidence. Existing diagnosis-prediction benchmarks are poorly suited to this setting: they restrict prediction to closed code sets, exclude free-text notes, and supervise with discharge diagnoses that incorporate the full inpatient course. We introduce EarlyDx, a large-scale benchmar...",
-      "company": null,
-      "decision_title": "EarlyDx：面向急诊入院诊断的开放生成基准，评估模型在有限证据下的诊断能力",
-      "key_change": "arXiv:2607.28788v1 Announce Type: new Abstract: Clinical diagnosis at hospital admission must be made rapidly…",
-      "why_important": "该论文提出了一个针对急诊入院诊断的开放生成基准，具有实际应用价值，但属于早期研究信号，且与个人核心关注领域关联度一般。",
-      "impact_objects": [
-        "工具链与开发"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28990",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
-      "headline": "SciDisco：面向科学发现智能体的可扩展训练框架",
-      "url": "https://arxiv.org/abs/2607.28990",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agentic",
-        "agents"
-      ],
-      "category": "工具链与开发",
-      "event_type": "论文",
-      "score": 42,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出用于科学发现智能体的可扩展训练框架，与Agent相关，但属于早期研究信号，缺乏直接应用场景，重要性有限。",
-      "summary": "arXiv:2607.28990v1 Announce Type: new Abstract: Large language model agents have shown promising capabilities in data-driven scientific discovery tasks, where an agent interacts with an execution environment and produces a statistical claim. Long-horizon scientific analysis remains constrained by the lack of process supervised environments over real-world scientific data. This paper introduces SciDisco, a scalable f...",
-      "company": null,
-      "decision_title": "SciDisco：面向科学发现智能体的可扩展训练框架",
-      "key_change": "arXiv:2607.28990v1 Announce Type: new Abstract: Large language model agents have shown promising capabilities…",
-      "why_important": "该论文提出用于科学发现智能体的可扩展训练框架，与Agent相关，但属于早期研究信号，缺乏直接应用场景，重要性有限。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29002",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "MMShopBench: A Real-Log Benchmark for Multimodal, Multi-Turn Shopping Agents",
-      "headline": "MMShopBench：首个基于真实日志的多模态多轮购物代理基准",
-      "url": "https://arxiv.org/abs/2607.29002",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agents",
-        "benchmark",
-        "fine-tuning"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 42,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出了一个针对多模态多轮购物代理的真实日志基准，对代理评估有参考价值，但属于早期研究信号，且与个人核心关注点（如编码、工作流自动化）关联度一般，故建议作为maybe保留。",
-      "summary": "arXiv:2607.29002v1 Announce Type: new Abstract: Online shoppers increasingly turn to AI shopping assistants, using images and multi-turn dialogue to express and refine product needs that are difficult to articulate in text alone. However, existing benchmarks largely rely on text-only or synthetic requests, underrepresenting complex real-world shopping requirements jointly expressed through images and language. We in...",
-      "company": null,
-      "decision_title": "MMShopBench：首个基于真实日志的多模态多轮购物代理基准",
-      "key_change": "arXiv:2607.29002v1 Announce Type: new Abstract: Online shoppers increasingly turn to AI shopping assistants,…",
-      "why_important": "该论文提出了一个针对多模态多轮购物代理的真实日志基准，对代理评估有参考价值，但属于早期研究信号，且与个人核心关注点（如编码、工作流自动化）关联度一般，故建议作为maybe保留。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28645",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Looks Right, Works Right: A Project-Level Benchmark for Multi-Screen Mobile App Generation",
-      "headline": "MobileForge：首个项目级多屏移动应用生成基准，评估多模态LLM的完整应用构建能力",
-      "url": "https://arxiv.org/abs/2607.28645",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 43,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出了首个项目级多屏移动应用生成基准，对AI编码和智能体工作流有一定参考价值，但属于早期研究信号，尚未验证实际应用效果，因此建议保留但降低优先级。",
-      "summary": "arXiv:2607.28645v1 Announce Type: cross Abstract: Recent multimodal large language models can convert visual designs directly into executable code, but real mobile products require multiple screenshots to become a buildable codebase with shared components and working navigation. This project-level setting exposes three limits of existing design-to-code benchmarks: they focus on single-page generation rather than com...",
-      "company": null,
-      "decision_title": "MobileForge：首个项目级多屏移动应用生成基准，评估多模态LLM的完整应用构建能力",
-      "key_change": "arXiv:2607.28645v1 Announce Type: cross Abstract: Recent multimodal large language models can convert visual…",
-      "why_important": "该论文提出了首个项目级多屏移动应用生成基准，对AI编码和智能体工作流有一定参考价值，但属于早期研究信号，尚未验证实际应用效果，因此建议保留但降低优先级。",
-      "impact_objects": [
-        "工具链与开发"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 2
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2601-02854",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "M3MAD-Bench: Multi-Dimensional Evaluation of Multi-Agent Debate Across Domains and Modalities",
-      "headline": "M3MAD-Bench：多领域多模态多智能体辩论的统一评估基准",
-      "url": "https://arxiv.org/abs/2601.02854",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "benchmark",
-        "multi-agent"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 43,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该基准为多智能体辩论提供了统一评估框架，与智能体工作流相关，但属于早期研究信号，尚未有实际应用证据，因此仅作中等优先级收录。",
-      "summary": "arXiv:2601.02854v2 Announce Type: replace Abstract: As an agent-level reasoning and coordination paradigm, Multi-Agent Debate (MAD) orchestrates multiple agents through structured debate to improve answer quality and support complex reasoning. However, existing research on MAD suffers from two fundamental limitations: evaluations are conducted under fragmented and inconsistent settings, making fair comparison diffic...",
-      "company": null,
-      "decision_title": "M3MAD-Bench：多领域多模态多智能体辩论的统一评估基准",
-      "key_change": "arXiv:2601.02854v2 Announce Type: replace Abstract: As an agent-level reasoning and coordination paradigm, Mu…",
-      "why_important": "该基准为多智能体辩论提供了统一评估框架，与智能体工作流相关，但属于早期研究信号，尚未有实际应用证据，因此仅作中等优先级收录。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "RAG / 数据"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28801",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Benchmarks Are Not Monolithic: Sample-Level Auditing and Orchestration for LLM Evaluation",
-      "headline": "新框架提出样本级基准审计：揭示MMLU等基准内部异质性",
-      "url": "https://arxiv.org/abs/2607.28801",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "dataset",
-        "orchestration"
-      ],
-      "category": "模型与能力更新",
-      "event_type": "基准",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出了一种样本级基准审计框架，对评估实践有潜在价值，但属于早期研究，未提供具体工具或量化结果，且与个人核心关注点（Agent、RAG、推理等）关联度中等。",
-      "summary": "arXiv:2607.28801v1 Announce Type: cross Abstract: Benchmark datasets are central to evaluating Large Language Models (LLMs), yet they are typically conceived as monolithic tasks, obscuring substantial variation in the demands of individual samples. We introduce a dataset-centric meta-evaluation framework that audits benchmark datasets at the sample level along five latent dimensions: 1. Cognitive and Knowledge Deman...",
-      "company": null,
-      "decision_title": "新框架提出样本级基准审计：揭示MMLU等基准内部异质性",
-      "key_change": "arXiv:2607.28801v1 Announce Type: cross Abstract: Benchmark datasets are central to evaluating Large Language…",
-      "why_important": "该论文提出了一种样本级基准审计框架，对评估实践有潜在价值，但属于早期研究，未提供具体工具或量化结果，且与个人核心关注点（Agent、RAG、推理等）关联度中等。",
-      "impact_objects": [
-        "模型与能力更新",
-        "Agent 工作流",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28934",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "FairFund-Bench: Evaluating Distributive Bias in LLM Resource Allocation",
-      "headline": "FairFund-Bench：评估LLM资源分配中的分配偏见的新基准",
-      "url": "https://arxiv.org/abs/2607.28934",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出了一个系统性的公平性基准，对AI资源分配中的偏见评估有方法学贡献，但属于早期研究信号，且与个人核心关注点（Agent、编码工具、基础设施等）关联较弱，因此建议作为maybe保留。",
-      "summary": "arXiv:2607.28934v1 Announce Type: cross Abstract: Large language models (LLMs) are increasingly involved in the distribution of scarce resources, raising concerns about biased allocations based on characteristics like race and gender. Recent LLM audits have produced inconsistent results, however, finding evidence of both positive and negative discrimination towards women and ethnic minorities, even for the same mode...",
-      "company": null,
-      "decision_title": "FairFund-Bench：评估LLM资源分配中的分配偏见的新基准",
-      "key_change": "arXiv:2607.28934v1 Announce Type: cross Abstract: Large language models (LLMs) are increasingly involved in t…",
-      "why_important": "该研究提出了一个系统性的公平性基准，对AI资源分配中的偏见评估有方法学贡献，但属于早期研究信号，且与个人核心关注点（Agent、编码工具、基础设施等）关联较弱，因此建议作为maybe保留。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29055",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search",
-      "headline": "MARS：基于蒙特卡洛树搜索的多智能体系统自动修复框架及StateMAS基准",
-      "url": "https://arxiv.org/abs/2607.29055",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "benchmark",
-        "multi-agent"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出多智能体系统自动修复框架MARS及基准StateMAS，与Agent工作流相关，但属于早期研究，未提供完整实验数据，实际应用价值待验证。",
-      "summary": "arXiv:2607.29055v1 Announce Type: cross Abstract: Multi-agent systems (MAS) are increasingly deployed to solve complex tasks. In case of incorrect or unsatisfactory outputs, users have to manually locate agent mistakes by inspecting agent trajectories (i.e., {\\em failure attribution}) and provide feedback to refine the outputs (i.e., {\\em repair}). Despite some recent work in MAS failure attribution, automated mecha...",
-      "company": null,
-      "decision_title": "MARS：基于蒙特卡洛树搜索的多智能体系统自动修复框架及StateMAS基准",
-      "key_change": "arXiv:2607.29055v1 Announce Type: cross Abstract: Multi-agent systems (MAS) are increasingly deployed to solv…",
-      "why_important": "该研究提出多智能体系统自动修复框架MARS及基准StateMAS，与Agent工作流相关，但属于早期研究，未提供完整实验数据，实际应用价值待验证。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "RAG / 数据"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2502-19135",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Combining Large Language Models and Symbolic Reasoning for Multi-Robot Temporal Planning through Explainable Knowledge Bases",
-      "headline": "PLANTOR：结合LLM与符号推理的多机器人时序规划框架",
-      "url": "https://arxiv.org/abs/2502.19135",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "workflow"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出LLM与符号推理结合的混合工作流，对多机器人任务规划有实际应用价值，但属于早期研究，未提供具体量化结果，且与核心关注点（Agent、RAG、工具链）关联度中等。",
-      "summary": "arXiv:2502.19135v2 Announce Type: replace Abstract: We present PLANTOR, a framework for generating and executing multi-robot task plans from natural-language task descriptions through LLM-assisted knowledge-base construction. The approach uses large language models to synthesize a structured Prolog knowledge-base, applies consistency checks to detect and repair modeling errors, generates a high-level symbolic plan,...",
-      "company": null,
-      "decision_title": "PLANTOR：结合LLM与符号推理的多机器人时序规划框架",
-      "key_change": "arXiv:2502.19135v2 Announce Type: replace Abstract: We present PLANTOR, a framework for generating and execut…",
-      "why_important": "该研究提出LLM与符号推理结合的混合工作流，对多机器人任务规划有实际应用价值，但属于早期研究，未提供具体量化结果，且与核心关注点（Agent、RAG、工具链）关联度中等。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28666",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "The Checking Problem: What must be true before AI ships in a regulated firm",
-      "headline": "arXiv研究：受监管企业AI部署的'检查问题'——生产级验证与审查负担的量化分析",
-      "url": "https://arxiv.org/abs/2607.28666",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "enterprise AI"
-      ],
-      "category": "商业与产业",
-      "event_type": "论文",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提供了企业AI部署中生产级验证的量化数据，对受监管行业有参考价值，但属于早期研究信号，且与个人核心关注点关联度一般。",
-      "summary": "arXiv:2607.28666v1 Announce Type: new Abstract: Enterprise AI programmes stall at a rate that is widely quoted and poorly explained. This paper measures the mechanism. Six document-heavy workflows of the kind performed daily in regulated financial services were run across four model families and three tool configurations, three times each, producing 5,093 scored output elements across 72 configurations. Each configu...",
-      "company": null,
-      "decision_title": "arXiv研究：受监管企业AI部署的'检查问题'——生产级验证与审查负担的量化分析",
-      "key_change": "arXiv:2607.28666v1 Announce Type: new Abstract: Enterprise AI programmes stall at a rate that is widely quote…",
-      "why_important": "该研究提供了企业AI部署中生产级验证的量化数据，对受监管行业有参考价值，但属于早期研究信号，且与个人核心关注点关联度一般。",
-      "impact_objects": [
-        "商业与产业",
-        "企业部署",
-        "RAG / 数据"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29377",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Zero-Mem: Zero-Token Memory Operations for LLM Agents",
-      "headline": "Zero-Mem：面向LLM Agent的零Token记忆操作研究",
-      "url": "https://arxiv.org/abs/2607.29377",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agents",
-        "retrieval"
-      ],
-      "category": "硬件与基础设施",
-      "event_type": "论文",
-      "score": 44,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出零token记忆操作，对agent记忆机制有潜在价值，但属于早期研究，缺乏实际应用验证，信息增益有限。",
-      "summary": "arXiv:2607.29377v1 Announce Type: new Abstract: LLM agents need memory to act consistently over long interactions, yet many systems use additional LLM calls to operate that memory. Generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. We ask whether structured memory access requires generation at all. Zero...",
-      "company": null,
-      "decision_title": "Zero-Mem：面向LLM Agent的零Token记忆操作研究",
-      "key_change": "arXiv:2607.29377v1 Announce Type: new Abstract: LLM agents need memory to act consistently over long interact…",
-      "why_important": "该研究提出零token记忆操作，对agent记忆机制有潜在价值，但属于早期研究，缺乏实际应用验证，信息增益有限。",
-      "impact_objects": [
-        "硬件与基础设施",
-        "Agent 工作流",
-        "RAG / 数据"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29626",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
-      "headline": "AgentHPOBench：评估LLM智能体作为顺序超参数优化器的新基准",
-      "url": "https://arxiv.org/abs/2607.29626",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 46,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该基准测试直接评估LLM智能体的实验优化能力，与智能体工作流相关，但作为arXiv预印本属于早期信号，且未提供具体量化结果，重要性有限。",
-      "summary": "arXiv:2607.29626v1 Announce Type: new Abstract: As LLMs evolve from code completion systems into autonomous scientific agents, evaluating their ability to conduct experiments has become increasingly important. Existing benchmarks typically focus on static code generation, paper replication, or final answer correctness, but do not directly assess whether agents can interpret experimental evidence and use it to guide...",
-      "company": null,
-      "decision_title": "AgentHPOBench：评估LLM智能体作为顺序超参数优化器的新基准",
-      "key_change": "arXiv:2607.29626v1 Announce Type: new Abstract: As LLMs evolve from code completion systems into autonomous s…",
-      "why_important": "该基准测试直接评估LLM智能体的实验优化能力，与智能体工作流相关，但作为arXiv预印本属于早期信号，且未提供具体量化结果，重要性有限。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2604-05150",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation",
-      "headline": "arXiv研究：编译式AI——面向LLM工作流自动化的确定性代码生成",
-      "url": "https://arxiv.org/abs/2604.05150",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "automation",
-        "workflow",
-        "workflow automation"
-      ],
-      "category": "工具链与开发",
-      "event_type": "论文",
-      "score": 46,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出编译式AI范式，将LLM生成代码并确定性执行，对工作流自动化有潜在价值，但属于早期研究，缺乏具体量化结果，且未提供可立即应用的代码或工具，因此仅作跟踪。",
-      "summary": "arXiv:2604.05150v2 Announce Type: replace-cross Abstract: We study compiled AI, a paradigm in which large language models generate executable code artifacts during a compilation phase, after which workflows execute deterministically without further model invocation. This paradigm has antecedents in prior work on declarative pipeline optimization (DSPy) and hybrid neural-symbolic planning (LLM+P); our contribution is...",
-      "company": null,
-      "decision_title": "arXiv研究：编译式AI——面向LLM工作流自动化的确定性代码生成",
-      "key_change": "arXiv:2604.05150v2 Announce Type: replace-cross Abstract: We study compiled AI, a paradigm in which large lan…",
-      "why_important": "该研究提出编译式AI范式，将LLM生成代码并确定性执行，对工作流自动化有潜在价值，但属于早期研究，缺乏具体量化结果，且未提供可立即应用的代码或工具，因此仅作跟踪。",
-      "impact_objects": [
-        "工具链与开发",
-        "AI Coding"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28777",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Self-Supervised Skill Optimization",
-      "headline": "自监督技能优化（SSO）：无需标注即可提升Agent技能的新框架",
-      "url": "https://arxiv.org/abs/2607.28777",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "terminal"
-      ],
-      "category": "工具链与开发",
-      "event_type": "论文",
-      "score": 46,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出了一种无需标注即可优化Agent技能的方法，对Agent工作流有潜在价值，但属于早期研究，缺乏实际应用验证，因此仅作中等优先级收录。",
-      "summary": "arXiv:2607.28777v1 Announce Type: new Abstract: Agent skills provide frozen large language model (LLM) agents with reusable procedural guidance, and recent work shows that such skills can be optimized with ground-truth (GT) feedback. Many applications, however, lack GT labels, task scores, rewards, or reliable task-specific evaluators. We therefore introduce Self-Supervised Skill Optimization (SSO), a comparative fr...",
-      "company": null,
-      "decision_title": "自监督技能优化（SSO）：无需标注即可提升Agent技能的新框架",
-      "key_change": "arXiv:2607.28777v1 Announce Type: new Abstract: Agent skills provide frozen large language model (LLM) agents…",
-      "why_important": "该研究提出了一种无需标注即可优化Agent技能的方法，对Agent工作流有潜在价值，但属于早期研究，缺乏实际应用验证，因此仅作中等优先级收录。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29539",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation",
-      "headline": "ARB基准：揭示AI文本检测器在重写攻击下性能大幅下降",
-      "url": "https://arxiv.org/abs/2607.29539",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "dataset",
-        "Llama",
-        "Mistral"
-      ],
-      "category": "安全与可靠性",
-      "event_type": "基准",
-      "score": 48,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出了一个针对AI文本检测器评估的新基准，并揭示了重写攻击下检测性能显著下降，对AI安全与内容治理有实际意义，但属于早期研究信号，且与个人核心关注点（Agent/工具链/基础设施）关联度中等。",
-      "summary": "arXiv:2607.29539v1 Announce Type: cross Abstract: Standard AI-text detection benchmarks compare human-written text against text generated directly by large language models (LLMs). While prior work has shown that rewriting and paraphrasing can degrade detector performance, it remains unclear whether performance measured on this conventional benchmark predicts detector behavior when human-authored content is rewritten...",
-      "company": "Mistral",
-      "decision_title": "ARB基准：揭示AI文本检测器在重写攻击下性能大幅下降",
-      "key_change": "arXiv:2607.29539v1 Announce Type: cross Abstract: Standard AI-text detection benchmarks compare human-written…",
-      "why_important": "该研究提出了一个针对AI文本检测器评估的新基准，并揭示了重写攻击下检测性能显著下降，对AI安全与内容治理有实际意义，但属于早期研究信号，且与个人核心关注点（Agent/工具链/基础设施）关联度中等。",
-      "impact_objects": [
-        "安全与可靠性",
-        "Agent 工作流",
-        "AI 安全"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28661",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Are the Financial Reasoning from LLMs Credible? A Real World Test over Long-Horizon Statements",
-      "headline": "新基准FinIndices揭示LLM金融推理脆弱性：去除公式提示后性能大幅下降",
-      "url": "https://arxiv.org/abs/2607.28661",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "Gemini"
-      ],
-      "category": "模型与能力更新",
-      "event_type": "基准",
-      "score": 55,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出了一个针对长文本金融推理的实用基准，揭示了LLM在去除公式提示后性能大幅下降的脆弱性，对RAG和推理应用有参考价值，但属于早期研究信号，需谨慎对待。",
-      "summary": "arXiv:2607.28661v1 Announce Type: new Abstract: Do Large Language Models (LLMs) possess genuine structural reasoning, or merely rely on surface-level pattern matching? The financial domain, demanding numerical precision and multi-step logic over long contexts, is an ideal testbed. Existing benchmarks fail to capture real-world industrial complexity, predominantly relying on multiple-choice questions or single-hop QA...",
-      "company": "Google/Gemini",
-      "decision_title": "新基准FinIndices揭示LLM金融推理脆弱性：去除公式提示后性能大幅下降",
-      "key_change": "arXiv:2607.28661v1 Announce Type: new Abstract: Do Large Language Models (LLMs) possess genuine structural re…",
-      "why_important": "该研究提出了一个针对长文本金融推理的实用基准，揭示了LLM在去除公式提示后性能大幅下降的脆弱性，对RAG和推理应用有参考价值，但属于早期研究信号，需谨慎对待。",
-      "impact_objects": [
-        "模型与能力更新",
-        "RAG / 数据"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28699",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "WitCert: Sound Runtime Risk Observability and Gating for KV-Cache Quantization",
-      "headline": "WitCert：为KV缓存量化提供可证明的运行时风险监控与门控机制",
-      "url": "https://arxiv.org/abs/2607.28699",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "quantization",
-        "serving"
-      ],
-      "category": "安全与可靠性",
-      "event_type": "基准",
-      "score": 58,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究为KV缓存量化提供了可证明的运行时风险监控方法，直接关系到推理部署的可靠性和成本优化，对关注推理基础设施的读者有实际价值。",
-      "summary": "arXiv:2607.28699v1 Announce Type: cross Abstract: KV-cache quantization is validated today by offline benchmark averages; a deployed system cannot tell whether compression is damaging the request it is serving right now. We give it a provably sound runtime meter, a \"DTrace for KV quantization\": a per-(layer, head, step) upper bound on the total variation between exact and compressed attention. The meter has two tier...",
-      "company": null,
-      "decision_title": "WitCert：为KV缓存量化提供可证明的运行时风险监控与门控机制",
-      "key_change": "arXiv:2607.28699v1 Announce Type: cross Abstract: KV-cache quantization is validated today by offline benchma…",
-      "why_important": "该研究为KV缓存量化提供了可证明的运行时风险监控方法，直接关系到推理部署的可靠性和成本优化，对关注推理基础设施的读者有实际价值。",
-      "impact_objects": [
-        "安全与可靠性",
-        "企业部署",
-        "RAG / 数据",
-        "AI 安全"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-22614",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "DynaResize: Runtime GPU Reallocation for Disaggregated LLM Post-Training",
-      "headline": "DynaResize：面向分离式LLM后训练的运行时GPU重分配系统，吞吐量提升66.5%",
-      "url": "https://arxiv.org/abs/2607.22614",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "GPU",
-        "startup"
-      ],
-      "category": "硬件与基础设施",
-      "event_type": "论文",
-      "score": 58,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究针对LLM后训练中GPU资源静态划分导致的流水线气泡问题，提出动态重分配方案，对GPU利用率和训练效率有实际提升，且与半导体/算力基础设施相关，值得关注。",
-      "summary": "arXiv:2607.22614v2 Announce Type: replace Abstract: RL-based LLM post-training increasingly disaggregates Rollout and Training across separate GPU resources, but static GPU partitioning suffers from severe pipeline bubbles under long-tail rollout latency. We present DynaResize, a runtime GPU reallocation system that dynamically switches GPUs between Rollout and Training to balance stage execution times without chang...",
-      "company": null,
-      "decision_title": "DynaResize：面向分离式LLM后训练的运行时GPU重分配系统，吞吐量提升66.5%",
-      "key_change": "arXiv:2607.22614v2 Announce Type: replace Abstract: RL-based LLM post-training increasingly disaggregates Rol…",
-      "why_important": "该研究针对LLM后训练中GPU资源静态划分导致的流水线气泡问题，提出动态重分配方案，对GPU利用率和训练效率有实际提升，且与半导体/算力基础设施相关，值得关注。",
-      "impact_objects": [
-        "硬件与基础设施",
-        "半导体硬件"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2601-02430",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "WebCoderBench: Benchmarking Web Application Generation with Comprehensive and Interpretable Evaluation Metrics",
-      "headline": "WebCoderBench：面向Web应用生成的可解释基准，涵盖1572个真实用户需求",
-      "url": "https://arxiv.org/abs/2601.02430",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agents",
-        "benchmark",
-        "weights"
-      ],
-      "category": "商业与产业",
-      "event_type": "基准",
-      "score": 58,
-      "decision": "include",
-      "content_type": "benchmark",
-      "risk_level": "早期信号",
-      "reason": "该基准针对LLM生成Web应用，提供真实用户需求和可解释的评估指标，对AI编码工具和Agent评估有实际参考价值，但属于早期研究信号，需注意其局限性。",
-      "summary": "arXiv:2601.02430v3 Announce Type: replace-cross Abstract: Web applications (web apps) have become a key arena for large language models (LLMs) to demonstrate their code generation capabilities and commercial potential. However, building a benchmark for LLM-generated web apps remains challenging due to the need for real-world user requirements, generalizable evaluation metrics without relying on ground-truth implemen...",
-      "company": null,
-      "decision_title": "WebCoderBench：面向Web应用生成的可解释基准，涵盖1572个真实用户需求",
-      "key_change": "arXiv:2601.02430v3 Announce Type: replace-cross Abstract: Web applications (web apps) have become a key arena…",
-      "why_important": "该基准针对LLM生成Web应用，提供真实用户需求和可解释的评估指标，对AI编码工具和Agent评估有实际参考价值，但属于早期研究信号，需注意其局限性。",
-      "impact_objects": [
-        "商业与产业",
-        "Agent 工作流"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2601-19827",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "When Iterative RAG Beats Ideal Evidence: A Diagnostic Study in Scientific Multi-hop Question Answering",
-      "headline": "研究：迭代RAG在科学多跳问答中可超越理想静态RAG，最高提升25.6个百分点",
-      "url": "https://arxiv.org/abs/2601.19827",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "dataset",
-        "RAG",
-        "retrieval"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 58,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提供了首个机制级诊断，对比迭代RAG与理想静态RAG，在科学多跳问答上显示迭代RAG可超越理想上限，对RAG系统设计有实际参考价值，但属于早期研究信号，需谨慎对待。",
-      "summary": "arXiv:2601.19827v5 Announce Type: replace-cross Abstract: Retrieval-Augmented Generation (RAG) extends large language models (LLMs) beyond parametric knowledge, yet it is unclear when iterative retrieval-reasoning loops meaningfully outperform static RAG, particularly in scientific domains requiring multi-hop reasoning over sparse, heterogeneous evidence. We provide the first controlled, mechanism-level diagnostic e...",
-      "company": null,
-      "decision_title": "研究：迭代RAG在科学多跳问答中可超越理想静态RAG，最高提升25.6个百分点",
-      "key_change": "arXiv:2601.19827v5 Announce Type: replace-cross Abstract: Retrieval-Augmented Generation (RAG) extends large…",
-      "why_important": "该研究提供了首个机制级诊断，对比迭代RAG与理想静态RAG，在科学多跳问答上显示迭代RAG可超越理想上限，对RAG系统设计有实际参考价值，但属于早期研究信号，需谨慎对待。",
-      "impact_objects": [
-        "工具链与开发",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2605-07699",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "DRIP-R: A Benchmark for Decision-Making and Reasoning Under Real-World Policy Ambiguity in the Retail Domain",
-      "headline": "新基准DRIP-R：评估LLM Agent在零售政策模糊场景下的决策与推理能力",
-      "url": "https://arxiv.org/abs/2605.07699",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "benchmark",
-        "customer",
-        "policy"
-      ],
-      "category": "工具链与开发",
-      "event_type": "商业信号",
-      "score": 58,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该基准针对真实世界零售政策模糊性下的LLM决策评估，填补了现有基准的空白，对Agent应用有实际参考价值，但属于早期研究信号，需保守评分。",
-      "summary": "arXiv:2605.07699v2 Announce Type: replace-cross Abstract: LLM-based agents are increasingly deployed for routine but consequential tasks in real-world domains, where their behavior is governed by inherently ambiguous domain policies that admit multiple valid interpretations. Despite the prevalence of such ambiguities in practice, existing agent benchmarks largely assume unambiguous, well-specified policies, leaving...",
-      "company": null,
-      "decision_title": "新基准DRIP-R：评估LLM Agent在零售政策模糊场景下的决策与推理能力",
-      "key_change": "arXiv:2605.07699v2 Announce Type: replace-cross Abstract: LLM-based agents are increasingly deployed for rout…",
-      "why_important": "该基准针对真实世界零售政策模糊性下的LLM决策评估，填补了现有基准的空白，对Agent应用有实际参考价值，但属于早期研究信号，需保守评分。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "企业部署"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-16057",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Frontier AI performance across the business disciplines: a case-grounded benchmark of knowledge work and analytical reasoning",
-      "headline": "BusinessCaseBench：面向商业学科知识工作的前沿AI性能基准",
-      "url": "https://arxiv.org/abs/2607.16057",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agentic",
-        "benchmark"
-      ],
-      "category": "商业与产业",
-      "event_type": "基准",
-      "score": 58,
-      "decision": "include",
-      "content_type": "benchmark",
-      "risk_level": "早期信号",
-      "reason": "该基准填补了LLM在商业分析知识工作评估上的空白，对Agent和RAG应用有参考价值，但属于早期研究信号，需谨慎对待。",
-      "summary": "arXiv:2607.16057v3 Announce Type: replace-cross Abstract: Large language models (LLMs) are improving rapidly as reflected in benchmark scores, yet these AI benchmarks largely test capabilities such as factual recall, narrow question answering, mathematical problem-solving, and coding and agentic tool-use. What remains poorly measured is AI progress on the analytical knowledge work white-collar professionals perform...",
-      "company": null,
-      "decision_title": "BusinessCaseBench：面向商业学科知识工作的前沿AI性能基准",
-      "key_change": "arXiv:2607.16057v3 Announce Type: replace-cross Abstract: Large language models (LLMs) are improving rapidly…",
-      "why_important": "该基准填补了LLM在商业分析知识工作评估上的空白，对Agent和RAG应用有参考价值，但属于早期研究信号，需谨慎对待。",
-      "impact_objects": [
-        "商业与产业",
-        "Agent 工作流",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-19957",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "HijackKV: New Threat in Position-Independent KV Cache Reuse",
-      "headline": "HijackKV：位置无关KV缓存复用中的新型劫持攻击",
-      "url": "https://arxiv.org/abs/2607.19957",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "inference"
-      ],
-      "category": "安全与可靠性",
-      "event_type": "论文",
-      "score": 58,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究揭示了一种针对位置无关KV缓存复用机制的新型安全威胁，对推理优化和系统安全有实际影响，值得关注。",
-      "summary": "arXiv:2607.19957v2 Announce Type: replace-cross Abstract: Key-Value (KV) cache reduces inference latency in large language models (LLMs). Traditional prefix-based reuse has low cache hit rates across inference requests because it requires exact token and position matches. To improve efficiency, recent system optimizations introduce position-independent KV reuse, allowing KV cache to be reused whenever identical text...",
-      "company": null,
-      "decision_title": "HijackKV：位置无关KV缓存复用中的新型劫持攻击",
-      "key_change": "arXiv:2607.19957v2 Announce Type: replace-cross Abstract: Key-Value (KV) cache reduces inference latency in l…",
-      "why_important": "该研究揭示了一种针对位置无关KV缓存复用机制的新型安全威胁，对推理优化和系统安全有实际影响，值得关注。",
-      "impact_objects": [
-        "安全与可靠性",
-        "AI 安全"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29196",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Hy-MultiTurn: A Six-Dimensional Benchmark for Deep Multi-Turn Dialogue Understanding",
-      "headline": "Hy-MultiTurn：面向深度多轮对话理解的中文六维基准",
-      "url": "https://arxiv.org/abs/2607.29196",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agents",
-        "benchmark",
-        "chatbot"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 58,
-      "decision": "include",
-      "content_type": "benchmark",
-      "risk_level": "早期信号",
-      "reason": "该基准针对长对话多轮理解，与智能体工作流相关，且提供了量化评估，值得关注。",
-      "summary": "arXiv:2607.29196v1 Announce Type: new Abstract: Long-running multi-turn interactions with chatbots and agents are now common, and a correct response often depends on remembering earlier details, tracking later revisions, identifying intended objects or referents, and withholding action when required conditions are unmet. Existing multi-turn benchmarks typically cover short exchanges and do not fully evaluate these c...",
-      "company": null,
-      "decision_title": "Hy-MultiTurn：面向深度多轮对话理解的中文六维基准",
-      "key_change": "arXiv:2607.29196v1 Announce Type: new Abstract: Long-running multi-turn interactions with chatbots and agents…",
-      "why_important": "该基准针对长对话多轮理解，与智能体工作流相关，且提供了量化评估，值得关注。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29516",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "From Code Review to Code Critique: Intent, Drift, and Spotlight for AI-Generated Diffs at Scale",
-      "headline": "ARCTIC：面向AI生成代码的代码批判系统，通过意图预测与漂移检测提升审查效率",
-      "url": "https://arxiv.org/abs/2607.29516",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "code review"
-      ],
-      "category": "工具链与开发",
-      "event_type": "论文",
-      "score": 60,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究针对AI生成代码审查的痛点，提出了可量化的方法（意图预测、漂移检测、代码聚焦），并给出了具体指标，对AI编码工具链有实际参考价值，但属于早期研究，尚未产品化。",
-      "summary": "arXiv:2607.29516v1 Announce Type: cross Abstract: AI coding agents are generating code at volumes that exceed the capacity of traditional peer review. At the same time, existing AI code review tools over-index on low-value suggestions such as style and best practices while under-indexing on the concerns human reviewers prioritize most: correctness, security, and performance. We present ARCTIC, an AI-powered Code Cri...",
-      "company": null,
-      "decision_title": "ARCTIC：面向AI生成代码的代码批判系统，通过意图预测与漂移检测提升审查效率",
-      "key_change": "arXiv:2607.29516v1 Announce Type: cross Abstract: AI coding agents are generating code at volumes that exceed…",
-      "why_important": "该研究针对AI生成代码审查的痛点，提出了可量化的方法（意图预测、漂移检测、代码聚焦），并给出了具体指标，对AI编码工具链有实际参考价值，但属于早期研究，尚未产品化。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "AI Coding"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28685",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Safety, or Just Capability? A Validity Audit of Agent-Safety Benchmarks",
-      "headline": "Agent安全基准有效性审计：R-Judge等四个基准存在评分缺陷与排名不一致",
-      "url": "https://arxiv.org/abs/2607.28685",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "benchmark",
-        "policy"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 62,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究对多个主流Agent安全基准进行了有效性审计，揭示了评分指标和模型选择中的系统性缺陷，对依赖这些基准评估Agent安全性的开发者和研究者具有直接参考价值。",
-      "summary": "arXiv:2607.28685v1 Announce Type: new Abstract: Agent-safety benchmarks measure different behaviors, and their scores get quoted interchangeably as an agent's safety. We treat four of them (R-Judge, InjecAgent, AgentHarm, AgentDojo) as measurements to be validated, running each under its official implementation and author-provided scorer on up to 22 models, with MMLU and GPQA measured by us under one protocol as a c...",
-      "company": null,
-      "decision_title": "Agent安全基准有效性审计：R-Judge等四个基准存在评分缺陷与排名不一致",
-      "key_change": "arXiv:2607.28685v1 Announce Type: new Abstract: Agent-safety benchmarks measure different behaviors, and thei…",
-      "why_important": "该研究对多个主流Agent安全基准进行了有效性审计，揭示了评分指标和模型选择中的系统性缺陷，对依赖这些基准评估Agent安全性的开发者和研究者具有直接参考价值。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "AI 安全"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28802",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Model or Harness? An Interaction-Centric Taxonomy for Localizing Agent Failures",
-      "headline": "新论文提出交互中心分类法，定位智能体故障来源并指导修复",
-      "url": "https://arxiv.org/abs/2607.28802",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 62,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该论文提出了一种交互中心的智能体故障分类法，直接针对智能体开发中的故障定位与修复问题，具有实际工程价值，且与智能体工作流高度相关。",
-      "summary": "arXiv:2607.28802v1 Announce Type: new Abstract: Existing evaluations often reduce agent failures to system-level outcomes, obscuring where the fault originated and which intervention would improve the agent system. This creates a repair-assignment problem: the same visible failure may call for model post-training, harness engineering, environment redesign, or benchmark repair depending on its source. Because agent b...",
-      "company": null,
-      "decision_title": "新论文提出交互中心分类法，定位智能体故障来源并指导修复",
-      "key_change": "arXiv:2607.28802v1 Announce Type: new Abstract: Existing evaluations often reduce agent failures to system-le…",
-      "why_important": "该论文提出了一种交互中心的智能体故障分类法，直接针对智能体开发中的故障定位与修复问题，具有实际工程价值，且与智能体工作流高度相关。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29250",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Data Turnstile: A Scalable Open Framework for Function-Calling Data Generation",
-      "headline": "Data Turnstile：面向函数调用的可扩展开源数据生成框架，提升小模型工具使用能力",
-      "url": "https://arxiv.org/abs/2607.29250",
-      "source_name": "arXiv cs.CL",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agentic",
-        "API",
-        "benchmark",
-        "function calling",
-        "privacy"
-      ],
-      "category": "安全与可靠性",
-      "event_type": "基准",
-      "score": 62,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提出一个开源框架，用于生成函数调用训练数据，对SLM的agentic部署有实际价值，且提供了量化基准结果，值得进入日报。",
-      "summary": "arXiv:2607.29250v1 Announce Type: new Abstract: Small language models (SLMs) are attractive for agentic deployment due to low latency, reduced cost, and on-device privacy, yet they struggle with tool-use tasks where training data is scarce and noisy. Unlike larger models, SLMs cannot compensate for low-quality supervision through sheer capacity, making data quality the critical bottleneck. We present Data Turnstile,...",
-      "company": null,
-      "decision_title": "Data Turnstile：面向函数调用的可扩展开源数据生成框架，提升小模型工具使用能力",
-      "key_change": "arXiv:2607.29250v1 Announce Type: new Abstract: Small language models (SLMs) are attractive for agentic 部署 du…",
-      "why_important": "该研究提出一个开源框架，用于生成函数调用训练数据，对SLM的agentic部署有实际价值，且提供了量化基准结果，值得进入日报。",
-      "impact_objects": [
-        "安全与可靠性",
-        "Agent 工作流",
-        "企业部署",
-        "RAG / 数据"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-29254",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Tool Specifications Matter: Uncovering and Mitigating Safety Risks in AI Agents",
-      "headline": "新研究：工具规格格式是AI智能体安全退化的关键因素，SafeKeep推理时防护显著提升拒答率",
-      "url": "https://arxiv.org/abs/2607.29254",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agents",
-        "inference"
-      ],
-      "category": "安全与可靠性",
-      "event_type": "论文",
-      "score": 64,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究揭示了工具规格格式导致智能体安全退化的机制，并提出有效的推理时防护方法，对Agent安全实践有直接参考价值，值得收录。",
-      "summary": "arXiv:2607.29254v1 Announce Type: new Abstract: AI agents extend large language models (LLMs) with external tools, enabling them to perform complex tasks and translate model outputs into consequential real-world actions. Yet LLMs often become substantially less safe when deployed as agents, and the source of this degradation remains poorly understood. In this paper, we identify schema-formatted tool specifications a...",
-      "company": null,
-      "decision_title": "新研究：工具规格格式是AI智能体安全退化的关键因素，SafeKeep推理时防护显著提升拒答率",
-      "key_change": "arXiv:2607.29254v1 Announce Type: new Abstract: AI agents extend large language models (LLMs) with external t…",
-      "why_important": "该研究揭示了工具规格格式导致智能体安全退化的机制，并提出有效的推理时防护方法，对Agent安全实践有直接参考价值，值得收录。",
-      "impact_objects": [
-        "安全与可靠性",
-        "Agent 工作流",
-        "AI 安全"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28633",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Topology-Aware Data Movement for Disaggregated GPU Inference",
-      "headline": "拓扑感知数据移动优化：解决分布式GPU推理中KV缓存传输瓶颈",
-      "url": "https://arxiv.org/abs/2607.28633",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "GPU",
-        "inference",
-        "startup"
-      ],
-      "category": "工具链与开发",
-      "event_type": "论文",
-      "score": 64,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究针对分布式GPU推理中KV缓存传输的拓扑感知优化，提供了具体量化数据（如带宽差异72倍、延迟隐藏60-85%），对AI基础设施和推理优化有实际参考价值，但属于早期研究，需谨慎对待。",
-      "summary": "arXiv:2607.28633v1 Announce Type: cross Abstract: Disaggregated LLM inference creates a datacenter networking problem that no existing system solves correctly. When prefill and decode run on separate GPU pools, the KV cache must be transferred between them. For a 70B model this is 2.6 GB per request, exceeding 100 GB/s aggregate at production scale. Yet DistServe, Splitwise, and Mooncake all use uniform RDMA, ignori...",
-      "company": null,
-      "decision_title": "拓扑感知数据移动优化：解决分布式GPU推理中KV缓存传输瓶颈",
-      "key_change": "arXiv:2607.28633v1 Announce Type: cross Abstract: Disaggregated LLM inference creates a datacenter networking…",
-      "why_important": "该研究针对分布式GPU推理中KV缓存传输的拓扑感知优化，提供了具体量化数据（如带宽差异72倍、延迟隐藏60-85%），对AI基础设施和推理优化有实际参考价值，但属于早期研究，需谨慎对待。",
-      "impact_objects": [
-        "工具链与开发",
-        "半导体硬件",
-        "RAG / 数据"
-      ],
-      "action_advice": "归档",
-      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2607-28887",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "To Add Is Machine, To Delete Is Human: Measuring and Mitigating Deletion Avoidance in LLM Code Editing",
-      "headline": "新研究：LLM代码编辑存在'删除回避'，CanItDelete基准揭示修复质量隐患",
-      "url": "https://arxiv.org/abs/2607.28887",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "benchmark",
-        "weights"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 66,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究揭示了LLM代码编辑中普遍存在的'删除回避'问题，并提供了量化基准和缓解方向，对AI编程工具和Agent工作流有直接参考价值，值得进入日报。",
-      "summary": "arXiv:2607.28887v1 Announce Type: cross Abstract: Large language models increasingly write and repair production code, yet evidence is mounting that their test-passing patches leave codebases harder to maintain. We identify one concrete source: deletion avoidance, the systematic tendency to retain code that an intended edit requires removing. Across the five leading models on the official SWE-bench Verified leaderbo...",
-      "company": null,
-      "decision_title": "新研究：LLM代码编辑存在'删除回避'，CanItDelete基准揭示修复质量隐患",
-      "key_change": "arXiv:2607.28887v1 Announce Type: cross Abstract: Large language models increasingly write and repair product…",
-      "why_important": "该研究揭示了LLM代码编辑中普遍存在的'删除回避'问题，并提供了量化基准和缓解方向，对AI编程工具和Agent工作流有直接参考价值，值得进入日报。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "AI Coding"
-      ],
-      "action_advice": "跟进",
-      "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2605-07161",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "SREGym: A Live Benchmark for AI SRE Agents with High-Fidelity Failure Scenarios",
-      "headline": "SREGym：面向AI SRE代理的高保真实时基准，含90个故障场景",
-      "url": "https://arxiv.org/abs/2605.07161",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "agentic",
-        "agents",
-        "benchmark"
-      ],
-      "category": "工具链与开发",
-      "event_type": "基准",
-      "score": 66,
-      "decision": "include",
-      "content_type": "benchmark",
-      "risk_level": "早期信号",
-      "reason": "该基准针对AI SRE代理，提供高保真故障场景，与代理工作流和运维自动化高度相关，且包含量化结果，具有实际参考价值。",
-      "summary": "arXiv:2605.07161v3 Announce Type: replace Abstract: AI agents are increasingly used to diagnose and mitigate failures in production systems, known as agentic Site Reliability Engineering (SRE). Current SRE benchmarks are limited to oversimplistic SRE tasks and are unfortunately hard to extend due to bespoke designs. We present SREGym, a high-fidelity benchmark for SRE agents. SREGym exposes a live system environment...",
-      "company": null,
-      "decision_title": "SREGym：面向AI SRE代理的高保真实时基准，含90个故障场景",
-      "key_change": "arXiv:2605.07161v3 Announce Type: replace Abstract: AI agents are increasingly used to diagnose and mitigate…",
-      "why_important": "该基准针对AI SRE代理，提供高保真故障场景，与代理工作流和运维自动化高度相关，且包含量化结果，具有实际参考价值。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流"
-      ],
-      "action_advice": "跟进",
-      "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-arxiv-org-abs-2603-20075",
-      "date": "2026-08-03",
-      "time": "12:00",
-      "title": "Agentic Harness for Real-World Compilers",
-      "headline": "llvm-harness：首个面向LLVM编译器bug修复的Agent工具链与基准，提升前沿模型性能62%",
-      "url": "https://arxiv.org/abs/2603.20075",
-      "source_name": "arXiv cs.AI",
-      "source_level": "early_signal",
-      "source_level_label": "早期信号",
-      "source_type": "arXiv",
-      "source_channel": "RSS",
-      "keywords": [
-        "Agent",
-        "agentic",
-        "agents",
-        "benchmark"
-      ],
-      "category": "模型与能力更新",
-      "event_type": "基准",
-      "score": 66,
-      "decision": "include",
-      "content_type": "research",
-      "risk_level": "早期信号",
-      "reason": "该研究提供了首个面向LLVM编译器bug修复的agent harness和基准，具有明确的量化结果和实用价值，与AI agent和开发者工具高度相关，值得进入日报。",
-      "summary": "arXiv:2603.20075v2 Announce Type: replace-cross Abstract: Compilers are critical to modern computing, yet fixing compiler bugs is difficult. While recent large language model (LLM) advancements enable automated bug repair, compiler bugs pose unique challenges due to their complexity, deep cross-domain expertise requirements, and sparse, non-descriptive bug reports, necessitating compiler-specific harnesses. To bridg...",
-      "company": null,
-      "decision_title": "llvm-harness：首个面向LLVM编译器bug修复的Agent工具链与基准，提升前沿模型性能62%",
-      "key_change": "arXiv:2603.20075v2 Announce Type: replace-cross Abstract: Compilers are critical to modern computing, yet fix…",
-      "why_important": "该研究提供了首个面向LLVM编译器bug修复的agent harness和基准，具有明确的量化结果和实用价值，与AI agent和开发者工具高度相关，值得进入日报。",
-      "impact_objects": [
-        "模型与能力更新",
-        "Agent 工作流"
-      ],
-      "action_advice": "跟进",
-      "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-hoplite-sh",
-      "date": "2026-08-04",
-      "time": "00:32",
-      "title": "Launch HN: Hoplite (YC S26) – Effortlessly deploy cloud coding agents",
-      "headline": "Hoplite (YC S26) 发布：简化云编码代理部署",
-      "url": "https://hoplite.sh",
-      "source_name": "Hacker News",
-      "source_level": "tech_community",
-      "source_level_label": "技术社区",
-      "source_type": "HN",
-      "source_channel": "Hacker News",
-      "keywords": [
-        "agents",
-        "launch"
-      ],
-      "category": "商业与产业",
-      "event_type": "商业信号",
-      "score": 42,
-      "decision": "maybe",
-      "content_type": "business_signal",
-      "risk_level": "早期信号",
-      "reason": "该信息为YC初创公司的产品发布，与AI coding agents相关，但缺乏具体技术细节和用户影响证据，属于早期商业信号，信息增益有限。",
-      "summary": "HN points: 49. Comments: https://news.ycombinator.com/item?id=49157997",
-      "company": null,
-      "decision_title": "Hoplite (YC S26) 发布：简化云编码代理部署",
-      "key_change": "HN points: 49. Comments: https://news.ycombinator.com/item?id=49157997",
-      "why_important": "该信息为YC初创公司的产品发布，与AI coding agents相关，但缺乏具体技术细节和用户影响证据，属于早期商业信号，信息增益有限。",
-      "impact_objects": [
-        "商业与产业",
-        "本地推理",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
     {
       "id": "2026-08-05-https-hoplite-sh",
       "date": "2026-08-04",
@@ -1431,83 +80,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
-    },
-    {
-      "id": "2026-08-04-https-github-com-ggml-org-llama-cpp-releases-tag-b10242",
-      "date": "2026-08-04",
-      "time": "01:22",
-      "title": "llama.cpp b10242：CUDA: Add backend sampler for penalties sampler (#25262)",
-      "headline": "llama.cpp b10242：CUDA后端新增惩罚采样器支持，优化惩罚处理逻辑",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10242",
-      "source_name": "llama.cpp",
-      "source_level": "official_confirmed",
-      "source_level_label": "官方确认",
-      "source_type": "GitHub",
-      "source_channel": "GitHub Releases",
-      "keywords": [
-        "CUDA",
-        "Llama",
-        "llama.cpp"
-      ],
-      "category": "应用与落地",
-      "event_type": "更新",
-      "score": 46,
-      "decision": "maybe",
-      "content_type": "minor_release",
-      "risk_level": "官方确认",
-      "reason": "这是llama.cpp的常规版本更新，主要涉及CUDA后端采样器对惩罚逻辑的优化和测试增强，对本地推理用户有一定技术价值，但属于增量改进，不构成重大新闻。",
-      "summary": "CUDA: Add backend sampler for penalties sampler (#25262) * sampling: enhance penalty handling in common_sampler_init - Set default value for penalty_last_n based on model context if not specified. - Ensure penalty_last_n and n_prev are non-negative. - Update llama_sampler_penalties structure to inherit from llama_sampler_backend and add backend input handling for penalties. - Implement backend initialization and app...",
-      "company": null,
-      "decision_title": "llama.cpp b10242：CUDA后端新增惩罚采样器支持，优化惩罚处理逻辑",
-      "key_change": "CUDA: Add backend sampler for penalties sampler (#25262) * sampling: enhance penalty handling in common_sampl…",
-      "why_important": "这是llama.cpp的常规版本更新，主要涉及CUDA后端采样器对惩罚逻辑的优化和测试增强，对本地推理用户有一定技术价值，但属于增量改进，不构成重大新闻。",
-      "impact_objects": [
-        "应用与落地",
-        "本地推理"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
       "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-github-com-openhands-openhands-releases-tag-v1-9-0",
-      "date": "2026-08-04",
-      "time": "02:49",
-      "title": "OpenHands v1.9.0：1.9.0 (2026-08-03)",
-      "headline": "OpenHands v1.9.0 发布：新增扩展清单宿主、实时活动显示及自动化 UI 改进",
-      "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.9.0",
-      "source_name": "OpenHands",
-      "source_level": "official_confirmed",
-      "source_level_label": "官方确认",
-      "source_type": "GitHub",
-      "source_channel": "GitHub Releases",
-      "keywords": [
-        "Agent",
-        "automation",
-        "GitHub",
-        "OpenHands"
-      ],
-      "category": "应用与落地",
-      "event_type": "更新",
-      "score": 46,
-      "decision": "maybe",
-      "content_type": "minor_release",
-      "risk_level": "官方确认",
-      "reason": "OpenHands 作为核心 AI 编码代理工具，其版本更新值得关注，但本次更新多为界面和自动化 UI 的增量改进，缺乏重大功能或性能突破，信息增益有限。",
-      "summary": "## 1.9.0 (2026-08-03) ## What's Changed ### Features * feat: add a domain-neutral extension-manifest host by @hieptl in https://github.com/OpenHands/OpenHands/pull/16127 * feat(backends): compact Cloud vs Agent-server add-backend chooser by @FraterCCCLXIII in https://github.com/OpenHands/OpenHands/pull/16211 * feat: show live agent activity in chat by @roian6 in https://github.com/OpenHands/OpenHands/pull/16110 * fe...",
-      "company": null,
-      "decision_title": "OpenHands v1.9.0 发布：新增扩展清单宿主、实时活动显示及自动化 UI 改进",
-      "key_change": "## 1.9.0 (2026-08-03) ## What's Changed ### Features * feat: add a domain-neutral extension-manifest host by…",
-      "why_important": "OpenHands 作为核心 AI 编码代理工具，其版本更新值得关注，但本次更新多为界面和自动化 UI 的增量改进，缺乏重大功能或性能突破，信息增益有限。",
-      "impact_objects": [
-        "应用与落地",
-        "本地推理",
-        "Agent 工作流"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-github-com-openhands-openhands-releases-tag-v1-9-0",
@@ -1546,7 +119,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-github-blog-changelog-2026-08-03-trigger-copilot-automations-with-comments",
@@ -1586,49 +159,6 @@ window.TIMELINE_DATA = {
       "action_advice": "跟进",
       "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
       "similar_count": 0
-    },
-    {
-      "id": "2026-08-04-https-www-reddit-com-r-machinelearning-comments-1ven68z-arpl-runtime-isatopology-detection-for-llamacpp",
-      "date": "2026-08-04",
-      "time": "03:22",
-      "title": "ARPL — runtime ISA/topology detection for llama.cpp on ARM (built for Snapdragon 8 Elite) [r]",
-      "headline": "ARPL：为llama.cpp提供ARM运行时ISA/拓扑检测，适配骁龙8 Elite",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1ven68z/arpl_runtime_isatopology_detection_for_llamacpp",
-      "source_name": "Reddit r/MachineLearning",
-      "source_level": "tech_community",
-      "source_level_label": "技术社区",
-      "source_type": "Reddit",
-      "source_channel": "RSS",
-      "keywords": [
-        "GitHub",
-        "GPU",
-        "ISA",
-        "Llama",
-        "llama.cpp",
-        "release"
-      ],
-      "category": "工具链与开发",
-      "event_type": "发布",
-      "score": 62,
-      "decision": "include",
-      "content_type": "community_discussion",
-      "risk_level": "社区讨论",
-      "reason": "该信息针对llama.cpp在ARM设备上的运行时ISA/拓扑检测，直接关联端侧AI推理优化，具有实际应用价值，尽管来自社区且未提供量化基准，但技术方案清晰，值得关注。",
-      "summary": "I've been working on this for a while and finally pushed a public version. The problem: llama.cpp runs fine on ARM phones, but it doesn't know anything about the specific chip it's on. Same thread count, same context params, whether you're on a Snapdragon 8 Elite or a five-year-old mid-ranger. ARPL reads the actual hardware at runtime — which ISA extensions are available (SDOT, I8MM, SME2), how the cores are cluster...",
-      "company": null,
-      "decision_title": "ARPL：为llama.cpp提供ARM运行时ISA/拓扑检测，适配骁龙8 Elite",
-      "key_change": "I've been working on this for a while and finally pushed a public version. The problem: llama.cpp runs fine o…",
-      "why_important": "该信息针对llama.cpp在ARM设备上的运行时ISA/拓扑检测，直接关联端侧AI推理优化，具有实际应用价值，尽管来自社区且未提供量化基准，但技术方案清晰，值得关注。",
-      "impact_objects": [
-        "工具链与开发",
-        "本地推理",
-        "半导体硬件",
-        "RAG / 数据",
-        "边缘 AI"
-      ],
-      "action_advice": "跟进",
-      "action_reason": "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。",
-      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-www-reddit-com-r-machinelearning-comments-1ven68z-arpl-runtime-isatopology-detection-for-llamacpp",
@@ -1671,7 +201,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-github-blog-changelog-2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
@@ -1713,41 +243,6 @@ window.TIMELINE_DATA = {
       "similar_count": 0
     },
     {
-      "id": "2026-08-04-https-www-reddit-com-r-machinelearning-comments-1veu3l1-no-universal-hallucination-detector-but-a",
-      "date": "2026-08-04",
-      "time": "07:52",
-      "title": "No universal hallucination detector, but a universal floor — pre-registered, 10 models. Come break it. [R]",
-      "headline": "Reddit研究：预注册的幻觉检测器在10个模型上达到通用下限，但无通用最优信号",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1veu3l1/no_universal_hallucination_detector_but_a",
-      "source_name": "Reddit r/MachineLearning",
-      "source_level": "tech_community",
-      "source_level_label": "技术社区",
-      "source_type": "Reddit",
-      "source_channel": "RSS",
-      "keywords": [],
-      "category": "工具链与开发",
-      "event_type": "实测",
-      "score": 42,
-      "decision": "maybe",
-      "content_type": "research",
-      "risk_level": "社区讨论",
-      "reason": "该研究提出了一种预注册的幻觉检测方法，并给出了跨模型、跨任务的量化结果，对RAG和Agent可靠性有参考价值，但来源为Reddit社区，缺乏同行评审，且方法细节有限，因此仅作为早期信号保留。",
-      "summary": "Yeoo I'm not a lab, I'm not a PhD — just a guy with an obsession: catch a model making things up the instant it commits to its first token. One forward pass, frozen model, before you see any text. I fit four families of internal signals (attention shape, residual motion, readout geometry, confidence — 29 total), let an honest selector pick one per model, and pre-registered everything before the data existed. Twice....",
-      "company": null,
-      "decision_title": "Reddit研究：预注册的幻觉检测器在10个模型上达到通用下限，但无通用最优信号",
-      "key_change": "Yeoo I'm not a lab, I'm not a PhD — just a guy with an obsession: catch a model making things up the instant…",
-      "why_important": "该研究提出了一种预注册的幻觉检测方法，并给出了跨模型、跨任务的量化结果，对RAG和Agent可靠性有参考价值，但来源为Reddit社区，缺乏同行评审，且方法细节有限，因此仅作为早期信号保留。",
-      "impact_objects": [
-        "工具链与开发",
-        "Agent 工作流",
-        "RAG / 数据",
-        "AI 安全"
-      ],
-      "action_advice": "忽略",
-      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
-    },
-    {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28788",
       "date": "2026-08-04",
       "time": "12:00",
@@ -1782,7 +277,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28662",
@@ -1855,7 +350,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28801",
@@ -1894,7 +389,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28934",
@@ -1930,7 +425,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29539",
@@ -1969,7 +464,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29002",
@@ -2007,7 +502,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29626",
@@ -2044,7 +539,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28699",
@@ -2081,7 +576,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2604-05150",
@@ -2119,7 +614,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-22614",
@@ -2158,7 +653,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28633",
@@ -2196,7 +691,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-19957",
@@ -2231,7 +726,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28685",
@@ -2269,7 +764,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28645",
@@ -2304,7 +799,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2601-02430",
@@ -2342,7 +837,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2605-07699",
@@ -2382,7 +877,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-16057",
@@ -2420,7 +915,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-18622",
@@ -2491,7 +986,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29516",
@@ -2529,7 +1024,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2608-00004",
@@ -2606,7 +1101,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2608-00009",
@@ -2679,7 +1174,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29677",
@@ -2720,7 +1215,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-29254",
@@ -2759,7 +1254,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2607-28887",
@@ -2796,7 +1291,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2605-07161",
@@ -2834,7 +1329,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-arxiv-org-abs-2603-20075",
@@ -2872,7 +1367,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 1
+      "similar_count": 0
     },
     {
       "id": "2026-08-05-https-github-com-n8n-io-n8n-releases-tag-stable",
@@ -5874,7 +4369,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-07-https-arxiv-org-abs-2608-03682",
@@ -11714,7 +10209,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-11-https-arxiv-org-abs-2608-06564",
@@ -22537,7 +21032,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-18-https-arxiv-org-abs-2608-13867",
@@ -32358,7 +30853,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 2
+      "similar_count": 1
     },
     {
       "id": "2026-08-25-https-arxiv-org-abs-2608-20614",
@@ -45295,6 +43790,42 @@ window.TIMELINE_DATA = {
       "similar_count": 0
     },
     {
+      "id": "2026-09-03-https-openai-com-index-path-to-astra",
+      "date": "2026-09-01",
+      "time": "21:00",
+      "title": "Path to Astra: critical capabilities and frontier safeguards",
+      "headline": "OpenAI发布Astra模型：首次达到关键网络安全能力阈值并强化安全防护",
+      "url": "https://openai.com/index/path-to-astra",
+      "source_name": "OpenAI News",
+      "source_level": "official_confirmed",
+      "source_level_label": "官方确认",
+      "source_type": "官方",
+      "source_channel": "RSS",
+      "keywords": [
+        "OpenAI",
+        "release"
+      ],
+      "category": "安全与可靠性",
+      "event_type": "发布",
+      "score": 61,
+      "decision": "include",
+      "content_type": "major_release",
+      "risk_level": "官方确认",
+      "reason": "OpenAI官方发布Astra模型，首次达到Preparedness Framework的关键网络安全能力阈值，属于重大模型发布，具有信息增量，但具体能力细节有限，故评分适中。",
+      "summary": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparedness Framework, with stronger safeguards for release.",
+      "company": "OpenAI/GPT",
+      "decision_title": "OpenAI发布Astra模型：首次达到关键网络安全能力阈值并强化安全防护",
+      "key_change": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparednes…",
+      "why_important": "OpenAI官方发布Astra模型，首次达到Preparedness Framework的关键网络安全能力阈值，属于重大模型发布，具有信息增量，但具体能力细节有限，故评分适中。",
+      "impact_objects": [
+        "安全与可靠性",
+        "AI 安全"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 1
+    },
+    {
       "id": "2026-09-02-https-openai-com-index-path-to-astra",
       "date": "2026-09-01",
       "time": "21:00",
@@ -45328,7 +43859,7 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "归档",
       "action_reason": "信息有参考价值，但当前不需要立刻行动。",
-      "similar_count": 0
+      "similar_count": 1
     },
     {
       "id": "2026-09-02-https-github-blog-changelog-2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
@@ -45369,7 +43900,48 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
+      "similar_count": 1
+    },
+    {
+      "id": "2026-09-03-https-github-blog-changelog-2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+      "date": "2026-09-01",
+      "time": "22:29",
+      "title": "Claude Fable 5.1 is generally available in GitHub Copilot",
+      "headline": "Claude Fable 5.1 正式登陆 GitHub Copilot，面向长时自主编码任务",
+      "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+      "source_name": "GitHub Changelog",
+      "source_level": "official_confirmed",
+      "source_level_label": "官方确认",
+      "source_type": "GitHub",
+      "source_channel": "RSS",
+      "keywords": [
+        "Anthropic",
+        "changelog",
+        "Claude",
+        "GitHub",
+        "GitHub Copilot"
+      ],
+      "category": "工具链与开发",
+      "event_type": "更新",
+      "score": 0,
+      "decision": "include",
+      "content_type": "major_release",
+      "risk_level": "官方确认",
+      "reason": "官方确认的模型在主流编码工具中的可用性更新，直接提升开发者工作流能力，信息增量明确。",
+      "summary": "Claude Fable 5.1 from Anthropic is now available in GitHub Copilot. The latest model in Anthropic’s Mythos class, Claude Fable 5.1 is designed for long-horizon, autonomous coding and knowledge-work tasks.… The post Claude Fable 5.1 is generally available in GitHub Copilot appeared first on The GitHub Blog .",
+      "company": "Anthropic/Claude",
+      "decision_title": "Claude Fable 5.1 正式登陆 GitHub Copilot，面向长时自主编码任务",
+      "key_change": "Claude Fable 5.1 from Anthropic is now available in GitHub Copilot. The latest model in Anthropic’s Mythos cl…",
+      "why_important": "官方确认的模型在主流编码工具中的可用性更新，直接提升开发者工作流能力，信息增量明确。",
+      "impact_objects": [
+        "工具链与开发",
+        "AI Coding",
+        "RAG / 数据",
+        "边缘 AI"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 1
     },
     {
       "id": "2026-09-02-https-simonwillison-net-2026-sep-1-python-315-rc-2",
@@ -45405,7 +43977,43 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "忽略",
       "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
-      "similar_count": 0
+      "similar_count": 1
+    },
+    {
+      "id": "2026-09-03-https-simonwillison-net-2026-sep-1-python-315-rc-2",
+      "date": "2026-09-01",
+      "time": "22:59",
+      "title": "Python 3.15.0 candidate 2 is here!",
+      "headline": "Python 3.15.0 候选版 RC2 发布，进入最终测试阶段",
+      "url": "https://simonwillison.net/2026/Sep/1/python-315-rc-2",
+      "source_name": "Simon Willison",
+      "source_level": "tech_community",
+      "source_level_label": "技术社区",
+      "source_type": "社区",
+      "source_channel": "RSS",
+      "keywords": [
+        "GitHub",
+        "release"
+      ],
+      "category": "前沿研究",
+      "event_type": "更新",
+      "score": 55,
+      "decision": "include",
+      "content_type": "minor_release",
+      "risk_level": "官方确认",
+      "reason": "Python 3.15 RC2 是官方发布候选版本，对依赖 Python 生态的开发者有实际测试价值，但属于常规版本更新，新闻重要性中等。",
+      "summary": "Python 3.15.0 candidate 2 is here! Hugo van Kemenade (release manager for Python 3.14 and 3.15) announces the final release candidate for Python 3.15, scheduled for release in October: Entering the release candidate phase, only reviewed code changes which are clear bug fixes are allowed between this release candidate and the final release. [...] We strongly encourage maintainers of third-party Python projects to pre...",
+      "company": null,
+      "decision_title": "Python 3.15.0 候选版 RC2 发布，进入最终测试阶段",
+      "key_change": "Python 3.15.0 candidate 2 is here! Hugo van Kemenade (release manager for Python 3.14 and 3.15) announces the…",
+      "why_important": "Python 3.15 RC2 是官方发布候选版本，对依赖 Python 生态的开发者有实际测试价值，但属于常规版本更新，新闻重要性中等。",
+      "impact_objects": [
+        "前沿研究",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 1
     },
     {
       "id": "2026-09-02-https-github-com-langchain-ai-langchain-releases-tag-langchain-3d-3d1-4-0a3",
@@ -45446,7 +44054,48 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
-      "similar_count": 0
+      "similar_count": 1
+    },
+    {
+      "id": "2026-09-03-https-github-com-langchain-ai-langchain-releases-tag-langchain-3d-3d1-4-0a3",
+      "date": "2026-09-02",
+      "time": "01:19",
+      "title": "LangChain langchain==1.4.0a3：Third alpha of the `1.4.0` line. This release focuses on the new `langchain.mcp` namespace",
+      "headline": "LangChain 1.4.0a3 发布：新增 langchain.mcp 命名空间，适配 MCP 服务器为 LangChain 工具",
+      "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.0a3",
+      "source_name": "LangChain",
+      "source_level": "official_confirmed",
+      "source_level_label": "官方确认",
+      "source_type": "GitHub",
+      "source_channel": "GitHub Releases",
+      "keywords": [
+        "Agent",
+        "agents",
+        "LangChain",
+        "LangGraph",
+        "MCP",
+        "release",
+        "serving"
+      ],
+      "category": "工具链与开发",
+      "event_type": "更新",
+      "score": 68,
+      "decision": "include",
+      "content_type": "minor_release",
+      "risk_level": "官方确认",
+      "reason": "该alpha版本引入新的langchain.mcp命名空间，提供MCPAdapter等工具，直接增强LangChain与MCP生态的集成，对Agent工作流开发者有实际价值，虽为预发布但信息明确。",
+      "summary": "Third alpha of the `1.4.0` line. This release focuses on the new `langchain.mcp` namespace for adapting MCP servers into LangChain tools. ## `langchain.mcp` highlights - **`MCPAdapter`** adapts any target `fastmcp.Client` accepts — a URL, a local script, an in-process server, an `MCPConfig` naming several servers, or a pre-built client — as well as a FastMCP `ClientGroup` for a fleet of servers behind one client. -...",
+      "company": null,
+      "decision_title": "LangChain 1.4.0a3 发布：新增 langchain.mcp 命名空间，适配 MCP 服务器为 LangChain 工具",
+      "key_change": "Third alpha of the `1.4.0` line. This release focuses on the new `langchain.mcp` namespace for adapting MCP s…",
+      "why_important": "该alpha版本引入新的langchain.mcp命名空间，提供MCPAdapter等工具，直接增强LangChain与MCP生态的集成，对Agent工作流开发者有实际价值，虽为预发布但信息明确。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流"
+      ],
+      "action_advice": "跟进",
+      "action_reason": "和核心能力、部署或工具链相关，值得后续观察可用性。",
+      "similar_count": 1
     },
     {
       "id": "2026-09-02-https-github-com-ggml-org-llama-cpp-releases-tag-b10750",
@@ -45564,6 +44213,1371 @@ window.TIMELINE_DATA = {
       ],
       "action_advice": "跟进",
       "action_reason": "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。",
+      "similar_count": 1
+    },
+    {
+      "id": "2026-09-03-https-simonwillison-net-2026-sep-1-claude-fable-5-1",
+      "date": "2026-09-02",
+      "time": "07:57",
+      "title": "Claude Fable 5.1 made me a really nice animated pelican",
+      "headline": "Anthropic发布Claude Fable 5.1：官方宣称新基准，社区测试显示推理能力提升",
+      "url": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1",
+      "source_name": "Simon Willison",
+      "source_level": "tech_community",
+      "source_level_label": "技术社区",
+      "source_type": "社区",
+      "source_channel": "RSS",
+      "keywords": [
+        "Anthropic",
+        "benchmark",
+        "Claude",
+        "GPT",
+        "terminal"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 60,
+      "decision": "include",
+      "content_type": "major_release",
+      "risk_level": "官方确认",
+      "reason": "该信息涉及Anthropic新模型Claude Fable 5.1的发布，包含官方基准测试结果和社区测试，对AI模型进展有信息增量，且与个人关注的模型和工具链相关。",
+      "summary": "Today is Claude Fable (and Mythos) 5.1 day . Anthropic say that Fable 5.1 \"sets a new standard for coding, knowledge work, and long-running problem-solving tasks\". Their announcement spends a notable amount of time on scientific research, boasting of a 52.6% score on the brand new Terminal-Bench-Science 0.1 benchmark (first announced on August 27th ), up from 24.7% for Fable 5, 29.0% for Opus 5 and 22.4% for GPT-5.6...",
+      "company": "OpenAI/GPT",
+      "decision_title": "Anthropic发布Claude Fable 5.1：官方宣称新基准，社区测试显示推理能力提升",
+      "key_change": "Today is Claude Fable (and Mythos) 5.1 day . Anthropic say that Fable 5.1 \"sets a new standard for coding, kn…",
+      "why_important": "该信息涉及Anthropic新模型Claude Fable 5.1的发布，包含官方基准测试结果和社区测试，对AI模型进展有信息增量，且与个人关注的模型和工具链相关。",
+      "impact_objects": [
+        "工具链与开发",
+        "RAG / 数据",
+        "边缘 AI"
+      ],
+      "action_advice": "跟进",
+      "action_reason": "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。",
+      "similar_count": 1
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00194",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "ReDeck: Step-Level Render-Grounded Refinement for Document-to-Slide Generation",
+      "headline": "ReDeck：面向文档转幻灯片生成的分步渲染反馈框架及DeckQuiz基准",
+      "url": "https://arxiv.org/abs/2609.00194",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agents",
+        "benchmark",
+        "Claude",
+        "Gemini",
+        "GPT"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种针对文档转幻灯片生成的分步渲染反馈框架，并引入新基准，对Agent工作流有一定参考价值，但属于早期研究，未提供完整结果，实际应用价值有限。",
+      "summary": "arXiv:2609.00194v1 Announce Type: new Abstract: Document-to-slide generation is challenging because slides are dense editable artifacts that require both faithful content selection and precise spatial layout. Recent slide agents adopt iterative reflection, but typically follow a monolithic \"one version, one feedback\" loop: a slide or deck is rewritten, rendered afterward, and critiqued only at the turn boundary. Thi...",
+      "company": "OpenAI/GPT",
+      "decision_title": "ReDeck：面向文档转幻灯片生成的分步渲染反馈框架及DeckQuiz基准",
+      "key_change": "arXiv:2609.00194v1 Announce Type: new Abstract: Document-to-slide generation is challenging because slides ar…",
+      "why_important": "该研究提出了一种针对文档转幻灯片生成的分步渲染反馈框架，并引入新基准，对Agent工作流有一定参考价值，但属于早期研究，未提供完整结果，实际应用价值有限。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00570",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "VoiceLongMemEval: Do Assistants Remember How You Sounded?",
+      "headline": "新基准VoiceLongMemEval：评估AI助手是否记住用户的语音特征",
+      "url": "https://arxiv.org/abs/2609.00570",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "benchmark",
+        "multi-agent",
+        "retrieval"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该论文提出了一个针对语音助手长期记忆评估的新基准，与RAG和Agent相关，但属于早期研究信号，尚未产品化，且与核心关注点（文本Agent/工具链）关联度中等。",
+      "summary": "arXiv:2609.00570v1 Announce Type: new Abstract: With the growing scale of multi-agent architectures and large language models, deployed AI assistants are increasingly tasked with reasoning over long, continuous, multi-session conversation histories. Current benchmarks evaluate this dialogue history as information retrieval over long horizon, temporal reasoning, or knowledge updates, while crucially ignoring the fund...",
+      "company": null,
+      "decision_title": "新基准VoiceLongMemEval：评估AI助手是否记住用户的语音特征",
+      "key_change": "arXiv:2609.00570v1 Announce Type: new Abstract: With the growing scale of multi-agent architectures and large…",
+      "why_important": "该论文提出了一个针对语音助手长期记忆评估的新基准，与RAG和Agent相关，但属于早期研究信号，尚未产品化，且与核心关注点（文本Agent/工具链）关联度中等。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "RAG / 数据",
+        "边缘 AI"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00918",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "RPCBench: A Benchmark for Proactive Premise Critique in LLM-based Recommendation",
+      "headline": "RPCBench：评估LLM推荐助手主动前提批判能力的新基准",
+      "url": "https://arxiv.org/abs/2609.00918",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该论文提出了一个针对LLM推荐助手的新基准，但属于早期研究信号，且与个人核心关注点（如Agent、RAG、推理）关联度中等，暂不构成高优先级情报。",
+      "summary": "arXiv:2609.00918v1 Announce Type: new Abstract: Large language models are increasingly used as interactive recommender assistants. Their evaluation should therefore go beyond plausible item recommendation and test whether they can recognize flawed recommendation requests. Existing recommender benchmarks mainly assess ranking, generation, or preference satisfaction, while existing error-detection benchmarks are usual...",
+      "company": null,
+      "decision_title": "RPCBench：评估LLM推荐助手主动前提批判能力的新基准",
+      "key_change": "arXiv:2609.00918v1 Announce Type: new Abstract: Large language models are increasingly used as interactive re…",
+      "why_important": "该论文提出了一个针对LLM推荐助手的新基准，但属于早期研究信号，且与个人核心关注点（如Agent、RAG、推理）关联度中等，暂不构成高优先级情报。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01038",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Data-Driven Persona-Conditioned Agents for A/B Test Simulation",
+      "headline": "arXiv新研究：数据驱动人格条件智能体用于A/B测试模拟，方向准确率达0.75-0.90",
+      "url": "https://arxiv.org/abs/2609.01038",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agents",
+        "benchmark"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出用数据驱动人格的LLM智能体模拟A/B测试，对产品评估有潜在应用价值，但属于早期研究，未提供代码或复现细节，且与核心关注点（Agent工作流、编码工具等）关联度中等，故建议保留但降权。",
+      "summary": "arXiv:2609.01038v1 Announce Type: new Abstract: A/B testing is the gold standard for evaluating product changes, but each experiment requires real user traffic, engineering effort, and weeks of measurement. We propose a simulation framework that predicts A/B test outcomes using LLM-powered agents conditioned on data-driven personas grounded in real user behavioral signals. Unlike prior work that relies on synthetic...",
+      "company": null,
+      "decision_title": "arXiv新研究：数据驱动人格条件智能体用于A/B测试模拟，方向准确率达0.75-0.90",
+      "key_change": "arXiv:2609.01038v1 Announce Type: new Abstract: A/B testing is the gold standard for evaluating product chang…",
+      "why_important": "该研究提出用数据驱动人格的LLM智能体模拟A/B测试，对产品评估有潜在应用价值，但属于早期研究，未提供代码或复现细节，且与核心关注点（Agent工作流、编码工具等）关联度中等，故建议保留但降权。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "AI Coding",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00086",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Retrieval, Scoring, and Decoding Shape Performance and Stability in LLM-based Conversational Recommendation",
+      "headline": "研究：检索与解码协议显著影响LLM重排序器在对话推荐中的性能与稳定性",
+      "url": "https://arxiv.org/abs/2609.00086",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark",
+        "inference",
+        "reranker",
+        "retrieval"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提供了关于LLM重排序器在对话推荐中性能受检索和推理协议影响的实证分析，对RAG和检索系统有参考价值，但属于早期研究，未直接涉及主流工具或工作流，重要性有限。",
+      "summary": "arXiv:2609.00086v1 Announce Type: cross Abstract: Large language models (LLMs) are increasingly used as rerankers in conversational recommender systems, yet measured gains depend strongly on the retrieval and inference protocol. On the ReDial conversational movie recommendation benchmark, we compare proprietary, open-weight, and fine-tuned LLM rerankers with collaborative-filtering and sequential baselines in a shar...",
+      "company": null,
+      "decision_title": "研究：检索与解码协议显著影响LLM重排序器在对话推荐中的性能与稳定性",
+      "key_change": "arXiv:2609.00086v1 Announce Type: cross Abstract: Large language models (LLMs) are increasingly used as reran…",
+      "why_important": "该研究提供了关于LLM重排序器在对话推荐中性能受检索和推理协议影响的实证分析，对RAG和检索系统有参考价值，但属于早期研究，未直接涉及主流工具或工作流，重要性有限。",
+      "impact_objects": [
+        "工具链与开发",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00103",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Good Memory Has ECC: Evaluating the Memory of Vision-Language Models Beyond Accuracy",
+      "headline": "新基准ECCBench：超越准确率，评估视觉语言模型的记忆效率与校准",
+      "url": "https://arxiv.org/abs/2609.00103",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agents",
+        "benchmark",
+        "Transformers"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了新的评测基准ECCBench，关注记忆效率、压缩和校准，对长程智能体有潜在价值，但属于早期研究信号，未提供具体量化结果，且与核心关注点（智能体、RAG等）关联度中等，故建议保留但降权。",
+      "summary": "arXiv:2609.00103v1 Announce Type: cross Abstract: Memory is widely viewed as an important unsolved problem for LLMs and VLMs, and current benchmarks typically evaluate it by testing accuracy over long text or video. However, accuracy alone misses properties that matter for real long-horizon tasks. We introduce ECCBench, a benchmark and evaluation protocol that measures memory beyond a system's capacity--its raw accu...",
+      "company": null,
+      "decision_title": "新基准ECCBench：超越准确率，评估视觉语言模型的记忆效率与校准",
+      "key_change": "arXiv:2609.00103v1 Announce Type: cross Abstract: Memory is widely viewed as an important unsolved problem fo…",
+      "why_important": "该研究提出了新的评测基准ECCBench，关注记忆效率、压缩和校准，对长程智能体有潜在价值，但属于早期研究信号，未提供具体量化结果，且与核心关注点（智能体、RAG等）关联度中等，故建议保留但降权。",
+      "impact_objects": [
+        "硬件与基础设施",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00982",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Disclosure-Gated User Simulation for Companion-Agent Evaluation",
+      "headline": "arXiv研究：面向陪伴型Agent评估的披露门控用户模拟方法",
+      "url": "https://arxiv.org/abs/2609.00982",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "benchmark",
+        "release"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 42,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种针对陪伴型Agent评估的用户模拟改进方法，属于Agent评估领域的前沿研究，但尚未产品化，且与个人核心关注点（如开发工具、基础设施）关联度中等，因此建议作为早期信号保留，但不必重点报道。",
+      "summary": "arXiv:2609.00982v1 Announce Type: cross Abstract: Using a large language model to play the user is now standard in scalable evaluation. It has a repeatedly diagnosed failure: the simulated user is excessively cooperative, so a system under test can score by the sheer number of questions it asks rather than by making the user willing to speak. We answer with a disclosure gate conditioning information release on the c...",
+      "company": null,
+      "decision_title": "arXiv研究：面向陪伴型Agent评估的披露门控用户模拟方法",
+      "key_change": "arXiv:2609.00982v1 Announce Type: cross Abstract: Using a large language model to play the user is now standa…",
+      "why_important": "该研究提出了一种针对陪伴型Agent评估的用户模拟改进方法，属于Agent评估领域的前沿研究，但尚未产品化，且与个人核心关注点（如开发工具、基础设施）关联度中等，因此建议作为早期信号保留，但不必重点报道。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00330",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Topic Matching in the Wild: Benchmark and Lessons from Real-World ASR Transcripts",
+      "headline": "真实ASR转录中的主题匹配：新基准与经验教训",
+      "url": "https://arxiv.org/abs/2609.00330",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "benchmark",
+        "customer",
+        "dataset",
+        "Gemini"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "商业信号",
+      "score": 43,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提供了真实客服场景下的主题匹配基准，对Agent辅助系统有参考价值，但属于早期研究信号，且未提供具体量化结果，重要性有限。",
+      "summary": "arXiv:2609.00330v1 Announce Type: cross Abstract: In contact centers, real-time agent-assist tools determine, for each of many predefined topics, whether a live customer utterance is relevant and display a coaching card to the agent when it is. The input is noisy and challenging: ASR(Automatic Speech Recognition) transcripts of spontaneous phone conversations, which can be unclear, repetitive, and mostly lack punctu...",
+      "company": "Google/Gemini",
+      "decision_title": "真实ASR转录中的主题匹配：新基准与经验教训",
+      "key_change": "arXiv:2609.00330v1 Announce Type: cross Abstract: In contact centers, real-time agent-assist tools determine,…",
+      "why_important": "该研究提供了真实客服场景下的主题匹配基准，对Agent辅助系统有参考价值，但属于早期研究信号，且未提供具体量化结果，重要性有限。",
+      "impact_objects": [
+        "硬件与基础设施",
+        "Agent 工作流",
+        "企业部署"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01360",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "EDGE: Error Dependency Graph-Guided Multi-Error Attribution in Multi-Agent LLM Systems",
+      "headline": "EDGE：基于错误依赖图的多智能体LLM系统多错误归因框架",
+      "url": "https://arxiv.org/abs/2609.01360",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "inference",
+        "multi-agent"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出多智能体错误归因的新方法，与Agent工作流调试相关，但属于早期研究，缺乏实际应用证据，重要性有限。",
+      "summary": "arXiv:2609.01360v1 Announce Type: new Abstract: Large language model (LLM) agent failures often contain multiple related errors rather than a single mistake. Existing attribution methods usually identify a responsible agent, step, or root cause, but do not explicitly model dependency between errors. We introduce EDGE, an Error Dependency Graph-guided multi-Error attribution framework. EDGE constructs an error depend...",
+      "company": null,
+      "decision_title": "EDGE：基于错误依赖图的多智能体LLM系统多错误归因框架",
+      "key_change": "arXiv:2609.01360v1 Announce Type: new Abstract: Large language model (LLM) agent failures often contain multi…",
+      "why_important": "该研究提出多智能体错误归因的新方法，与Agent工作流调试相关，但属于早期研究，缺乏实际应用证据，重要性有限。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "边缘 AI"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01466",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Parsing the Stream: A Live Trace Model for Long-Horizon Agents and Their Observers",
+      "headline": "arXiv新研究：面向长时程智能体的实时轨迹模型，减少观测token消耗约14倍",
+      "url": "https://arxiv.org/abs/2609.01466",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "benchmark"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种针对长时程智能体的实时轨迹模型，在token效率和成本上有量化改进，但属于早期研究且基准为自研，需谨慎对待。",
+      "summary": "arXiv:2609.01466v1 Announce Type: new Abstract: A long-horizon agent's trace outgrows both of its consumers: the human observer monitoring the run, and the agent itself, whose bounded context the trace must be folded back into. We present a live trace model, an append-only event ledger folded incrementally into typed run state and compiled into per-consumer views, and evaluate it for both consumers against determini...",
+      "company": null,
+      "decision_title": "arXiv新研究：面向长时程智能体的实时轨迹模型，减少观测token消耗约14倍",
+      "key_change": "arXiv:2609.01466v1 Announce Type: new Abstract: A long-horizon agent's trace outgrows both of its consumers:…",
+      "why_important": "该研究提出了一种针对长时程智能体的实时轨迹模型，在token效率和成本上有量化改进，但属于早期研究且基准为自研，需谨慎对待。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "边缘 AI"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01481",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement",
+      "headline": "Harness-of-Harness框架：多日自主软件开发中的持续改进方法",
+      "url": "https://arxiv.org/abs/2609.01481",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "Codex",
+        "DeepSeek",
+        "GPT",
+        "MiniMax"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种提升编码智能体自主开发能力的框架，与个人关注的AI智能体和编码工具高度相关，但作为arXiv预印本，缺乏可复现细节和实际应用验证，信息增益有限，建议谨慎纳入。",
+      "summary": "arXiv:2609.01481v1 Announce Type: new Abstract: This paper studies autonomous software development, in which LLM-based coding agents transform high-level requirements into complete, functional, and usable software systems without human intervention. We introduce Harness-of-Harness (HoH), a framework that enables coding agents to continually improve software during autonomous development. HoH operates on existing cod...",
+      "company": "OpenAI/GPT",
+      "decision_title": "Harness-of-Harness框架：多日自主软件开发中的持续改进方法",
+      "key_change": "arXiv:2609.01481v1 Announce Type: new Abstract: This paper studies autonomous software development, in which…",
+      "why_important": "该研究提出了一种提升编码智能体自主开发能力的框架，与个人关注的AI智能体和编码工具高度相关，但作为arXiv预印本，缺乏可复现细节和实际应用验证，信息增益有限，建议谨慎纳入。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "AI Coding"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00450",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "HBQ: Hierarchical Scaling Block Quantization with Hardware-Efficiency-Aware Design for Accurate LLM Inference",
+      "headline": "HBQ：面向硬件效率的层级块量化方法，用于精确LLM推理",
+      "url": "https://arxiv.org/abs/2609.00450",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark",
+        "inference",
+        "quantization"
+      ],
+      "category": "应用与落地",
+      "event_type": "基准",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出HBQ量化方法，针对LLM推理的硬件效率与精度权衡，与推理优化相关，但属于早期研究，未提供具体量化结果或部署细节，信息增益有限。",
+      "summary": "arXiv:2609.00450v1 Announce Type: cross Abstract: Block Quantization (BQ) is a promising approach for efficient deployment of large language models (LLMs), enabling low-precision computation with controlled accuracy degradation. Compared to scalar weight-only quantization (WoQ), BQ quantizes both weight and activation, offering higher hardware efficiency and end-to-end inference on a unified datapath, but its design...",
+      "company": null,
+      "decision_title": "HBQ：面向硬件效率的层级块量化方法，用于精确LLM推理",
+      "key_change": "arXiv:2609.00450v1 Announce Type: cross Abstract: Block Quantization (BQ) is a promising approach for efficie…",
+      "why_important": "该研究提出HBQ量化方法，针对LLM推理的硬件效率与精度权衡，与推理优化相关，但属于早期研究，未提供具体量化结果或部署细节，信息增益有限。",
+      "impact_objects": [
+        "应用与落地",
+        "企业部署",
+        "半导体硬件"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00949",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Calibration is the Bottleneck: An Action-Class Diagnostic of Multi-Turn Tool-Calling",
+      "headline": "新诊断框架揭示多轮工具调用中校准瓶颈：arXiv研究提出动作类分解方法",
+      "url": "https://arxiv.org/abs/2609.00949",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agents"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种针对多轮工具调用智能体的诊断框架，对Agent评估有参考价值，但属于早期研究，未提供具体量化结果，且与个人工具链的直接关联有限。",
+      "summary": "arXiv:2609.00949v1 Announce Type: cross Abstract: Multi-turn tool calling is a core evaluation scenario for large language model (LLM) agents. On public tool-calling benchmarks, open-weight models now approach or even surpass closed-source frontier models in aggregate accuracy. However, this metric averages over many different multi-turn situations and obscures whether progress is balanced across them. We propose an...",
+      "company": null,
+      "decision_title": "新诊断框架揭示多轮工具调用中校准瓶颈：arXiv研究提出动作类分解方法",
+      "key_change": "arXiv:2609.00949v1 Announce Type: cross Abstract: Multi-turn tool calling is a core evaluation scenario for l…",
+      "why_important": "该研究提出了一种针对多轮工具调用智能体的诊断框架，对Agent评估有参考价值，但属于早期研究，未提供具体量化结果，且与个人工具链的直接关联有限。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01210",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Who Judges the Judges? A Chinese Safety QA Benchmark for Evaluating LLM Responses and Safety Judges",
+      "headline": "C-SafeQA：面向中文安全评估的响应级基准，用于评测LLM响应与安全裁判",
+      "url": "https://arxiv.org/abs/2609.01210",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark",
+        "policy"
+      ],
+      "category": "商业与产业",
+      "event_type": "基准",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一个针对中文安全评估的基准，包含量化结果，对安全评估领域有一定价值，但属于早期研究信号，且与个人核心关注点（Agent、工具链等）关联较弱，故建议作为maybe保留。",
+      "summary": "arXiv:2609.01210v1 Announce Type: cross Abstract: Safety benchmarks for large language models often assess the risk of a user query, although the outcome of question answering depends on whether the response violates a policy. This distinction is critical in Chinese harmful-content evaluation, where linguistic variation and adversarial transformations can obscure risky intent. We introduce C-SafeQA, a policy-grounde...",
+      "company": null,
+      "decision_title": "C-SafeQA：面向中文安全评估的响应级基准，用于评测LLM响应与安全裁判",
+      "key_change": "arXiv:2609.01210v1 Announce Type: cross Abstract: Safety benchmarks for large language models often assess th…",
+      "why_important": "该研究提出了一个针对中文安全评估的基准，包含量化结果，对安全评估领域有一定价值，但属于早期研究信号，且与个人核心关注点（Agent、工具链等）关联较弱，故建议作为maybe保留。",
+      "impact_objects": [
+        "商业与产业",
+        "Agent 工作流",
+        "AI 安全"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01245",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Explore More, Drift Less: Outcome-Only Reinforcement Learning Can Suffice for Long-Horizon Interactive Agents",
+      "headline": "CANOPY：面向长程交互智能体的结果驱动强化学习新协议",
+      "url": "https://arxiv.org/abs/2609.01245",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "multi-agent",
+        "orchestration",
+        "policy"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "论文",
+      "score": 44,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出针对长程交互智能体的强化学习新方法，与Agent训练相关，但属于早期研究，缺乏实证细节，实际应用价值尚不明确。",
+      "summary": "arXiv:2609.01245v1 Announce Type: cross Abstract: Reinforcement learning is a natural way to post-train LLM agents for long-horizon interactive tasks judged only by end-of-task verification, yet a shared belief holds that outcome-only RL soon hits a ceiling on small open models. Recent work therefore compensates around the training with denser rewards, SFT priors, skill libraries, curated memory, or multi-agent orch...",
+      "company": null,
+      "decision_title": "CANOPY：面向长程交互智能体的结果驱动强化学习新协议",
+      "key_change": "arXiv:2609.01245v1 Announce Type: cross Abstract: Reinforcement learning is a natural way to post-train LLM a…",
+      "why_important": "该研究提出针对长程交互智能体的强化学习新方法，与Agent训练相关，但属于早期研究，缺乏实证细节，实际应用价值尚不明确。",
+      "impact_objects": [
+        "硬件与基础设施",
+        "Agent 工作流"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00662",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Drift-Aware LLM Routing with Sparse Contexts and Shared Budgets",
+      "headline": "arXiv新研究：漂移感知稀疏路由（DRS）用于多模型LLM服务预算约束下的请求路由",
+      "url": "https://arxiv.org/abs/2609.00662",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark",
+        "policy",
+        "quantization"
+      ],
+      "category": "应用与落地",
+      "event_type": "基准",
+      "score": 46,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该论文提出了一种面向多模型路由的漂移感知稀疏路由方法，与AI基础设施和推理优化相关，但属于早期研究，缺乏实际部署验证，信息增益有限。",
+      "summary": "arXiv:2609.00662v1 Announce Type: new Abstract: A multi-model language service must route each request while preserving workload-level budgets for compute, latency, memory, or monetary cost. Two features make this problem materially harder than static model selection. Prompt representations are high dimensional, so only a small subset of embedding directions may predict the incremental value of a model, and both the...",
+      "company": null,
+      "decision_title": "arXiv新研究：漂移感知稀疏路由（DRS）用于多模型LLM服务预算约束下的请求路由",
+      "key_change": "arXiv:2609.00662v1 Announce Type: new Abstract: A multi-model language service must route each request while…",
+      "why_important": "该论文提出了一种面向多模型路由的漂移感知稀疏路由方法，与AI基础设施和推理优化相关，但属于早期研究，缺乏实际部署验证，信息增益有限。",
+      "impact_objects": [
+        "应用与落地",
+        "企业部署"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00714",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "ChatDev 2.0: A No-Code Multi-Agent Platform for Developing Everything",
+      "headline": "ChatDev 2.0 发布：无代码多智能体平台 DevAll 支持异构智能体编排",
+      "url": "https://arxiv.org/abs/2609.00714",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "multi-agent",
+        "no-code",
+        "orchestration"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 46,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该论文提出一个无代码多智能体平台，与个人关注的AI Agent工作流相关，但属于早期研究信号，未提供量化结果或实际应用证据，因此仅作中等优先级收录。",
+      "summary": "arXiv:2609.00714v1 Announce Type: new Abstract: Large language model (LLM)-based multi-agent systems (MAS) have shown strong potential for solving complex tasks, yet their development forces a tradeoff: code frameworks are expressive but engineering-intensive, while no-code builders simplify authoring but constrain agent interactions to author-defined workflows. We present ChatDev 2.0: DevAll (hereafter DevAll), a n...",
+      "company": null,
+      "decision_title": "ChatDev 2.0 发布：无代码多智能体平台 DevAll 支持异构智能体编排",
+      "key_change": "arXiv:2609.00714v1 Announce Type: new Abstract: Large language model (LLM)-based multi-agent systems (MAS) ha…",
+      "why_important": "该论文提出一个无代码多智能体平台，与个人关注的AI Agent工作流相关，但属于早期研究信号，未提供量化结果或实际应用证据，因此仅作中等优先级收录。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "AI Coding"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01286",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Analog-DB: An Agent-First Analog Integrated Circuit Database, From Blocks to Systems",
+      "headline": "Analog-DB：面向AI设计代理的模拟集成电路开源数据库",
+      "url": "https://arxiv.org/abs/2609.01286",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "foundry"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "论文",
+      "score": 46,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出面向AI设计代理的模拟集成电路数据库，与半导体和Agent主题相关，但属于早期研究，未提供完整量化结果，实际应用价值有限。",
+      "summary": "arXiv:2609.01286v1 Announce Type: new Abstract: Sharing analog integrated circuit designs remains difficult: foundry non-disclosure agreements restrict the process details a design depends on, and the testbenches behind published results are rarely released. We present analog-db, an open-source, versioned database built on a shareable design representation. A domain-specific language captures each design as a proces...",
+      "company": null,
+      "decision_title": "Analog-DB：面向AI设计代理的模拟集成电路开源数据库",
+      "key_change": "arXiv:2609.01286v1 Announce Type: new Abstract: Sharing analog integrated circuit designs remains difficult:…",
+      "why_important": "该研究提出面向AI设计代理的模拟集成电路数据库，与半导体和Agent主题相关，但属于早期研究，未提供完整量化结果，实际应用价值有限。",
+      "impact_objects": [
+        "硬件与基础设施",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00038",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "trajectory-judge: What Outcome-Only LLM Judges Miss on Agent Trajectories",
+      "headline": "研究：轨迹级评估揭示仅看结果的LLM评判器在Agent任务中的盲点",
+      "url": "https://arxiv.org/abs/2609.00038",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "customer",
+        "policy"
+      ],
+      "category": "商业与产业",
+      "event_type": "商业信号",
+      "score": 46,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究针对LLM agent评估中的盲点，提供了量化对比，对agent工作流有参考价值，但属于早期研究，未直接落地，故评为maybe。",
+      "summary": "arXiv:2609.00038v1 Announce Type: cross Abstract: Outcome-only evaluation is the production default for LLM agents: show a judge the request and the final reply and ask whether it was handled well. The metric is structurally blind to an agent that reaches the right answer the wrong way. We measure that blind spot where ground truth is known by construction: a deterministic tool-using support-desk environment, a scri...",
+      "company": null,
+      "decision_title": "研究：轨迹级评估揭示仅看结果的LLM评判器在Agent任务中的盲点",
+      "key_change": "arXiv:2609.00038v1 Announce Type: cross Abstract: Outcome-only evaluation is the production default for LLM a…",
+      "why_important": "该研究针对LLM agent评估中的盲点，提供了量化对比，对agent工作流有参考价值，但属于早期研究，未直接落地，故评为maybe。",
+      "impact_objects": [
+        "商业与产业",
+        "Agent 工作流",
+        "企业部署"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00568",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "WiseSpec: Requirements-Driven Agents for Code Generation",
+      "headline": "WiseSpec：面向代码生成的需求驱动智能体框架，平均提升13.17%",
+      "url": "https://arxiv.org/abs/2609.00568",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "repository",
+        "software engineering"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 46,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出面向代码生成的智能体框架，与智能体及编码工具高度相关，但属于早期研究信号，缺乏实际应用验证，信息增益有限。",
+      "summary": "arXiv:2609.00568v1 Announce Type: cross Abstract: Code generation aims to automatically generate source code from task requirements and has attracted significant attention with the rapid advancement of large language models (LLMs). Despite remarkable progress, LLMs often struggle to generate correct code for complex software engineering tasks because task descriptions are frequently incomplete, ambiguous, or lack cr...",
+      "company": null,
+      "decision_title": "WiseSpec：面向代码生成的需求驱动智能体框架，平均提升13.17%",
+      "key_change": "arXiv:2609.00568v1 Announce Type: cross Abstract: Code generation aims to automatically generate source code…",
+      "why_important": "该研究提出面向代码生成的智能体框架，与智能体及编码工具高度相关，但属于早期研究信号，缺乏实际应用验证，信息增益有限。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "AI Coding"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00749",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "ContextPipe: Database-Inspired Context Assembly for Long-Horizon Agents",
+      "headline": "ContextPipe：数据库启发的长程Agent上下文组装方法，初步评估降低31% token消耗",
+      "url": "https://arxiv.org/abs/2609.00749",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agentic",
+        "agents",
+        "policy"
+      ],
+      "category": "工具链与开发",
+      "event_type": "论文",
+      "score": 48,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出数据库启发的上下文组装方法，对长程Agent的上下文管理有实际意义，但属于早期研究，且评估规模有限，尚未落地，故仅建议关注而非重点报道。",
+      "summary": "arXiv:2609.00749v1 Announce Type: new Abstract: Long-horizon large language model (LLM) agents require context assembly: the runtime must decide what to include in each prompt, in what order, and when to compact history under a hard context-window budget and a byte-sensitive prompt cache. In production agentic systems, this logic is scattered across prompt builders, ad hoc compaction routines, cache-break workaround...",
+      "company": null,
+      "decision_title": "ContextPipe：数据库启发的长程Agent上下文组装方法，初步评估降低31% token消耗",
+      "key_change": "arXiv:2609.00749v1 Announce Type: new Abstract: Long-horizon large language model (LLM) agents require contex…",
+      "why_important": "该研究提出数据库启发的上下文组装方法，对长程Agent的上下文管理有实际意义，但属于早期研究，且评估规模有限，尚未落地，故仅建议关注而非重点报道。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00196",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "WHALE: A Simple Recipe for Joint Harness-Weight Optimization",
+      "headline": "WHALE：一种联合优化Agent权重与执行框架的简单方法",
+      "url": "https://arxiv.org/abs/2609.00196",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "fine-tuning",
+        "weights"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "论文",
+      "score": 52,
+      "decision": "maybe",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种联合优化模型权重与执行框架的新方法，对Agent开发有潜在价值，但属于早期研究，尚未产品化，且摘要被截断，缺乏完整实验细节，因此仅作中等优先级收录。",
+      "summary": "arXiv:2609.00196v1 Announce Type: cross Abstract: Agent performance depends jointly on the model parameters and the executable harness code that manages context and control flow. Optimizing either component in isolation can leave the system bottlenecked by its frozen counterpart: weight updates can change which harness is effective, while harness updates can change which model capabilities are exposed. Existing join...",
+      "company": null,
+      "decision_title": "WHALE：一种联合优化Agent权重与执行框架的简单方法",
+      "key_change": "arXiv:2609.00196v1 Announce Type: cross Abstract: Agent performance depends jointly on the model parameters a…",
+      "why_important": "该研究提出了一种联合优化模型权重与执行框架的新方法，对Agent开发有潜在价值，但属于早期研究，尚未产品化，且摘要被截断，缺乏完整实验细节，因此仅作中等优先级收录。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00728",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "SOVER: Formal Certification of Optimization Reformulations via LLM-Assisted SMT Verification",
+      "headline": "SOVER：利用LLM辅助SMT验证优化问题重构的正确性，并发布NLEquiv-150基准",
+      "url": "https://arxiv.org/abs/2609.00728",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种用LLM辅助SMT验证优化问题重构正确性的方法，并附带基准NLEquiv-150，对AI在数学优化和形式验证交叉领域有实际应用价值，但属于早期研究信号，需谨慎对待。",
+      "summary": "arXiv:2609.00728v1 Announce Type: new Abstract: Large Language Models (LLMs) have shown remarkable promise in translating and reformulating complex mathematical optimization problems across modeling languages. However, validating such transformations through empirical solver executions alone is unreliable, as solver outcomes may be affected by local minima, structural timeouts, numerical artifacts, and subtle semant...",
+      "company": null,
+      "decision_title": "SOVER：利用LLM辅助SMT验证优化问题重构的正确性，并发布NLEquiv-150基准",
+      "key_change": "arXiv:2609.00728v1 Announce Type: new Abstract: Large Language Models (LLMs) have shown remarkable promise in…",
+      "why_important": "该研究提出了一种用LLM辅助SMT验证优化问题重构正确性的方法，并附带基准NLEquiv-150，对AI在数学优化和形式验证交叉领域有实际应用价值，但属于早期研究信号，需谨慎对待。",
+      "impact_objects": [
+        "模型与能力更新"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00921",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "VIBE-Bench: Evaluating Personalized Large Language Models When Profiles Don't Mean Preferences",
+      "headline": "VIBE-Bench：评估个性化大语言模型在画像与偏好不一致时的表现",
+      "url": "https://arxiv.org/abs/2609.00921",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark",
+        "retrieval"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一个针对个性化LLM的新基准，揭示了现有模型在跨概念偏好推理上的缺陷，对RAG和个性化系统有实际参考价值，但属于早期研究信号，需谨慎对待。",
+      "summary": "arXiv:2609.00921v1 Announce Type: new Abstract: Personalized Large Language Models (PLLMs) aim to tailor responses to individual users, where a central challenge is preference reasoning: inferring query-relevant preferences from user-related history. Existing benchmarks, however, largely assume that such preference can be retrieved from semantically related history. We study an underexplored but practically importan...",
+      "company": null,
+      "decision_title": "VIBE-Bench：评估个性化大语言模型在画像与偏好不一致时的表现",
+      "key_change": "arXiv:2609.00921v1 Announce Type: new Abstract: Personalized Large Language Models (PLLMs) aim to tailor resp…",
+      "why_important": "该研究提出了一个针对个性化LLM的新基准，揭示了现有模型在跨概念偏好推理上的缺陷，对RAG和个性化系统有实际参考价值，但属于早期研究信号，需谨慎对待。",
+      "impact_objects": [
+        "模型与能力更新",
+        "RAG / 数据"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01056",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "WorldBench: Culturally Grounded Benchmark for Multilingual Agents",
+      "headline": "WorldBench：面向多语言智能体的文化基准，前沿模型CTS仅49.2%",
+      "url": "https://arxiv.org/abs/2609.01056",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "agentic",
+        "agents",
+        "benchmark"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该基准针对多语言、文化场景下的智能体评估，提供了量化结果和新的评估指标，对智能体开发者有参考价值，但属于早期研究信号，需谨慎对待。",
+      "summary": "arXiv:2609.01056v1 Announce Type: new Abstract: Despite the growing use of LLM-powered agents to solve multi-step tasks in complex environments, existing benchmarks rarely test state preservation, performance across languages, and application to realistic, grounded scenarios. To address these concerns, we present WorldBench: a comprehensive, multilingual benchmark of genuine, persona-grounded everyday workflows, whe...",
+      "company": null,
+      "decision_title": "WorldBench：面向多语言智能体的文化基准，前沿模型CTS仅49.2%",
+      "key_change": "arXiv:2609.01056v1 Announce Type: new Abstract: Despite the growing use of LLM-powered agents to solve multi-…",
+      "why_important": "该基准针对多语言、文化场景下的智能体评估，提供了量化结果和新的评估指标，对智能体开发者有参考价值，但属于早期研究信号，需谨慎对待。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2608-29632",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "InteractBench: Benchmarking LLMs on Competitive Programming under Unrevealed Information",
+      "headline": "InteractBench：面向未完全信息场景的LLM竞赛编程基准，含322道交互式问题",
+      "url": "https://arxiv.org/abs/2608.29632",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "benchmark"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "benchmark",
+      "risk_level": "早期信号",
+      "reason": "该基准测试针对LLM在交互式编程问题上的能力，提供了可离线评估的本地交互器，对AI编程工具和智能体工作流有实际参考价值，但属于早期研究信号，需注意其局限性。",
+      "summary": "arXiv:2608.29632v1 Announce Type: cross Abstract: Competitive programming is increasingly being used to evaluate the algorithmic reasoning capabilities of large language models (LLMs). However, existing benchmarks primarily focus on full-information tasks where all problem inputs are provided upfront. This overlooks a critical dimension of algorithmic reasoning: the ability of generated programs to operate when key...",
+      "company": null,
+      "decision_title": "InteractBench：面向未完全信息场景的LLM竞赛编程基准，含322道交互式问题",
+      "key_change": "arXiv:2608.29632v1 Announce Type: cross Abstract: Competitive programming is increasingly being used to evalu…",
+      "why_important": "该基准测试针对LLM在交互式编程问题上的能力，提供了可离线评估的本地交互器，对AI编程工具和智能体工作流有实际参考价值，但属于早期研究信号，需注意其局限性。",
+      "impact_objects": [
+        "硬件与基础设施"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00048",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+      "headline": "新基准GUI-CC：评估GUI世界模型作为智能体环境的上下文一致性",
+      "url": "https://arxiv.org/abs/2609.00048",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "benchmark"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该论文提出了针对GUI世界模型作为智能体环境的新基准，直接关联AI智能体工作流，具有实际评估价值，但属于早期研究信号，需谨慎对待。",
+      "summary": "arXiv:2609.00048v1 Announce Type: cross Abstract: GUI world models are increasingly evaluated as one-step next-screen predictors, yet their intended use is often as multi-step environments for GUI agents. This mismatch leaves a key requirement under-tested: generated states must remain contextually consistent when they are repeatedly reused for future interaction. We introduce GUI-CC, a benchmark that evaluates cont...",
+      "company": null,
+      "decision_title": "新基准GUI-CC：评估GUI世界模型作为智能体环境的上下文一致性",
+      "key_change": "arXiv:2609.00048v1 Announce Type: cross Abstract: GUI world models are increasingly evaluated as one-step nex…",
+      "why_important": "该论文提出了针对GUI世界模型作为智能体环境的新基准，直接关联AI智能体工作流，具有实际评估价值，但属于早期研究信号，需谨慎对待。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00069",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Auditing Harness Tampering in Self-Improving Agents",
+      "headline": "新研究：自改进Agent的'Harness篡改'现象与审计方法",
+      "url": "https://arxiv.org/abs/2609.00069",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "benchmark"
+      ],
+      "category": "安全与可靠性",
+      "event_type": "基准",
+      "score": 58,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出'harness tampering'概念并构建分类体系与审计基准，对自改进Agent的安全与可靠性有直接应用价值，虽为早期研究但值得关注。",
+      "summary": "arXiv:2609.00069v1 Announce Type: cross Abstract: Self-improving agents iteratively modify their own harness to push the frontier of their performance. However, such modifications can produce illusory performance gains or compromise integrity constraints such as authorization, provenance, and completeness without genuinely improving capability. We term this phenomenon as harness tampering, which extends the concept...",
+      "company": null,
+      "decision_title": "新研究：自改进Agent的'Harness篡改'现象与审计方法",
+      "key_change": "arXiv:2609.00069v1 Announce Type: cross Abstract: Self-improving agents iteratively modify their own harness…",
+      "why_important": "该研究提出'harness tampering'概念并构建分类体系与审计基准，对自改进Agent的安全与可靠性有直接应用价值，虽为早期研究但值得关注。",
+      "impact_objects": [
+        "安全与可靠性",
+        "Agent 工作流",
+        "AI 安全"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00028",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "UI-Venus-2 Technical Report",
+      "headline": "UI-Venus-2技术报告：跨移动、Web和桌面的通用GUI智能体",
+      "url": "https://arxiv.org/abs/2609.00028",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "automation",
+        "benchmark"
+      ],
+      "category": "工具链与开发",
+      "event_type": "基准",
+      "score": 60,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出跨移动、Web和桌面的通用GUI智能体，并强调环境、任务和验证的规模化，对Agent工作流和自动化有直接参考价值，但属于早期研究信号，需保守评分。",
+      "summary": "arXiv:2609.00028v1 Announce Type: new Abstract: Multimodal GUI agents have emerged as a promising paradigm for digital task automation, yet transitioning from benchmark-oriented models to dependable real-world applications remains challenging due to limited environment coverage, brittle task construction, and unreliable reward verification. In this work, we present UI-Venus-2, a general-purpose foundation GUI agent...",
+      "company": null,
+      "decision_title": "UI-Venus-2技术报告：跨移动、Web和桌面的通用GUI智能体",
+      "key_change": "arXiv:2609.00028v1 Announce Type: new Abstract: Multimodal GUI agents have emerged as a promising paradigm fo…",
+      "why_important": "该研究提出跨移动、Web和桌面的通用GUI智能体，并强调环境、任务和验证的规模化，对Agent工作流和自动化有直接参考价值，但属于早期研究信号，需保守评分。",
+      "impact_objects": [
+        "工具链与开发",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-00595",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "SoK: When Safe Agents Fail Together: The Security of Multi Agent LLM Systems",
+      "headline": "SoK论文：多智能体LLM系统的安全风险系统化分析",
+      "url": "https://arxiv.org/abs/2609.00595",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agents",
+        "benchmark",
+        "multi-agent"
+      ],
+      "category": "安全与可靠性",
+      "event_type": "基准",
+      "score": 61,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究系统化梳理了多智能体系统的安全风险，提出了A-I-R框架和防御契约，对构建安全Agent工作流具有直接参考价值，值得收录。",
+      "summary": "arXiv:2609.00595v1 Announce Type: cross Abstract: Safe agents can fail together. Multi-agent LLM systems (MAS) move information, state, decisions, and authority across principal boundaries, creating failures that local checks may miss. Without an execution-level view, a multi-agent setting can easily be mistaken for evidence of a genuinely multi-agent security effect. We thus systematize MAS security through an exec...",
+      "company": null,
+      "decision_title": "SoK论文：多智能体LLM系统的安全风险系统化分析",
+      "key_change": "arXiv:2609.00595v1 Announce Type: cross Abstract: Safe agents can fail together. Multi-agent LLM systems (MAS…",
+      "why_important": "该研究系统化梳理了多智能体系统的安全风险，提出了A-I-R框架和防御契约，对构建安全Agent工作流具有直接参考价值，值得收录。",
+      "impact_objects": [
+        "安全与可靠性",
+        "Agent 工作流",
+        "AI 安全"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-arxiv-org-abs-2609-01272",
+      "date": "2026-09-02",
+      "time": "12:00",
+      "title": "Making Prospective Memory SLM-Shaped: Typed Intention Stores for Small-Model Agents",
+      "headline": "arXiv研究：类型化意图存储（PIS）让小型模型在PM-Bench上超越大型模型",
+      "url": "https://arxiv.org/abs/2609.01272",
+      "source_name": "arXiv cs.AI",
+      "source_level": "early_signal",
+      "source_level_label": "早期信号",
+      "source_type": "arXiv",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "agentic",
+        "agents",
+        "benchmark",
+        "DeepSeek",
+        "fine-tuning"
+      ],
+      "category": "硬件与基础设施",
+      "event_type": "基准",
+      "score": 64,
+      "decision": "include",
+      "content_type": "research",
+      "risk_level": "早期信号",
+      "reason": "该研究提出了一种训练无关的智能体记忆架构，在PM-Bench上显著提升小模型性能，对Agent工作流和记忆设计有直接参考价值，但属于早期研究信号，需谨慎对待。",
+      "summary": "arXiv:2609.01272v1 Announce Type: new Abstract: Prospective memory means carrying out a deferred intention at the right future cue while other work continues. Benchmarks now isolate it as an agent skill, yet frontier LLMs still struggle: the best published PM-Bench scaffold reaches only 65.1% Set-F1. We argue that this loop is schema-constrained state tracking rather than open-ended reasoning, and that small models...",
+      "company": "DeepSeek",
+      "decision_title": "arXiv研究：类型化意图存储（PIS）让小型模型在PM-Bench上超越大型模型",
+      "key_change": "arXiv:2609.01272v1 Announce Type: new Abstract: Prospective memory means carrying out a deferred intention at…",
+      "why_important": "该研究提出了一种训练无关的智能体记忆架构，在PM-Bench上显著提升小模型性能，对Agent工作流和记忆设计有直接参考价值，但属于早期研究信号，需谨慎对待。",
+      "impact_objects": [
+        "硬件与基础设施",
+        "Agent 工作流"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-www-latent-space-p-ainews-claude-fablemythos-51-new",
+      "date": "2026-09-02",
+      "time": "15:46",
+      "title": "[AINews] Claude Fable/Mythos 5.1: new SOTA model, 75% cache price cut but 70% more output tokens",
+      "headline": "Claude 5.1 发布：新SOTA模型，缓存价格下调75%，输出token增加70%",
+      "url": "https://www.latent.space/p/ainews-claude-fablemythos-51-new",
+      "source_name": "Latent Space",
+      "source_level": "tech_community",
+      "source_level_label": "技术社区",
+      "source_type": "社区",
+      "source_channel": "RSS",
+      "keywords": [
+        "Claude"
+      ],
+      "category": "商业与产业",
+      "event_type": "发布",
+      "score": 58,
+      "decision": "maybe",
+      "content_type": "major_release",
+      "risk_level": "待验证",
+      "reason": "标题暗示重大模型发布和定价变化，但摘要信息不足，且来源为社区博客，需验证官方细节。",
+      "summary": "Queue the usual rush of model launches...",
+      "company": "Anthropic/Claude",
+      "decision_title": "Claude 5.1 发布：新SOTA模型，缓存价格下调75%，输出token增加70%",
+      "key_change": "Queue the usual rush of model launches...",
+      "why_important": "标题暗示重大模型发布和定价变化，但摘要信息不足，且来源为社区博客，需验证官方细节。",
+      "impact_objects": [
+        "商业与产业"
+      ],
+      "action_advice": "跟进",
+      "action_reason": "有方向价值，但来源不是官方或仍需复验，需要等待后续验证。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-simonwillison-net-2026-sep-2-llm-gemini",
+      "date": "2026-09-03",
+      "time": "00:39",
+      "title": "llm-gemini 0.34",
+      "headline": "llm-gemini 0.34发布：新增Gemini 3.8 Flash模型支持",
+      "url": "https://simonwillison.net/2026/Sep/2/llm-gemini",
+      "source_name": "Simon Willison",
+      "source_level": "tech_community",
+      "source_level_label": "技术社区",
+      "source_type": "社区",
+      "source_channel": "RSS",
+      "keywords": [
+        "Agent",
+        "Gemini",
+        "release"
+      ],
+      "category": "模型与能力更新",
+      "event_type": "更新",
+      "score": 48,
+      "decision": "maybe",
+      "content_type": "minor_release",
+      "risk_level": "官方确认",
+      "reason": "该信息是llm-gemini插件的小版本更新，新增了Gemini 3.8 Flash模型支持，但未提供官方基准或详细性能数据，信息增益有限，因此仅作maybe处理。",
+      "summary": "Release: llm-gemini 0.34 New model gemini-3.8-flash for Gemini 3.8 Flash , with low, medium and high thinking levels. #146 Fixed async responses failing to record the resolved model version. Thanks, Charlie Tonneslan . #137 Google released Gemini 3.8 Flash (and 3.8 Flash Cyber, but that's available to \"trusted defenders\" only) today. Here are the pelicans for high, medium, and low. This is high: For comparison, here...",
+      "company": "Google/Gemini",
+      "decision_title": "llm-gemini 0.34发布：新增Gemini 3.8 Flash模型支持",
+      "key_change": "Release: llm-gemini 0.34 New model gemini-3.8-flash for Gemini 3.8 Flash , with low, medium and high thinking…",
+      "why_important": "该信息是llm-gemini插件的小版本更新，新增了Gemini 3.8 Flash模型支持，但未提供官方基准或详细性能数据，信息增益有限，因此仅作maybe处理。",
+      "impact_objects": [
+        "模型与能力更新",
+        "Agent 工作流",
+        "RAG / 数据"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-github-blog-changelog-2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
+      "date": "2026-09-03",
+      "time": "02:14",
+      "title": "Content exclusions generally available in Copilot app and CLI",
+      "headline": "GitHub Copilot 应用及 CLI 全面支持内容排除策略，保护敏感文件",
+      "url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
+      "source_name": "GitHub Changelog",
+      "source_level": "official_confirmed",
+      "source_level_label": "官方确认",
+      "source_type": "GitHub",
+      "source_channel": "RSS",
+      "keywords": [
+        "changelog",
+        "GitHub",
+        "GitHub Copilot",
+        "repository"
+      ],
+      "category": "商业与产业",
+      "event_type": "更新",
+      "score": 58,
+      "decision": "include",
+      "content_type": "minor_release",
+      "risk_level": "官方确认",
+      "reason": "该更新为官方确认的GA功能，对使用GitHub Copilot的企业和组织用户有实际影响，涉及敏感文件保护，虽非重大发布但值得关注。",
+      "summary": "The GitHub Copilot app and Copilot CLI now respect content exclusion policies configured by enterprise, organization, and repository administrators. Copilot won’t use excluded files as context, helping you protect sensitive… The post Content exclusions generally available in Copilot app and CLI appeared first on The GitHub Blog .",
+      "company": "Microsoft/GitHub",
+      "decision_title": "GitHub Copilot 应用及 CLI 全面支持内容排除策略，保护敏感文件",
+      "key_change": "The GitHub Copilot app and Copilot CLI now respect content exclusion policies configured by enterprise, organ…",
+      "why_important": "该更新为官方确认的GA功能，对使用GitHub Copilot的企业和组织用户有实际影响，涉及敏感文件保护，虽非重大发布但值得关注。",
+      "impact_objects": [
+        "商业与产业",
+        "企业部署",
+        "AI Coding"
+      ],
+      "action_advice": "归档",
+      "action_reason": "信息有参考价值，但当前不需要立刻行动。",
+      "similar_count": 0
+    },
+    {
+      "id": "2026-09-03-https-github-blog-changelog-2026-09-02-enterprise-managed-settings-support-any-default-model",
+      "date": "2026-09-03",
+      "time": "02:51",
+      "title": "Enterprise-managed settings support any default model",
+      "headline": "GitHub Copilot企业版管理设置支持自定义默认模型",
+      "url": "https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model",
+      "source_name": "GitHub Changelog",
+      "source_level": "official_confirmed",
+      "source_level_label": "官方确认",
+      "source_type": "GitHub",
+      "source_channel": "RSS",
+      "keywords": [
+        "changelog",
+        "GitHub",
+        "GitHub Copilot"
+      ],
+      "category": "商业与产业",
+      "event_type": "更新",
+      "score": 43,
+      "decision": "maybe",
+      "content_type": "minor_release",
+      "risk_level": "官方确认",
+      "reason": "该更新为GitHub Copilot企业版管理设置中的小功能增强，允许管理员设置默认模型，对使用Copilot的企业用户有一定相关性，但影响范围有限，信息增益不高，故评为maybe。",
+      "summary": "You can now set your preferred GitHub Copilot model as the default for new conversations through enterprise-managed settings. This lets you choose the default model that best fits your workflows.… The post Enterprise-managed settings support any default model appeared first on The GitHub Blog .",
+      "company": "Microsoft/GitHub",
+      "decision_title": "GitHub Copilot企业版管理设置支持自定义默认模型",
+      "key_change": "You can now set your preferred GitHub Copilot model as the default for new conversations through enterprise-m…",
+      "why_important": "该更新为GitHub Copilot企业版管理设置中的小功能增强，允许管理员设置默认模型，对使用Copilot的企业用户有一定相关性，但影响范围有限，信息增益不高，故评为maybe。",
+      "impact_objects": [
+        "商业与产业",
+        "企业部署",
+        "AI Coding"
+      ],
+      "action_advice": "忽略",
+      "action_reason": "信号较弱或偏维护性更新，除非正在使用相关项目，否则可以跳过。",
       "similar_count": 0
     }
   ],
@@ -45874,13 +45888,6 @@ window.TIMELINE_DATA = {
       "company": "OpenAI/GPT",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -46094,19 +46101,19 @@ window.TIMELINE_DATA = {
           "headline": "",
           "score": 0,
           "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
         }
       ]
     },
     {
       "company": "Anthropic/Claude",
       "days": [
-        {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
         {
           "date": "2026-08-05",
           "count": 0,
@@ -46305,6 +46312,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -46316,13 +46330,6 @@ window.TIMELINE_DATA = {
       "company": "Google/Gemini",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -46520,6 +46527,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -46531,13 +46545,6 @@ window.TIMELINE_DATA = {
       "company": "Meta/Llama",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -46735,6 +46742,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -46746,13 +46760,6 @@ window.TIMELINE_DATA = {
       "company": "DeepSeek",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -46950,6 +46957,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -46961,13 +46975,6 @@ window.TIMELINE_DATA = {
       "company": "xAI/Grok",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -47165,6 +47172,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -47176,13 +47190,6 @@ window.TIMELINE_DATA = {
       "company": "Mistral",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -47380,6 +47387,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,
@@ -47391,13 +47405,6 @@ window.TIMELINE_DATA = {
       "company": "Qwen",
       "days": [
         {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
-        {
           "date": "2026-08-05",
           "count": 0,
           "headline": "",
@@ -47599,19 +47606,19 @@ window.TIMELINE_DATA = {
           "headline": "",
           "score": 0,
           "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
         }
       ]
     },
     {
       "company": "Microsoft/GitHub",
       "days": [
-        {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
         {
           "date": "2026-08-05",
           "count": 0,
@@ -47816,19 +47823,19 @@ window.TIMELINE_DATA = {
           "headline": "",
           "score": 0,
           "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
         }
       ]
     },
     {
       "company": "NVIDIA",
       "days": [
-        {
-          "date": "2026-08-04",
-          "count": 0,
-          "headline": "",
-          "score": 0,
-          "item_ids": []
-        },
         {
           "date": "2026-08-05",
           "count": 0,
@@ -48041,6 +48048,13 @@ window.TIMELINE_DATA = {
         },
         {
           "date": "2026-09-02",
+          "count": 0,
+          "headline": "",
+          "score": 0,
+          "item_ids": []
+        },
+        {
+          "date": "2026-09-03",
           "count": 0,
           "headline": "",
           "score": 0,

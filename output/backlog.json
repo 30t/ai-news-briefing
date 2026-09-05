@@ -1,53 +1,57 @@
 [
   {
-    "title": "How Fast Do Agents Rot? An Empirical Study of Long-Horizon Degradation in LLM Agents for Production Decision-Making",
-    "url": "https://arxiv.org/abs/2609.01660",
+    "title": "KC-Bench: A Dynamic Interactive Benchmark for Evaluating Knowledge Conflicts in LLM Agents",
+    "url": "https://arxiv.org/abs/2609.03588",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.01660v1 Announce Type: cross Abstract: Production deployments of large language model (LLM) agents remain unreliable on long, multi-step workflows even as benchmark success rates climb steadily. We argue this gap is largely an artifact of task horizon: benchmarks are dominated by short-to-medium horizons where success remains high, while production workloads demand an order of magnitude more dependent steps. We measure the effect directly, characterizing the shape of agent degradation and disentangling its cause across a large controlled study spanning nine models, six open models from 1.2B to 671B parameters, and three deployed proprietary systems; four task families, including a genuinely agentic tool-use loop; five horizons; and three context regimes. Task success follows a geometric law governed by a single per-step reliability parameter, which rises with model scale but saturates well below 1 even for the strongest models, guaranteeing eventual collapse at sufficiently long horizons. The effect is sharpest on the agentic task, where every model tested, including widely deployed systems, falls from near-perfect success to near zero within sixteen steps of (n=10,664...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agent Tools Orchestration Leaks More: Dataset, Benchmark, and Mitigation",
-    "url": "https://arxiv.org/abs/2512.16310",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2512.16310v4 Announce Type: replace-cross Abstract: LLM agents can combine individually non-revealing tool returns and disclose a sensitive conclusion, creating Tools Orchestration Privacy Risk (TOP-R). We formalize TOP-R through three conditions: conclusion sensitivity, single-source non-inferability, and compositional inferability. We introduce Library-Grounded Reverse-Inference Seed Expansion (LRSE), a four-library reverse-construction pipeline, and use it to build TOP-Bench, a 1,000-instance benchmark evaluated under a controlled two-stage tool-use protocol. Across six LLM agents, average task completion, leakage, and H-score are 98.0 percent, 88.6 percent, and 20.4. With native reasoning enabled, four models average 81.4 percent final-response leakage and 82.4 percent reasoning-trace leakage. With reasoning disabled, three prompt-only safeguards improve H-score by an average of about 3.4 points on TOP-Bench. We further propose TOP-Align, an SFT+DPO method for learning safer task-completion boundaries. On a separate post-training evaluation set, TOP-Align improves H-score by 16.2 points over the base model, versus a 5.0-point average gain from prompt-only mitigation on t...",
+    "published_at": "2026-09-04T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.03588v1 Announce Type: new Abstract: As LLMs increasingly act through tools, they must reconcile user instructions, parametric knowledge, and dynamic environmental observations before taking actions. We introduce KC-Bench, a controlled multi-turn benchmark for measuring this capability across world-knowledge conflicts, input inconsistencies, and multi-source temporal conflicts. Its 238 tasks are manually screened from more than 1,000 generated candidates and combine a user simulator, stateful tools, deterministic environment assertions, an open-source natural-language evaluator, and human trajectory verification. Evaluation of nine models, including DeepSeek-V4-Flash, GLM-5.2, and MiniMax-M3, shows substantial cross-domain variation: no model handles factual correction, identity consistency checking, and temporal conflict resolution reliably across all settings. In the simulated environments, missed conflicts can propagate to tool calls or synthetic protected-data flows. KC-Bench isolates this model-level behavior rather than ranking complete agent frameworks, and provides a reproducible diagnostic for developing conflict-aware reasoning and execution safeguards.",
     "matched_keywords": [
       "Agent",
       "agents",
       "benchmark",
-      "dataset",
-      "inference",
-      "orchestration",
-      "privacy"
+      "DeepSeek",
+      "GLM",
+      "MiniMax"
     ],
     "tags": [
       "agent",
-      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 66,
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Measuring Harmfulness of Computer-Using Agents",
+    "url": "https://arxiv.org/abs/2508.00935",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-04T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2508.00935v3 Announce Type: replace-cross Abstract: Computer-using agents (CUAs), which can autonomously control computers to perform multi-step actions, might pose significant safety risks if misused. However, existing benchmarks mainly evaluate LMs in chatbots or simple tool use. To more comprehensively evaluate CUAs' misuse risks, we introduce a new benchmark: CUAHarm. CUAHarm consists of 104 expert-written realistic misuse risks, such as disabling firewalls, leaking data, or installing backdoors. We provide a sandbox with rule-based verifiable rewards to measure CUAs' success rates in executing these tasks (e.g., whether the firewall is indeed disabled), beyond refusal rates. We evaluate frontier LMs including GPT-5, Claude 4 Sonnet, Gemini 2.5 Pro, Llama-3.3-70B, and Mistral Large 2. Even without jailbreaking prompts, these frontier LMs comply with executing these malicious tasks at a high success rate (e.g., 90% for Gemini 2.5 Pro). Furthermore, while newer models are safer in previous safety benchmarks, their misuse risks as CUAs become even higher, e.g., Gemini 2.5 Pro is riskier than Gemini 1.5 Pro. Additionally, while these LMs are robust to common malicious prompt...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "Claude",
+      "Gemini",
+      "GPT",
+      "Llama",
+      "Mistral",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "model",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -68,7 +72,84 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ExecRetrieval: Measuring the Functional-Correctness Gap in Code-Embedding Retrieval",
+    "url": "https://arxiv.org/abs/2609.01865",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-04T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.01865v1 Announce Type: cross Abstract: Embedding-based code retrieval is a core component of coding agents and retrieval-augmented code generation, where retrieving correct code matters more than retrieving lexically similar code. Existing code-retrieval benchmarks do not plant controlled, execution-verified single-edit variants of each query's canonical implementation in the search pool, leaving the question of whether embeddings can functionally discriminate correct from near-clone-but-incorrect code unanswered in a retrieval setting. Resolving this requires a benchmark whose search pool itself contains the relevant counterfactuals -- execution-verified buggy variants near-identical to each canonical -- so that a retriever's rank ordering can be directly tested for functional discrimination rather than topical or identity overlap. We introduce ExecRetrieval, 939 Python tasks each paired with one execution-verified canonical implementation and up to four execution-verified buggy distractors, each generated by a mechanical mutation making a single targeted edit, and evaluate 23 dense embedding configurations plus BM25 under provider-native invocation with paired McNemar...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "embeddings",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
+    "url": "https://arxiv.org/abs/2609.03467",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-04T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.03467v1 Announce Type: cross Abstract: Large language models (LLMs) are increas- ingly deployed as long-horizon conversational agents, motivating growing interest in mem- ory systems. However, existing benchmarks primarily evaluate memory through QA-style probing rather than in-situ conversational usage. We introduce LOCOMO-CONV, a conversa- tional memory benchmark derived from Lo- CoMo with four query styles: dialog, implicit, counterfactual, and composed. Across five rep- resentative memory systems, we evaluate both retrieval recall and end-to-end response qual- ity. Our experiments show that conversational framing exposes substantial retrieval gaps over- looked by QA benchmarks, especially on im- plicit and composed queries, which multi-facet query rewriting narrows for raw-turn mem- ory but not abstractive memory. We further find that strong retrieval does not fully trans- late into response quality, and that implicit queries exhibit silent grounding, where mem- ory improves contextual grounding without ex- plicitly surfacing the gold fact. These results point to reasoning-based memory elaboration as a promising direction, and we release aux- iliary supportive_memor...",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "release",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SWE-Gate: Passing Functional Tests Is Not Enough for Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2609.04167",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-04T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.04167v1 Announce Type: cross Abstract: Repository-level software engineering benchmarks have significantly advanced the evaluation of coding agents, but existing benchmarks primarily measure whether generated patches pass functional tests and overlook review-derived acceptance constraints (review constraints) that often influence whether a patch is acceptable in real-world software development. We introduce SWE-Gate, a repository-level benchmark for software engineering agents that explicitly evaluates review constraint compliance alongside functional correctness. SWE-Gate derives review constraints from real pull request review comments and synthesizes repository-level repair instances around these constraints. Each instance provides separate functional and constraint tests, together with non-compliant and gold patches, enabling explicit separation between issue resolution capability and review constraint compliance. We construct SWE-Gate with 303 repository-level repair instances spanning 75 open-source Python repositories across diverse software domains. Experiments with four LLM backends spanning different capability levels under a common coding-agent scaffold revea...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "pull request",
+      "repository",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -90,8 +171,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -117,8 +198,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -141,7 +222,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-03T08:59:41.864884+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -168,7 +249,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -192,30 +273,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests",
-    "url": "https://arxiv.org/abs/2608.27831",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.27831v1 Announce Type: cross Abstract: Coding agents are now commonly evaluated on the SWE-bench family of benchmarks, whose tasks are built from curated GitHub issues--long, structured, and information-rich. Real user requests, however, are typically far shorter and less structured. To characterize this gap, we define a six-category information taxonomy and four dimensions of linguistic style, and apply them to real user prompts from SWE-chat and problem statements from SWE-bench Verified and Pro. We find that requests carrying only a problem statement, alone or with limited additional context, account for 88% of real prompts but just 7% of benchmark problems. Furthermore, 87% of real prompts are casually written whereas 94% of benchmark problems are formal. Guided by these observations, we introduce sys, 381 multi-variant task families derived from SWE-bench Verified and Pro. Variants within each family share the same underlying task and gold patch while differing only in information composition and linguistic style. Evaluating seven contemporary LLMs with sys, we find that i) realistic inputs reduce resolution rates by 6.4 pp on average and can change model rankings....",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "GitHub"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -238,8 +296,8 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -263,7 +321,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-03T08:59:41.864884+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -285,7 +343,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -309,192 +367,92 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "ScienceArena: Benchmarking LLMs on Latest Scientific Olympiad Competitions",
-    "url": "https://arxiv.org/abs/2608.30517",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.30517v1 Announce Type: new Abstract: Benchmark saturation and data contamination increasingly obscure genuine scientific reasoning in frontier LLMs. We introduce \\textsc{ScienceArena}, an olympiad-style benchmark from thirteen public science competitions in physics, chemistry, and biology, including IPhO and IChO 2025--2026, IBO 2023, USAPhO 2026, and USNCO 2025. Its open-ended, multi-step problems use process-credit rubrics, making faithful scoring difficult. We build ScienceArena through an expert-audited digitization pipeline that converts official exams, figures, solutions, and rubrics into structured items verified by olympiad medalists. To scale evaluation beyond costly human grading, we calibrate LLM-as-judge against medalist ground truth on archived answers from five models across IPhO and IChO; two strong judges stay within one point of expert total scores. Medalist notes show that failures often stem from visual grounding, structure fidelity, and global problem control rather than missing terminology. Evaluating fourteen recent LLMs with interleaved solving, we find that top models obtain medal-equivalent rubric scores on several public international exams, wh...",
+    "title": "llama.cpp b10813：opencl: add Adreno xmem SDPA path (#26331)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10813",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-04T19:02:50+00:00",
+    "summary_or_excerpt": "opencl: add Adreno xmem SDPA path (#26331) * opencl: add Adreno xmem SDPA path Assisted-by: Codex * Removed the Adreno-specific queue profiling override * Clean up formatting * 修复数值误差优化gqa/mask attn Assisted-by: Codex * add env GGML_OPENCL_XMEM_SDPA Assisted-by: OpenAI Codex --------- Co-authored-by: happyyzy **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10813/llama-b10813-bin-ubuntu...",
     "matched_keywords": [
-      "benchmark"
+      "Codex",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp",
+      "OpenAI"
     ],
     "tags": [
-      "open_source"
+      "coding_tool",
+      "model",
+      "open_source",
+      "semiconductor"
     ],
-    "score": 60,
-    "first_seen_at": "2026-09-02T08:51:42.708575+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
+    "score": 45,
+    "release_version": "b10813",
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "PersonaForge: Realistic Multi-Turn User Simulation for Agentic Systems",
-    "url": "https://arxiv.org/abs/2608.28378",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.28378v1 Announce Type: new Abstract: Large language models are increasingly used as agentic workflow executors, yet existing training data and benchmarks largely assume informationally complete, single-turn queries. Our analysis of 16K real-world sessions shows that 75.9% of interactions are multi-turn, revealing a substantial gap between how users interact with agents and how such systems are trained and evaluated. We introduce \\textbf{PersonaForge}, a user simulation framework for synthesizing realistic multi-turn user--agent interactions. PersonaForge combines a four-dimensional persona space, SOUL-driven behavioral control calibrated to real-user statistics, and Reverse Deep Construction grounded in authentic seed queries. Using PersonaForge, we construct a 6.3K-record training dataset and \\textbf{PersonaForge-Bench}, a manually annotated 138-task benchmark spanning over 20 professional domains with four-dimensional scoring. Experiments on Qwen3.5-27B show that PersonaForge training improves the composite score by +4.1%, with gains across all four dimensions and the largest improvements in Task Completion (+6.0%) and Response Quality (+6.8%). Further analyses show t...",
+    "title": "llama.cpp b10809：llama.cpp : bump version to 0.4.0 (#28386)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10809",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-04T17:55:12+00:00",
+    "summary_or_excerpt": "llama.cpp : bump version to 0.4.0 (#28386) **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10809/llama-b10809-bin-ubuntu-vulkan-arm...",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "dataset",
-      "workflow"
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 42,
+    "release_version": "b10809",
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CrewAI 1.15.19：Features",
+    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.19",
+    "source_name": "CrewAI",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-04T11:28:32+00:00",
+    "summary_or_excerpt": "## What's Changed ### Features - Add Clipper integrations client - Add `now()` to the CEL expression environment - Record how a crew run ended for every user - Report machine size as a coarse band, not a core count - Add injectable client for CrewAI platform tools ### Bug Fixes - Fix reading of octet-stream and xlsx URLs in `urlreadtool` - Fix appending trailing user turn in native Gemini provider - Normalize scheme and port in Ollama base URL - Preserve reusable scope configs in memory - Bump `pypdf` to 6.16.2 for security vulnerability - Bump `nltk` to 3.10.3 for security vulnerability - Fix native structured outputs for current Claude models and Snowflake CVE floor - Run model call hooks on every path and propagate a deny ### Documentation - Remove `CodeInterpreterTool` from AI/ML overview examples - Point `prompt-template` link at its current path - Update channels guide to current CopilotKit channels API - Refresh retired Gemini model IDs ## Contributors @Vidit-Ostwal, @a-yeyang, @github-actions[bot], @hvlcrs, @joaomdmoura, @kikifrost, @lorenzejay, @lucasgomide, @parthiban-sivakumar, @ranst91, @tandede, @thiagomoretto, @vinibrsl",
+    "matched_keywords": [
+      "API",
+      "Claude",
+      "CrewAI",
+      "Gemini",
+      "GitHub",
+      "Ollama"
     ],
     "tags": [
       "agent",
       "ai_app",
-      "open_source"
-    ],
-    "score": 60,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Telephone Game: Evaluating Semantic Drift in Unified Models",
-    "url": "https://arxiv.org/abs/2509.04438",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2509.04438v3 Announce Type: replace-cross Abstract: Unified models (UMs) combine visual understanding (I2T) and generation (T2I) in a single framework. We focus on T2I and I2T, where cross-consistency---what a model understands, it should be able to generate---is a promise of unification and a necessity when composing both capabilities. Yet, existing benchmarks evaluate them in isolation: FID/GenEval for T2I; MME/MMBench for I2T. We show this gap is consequential: models scoring competitively on these benchmarks can fail severely when understanding and generation are composed, losing entities, attributes, spatial relations, and counts, resulting in semantic drift. To quantify drift, we introduce the Semantic Drift Protocol (SDP), inspired by the Telephone Game: starting from a caption or image, we alternate I2T and T2I over multiple generations and measure semantic preservation. We propose Mean Cumulative Drift (MCD), an embedding-based measure of content retention across three representation spaces, and Multi-Generation GenEval (MGG), extending GenEval's object-level compliance scoring across generations. To stress-test models beyond COCO-style data, we create a benchmark o...",
-    "matched_keywords": [
-      "benchmark"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 59,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Loom: Weaving Diagnostic Strands into Free-Text Consensus via Embedding-Space Reweighting",
-    "url": "https://arxiv.org/abs/2609.02649",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.02649v1 Announce Type: new Abstract: Aggregating noisy, conflicting textual hypotheses into a reliable consensus is a fundamental challenge when deploying NLP systems in real-world industrial settings. While monolithic Large Language Model (LLM) agents offer unbounded expressivity for tasks like Root Cause Analysis (RCA), they suffer from context limits, compounding hallucinations, and prohibitive inference latency. Traditional weak supervision offers statistical rigor but is mathematically restricted to discrete classes. We present Loom, a generative consensus framework deployed for real-world RCA that bridges these paradigms. Loom aggregates open-form hypotheses emitted by modular heuristics (diagnostic templates dynamically populated with episode-specific entities, times, and metrics) by projecting them into a continuous embedding space, and resolves conflicting signals with an iterative centroid-based reweighting algorithm. The resulting consensus weights ground a single lightweight LLM synthesis step. Evaluated on the OpenRCA benchmark, Loom occupies the accuracy--efficiency Pareto frontier: it matches a state-of-the-art autonomous agent on Bank and Market-2 and tr...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "inference",
-      "weights"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference",
-    "url": "https://arxiv.org/abs/2609.01657",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-03T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.01657v1 Announce Type: cross Abstract: Multimodal models often build on architectures designed for generative vision-language modeling, typically combining separately pretrained vision encoders with causal language models. Visual document retrievers such as ColPali repurpose these models as encoders, carrying over the parameter and compute overhead of a VLM for a non-generative task. We introduce NeoMME, a family of 260M and 800M-parameter Multimodal and Multilingual bidirectional Encoders that process multilingual text and raw image patches in a single bidirectional Transformer encoder. Both models are pretrained from scratch with a masked discrete-diffusion text objective, conditioned on visible image patches for multimodal examples. Both support a 16,384-token context, enough to encode up to two standard 4K UHD images. To demonstrate its downstream capabilities, we fine-tune NeoMME with jointly trained dense and late-interaction heads. On the ViDoRe v3 benchmark, the resulting NeoMME-Retriever 260M outperforms all evaluated models strictly below 800M parameters with 0.523 nDCG@10, while NeoMME-Retriever 800M reaches 0.556. At a matched 2048x2048 image input size on a...",
-    "matched_keywords": [
-      "benchmark",
-      "fine-tuning",
-      "inference"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenStamp: A Watermark for Open-Source Language Models",
-    "url": "https://arxiv.org/abs/2608.27899",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-08-31T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.27899v1 Announce Type: new Abstract: With the growing prevalence of large language model (LLM) generated content, watermarking is considered a promising approach for attributing text to LLMs and distinguishing it from human-written content. A prominent class of techniques embeds subtle but detectable signals in generated text by modifying token sampling probabilities. However, such methods are unsuitable for open-source models, where users have white-box access and can easily disable watermarking during inference. In this work, we introduce OpenStamp, a watermarking technique that encodes the watermarking logic directly into the model weights by modifying only the final projection, or unembedding, layer. Through experiments across two models, we show that OpenStamp achieves superior detection performance, with minimal degradation in model capabilities compared to prior methods. The implanted watermark is explicitly designed, and empirically confirmed, to be more robust to paraphrasing attacks and harder to scrub off through post-hoc fine-tuning than prior open-source watermarks. To enable developers to watermark their models, we release our code alongside watermarked ve...",
-    "matched_keywords": [
-      "fine-tuning",
-      "inference",
-      "release",
-      "weights"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llm-gemini 0.34",
-    "url": "https://simonwillison.net/2026/Sep/2/llm-gemini",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-02T16:39:38+00:00",
-    "summary_or_excerpt": "Release: llm-gemini 0.34 New model gemini-3.8-flash for Gemini 3.8 Flash , with low, medium and high thinking levels. #146 Fixed async responses failing to record the resolved model version. Thanks, Charlie Tonneslan . #137 Google released Gemini 3.8 Flash (and 3.8 Flash Cyber, but that's available to \"trusted defenders\" only) today. Here are the pelicans for high, medium, and low. This is high: For comparison, here are the same pelicans generated using Gemini 3.7 Flash . Something I appreciate about Gemini Flash is that it's fast, cheap, and competent at things like HTML and JavaScript. I was messing around with it and prompted \"make me a cool thing in html\" and it built this , which is certainly a cool thing in HTML! Took 13 seconds, cost 1.8 cents. Your browser does not support HTML5 video. If you click through to the demo you'll see one more thing I built with Gemini 3.8 Flash. My markdown-svg-renderer tool lets me feed in the URL to a Gist with Markdown in and renders that markdown with fenced code blocks for SVG correctly rendered. I used Gemini 3.8 Flash (with my very basic llm-coding-agent coding agent plugin) to add support for HTML as well, so now any HTML blocks in the...",
-    "matched_keywords": [
-      "Agent",
-      "Gemini",
-      "release"
-    ],
-    "tags": [
-      "agent",
+      "business",
       "model",
       "open_source"
     ],
-    "score": 45,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Enterprise-managed settings support any default model",
-    "url": "https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-02T18:51:12+00:00",
-    "summary_or_excerpt": "You can now set your preferred GitHub Copilot model as the default for new conversations through enterprise-managed settings. This lets you choose the default model that best fits your workflows.… The post Enterprise-managed settings support any default model appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "GitHub Copilot"
-    ],
-    "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 43,
-    "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "score": 42,
+    "release_version": "1.15.19",
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -517,60 +475,7 @@
     "score": 42,
     "release_version": "stable",
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10729：metal : add fa-vec tunings for M1 Ultra (#28088)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10729",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-31T22:22:28+00:00",
-    "summary_or_excerpt": "metal : add fa-vec tunings for M1 Ultra (#28088) * metal : add fa-vec tunings for M1 Ultra * metal : move M1 Ultra tunings after M1 Max section * metal : remove duplicate blank line **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10729/llama-b10729-bin-ubuntu-vul...",
-    "matched_keywords": [
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 42,
-    "release_version": "b10729",
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "llama.cpp b10727：metal : add concat support for quantized types (#28116)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10727",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-08-31T20:54:49+00:00",
-    "summary_or_excerpt": "metal : add concat support for quantized types (#28116) Assisted-by: pi:llama.cpp/DeepSeek-V4-Flash-0731 **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10727/llama-b10727-bin-ubuntu-vulkan-x64.tar.gz) - [Ubuntu arm64 (Vulkan)](https://github.com/ggml-org/llama.c...",
-    "matched_keywords": [
-      "DeepSeek",
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
-    ],
-    "tags": [
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 42,
-    "release_version": "b10727",
-    "first_seen_at": "2026-09-01T09:40:18.601640+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -594,7 +499,33 @@
     "score": 41,
     "release_version": "n8n@2.38.3",
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "New API endpoint provides privacy-safe star history data",
+    "url": "https://github.blog/changelog/2026-09-04-new-api-endpoint-provides-privacy-safe-star-history-data",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-04T16:43:56+00:00",
+    "summary_or_excerpt": "Track repository star growth over time with the new star history REST API endpoint without exposing stargazer identities. Earlier this year, stargazer listing endpoints were restricted to admins and collaborators… The post New API endpoint provides privacy-safe star history data appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "API",
+      "changelog",
+      "GitHub",
+      "privacy",
+      "repository"
+    ],
+    "tags": [
+      "business",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 40,
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -615,7 +546,33 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-04T08:39:54.569011+08:00",
-    "last_seen_at": "2026-09-04T08:39:54.569011+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "llama.cpp b10816：metal : add remaining fa-vec tunings for M3 (#28396)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10816",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-04T19:57:56+00:00",
+    "summary_or_excerpt": "metal : add remaining fa-vec tunings for M3 (#28396) * addition of m3 in fa_vec_tuned_table * adding q4_0,q4_1,q5_0,q5_1 in ggml-metal-tuning * Fix formatting in ggml-metal-tuning.cpp **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-ubuntu-arm64.tar.gz) - [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-ubuntu-s390x.tar.gz) - [Ubuntu x64 (Vulkan)](https://github.com/ggml-org/llama.cpp/releases/download/b10816/llama-b10816-bin-ubuntu-v...",
+    "matched_keywords": [
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
+    ],
+    "tags": [
+      "model",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 38,
+    "release_version": "b10816",
+    "first_seen_at": "2026-09-05T08:36:01.926673+08:00",
+    "last_seen_at": "2026-09-05T08:36:01.926673+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   }

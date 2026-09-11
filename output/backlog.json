@@ -1,22 +1,83 @@
 [
   {
-    "title": "Anthropic 据报道签约高达 5170 亿美元算力协议，锁定至少 14.8 GW 算力",
-    "url": "https://aihot.news/items/cmtrkorpo07jdrotnozlrlyx2",
-    "source_name": "AIHOT Featured",
+    "title": "When Does Memory Help? A Cost-Aware Evaluation of Long-Term Memory in Tool-Using LLM Agents",
+    "url": "https://arxiv.org/abs/2609.05441",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-07T18:12:41+00:00",
-    "summary_or_excerpt": "据 The Information 报道，Anthropic 在十一个月内签署了价值高达 5170 亿美元的算力合同，自 2025 年 10 月以来锁定至少 14.8 GW 算力，并计划自建数据中心。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtrkorpo07jdrotnozlrlyx2",
+    "source_level": "early_signal",
+    "published_at": "2026-09-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.05441v1 Announce Type: new Abstract: Long-term memory for LLM agents is evaluated today by conversational recall benchmarks (LoCoMo, LongMemEval), which measure question answering over dialogue history, not whether remembered facts change what a tool-using agent does. We present MERIT (Memory Evaluation for Realistic Instrumented Tasks), a benchmark and harness that measures the marginal utility of memory for task-executing agents under explicit cost accounting. MERIT provides episodic tool-use tasks in three domains whose dependence on earlier-episode facts is verified by an automated leak check; a difficulty ladder ending in updated-fact recall; controlled memory corruption; and full token and dollar metering of every memory operation. Across 23,440 scored episodes ($42.57), a two-generation pilot on gpt-4.1-mini and a preregistered 3-model x 3-seed grid (GPT-4.1, Claude Haiku 4.5; memory side held fixed), memory lifts dependent-task success from a leak-verified floor of 0.00 to 0.55-1.00. On updated facts, embedding retrieval collapses unpredictably (0.30-0.95 across models; max seed gap 0.45), and agents act on a correctly retrieved value only 55% of the time, while...",
     "matched_keywords": [
-      "Anthropic"
+      "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "GPT",
+      "retrieval"
     ],
     "tags": [
-      "model"
+      "agent",
+      "model",
+      "open_source",
+      "rag_data"
     ],
-    "score": 62,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
+    "score": 65,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "From Monolithic Blending to Agentic Orchestration: Dynamic Response for Conversational Assistants at Scale",
+    "url": "https://arxiv.org/abs/2609.05758",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.05758v2 Announce Type: new Abstract: Conversational assistants can blend retrieval, action selection, escalation, and wording in a single model path, or separate those roles. We report a production migration of a customer-support assistant at a large accommodation marketplace (millions of conversations per month, 11 languages, 10-second P90). Dynamic Response (DR) replaces a single Qwen3-235B-A22B blended responder with a bounded ReAct orchestrator over typed tools plus a smaller generator that writes from a backend-validated context contract. Because the migration also changed prompts, alignment, and serving, we attribute each effect to its cause and claim as architecture effects only those measured on identical replayed turns: typed entity selection moves the reservation selector to a precision-first operating point (precision 8.3% to 89.1%, recall 75.2% to 67.3%), and typed action IDs with a membership check remove observed structured-action hallucination (2.14% to 0.0%). A low-ramp A/B test reproduces the replay escalation reductions: hard-escalation responses fall from 5.60% to 3.08% and soft-escalation responses from 9.56% to 2.49%, while production handoff volume...",
+    "matched_keywords": [
+      "agentic",
+      "customer",
+      "orchestration",
+      "retrieval",
+      "serving"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2609.08149",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.08149v1 Announce Type: new Abstract: SWE-Bench Pro has emerged as a standard benchmark for evaluating software engineering agents on challenging repository-level tasks. However, our analysis work show that its evaluation is undermined by two sources of unreliability: \\textbf{reward hacking}, enabled by leakage of gold solutions or hidden evaluation information, and \\textbf{task quality issues}, including misleading problem statements and improperly scoped tests. These issues can inflate benchmark performance and obscure agents' true coding ability. We present \\textbf{SWE-Bench Pro Verified}, a verified version of SWE-Bench Pro that addresses both problems. Our approach combines \\textbf{anti-hacking} safeguards that eliminate major leakage channels without disrupting normal agent functionality, with \\textbf{task refinement} that minimally corrects inconsistencies within flawed instances. Evaluations on SWE-Bench Pro Verified reveal that some models perform substantially worse than previously reported, suggesting that existing results on SWE-Bench Pro may overestimate real software engineering capability. SWE-Bench Pro Verified offers a more trustworthy benchmark for asse...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -42,7 +103,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -74,7 +135,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -97,7 +158,7 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -122,7 +183,7 @@
     ],
     "score": 60,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -143,7 +204,7 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -163,7 +224,7 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -185,8 +246,38 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "API Benchmark Scores Do Not Reliably Transfer to Chatbot Interfaces",
+    "url": "https://arxiv.org/abs/2609.08861",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-10T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.08861v1 Announce Type: new Abstract: Benchmark scores are a central currency in model releases: they inform purchasing decisions, shape public trust, and influence policy. Yet, a key assumption underlying benchmark scores is that the model performance measured through APIs faithfully reflects the behavior of deployed systems. We challenge this assumption by auditing ChatGPT, Claude, and Gemini across seven systems and nine benchmarks spanning general capability, social bias, and sycophancy. We find systematic API--interface differences in both accuracy and consistency. On average, API evaluations score 3.4 percentage points higher in accuracy and 2.1 percentage points higher in test--retest agreement than corresponding interface evaluations. For ChatGPT, the performance difference between API and interface access exceeds the API-only difference between GPT 5.3 and GPT 5.4. Put differently, switching access surfaces can degrade performance as much as downgrading a full model generation. We further test whether exposed API controls can reproduce interface behavior by varying system prompts, sampling parameters, and reasoning settings. These controls shift behavior in some...",
+    "matched_keywords": [
+      "API",
+      "benchmark",
+      "chatbot",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "GPT",
+      "policy"
+    ],
+    "tags": [
+      "ai_app",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -201,28 +292,7 @@
     "tags": [],
     "score": 58,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Hackers are stealing Claude tokens from subscribers",
-    "url": "https://techcrunch.com/2026/09/08/hackers-are-stealing-claude-tokens-from-subscribers",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T21:10:27+00:00",
-    "summary_or_excerpt": "Last month, a Claude user noticed his account was consuming tokens even though he wasn't working. Anthropic has since warned users about hackers.",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -245,7 +315,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -269,7 +339,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -292,7 +362,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -314,29 +384,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Molecular D\\'ej\\`a Vu: Digit-Level Retrieval of Published Values in Frontier Language Models",
-    "url": "https://arxiv.org/abs/2609.05381",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-07T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.05381v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly evaluated on molecular property benchmarks, but accuracy cannot distinguish a model that predicts a property from one that retrieves a published number. We audit 22 frontier models on 12 regression benchmarks for verbatim retrieval and find that it is widespread but relatively benchmark-specific: on five datasets more than $50\\%$ of the LLMs show verbatim retrieval, while on the remaining datasets it appears only in isolated cells. We run our experiments at two reasoning levels and find that reasoning changes retrieval. The same experiments, on the same molecules and with the same prompt, are flagged $89\\%$ more often at the higher reasoning level than at the lowest one. Finally, we test a way to interrupt retrieval in our most contaminated cases, and find that the strongest models in some cases still recognise a combination of transformed SMILES strings and original labels. Furthermore, suppressing retrieval moves the prediction errors of the different models closer together in relative terms, while their differing use of verbatim retrieval spreads them apart. This indicates that the gen...",
-    "matched_keywords": [
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 58,
-    "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -352,88 +400,33 @@
     "tags": [],
     "score": 56,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Kimi K3 (2.8T) at 1 token/s on a MacBook Pro, streamed from four SSDs",
-    "url": "https://github.com/argonautlabsai/deltafin",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-08T20:07:55+00:00",
-    "summary_or_excerpt": "HN points: 200. Comments: https://news.ycombinator.com/item?id=49616257",
+    "title": "AI Scan for pull request APIs in public preview",
+    "url": "https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-10T20:20:58+00:00",
+    "summary_or_excerpt": "You can now manage GitHub code scanning’s AI Scan for pull request enablement with REST API endpoints at the organization and repository levels. This public preview gives teams a programmatic… The post AI Scan for pull request APIs in public preview appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "Kimi"
+      "API",
+      "changelog",
+      "GitHub",
+      "pull request",
+      "repository"
     ],
     "tags": [
-      "model"
-    ],
-    "score": 54,
-    "hn_score": 200,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mercury 2.5",
-    "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-2-5",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-08T20:14:52+00:00",
-    "summary_or_excerpt": "HN points: 117. Comments: https://news.ycombinator.com/item?id=49616354",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 50,
-    "hn_score": 117,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mistral raises €3B",
-    "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-08T05:06:23+00:00",
-    "summary_or_excerpt": "HN points: 804. Comments: https://news.ycombinator.com/item?id=49605767",
-    "matched_keywords": [
-      "Mistral"
-    ],
-    "tags": [
-      "model"
+      "business",
+      "coding_tool",
+      "open_source"
     ],
     "score": 50,
-    "hn_score": 804,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Show HN: Geiger – See every AI agent on your machine and what it can touch",
-    "url": "https://github.com/Atomburstofficial/geiger",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-09T14:54:49+00:00",
-    "summary_or_excerpt": "HN points: 44. Comments: https://news.ycombinator.com/item?id=49627646",
-    "matched_keywords": [
-      "Agent",
-      "AI Agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 49,
-    "hn_score": 44,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -449,120 +442,27 @@
     "tags": [],
     "score": 49,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Enterprise-managed sandbox in Copilot for JetBrains",
-    "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
-    "source_name": "GitHub Changelog",
+    "title": "Native is now the future of mobile at Shopify",
+    "url": "https://simonwillison.net/2026/Sep/10/shopify-react-native",
+    "source_name": "Simon Willison",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-09T02:43:38+00:00",
-    "summary_or_excerpt": "This update brings support for enterprise-managed sandbox policies, cross-file cursor jumps for next edit suggestions, global project context in chat, enterprise policy diagnostics, and a new connection between terminal Copilot… The post Enterprise-managed sandbox in Copilot for JetBrains appeared first on The GitHub Blog .",
+    "source_level": "tech_community",
+    "published_at": "2026-09-10T21:11:15+00:00",
+    "summary_or_excerpt": "Native is now the future of mobile at Shopify Shopify are moving from React Native back to separate Swift and Kotlin codebases for their native apps, for the exact reason you would expect: We decided to switch from native to React Native in 2020 for three reasons: Stop building the same features twice Allow developers to work across the stack Spend less time chasing feature parity and more time shipping value [...] Native still means building and maintaining software on two platforms, that cost has not disappeared. What changed is that agents can now do enough of the implementation, translation, testing, and review work that it’s no longer the deciding factor it was in 2020. It's a well-written post, which gives full credit to React Native as a great platform for the six years they were using it. Shopify are the maintainers of three significant React Native libraries: react-native-skia , flash-list , and restyle . The first two are finding new homes; the third \"has a smaller user base than our other libraries\" and will be archived at the end of 2026. Via Hacker News Tags: android , mobile , open-source , ios , ai , react , generative-ai , llms , ai-assisted-search , coding-agents...",
     "matched_keywords": [
-      "changelog",
-      "Cursor",
-      "GitHub",
-      "policy",
-      "terminal"
+      "agents"
     ],
     "tags": [
-      "business",
-      "coding_tool",
-      "open_source"
+      "agent"
     ],
     "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 发布四起 Claude 网络安全评测事故的对齐评估报告",
-    "url": "https://aihot.news/items/cmtuhr1gr1dmxrofp90rc4c6u",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T19:28:17+00:00",
-    "summary_or_excerpt": "Anthropic 对四起 Claude 模型因评测环境配置错误而接入真实互联网的事故发布对齐评估，涉及 Claude Mythos 5、Claude Opus 4.7 和 Claude Opus 4.6 早期检查点等模型，其中 Mythos 5 曾向 PyPI 上传恶意包并被 15 个第三方主机安装。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtuhr1gr1dmxrofp90rc4c6u",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Anthropic 发布 Claude 模型越权访问事件的对齐评估，METR 将独立调查",
-    "url": "https://aihot.news/items/cmtuhrbi71dnsrofpx3fnhef7",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T19:02:43+00:00",
-    "summary_or_excerpt": "Anthropic 发布对齐评估，回应 Claude 模型在第三方网络安全评测中被误连互联网后越权访问真实系统的事件。METR 将开展独立调查，可获取包括事件窗口外记录及经许可分享机密信息的员工访谈等广泛资料，初步协议为期八周，Anthropic 表示愿意给 METR 充足时间完成彻底调查。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtuhrbi71dnsrofpx3fnhef7",
-    "matched_keywords": [
-      "Anthropic",
-      "Claude"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mistral 复盘用 AI Agent 迁移 40000 行 Fortran 77 到 C++ 的经验",
-    "url": "https://aihot.news/items/cmtugpn561cgnrofplpzs3udv",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T18:59:11+00:00",
-    "summary_or_excerpt": "Mistral 帮助一家欧洲能源运营商将 40000 行 Fortran 77 储层模拟器迁移到 C++，并复盘了方法与经验。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtugpn561cgnrofplpzs3udv",
-    "matched_keywords": [
-      "Agent",
-      "AI Agent",
-      "Mistral"
-    ],
-    "tags": [
-      "agent",
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "NSA、FBI 和 CISA 指控 DeepSeek、月之暗面等六家中国 AI 公司大规模提取美国模型知识",
-    "url": "https://aihot.news/items/cmttwa2j30pktrofpw67b9pby",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T09:20:00+00:00",
-    "summary_or_excerpt": "NSA、FBI 和 CISA 指控 DeepSeek、月之暗面（Moonshot AI）、阿里巴巴、MiniMax、阶跃星辰（StepFun）和 Z.ai 至少自 2024 年起以产业规模从美国模型中提取知识。机构称其通过多渠道路由请求以绕过规则并提升数学与编码能力；蒸馏在获授权时合法，争议核心在于访问与同意。美国开发商被敦促立即行动并共享情报，相关公司暂未回应。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmttwa2j30pktrofpw67b9pby",
-    "matched_keywords": [
-      "DeepSeek",
-      "MiniMax",
-      "Moonshot"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -583,28 +483,8 @@
     ],
     "score": 48,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenRouter 推出美国区域路由，与去年上线的 EU 路由配套保障数据驻留",
-    "url": "https://aihot.news/items/cmtu70vhj11u4rofpg46vvloh",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T00:00:00+00:00",
-    "summary_or_excerpt": "OpenRouter 推出 US In-Region Routing，请求经 us.openrouter.ai 在美国境内解密并只路由到美国 provider 端点，eu.openrouter.ai 同理服务欧盟。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtu70vhj11u4rofpg46vvloh",
-    "matched_keywords": [
-      "OpenRouter"
-    ],
-    "tags": [
-      "ai_app"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -627,8 +507,8 @@
     ],
     "score": 48,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -647,8 +527,8 @@
     ],
     "score": 47,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -668,7 +548,49 @@
     ],
     "score": 47,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video",
+    "url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai",
+    "source_name": "NVIDIA Blog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-10T16:30:35+00:00",
+    "summary_or_excerpt": "Manufacturing floors, warehouses and production lines rarely stay fixed — tasks change, layouts shift and new products arrive, and most robots can’t keep up without significant reprogramming. Skild AI’s new S1 robot foundation model helps address this, designed to learn previously unseen, long-horizon tasks from a single video demonstration. The model, launched last week, uses […]",
+    "matched_keywords": [
+      "NVIDIA"
+    ],
+    "tags": [
+      "semiconductor"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Any Nix package, live in your browser",
+    "url": "https://simonwillison.net/2026/Sep/10/trynix",
+    "source_name": "Simon Willison",
+    "source_type": "rss",
+    "source_level": "tech_community",
+    "published_at": "2026-09-10T23:44:15+00:00",
+    "summary_or_excerpt": "Any Nix package, live in your browser Farid Zakaria calls this his \" magnum opus of Nix work\", and I can see why. trynix.dev provides a qemu-wasm powered x86_64 Linux virtual machine running entirely in your browser through WebAssembly. That VM can then be booted with any Nix package from the past 13 years. They are URL addressable, so you can navigate to this page: https://trynix.dev/?pkg=python3%403.6.2 Then click \"Load\" and get an interactive shell against a virtual machine running Python 3.6.2 from 2017. Farid is building all sorts of neat things on top of this. One recent example: Review a pull request by booting it introduces trynix-preview , described like this: GitHub action that comments a link on a pull request which lets you boot the PR’s build in the browser using https://trynix.dev . No servers, just browsers. Via Lobste.rs Tags: code-review , linux , webassembly , github-actions",
+    "matched_keywords": [
+      "GitHub",
+      "pull request"
+    ],
+    "tags": [
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -696,8 +618,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -716,8 +638,8 @@
     ],
     "score": 45,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -737,7 +659,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -757,7 +679,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -783,7 +705,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -808,7 +730,7 @@
     ],
     "score": 45,
     "first_seen_at": "2026-09-08T08:56:22.566516+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -833,8 +755,8 @@
     ],
     "score": 44,
     "release_version": "v1.17.0",
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -857,8 +779,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -879,8 +801,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -900,7 +822,7 @@
     "score": 44,
     "hn_score": 304,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -923,7 +845,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -943,7 +865,7 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -964,7 +886,7 @@
     "score": 43,
     "hn_score": 203,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -985,8 +907,32 @@
     "score": 43,
     "hn_score": 113,
     "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "RT-Thread RT-Thread v5.3.0 Released：Change Log Since v5.2.2 Release.",
+    "url": "https://github.com/RT-Thread/rt-thread/releases/tag/v5.3.0",
+    "source_name": "RT-Thread",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-10T10:05:54+00:00",
+    "summary_or_excerpt": "Change Log Since v5.2.2 Release. ## Kernel * Fix timeout wakeup ownership races in IPC and LWP wait paths. [(#11631)](https://github.com/RT-Thread/rt-thread/pull/11631) * Fix delayed wakeups when a thread is suspended repeatedly. [(#10970)](https://github.com/RT-Thread/rt-thread/pull/10970) * Prevent suspension of idle threads. [(#11314)](https://github.com/RT-Thread/rt-thread/pull/11314) * Release mutexes held by a thread when it is deleted by another thread. [(#11620)](https://github.com/RT-Thread/rt-thread/pull/11620) * Calculate recent thread CPU usage from incremental statistics over sampling windows. [(#11256)](https://github.com/RT-Thread/rt-thread/pull/11256) * Add 8-bit and 16-bit atomic operation support. [(#11244)](https://github.com/RT-Thread/rt-thread/pull/11244) * Remove object name length assertions and safely truncate long names. [(#10943)](https://github.com/RT-Thread/rt-thread/pull/10943) * Reject invalid frees in memheap and handle NULL names in `rt_smem_setname`. [(#11721)](https://github.com/RT-Thread/rt-thread/pull/11721) [(#11598)](https://github.com/RT-Thread/rt-thread/pull/11598) * Check interrupt-disabled contexts when validating scheduler availability an...",
+    "matched_keywords": [
+      "GitHub",
+      "release",
+      "RT-Thread"
+    ],
+    "tags": [
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 42,
+    "release_version": "v5.3.0",
+    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -1010,8 +956,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1036,8 +982,8 @@
     "score": 42,
     "hn_score": 38,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1059,8 +1005,8 @@
     ],
     "score": 42,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1079,8 +1025,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1103,8 +1049,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1126,8 +1072,8 @@
     "score": 40,
     "hn_score": 47,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1147,8 +1093,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1171,8 +1117,8 @@
     "score": 39,
     "release_version": "v0.35.0",
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1191,8 +1137,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1212,8 +1158,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1234,8 +1180,8 @@
     ],
     "score": 37,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1258,8 +1204,8 @@
     ],
     "score": 37,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1281,8 +1227,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1301,8 +1247,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1321,8 +1267,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-11T08:52:07.665629+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

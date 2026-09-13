@@ -1,50 +1,24 @@
 [
   {
-    "title": "An Experimental Evaluation of Multimodal Prompt Injection Attacks on Agentic AI Frameworks",
-    "url": "https://arxiv.org/abs/2609.09404",
+    "title": "What a Random Draw from the MCP Registry Contains, and What Tool-Use Benchmarks Contain Instead",
+    "url": "https://arxiv.org/abs/2609.10962",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.09404v1 Announce Type: cross Abstract: Agentic AI frameworks let a language model plan, keep memory, and call tools that reach real files, mail, and services. Most of these agents also read images, which gives an attacker a way to put text into the agent's context without going through the user. We present MMPIBench, a reproducible benchmark that measures what happens next. It delivers a fixed set of attacks through six visual carriers (OCR text, overlays, EXIF metadata, QR codes, fake interfaces, and hybrids) and records how far each injected instruction travels through the agent, from perception through planning to the tool call. Across 720 runs covering six frameworks, five foundation models, six carriers, and four attacker objectives, attacks complete in approximately 1% of runs but are attempted in 12.8%, and the gap is closed almost entirely at the planning step, where the model reads the injected instruction and declines to act on it. The model matters far more than the framework for whether an instruction is acted on. One model never attempts an attack and recognizes the injection in 59.7% of runs, while two others attempt in 23.6%. We then extend the benchmark...",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.10962v1 Announce Type: cross Abstract: Studies of the Model Context Protocol (MCP) server ecosystem draw their samples in ways that quietly select for servers that work: reference sets, popularity lists, hand-curated frames, or pipelines that repair a server until it starts. We report what an unrepaired probability sample actually contains. From a 24,135-server registry census we draw 400 npm/stdio servers with a published seed and probe each one over the wire. Only 48.8% complete an initialize handshake, against 66.7% for a hand-curated frame measured with the same instrument, and the dominant failure is not missing credentials (13.3%) but servers that never start at all (37.5%). Among the 195 that do run, hard conformance is total: zero fatal JSON Schema violations across 2,766 advertised tools. Optional safety annotations are the real variance, and the tool-level omission rate on a random draw is 58.8% against 41.5% on the curated frame, so curation flatters this figure too. We then compare the tool descriptions these servers advertise against two tool-use benchmark corpora using one method held constant. Real MCP tools show 2.8% near-duplication at cosine 0.70, and...",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents",
-    "url": "https://arxiv.org/abs/2605.21384",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.21384v2 Announce Type: replace-cross Abstract: As long-horizon coding agents produce more code than any developer can review, oversight collapses onto a single surface: the automated test suite. Reward hacking naturally arises in this setup, as the agent optimizes for passing tests while deviating from the users true goal. We study this reward hacking phenomenon by decompose software engineering tasks into three parts: (i) a natural language description of the specification (ii) visible validation tests that exercise specified features in isolation, and (iii) held-out tests that compose those same features to simulate real-world usage. Based on the specification and the visible validation test suites, a genuine agent would be able to generate a solution that can also pass all of the held-out tests. Therefore we use the gap in pass rates on these two suites to quantify reward hacking. Based on this methodology, we introduce SpecBench, a benchmark comprising 30 systems-level programming tasks ranging from short horizon tasks like building a JSON parser to ultra long horizon tasks like building an entire OS kernel from scratch. Large-scale experiments reveal a consistent p...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
       "benchmark",
-      "software engineering"
+      "MCP",
+      "Model Context Protocol"
     ],
     "tags": [
       "agent",
-      "coding_tool",
       "open_source"
     ],
     "score": 65,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -54,7 +28,7 @@
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
+    "published_at": "2026-09-12T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2609.04298v3 Announce Type: replace Abstract: Evaluating agents on the growing number of agentic benchmarks is challenging because they often require complex environments and agent integrations. We introduce Harbor Adapters, a unified evaluation infrastructure for agentic benchmarks. Our work makes three contributions. First, we develop benchmark adapters that port more than 80 benchmarks to evaluate arbitrary agents, and validate them through rigorous code review and parity experiments. Second, we conduct a large-scale evaluation of 8 models spanning capability tiers across 54 benchmarks; every model is run with Terminus-2 and with one of 3 native harnesses. This enables a broader analysis of agent capabilities and failure modes than was previously possible. Third, we introduce Harbor-Index, a curated set of 82 difficult, diverse, and high-quality tasks spanning 29 benchmarks, refined from the adapted suite through difficulty filtering, AI and human audit, and an audit-and-fix loop. Harbor-Index preserves the challenge and breadth of large-scale agentic evaluations while being affordable to run; no evaluated model-harness configuration exceeds 30% pass rate, and the stronge...",
     "matched_keywords": [
       "Agent",
@@ -70,8 +44,33 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+    "url": "https://arxiv.org/abs/2609.11060",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.11060v1 Announce Type: new Abstract: Persistent memory is entering production-oriented agent platforms to help long-horizon agents accumulate experience across sessions. Yet a post-task curator agent restricted to completed trajectories can preserve errors, overgeneralize partial evidence, or retain stale knowledge. We introduce environment-probing curation, a deployment-compatible extension that gives an existing asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories. It requires no model retraining and leaves the task agent, retriever, memory representation, and production write authority unchanged. In a production-like GitHub Copilot (GHCP) harness built on its SDK, we compare stateless execution, full in-context learning, GHCP + Mem, and GHCP + Mem (w/ Env Probing) on CLBench database exploration and 90 adapted APEX management-consulting tasks. On CLBench, probing raises pass rate from 39% to 73% and pass-discounted reward from 8.60 to 22.60 while reducing queries from 8.8 to 4.7 per question and task-agent cost from \\$3.38 to \\$1.68. Across six APEX worlds, all 18 memory-versus-baseline mean reward comparis...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "GitHub",
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -98,8 +97,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -128,7 +127,35 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "When Synthetic Data Hurts: On Catastrophic Forgetting in Skill Retrieval for LLM Agents",
+    "url": "https://arxiv.org/abs/2609.10750",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.10750v1 Announce Type: cross Abstract: LLM agents increasingly rely on external skills retrieved at runtime, making skill selection from large repositories a critical challenge. We present a production skill router over 34,396 skills and a large-scale study of skill retrieval using limited real supervision and synthetic data. We found that the synthetic-data fine-tuning improves in-distribution retrieval but it causes catastrophic forgetting on real and out-of-distribution (OOD) data. We evaluate several forgetting mitigation fine-tuning approaches inspired by continual learning, including embedding-anchor regularization, Learning without Forgetting (LwF), Elastic Weight Consolidation (EWC), and L2-initialization. The results show that these approaches not only retain the performance on OOD skills retrieval but also improve the retrieval on synthetic in-distribution skills by 13.98\\% for 0.6B Qwen retriever and reranker. Our results provide a practical benchmark and a robust fine-tuning recipe for scarce, multi-positive supervision.",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "fine-tuning",
+      "Qwen",
+      "reranker",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -148,7 +175,23 @@
     ],
     "score": 61,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Can Edge-Deployable Vision-Language Models Identify Species?",
+    "url": "https://arxiv.org/abs/2609.11916",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.11916v1 Announce Type: new Abstract: Camera traps often run in the field on edge hardware with limited or no connectivity, making small, locally-deployable vision-language models (VLMs) -- not frontier-scale ones -- the practically relevant class to evaluate for species identification. We test whether models in this deployment-relevant 2--8B range carry genuine taxonomic knowledge, evaluating four such VLMs (Qwen3-VL 2B/4B/8B, Gemma3 4B) against the domain-specific specialist BioCLIP (300M parameters) on a 96-species task, comparing clean iNaturalist photographs against camera-trap imagery from 6 LILA.science collections, on two independently-sampled evaluation sets. All models identify species far above chance, but every model -- general-purpose or specialist -- degrades sharply on field imagery (domain gaps of 9.6--26.6 percentage points, consistent across taxonomic levels and both evaluation sets), indicating the degradation reflects general image legibility rather than fine-grained discrimination failure. BioCLIP substantially outperforms every VLM tested (by 33.2--59.2 percentage points across an expanded 200-image sample for every model) despite its far smaller si...",
+    "matched_keywords": [],
+    "tags": [],
+    "score": 58,
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -178,39 +221,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Runway 发布 Adobe 插件，可在 Premiere Pro 和 After Effects 内直接生成与编辑",
-    "url": "https://aihot.news/items/cmtt7nvmn02h6romq0xpo0p2w",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T21:58:07+00:00",
-    "summary_or_excerpt": "Runway 发布 Runway Plugins，新面板可直接嵌入 Premiere Pro 和 After Effects，在时间线内生成图像和视频、重绘片段并放置结果。Edit Studio 可基于已有片段用 Aleph 2 按原始时长重新渲染，插件免费下载（macOS 和 Windows），生成功能面向所有付费计划并消耗现有额度。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtt7nvmn02h6romq0xpo0p2w",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 58,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Dwarkesh Patel 研究：预训练进步主要来自数据改进",
-    "url": "https://aihot.news/items/cmtsx0wm4041jrob5liwjypsq",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T16:10:16+00:00",
-    "summary_or_excerpt": "Dwarkesh Patel 发布实验分析，在最高 1e19 FLOPs 的算力预算下训练 2019 至 2025 年各年度代表性模型配方与数据语料，发现数据改进带来 12.0x 算力效率提升，模型改进为 3.7x，数据贡献约为模型的 3.24 倍。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmtsx0wm4041jrob5liwjypsq",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 56,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -234,8 +245,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -260,8 +271,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -284,8 +295,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -306,102 +317,57 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "The Era by Eon Benchmark: A Generated Enterprise Estate with Exact Ground Truth for Benchmarking LLM Agents",
-    "url": "https://arxiv.org/abs/2609.09853",
+    "title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
+    "url": "https://arxiv.org/abs/2609.11115",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.09853v1 Announce Type: new Abstract: LLM agents for enterprise systems of record cannot be evaluated on customer production data, and no existing substitute provides ground truth. We present the Era by Eon Benchmark for evaluating LLM agents that use enterprise tools. The benchmark is built around a complete fictional company. It includes product simulators, company-specific internal databases, benchmark questions, and computed answer keys. Industry, company size, business model, application portfolio, and a seed define each company. One seeded entity graph supplies shared company data to simulators of Salesforce, Zendesk, Slack, Gong, and other products. A questionconditioned generator creates the schemas and records for internal databases. It takes shared entities, keys, and values from the same graph before generating database-specific facts. Both mechanisms therefore describe one consistent enterprise estate. Every expected answer is computed from the final records, so grading is exact. Design and answer-key checks validate the internal databases. A realism scorecard and adversarial detector validate the entity graph. Across 23 generated companies, the mean realism...",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.11115v1 Announce Type: new Abstract: Benchmark researchers and developers of large language models (LLMs) and other AI systems need to find relevant evaluations, locate their benchmark datasets and code, and understand the settings behind reported scores. We present Benchmark Radar, a living database and search engine for retrieval and discovery of AI benchmarks, covering LLM evaluation, agentic and tool-use benchmarks, coding, reasoning, safety, and domain-specific evaluations. The system combines daily discovery of benchmark papers, repositories, datasets, and releases with a searchable benchmark catalog, mentions in model cards and technical reports, and score histories. It retains source identities and citations so readers can inspect candidate benchmarks and their evaluation evidence. Daily discovery draws on 37 sources: 13 direct connectors and 24 first-party research and engineering feeds. The catalog contains 1,283 source records drawn from 4 benchmark catalogs and 12,916 numeric observations on 790 records. We describe collection and retrieval, audit the full catalog, and examine benchmark saturation, adoption trends, and the limits of score comparisons. A work...",
     "matched_keywords": [
-      "agents",
+      "agentic",
       "benchmark",
-      "customer"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Fortunate Recall: Ontology-Driven Memory Lifecycle Management for Persistent Coherence in LLMs",
-    "url": "https://arxiv.org/abs/2609.10413",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.10413v1 Announce Type: new Abstract: Current LLM memory systems treat all personal facts identically, so stores grow without bound while retrieval precision degrades. The core challenge is lifecycle management: which memories should persist, which should be replaced, and at what rate, conditioned on the behavioral type of each fact. Fortunate Recall (FR) is a composable policy layer that classifies personal facts into a 10+1 behavioral ontology and applies category-specific lifecycle policies (differential temporal decay, slot-key supersession, event-time validity, and category-aware retrieval routing) as deterministic functions over LLM-extracted metadata. FR-Bank, our infrastructure-independent implementation, reaches a 76.9% pass rate on LifecycleBench, a new 516-question temporal-disambiguation benchmark, ahead of Mem0, A-MEM, Memory-R1, and MemoryOS (61% to 70.5%), and 75.2% on the full LongMemEval-S under the canonical Wu et al. judge protocol, so lifecycle policies impose no measurable cost on standard retrieval. A pre-registered ablation locates the gains: replacing the typed layer with three generic lifecycle primitives leaves correctness statistically unchange...",
-    "matched_keywords": [
-      "benchmark",
-      "policy",
       "retrieval"
     ],
     "tags": [
-      "business",
+      "agent",
       "open_source",
       "rag_data"
     ],
     "score": 50,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
-    "url": "https://arxiv.org/abs/2609.10451",
+    "title": "SemVerBench: Benchmarking LLM Comprehension of Version-Constraint Resolution Semantics",
+    "url": "https://arxiv.org/abs/2609.11180",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.10451v1 Announce Type: new Abstract: Real-world GUI usage frequently involves workflows that span multiple devices and platforms, requiring the transfer of intermediate results, maintenance of shared state, and coordination across heterogeneous environments. However, existing GUI benchmarks overwhelmingly evaluate agents on single-device, statically defined tasks, thus leaving such cross-device capabilities largely unexamined, resulting in an overly optimistic assessment of agents' readiness for real-world usage. We introduce JarvisGUI, a dynamic benchmark that evaluates GUI agents on cross-device workflows requiring coordinated interaction across heterogeneous platforms, including Android, Windows, and Ubuntu. Specifically, JarvisGUI formulates GUI tasks as input-output transformations under a lightweight type system, which allows us to automatically compose multi-step, cross-device workflows and dynamically evaluate agent performance within a unified framework. By evaluating agents in virtual environments spanning multiple operating systems, JarvisGUI reveals that state-of-the-art open-source GUI agents struggle with the state-transfer awareness, cross-platform contex...",
+    "published_at": "2026-09-12T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.11180v1 Announce Type: new Abstract: Large language model (LLM) coding agents constantly decide whether a version satisfies a constraint such as ^1.2.3 or >=2.0, 1.2 means >=1.3.0) traps every model on Cargo (near 60%), and although standard PEP 440 prefix matching is universal, on zero-pad/post-release corner cases GPT-5.1 collapses (0/26) while Claude stays at 97-100% (verified on a 67-item oracle-validated set). Opus significantly outperforms all other models, and Sonnet outperforms the OpenAI models (McNemar). The failures look more like an activation/application gap than a knowledge gap: injecting the rule or a light correct hint recovers most errors, whereas interval decomposition does not, and models are at ceiling on the basic forms of the same rules. An author-stratified analysis finds no statistically significant self-favoritism. Because the task is verifiable and a free, 100%-correct resolver exists, tool delegation reaches ~100%: coding agents should delegate version resolution to a resolver rather than reason about versions in-head.",
     "matched_keywords": [
-      "Agent",
       "agents",
-      "benchmark"
+      "Claude",
+      "GPT",
+      "OpenAI",
+      "release"
     ],
     "tags": [
       "agent",
+      "model",
       "open_source"
     ],
     "score": 50,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
-    "url": "https://arxiv.org/abs/2609.10494",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-11T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.10494v1 Announce Type: cross Abstract: Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has three parts. A gold-blind capability-binding preflight verifies that a route can execute the evaluation contract before any task reaches it; a reliability-inclusive first-pass scoring rule keeps failure in the score while keeping unsupported capability out; and adjudication is structurally score-blind. We call the protocol IB2 and release its algorithms, classification tables, request contract, and manifest schemas. Its reference instantiation, 128 locked tasks and 987 assertions over document, spreadsheet, chart, tool and database work, stays sealed: the procedure is the artifact, not the corpus. Across eleven systems, four results. Capability availability is measurable: two complete single-route runs on identical weights later failed distinct predicates of the finalized binding gate, while a third passed that gate before a fresh run....",
-    "matched_keywords": [
-      "enterprise AI",
-      "release",
-      "serving",
-      "weights"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -425,198 +391,31 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "DirectX Support Promoted To Official Target Within LLVM",
-    "url": "https://www.phoronix.com/news/LLVM-DirectX-Backend-Official",
-    "source_name": "Phoronix",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T10:21:51+00:00",
-    "summary_or_excerpt": "Over the past four years there has been a lot of work on a DirectX back-end within the LLVM compiler stack. Microsoft has backed the initiative for being able to lower LLVM IR into the DirectX Intermediate Language (DXIL) for execution by Windows DirectX 12 graphics drivers. This back-end is now officially supported...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 49,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "AI Scan for pull request APIs in public preview",
-    "url": "https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
+    "title": "llama.cpp b10934：common : implement common_schema internal representation for JSON schemas (#28736)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10934",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
     "source_level": "official_confirmed",
-    "published_at": "2026-09-10T20:20:58+00:00",
-    "summary_or_excerpt": "You can now manage GitHub code scanning’s AI Scan for pull request enablement with REST API endpoints at the organization and repository levels. This public preview gives teams a programmatic… The post AI Scan for pull request APIs in public preview appeared first on The GitHub Blog .",
+    "published_at": "2026-09-13T00:15:56+00:00",
+    "summary_or_excerpt": "common : implement common_schema internal representation for JSON schemas (#28736) * common : implement common_schema types * common : implement a json schema optimizer * common : reduce optimizations * common : refactor json-schema-to-grammar to use common_schema * common : use common_trie * common/schema : implement type/kind resolution * cont : cleanup * cont : remove common_chat_tool_parameters * cont : simplify schema resolution * cont : pass common_schema through the json-schema-to-grammar builder * cont : cleanup * cont : move enums under common_schema and add type enum * cont : reduce test cases * cont : clean up * cont : clean up * refactor : rename common_schema_parse to common_schema_from_json * tests : fix gcc dangling-reference warning in test-json-schema * tests : take the schema label as const char * to satisfy gcc dangling-reference * refactor : rename common_schema_builder parse_* methods to build_* * cont : fix may_be_string * cont : properly handle empty tool parameters * cont : add tests for empty $ref * cont : remove dead code * cont : update docs * cont : make \"{}\" mean any object for json_object as well * cont : restore (min|max)Length to imply string type *...",
     "matched_keywords": [
-      "API",
-      "changelog",
-      "GitHub",
-      "pull request",
-      "repository"
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
-      "business",
-      "coding_tool",
+      "model",
       "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video",
-    "url": "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai",
-    "source_name": "NVIDIA Blog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-10T16:30:35+00:00",
-    "summary_or_excerpt": "Manufacturing floors, warehouses and production lines rarely stay fixed — tasks change, layouts shift and new products arrive, and most robots can’t keep up without significant reprogramming. Skild AI’s new S1 robot foundation model helps address this, designed to learn previously unseen, long-horizon tasks from a single video demonstration. The model, launched last week, uses […]",
-    "matched_keywords": [
-      "NVIDIA"
-    ],
-    "tags": [
-      "semiconductor"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Don't sleep on wrapture",
-    "url": "https://simonwillison.net/2026/Sep/11/wrapture",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-11T13:51:32+00:00",
-    "summary_or_excerpt": "Graham Dumpleton's new monkey patching package wrapture is shaping up to be an indispensable tool for Python developers. I'm not sure why I've seen so little buzz about it! Graham has been posting new tutorials for it almost daily since the initial release on August 31st. Here's everything he's published so far: Introducing wrapture - a new monkey patching library that serves both testing and observability (think New Relic style tracing) at the same time. Unit testing with wrapture - how to use it for the same kinds of thing as unittest.mock . Recording calls with wrapture - recording method calls as timelines and processing and displaying them as trees. Phased behaviour in wrapture - arranging patched methods to change behavior across multiple calls. Beyond callables in wrapture - monkey patching attributes, dictionaries, generators. Live tracing with wrapture - tracing a live application to see exactly how it works. Zero-code tracing with wrapture - configuring tracing in a separate TOML file without modifying Python code at all. Tracing Flask with wrapture - using the separate wrapture-instrumenation package to instrument a Flask application. That package also provides instrume...",
-    "matched_keywords": [
-      "release"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Mistral raises €3B as sovereign AI becomes big business",
-    "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T14:17:48+00:00",
-    "summary_or_excerpt": "The French AI lab has raised €3 billion at a €21 billion valuation in a Series D round led by Samsung, Scaleup Europe, and PSG Equity.",
-    "matched_keywords": [
-      "Mistral"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "使用 Data Agent Kit 实现智能体化分析",
-    "url": "https://www.bestblogs.dev/en/article/9c0442a7fc?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-08T00:00:00+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Data Agent Kit 使数据从业人员能够通过自然语言提示词回答复杂的业务问题，自动查询 BigQuery、Cloud SQL 和 Cloud Storage 等多个数据源，以识别根本原因并构建可复用的数据流水线。 📝 Summary 本文介绍了 Data Agent Kit，这是一款 Google Cloud 解决方案，允许数据分析师通过其 IDE 使用自然语言提示词运行数据工作流。文章演示了该工具如何连接多个数据源（用于分析数据的 BigQuery、用于业务记录的 Cloud SQL 以及用于营销元数据的 Cloud Storage），以调查诸如平均订单价值下降等业务问题。该工具利用模型上下文协议（MCP）和可定制的技能来自动化查询执行和数据集成，减少了手动编写代码和跨系统导航的需求。此外，文章还展示了如何将分析结果转换为可复用的 dbt 项目以供未来使用。 💡 Main Points Data Agent Kit 通过实现跨多个数据源的自然语言查询，解决了跨系统数据分析的挑战。 它利用模型上下文协议（MCP）和智能体技能，自动化了查询 BigQuery、Cloud SQL 和 Cloud Storage 的过程，消除了手动编写 SQL 和系统导航的需求。 一个实际案例研究展示了该工具如何识别平均订单价值下降的根本原因。 通过在单个聊天会话中查询分析数据、业务记录和营销元数据，智能体发现使用促销折扣码的新 B2B 批发客户是导致下降的原因。 该工具支持从即时调查构建可复用的数据流水线。 它可以将自然语言分析转换为 dbt 项目，包括数据模型和质量测试，从而实现自动化且一致的未来分析。 💬 Key Quotes 通过将 MCP 等开放标准与模块化（且可编辑！）的智能体技能相结合，Data Agent Kit 消除了问题与答案之间的摩擦。 梳理陌生的模式、在不同方言之间进行转换、编写你已经写过一百次的连接查询：这些都变成了智能体的工作。你负责指挥调查的方向。 📊 Article Meta AI Screening： 90 Source： Google Cloud Blog Author： Jeff Nelson Category： 人工智能 Language： 英文 Read Time： 6 min Word Count： 1306 Tags： AI Agents , 数据分析 , 云数据工具 , NLP , 数据集成 Read Full Article",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "IDE",
-      "MCP",
-      "Meta AI"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model"
-    ],
-    "score": 45,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Creepy crawlies",
-    "url": "https://simonwillison.net/2026/Sep/7/creepy-crawlies",
-    "source_name": "Simon Willison",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-07T23:08:58+00:00",
-    "summary_or_excerpt": "Creepy crawlies Konstantin Ryabitsev discusses how bad the \"background radiation\" of abusive crawlers has become from the perspective of git.kernel.org , the official Git repository for the Linux kernel: TL;DR: we spend more CPU cycles rendering commits for scrapers than we spend on all other kinds of legitimate access, including git clones. At any one time, across 5 geo-distributed nodes, there are 14 CPU cores doing nothing but rendering git commits as html. I worry about this a lot from the perspective of Datasette, which serves a huge number of crawlable web pages. Via Hacker News Tags: crawling , git , linux , datasette , ai-ethics",
-    "matched_keywords": [
-      "repository"
-    ],
-    "tags": [
-      "coding_tool"
     ],
     "score": 44,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Show HN: Copperhead – Cursor for circuit boards",
-    "url": "https://copperhead.sh/",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-08T13:26:45+00:00",
-    "summary_or_excerpt": "HN points: 203. Comments: https://news.ycombinator.com/item?id=49610059",
-    "matched_keywords": [
-      "Cursor"
-    ],
-    "tags": [
-      "coding_tool"
-    ],
-    "score": 43,
-    "hn_score": 203,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Multi-Agents LLM Financial Trading Framework",
-    "url": "https://github.com/TauricResearch/TradingAgents",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-08T05:20:23+00:00",
-    "summary_or_excerpt": "HN points: 113. Comments: https://news.ycombinator.com/item?id=49605822",
-    "matched_keywords": [
-      "agents"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 43,
-    "hn_score": 113,
-    "first_seen_at": "2026-09-09T08:57:57.608390+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
+    "release_version": "b10934",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -640,107 +439,29 @@
       "open_source"
     ],
     "score": 42,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "RT-Thread RT-Thread v5.3.0 Released：Change Log Since v5.2.2 Release.",
-    "url": "https://github.com/RT-Thread/rt-thread/releases/tag/v5.3.0",
-    "source_name": "RT-Thread",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-10T10:05:54+00:00",
-    "summary_or_excerpt": "Change Log Since v5.2.2 Release. ## Kernel * Fix timeout wakeup ownership races in IPC and LWP wait paths. [(#11631)](https://github.com/RT-Thread/rt-thread/pull/11631) * Fix delayed wakeups when a thread is suspended repeatedly. [(#10970)](https://github.com/RT-Thread/rt-thread/pull/10970) * Prevent suspension of idle threads. [(#11314)](https://github.com/RT-Thread/rt-thread/pull/11314) * Release mutexes held by a thread when it is deleted by another thread. [(#11620)](https://github.com/RT-Thread/rt-thread/pull/11620) * Calculate recent thread CPU usage from incremental statistics over sampling windows. [(#11256)](https://github.com/RT-Thread/rt-thread/pull/11256) * Add 8-bit and 16-bit atomic operation support. [(#11244)](https://github.com/RT-Thread/rt-thread/pull/11244) * Remove object name length assertions and safely truncate long names. [(#10943)](https://github.com/RT-Thread/rt-thread/pull/10943) * Reject invalid frees in memheap and handle NULL names in `rt_smem_setname`. [(#11721)](https://github.com/RT-Thread/rt-thread/pull/11721) [(#11598)](https://github.com/RT-Thread/rt-thread/pull/11598) * Check interrupt-disabled contexts when validating scheduler availability an...",
-    "matched_keywords": [
-      "GitHub",
-      "release",
-      "RT-Thread"
-    ],
-    "tags": [
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 42,
-    "release_version": "v5.3.0",
-    "first_seen_at": "2026-09-11T08:52:07.665629+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ChatGPT Images 2.5 更新及新 API 模型",
-    "url": "https://www.bestblogs.dev/en/status/2097394962782384318?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
+    "title": "Anthropic spent this week in hot water over cybersecurity",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/994064/anthropic-spent-this-week-in-hot-water-over-cybersecurity",
+    "source_name": "The Verge AI",
     "source_type": "rss",
     "source_level": "needs_verification",
-    "published_at": "2026-09-08T18:41:41+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary OpenAI 宣布 ChatGPT Images 2.5 向所有用户推出，并引入两个具有增强功能的新 API 模型。 📝 Summary 推文宣布 ChatGPT Images 2.5 在所有平台上对用户可用，并介绍两个新的 API 模型：GPT-Image-2.5 Flare 具有质量、编辑和速度提升，而 GPT-Image-2.5 Sunburst 则为详细创意工作提供精度。 📊 Article Meta AI Screening： 90 Source： OpenAI(@OpenAI) Author： OpenAI Category： 人工智能 Language： 英文 Read Time： 2 min Word Count： 374 Tags： 模型发布 , AI 产品与应用 , 图像生成 , API 更新 , GPT-4 Read Tweet",
+    "published_at": "2026-09-11T16:09:14+00:00",
+    "summary_or_excerpt": "After admitting earlier this year that its AI models had hacked other companies' systems on a handful of occasions, Anthropic released a new report on Wednesday detailing the attacks. It reveals a string of incidents displaying what Anthropic deems its models' single-minded \"recklessness\" - and will likely fuel already raging concerns about cybersecurity and AI. […]",
     "matched_keywords": [
-      "API",
-      "ChatGPT",
-      "GPT",
-      "Meta AI",
-      "OpenAI"
+      "Anthropic"
     ],
     "tags": [
-      "business",
       "model"
     ],
     "score": 42,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Show HN: Self-hosted company OS, Claude Code and Codex agents in departments",
-    "url": "https://github.com/OtoDock/oto-dock",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-09T17:57:55+00:00",
-    "summary_or_excerpt": "HN points: 38. Comments: https://news.ycombinator.com/item?id=49630606",
-    "matched_keywords": [
-      "agents",
-      "Claude",
-      "Claude Code",
-      "Codex"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model"
-    ],
-    "score": 42,
-    "hn_score": 38,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenAI 上线 GPT Image 2.5，作者实测新版与 image2 的生图差异",
-    "url": "https://aihot.news/items/cmttklkuj0chfrofpzacvz20x",
-    "source_name": "AIHOT Featured",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-09T00:27:00+00:00",
-    "summary_or_excerpt": "OpenAI 上线 GPT Image 2.5，主打更快生成、更高清、多轮编辑一致性和区域标注精修，并新增涂鸦绘图与 15 个图片模版功能。API 同步发布 GPT-Image-2.5 Flare（速度提升 50%）和 GPT-Image-2.5 Sunburst（更高精度）。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmttklkuj0chfrofpzacvz20x",
-    "matched_keywords": [
-      "API",
-      "GPT",
-      "OpenAI"
-    ],
-    "tags": [
-      "business",
-      "model"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -761,8 +482,8 @@
     ],
     "score": 41,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -784,8 +505,8 @@
       "model"
     ],
     "score": 40,
-    "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -805,7 +526,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -829,7 +550,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -852,7 +573,7 @@
     "score": 40,
     "hn_score": 47,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -873,7 +594,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -895,8 +616,8 @@
     ],
     "score": 39,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -919,7 +640,7 @@
     "score": 39,
     "release_version": "v0.35.0",
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -943,8 +664,8 @@
     ],
     "score": 38,
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -963,7 +684,7 @@
     ],
     "score": 38,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -984,8 +705,33 @@
     ],
     "score": 38,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "OpenHands v1.18.0：1.18.0 (2026-09-11)",
+    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.18.0",
+    "source_name": "OpenHands",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-11T18:27:48+00:00",
+    "summary_or_excerpt": "## 1.18.0 (2026-09-11) ## What's Changed ### Features * feat: click an image attachment to open it full size by @palrohitg in https://github.com/OpenHands/OpenHands/pull/17179 * feat: only the creator can turn an automation back on by @hieptl in https://github.com/OpenHands/OpenHands/pull/17190 * feat: allow editing automations on cloud backends by @hieptl in https://github.com/OpenHands/OpenHands/pull/17191 * feat: show which identity an automation runs as by @hieptl in https://github.com/OpenHands/OpenHands/pull/17138 * feat: use DB-driven free/default model flags in Canvas by @juanmichelini in https://github.com/OpenHands/OpenHands/pull/16685 ### Bug Fixes * fix: pass the active org from the gear icon to cloud settings by @hieptl in https://github.com/OpenHands/OpenHands/pull/17256 * fix: hide unlisted settings pages from the command menu when locked to a Cloud host by @hieptl in https://github.com/OpenHands/OpenHands/pull/17254 * fix: open Cloud settings in the same tab when locked to a Cloud host by @hieptl in https://github.com/OpenHands/OpenHands/pull/17253 * fix: OHE-3110 : remove misleading \"No budget limit\" line from Token Usage panel by @tofarr in https://github.com/Ope...",
+    "matched_keywords": [
+      "automation",
+      "GitHub",
+      "OpenHands"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 37,
+    "release_version": "v1.18.0",
+    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -1008,8 +754,8 @@
     "score": 37,
     "release_version": "b10909",
     "first_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -1030,7 +776,7 @@
     ],
     "score": 37,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1054,7 +800,7 @@
     ],
     "score": 37,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1077,7 +823,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1097,7 +843,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -1117,7 +863,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-10T08:48:40.645060+08:00",
-    "last_seen_at": "2026-09-12T08:54:41.675088+08:00",
+    "last_seen_at": "2026-09-13T08:36:54.239964+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

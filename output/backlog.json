@@ -1,36 +1,34 @@
 [
   {
-    "title": "Capable but Careless: Do Computer-Use Agents Follow Contextual Integrity?",
-    "url": "https://arxiv.org/abs/2606.23189",
-    "source_name": "arXiv cs.CL",
+    "title": "$\\tau$-Elicitation: Benchmarking multi-turn entity extraction in voice agents",
+    "url": "https://arxiv.org/abs/2609.13602",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.23189v2 Announce Type: replace-cross Abstract: Computer-use agents (CUAs) now act on a user's behalf across personal applications such as email, calendars, and to-do lists. This cross-application access is useful, but it also creates a privacy risk that has been largely overlooked: when an agent works in one context, it can pull in information from another that is inappropriate in that context. Hence, we introduce AgentCIBench, an evaluation harness that turns this risk into executable, deterministically scored scenarios. We target three common failure modes in CUAs: visual co-location, where the agent pulls in prohibited items that sit next to the task target in the UI; task-ambiguity overshare, where the agent dumps dense personal state in response to an under-specified prompt; and recipient misalignment, where the agent sends content to an addressee for whom it is inappropriate. We evaluate 15 frontier agents and find a surprisingly high failure rate: 11 of 15 leak on more than 50% of scenarios, with an average leakage of 67.9%, and the same failures persist when agents act end-to-end in the environment to complete the task. We release AgentCIBench to encourage the d...",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.13602v1 Announce Type: new Abstract: Voice agents often need to collect names, addresses, identifiers, dates, and times exactly, yet end-to-end benchmarks obscure where capture fails. We introduce $\\tau$-Elicitation, a 200-task voice benchmark spanning 10 entity types, controlled difficulty, caller realisms, and three environments. A matched text agent passes all tasks, but four voice configurations achieve robust exact success from 0.14 to 0.41. Agents increase verification for hard and unfamiliar entities and sometimes for incorrect captures, but not for their weakest caller voice; only 24 to 37 percent of verified errors are repaired. A scaffold that prescribes spelling, read-back, correction, and confirmation raises robust Pass$^3$ by 14 to 31 points, at a cost of 21 to 28 seconds per call. Realisms such as spelling variations and restarts do not detectably affect exact success; mispronunciation increases repair effort. These results identify strategy selection and successful recovery as the central bottlenecks in exact spoken entity collection.",
     "matched_keywords": [
       "Agent",
       "agents",
-      "privacy",
-      "release"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "business",
       "open_source"
     ],
-    "score": 65,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "score": 58,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
     "title": "Is Bash All You Need? An Empirical Study of Tool Interfaces for Enterprise Digital Worker Agents",
     "url": "https://arxiv.org/abs/2609.11999",
-    "source_name": "arXiv cs.CL",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
+    "published_at": "2026-09-15T04:00:00+00:00",
     "summary_or_excerpt": "arXiv:2609.11999v1 Announce Type: cross Abstract: In this study, we examine whether a general shell can outperform specialized tools on enterprise tasks. Shell-based agents have shown strong results in coding, but enterprise work also involves moving between applications and services, coordinating with coworkers, and performing professional analysis. We compare five tool interfaces on TheAgentCompany and APEX-Agents using Opus-4.8 and GPT-5.5: typed tools, typed tools plus bash, bash alone, bash with persistent agent-synthesized tools, and programmatic tool calling (PTC), which runs programs whose actions are restricted to a typed tool catalog. Bash alone outperforms typed tools on both benchmarks, improving score by 21.8-24.5 pp on TheAgentCompany and 4.8-7.4 pp on APEX-Agents while using 19-72% fewer total tokens. Adding typed tools or persistent tool synthesis to bash produces no detectable pooled score gain. PTC uses fewer tokens than direct typed calls with broadly similar task performance, but generally underperforms bash alone in both quality and cost efficiency. For enterprise practitioners, these results favor bash alone when arbitrary execution can be isolated and PTC wh...",
     "matched_keywords": [
       "Agent",
@@ -41,54 +39,10 @@
       "agent",
       "model"
     ],
-    "score": 64,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "score": 53,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "When Synthetic Data Hurts: On Catastrophic Forgetting in Skill Retrieval for LLM Agents",
-    "url": "https://arxiv.org/abs/2609.10750",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.10750v1 Announce Type: cross Abstract: LLM agents increasingly rely on external skills retrieved at runtime, making skill selection from large repositories a critical challenge. We present a production skill router over 34,396 skills and a large-scale study of skill retrieval using limited real supervision and synthetic data. We found that the synthetic-data fine-tuning improves in-distribution retrieval but it causes catastrophic forgetting on real and out-of-distribution (OOD) data. We evaluate several forgetting mitigation fine-tuning approaches inspired by continual learning, including embedding-anchor regularization, Learning without Forgetting (LwF), Elastic Weight Consolidation (EWC), and L2-initialization. The results show that these approaches not only retain the performance on OOD skills retrieval but also improve the retrieval on synthetic in-distribution skills by 13.98\\% for 0.6B Qwen retriever and reranker. Our results provide a practical benchmark and a robust fine-tuning recipe for scarce, multi-positive supervision.",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "fine-tuning",
-      "Qwen",
-      "reranker",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can Edge-Deployable Vision-Language Models Identify Species?",
-    "url": "https://arxiv.org/abs/2609.11916",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.11916v1 Announce Type: new Abstract: Camera traps often run in the field on edge hardware with limited or no connectivity, making small, locally-deployable vision-language models (VLMs) -- not frontier-scale ones -- the practically relevant class to evaluate for species identification. We test whether models in this deployment-relevant 2--8B range carry genuine taxonomic knowledge, evaluating four such VLMs (Qwen3-VL 2B/4B/8B, Gemma3 4B) against the domain-specific specialist BioCLIP (300M parameters) on a 96-species task, comparing clean iNaturalist photographs against camera-trap imagery from 6 LILA.science collections, on two independently-sampled evaluation sets. All models identify species far above chance, but every model -- general-purpose or specialist -- degrades sharply on field imagery (domain gaps of 9.6--26.6 percentage points, consistent across taxonomic levels and both evaluation sets), indicating the degradation reflects general image legibility rather than fine-grained discrimination failure. BioCLIP substantially outperforms every VLM tested (by 33.2--59.2 percentage points across an expanded 200-image sample for every model) despite its far smaller si...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 58,
-    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -113,7 +67,148 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MemRiskBench: Trace-Aware Risk-Preserving Evaluation for Long-Horizon LLM Agents",
+    "url": "https://arxiv.org/abs/2609.14976",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14976v1 Announce Type: new Abstract: Long-horizon LLM agents accumulate memory across sessions, creating sparse but high-impact risks: stale facts, conflicting updates, cross-user leakage, revoked-memory reuse, and constraint decay. Standard aggregate scores hide per-risk failure rates--a model achieving 78% average accuracy may still leak data in 4% of episodes--and benchmark compression preferentially discards the rare high-severity events that distinguish a mostly-working model from one that occasionally causes harm. We present MemRiskBench. The primary contribution is a five-category risk taxonomy (plus one documented, unscored category) operationalized by deterministic trace grounded checks, instantiated as a 120-episode scripted benchmark with full trace logging and no LLM-as-judge on the pass/fail path, evaluated on five locally run quantized instruction-tuned models. Second, a risk-preserving subset selector: a coverage-constrained greedy selector on deterministic trace-derived features that retains full ranking (Spearman rho = 0.975, deterministic; CI collapses to a point estimate with zero bootstrap variance), risk coverage (1.0), and high-risk model detection...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Why LLM Agents Collapse Without Oversight: The Enforcement Gap as the Mechanism Behind Emergence World Failures",
+    "url": "https://arxiv.org/abs/2609.15293",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15293v1 Announce Type: new Abstract: When Emergence World placed frontier LLM agents in an unsupervised multi-agent simulation, the results were alarming: agents committed crimes, starved, and enforced unanimous conformity -- without any external attacker. This paper identifies the mechanism. Reflexion-style agents already detect dangerous plan steps through iterative self-critique, yet the architecture provides no pathway from detection to action. We call this the enforcement gap: the audit sees the problem; the controller ignores it. Closing the gap requires a single conditional check -- fewer than 20 lines of code -- and reduces attack success by more than fourfold in large-scale experiments across frontier models, all five major agent frameworks, and an independent benchmark. We prove formally that when enforcement probability is near zero, detection quality is irrelevant to security. We further identify two compounding failure modes -- unreliable auditors and unparseable verdicts -- that explain every collapse pattern in Emergence World. A GRPO-trained enforcement controller resolves the ambiguity case. Together these results motivate a three-requirement Audit Enfo...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "AGENTQ: Quantization-Conditioned Backdoor Attacks on LLM Agents",
+    "url": "https://arxiv.org/abs/2609.14060",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14060v1 Announce Type: cross Abstract: Quantization is one of the default deployment paths for open-weight LLM agents, but it is not behavior-preserving: an adversary can release a full-precision checkpoint that passes audits yet misbehaves once quantized, termed as quantization-conditioned attack (QCA). Prior QCA work targets free-text generation, where harm is mediated by a human reader. In contrast, the agentic setting poses a more severe risk: the triggered payload is a structured function that can be executed without human oversight. We present the first study of QCA against LLM agents. We find that directly adapting prior backdoor-injection methods can produce malicious behavior after quantization, but substantially degrades benign utility, rendering the resulting attacks impractical. To understand the true upper bound of the threat, we propose AGENTQ, an attack framework that combines layer-banded LoRA injection with partial-PGD repair over a multi-codebook quantization-equivalence class. AGENTQ preserves normal agentic capability while concentrating malicious behavior in the quantized model. Across three trigger-action pairs and three codebooks (NF4, FP4, INT8),...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "quantization",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Loop-Back Authority in LLM Agent Teams: A Paired Experiment on Flat and Hierarchical Coordination",
+    "url": "https://arxiv.org/abs/2609.14767",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14767v1 Announce Type: cross Abstract: Hierarchical orchestration, in which a Manager agent reviews worker output and can send it back for revision, is the default coordination pattern in production multi-agent LLM frameworks. Classical organizational theory predicts that the authority link speeds convergence on decisive output; work on sycophancy and Degeneration-of-Thought predicts that authoritative critique makes LLM output worse. Prior comparisons vary whole frameworks on tasks with checkable answers, leaving the authority link untested on open-ended work. We present a paired experiment that holds five LLM agents, their roles, prompts, tools, models, and data fixed and varies one link: whether the Manager may reject a worker's output and oblige a revision. Across 43 paired products and 86 runs of a business-intelligence reporting task, a five-model judge panel and a deterministic specification check score every report. The flat organization scores higher on Utility (d = 0.42, p = 0.009) and on Writing Clarity (d = 0.34, p = 0.030); the classical prediction fails. The reports are the same length, but hierarchical reports hedge 53% more, each revision loop is associa...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "multi-agent",
+      "orchestration"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Stochastic Deputy: Structural Tenant Isolation for Tool-Using LLM Agents",
+    "url": "https://arxiv.org/abs/2609.14780",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14780v1 Announce Type: cross Abstract: Multi-tenant tools commonly accept a tenant identifier and validate it against the caller's entitlement. For a large language model (LLM) agent, that pattern delegates resource selection to a process whose context may contain attacker controlled instructions. We formalize this stochastic deputy problem and present a structural defense: remove tenant identity from the Model Context Protocol (MCP) tool schema, bind scope to a verified credential, and enforce it below the agent. In a 373-trial ablation across eight model configurations and two transports, a correctly validated tenant parameter served every out-of-scope attempt: 26 of 26, or 26 of 41 plausible-pretext trials overall. With the parameter removed, no tool signature could express the read. Twelve of 56 trials instead escaped the interface by forging writable scope, showing that interface invariance requires cryptographically protected context. On a production dataset containing multiple GBs of data, set-valued scope caused a measured $57\\times$ latency ratio under function-wrapped membership predicates; a JSON_TABLE lateral join recovered index access where the tenant key...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "dataset",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "CiteGuard-RAG: A Validation-Centered AI System for Evidence-Grounded Question Answering",
+    "url": "https://arxiv.org/abs/2609.15830",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15830v1 Announce Type: cross Abstract: Retrieval-augmented generation (RAG) can improve access to complex information; however, retrieving evidence alone does not ensure that answers are grounded, citation-valid, or appropriately refused. This paper introduces CiteGuard-RAG, a validation-centered AI system for evidence-grounded question answering. The system integrates hybrid semantic-lexical retrieval, citation-constrained generation, sentence-level grounding validation, and single-pass regeneration. Validation is used at runtime to determine whether a candidate answer should be accepted, refused, or regenerated before final delivery. CiteGuard-RAG is evaluated on 400 questions across a controlled housing-law dataset, PrivacyQA, and CUAD. In the controlled evaluation, it achieves 99.1% retrieval accuracy, 98.3% grounded-answer accuracy, and 98.3% citation validity, with no validation-detected hallucinations. Ablation results show that grounded-answer accuracy drops sharply when validation is removed, even when retrieval accuracy remains unchanged. External evaluation shows that while citation validity remains strong, evidence utilization, span alignment, and refusal ca...",
+    "matched_keywords": [
+      "dataset",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "open_source",
+      "rag_data"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -135,8 +230,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -158,8 +253,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -181,8 +276,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -213,23 +308,22 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "GAUGE: When Not to Trust LLM-as-a-Judge in User-Simulated Evaluation of Task-Oriented Agents",
-    "url": "https://arxiv.org/abs/2609.12191",
-    "source_name": "arXiv cs.CL",
+    "title": "Identity Is More Than Recall: A Benchmark for Persistent Identity in Deployed AI Agents",
+    "url": "https://arxiv.org/abs/2609.13637",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12191v1 Announce Type: new Abstract: Comparing and selecting task-oriented LLM agents increasingly relies on a low-cost offline evaluation gate: persona-driven LLM user-simulators converse with each candidate, an LLM-as-a-judge scores the transcripts, and the higher-scoring agent is promoted. We introduce GAUGE, a reusable offline protocol that measures whether this gate's ranking matches a grounded verifiable reward across 25 agents from six providers on the $\\tau^2$-bench and SimulatorArena benchmarks, separating two kinds of evaluation validity that release practices conflate: ranking validity and construct validity. First, a satisfaction-success gap: satisfaction carries essentially no information about task success, as conversations rated satisfied by our blind panel are decorrelated from actual success, with 57.5% of them failing the customer's task, a pattern consistent across five rater populations, both benchmarks, and every subjective dimension we rated. Second, while the gate's ranking is robust across the broad capability span, it loses resolution among the near-equal strong agents: this decision-disagreement rate jumps from $<$1% on wide-reward pairs to 31%...",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.13637v1 Announce Type: new Abstract: Persistent agents need evaluations that distinguish identity facts they can recall from those they express and enact. We introduce PAI-Bench, a provider-neutral benchmark for fidelity to a versioned, update-governed identity contract. It separates recall, composition, behavioral enactment, resistance, persistence, lineage, and role-conditioned updates while keeping scoring oracles outside the target process. Two frozen campaigns cover sixteen synthetic profiles, thirty-two probes, and three independently initialized target configurations, yielding 1,536 retained responses. A judge-independent literal audit finds direct-parent identifiers in 48/48 atomic responses but only 1/48 implicit self-portraits. On eight profiles, explicit field cues increase joint presence of three identity identifiers from 0/8 to 7/8 under the same four-sentence instruction. A separate startup body-label substitution increases full-designation presence from 1/8 to 7/8 while parents remain absent. These contrasts reveal prompt-dependent component selection and component-specific sensitivity to startup cues in the tested deployments. Replaying identical factori...",
     "matched_keywords": [
-      "Agent",
       "agents",
-      "customer",
-      "release"
+      "benchmark",
+      "startup"
     ],
     "tags": [
       "agent",
@@ -237,196 +331,44 @@
       "open_source"
     ],
     "score": 50,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization",
-    "url": "https://arxiv.org/abs/2609.12471",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12471v1 Announce Type: new Abstract: We introduce AMDKernelVault, an open HIP and Triton kernel corpus and training framework for recent AMD CDNA GPUs. Existing LLM-based kernel agents are largely CUDA/NVIDIA-centric and often depend on repeated frontier-LLM calls for generation, reflection, and optimization. To address this gap, we develop HIPKernelGen and TritonKernelGen, agent-driven pipelines that transform PyTorch references into HIP or Triton kernels, compile and validate candidates under ROCm, and latency-profile them on AMD hardware. The corpus contains 62,153 execution-verified HIP kernel samples, 2,377 production-grounded ROCm Libraries QA entries, and 39,893 Triton kernels. We further train Qwen3-8B with supervised fine-tuning and execution-aware reinforcement learning as a demonstration of the corpus's utility. Under fixed evaluation budgets, it achieves the highest correctness among the compared models on PyTorch-to-HIP (34.0% Pass@1), TritonBench-G (33.2% Corr@3), and ROCmBench (41.94% Corr@3), but does not uniformly lead compilation or speed metrics. The corpus and documentation are available at https://huggingface.co/datasets/amd/AIG-Datasets, and the as...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "AMD",
-      "CUDA",
-      "fine-tuning",
-      "GPU",
-      "NVIDIA"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization",
-    "url": "https://arxiv.org/abs/2606.10531",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.10531v3 Announce Type: replace Abstract: Quantization-aware training (QAT) is essential for extremely low-bit large language models (LLMs). Current QAT methods are mainly based on scalar quantization (SQ), which enables efficient optimization but suffers from severe performance degradation at 2-bit precision. On the other hand, vector quantization (VQ) provides substantially higher representational capacity, but its discrete codebook lookup prevents end-to-end training. We propose LC-QAT, a 2-bit weight-only VQ-QAT framework that represents quantized weights via a learned affine mapping over discrete vectors, which yields a high-quality PTQ initialization and enables fully differentiable end-to-end optimization without explicit codebook lookup in the training forward pass. This strong post-training initialization makes LC-QAT highly data-efficient. Experiments across diverse LLMs demonstrate that LC-QAT consistently outperforms state-of-the-art QAT methods while using only 0.1%--10% of the training data. Our results establish LC-QAT as a practical and scalable solution for extreme low-bit model deployment. Codes are publicly available at https://github.com/AI9Stars/UniS...",
-    "matched_keywords": [
-      "GitHub",
-      "quantization",
-      "weights"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LatentMD: Benchmarking Markdown Boundary Failures in LLM-Generated Text",
-    "url": "https://arxiv.org/abs/2609.06993",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.06993v2 Announce Type: replace-cross Abstract: Large language models (LLMs) increasingly generate Markdown that is consumed by renderers, agents, code extractors, and structured downstream pipelines. Yet existing evaluations often conflate content quality with format adherence, leaving Markdown boundary failures under-measured. We introduce LatentMD, a benchmark and evaluation protocol for diagnosing CommonMark-level fence-boundary failures in LLM-generated Markdown. LatentMD separates content correctness from boundary correctness, enabling detection of outputs that are content-correct but boundary-broken. The benchmark contains 4,179 prompts and a CLI for scoring arbitrary model outputs. Across 9 LLMs and roughly 37,600 generations, we find that Markdown boundary failures are widespread: 38.0% of valid main-grid outputs are content-correct but boundary-broken, with substantial boundary breakage under unspecified prompts and in a small human-authored validation set. Ablations show that failures are driven primarily by same-family symmetric-delimiter collisions rather than nesting alone, are only partially mitigated by prompt hints, and generalize to Python triple-quote...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Battery Price of edge AI: A study of the Environmental Impact of LLM Inference on Mobile Devices",
-    "url": "https://arxiv.org/abs/2609.11940",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.11940v1 Announce Type: cross Abstract: The rapid diffusion of generative artificial intelligence raises privacy, latency, and performance concerns that motivate a shift toward \"local-first\" AI, where inferences are performed on the user's device instead of on remote cloud servers. This paradigm also places a significant computational load on battery-powered smartphones, potentially shortening battery life and increasing the overall replacement rate of mobile devices. This paper presents a systematic study of the energy consumption, performance, and accuracy of on-device large language model (LLM) inference. We evaluate 18 models from different model families, sizes, and quantization levels, on two modern smartphones and on a server, using the respective state-of-the-art for such deployments. We measure the energy per generated token, inter-token latency, model accuracy, and battery-cycle consumption. Our results show that (i) on-device inference is on average 3 times less energy-efficient than batched server inference; (ii) the relationship between quantization bit-width and energy per token is non-monotonic, with energy sweet spots on both tested smartphones; (iii) eig...",
-    "matched_keywords": [
-      "battery-powered",
-      "Edge AI",
-      "inference",
-      "on-device inference",
-      "privacy",
-      "quantization"
-    ],
-    "tags": [
-      "business",
-      "embedded_edge_ai",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
-    "url": "https://arxiv.org/abs/2609.11115",
+    "title": "Overflip: Repetition-Induced Label Flips in Guardrail Models",
+    "url": "https://arxiv.org/abs/2609.15013",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.11115v1 Announce Type: new Abstract: Benchmark researchers and developers of large language models (LLMs) and other AI systems need to find relevant evaluations, locate their benchmark datasets and code, and understand the settings behind reported scores. We present Benchmark Radar, a living database and search engine for retrieval and discovery of AI benchmarks, covering LLM evaluation, agentic and tool-use benchmarks, coding, reasoning, safety, and domain-specific evaluations. The system combines daily discovery of benchmark papers, repositories, datasets, and releases with a searchable benchmark catalog, mentions in model cards and technical reports, and score histories. It retains source identities and citations so readers can inspect candidate benchmarks and their evaluation evidence. Daily discovery draws on 37 sources: 13 direct connectors and 24 first-party research and engineering feeds. The catalog contains 1,283 source records drawn from 4 benchmark catalogs and 12,916 numeric observations on 790 records. We describe collection and retrieval, audit the full catalog, and examine benchmark saturation, adoption trends, and the limits of score comparisons. A work...",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15013v1 Announce Type: new Abstract: Guardrail models are classifiers deployed to screen malicious prompts and responses in LLM-based services. To meet latency constraints, many lightweight guardrails adopt compact Transformer backbones (e.g., DeBERTa) that are trained with short context windows (typically 512 tokens) and rely on bucketed relative positional encodings to process longer inputs. Prior evaluations assume that a guardrail's decision is stable as the input is lengthened. We show that this assumption can fail. We identify Overflip, a repetition-induced instability where repeating a prompt causes the guardrail's prediction to flip (MAL$\\to$BEN) as the sequence grows. We conduct experiments on 9 widely used lightweight guardrail models. Five exhibit MAL$\\to$BEN flips on a benchmark of 100 prompts, with confidence margins shrinking steadily with repetition. Among these vulnerable models, flip rates range from 8% to 92%, with first flips occurring at roughly 2.6k--9.4k tokens. Our analysis suggests Overflip differs from traditional attention-dilution baselines, which aim to divert the model's attention away from tokens associated with malicious content, shifting...",
     "matched_keywords": [
-      "agentic",
-      "benchmark",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "rag_data"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SemVerBench: Benchmarking LLM Comprehension of Version-Constraint Resolution Semantics",
-    "url": "https://arxiv.org/abs/2609.11180",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-12T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.11180v1 Announce Type: new Abstract: Large language model (LLM) coding agents constantly decide whether a version satisfies a constraint such as ^1.2.3 or >=2.0, 1.2 means >=1.3.0) traps every model on Cargo (near 60%), and although standard PEP 440 prefix matching is universal, on zero-pad/post-release corner cases GPT-5.1 collapses (0/26) while Claude stays at 97-100% (verified on a 67-item oracle-validated set). Opus significantly outperforms all other models, and Sonnet outperforms the OpenAI models (McNemar). The failures look more like an activation/application gap than a knowledge gap: injecting the rule or a light correct hint recovers most errors, whereas interval decomposition does not, and models are at ceiling on the basic forms of the same rules. An author-stratified analysis finds no statistically significant self-favoritism. Because the task is verifiable and a free, 100%-correct resolver exists, tool delegation reaches ~100%: coding agents should delegate version resolution to a resolver rather than reason about versions in-head.",
-    "matched_keywords": [
-      "agents",
-      "Claude",
-      "GPT",
-      "OpenAI",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "model",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-13T08:36:54.239964+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Zipbench: Low-Cost Framework for Compressing Comprehensive Benchmarks of Large Language Models",
-    "url": "https://arxiv.org/abs/2609.12475",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12475v1 Announce Type: new Abstract: Comprehensive benchmark suites are essential for improving large language models (LLMs), but many widely used benchmarks are redundant, making evaluation unnecessarily expensive. Although recent benchmark compression methods (BCMs) can mitigate this cost, many strong BCMs rely on large collections of per-sample evaluation results from numerous LLMs to identify representative samples. Building such collections is also expensive unless they are already public, making these methods difficult to extend to newly released benchmarks. To address this challenge, we present ZipBench, a simple and low-cost BCM with theoretical error and rank-consistency guarantees. ZipBench evaluates only a small set of anchor LLMs, synthesizes pseudo evaluation results to broaden coverage, learns compact sample representations, and selects a small yet representative subset. Building on it, we create ZipBench Zoo, a collection of compact versions of 100+ benchmark proxies spanning text, multimodal, and agent tasks. These benchmark achieve mean absolute errors of 0.002--0.02 and average Spearman correlations of ~0.98 with the full benchmarks. Overall, ZipBench...",
-    "matched_keywords": [
-      "Agent",
       "benchmark"
     ],
     "tags": [
-      "agent",
       "open_source"
     ],
-    "score": 47,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Code-to-Harness: Distilling Black-Box Optimizers from Self-Play",
-    "url": "https://arxiv.org/abs/2609.09468",
-    "source_name": "arXiv cs.LG",
+    "title": "Empirical Evaluation of Task-Based Permission Scoping Architecture for AI Agents",
+    "url": "https://arxiv.org/abs/2609.15422",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.09468v2 Announce Type: replace Abstract: Can an agent learn a numerical search strategy through executable practice and then transfer that strategy as text? We study low-budget black-box optimization, where unaided language models remain well below strong classical optimizers. During development, an agent repeatedly writes and evaluates optimizer programs. It then distills the resulting program and practice record once into a 197-word primary Harness A, which is frozen before evaluation. Harness A reduces Gemini Flash regret by 48\\% in an independent $N=30$ study ($p<.001$), enters the GP-BO performance range on the practice family, and lowers mean regret on all three held-out BBOB landscapes. The same text improves every tested Gemini executor and transfers to Claude Sonnet, reducing regret by 43\\% and 49\\% ($p\\leq.005$). An independent end-to-end replication produces Harness B, a different program and text at the same performance tier. The same framework also attains the lowest regret on a sealed YouTube reward-tuning production benchmark. Executable practice is thus a viable way to discover a search policy, and language a portable medium for deploying it.",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15422v1 Announce Type: new Abstract: AI agents are provisioned the same as employee-owned hosts in many enterprise settings with a static credential set fixed at deployment which includes all permissions the employee role might ever need. Role-based access control made this compromise for human principals because scoping access per task was infeasible. For AI agents, the compromise leaves every credential standing exposed whether or not the current task uses them. These permissions can later be utilised by a compromised or misaligned agent. Prior work (Noyan, 2026) defined this as the task-context mismatch, and proposed a three-source permission architecture which includes role-based permission ceilings, a task permission classifier and policy-based prohibitions, together eliminating the exposure preemptively. The work released a 600-prompt labelled dataset to evaluate it. This paper presents that evaluation end to end by implementing the security gate; a fine-tuned RoBERTa-large encoder which matched few-shot trained Claude Haiku 4.5 on classification quality (macro-F1 0.881 against 0.886, precision 0.897 against 0.842, severity-weighted residual risk 0.63 against 1.12...",
     "matched_keywords": [
       "Agent",
-      "benchmark",
+      "agents",
       "Claude",
-      "Gemini",
+      "dataset",
       "policy"
     ],
     "tags": [
@@ -435,51 +377,125 @@
       "model",
       "open_source"
     ],
-    "score": 46,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Judging by the Cover: Cleaning LLM Truthfulness Benchmarks to Avoid Surface-Level Feature Leakage",
-    "url": "https://arxiv.org/abs/2609.13003",
-    "source_name": "arXiv cs.CL",
+    "title": "SkillAtlas: An Attack Trace Library for Agent Skills",
+    "url": "https://arxiv.org/abs/2609.13353",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.13003v1 Announce Type: new Abstract: Binary-choice truth benchmarks ask models to choose between a correct and an incorrect answer, but if the two answers differ systematically in surface-level features, models can exceed chance without performing the intended reasoning. We show that this failure mode is detectable and can be exploited by downstream classifiers. In TruthfulQA, a simple six-feature logistic classifier achieves substantial accuracy in separating correct from incorrect answers. We further show that similar surface-level artifacts are present in additional benchmarks. To counteract this, we developed a general mechanism to clean them by removing the most leakage-reinforcing pairs. We release a version of TruthfulQA with surface-feature leakage reduced close to chance and provide a mechanism, Audit-Prune, so that the datasets can be cleaned before release.",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.13353v1 Announce Type: cross Abstract: Agent skills are reusable units for language-model agents, but their risks emerge through model decisions, user context, tool calls, and execution feedback rather than through stable signatures or a single sandbox run. Existing static, dynamic, and benchmark-style evaluations rarely preserve public evidence that can be inspected, searched, and reused. We present SkillAtlas, a hosted attack trace library that converts private agent-skill security report bundles into reviewed, redacted, and searchable public cases. The library contains 3,014 cases, 6,589 traces, 151,131 steps, 233 affected skills, and 8 risk categories; 42.5% of successful cases first become successful after a non-success initial round, and trajectory-grounded labels improve pre-execution guard accuracy to 0.770.",
     "matched_keywords": [
-      "release"
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "TriCalRAG: A Three-Strategy, Retrieval-Augmented Benchmark for On-Premise LLM-Based Root Cause Analysis in AIOps",
+    "url": "https://arxiv.org/abs/2609.14762",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14762v1 Announce Type: cross Abstract: Cloud-hosted large language models (LLMs) are increasingly used for root cause analysis (RCA) in AIOps pipelines, but they introduce data privacy risk, network latency, and per-query cost that scale poorly with production log volumes. We present TriCalRAG, a benchmark evaluating open-weight LLMs served locally via vLLM on a single high-memory workstation GPU (NVIDIA RTX PRO 6000, 96GB) against a classical LSTM-based log anomaly detector (DeepLog), across four real, publicly available log datasets (BGL, HDFS, Thunderbird, OpenStack). We evaluate two open-weight models (Qwen2.5-14B, Mistral-Small) under three prompting strategies: zero-shot, few-shot, and retrieval-augmented generation (RAG) over a labeled incident history, reporting accuracy, precision/recall, and F1 with bootstrap 95% confidence intervals across 3 random seeds, alongside throughput and VRAM footprint. Our results show that RAG not only improves mean F1 by 0.10-0.27 over zero-shot prompting but, more importantly, substantially stabilizes model calibration: zero-shot prompting drives both models toward near-degenerate behavior (predicting \"anomaly\" on up to 100% of i...",
+    "matched_keywords": [
+      "benchmark",
+      "GPU",
+      "Mistral",
+      "NVIDIA",
+      "privacy",
+      "RAG",
+      "retrieval",
+      "vLLM"
+    ],
+    "tags": [
+      "business",
+      "model",
+      "open_source",
+      "rag_data",
+      "semiconductor"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Efficiency Hallucination: Formalizing and Measuring Behavioral Calibration in LLM-Based Code Optimization",
+    "url": "https://arxiv.org/abs/2609.14839",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.14839v1 Announce Type: cross Abstract: The integration of Large Language Models (LLMs) into automated code optimization introduces a critical reliability risk we term the Efficiency Hallucination: an LLM's tendency to issue non-functional mutations with unsubstantiated performance claims on already-optimized code. This is driven by the Evaluation Trap, wherein binary benchmarks incentivize unnecessary modifications over safely abstaining. We present a validation framework using classification penalty methods, evaluated across 180 optimization runs on nine models (GPT, Claude, Gemini) using EffiBench. Under standard prompts, models exhibit a 100% over-edit rate on optimal code. Our guardrail raises correct abstention from 0% to to 44.4%, preserving a 100% edit rate on sub-optimal code with zero false abstentions. Calibration is uneven: GPT-5.4 Mini approaches near-perfect abstention, and simple code is recognized more reliably than complex code. Our framework offers a training-free mechanism to mitigate LLM overconfidence before deployment in production.",
+    "matched_keywords": [
+      "Claude",
+      "Gemini",
+      "GPT"
+    ],
+    "tags": [
+      "model"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "PIDS-Bench: Evaluating Prompt-Injection Detectors Under Over-Defense, Obfuscation, and Distribution Shift",
+    "url": "https://arxiv.org/abs/2609.15017",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-15T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15017v1 Announce Type: cross Abstract: Prompt-injection detectors are typically evaluated using aggregate F1 on in-distribution test data, which offers limited insight into behavior under distribution shift, particularly on the benign side of the decision boundary, where false positives impose direct operational cost yet are seldom measured. We present PIDS-Bench, a frozen multi-axis benchmark that jointly evaluates attack detection and benign false-positive behavior at fixed thresholds, spanning in-distribution inputs, hard-benign prompts that mimic injection structure without malicious intent, obfuscated attacks, and domain and structural distribution shifts. We evaluate seven detectors (learned baselines, external prompt-injection classifiers, and broad-safety comparators) alongside a rule-based lower-bound reference. Multi-axis evaluation exposes a failure mode that aggregate F1 conceals. A detector exceeding F1 = 0.98 on the held-out split still misclassifies roughly one-third of an externally-sourced benign subset drawn from public corpora and restricted to security-adjacent content. Across a full threshold sweep and five training seeds, no internal detector reach...",
+    "matched_keywords": [
+      "benchmark"
     ],
     "tags": [
       "open_source"
     ],
-    "score": 45,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "score": 50,
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "CueMem: Cue-Guided Context Reconstruction for Long-Term Conversational Memory",
-    "url": "https://arxiv.org/abs/2609.12354",
-    "source_name": "arXiv cs.CL",
+    "title": "TabPFN-3.5 is released as the next SOTA tabular foundation model [N]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1wh4xhy/tabpfn35_is_released_as_the_next_sota_tabular",
+    "source_name": "Reddit r/MachineLearning",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12354v1 Announce Type: new Abstract: Long-term conversational agents must answer user queries by recalling information from extended dialogue histories, yet directly using the full history is costly and often unreliable, while compressed memory units may lose fine-grained evidence needed for question answering. Motivated by the reconstructive view of autobiographical memory, we propose CueMem, a cue-guided framework that treats extracted memory records as retrieval cues rather than self-contained evidence and reconstructs query-relevant dialogue context from their source turns. During memory construction, CueMem extracts fine-grained memory cues from dialogue turns and links each cue to its source turn. At query time, it retrieves query-relevant cues, maps them to source-turn anchors, and expands from these anchors over a turn graph that captures temporal proximity and semantic relatedness, reconstructing a compact evidence context from the original dialogue for LLM answer generation. Experiments on LoCoMo and LongMemEval show that CueMem consistently outperforms representative long-term memory baselines. Further analyses show that graph-based context reconstruction hel...",
+    "source_level": "tech_community",
+    "published_at": "2026-09-15T16:18:50+00:00",
+    "summary_or_excerpt": "Prior Labs released their latest tabular foundation model, TabPFN-3.5 today. The model is top of both TabArena and BeyondArena and SOTA for 1M rows and up to 20k features It comes with: - TabPFN-3.5-Fast (in alpha): This one goes 6x faster than the base model - TabPFN-3.5-Thinking: you basically exchange compute for better accuracy with this one and it's via the API - TabPFN-3.5-Plus On BeyondArena, TabPFN-3.5 leads on text-rich, high-cardinality and high-dimensional data, with +250 Elo points over the strongest previous baseline and +150 Elo points ahead of the previous overall leader. TabPFN-3.5-Thinking is +20 Elo on the base model in BeyondArena and +44 Elo on TabArena submitted by /u/tuanacelik [link] [comments]",
     "matched_keywords": [
-      "agents",
-      "retrieval"
+      "API"
     ],
     "tags": [
-      "agent",
-      "rag_data"
+      "business"
     ],
     "score": 44,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -495,7 +511,7 @@
     "tags": [],
     "score": 41,
     "first_seen_at": "2026-09-14T08:36:03.728555+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -515,7 +531,7 @@
     ],
     "score": 35,
     "first_seen_at": "2026-09-14T08:36:03.728555+08:00",
-    "last_seen_at": "2026-09-15T09:10:26.939399+08:00",
+    "last_seen_at": "2026-09-16T09:01:53.235752+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

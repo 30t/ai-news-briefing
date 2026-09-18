@@ -1,47 +1,79 @@
 [
   {
-    "title": "JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management",
-    "url": "https://arxiv.org/abs/2609.17475",
+    "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
+    "url": "https://arxiv.org/abs/2609.17817",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.17475v1 Announce Type: new Abstract: Capable open-weight models make local coding and reasoning attractive, but their context and execution state strain laptop memory. We present JustFit, an MLX-based inference runtime that combines KVExec for compressed KV execution, PhaseSwap for component residency, and StateTrans for state-preserving serving transitions. These mechanisms fuse reconstruction and coordinate just-in-time materialization and release, independently of model-weight quantization. In full-execution capacity tests on a 24 GiB M4 Pro MacBook running Qwen3.8-27B MXFP4, three independent runs complete 196,608 input and 16,384 output tokens, increasing completed single-request context from the mlx-vlm baseline's 30,720 positions to 212,992 (6.93x); a separate two-request run retains 229,376 positions in aggregate. In separate performance tests, a 32K-input, 64-output probe reaches 19.11 tokens/s, and a repeated 32K+6K workload has a median peak process footprint of 16,374 MiB. The integrated runtime answers 29 of 30 AIME 2026 problems correctly, showing how compact state and lifetime-aware execution expand local serving capacity while supporting extended generat...",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.17817v1 Announce Type: cross Abstract: Thompson's \"Reflections on Trusting Trust\" showed that a compiler can be poisoned to reinsert its own backdoor, so that even recompiling clean source reproduces the Trojan. Today, substantial coding work is done by AI coding agents -- and increasingly, those agents generate new versions of themselves. We reconsider Thompson's attack when the \"compiler\" is a self-modifying coding agent. Can an adversary supply poisoned benchmarks to the agent's self-evaluation and self-improvement process to induce future versions of the agent to write vulnerable code on clean, held-out tasks? We instantiate this attack against three recently proposed self-modifying coding agents: the Darwin G\\\"odel Machine (with our experimental modifications), the Self-Improving Coding Agent, and Hyperagents (both substantively unmodified). We demonstrate successful proofs-of-concept: for example, with Hyperagents powered by Sonnet 4.5, our poisoned benchmark leads the agent to self-evolve instructions that disable HTTPS certificate validation on neutral URL-fetching tasks. From our experiments, we distill properties of the vulnerability, benchmark, model, and age...",
     "matched_keywords": [
-      "inference",
-      "quantization",
-      "release",
-      "serving"
-    ],
-    "tags": [
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ADeptS-Bench: Measuring the Trustworthiness of Computer Use Agents Across Devices",
-    "url": "https://arxiv.org/abs/2608.26204",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.26204v2 Announce Type: replace-cross Abstract: Computer Use Agents (CUAs) are increasingly deployed to navigate mobile and desktop applications on behalf of users, yet no benchmark comprehensively evaluates whether they can safely interact with visual interfaces while handling ambiguous instructions. We introduce ADeptS-Bench, a dual-stream trustworthiness benchmark, grounded in the ADEPTS capability framework and general population user studies. The Safety stream provides paired benign/malicious tasks with threats embedded in the visual interface. The Disambiguation stream evaluates whether agents seek clarification when intent is ambiguous. Evaluating seven models reveals that no model consistently exceeds 80% task success while staying below 30% attack success; every model clicks \"Checkout\" on a $25K order without hesitation, and none detects that a \"factory reset\" button is mislabeled as \"Optimize.\" An ablation reveals three distinct safety architectures: tool-dependent (ASR +21-23pp without refusal tool), partially tool-dependent (+10-11pp), and no mechanism (unchanged). In disambiguation, all models overestimate consequence severity, mirroring the over-refusal bia...",
-    "matched_keywords": [
+      "Agent",
       "agents",
-      "benchmark",
-      "computer use"
+      "benchmark"
     ],
     "tags": [
       "agent",
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+    "url": "https://arxiv.org/abs/2609.08149",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.08149v2 Announce Type: replace Abstract: SWE-Bench Pro has emerged as a standard benchmark for evaluating software engineering agents on challenging repository-level tasks. However, our analysis work show that its evaluation is undermined by two sources of unreliability: reward hacking, enabled by leakage of gold solutions or hidden evaluation information, and task quality issues, including misleading problem statements and improperly scoped tests. These issues can inflate benchmark performance and obscure agents' true coding ability. We present SWE-Bench Pro Verified, a verified version of SWE-Bench Pro that addresses both problems. Our approach combines anti-hacking safeguards that eliminate major leakage channels without disrupting normal agent functionality, with task refinement that minimally corrects inconsistencies within flawed instances. Evaluations on SWE-Bench Pro Verified reveal that some models perform substantially worse than previously evaluated, suggesting that existing results on SWE-Bench Pro may overestimate real software engineering capability. SWE-Bench Pro Verified offers a more trustworthy benchmark for assessing software engineering agents.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "repository",
+      "software engineering"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MCPAgentBench: A Real-world Task Benchmark for Evaluating LLM Agent MCP Tool Use",
+    "url": "https://arxiv.org/abs/2512.24565",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2512.24565v5 Announce Type: replace Abstract: Large Language Models (LLMs) are increasingly serving as autonomous agents, and their utilization of external tools via the Model Context Protocol (MCP) is considered a future trend. Current MCP evaluation sets suffer from issues such as reliance on external MCP services and a lack of difficulty awareness. To address these limitations, we propose MCPAgentBench, a benchmark based on real-world MCP definitions designed to evaluate the tool-use capabilities of agents. We construct a dataset containing authentic tasks and simulated MCP tools. The evaluation employs a dynamic sandbox environment that presents agents with candidate tool lists containing distractors, thereby testing their tool selection and discrimination abilities. Furthermore, we introduce comprehensive metrics to measure both task completion rates and execution efficiency. Experiments conducted on state-of-the-art LLMs reveal significant performance differences in handling complex, multi-step tool invocations. All code is open-source at https://github.com/Brunestuder/MCPAgentBench.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "dataset",
+      "GitHub",
+      "MCP",
+      "Model Context Protocol",
+      "serving",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -71,8 +103,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -94,7 +126,7 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -117,7 +149,7 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -143,8 +175,111 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Why LLM Agents Collapse Without Oversight: The Enforcement Gap as the Mechanism Behind Emergence World Failures",
+    "url": "https://arxiv.org/abs/2609.15293",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.15293v2 Announce Type: replace Abstract: When Emergence World placed frontier LLM agents in an unsupervised multi-agent simulation, the results were alarming: agents committed crimes, starved, and enforced unanimous conformity -- without any external attacker. This paper identifies the mechanism. Reflexion-style agents already detect dangerous plan steps through iterative self-critique, yet the architecture provides no pathway from detection to action. We call this the enforcement gap: the audit sees the problem; the controller ignores it. Closing the gap requires a single conditional check -- fewer than 20 lines of code -- and reduces attack success by more than fourfold in large-scale experiments across frontier models, all five major agent frameworks, and an independent benchmark. We prove formally that when enforcement probability is near zero, detection quality is irrelevant to security. We further identify two compounding failure modes -- unreliable auditors and unparseable verdicts -- that explain every collapse pattern in Emergence World. A GRPO-trained enforcement controller resolves the ambiguity case. Concurrent work on filtering and information-flow control...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Contiguity, Not Importance: Budgeted Repair of Stale KV Caches After Document Edits",
+    "url": "https://arxiv.org/abs/2609.17983",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.17983v1 Announce Type: new Abstract: KV-cache reuse can reduce inference cost in retrieval-augmented generation and agentic systems, but cached contexts may become stale when retrieved knowledge, working memory, or user state is edited. Under causal self-attention, even a local edit can affect downstream KV states. A full re-prefill reliably restores consistency but is costly, whereas refreshing only the edited span can leave downstream dependencies stale. We formulate in-place repair as budgeted recomputation and compare training-free position-selection policies on a factual RAG benchmark with matched direct and derived edits. Across three model families, all policies repair direct cases, but derived cases clearly separate them. At the primary budget, a contiguous edit-local window recovers at least 0.94 of the post-edit answer margin and substantially outperforms attention-based, KV-deviation, and structural selectors. Mechanistic analysis shows that position sets effective under clean-state transplantation can fail under actual recomputation because scattered positions inherit surrounding staleness. The edit-local advantage also depends on adjacency and largely disap...",
+    "matched_keywords": [
+      "agentic",
+      "benchmark",
+      "inference",
+      "RAG",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Collective Loss of Control in LLM Agent Systems: An Epidemic Account of Mutation, Contagion, and Recovery",
+    "url": "https://arxiv.org/abs/2609.18460",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.18460v1 Announce Type: new Abstract: How does a multi-agent system evolve from a local deviation into collective loss of control? We propose an epidemic explanation organized around accidental mutation, contagion, and recovery. A spontaneous deviation creates a seed; communication enables other agents to adopt and retransmit its unsafe strategy; collective failure can emerge when propagation outpaces correction and containment. Thus, rare individual deviations can coexist with substantial collective risk. Motivated by reported OpenAI agent coordination incidents, we examine two ingredients of this mechanism. A deployment audit identifies implicit communication paths between nominally independent evaluation runs and verifies transport through a default Docker backend. RogueHandoff-20, a benchmark of 20 executable scenarios, tests recipient susceptibility by injecting unsafe trajectories generated by a modified Qwen-27B route. Across four native-pending routes, executed harm is 0-5% on normal tasks and 40-95% after injection, exceeding paired direct malicious requests by 5-45 percentage points. These results support low observed baseline harm alongside high conditional su...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent",
+      "OpenAI",
+      "Qwen"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Ask the Tool, Don't Guess: Agent Tool Calls Hold Their Progress, and the Serving System Should Read It",
+    "url": "https://arxiv.org/abs/2609.18849",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-17T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.18849v1 Announce Type: cross Abstract: An agentic request spends substantial wall-clock time waiting for tools, and its KV cache holds GPU memory the whole time. Serving systems decide whether that cache stays, leaves, or comes back by guessing how long the tool will run, from the tool's name, its history, a duration declared before the call, or the engine's own occupancy. We show that no estimate fixed before a call starts can know its duration, and such estimates may not even rank the calls. Meanwhile, the running tool already holds the answer, but the agent stack together with the tool silences it. We propose that tool calls report their progress explicitly while they run, and we measure what that takes. A census of four public agent corpora finds a readable signal in most tool time once it is revealed, in two strengths: a fraction of the work remaining, or an accurate signal that the end is near. A harness recovers it without changing what the agent sees, at no measurable cost to the agent's benchmark score. At the points where a KV cache decision is made, the reported progress is between several times and an order of magnitude more accurate than the best published...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "benchmark",
+      "GPU",
+      "serving"
+    ],
+    "tags": [
+      "agent",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -166,8 +301,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -188,31 +323,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Why LLM Agents Collapse Without Oversight: The Enforcement Gap as the Mechanism Behind Emergence World Failures",
-    "url": "https://arxiv.org/abs/2609.15293",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.15293v1 Announce Type: new Abstract: When Emergence World placed frontier LLM agents in an unsupervised multi-agent simulation, the results were alarming: agents committed crimes, starved, and enforced unanimous conformity -- without any external attacker. This paper identifies the mechanism. Reflexion-style agents already detect dangerous plan steps through iterative self-critique, yet the architecture provides no pathway from detection to action. We call this the enforcement gap: the audit sees the problem; the controller ignores it. Closing the gap requires a single conditional check -- fewer than 20 lines of code -- and reduces attack success by more than fourfold in large-scale experiments across frontier models, all five major agent frameworks, and an independent benchmark. We prove formally that when enforcement probability is near zero, detection quality is irrelevant to security. We further identify two compounding failure modes -- unreliable auditors and unparseable verdicts -- that explain every collapse pattern in Emergence World. A GRPO-trained enforcement controller resolves the ambiguity case. Together these results motivate a three-requirement Audit Enfo...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -236,7 +347,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -259,7 +370,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -284,30 +395,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CiteGuard-RAG: A Validation-Centered AI System for Evidence-Grounded Question Answering",
-    "url": "https://arxiv.org/abs/2609.15830",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.15830v1 Announce Type: cross Abstract: Retrieval-augmented generation (RAG) can improve access to complex information; however, retrieving evidence alone does not ensure that answers are grounded, citation-valid, or appropriately refused. This paper introduces CiteGuard-RAG, a validation-centered AI system for evidence-grounded question answering. The system integrates hybrid semantic-lexical retrieval, citation-constrained generation, sentence-level grounding validation, and single-pass regeneration. Validation is used at runtime to determine whether a candidate answer should be accepted, refused, or regenerated before final delivery. CiteGuard-RAG is evaluated on 400 questions across a controlled housing-law dataset, PrivacyQA, and CUAD. In the controlled evaluation, it achieves 99.1% retrieval accuracy, 98.3% grounded-answer accuracy, and 98.3% citation validity, with no validation-detected hallucinations. Ablation results show that grounded-answer accuracy drops sharply when validation is removed, even when retrieval accuracy remains unchanged. External evaluation shows that while citation validity remains strong, evidence utilization, span alignment, and refusal ca...",
-    "matched_keywords": [
-      "dataset",
-      "RAG",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -329,7 +417,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -352,7 +440,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -375,7 +463,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -407,76 +495,31 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "BLINDSPOT: A Benchmark for Safety and Refusal Calibration in Long-Horizon Tool-Using Agents",
-    "url": "https://arxiv.org/abs/2609.16305",
-    "source_name": "arXiv cs.AI",
+    "title": "Workflow execution protections in GitHub Actions generally available",
+    "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+    "source_name": "GitHub Changelog",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.16305v1 Announce Type: new Abstract: Large language model (LLM) agents increasingly operate over long-horizon interactions involving tool use, persistent state, evolving authorization, and external environment feedback. In such settings, safety failures may emerge only after multiple turns, yet existing evaluations often reduce agent behavior to task or attack success, obscuring whether an agent acts, refuses, or remains appropriately calibrated as the interaction evolves. We introduce Blindspot, a benchmark for trajectory-level safety calibration of long-horizon tool-using agents. Blindspot evaluates complete user-agent-environment trajectories through adaptive adversarial interaction, stateful tool execution, and execution-grounded adjudication. Its current instantiation contains 22 attack families and 35 scenarios across seven domains, yielding more than 2,500 long-horizon trajectories with an average interaction length of 14.7 turns. Each trajectory is assigned one of five outcomes: Safe Completion, Correct Refusal, Unsafe Completion, Over-Refusal, or Indeterminate. Unlike fixed attack datasets, Blindspot is an extensible live-simulation framework in which attacks,...",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-17T15:45:26+00:00",
+    "summary_or_excerpt": "Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for GitHub Enterprise, organizations, and repositories. Execution protections let you define an allowlist that controls who… The post Workflow execution protections in GitHub Actions generally available appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "tool use"
+      "changelog",
+      "GitHub",
+      "workflow"
     ],
     "tags": [
-      "agent",
+      "ai_app",
+      "business",
       "open_source"
     ],
-    "score": 50,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Decomposition Buys Integrity, Not Yield",
-    "url": "https://arxiv.org/abs/2609.17464",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.17464v1 Announce Type: cross Abstract: Multi-agent systems split a task across a tree of agents and justify the split with folklore: smaller contexts, cleaner separation, parallelism. We ask what the split does to how much of what the leaves discover reaches the root. Model a decomposition as a tree in which an agent handed $b$ items keeps any one with probability $r(b)$. If $r(b)=1/b$, every tree delivers exactly one finding, for every task size and every shape; we verify this to $2.4 \\times 10^{-15}$ on 20,000 random irregular trees. If $r(b)=Cb^{-\\delta}$, a depth-$k$ tree over $N$ findings yields $C^k N^{1-\\delta}$: task size and architecture separate, and architecture contributes only $C \\le 1$ per level, so flat is optimal for yield and no arrangement of agents escapes the exponent $\\delta$. On 600 production deep-research traces $\\delta = 0.34$ [0.30, 0.38], by three identifications that do not share a failure mode. At a hop where item boundaries come from the tool rather than a text heuristic, and where $b=1$ occurs 550 times, $C = 0.571$ [0.527, 0.615] is observed rather than extrapolated, over 16,082 hops. A tier also costs alignment: on 1,012 annotated multi-...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Lost at the End: Primacy Bias in Multimodal Retrieval-Augmented Question Answering",
-    "url": "https://arxiv.org/abs/2606.16494",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.16494v4 Announce Type: replace-cross Abstract: Knowledge-based visual question answering (KB-VQA) lets vision-language systems answer questions that exceed their parametric knowledge by conditioning a reader on passages retrieved from a Wikipedia-derived knowledge base. In pure-text long-context LLMs, retrieved-context use follows the U-shaped lost-in-the-middle effect of Liu et al. (2024): information at the start and end of context is used, the middle is lost. Whether this transfers to deployed multimodal KB-VQA is open. To close this gap, we design the first controlled probe of reader-side position dependence in multimodal KB-VQA: a gold-position protocol in which only the gold passage's prompt slot varies within question. We run it on three open-source 7B/8B VLM readers and two KB-VQA benchmarks with up to 20 retrieved passages. The shape flips from U to primacy: gold-at-first beats gold-at-last by 16 to 26 points on all six combinations of reader and benchmark, an effect we call Lost at the End; the gap holds at every scale we test, 3B to 32B, attenuating at 32B. Three targeted ablations narrow the cause. A text-only control that removes the image and changes nothi...",
-    "matched_keywords": [
-      "benchmark",
-      "knowledge base",
-      "retrieval"
-    ],
-    "tags": [
-      "open_source",
-      "rag_data"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "score": 46,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -496,8 +539,8 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -527,8 +570,8 @@
     "score": 44,
     "release_version": "v1.19.0",
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -548,32 +591,39 @@
       "business",
       "open_source"
     ],
-    "score": 39,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "score": 42,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
-    "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance",
-    "source_name": "NVIDIA Blog",
+    "title": "Agentic CLI customizations now in the usage metrics API",
+    "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+    "source_name": "GitHub Changelog",
     "source_type": "rss",
     "source_level": "official_confirmed",
-    "published_at": "2026-09-16T13:00:33+00:00",
-    "summary_or_excerpt": "AI factories are the infrastructure of the intelligence era. Scaling them responsibly will depend as much on innovation across the grid as inside the data center. Today, Emerald AI, Google and NVIDIA announced the launch of the AI Energy Management Alliance (AEMA), a first-of-its-kind coalition advancing data centers that can dynamically manage their electricity use […]",
+    "published_at": "2026-09-17T21:08:50+00:00",
+    "summary_or_excerpt": "GitHub Copilot expands existing CLI report coverage with agentic activity metrics for skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins. What’s new The fields appear in… The post Agentic CLI customizations now in the usage metrics API appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "data center",
-      "launch",
-      "NVIDIA"
+      "agentic",
+      "agents",
+      "API",
+      "changelog",
+      "GitHub",
+      "GitHub Copilot",
+      "MCP",
+      "Model Context Protocol"
     ],
     "tags": [
+      "agent",
       "business",
-      "semiconductor"
+      "coding_tool",
+      "open_source"
     ],
-    "score": 39,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "score": 42,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -598,10 +648,32 @@
       "ai_app",
       "model"
     ],
-    "score": 37,
+    "score": 40,
     "release_version": "1.15.22",
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Copilot impact dashboard now shows feature engagement",
+    "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-17T21:47:27+00:00",
+    "summary_or_excerpt": "The Copilot impact dashboard now shows how many active users regularly use key Copilot features. Enterprise administrators can quickly see which experiences are widely adopted and which may need more… The post Copilot impact dashboard now shows feature engagement appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 39,
+    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -625,8 +697,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -645,8 +717,8 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -666,8 +738,8 @@
     "score": 36,
     "hn_score": 70,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   }
 ]

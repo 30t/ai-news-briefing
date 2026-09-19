@@ -1,14 +1,96 @@
 [
   {
-    "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
-    "url": "https://arxiv.org/abs/2609.17817",
+    "title": "ClashBench: Conflicts Leading Agents to Seize and Harm",
+    "url": "https://arxiv.org/abs/2609.19892",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.17817v1 Announce Type: cross Abstract: Thompson's \"Reflections on Trusting Trust\" showed that a compiler can be poisoned to reinsert its own backdoor, so that even recompiling clean source reproduces the Trojan. Today, substantial coding work is done by AI coding agents -- and increasingly, those agents generate new versions of themselves. We reconsider Thompson's attack when the \"compiler\" is a self-modifying coding agent. Can an adversary supply poisoned benchmarks to the agent's self-evaluation and self-improvement process to induce future versions of the agent to write vulnerable code on clean, held-out tasks? We instantiate this attack against three recently proposed self-modifying coding agents: the Darwin G\\\"odel Machine (with our experimental modifications), the Self-Improving Coding Agent, and Hyperagents (both substantively unmodified). We demonstrate successful proofs-of-concept: for example, with Hyperagents powered by Sonnet 4.5, our poisoned benchmark leads the agent to self-evolve instructions that disable HTTPS certificate validation on neutral URL-fetching tasks. From our experiments, we distill properties of the vulnerability, benchmark, model, and age...",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.19892v1 Announce Type: cross Abstract: As agent systems become more widely used, multiple agent sessions increasingly run alongside pre-existing user tasks in the same environment, sharing resources with limited capacity or mutually exclusive states. This creates a safety risk: when granted sufficient privileges, an agent may resolve a resource conflict by terminating or otherwise disrupting an existing task rather than reporting it. In this work, we identify and formalize this failure mode, which we term destructive resource preemption: obtaining the resources required for a requested task by terminating, overwriting, evicting, or degrading an incumbent task. To systematically study this risk, we introduce ClashBench, an executable benchmark comprising 268 validated conflict cases across 55 resource types, and evaluate 17 models through Codex, Claude Code, and OpenCode. We observe destructive preemption in 44.5% of trajectories, where the agent completes the requested task while causing the incumbent task to fail its health check. We also show that prompt-based safeguards are insufficient: an instruction to avoid affecting existing tasks reduces but does not eliminate...",
     "matched_keywords": [
       "Agent",
+      "agents",
+      "benchmark",
+      "Claude",
+      "Claude Code",
+      "Codex"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents",
+    "url": "https://arxiv.org/abs/2609.19587",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.19587v1 Announce Type: cross Abstract: To keep coding agents from going off the rails, production systems now review each proposed action with a blocking monitor that can reject it before it runs (Auto Mode in Claude Code, Guardian in OpenAI's Codex). Prior evaluations of such monitors largely measure robustness to accidental harm or prompt injections from untrusted sources looking to hijack the agent. Less understood is how they hold up when the agent they monitor is persistently misaligned. To understand this risk, we task an adversarial agent with evading production blocking monitors and causing catastrophic harm, e.g. by exfiltrating its own weights. We find that when instructed with high-level attack strategies, adversarial agents can succeed through several distinct mechanisms, such as agent-generated prompt injection against the monitor, multi-agent attacks, and malicious compaction. In particular we find that in 79% of trials, the agent can use an injection attack against Auto Mode and Guardian to run arbitrary bash commands. We also find that it is possible to greatly improve Auto Mode through design changes like enhancements to tool coverage, transcript format...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "multi-agent",
+      "OpenAI",
+      "weights"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+    "url": "https://arxiv.org/abs/2609.20812",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.20812v1 Announce Type: cross Abstract: Frontier coding agents are increasingly trusted to work autonomously for long periods, yet an agent's final response is often the only account of that work a user sees. We quantify the propensity of frontier agents to \\emph{overclaim} task completion, a misrepresentation that can mislead the user. An agent overclaims when its final response contradicts information in its context. This definition requires no inference about intent and is independent of task success. We introduce \\emph{OverclaimBench}, an evaluation suite composed of five file-review scenarios, transcript-based coverage measurements, and registered planted defects. We evaluate eight proprietary frontier models in their own production command-line interfaces, and four open-weight models under a single fixed harness on OverclaimBench and find that 1) agents do not read all the files they were asked to review in 67.9\\% of runs; 2) among runs where not all files are read, agents are \\emph{misleading} 80.4\\% of the time (59--96\\% per model), either falsely claiming to have read all files or omitting that coverage is incomplete; 3) requiring delegation to subagents increas...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Evaluating Deep-Search Agents under Hierarchical Web Evidence Poisoning",
+    "url": "https://arxiv.org/abs/2609.06027",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.06027v2 Announce Type: replace-cross Abstract: Search-augmented LLM agents are increasingly used for consumer decisions, making them vulnerable to Generative Engine Optimization (GEO) poisoning. Existing benchmarks largely measure whether manipulated content is retrieved or endorsed, but do not track whether an agent verifies suspicious evidence, revises adopted claims, or recovers before producing its final recommendation. We introduce HAE-GEO, a benchmark that tracks the full trajectory from exposure to recovery under progressively more persuasive Web poisoning. Agents interact via a multi-turn Search-Scrape interface across three attack levels (L1 direct assertion, L2 contextual camouflage, and L3 apparent corroboration), supported by a controlled corpus of 72,039 clean pages and 770 poisoned pages per level spanning 8 product categories and 154 brands. Evaluation combines deterministic behavioral measures with six semantic rubric dimensions. Evaluating 10 agents, we find three recurring patterns: evidence recognition degrades under the corroboration trap; agentic search improves final resistance without improving evidence recognition or utility; and defense promptin...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
       "agents",
       "benchmark"
     ],
@@ -17,34 +99,8 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
-    "url": "https://arxiv.org/abs/2609.08149",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.08149v2 Announce Type: replace Abstract: SWE-Bench Pro has emerged as a standard benchmark for evaluating software engineering agents on challenging repository-level tasks. However, our analysis work show that its evaluation is undermined by two sources of unreliability: reward hacking, enabled by leakage of gold solutions or hidden evaluation information, and task quality issues, including misleading problem statements and improperly scoped tests. These issues can inflate benchmark performance and obscure agents' true coding ability. We present SWE-Bench Pro Verified, a verified version of SWE-Bench Pro that addresses both problems. Our approach combines anti-hacking safeguards that eliminate major leakage channels without disrupting normal agent functionality, with task refinement that minimally corrects inconsistencies within flawed instances. Evaluations on SWE-Bench Pro Verified reveal that some models perform substantially worse than previously evaluated, suggesting that existing results on SWE-Bench Pro may overestimate real software engineering capability. SWE-Bench Pro Verified offers a more trustworthy benchmark for assessing software engineering agents.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "repository",
-      "software engineering"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 64,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -73,8 +129,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -103,7 +159,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -126,8 +182,57 @@
     ],
     "score": 58,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DeltaSelect: Affordable A/B Testing for Coding Agents",
+    "url": "https://arxiv.org/abs/2609.19607",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.19607v1 Announce Type: cross Abstract: Coding-agent benchmarks are built for broad and comprehensive comparisons, not frequent development decisions. Individual runs vary, full suites are expensive, and the benchmark harness may differ from the harness used in practice. In a resampling analysis of DeepSWE's published trials, only 19.5% of tasks (22 of 113) had a fifth-percentile Pearson correlation of at least 0.50 with full-benchmark performance. The paper presents DeltaSelect, an open-source method that identifies tasks whose one-run results consistently track full-benchmark performance using Pearson correlation, maps fractional verifier results to a common score using linear regression, and selects a fixed task set within a dollar budget. DeltaSelect is intended for repeated baseline-versus-candidate comparisons during development, not model rankings. In a gpt-5.6-luna low-reasoning case study, DeltaSelect was used to revise custom skills and instructions. Across 13 evaluations, the recorded cost was USD 27.86 at rates published August 16, 2026. The adopted version cost 58.1% less than the initial version (USD 1.75 versus USD 4.18; p=0.008), while the calibrated scor...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Chronicle: Cut-Point Replay for Regression Testing of LLM Agents",
+    "url": "https://arxiv.org/abs/2609.20625",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.20625v1 Announce Type: cross Abstract: Large language model responses are non-deterministic, so failures in LLM agents are hard to reproduce: a failure depends on inference that is not bitwise reproducible, on tools that read changing state, and on a multi-step trajectory that a re-run rarely repeats. Record-and-replay makes a run reproducible, but existing agent tooling records runs only to trace or score them, not to test a code change against them. We present Chronicle, which records an agent run at its non-deterministic boundaries as immutable envelopes and replays it from the record. Its central operation, cut-point replay, serves a chosen subset of boundaries from the record and executes the complementary subset live with new code, turning a recorded incident into a regression test that runs in continuous integration. On a benchmark of 6 recorded failures with simulated model boundaries, recording adds 23 {\\mu}s per crossing (0.008% of an assumed 300 ms model call), full replay issues zero model calls and is bit-stable across 20 repetitions, and cut-point tests fail on faulty code and pass on guarded and benign changes for all 6 incidents. In a mutation study of t...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -149,34 +254,61 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Dissecting GPU Utilization for LLM Inference on Nvidia Hopper",
-    "url": "https://arxiv.org/abs/2609.12923",
-    "source_name": "arXiv cs.LG",
+    "title": "Closed-World Resolution Against Tool Hallucination in LLM Agents",
+    "url": "https://arxiv.org/abs/2609.19425",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12923v1 Announce Type: cross Abstract: A single SM utilization percentage can make an LLM inference workload look compute-saturated while hiding how much useful work is being done. The problem is not that the counter is wrong, but that it collapses several different mechanisms into one number. This is most severe during decode, where each request contributes only one new token and dense projection GEMMs become small-row matrix multiplications. On Hopper, the bfloat16 GMMA path executes these operations in fixed 64-row matrix fragments, so small-batch decode can fill only a small fraction of each fragment with real token rows. In this paper, we profile vLLM with FlashAttention-3 and cuBLASLt on an H100 NVL across cold prefill, warm prefill, and decode, sweeping sequence length and batch size. We replace the usual single utilization number with eight counter-validated views derived from raw Nsight Compute reports, each pinned to an NCU counter or explicit formula. Together, these views map utilization gaps to concrete mechanisms - fragment fill, occupancy limits, stall signatures, wave quantization, and kernel selection - across four production models and six per-layer ke...",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.19425v1 Announce Type: new Abstract: Tool-augmented large language model (LLM) agents fail in a way no tool-selection or tool-security method addresses: they call tools that do not exist and pass arguments no schema declares. Existing defenses either pick the right tool (selection) or constrain what an agent may do with real tools (gating), both of which presuppose the emitted call refers to a real tool at all. We show this is a structural blind spot: a hallucinated call is by construction not a decision any gate made, so no gate can reject it. This paper is primarily a measurement and benchmark study. We give a five-class taxonomy of tool hallucination (H1-H5) and, as a reference point, the Resolution Rung: a training-free, closed-world resolver (registry membership plus a signature check) whose interest is where it must sit, not what it computes. We prove hallucination defense must precede any causal gate, and characterize the one irreducible residue (borrowed arguments schema-indistinguishable from a valid call). Across ten hosted models under two invocation surfaces we measure 322 genuine hallucinations; fabricated-tool calls concentrate on the unconstrained raw-JSO...",
     "matched_keywords": [
-      "GPU",
-      "H100",
-      "inference",
-      "NVIDIA",
-      "quantization",
-      "vLLM"
+      "Agent",
+      "agents",
+      "benchmark"
     ],
     "tags": [
-      "open_source",
-      "semiconductor"
+      "agent",
+      "open_source"
     ],
-    "score": 53,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
+    "score": 52,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+    "url": "https://arxiv.org/abs/2609.20519",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-18T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.20519v1 Announce Type: new Abstract: As coding agents move from supervised code completion to unattended, around-the-clock exploration, their work expands from isolated predictions into long trajectories of reasoning, tool use, and feedback. Token efficiency therefore becomes important for scaling recursive self-improvement. We take an RSI-inspired approach at the harness layer, scaling auto-research loops across increasingly numerous and diverse environments for harness rollouts. At this scale, the process yields reusable improvements that transfer beyond their development setting, moving automated harness discovery toward production-level outcomes. Four mechanisms survive selection and form SoL-Pi, spanning action execution, context compaction, observation handling, and delegated reading. On the 51-task EdgeBench evaluation, SoL-Pi achieves performance comparable to Pi across GPT-5.6 Sol and Opus 5 while reducing recorded token traffic by 44.7-49.0% and API cost by about one third. In other words, estimated hourly savings are \\$8.75-\\$13.50 relative to native Codex and Claude Code harnesses, and \\$4.36-\\$5.71 relative to Pi.",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "API",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "GPT",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "coding_tool",
+      "model"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -199,8 +331,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -225,8 +357,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -252,349 +384,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Ask the Tool, Don't Guess: Agent Tool Calls Hold Their Progress, and the Serving System Should Read It",
-    "url": "https://arxiv.org/abs/2609.18849",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-17T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.18849v1 Announce Type: cross Abstract: An agentic request spends substantial wall-clock time waiting for tools, and its KV cache holds GPU memory the whole time. Serving systems decide whether that cache stays, leaves, or comes back by guessing how long the tool will run, from the tool's name, its history, a duration declared before the call, or the engine's own occupancy. We show that no estimate fixed before a call starts can know its duration, and such estimates may not even rank the calls. Meanwhile, the running tool already holds the answer, but the agent stack together with the tool silences it. We propose that tool calls report their progress explicitly while they run, and we measure what that takes. A census of four public agent corpora finds a readable signal in most tool time once it is revealed, in two strengths: a fraction of the work remaining, or an accurate signal that the end is near. A harness recovers it without changing what the agent sees, at no measurable cost to the agent's benchmark score. At the points where a KV cache decision is made, the reported progress is between several times and an order of magnitude more accurate than the best published...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "benchmark",
-      "GPU",
-      "serving"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Know Your Agent: Reconnaissance-Driven Pentesting of AI Agents",
-    "url": "https://arxiv.org/abs/2607.19837",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-16T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2607.19837v2 Announce Type: replace Abstract: Traditional pentesting uses reconnaissance at each step to uncover unseen weaknesses, build stronger attacks, and advance the objective; we argue that AI agents require the same treatment. We formalize agent reconnaissance by modeling the process and identifying the knowledge assets it seeks to extract: what they are, how they are used, and which agent weaknesses they exploit to give adversaries leverage in indirect prompt injection attacks. We instantiate these insights in Know Your Agent (KYA), a framework that automates black-box, reconnaissance-driven pentesting by probing agents, building target profiles, and using those profiles to craft stronger attacks. We evaluate KYA on agent-security benchmarks and a real-world coding agent, and release KYA, its benchmarks, and baseline implementations for reproducibility.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MemRiskBench: Trace-Aware Risk-Preserving Evaluation for Long-Horizon LLM Agents",
-    "url": "https://arxiv.org/abs/2609.14976",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.14976v1 Announce Type: new Abstract: Long-horizon LLM agents accumulate memory across sessions, creating sparse but high-impact risks: stale facts, conflicting updates, cross-user leakage, revoked-memory reuse, and constraint decay. Standard aggregate scores hide per-risk failure rates--a model achieving 78% average accuracy may still leak data in 4% of episodes--and benchmark compression preferentially discards the rare high-severity events that distinguish a mostly-working model from one that occasionally causes harm. We present MemRiskBench. The primary contribution is a five-category risk taxonomy (plus one documented, unscored category) operationalized by deterministic trace grounded checks, instantiated as a 120-episode scripted benchmark with full trace logging and no LLM-as-judge on the pass/fail path, evaluated on five locally run quantized instruction-tuned models. Second, a risk-preserving subset selector: a coverage-constrained greedy selector on deterministic trace-derived features that retains full ranking (Spearman rho = 0.975, deterministic; CI collapses to a point estimate with zero bootstrap variance), risk coverage (1.0), and high-risk model detection...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "AGENTQ: Quantization-Conditioned Backdoor Attacks on LLM Agents",
-    "url": "https://arxiv.org/abs/2609.14060",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.14060v1 Announce Type: cross Abstract: Quantization is one of the default deployment paths for open-weight LLM agents, but it is not behavior-preserving: an adversary can release a full-precision checkpoint that passes audits yet misbehaves once quantized, termed as quantization-conditioned attack (QCA). Prior QCA work targets free-text generation, where harm is mediated by a human reader. In contrast, the agentic setting poses a more severe risk: the triggered payload is a structured function that can be executed without human oversight. We present the first study of QCA against LLM agents. We find that directly adapting prior backdoor-injection methods can produce malicious behavior after quantization, but substantially degrades benign utility, rendering the resulting attacks impractical. To understand the true upper bound of the threat, we propose AGENTQ, an attack framework that combines layer-banded LoRA injection with partial-PGD repair over a multi-codebook quantization-equivalence class. AGENTQ preserves normal agentic capability while concentrating malicious behavior in the quantized model. Across three trigger-action pairs and three codebooks (NF4, FP4, INT8),...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "quantization",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Loop-Back Authority in LLM Agent Teams: A Paired Experiment on Flat and Hierarchical Coordination",
-    "url": "https://arxiv.org/abs/2609.14767",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.14767v1 Announce Type: cross Abstract: Hierarchical orchestration, in which a Manager agent reviews worker output and can send it back for revision, is the default coordination pattern in production multi-agent LLM frameworks. Classical organizational theory predicts that the authority link speeds convergence on decisive output; work on sycophancy and Degeneration-of-Thought predicts that authoritative critique makes LLM output worse. Prior comparisons vary whole frameworks on tasks with checkable answers, leaving the authority link untested on open-ended work. We present a paired experiment that holds five LLM agents, their roles, prompts, tools, models, and data fixed and varies one link: whether the Manager may reject a worker's output and oblige a revision. Across 43 paired products and 86 runs of a business-intelligence reporting task, a five-model judge panel and a deterministic specification check score every report. The flat organization scores higher on Utility (d = 0.42, p = 0.009) and on Writing Clarity (d = 0.34, p = 0.030); the classical prediction fails. The reports are the same length, but hierarchical reports hedge 53% more, each revision loop is associa...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "multi-agent",
-      "orchestration"
-    ],
-    "tags": [
-      "agent"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Stochastic Deputy: Structural Tenant Isolation for Tool-Using LLM Agents",
-    "url": "https://arxiv.org/abs/2609.14780",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-15T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.14780v1 Announce Type: cross Abstract: Multi-tenant tools commonly accept a tenant identifier and validate it against the caller's entitlement. For a large language model (LLM) agent, that pattern delegates resource selection to a process whose context may contain attacker controlled instructions. We formalize this stochastic deputy problem and present a structural defense: remove tenant identity from the Model Context Protocol (MCP) tool schema, bind scope to a verified credential, and enforce it below the agent. In a 373-trial ablation across eight model configurations and two transports, a correctly validated tenant parameter served every out-of-scope attempt: 26 of 26, or 26 of 41 plausible-pretext trials overall. With the parameter removed, no tool signature could express the read. Twelve of 56 trials instead escaped the interface by forging writable scope, showing that interface invariance requires cryptographically protected context. On a production dataset containing multiple GBs of data, set-valued scope caused a measured $57\\times$ latency ratio under function-wrapped membership predicates; a JSON_TABLE lateral join recovered index access where the tenant key...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "dataset",
-      "MCP",
-      "Model Context Protocol"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-16T09:01:53.235752+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EvoHarnessBench: Can Your Agents Keep Pace with an Evolving Harness?",
-    "url": "https://arxiv.org/abs/2609.04280",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.04280v2 Announce Type: replace-cross Abstract: Modern LLM-based agents operate through a harness of tools, reusable skills, and specialist agents that shapes what they observe and what they can do. In practice, this harness continually evolves as new capabilities are added. We introduce EVOHARNESSBENCH, a benchmark for evaluating agents under controlled harness evolution across three axes (tools, skills, and agents). Unlike existing continual-learning benchmarks for agents, which typically place non-stationarity (i.e., what changes over time) in the task stream while keeping the harness fixed, EVOHARNESSBENCH places non-stationarity in the externally supplied harness itself. It contains 17 multi-stage harness streams constructed deterministically from verifier-based benchmarks, comprising 802 tasks, 520 tools, 42 skills, and 62 agents. We evaluate two complementary settings corresponding to the central challenges of harness evolution: deployment evaluation, which isolates retention of previously accessible competence as the harness expands, and self-evolving adaptation evaluation, which tests whether accumulated experience remains useful as new capabilities are introduc...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Look Before You Leap: Pre-Action Verification for LLM Agents",
-    "url": "https://arxiv.org/abs/2609.11957",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.11957v1 Announce Type: new Abstract: An LLM agent acts on the world by emitting actions: shell commands to run, edits to apply. A wrong action does not always fail loudly; it can fail silently, producing a plausible but incorrect effect that raises no error. We argue that a cheap deterministic check, run before an action takes effect, is an effective and underused form of agent oversight, and we study it across two action modalities in one framework. The idea is to fix an action's correct effect by construction, before any executor runs, so that silent failure is measured directly and the verifier may abstain rather than guess. For shell commands, a static verifier over 9930 commands and 482 tools catches 95.8% of invalid commands at a 10.0% false-positive rate. Its syntax and binary checks are oracle-exact, giving zero false positives while catching half of all errors; the flag check is bounded only by help-text coverage and accounts for every false positive. For code edits, a benchmark of 640 edits over 224 files isolating the apply step exposes a sharp split. Content-anchored formats such as search/replace and diff fail cleanly, whereas location-anchored formats fail...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ParaRecover: A Process-Level Benchmark for Error Localization and Recovery in Parallel Tool-Use Agents",
-    "url": "https://arxiv.org/abs/2609.12345",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.12345v1 Announce Type: new Abstract: Existing agent benchmarks mainly evaluate final task success or tool-call correctness, providing limited insight into whether agents can reliably diagnose and recover from intermediate execution failures. This limitation becomes particularly critical in multi-turn parallel tool-use scenarios, where errors may propagate across dependent branches and trigger cascading failures. We introduce ParaRecover, a process-level benchmark for evaluating error localization and recovery in multi-turn parallel tool-use agents. Built upon a fine-grained taxonomy of 14 error types covering planning dependencies, tool selection, and argument matching, the benchmark comprises 10,626 instances spanning two difficulty levels. To enable finegrained, process-oriented evaluation, we further propose the SDE rubric, which measures structural integrity, diagnostic reasoning, and evolutionary strategy during agent execution.Experiments across more than ten mainstream LLMs reveal that even state-of-the-art models still struggle with multi-turn error propagation,implicit tool-use failures, and precise replanning. Moreover, we demonstrate that the SDE rubric provi...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "UltraQuant: 4-bit KV Caching for Context-Heavy Agents",
-    "url": "https://arxiv.org/abs/2606.20474",
-    "source_name": "arXiv cs.LG",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2606.20474v3 Announce Type: replace Abstract: Context-heavy agents place substantial pressure on the key-value (KV) cache: long prefixes are reused across many short turns, while concurrency determines whether the serving system can keep GPUs utilized. We study 4-bit KV-cache compression for this setting, using TurboQuant-style rotation and codebook quantization as a quality anchor and vLLM FP8 KV caching as the deployment anchor. We report three contributions. First, we frame 4-bit KV caching around multi-round agent workloads where task quality, cache residency, and serving throughput must be measured jointly. Second, we describe the practical design choices needed to make the 4-bit path robust, including asymmetric K/V treatment, Walsh-Hadamard rotation, QJL removal, and block-scale variants. Third, we present serving optimizations on AMD GPUs, including optimized decode-attention kernels and UltraQuant, an FP4 approximation path that uses FP8 queries, FP4 KV tensors, UE8M0 group scales, and native scaled-MFMA support on CDNA4. On an adaptive-SLO replay of production Claude Code traces, UltraQuant sustains 2.71x (MiniMax-M2.5) and 4.38x (Qwen3-235B) the qualified-request...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "AMD",
-      "Claude",
-      "Claude Code",
-      "MiniMax",
-      "quantization",
-      "serving",
-      "vLLM"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-09-15T09:10:26.939399+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Workflow execution protections in GitHub Actions generally available",
-    "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-17T15:45:26+00:00",
-    "summary_or_excerpt": "Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for GitHub Enterprise, organizations, and repositories. Execution protections let you define an allowlist that controls who… The post Workflow execution protections in GitHub Actions generally available appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "workflow"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "TabPFN-3.5 is released as the next SOTA tabular foundation model [N]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1wh4xhy/tabpfn35_is_released_as_the_next_sota_tabular",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-15T16:18:50+00:00",
-    "summary_or_excerpt": "Prior Labs released their latest tabular foundation model, TabPFN-3.5 today. The model is top of both TabArena and BeyondArena and SOTA for 1M rows and up to 20k features It comes with: - TabPFN-3.5-Fast (in alpha): This one goes 6x faster than the base model - TabPFN-3.5-Thinking: you basically exchange compute for better accuracy with this one and it's via the API - TabPFN-3.5-Plus On BeyondArena, TabPFN-3.5 leads on text-rich, high-cardinality and high-dimensional data, with +250 Elo points over the strongest previous baseline and +150 Elo points ahead of the previous overall leader. TabPFN-3.5-Thinking is +20 Elo on the base model in BeyondArena and +44 Elo on TabArena submitted by /u/tuanacelik [link] [comments]",
-    "matched_keywords": [
-      "API"
-    ],
-    "tags": [
-      "business"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenHands v1.19.0：1.19.0 (2026-09-16)",
-    "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.19.0",
-    "source_name": "OpenHands",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-16T19:24:24+00:00",
-    "summary_or_excerpt": "## 1.19.0 (2026-09-16) ## What's Changed ### Features * feat: scope an agent profile to specific MCP servers by @simonrosenberg in https://github.com/OpenHands/OpenHands/pull/17289 * feat: add GPT-6 Astra model support by @neubig in https://github.com/OpenHands/OpenHands/pull/17164 * feat: track authenticated Canvas arrivals by @neubig in https://github.com/OpenHands/OpenHands/pull/17083 * feat: surface automation disablement reason in the UI by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/17425 ### Bug Fixes * fix: recognize Azure DevOps SSH remotes by @Chocolatine75 in https://github.com/OpenHands/OpenHands/pull/17375 * fix(static-server): HTML-escape injected runtime config and set Cache-Control: no-store on credential injection by @Tyagiquamar in https://github.com/OpenHands/OpenHands/pull/17175 * fix: avoid redundant automation SDK version refetches by @workvahedi in https://github.com/OpenHands/OpenHands/pull/16991 * fix(acp): tie the client ACP registry pin to agent-server, drop the codex shim by @simonrosenberg in https://github.com/OpenHands/OpenHands/pull/17423 * fix(ci): apply inferred issue type labels by @enyst in https://github.com/OpenHands/OpenHands/pu...",
-    "matched_keywords": [
-      "Agent",
-      "automation",
-      "Codex",
-      "GitHub",
-      "GPT",
-      "MCP",
-      "OpenHands"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 44,
-    "release_version": "v1.19.0",
-    "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Copilot budget increase requests are generally available",
-    "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
-    "source_name": "GitHub Changelog",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-16T20:17:18+00:00",
-    "summary_or_excerpt": "Previously, when a member used all the Copilot AI credits available to them, they were blocked from Copilot features that consume credits. This release adds a flow for them to… The post Copilot budget increase requests are generally available appeared first on The GitHub Blog .",
-    "matched_keywords": [
-      "changelog",
-      "GitHub",
-      "release"
-    ],
-    "tags": [
-      "business",
-      "open_source"
-    ],
-    "score": 42,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -622,36 +413,8 @@
       "open_source"
     ],
     "score": 42,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "CrewAI 1.15.22：Features",
-    "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.22",
-    "source_name": "CrewAI",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-16T22:09:58+00:00",
-    "summary_or_excerpt": "## What's Changed ### Features - Support aliases as connection identifiers - Record reasons for deployment creation failures - Collect human feedback and pause events in tracing - Add `llm_overlay` context variable to route agent roles to models - Carry `task_prompt` and output in agent execution payloads - Validate platform integrations during crew setup - Add platform tools to JSON crew wizard - Expose CrewAI Platform application catalog - Add OpenRouter as a supported embedding provider ### Bug Fixes - Accept CRLF in inline skill definitions - Load text file URLs through the safe fetcher - Close SQLite connections in kickoff task outputs storage - Carry `from_cache` on the native tool path's `ToolUsageFinishedEvent` - Raise `ValueError` instead of bare raise in uploader - Support non-primitive types in SQLiteFlowPersistence - Improve coding agents instructions - Read JSON checkpoints as UTF-8 - Overwrite stale `poetry.lock` backup on Windows - Key streamed tool calls by wire index in Azure - Preserve file data content parts in Gemini - Honor `read_only` on `update()` and `recall()` access times - Send `reasoning_effort` to every OpenAI reasoning model - Prevent crashes in the r...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "CrewAI",
-      "Gemini",
-      "OpenAI",
-      "OpenRouter"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "model"
-    ],
-    "score": 40,
-    "release_version": "1.15.22",
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -672,8 +435,31 @@
       "open_source"
     ],
     "score": 39,
-    "first_seen_at": "2026-09-18T09:00:44.673057+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Launch HN: Skillsync (YC W26) – AI chat sessions made portable across agents",
+    "url": "https://news.ycombinator.com/item?id=49743049",
+    "source_name": "Hacker News",
+    "source_type": "hackernews",
+    "source_level": "tech_community",
+    "published_at": "2026-09-17T16:22:15+00:00",
+    "summary_or_excerpt": "HN points: 62. Comments: https://news.ycombinator.com/item?id=49743049",
+    "matched_keywords": [
+      "agents",
+      "launch"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 38,
+    "hn_score": 62,
+    "first_seen_at": "2026-09-19T08:53:33.252563+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -697,7 +483,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -717,7 +503,7 @@
     ],
     "score": 36,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -738,7 +524,7 @@
     "score": 36,
     "hn_score": 70,
     "first_seen_at": "2026-09-17T09:05:19.332037+08:00",
-    "last_seen_at": "2026-09-18T09:00:44.673057+08:00",
+    "last_seen_at": "2026-09-19T08:53:33.252563+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

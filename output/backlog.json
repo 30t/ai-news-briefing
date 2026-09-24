@@ -1,28 +1,56 @@
 [
   {
-    "title": "An Empirical Cost Attribution of Context-Compression Gateways in Multi-Turn Coding Agents",
-    "url": "https://arxiv.org/abs/2609.22114",
-    "source_name": "arXiv cs.CL",
+    "title": "DUMA-Bench: A Dual-Control Multi-Agent Benchmark for Evaluating LLM Agent Security",
+    "url": "https://arxiv.org/abs/2609.24662",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.22114v1 Announce Type: new Abstract: Context compression is widely proposed as a way to cut the token bill of LLM coding agents, and public benchmarks report that aggressive compression preserves task-solving quality. These two facts do not imply the third one commonly assumed: that compressing file reads saves money in a real multi-turn agent. We instrument a production compression gateway (Paritok) between coding agents (Claude Code, Codex) and frontier LLMs (Claude Sonnet, GPT-5), and decompose the token bill of real sessions into three independent levers: tool-schema filtering, content compression of file reads and tool output, and history summarization. Measured in isolation under controlled A/B runs, the three save at fundamentally different rates. Tool-schema filtering removes a fixed block every turn, roughly 21K-57K tokens on a typical turn; it is linear in the turn count N and the only unambiguously and reproducibly positive lever. Content compression saves only about 2% of the cache-priced prefix per turn, but compressed reads accumulate in history and are re-sent on every later turn, so its cumulative saving grows quadratically, about 3350*N^2 tokens (measur...",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.24662v1 Announce Type: new Abstract: LLM-based agents increasingly operate in environments where they interact with users, tools, and external systems. Yet most security evaluations assume passive users and static control, ignoring the interactive dynamics that shape real agent behavior. We introduce \\textbf{DUMA-Bench}, a benchmark and evaluation protocol for measuring agent security under \\emph{dual-control} interaction, where both the agent and the user can influence the shared environment state. DUMA-Bench extends $\\tau^2$-bench ~\\cite{barres2025tau} with adversarial environments covering eight vulnerability classes, including RAG poisoning, cross-agent manipulation, and unsafe output handling. We evaluate \\textbf{14 models from five model families} (OpenAI, Anthropic, DeepSeek, Qwen, and Z.ai) across eight domains and multiple user-behavior regimes. Across our experiments, introducing dual-control interaction increases the attack success rate from \\textbf{26.9\\%} to \\textbf{41.1\\%}. These results show that agent security is not solely a property of the model but emerges from the interaction between the model, the user, and the environment. DUMA-Bench provides a mis...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "Claude",
-      "Claude Code",
-      "Codex",
-      "GPT"
+      "Anthropic",
+      "benchmark",
+      "DeepSeek",
+      "multi-agent",
+      "OpenAI",
+      "Qwen",
+      "RAG"
     ],
     "tags": [
       "agent",
-      "coding_tool",
-      "model"
+      "model",
+      "open_source",
+      "rag_data"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Beyond Single-Model Injection: A Threat Model and Defense Architecture for Prompt Injection in Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2609.22949",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.22949v1 Announce Type: cross Abstract: Existing prompt injection research focuses on single-model chatbot scenarios, where an attacker manipulates one LLM through crafted input. Multi-agent systems amplify this threat through three mechanisms absent from single-model settings: inter-agent message passing creates injection channels invisible to perimeter defenses, shared tool access enables privilege escalation across agent boundaries, and trust propagation allows a compromised agent to influence upstream orchestrators. We construct a threat model enumerating 14 attack vectors across four categories: direct injection via user input (3 vectors), indirect injection via tool outputs (4 vectors), inter-agent injection via message passing (4 vectors), and cascading injection through orchestrator manipulation (3 vectors). Testing all 14 vectors against a 6-agent production-representative system, we find that 67% of agents are vulnerable to at least one scope violation even with system-prompt-level guardrails, and indirect injection via tool outputs succeeds in 43% of attempts. Four architectural defenses reduce overall injection success from 31.2% to 4.2%: message signing with...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "chatbot",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "ai_app"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -46,7 +74,81 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Total Cost of Agency: Exact Attribution of Memory Injection Cost in Multi-Agent LLM Workflows",
+    "url": "https://arxiv.org/abs/2609.23790",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.23790v1 Announce Type: new Abstract: Every node in a multi-agent large language model (LLM) workflow retrieves context from memory and injects it into its prompt, where those injected tokens are billed as input tokens at the same per-token price as the system prompt and the user query. Production observability tools report total token cost but do not separate the tokens a node generates from the tokens it is handed, so this component of the bill is invisible to the teams paying it. We introduce the Total Cost of Agency (TCA), a decomposition of multi-agent workflow cost into base prompt, inference, memory injection, miss penalty and context-accumulation components, and an exact attribution method: a two-pass, non-billable token count that measures injected tokens directly rather than estimating them from word-count proxies. On a 200-task enterprise benchmark executed against real model APIs, memory injection accounts for 13.6 percent of the variable cost a compile-time optimizer can act on, about 12 percent of the full billed cost, and its share rises from a structural zero at workflow depth one to 27.6 percent at depth six. Injected tokens grow linearly with depth over...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "inference",
+      "multi-agent",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Graph Memory for LLM Agents: At What Cost? A Comparative Evaluation of Query, Ingest, and Update Performance Across Graph Database Engines",
+    "url": "https://arxiv.org/abs/2609.23315",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.23315v1 Announce Type: cross Abstract: Graph databases are frequently positioned as categorically necessary for connected-data workloads, yet the systems dimension along which they actually differ - query planning, indexing, and data-readiness cost - is rarely isolated from vendor framing. We construct a synthetic, biomedical-shaped property graph (1.02 million nodes, 5.34 million total node and edge rows) and a twenty-query workload spanning neighborhood lookups, bounded paths, set intersections, anti-joins, grouped aggregation, top-k ranking, temporal filters, full scans, and relational joins. We benchmark Corvic AI - a purpose-built columnar query engine underlying Corvic's ontology management layer (\"memories\")- against seven purpose-built or graph-extension database systems (LoraDB, Ladybug, DuckPGQ, Memgraph, Neo4j, HugeGraph, and FalkorDB) at three graph scales spanning three orders of magnitude. We report query latency geomeans, bulk-ingest throughput, point-update latency, and answer correctness for each system, and we derive a simple total-cost-of-ownership model that expresses the ingest/query trade-off as a function of query volume. Our central finding is th...",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Toollery: Scaling LLM Agents to Thousands of Skills and Tools",
+    "url": "https://arxiv.org/abs/2609.22218",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.22218v1 Announce Type: cross Abstract: As LLM agents are exposed to hundreds to tens of thousands of skills, tools, and API functions, full-library prompting becomes costly, slow, and less reliable: each added candidate increases prompt tokens and latency, while longer candidate lists introduce more distractors for LLM selection. We present \\textbf{Toollery}, a training-free candidate-compression framework for scalable LLM skill/tool selection. Following established document-side query expansion, Toollery generates user-intent queries from each skill/tool specification and builds a retrieval index that maps real user requests to compact candidate sets before final LLM decision-making. By treating high-level skills and atomic tools as selectable capabilities, Toollery can be applied to both skill libraries and tool registries. We evaluate Toollery on the roughly 79K-capability SkillRouter benchmark, BFCL-V4 with over 440 atomic tools, and 3,396 proprietary smart-cockpit requests over 220 tools. Across these settings, Toollery keeps online selection bounded to a compact top-$k$ candidate set and improves recall over ordinary specification retrieval. At a fixed top-10 budg...",
+    "matched_keywords": [
+      "agents",
+      "API",
+      "benchmark",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source",
+      "rag_data"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -69,8 +171,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -93,8 +195,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -116,8 +218,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -140,7 +242,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -163,8 +265,61 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Can Coding Agents Reproduce Official Statistics? Metadata, Retry Budget and the Limits of Execution Feedback in a Controlled Eurostat Benchmark",
+    "url": "https://arxiv.org/abs/2609.22222",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.22222v1 Announce Type: cross Abstract: Large language models can generate executable data-analysis code, but successful execution is not equivalent to a valid official-statistics result. This study asks whether authoritative metadata and execution feedback improve the reproducibility of Eurostat answers produced by a coding agent, and isolates what execution feedback actually contributes. A benchmark of 30 natural-language tasks covering seven domains, seven Eurostat datasets and four difficulty tiers was run under four conditions: task only (A), task plus a frozen dataset metadata card (B), metadata plus a repair loop driven by sanitized execution feedback (C), and metadata plus the same attempt budget with no diagnostics of any kind (D). Claude Sonnet 5 generated Python through the Anthropic Messages API in three independent replicates, yielding 360 task-runs. Exact correctness required successful execution, the correct dataset, filters, output shape, values and unit. A companion experiment run under an under-specified output contract, in which the required ranking key and unit representation were never stated to the model, understated condition C by 23.4 points, show...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "Anthropic",
+      "API",
+      "benchmark",
+      "Claude",
+      "dataset"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "model",
+      "open_source"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Propose, Verify, Commit: Evidence-Grounded Memory for Long-Horizon Multi-Actor Conversations",
+    "url": "https://arxiv.org/abs/2609.23465",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-23T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.23465v1 Announce Type: cross Abstract: Long-horizon conversational memory is especially challenging in multi-actor settings, where relevant evidence is distributed across participants and contexts and previously established information may later be revised. We introduce EGMEMORY, which formulates long-horizon multi-actor memory as a searchable state machine that separates persistent message-level evidence from an explicit active state. At write time, adaptive state resolution and an evidence-grounded propose-verify-commit protocol govern how this state evolves. At read time, adaptive evidence navigation iteratively resolves the state and supporting evidence required for a query, using conversational structure to narrow the search space and lexical-semantic relevance to rank candidates. The system operates through prompting and tool use without memory-specific policy training. EGMEMORY achieves 68.2% on GroupMemBench and 77.9% on EverMemBench, outperforming the strongest evaluated baselines by 22.7 and 21.4 percentage points, respectively. It further reaches 73.6% on the dyadic LoCoMo benchmark, demonstrating generalization beyond multi-actor conversations. We will relea...",
+    "matched_keywords": [
+      "benchmark",
+      "policy",
+      "tool use"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -189,8 +344,8 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -213,8 +368,8 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -241,8 +396,8 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -270,52 +425,8 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Do New Attention Mechanisms Actually Fix Attention Sinks at Million-Token Context?",
-    "url": "https://arxiv.org/abs/2609.08574",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.08574v2 Announce Type: replace-cross Abstract: Long context language models now advertise windows of one million tokens, but two habits limit how much of that window is used. Attention heads with nothing useful to read still spend their budget on the first token, which is called the attention sink, and where a fact sits in the context changes whether the model finds it. Gated attention cut first token attention from 46.7 percent to 4.8 percent at NeurIPS 2025, and Kimi K3 pairs that idea with Kimi Delta Attention and Attention Residuals behind a one million token window, eight times past the range where these diagnostics have been reported. This paper asks whether the fix survives that jump. We build SinkProbe, a suite that measures sink mass, massive activation, position resolved recall and the recency gap, and apply it to four small models that differ only in how they mix tokens and depth. Three results follow. The training objective produces the sink, not the architecture. Gating did not reproduce its published effect at our scale. Sink mass, activations and position bias moved independently. Code, data and the measurement protocol are released at https://github.com/...",
-    "matched_keywords": [
-      "GitHub",
-      "Kimi"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PII-TRACE: A Benchmark for Context-Aware PII Detection in Multi-Turn LLM Conversations",
-    "url": "https://arxiv.org/abs/2609.22200",
-    "source_name": "arXiv cs.CL",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.22200v1 Announce Type: new Abstract: LLM assistants and agentic systems log long multi-turn conversations. AI providers often scan these conversations for Personally Identifiable Information (PII) and mask the PII before storing or processing conversation data. Yet most PII detectors and benchmarks target self-contained records rather than cross-turn evaluation. To evaluate PII detection across turns in multi-turn conversations, we introduce PII-TRACE (Tracing Recurring PII Across Conversational Exchanges), to our knowledge the first PII benchmark to assess whether detectors identify PII in conversational contexts and cover every mention of a recurring identifier across turns. PII-TRACE contains 13,148 synthetic multi-turn dialogues in 13 languages with character-level spans and identifier clusters. Across eleven baselines, including frontier LLMs, no detector achieves full entity-level coverage without substantial false positives on PII-free conversations, and single-pass reading loses a third of the gold characters on long dialogues. To close this gap, we introduce PII-Tracer, a compact 0.6B-parameter detector trained with conversation-level supervision. PII-Tracer at...",
-    "matched_keywords": [
-      "agentic",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -339,55 +450,8 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Scaling Discovery through Test-Time Communication",
-    "url": "https://arxiv.org/abs/2609.21032",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.21032v1 Announce Type: cross Abstract: Science advances not in isolation but through collaboration, yet existing agentic systems capture little of this. Whether communicating agents help remains an open question with mixed prior results. We show that test-time communication can substantially outperform independent parallel attempts on challenging tasks, where sharing a breakthrough can push the whole group forward. We first study the effect of scaling multi-agent test-time communication, where agents have no predefined roles and communicate via a shared directory, on ARC-AGI-3, a benchmark requiring novel problem solving. We find that a team of $k$ communicating agents, team@$k$, matches the success rate of $4k$ independent agents, and this advantage grows with $k$, suggesting gains compound with scale. The effect is not merely efficiency: a task that no single agent can solve, a team of agents can solve reliably. Furthermore, these gains transfer to research-oriented tasks, given sufficient compute. On polyomino packing, communicating agents outperform best@$k$ and exceed the prior best-known score. On MNIST classifier compression, communication surpasses the best-know...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "BI-Agent and BI-Bench: Towards Automating End-to-End Business Intelligence",
-    "url": "https://arxiv.org/abs/2609.20886",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.20886v1 Announce Type: cross Abstract: Business intelligence (BI) is a cornerstone of enterprise decision-making and is widely used by enterprise users in software such as Power BI and Tableau. In traditional BI workflows, users need to prepare data by (1) identifying relevant tables, (2) performing data transformations, and (3) building join relationships, before they can (4) answer their business questions. These steps can be complex and time-consuming, making BI challenging. Given the strong capabilities of large language models (LLMs) in working with data, we study their ability to answer BI questions end-to-end, without requiring users to manually perform the tedious preparation steps. To do this, we harvest a large collection of real-world BI projects from public sources, and manually extract pairs of (questions, ground-truth answers) from real user dashboards. The resulting benchmark, BI-Bench, is the first benchmark to systematically study LLMs' ability on end-to-end BI. We find that even frontier LLMs perform poorly on BI-Bench, with less than 50% accuracy. To address their limitations, we design a tool-augmented BI-Agent that decomposes BI workflows into subta...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -410,30 +474,63 @@
     ],
     "score": 46,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ExecuTorch v1.5.1：v1.5.1 Changes",
+    "url": "https://github.com/pytorch/executorch/releases/tag/v1.5.1",
+    "source_name": "ExecuTorch",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-23T16:58:34+00:00",
+    "summary_or_excerpt": "# v1.5.1 Changes * Updated CMSIS-NN to v8.0.0 and aligned Arm runner dependencies. * Added the public `get_thread_count()` API. * Expanded Arm support for symbolic shapes and dynamic convolution and pooling. * Folded redundant Q/DQ pairs in the shared EXIR `to_edge` lowering path. # Highlights ---------- * Expanded the Python wheels into a C++ SDK, with linkable libraries for the CUDA, Core ML, MLX, OpenVINO, and Qualcomm delegates and packaged TorchAO kernels. * Expanded LLM serving with multi-method export, batched request scheduling, bounded cancellation, off-graph KV-cache layouts, and new Qwen3.5 MoE, Muse Glimmer, Supertonic, and Voxtral workflows. * Added ROCm support to the AOTI CUDA backend, including packed W4 execution and end-to-end Voxtral Realtime coverage. * Expanded Arm and Cortex-M support with explicit-layout lowering and kernels, additional Ethos-U targets and demos, broader VGF profiling, and more model and operator coverage. * Expanded Qualcomm LLM quantization-aware distillation, additional operators, Windows guidance, and stronger validation and error handling. * Improved Vulkan quantized execution, dispatch safety, external-memory integration, and operator...",
+    "matched_keywords": [
+      "API",
+      "CMSIS",
+      "CMSIS-NN",
+      "Cortex-M",
+      "CUDA",
+      "ExecuTorch",
+      "quantization",
+      "serving"
+    ],
+    "tags": [
+      "business",
+      "embedded_edge_ai",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 45,
+    "release_version": "v1.5.1",
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "MOSCOPT: Mixture-of-Skills Collective Optimization for LLM Agents",
-    "url": "https://arxiv.org/abs/2609.14399",
-    "source_name": "arXiv cs.AI",
+    "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+    "url": "https://openai.com/index/ringg",
+    "source_name": "OpenAI News",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.14399v2 Announce Type: replace Abstract: Natural language prompts and skills serve as the strategic backbone of LLM-based agents. Recent advances in prompt and skill optimization have achieved notable gains, yet all existing methods optimize a \\emph{single} text template---missing the synergy among multiple complementary strategies. We propose MOSCOPT, a text-native, parameter-free algorithm that jointly optimizes a pool of $N$ skills and a gating skill $G$ that dynamically selects $K$ skills per step. To effectively optimize the skills, we build the EditAdam with internally maintained dual states. Through the three-phase interleaved updates with EditAdam, the system monotonically improves without gradient or parameter tuning. Extensive experiments and detailed ablations across 5 benchmarks and 3 target LLMs demonstrate that MOSCOPT consistently outperforms all baselines, and confirm that both the mixture-of-skills architecture with selective activation and the collective evolution with three-phase interleaving are essential to its superior performance. Code is released https://github.com/zhangzhenyu13/SummerClaw/tree/master/summerclaw/agent_trainer/algorithms/moscopt.",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-23T12:00:00+00:00",
+    "summary_or_excerpt": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
     "matched_keywords": [
-      "Agent",
       "agents",
-      "GitHub"
+      "customer",
+      "GPT",
+      "OpenAI"
     ],
     "tags": [
       "agent",
-      "open_source"
+      "business",
+      "model"
     ],
     "score": 44,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -455,31 +552,31 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "An Interpretable Memory Decision Controller for LLM Agents Based on Three-Signal Complementarity: Decoupling Confidence and Consistency",
-    "url": "https://arxiv.org/abs/2609.22043",
-    "source_name": "arXiv cs.CL",
+    "title": "llm 0.36",
+    "url": "https://simonwillison.net/2026/Sep/22/llm",
+    "source_name": "Simon Willison",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-21T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.22043v1 Announce Type: new Abstract: Memory systems for large language models have focused predominantly on efficient retrieval, whereas the decision of whether retrieved memories should be trusted has received comparatively little attention. When the memory store contains conflicting positions, standard retrieval-augmented generation (RAG) blindly injects memories and amplifies hallucinations: in models susceptible to memory injection, the RAG hallucination rate under conflicting memories is markedly higher than that of a memory-free baseline. Inspired by memory signaling mechanisms in the prefrontal cortex, we propose the Memory Decision Layer (MDL), a zero-parameter memory decision controller situated between the retrieval and generation stages. Its core is a three-signal complementary encoder that fuses relevance, reliability, and task risk through QR-based orthogonal subspace projection and a meta-working-memory signal into an interpretable decision representation that quantifies the trustworthiness of retrieved memories. Building on this encoder, MDL explicitly decouples confidence from consistency and introduces risk inversion and explicit abstention. Evaluations...",
+    "source_level": "tech_community",
+    "published_at": "2026-09-22T18:48:37+00:00",
+    "summary_or_excerpt": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assistant or tool history, and llm chat rejects them before starting a session. See Models that do not support conversations . The first plugin to use this is llm-typesafe . #1692 Reasoning traces in the Markdown output of llm logs are now wrapped in <details><summary> tags. #1701 Plus bug fixes from five new contributors . Tags: openai , llm",
     "matched_keywords": [
-      "agents",
-      "RAG",
-      "retrieval"
+      "GPT",
+      "OpenAI",
+      "release"
     ],
     "tags": [
-      "agent",
-      "rag_data"
+      "model",
+      "open_source"
     ],
-    "score": 44,
-    "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "backlog",
+    "score": 41,
+    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -500,8 +597,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -522,8 +619,8 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -547,8 +644,8 @@
     "score": 38,
     "release_version": "langchain-anthropic==1.7.3",
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -575,76 +672,7 @@
     "score": 37,
     "release_version": "langchain-openai==1.6.3",
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Reproduce it, or it doesn't count: why training-side decontamination can't be verified, and what an evaluation-side rule looks like [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1wks8db/reproduce_it_or_it_doesnt_count_why_trainingside",
-    "source_name": "Reddit r/MachineLearning",
-    "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-19T17:32:20+00:00",
-    "summary_or_excerpt": "Since OpenAI retired SWE-bench Verified in February (every frontier model tested could reproduce reference fixes for some tasks; underspecified tests rewarded knowing the intended fix), I've been trying to write down precisely what a decontamination report can and can't establish. The claim: training-side decontamination has a hard floor. A report is a claim by the party whose score depends on it, over a corpus nobody else can inspect, using matching that misses paraphrase and synthetic derivatives. Corpus commitments and PSI make the lab's claims more precise but not checkable by anyone else, because neither proves the model was trained on the declared corpus and nothing else, and proof-of-training proposals so far have been shown spoofable. The alternative is to make the evaluation side rule out prior exposure by construction: the submission never receives labels, no network at evaluation, the evaluator builds from a named commit and reproduces the score itself, forward-dated test data where the problem allows it. I've implemented this for small tabular models and the post separates what's built from what's design. It also lists four things reproduction does not prove: benchmark...",
-    "matched_keywords": [
-      "benchmark",
-      "OpenAI"
-    ],
-    "tags": [
-      "model",
-      "open_source"
-    ],
-    "score": 37,
-    "first_seen_at": "2026-09-21T08:42:34.740768+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "LiteLLM v1.103.0-rc.1：Verify Docker Image Signature",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.103.0-rc.1",
-    "source_name": "LiteLLM",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-20T07:10:47+00:00",
-    "summary_or_excerpt": "## Verify Docker Image Signature All LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0). **Verify using the pinned commit hash (recommended):** A commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\ ghcr.io/berriai/litellm:v1.103.0-rc.1 ``` **Verify using the release tag (convenience):** Tags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules: ```bash cosign verify \\ --key https://raw.githubusercontent.com/BerriAI/litellm/v1.103.0-rc.1/cosign.pub \\ ghcr.io/berriai/litellm:v1.103.0-rc.1 ``` Expected output: ``` The following checks were performed on each of these signatures: - The cosign claims were validated - The signatures were verified against the specified public key ``` --- ## What's Changed * test(cost_m...",
-    "matched_keywords": [
-      "GitHub",
-      "LiteLLM",
-      "release",
-      "repository"
-    ],
-    "tags": [
-      "ai_app",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 36,
-    "release_version": "v1.103.0-rc.1",
-    "first_seen_at": "2026-09-21T08:42:34.740768+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ChatGPT now knows what you do on other websites via ad collector",
-    "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector",
-    "source_name": "Hacker News",
-    "source_type": "hackernews",
-    "source_level": "tech_community",
-    "published_at": "2026-09-20T15:18:44+00:00",
-    "summary_or_excerpt": "HN points: 561. Comments: https://news.ycombinator.com/item?id=49776729",
-    "matched_keywords": [
-      "ChatGPT"
-    ],
-    "tags": [
-      "model"
-    ],
-    "score": 36,
-    "hn_score": 561,
-    "first_seen_at": "2026-09-21T08:42:34.740768+08:00",
-    "last_seen_at": "2026-09-23T09:11:23.164164+08:00",
+    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

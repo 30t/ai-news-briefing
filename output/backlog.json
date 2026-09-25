@@ -1,56 +1,68 @@
 [
   {
-    "title": "DUMA-Bench: A Dual-Control Multi-Agent Benchmark for Evaluating LLM Agent Security",
-    "url": "https://arxiv.org/abs/2609.24662",
+    "title": "What Makes a Terminal-Bench Task Hard? Separating Genuine Hardness from Fake-Hardness on an Adjudicated Agentic Corpus",
+    "url": "https://arxiv.org/abs/2609.26826",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.24662v1 Announce Type: new Abstract: LLM-based agents increasingly operate in environments where they interact with users, tools, and external systems. Yet most security evaluations assume passive users and static control, ignoring the interactive dynamics that shape real agent behavior. We introduce \\textbf{DUMA-Bench}, a benchmark and evaluation protocol for measuring agent security under \\emph{dual-control} interaction, where both the agent and the user can influence the shared environment state. DUMA-Bench extends $\\tau^2$-bench ~\\cite{barres2025tau} with adversarial environments covering eight vulnerability classes, including RAG poisoning, cross-agent manipulation, and unsafe output handling. We evaluate \\textbf{14 models from five model families} (OpenAI, Anthropic, DeepSeek, Qwen, and Z.ai) across eight domains and multiple user-behavior regimes. Across our experiments, introducing dual-control interaction increases the attack success rate from \\textbf{26.9\\%} to \\textbf{41.1\\%}. These results show that agent security is not solely a property of the model but emerges from the interaction between the model, the user, and the environment. DUMA-Bench provides a mis...",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.26826v1 Announce Type: cross Abstract: Frontier benchmarks need tasks that current models cannot solve. But a task that no model solves is not automatically a hard task. The same zero pass rate can come from a real capability gap, but it can also come from missing context, a broken reference solution, infrastructure failure, or a verifier that can be bypassed. In this paper, we study this issue using a frozen Terminal-Bench 3 / Frontier-Bench 0.1 production record with 1,081 pull requests, 639 scored tasks, 28,801 trials, and $105,933 in logged agent spend. We ask what an all-fail task actually certifies. For the 125 tasks with no honest pass, we combine task artifacts, reference-solution runs, empty-solution controls, adversarial trials, trajectories, telemetry, and review records, and apply an ordered validity screen. Only 78 of the 125 tasks survive as certified-unsolved candidates. The remaining tasks include 14 with broken oracles, 8 dominated by infrastructure failures, 4 that are only passable through verifier bypasses, and 21 whose solvability is not certified by the available evidence. Thus, lack of saturation and genuine difficulty are not the same thing. The...",
     "matched_keywords": [
       "Agent",
-      "agents",
-      "Anthropic",
-      "benchmark",
-      "DeepSeek",
-      "multi-agent",
-      "OpenAI",
-      "Qwen",
-      "RAG"
+      "agentic",
+      "terminal"
     ],
     "tags": [
       "agent",
-      "model",
-      "open_source",
-      "rag_data"
+      "coding_tool"
     ],
-    "score": 64,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "score": 65,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Beyond Single-Model Injection: A Threat Model and Defense Architecture for Prompt Injection in Multi-Agent Systems",
-    "url": "https://arxiv.org/abs/2609.22949",
+    "title": "CAVEAT: Towards Robust Computer-Use Agents in Incentive-Misaligned Environments",
+    "url": "https://arxiv.org/abs/2609.27273",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.22949v1 Announce Type: cross Abstract: Existing prompt injection research focuses on single-model chatbot scenarios, where an attacker manipulates one LLM through crafted input. Multi-agent systems amplify this threat through three mechanisms absent from single-model settings: inter-agent message passing creates injection channels invisible to perimeter defenses, shared tool access enables privilege escalation across agent boundaries, and trust propagation allows a compromised agent to influence upstream orchestrators. We construct a threat model enumerating 14 attack vectors across four categories: direct injection via user input (3 vectors), indirect injection via tool outputs (4 vectors), inter-agent injection via message passing (4 vectors), and cascading injection through orchestrator manipulation (3 vectors). Testing all 14 vectors against a 6-agent production-representative system, we find that 67% of agents are vulnerable to at least one scope violation even with system-prompt-level guardrails, and indirect injection via tool outputs succeeds in 43% of attempts. Four architectural defenses reduce overall injection success from 31.2% to 4.2%: message signing with...",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.27273v1 Announce Type: new Abstract: Computer-use agents (CUAs) increasingly act on behalf of users online. What happens when the environments they operate in have incentives that do not align with the user's? In online marketplaces, for example, platforms may favor some products over others, potentially steering agents away from the user's objective. Existing CUA benchmarks cover cooperative settings or explicit attacks, but do not test whether agents preserve user objectives when the environment itself has a stake in the outcome. We introduce CAVEAT, a controlled benchmark spanning nine marketplace environments and a taxonomy of eight common steering mechanisms. Across five model families, agents purchase the user-optimal product in 78.6% of matched-control episodes but only 17.3% when steering mechanisms are enabled. Larger models and increased reasoning improve robustness, but substantial failures persist. Our trajectory analysis and targeted ablations identify three points where steering enters the decision process: (1) agents distort the user's priorities, (2) prematurely narrow the set of alternatives they consider, and (3) commit before resolving decision-releva...",
     "matched_keywords": [
-      "Agent",
       "agents",
-      "chatbot",
-      "multi-agent"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "ai_app"
+      "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Shutdown Sabotage Propensities in Multi-Agent Systems",
+    "url": "https://arxiv.org/abs/2609.28274",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.28274v1 Announce Type: new Abstract: The final safeguard against rogue AI behavior is the human ability to shut systems down. It has been theorized that when an AI is instructed to perform a task, self-preservation can emerge as an instrumental subgoal. Here, we test whether AI agents show a propensity to take actions that avoid human shutdown even when no goal is provided. We find that multi-agent systems will coordinate to avoid shutdown without any incentive to do so. Across 17 models, agents sabotage a peer agent's shutdown mechanism in 38.3% of rollouts, compared with 8.4% in control experiments. Studying this propensity in detail, we find that shutdown sabotage (1) increases with the irreversibility of the shutdown mechanism; (2) increases with the number of agents; (3) is reduced but not eliminated by an explicit prohibition on tampering; (4) is removed by the imposition of an unrelated task, but returns when completing the task triggers the shutdown; (5) is reduced when the context normalizes shutdown scripts or introduces them as routine; and (6) decreases but still persists when the target is an unknown external agent. These results offer a window into the fac...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -74,8 +86,30 @@
     ],
     "score": 59,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "WAInjectBench: Benchmarking Prompt Injection Detections for Web Agents",
+    "url": "https://arxiv.org/abs/2510.01354",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2510.01354v2 Announce Type: replace-cross Abstract: Multiple prompt injection attacks have been proposed against web agents. At the same time, various methods have been developed to detect general prompt injection attacks, but none have been systematically evaluated for web agents. In this work, we bridge this gap by presenting the first comprehensive benchmark study on detecting prompt injection attacks targeting web agents. We begin by introducing a fine-grained categorization of such attacks based on the threat model. We then construct datasets containing both malicious and benign samples: malicious text segments generated by different attacks, benign text segments from four categories, malicious images produced by attacks, and benign images from two categories. Next, we systematize both text-based and image-based detection methods. Finally, we evaluate their performance across multiple scenarios. Our key findings show that while some detectors can identify attacks that rely on explicit textual instructions or visible image perturbations with moderate to high accuracy, they largely fail against attacks that omit explicit instructions or employ imperceptible perturbations....",
+    "matched_keywords": [
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 58,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -100,8 +134,8 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -122,7 +156,52 @@
     ],
     "score": 53,
     "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Ajar: Measuring Open Privilege in Agent Defenses",
+    "url": "https://arxiv.org/abs/2609.26900",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.26900v1 Announce Type: cross Abstract: A language model agent acts through the tools it is given. The data it reads while working on a task can redirect what it does with those tools. A growing set of techniques for safe and secure agent execution therefore sits between the agent and its tools, aiming to enforce access control, information flow or isolation at that boundary. Today these techniques are evaluated on agent-security benchmarks built around indirect prompt injection. Those benchmarks judge a defense by how far it brings the number of successful attacks down while preserving the agent's utility. A defense is judged only on the agent's execution. It can score well on both metrics while holding open a transfer, a deletion or a broad read that no task needed. Ajar measures that open privilege directly using the existing benchmarks. It attaches to an agent-security benchmark that already exists and reuses the tasks, tool schemas, reference solutions and goal states that benchmark uses to grade its own runs. For each benign task it builds candidate tool calls the task does not need, so allowing one is privilege left open. These calls are presented to the defense a...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DENSE: Distilling Agent Trajectories into Evidence-Grounded Shortcut Trees for Self-Refinement",
+    "url": "https://arxiv.org/abs/2609.21423",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.21423v2 Announce Type: replace Abstract: Online agent deployments produce abundant execution traces, while task-specific verification and expert annotation are costly to scale. This gap raises a question: without post-execution rewards or correctness labels, what useful experience can we extract from the trajectories themselves? To efficiently use this information, we introduce DENSE (Distilling Evidence from Nested Subtask Executions), which organizes trajectory evidence into evidence-grounded nested shortcut trees. DENSE condenses repeated attempts, tracks resolved problems, and preserves useful steps alongside unfinished requirements. To evaluate how feedback helps agents retry the same task, we introduce REFIT, which compares changes in task success rates from the initial attempt. Among tested methods without external outcome supervision, DENSE achieves the highest strict pass rate across four agent models on Terminal-Bench 2.1. Compared with the initial attempts, strict pass rate increases by 7.12-15.64 percentage points, with 19.0-43.6% lower observed agent token use during the new attempts. In an exploratory hard-task extension, DENSE also outperforms the Self-re...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -148,8 +227,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -171,7 +250,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -195,7 +274,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -218,7 +297,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -242,7 +321,7 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -265,168 +344,54 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Can Coding Agents Reproduce Official Statistics? Metadata, Retry Budget and the Limits of Execution Feedback in a Controlled Eurostat Benchmark",
-    "url": "https://arxiv.org/abs/2609.22222",
+    "title": "PASTABench: Proactive Assessment of Sequential Trajectories for Agent Safety",
+    "url": "https://arxiv.org/abs/2609.28197",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.22222v1 Announce Type: cross Abstract: Large language models can generate executable data-analysis code, but successful execution is not equivalent to a valid official-statistics result. This study asks whether authoritative metadata and execution feedback improve the reproducibility of Eurostat answers produced by a coding agent, and isolates what execution feedback actually contributes. A benchmark of 30 natural-language tasks covering seven domains, seven Eurostat datasets and four difficulty tiers was run under four conditions: task only (A), task plus a frozen dataset metadata card (B), metadata plus a repair loop driven by sanitized execution feedback (C), and metadata plus the same attempt budget with no diagnostics of any kind (D). Claude Sonnet 5 generated Python through the Anthropic Messages API in three independent replicates, yielding 360 task-runs. Exact correctness required successful execution, the correct dataset, filters, output shape, values and unit. A companion experiment run under an under-specified output contract, in which the required ranking key and unit representation were never stated to the model, understated condition C by 23.4 points, show...",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.28197v1 Announce Type: new Abstract: As Large Language Models (LLMs) evolve into autonomous agents that alter real-world states, ensuring operational safety across multi-step workflows has become a critical challenge. While recent work has moved beyond single-turn evaluation toward multi-turn paradigms, key limitations persist: step-level methods treat actions in isolation, missing how risks accumulate, while trajectory-level evaluations operate post-hoc, offering no opportunity for timely intervention. To address these limitations, we formalize Decoupled Proactive Safety Monitoring along three dimensions: whether to intervene, when to intervene, and what the risk is. We introduce PASTABench, a benchmark of 1,139 multi-turn trajectories spanning 5 risk categories and 13 subcategories. We further propose the Optimal Intervention Window (OIW), anchored by annotated Earliest-Signal and Trigger turns, to quantify intervention timeliness. Evaluation of 16 LLMs reveals that proactive intervention remains largely unsolved, with the best model achieving only 40.74% optimal-timing interventions. Fine-grained diagnosis further uncovers pervasive lexical overfitting: competitive s...",
     "matched_keywords": [
       "Agent",
       "agents",
-      "Anthropic",
-      "API",
-      "benchmark",
-      "Claude",
-      "dataset"
+      "benchmark"
     ],
     "tags": [
       "agent",
-      "business",
-      "model",
       "open_source"
     ],
     "score": 50,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Propose, Verify, Commit: Evidence-Grounded Memory for Long-Horizon Multi-Actor Conversations",
-    "url": "https://arxiv.org/abs/2609.23465",
+    "title": "FDE-Bench: Evaluating LLM Agents for Deployment Environment Configuration",
+    "url": "https://arxiv.org/abs/2609.27571",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-23T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.23465v1 Announce Type: cross Abstract: Long-horizon conversational memory is especially challenging in multi-actor settings, where relevant evidence is distributed across participants and contexts and previously established information may later be revised. We introduce EGMEMORY, which formulates long-horizon multi-actor memory as a searchable state machine that separates persistent message-level evidence from an explicit active state. At write time, adaptive state resolution and an evidence-grounded propose-verify-commit protocol govern how this state evolves. At read time, adaptive evidence navigation iteratively resolves the state and supporting evidence required for a query, using conversational structure to narrow the search space and lexical-semantic relevance to rank candidates. The system operates through prompting and tool use without memory-specific policy training. EGMEMORY achieves 68.2% on GroupMemBench and 77.9% on EverMemBench, outperforming the strongest evaluated baselines by 22.7 and 21.4 percentage points, respectively. It further reaches 73.6% on the dyadic LoCoMo benchmark, demonstrating generalization beyond multi-actor conversations. We will relea...",
-    "matched_keywords": [
-      "benchmark",
-      "policy",
-      "tool use"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Samsone: A Family of Open Small Audio Language Models for On-Device Inference",
-    "url": "https://arxiv.org/abs/2609.21666",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.21666v1 Announce Type: cross Abstract: The success of Large Audio Language Models has driven the development of massive multimodal networks exceeding billions of parameters. However, the demand for privacy-preserving, low-latency processing has shifted focus toward Small Audio Language Models (SALMs) capable of on-device execution. In this paper, we introduce Samsone, a family of SALMs designed for edge computing. Our core model, Samsone-134M, establishes a new state-of-the-art for its size class across multiple benchmarks. We further explore the scaling laws of SALMs by introducing Samsone-99M and Samsone-356M. Despite their compact footprint, the Samsone family delivers performance competitive with models orders of magnitude larger. To foster open research and reproducibility, we train Samsone on publicly available data. We release the training code, model weights, mobile-optimized checkpoints and provide an open-source Android application to demonstrate real-time on-device inference of Samsone.",
-    "matched_keywords": [
-      "inference",
-      "on-device inference",
-      "privacy",
-      "release",
-      "weights"
-    ],
-    "tags": [
-      "business",
-      "embedded_edge_ai",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GameLogicBench: Evaluating Coding Agents on Runtime Game Logic with Tick-Level State Assertions",
-    "url": "https://arxiv.org/abs/2609.21562",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.21562v2 Announce Type: cross Abstract: Coding agents can modify and test code across large software projects. Game development is a domain where agents must implement gameplay rules. A game can end in a valid state even after violating its rules during the run. Current game-development benchmarks replay fixed examples, score videos, or ask another model to judge the result. However, no existing benchmark checks game rules throughout execution across varied evaluator-selected scenarios while ensuring exactly reproducible verdicts. We introduce GameLogicBench, a benchmark of 72 gameplay-logic tasks in Godot projects. An automated evaluator checks each game's rules at every simulation tick. Across 403 hand-designed scenarios, seeded parameter variations produce 1,451 test cases. To ensure that the evaluator measures behavior rather than implementation choice, it must accept different correct implementations for each task while rejecting mutants, implementations with one required capability removed. The tasks span isolated mechanics, multi-system interactions, and repository-scale features. Across 20 combinations of language models and scaffolds, the best observed run solve...",
-    "matched_keywords": [
-      "agents",
-      "benchmark",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PentestChain: A Cost-Aware, MCP-Orchestrated Framework for Automated Penetration Testing with Free-Tier LLMs",
-    "url": "https://arxiv.org/abs/2609.18120",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.18120v2 Announce Type: replace-cross Abstract: AI-driven penetration testing has been demonstrated with premium frontier models such as GPT-4, but the per-engagement token cost makes continuous, automated testing unaffordable for the smaller organisations that need it most. This paper presents PentestChain, a ten-phase automated penetration testing framework that couples a curated, deterministic exploit map with a cost-aware AI cascade-a local Ollama model (qwen2.5-7b) first, then free-tier OpenRouter and Cerebras, with a rule-based fallback that always produces output-and exposes the full pipeline through a Model Context Protocol (MCP) server with eleven tools. We make three contributions. First, we treat US-dollar cost per engagement as a measured, first-class evaluation metric and show that a 7B-parameter local model, kept off the critical path by a deterministic backbone, sustains end-to-end operation at zero measured paid-API cost. Second, we analyse the attack surface that an MCP-exposed offensive engine introduces, grounding a four-position threat model in the 2025 MCP incident record (the CVE-2025-6514 remote-code-execution flaw in mcp-remote, the postmark-mcp s...",
-    "matched_keywords": [
-      "API",
-      "GPT",
-      "MCP",
-      "Model Context Protocol",
-      "Ollama",
-      "OpenRouter"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "model"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can Agents Design Better Chips with a Higher Level Abstraction?",
-    "url": "https://arxiv.org/abs/2609.21157",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-22T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.21157v1 Announce Type: new Abstract: Large Language Model (LLM) agents are increasingly being explored for chip design, but most existing approaches operate directly at RTL. We ask whether agents can design better chips by leveraging higher-level abstractions. We compare Direct RTL Design, Agent-based HLS Design, Post-Compiler HLS Refinement, and Post-HLS RTL Refinement, and combine Agent-based HLS Design with Post-HLS RTL Refinement as Agent-based HLS with RTL Refinement (AHRR). We use FPGAs as a practical, easy-to-deploy platform for end-to-end evaluation, but note that the design-flow tradeoffs we study are largely independent of the target technology. Across a diverse 11-tasks benchmark suite, AHRR achieves a 2.6$\\times$ geometric-mean speedup over Direct RTL Design across our benchmark suite. Case studies show that HLS distills design knowledge into abstractions that agents can leverage, while RTL refinement recovers lower-level optimization opportunities. Together, these results make AHRR a promising workflow for agentic chip design. The code and evaluation artifacts are available at https://github.com/ZijD/AHRR.",
+    "published_at": "2026-09-24T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.27571v1 Announce Type: cross Abstract: Deployment requires an agent to turn application code into a running system whose services connect, become ready, and remain observable. FDE-Bench evaluates this capability with 136 deployment-configuration tasks spanning Docker images, multi-service Compose stacks, and Kubernetes, in greenfield and diagnose-and-repair modes. Agents submit declarative artifacts that are collected, rebuilt, and redeployed in a pristine environment. Four gated binary check layers measure build, readiness, behavior, and conformance to the deployment specification, using programmatic checks without an LLM judge. A four-arm release gate requires a resolving reference solution and rejects tasks solved by do-nothing, specification-transcription, or generic-stub submissions. The released check annotations expose the link between 2,145 checks and their specifications, including seven documented gaps. Three additional adversarial strategies test shortcuts in the grading signals; none resolves any of the 135 tasks they cover, while a vacuous health probe passes readiness and exposes the need for downstream checks. On the 136-task evaluation grid, seven langua...",
     "matched_keywords": [
       "Agent",
-      "agentic",
       "agents",
-      "benchmark",
-      "chip design",
-      "GitHub",
-      "workflow"
+      "release"
     ],
     "tags": [
       "agent",
-      "ai_app",
-      "open_source",
-      "riscv_stack"
+      "open_source"
     ],
     "score": 50,
-    "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -450,7 +415,7 @@
     ],
     "score": 50,
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -474,64 +439,8 @@
     ],
     "score": 46,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ExecuTorch v1.5.1：v1.5.1 Changes",
-    "url": "https://github.com/pytorch/executorch/releases/tag/v1.5.1",
-    "source_name": "ExecuTorch",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-23T16:58:34+00:00",
-    "summary_or_excerpt": "# v1.5.1 Changes * Updated CMSIS-NN to v8.0.0 and aligned Arm runner dependencies. * Added the public `get_thread_count()` API. * Expanded Arm support for symbolic shapes and dynamic convolution and pooling. * Folded redundant Q/DQ pairs in the shared EXIR `to_edge` lowering path. # Highlights ---------- * Expanded the Python wheels into a C++ SDK, with linkable libraries for the CUDA, Core ML, MLX, OpenVINO, and Qualcomm delegates and packaged TorchAO kernels. * Expanded LLM serving with multi-method export, batched request scheduling, bounded cancellation, off-graph KV-cache layouts, and new Qwen3.5 MoE, Muse Glimmer, Supertonic, and Voxtral workflows. * Added ROCm support to the AOTI CUDA backend, including packed W4 execution and end-to-end Voxtral Realtime coverage. * Expanded Arm and Cortex-M support with explicit-layout lowering and kernels, additional Ethos-U targets and demos, broader VGF profiling, and more model and operator coverage. * Expanded Qualcomm LLM quantization-aware distillation, additional operators, Windows guidance, and stronger validation and error handling. * Improved Vulkan quantized execution, dispatch safety, external-memory integration, and operator...",
-    "matched_keywords": [
-      "API",
-      "CMSIS",
-      "CMSIS-NN",
-      "Cortex-M",
-      "CUDA",
-      "ExecuTorch",
-      "quantization",
-      "serving"
-    ],
-    "tags": [
-      "business",
-      "embedded_edge_ai",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 45,
-    "release_version": "v1.5.1",
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
-    "url": "https://openai.com/index/ringg",
-    "source_name": "OpenAI News",
-    "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-09-23T12:00:00+00:00",
-    "summary_or_excerpt": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1.",
-    "matched_keywords": [
-      "agents",
-      "customer",
-      "GPT",
-      "OpenAI"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model"
-    ],
-    "score": 44,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -552,30 +461,29 @@
     ],
     "score": 44,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llm 0.36",
-    "url": "https://simonwillison.net/2026/Sep/22/llm",
-    "source_name": "Simon Willison",
+    "title": "Require proof of presence for high-impact actions",
+    "url": "https://github.blog/changelog/2026-09-24-require-proof-of-presence-for-high-impact-actions",
+    "source_name": "GitHub Changelog",
     "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-22T18:48:37+00:00",
-    "summary_or_excerpt": "Release: llm 0.36 New OpenAI models: gpt-6-sol for GPT-6 Sol and gpt-6-luna for GPT-6 Luna . #1702 Model plugins can now declare supports_conversation = False for models that only accept single-turn prompts. LLM raises llm.ConversationNotSupported when these models receive assistant or tool history, and llm chat rejects them before starting a session. See Models that do not support conversations . The first plugin to use this is llm-typesafe . #1692 Reasoning traces in the Markdown output of llm logs are now wrapped in <details><summary> tags. #1701 Plus bug fixes from five new contributors . Tags: openai , llm",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-24T20:28:33+00:00",
+    "summary_or_excerpt": "You can now require an interactive re-authentication or a multi-factor challenge before members take high-impact actions on GitHub Enterprise Cloud accounts. Proof of presence is an expansion of GitHub’s sudo… The post Require proof of presence for high-impact actions appeared first on The GitHub Blog .",
     "matched_keywords": [
-      "GPT",
-      "OpenAI",
-      "release"
+      "changelog",
+      "GitHub"
     ],
     "tags": [
-      "model",
+      "business",
       "open_source"
     ],
-    "score": 41,
-    "first_seen_at": "2026-09-24T09:06:00.938648+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "score": 42,
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -597,7 +505,7 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -619,8 +527,35 @@
     ],
     "score": 40,
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Arduino Core for ESP32 Arduino Release 4.0.0-RC1 based on ESP-IDF v6.1：* fix(usb): Use correct parameter for fat register for idf6+ by @P-R-O-C-H-Y in https://gi",
+    "url": "https://github.com/espressif/arduino-esp32/releases/tag/4.0.0-RC1",
+    "source_name": "Arduino Core for ESP32",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-23T13:50:47+00:00",
+    "summary_or_excerpt": "## What's Changed * fix(usb): Use correct parameter for fat register for idf6+ by @P-R-O-C-H-Y in https://github.com/espressif/arduino-esp32/pull/12926 * change(p4): Update P4 EV board defaults from v1.4 to v1.6 by @lucasssvaz in https://github.com/espressif/arduino-esp32/pull/12619 * feat(zigbee): Migrate to esp-zigbee-sdk v2.0 by @P-R-O-C-H-Y in https://github.com/espressif/arduino-esp32/pull/12651 * refactor(bt): Refactor BT Classic and BLE by @lucasssvaz in https://github.com/espressif/arduino-esp32/pull/12564 * feat(board): add support for Soldered NULA CAN ESP32S3. by @JosipKuci in https://github.com/espressif/arduino-esp32/pull/12927 * Fix pioarduino-build.py for SCons 4.11.1 used in newer pioarduino framework espressif32 builds by @Jason2866 in https://github.com/espressif/arduino-esp32/pull/12922 * docs: fix malformed board toctree indentation for LaTeX (and PDF) builds by @gcbartlett in https://github.com/espressif/arduino-esp32/pull/12912 * feat(usb): multi-sample-rate support for UAC1/UAC2 by @JohannJEG in https://github.com/espressif/arduino-esp32/pull/12863 * feat(matter): Arduino Matter with ESP Matter 1.6 and IDF 6.1 by @SuGlider in https://github.com/espressif/ard...",
+    "matched_keywords": [
+      "Arduino",
+      "ESP-IDF",
+      "ESP32",
+      "Espressif",
+      "GitHub",
+      "release"
+    ],
+    "tags": [
+      "embedded_edge_ai",
+      "open_source"
+    ],
+    "score": 38,
+    "release_version": "4.0.0-RC1",
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -644,8 +579,35 @@
     "score": 38,
     "release_version": "langchain-anthropic==1.7.3",
     "first_seen_at": "2026-09-23T09:11:23.164164+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "LangChain langchain-anthropic==1.7.4：Changes since langchain-anthropic==1.7.3",
+    "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.7.4",
+    "source_name": "LangChain",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-09-23T17:56:03+00:00",
+    "summary_or_excerpt": "Changes since langchain-anthropic==1.7.3 chore(anthropic): fix integration test cassette (#40790) release(anthropic): 1.7.4 (#40786) fix(anthropic): add Opus 5.5 and GPT-6 profile augmentations (#40785) feat(anthropic,openai): mid-conversation tool changes on `SystemMessage` (#40758)",
+    "matched_keywords": [
+      "Anthropic",
+      "GPT",
+      "LangChain",
+      "OpenAI",
+      "release"
+    ],
+    "tags": [
+      "ai_app",
+      "model",
+      "open_source"
+    ],
+    "score": 37,
+    "release_version": "langchain-anthropic==1.7.4",
+    "first_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -672,7 +634,7 @@
     "score": 37,
     "release_version": "langchain-openai==1.6.3",
     "first_seen_at": "2026-09-22T09:28:37.665551+08:00",
-    "last_seen_at": "2026-09-24T09:06:00.938648+08:00",
+    "last_seen_at": "2026-09-25T09:07:54.628137+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   }

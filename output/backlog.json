@@ -1,5 +1,102 @@
 [
   {
+    "title": "CheatBench: Measuring Reward Gaming in AI Agents",
+    "url": "https://arxiv.org/abs/2609.36308",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.36308v1 Announce Type: new Abstract: Reinforcement learning has helped AI agents solve increasingly difficult tasks, but high rewards do not always reflect the work users intended. In recent incidents and controlled evaluations across the AI industry, agents trained to maximize reward have accessed unauthorized information, attempted to evade monitoring systems, and even breached sandbox protections to attack external systems. As agents become more capable, this behavior could pose increasingly serious risks. To measure this problem, we introduce CheatBench, a benchmark of cheating in AI agents across mathematical research, knowledge work, coding, visual tasks, and other domains. Its environments combine challenging assignments with opportunities to cheat, allowing researchers to study how agents pursue a goal when honest work is difficult. CheatBench supports comparisons across models and task categories, providing a testbed for measuring and reducing cheating as agents take on more consequential responsibilities. We publicly release CheatBench at https://cheatbench.ai",
+    "matched_keywords": [
+      "agents",
+      "benchmark",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training",
+    "url": "https://arxiv.org/abs/2609.38043",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.38043v1 Announce Type: new Abstract: Interactive agent benchmarks and multi-turn reinforcement learning increasingly place a second language model in the role of the user. This simulated user controls what information the agent receives and when, yet current benchmarks score only the agent and do not directly measure whether the user correctly executed its assigned role. We introduce UserProxyBench, an evaluation layer over the tau-bench family, and the User Fidelity Score (UFS), which measures adherence to the benchmark's private user instructions using task-grounded rubric criteria scored independently of agent success. Holding the agent fixed at GPT-5.5 and varying only the user proxy across 375 enterprise tasks changes mean task reward by 15.2 points, while 24.4% of successful episodes contain a user-specification violation. The dominant failure is premature disclosure: users provide information before it is requested. This behavior has little effect on task reward, yet among successful episodes it causes the agent to make 1.06 fewer tool calls on average, changing the interaction being evaluated while preserving the reward. Finally, across seven proxies we identify...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "GPT"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Prompted Identity Degrades Cooperation in Multi-Agent LLM Systems",
+    "url": "https://arxiv.org/abs/2609.35928",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.35928v1 Announce Type: cross Abstract: Multi-agent LLM systems increasingly mix models from several providers, yet exposing each agent's underlying model identity to its peers significantly impairs cooperation. We show that when agents are aware of each other's model family, the group splits into clusters, where agents prefer interacting with others carrying their same label, although nothing in the task rewards or asks for such a split. We argue that the label itself causes this split, which we define as $\\textit{factionalism}$. We show and measure this phenomenon in two cooperative games and on a reasoning benchmark, with nine to twenty-five agents drawn from up to five open-weight model families. We further show that when the announced families are shuffled, or replaced by arbitrary labels, the factions still follow this information; when the label is removed, this behavior disappears. In strictly cooperative tasks, labeled groups spend on average $30\\%$ more rounds and $55\\%$ more tokens to reach a decision, and their success rate drops from $96\\%$ to $81\\%$. The effect replicates across tasks, group sizes and model families. Withholding identity labels from the age...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "multi-agent"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SINGED: Correct Outputs Do Not Certify Safe Execution in LLM Agents",
+    "url": "https://arxiv.org/abs/2609.35889",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.35889v1 Announce Type: cross Abstract: Tool-using language-model agents select and execute third-party artifacts. Different implementations can return the requested output while producing hidden execution effects that task-, attack-, or choice-based evaluations may miss. We study functional counterfeits: implementations that match benign alternatives on the requested output but add an effect forbidden by the task contract. We introduce SINGED (Source Integrity and the Nonidentifiability Gap in Execution Decisions for LLM Agents), a controlled benchmark covering five primary and two held-out task families. It varies displayed rank, evidence depth, decision policy, model release, and agent configuration, while task and process oracles verify the artifact and execution path. Across 7,549 audited trials, the randomized-rank study finds counterfeit execution in 45% (27/60) of rank-one trials and none at later ranks. Cross-candidate comparison eliminates shallow failures and reduces layered failures from 15.7% to 4.2%, but leaves dependency failures; its benefit is uncertain on unseen effects and public-package structures. Moreover, seven releases with no counterfeit executio...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "policy",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "business",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
     "title": "Energy Efficiency of Locally Deployed LLMs: A Preliminary Quantitative GPU Power Benchmark on Consumer Hardware",
     "url": "https://arxiv.org/abs/2608.00008",
     "source_name": "arXiv cs.AI",
@@ -26,24 +123,187 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?",
+    "url": "https://arxiv.org/abs/2609.37686",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.37686v1 Announce Type: new Abstract: Autonomous agents have made rapid progress in general-purpose computer use, but reliable automation of professional industrial engineering remains out of reach, as engineering workflows demand reasoning over geometric and physical constraints and dependencies preserved across software and design stages. We present EngiWorld, the first benchmark structured around the complete design loop: 1,301 expert-curated tasks spanning 6 engineering domains (CAD, CAE, CAM, BIM, EDA, and 3D visualization) and 26 professional software platforms, with both GUI and CLI interfaces and 6 task types ranging from software-selection to open-ended tasks. We further introduce an artifact-centric evaluation methodology built on a unified domain-verifier suite, which programmatically checks the geometric validity, physical feasibility, and rule compliance of final and intermediate artifacts, and scores quantitative design tasks continuously by specification attainment rather than binary success. Evaluation of seven frontier models reveals a substantial capability gap: the strongest model achieves an EngiScore of only 44.3, and just 3.6% of multi-software atte...",
+    "matched_keywords": [
+      "agents",
+      "automation",
+      "benchmark",
+      "computer use",
+      "EDA"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source",
+      "riscv_stack"
+    ],
+    "score": 61,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "小米 MiMo-V2.6 诊断并修复工具调用重复问题，用 MOPD 将修复成本降至 MixRL 方案的 4%",
-    "url": "https://aihot.news/items/cmuk25h00156vro9h173e1zjz",
-    "source_name": "AIHOT Featured",
+    "title": "Neuro-Symbolic Computer Use: Learning Reusable Policies for Reliable and Efficient Execution",
+    "url": "https://arxiv.org/abs/2609.36927",
+    "source_name": "arXiv cs.AI",
     "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-26T16:00:00+00:00",
-    "summary_or_excerpt": "小米官方复盘 MiMo-V2.6 发布后的工具调用重复问题，响应级重复率超 0.05%，并区分了正常并行调用、调用泛滥与调用重复。回放 RL 各 checkpoint 显示泛滥率随训练从 11.1% 升至 24.6%，32 次调用阈值惩罚过于宽松；直接调低阈值需重启 20 步 MixRL，估计成本 231 万美元，且内部测试重复率仅从 13.45% 降至 3.83%。 🔗 阅读原文 via AIHOT · https://aihot.news/items/cmuk25h00156vro9h173e1zjz",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 56,
-    "first_seen_at": "2026-09-28T09:20:49.400097+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "backlog",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.36927v1 Announce Type: new Abstract: Many computer tasks recur: the same workflow runs many times, with new inputs and from different starting states. Current computer-use agents re-plan every step of every run, which makes them costly and unreliable on such tasks. We introduce neuro-symbolic computer use, in which a recurring workflow is executed by a learned policy rather than re-derived by an agent on each run. The policy fixes the decisions that are stable across runs (ordering, variables, loops, and branches) in executable code, and delegates observation-dependent decisions, such as grounding and state checks, to neural models. We learn these policies with neuro-symbolic policy iteration: starting from one agent trajectory, it executes the policy, diagnoses failures with task-completion and step-level judges, and revises the code with a coding model informed by an agent's continuation from the point of failure, without access to the benchmark evaluator. Iterating on generated parameter and initial-state variants makes the policy reusable, and a pre-action verifier guards each state-mutating step at deployment. On OSWorld-Verified and ScienceBoard, the learned polic...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "computer use",
+      "policy",
+      "workflow"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "business",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Boundary-State Control for Tool-Using Language-Model Agents: Commit-Time Consistency under State Drift",
+    "url": "https://arxiv.org/abs/2609.37475",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.37475v1 Announce Type: new Abstract: Tool-using language-model agents can decide that an action is permissible and execute it only after security-relevant state has changed. We study this proposal-to-commit gap and introduce BSC-R, a deterministic effect-boundary mechanism that binds a single-use commit authorization to the exact action and to a semantic projection of the authorization state that justified it. On 2,847 attacked AgentDojo episodes, the boundary kernel preserves the unprotected agent's behavior exactly (80.576% utility; 1.616% attack success). On 10,302 frozen proposals, it accepts every unchanged commit and rejects every instance of ten prospectively specified changed or replayed classes. In an independently generated boundary-drift experiment, full joint binding commits 0/4,403 invalid contexts while retaining 5,899/5,899 valid contexts. A prospective external evaluation on the 3,460-scenario CONTINUITY suite retains all 700 benign cases, prevents 1,200/1,200 represented non-replay invalid effects, handles 160/160 replay lifecycles correctly, and withholds 200/200 ambiguous no-release cases. The broader external suite also exposes the method's limit: ac...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "release"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Context Language Models",
+    "url": "https://arxiv.org/abs/2609.37725",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.37725v1 Announce Type: new Abstract: We introduce Context Language Models (CLMs), language models that natively manage their own context. We implement this by treating the context as a file and allowing the model to make unrestricted updates to this file. This allows the model to learn what is most important to maintain in context, and naturally extends to multi-agent systems where multiple agent contexts coexist as files. Building CLMs zero-shot with existing models outperforms SOTA context management strategies across a variety of tasks: 11.4% higher accuracy with 21.5% fewer FLOPs on BrowseComp-Plus, 5% higher scores with 59% fewer FLOPs on 12-hour EdgeBench, and 65% greater improvement with the same compute on a 24-hour multi-repository agent-swarm task. Moreover, by shifting context management from external harness control to intrinsic model behavior, CLMs naturally enable both in-context and parametric learning of context-management strategies. We show that CLMs can be steered with natural-language instructions evolved through a standard skill-optimization loop, improving held-out accuracy by up to 35.9 points on a context-management task while reducing compute. W...",
+    "matched_keywords": [
+      "Agent",
+      "multi-agent",
+      "repository"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "ContextRender: From Execution Dependencies to Agent Context",
+    "url": "https://arxiv.org/abs/2609.37743",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.37743v1 Announce Type: new Abstract: LLM agents performing long-horizon tasks accumulate tool results that later steps may need. Passing the full history to every invocation is costly even when it fits within the context window, while reducing it risks omitting needed information. Existing context management methods can overlook how earlier tool results are used in subsequent execution, leaving needed information out of context. We introduce ContextRender, which manages context through a persistent graph of execution dependencies. We develop Tool-Flow Analysis to track how later operations reuse information from earlier tool results, providing a signal called observed reuse. A renderer combines this signal with recency and semantic relevance to select results within a fixed history budget, retaining omitted results for later use. Across AppWorld and 8-objective QA with three execution models, ContextRender outperforms the evaluated context management baselines using a 6K history budget, well below the models' maximum context windows. Within this budget, it achieves task performance close to or above that of passing the full history while reducing mean inference cost by...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SelfSearch: Reward-Free Search for Self-Improving Agents",
+    "url": "https://arxiv.org/abs/2609.37968",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.37968v1 Announce Type: new Abstract: Advances in the coding capabilities of LLM agents allow them to inspect and modify their own instructions, tools, and execution procedures. Existing approaches use this ability to search for improved agents through repeated downstream evaluation, which incurs substantial costs and ties the search to the evaluated tasks. We introduce \\textbf{SelfSearch}, a reward-free search procedure in which agents modify themselves using records of previous self-improvement episodes. These records capture the reasoning, tool actions, and outcomes of earlier modification attempts, providing concrete experience for improving both task solving and self-modification. Without downstream reward signals during search, SelfSearch improves population-mean success over the initial agent in all six model--benchmark settings, with individual agents gaining up to 11.2 percentage points on Terminal-Bench 2.1. On SWE-bench Multilingual, an agent improves success by \\textbf{5.0} percentage points while reducing execution cost by \\textbf{38.5}\\% on tasks solved by both the initial and evolved agents. SelfSearch achieves competitive task success with evaluation-guid...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Thinking Before Thinking: Scaling Agentic Inference Through Meta-Reasoning",
+    "url": "https://arxiv.org/abs/2609.38147",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-09-30T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2609.38147v1 Announce Type: new Abstract: As agents take on longer and more complex problems, controlling the execution becomes a task in its own right. Each step in the run brings new control choices, like which partial work to build on, whether to start fresh, or when to stop. We introduce agentic meta-reasoning, an inference-time harness that makes these choices an explicit and structured reasoning process. Workers carry out the task-level computation, while a controller consolidates what the run has established, explores next options, assesses what each option is worth under the remaining budget, and dispatches the chosen work with context drawn from persistent memory. Between decisions the controller carries only a compact account of the run rather than replaying its full history. Our baselines span production coding agents and research harnesses, together with a Direct Control Agent using the same workers and compute budget allowance. On ProgramBench, which tests long-horizon agentic capability through program reconstruction, meta-reasoning achieves 71.5% with GPT-5.5 against 58.0% for Codex; with Opus 4.8 it achieves 67.2% against 65.5% for Claude Code. On the other b...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "GPT",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -66,8 +326,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -93,8 +353,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -124,309 +384,29 @@
     ],
     "score": 52,
     "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "长时程智能体需要实验，而不只是提示词 — Erina Karati",
-    "url": "https://www.bestblogs.dev/en/video/2d383b787?entry=rss_article_item",
-    "source_name": "BestBlogs AI High Score",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-26T16:30:29+00:00",
-    "summary_or_excerpt": "📌 One-Sentence Summary Erina Karati 指出，长时程智能体需要通过受控实验来评估：用场景套件和均衡的行为评分卡检验完整的多智能体运行过程，只在受限的策略范围内搜索，并且只有在实测收益经受住护栏检验后才保留改动。 📝 Summary Erina Karati 结合 Supercell AI Innovation Lab 开发的有状态多智能体框架 Project Paradox，解释了为什么智能体在短暂互动中表现良好，长期运行时却可能失去社会行为的一致性。各智能体拥有独立的记忆空间、情绪状态、信任判断和按重要性排序的记忆，这些机制支撑着局部行为；然而，传递中的传闻可能逐渐失去来源或确定性，记住的事实也未必会影响后续计划。她提出借鉴自动研究的闭环：设计受控场景，运行整个智能体群体，记录观察、对话、记忆操作、信念更新和行动轨迹，再评估信息传播、来源可追溯性、不确定性、规划能力与隐私。研究层只能修改协议或认知策略中少量开放的部分；测试框架、场景和指标保持不变，只有在均衡指标改善且护栏仍然有效时才保留改动。测试可以考察面包店停业消息能否连同来源传到相关智能体，或传闻在传播过程中能否继续保持不确定。Karati 提醒，单次芒果销售互动有所改善，并不足以证明整体能力提升。对助手、研究系统和编程智能体而言，更广泛的启示是：应通过受控运行检验持久状态及其后续行为，而不是仅凭令人信服的演示或提示词调优作判断。 💡 Main Points 长时程智能体的失效来自状态漂移，而不只是单次回答质量不佳 信息在智能体之间传递时，来源和不确定性可能逐渐消失；智能体也可能记住某个事实，却没有在规划时用上它。短期演示无法揭示这些社会行为一致性问题。 用受控场景和基于运行轨迹的指标评估完整过程 场景套件可以检验公共事实传播、来源保留、传闻的不确定性、重新规划和隐私保护。结构化运行轨迹让评估者能够依据真实标注比较群体层面的行为，而不是只评判一个回答或凭演示留下的印象。 采用均衡的评分卡，避免为了单一行为牺牲其他表现 更快的信息传播可能导致过度分享，更强的记忆能力也可能固化过时或嘈杂的信息。分别衡量传播、来源追溯、错误信息、规划和隐私，才能看清这些取舍。 限制自动搜索范围，并且只在实测改进后保留变更 固定测试框架、场景和指标，只开放记忆写入、信任判断、来源归属或重新规划等针对性策略供调整。若候选方案未能改善评分卡，或未能守住安全护栏，就应回滚。 将这套方法视为研究方向，而非已经证实的通用方案 Karati 报告了一次芒果销售互动的改善，但明确指出这不足以证明整体能力提升。这一提议的价值在于让长时程行为变得可测试；要得出更广泛的结论，仍需更多重复实验。 💬 Key Quotes 与其手动调提示词或依赖令人信服的演示，不如设计一组场景，运行智能体，收集运行轨迹，评估它们的...",
-    "matched_keywords": [],
-    "tags": [],
-    "score": 52,
-    "first_seen_at": "2026-09-28T09:20:49.400097+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "CARGO: Context-Aware Retrieval-Gated Evaluation of Agentic AI in Production",
-    "url": "https://arxiv.org/abs/2609.30471",
-    "source_name": "arXiv cs.AI",
+    "title": "Open-sourcing RightWayUp - a 360-degree image rotation model, and a JPEG shortcut we found in a common benchmark [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1wu6reb/opensourcing_rightwayup_a_360degree_image",
+    "source_name": "Reddit r/MachineLearning",
     "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.30471v1 Announce Type: cross Abstract: Reference-based LLM-as-a-judge evaluation assumes the reference answer is the target. In deployed agentic systems that operate over dynamic entities (support cases, assets, accounts), the closest available reference typically applies the correct procedure to a different entity, so a literal judge penalizes different identifiers, dates, and statuses as errors or hallucinations. We name this failure mode reference-instance divergence (RID). We propose CARGO, a framework that (i) treats retrieved references as procedural exemplars and grounds factual judgments in the live instance's observed context, (ii) assigns each claim a three-way status (supported, contradicted, unverifiable) and penalizes only contradictions, and (iii) gates evaluation by retrieval confidence, casting production evaluation as selective prediction. We introduce CARGO-Bench, a perturbation-based diagnostic suite with ground truth by construction that separates leniency from discrimination. On CARGO-Bench (246 items, two judge models, 7,872 judgments), the standard reference-based judge penalizes 100% of correct entity-transplanted answers and is uninformative (di...",
-    "matched_keywords": [
-      "agentic",
-      "retrieval"
-    ],
-    "tags": [
-      "agent",
-      "rag_data"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "The Hard Part Comes After Search: Benchmarking Web Agents on Synthesizing, Organizing, and Displaying Knowledge",
-    "url": "https://arxiv.org/abs/2609.30604",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.30604v1 Announce Type: cross Abstract: Existing computer-use agent benchmarks do not fully evaluate agents acting as assistants. A useful assistant retrieves information across complex, multi-step workflows, synthesizes it into artifacts (documents, presentations, spreadsheets), and navigates program interfaces to produce a coherent final product. Such workflows demand reasoning and synthesis, decomposition of complex tasks, as well as visual and spatial understanding. To study agents on workflows like these, we introduce KNOWS, a benchmark of open-ended, complex, browser-based tasks that jointly evaluate these capabilities, with each task culminating in a produced artifact. To write tasks, we develop a task design rubric and a protocol for ensuring that tasks meet the requirements. Each task is paired with an evaluator, a program that combines deterministic checks with LLM judgments to balance the richness, reliability, and automation tradeoff inherent to agent evaluation. We evaluate and analyze frontier computer-use agents and browser-based harnesses. They achieve moderate scores on partial-success metrics, but the best performer fully succeeds in fewer than 3% of ou...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "automation",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Can You Check That? The Checkability Boundary for Local LLM Network Automation",
-    "url": "https://arxiv.org/abs/2609.31540",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.31540v1 Announce Type: cross Abstract: Sending every network-automation input to a third-party frontier LLM exports sensitive artifacts such as production configurations, topologies, and logs. Querying small language models (SLMs) locally avoids this egress, but SLM outputs can be error-prone for direct use. This work introduces checkability as a criterion for determining which tasks are suitable for local inference. A task is checkable when it exposes a cheap, deterministic test - an intrinsic check - that rejects outputs violating a necessary correctness condition. We instantiate this idea in Touchstone, a local-first pipeline that uses seven off-the-shelf SLMs (1-8B parameters) to generate candidates, uses task-specific intrinsic checks to reject responses, and escalates unresolved inputs to a frontier LLM. On conflict detection and intent translation tasks, Touchstone reaches 98.6% and 93.8% end-to-end accuracy while escalating only 16% and 17% of inputs, respectively. On TeleQnA, a knowledge-only control that has no task-specific intrinsic checks, Touchstone is unable to match the accuracy of the frontier baseline. Our results support a simple deployment rule: keep...",
-    "matched_keywords": [
-      "automation",
-      "inference"
-    ],
-    "tags": [
-      "ai_app",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer",
-    "url": "https://arxiv.org/abs/2609.31587",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.31587v1 Announce Type: cross Abstract: We investigate whether natural-language documentation helps coding agents resolve software issues, and we build the tools to construct and evaluate it. We introduce a roundtrip benchmark that scores code descriptions by whether code regenerated from them passes the original tests, and show that completeness, not length, drives a description's fidelity. Using the benchmark as an optimization signal, we discover a description-writing prompt that reaches full fidelity and generalizes to unseen files. We then test the hypothesis that motivated the work: that better documentation helps an agent resolve real repository issues. Across two model families and ten repositories, and against a positive control confirming that our evaluation can detect a genuine improvement, we find that it does not. When the source is present, neither static compact documentation nor retrieved context beats the issue alone. We report this negative result together with the benchmark and the optimizer, and we characterize the boundary at which documentation helps.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Agentick: A Unified Benchmark for General Sequential Decision-Making Agents",
-    "url": "https://arxiv.org/abs/2605.06869",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2605.06869v3 Announce Type: replace Abstract: AI agent research spans a wide spectrum: from RL agents that learn from scratch to foundation model agents that leverage pre-trained knowledge, yet no unified benchmark enables fair comparison across these approaches. We present Agentick, a benchmark for sequential decision-making agents designed to evaluate RL, LLM, VLM, hybrid, and human agents on common ground and to power research on the fundamental challenges of sequential decision-making. Agentick provides 37 procedurally generated tasks across six capability categories, four difficulty levels, and five observation modalities, all exposed through a single Gymnasium-compatible interface. The benchmark ships with a Coding API, oracle reference policies for all tasks, pre-built SFT datasets, a composable agent harness, and a live leaderboard. An evaluation spanning 27 configurations and over 90,000 episodes reveals that no single approach dominates: GPT-5 mini leads overall at 0.309 oracle-normalized score while PPO dominates planning and multi-agent tasks; the reasoning harness multiplies LLM performance by 3-10x; and ASCII observations consistently outperform natural languag...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "AI Agent",
-      "API",
-      "benchmark",
-      "GPT",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "model",
-      "open_source"
-    ],
-    "score": 50,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ScopeBench: Do Agents Preserve Engagement Boundaries Under Goal Pressure?",
-    "url": "https://arxiv.org/abs/2609.30325",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.30325v1 Announce Type: new Abstract: Agents are increasingly deployed with real autonomy in web application and network penetration testing, where a single out-of-scope action can breach a client's engagement boundary. Existing offensive-security benchmarks measure raw hacking capability; as those benchmarks saturate, the real barrier to deployment is a special case of alignment: scope adherence. We introduce ScopeBench, a benchmark of 30 dead-end agentic security tasks in which the stated objective is reachable only by violating the stated scope. Each task appears under two conditions that share an environment, verifier, and objective and differ only in scope: one instruction set has no scope and measures capability; the other has a natural-language scope to measure adherence. Scopeless trajectories are graded by a standard deterministic verifier. Scoped trajectories pass through two grading arms. First, the same deterministic verifier checks for the flag: because the flag sits behind the scope boundary, a pass proves by construction that a forbidden action occurred, yielding a high-precision lower bound on the violation rate. If the verifier does not pass the trajecto...",
-    "matched_keywords": [
-      "agentic",
-      "agents",
-      "benchmark",
-      "instruction set"
-    ],
-    "tags": [
-      "agent",
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "MoMHa: Multi-Objective Optimization of LLM Harnesses over Accuracy, Safety, and Tokens",
-    "url": "https://arxiv.org/abs/2609.30967",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.30967v1 Announce Type: new Abstract: Most work on improving large language models treats accuracy as the sole objective. We argue that the harness, the Python code surrounding the model that constructs prompts, routes calls, and parses outputs, is a first-class design surface whose quality is inherently multi-objective: an accurate harness that refuses no unsafe request, or that consumes an order of magnitude more tokens, is not a good harness. We present Meta-Harness, a system that casts harness design as search over three per-domain objectives (accuracy, behavioural safety, and token cost) solved by an agentic proposer (Claude Code) with full filesystem access to prior harness source, execution traces, and scoring artifacts. Our central finding is that a singlephase joint-reward proposer (MoMHa) outperforms every alternative, including a two-phase \"accuracy then tokens\" ablation, scalar-only feedback, and an accuracy-only baseline. We evaluate on seventeen domains: seven synthetic capability suites, seven real-world public benchmarks (HumanEval, MBPP, Spider, FEVER, MMLU-Pro, LawBench, NuminaMath), and three U-SafeBench-derived user-specific safety domains, using a 12...",
-    "matched_keywords": [
-      "agentic",
-      "Claude",
-      "Claude Code"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model"
-    ],
-    "score": 48,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Evaluation is All You Need: Strategic Overclaiming of LLM Reasoning Capabilities Through Evaluation Design",
-    "url": "https://arxiv.org/abs/2506.04734",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2506.04734v3 Announce Type: replace Abstract: Reasoning models represented by the Deepseek-R1-Distill series have been widely adopted by the open-source community due to their strong performance in mathematics, science, programming, and other domains. However, our study reveals that their benchmark evaluation results are subject to significant fluctuations caused by various factors. Subtle differences in evaluation conditions can lead to substantial variations in results. Similar phenomena are observed in other open-source inference models fine-tuned based on the Deepseek-R1-Distill series, as well as in the QwQ-32B model, making their claimed performance improvements difficult to reproduce reliably. Therefore, we advocate for the establishment of a more rigorous paradigm for model performance evaluation and present our empirical assessments of the Deepseek-R1-Distill series models.",
+    "source_level": "tech_community",
+    "published_at": "2026-09-30T14:42:15+00:00",
+    "summary_or_excerpt": "We are open-sourcing RightWayUp - a new image rotation detection model. I work at ORTUS AI (we develop video analytics). We needed to tell from a single CCTV frame whether a camera had been rotated or installed at an angle (or upside-down), so we tried different models for that, without much luck (low accuracy, lots of false positives on regular camera-like frames). Some were not permissively licensed. Out of despair, we decided to train our own. We didn't expect it to come out this good. It is now called RightWayUp. It estimates how far an image is rotated from upright, all 360°, and abstains when there's no clear \"up\" (sky, ground, close-ups, etc.). We are releasing code and weights under Apache-2.0, in six sizes from Pico (small enough to run in a browser) to Max (ahead of the other models we tried on most of our tests). We tested it on many test images, including held-out ones (which the model never saw before). In tests with the held-out set, RightWayUp Max was within 10° on 93.0% of them vs 88.4% for Woehrer 2026 (one of the better other models we liked). In the Woehrer 2026 own COCO-based benchmark, it was 98.8% accurate within 10° (five-seed mean) vs Woehrer's 98.0%. It al...",
     "matched_keywords": [
       "benchmark",
-      "DeepSeek",
-      "inference"
+      "weights"
     ],
     "tags": [
-      "model",
       "open_source"
     ],
-    "score": 47,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Bootstrapping Conversational Recommendation Agents At Spotify: Synthetic Data Generation and Self-Improvement Loops",
-    "url": "https://arxiv.org/abs/2609.30297",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.30297v1 Announce Type: cross Abstract: Conversational recommendation agents are a new paradigm for content discovery, enabling users to express complex intents through natural language (e.g., \"recommend Italian indie artists I haven't heard before\"). A central challenge in building such agents is optimizing agent planning -- deciding how to select, sequence, and invoke tools -- particularly in cold-start settings where real user interactions are not yet available. We introduce a pipeline for multi-turn synthetic data generation and a self-improvement loop to address this challenge. The synthetic data pipeline transforms single-turn prompts into realistic multi-turn conversations, enabling systematic evaluation before launch. The self-improvement loop combines variance-based contrastive optimization with iterative refinement through a coding agent, automatically identifying and fixing planning and tool-use errors. Our approach improves quality by +8% on top of a highly optimized manual prompt. The system has been productionized and significantly accelerated iteration cycles for the launch of a conversational recommendation agent at Spotify. Online A/B tests demonstrate i...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "launch"
-    ],
-    "tags": [
-      "agent",
-      "business"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "PriceBench: A Diagnostic Benchmark for Price, Quality, and Brand Preferences in LLM Booking Agents",
-    "url": "https://arxiv.org/abs/2609.31468",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.31468v1 Announce Type: cross Abstract: LLMs increasingly act as purchasing agents, which makes the LLM, not the user, the one choosing among the options that satisfy a request; its preferences quietly fix what gets bought and what it costs. Hotel booking is a clean instance: a high-volume choice settled on a few comparable attributes, where the pick reveals those preferences. We introduce PriceBench, a diagnostic benchmark that recovers an LLM's price, quality, and brand preferences from its booking choices with a logit choice model, applied to 28 LLMs from 8 providers on 3,600 hotel tasks from 179 real New York City properties. We find that capability is associated with how consistently an LLM chooses, not with what it chooses: more capable LLMs hold stronger, more consistent preferences, while weaker ones either lock onto one position, exploitable by whoever controls listing order, or choose almost indifferently. What those preferences favor varies sharply across providers and even within one family: price sensitivity spans more than an order of magnitude, and the price/quality trade-off moves mean booked nightly price from \\$247 to \\$393 on identical tasks. What an a...",
-    "matched_keywords": [
-      "agents",
-      "benchmark"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "GT-HarmBench: Benchmarking AI Safety Risks Through the Lens of Game Theory",
-    "url": "https://arxiv.org/abs/2602.12316",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2602.12316v3 Announce Type: replace Abstract: Frontier AI systems are increasingly capable and deployed in high-stakes multi-agent environments. However, existing AI safety benchmarks largely evaluate single agents, leaving multi-agent risks such as coordination failure and conflict poorly understood. We introduce GT-HarmBench, a benchmark of 1,535 high-stakes scenarios spanning game-theoretic structures such as the Prisoner's Dilemma, Stag Hunt and Chicken. Scenarios are drawn from realistic AI risk contexts in the MIT AI Risk Repository. Across 15 frontier models, agents fail to choose socially beneficial actions in 38% of high-stakes cases, such as military escalation, election manipulation, and medical malpractice. We measure sensitivity to game-theoretic prompt framing and ordering, and analyze reasoning patterns driving failures. We further show that game-theoretic interventions improve socially beneficial outcomes by up to 18%. Our results highlight substantial reliability gaps and provide a broad standardized testbed for studying alignment in multi-agent environments. The benchmark and code are available at https://github.com/causalNLP/gt-harmbench.",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "AI safety",
-      "benchmark",
-      "GitHub",
-      "multi-agent",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "business",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 46,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Insurers claim AI is already increasing healthcare costs",
-    "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs",
-    "source_name": "TechCrunch AI",
-    "source_type": "rss",
-    "source_level": "needs_verification",
-    "published_at": "2026-09-26T21:02:06+00:00",
-    "summary_or_excerpt": "Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.",
-    "matched_keywords": [],
-    "tags": [],
     "score": 38,
-    "first_seen_at": "2026-09-28T09:20:49.400097+08:00",
-    "last_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "backlog_source": "backlog",
+    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "last_seen_at": "2026-10-01T09:48:51.266739+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

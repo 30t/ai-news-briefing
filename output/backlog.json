@@ -1,50 +1,113 @@
 [
   {
-    "title": "UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training",
-    "url": "https://arxiv.org/abs/2609.38043",
+    "title": "Mingbird: A Local-First Agent Harness Enabling Small Open Models to Complete Real Tasks",
+    "url": "https://arxiv.org/abs/2610.02001",
     "source_name": "arXiv cs.AI",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.38043v1 Announce Type: new Abstract: Interactive agent benchmarks and multi-turn reinforcement learning increasingly place a second language model in the role of the user. This simulated user controls what information the agent receives and when, yet current benchmarks score only the agent and do not directly measure whether the user correctly executed its assigned role. We introduce UserProxyBench, an evaluation layer over the tau-bench family, and the User Fidelity Score (UFS), which measures adherence to the benchmark's private user instructions using task-grounded rubric criteria scored independently of agent success. Holding the agent fixed at GPT-5.5 and varying only the user proxy across 375 enterprise tasks changes mean task reward by 15.2 points, while 24.4% of successful episodes contain a user-specification violation. The dominant failure is premature disclosure: users provide information before it is requested. This behavior has little effect on task reward, yet among successful episodes it causes the agent to make 1.06 fewer tool calls on average, changing the interaction being evaluated while preserving the reward. Finally, across seven proxies we identify...",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.02001v1 Announce Type: new Abstract: Small open-weight models (2-9B) run on ordinary laptops, but under cloud-scale agent harnesses they rarely complete real tasks: tool prefill overflows the context, self-correction diverges, tool demonstrations loop, and tasks are silently abandoned. We present evidence, from a controlled single-machine comparison and one third-party benchmark, that a substantial share of these failures is attributable to the harness rather than the model. We introduce Mingbird, a local-first agent harness for Windows and Ollama whose ten mechanisms compensate point-by-point for small-model failure forms, three of them representative: a byte-level net-zero prefill budget, a finish gate that re-reads the task before accepting completion, and signature-level loop detection. On LRAB, a controlled comparison holding machine, models, budgets, and scoring fixed (4 harnesses $\\times$ 4 open models (2B-35B) $\\times$ 18 real tasks, deterministic artifact scoring), Mingbird reaches 0.886 overall against 0.631 (goose), 0.479 (opencode), and 0.405 (agent-mini), with all 288 cells published; on $\\tau^2$-bench (278 tasks, three arms, one protocol) it totals 0.856 a...",
     "matched_keywords": [
       "Agent",
       "benchmark",
-      "GPT"
+      "Ollama"
+    ],
+    "tags": [
+      "agent",
+      "ai_app",
+      "open_source"
+    ],
+    "score": 68,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks",
+    "url": "https://arxiv.org/abs/2610.00917",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00917v1 Announce Type: new Abstract: Choosing an agent system means choosing both a language model and the harness through which it acts. We ask whether a strong model, harness, or pairing stays strong when the setting changes. We evaluate 66 configurations: four configurable harnesses (OpenHands, DeepSeek Harness, PI, and openJiuwen) paired with five models on TUA-Bench, ALE-CLI, and Terminal-Bench 4, plus the native Codex-GPT and Claude Code-Claude pairings. Model rankings reverse across harnesses. On Terminal-Bench 4, Claude leads GPT by 7.94 points in OpenHands but trails it by 30.16 points in PI. For four of the five models, the best harness changes from one benchmark to another, yet some pairings hold: openJiuwen gives Kimi its highest score on all three benchmarks, by 5.61 to 11.11 points. A model's own vendor harness is not reliably its best, and higher cost does not reliably buy a higher score. On Terminal-Bench 4, GPT scores higher under PI than under DSH at less than a quarter of the cost per task. Matched trajectories suggest why fit varies. Models start almost all repairs themselves, so much depends on whether the harness hands failures back in a form the m...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "DeepSeek",
+      "GPT",
+      "Kimi",
+      "OpenHands",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 65,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Cross-Benchmark Transfer from RL on Agentic Coding Tasks",
+    "url": "https://arxiv.org/abs/2610.00890",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00890v1 Announce Type: cross Abstract: Coding agents often fail in the last mile: they build most of a feature but drop a requirement, test only the cases their implementation already handles, break behavior that was supposed to stay intact, or validate against an unchecked assumption. We ask whether reinforcement learning (RL) on expert-built agentic coding tasks closes this gap, and whether what the agent learns transfers beyond the training distribution. We post-train Kimi K2.7 Code, a 1T-parameter (32B active) open-weight mixture-of-experts model, with RL alone on 1,700 tasks: 1,000 repository tasks graded by hidden fail-to-pass tests and by pass-to-pass tests of existing behavior, and 700 terminal tasks graded by expert-written hidden verifiers. The reward is the fraction of target checks passed and drops to zero if any pass-to-pass test fails. One epoch of GSPO on a rank-32 LoRA adapter improves pass@1 on each of the six external benchmarks we evaluated, across three agent harnesses: SWE-Bench Pro (60.1 to 64.8), DeepSWE (31.0 to 43.4), Terminal-Bench 2.1 (67.4 to 82.0), Terminal-Bench 3 (1.4 to 12.1), Terminal-Bench 4 (0.0 to 7.6), and SWE-Marathon (5.0 to 25.0)....",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark",
+      "Kimi",
+      "repository",
+      "terminal"
+    ],
+    "tags": [
+      "agent",
+      "coding_tool",
+      "model",
+      "open_source"
+    ],
+    "score": 64,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "DAYJOB: A Benchmark for Long-Horizon Professional Work",
+    "url": "https://arxiv.org/abs/2610.01306",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01306v1 Announce Type: new Abstract: Professional work often starts with a brief request that leaves the professional to work out what is needed, which documents matter, and whether the request's premise holds. We introduce DAYJOB, a benchmark of 130 tasks built by professionals in healthcare (50) and finance (80). The tasks are estimated to take a professional 13.6 hours on average in healthcare and 16.6 in finance. Each task is a containerized Harbor environment with an expert rubric of binary criteria (median 47.5 and 57.5 per task) that an agentic judge applies to the delivered files, and an attempt passes only if it meets every criterion. Across 30 model configurations from 13 developers, the strongest, Claude Opus 5.5, passes 24.7% of healthcare and 23.9% of finance attempts, and the median configuration passes 0.6% and 2.5%. In case studies, agents accept premises that the record contradicts and carry wrong inputs through otherwise consistent analyses. We release all healthcare tasks, 50 of the 80 finance tasks, the evaluation harness, and the leaderboard.",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "benchmark",
+      "Claude",
+      "release"
     ],
     "tags": [
       "agent",
       "model",
       "open_source"
     ],
-    "score": 65,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Prompted Identity Degrades Cooperation in Multi-Agent LLM Systems",
-    "url": "https://arxiv.org/abs/2609.35928",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.35928v1 Announce Type: cross Abstract: Multi-agent LLM systems increasingly mix models from several providers, yet exposing each agent's underlying model identity to its peers significantly impairs cooperation. We show that when agents are aware of each other's model family, the group splits into clusters, where agents prefer interacting with others carrying their same label, although nothing in the task rewards or asks for such a split. We argue that the label itself causes this split, which we define as $\\textit{factionalism}$. We show and measure this phenomenon in two cooperative games and on a reasoning benchmark, with nine to twenty-five agents drawn from up to five open-weight model families. We further show that when the announced families are shuffled, or replaced by arbitrary labels, the factions still follow this information; when the label is removed, this behavior disappears. In strictly cooperative tasks, labeled groups spend on average $30\\%$ more rounds and $55\\%$ more tokens to reach a decision, and their success rate drops from $96\\%$ to $81\\%$. The effect replicates across tasks, group sizes and model families. Withholding identity labels from the age...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "multi-agent"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
+    "score": 62,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -72,8 +135,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -103,7 +166,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -133,8 +196,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -160,8 +223,31 @@
     ],
     "score": 61,
     "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Measuring the Microtask Eligibility Gap: When Is an Off-the-Shelf SLM Enough for an Agent Harness?",
+    "url": "https://arxiv.org/abs/2610.00025",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00025v1 Announce Type: new Abstract: Agent harnesses increasingly want to run small language models (SLMs) on the microtasks around a frontier large language model (LLM) planner: auto-approving shell commands, writing memory, selecting tools, ranking past turns. We ask whether off-the-shelf SLMs meet practitioner-defined thresholds and, when they fail, why, and whether quantization changes the answer. We build a benchmark of 4 such microtasks with fixed prompts and automatic metrics, each with a pre-specified threshold $\\tau$ anchored to a cheap non-LLM baseline and a CI-aware eligibility rule (a configuration passes only if its confidence bound clears $\\tau$). Sweeping Qwen3 0.6/1.7/4/8B at their best (FP16, greedy, one frozen prompt, no tuning), we find an eligibility gap: 0 of 16 (4 tasks $\\times$ 4 models) configurations pass (verified by checking the raw outputs and parser behavior). A logprob decision-threshold diagnostic (T1/T3/T4; T2 via a context-length/cascade probe) separates the failures into capability deficits and failures that can be addressed by changing the decoding threshold (4 regimes). Quantization to 4-bit (RTN/GPTQ/AWQ) does damage that depends on...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "quantization"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 53,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -187,7 +273,100 @@
     ],
     "score": 53,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MemFit: Efficient Long-Term Agentic Memory",
+    "url": "https://arxiv.org/abs/2610.00872",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00872v1 Announce Type: new Abstract: Long-term memory systems for large language models (LLMs) have gained popularity for extending reasoning capabilities across applications. Current memory systems rely on LLM agents to organize and consolidate memory, resulting in costly, inefficient write operations. To address this limitation, we propose MemFit, a long-term memory system for conversational agents that reduces the cost and latency of memory operations. Unlike existing systems that rely on expensive LLM calls for memory construction or discard surface-level details through compression, MemFit stores each turn verbatim in an append-only store with near-instantaneous, LLM-free insertion, indexing turns with segment summaries rather than replacing them. Additionally, MemFit uses an LLM-free, multi-path retrieval strategy that combines lexical and semantic signals with cross-encoder reranking over caption- augmented episodes in both textual and multimodal settings. Empirical results on three widely used benchmarks, LoCoMo, MemGallery, and LongMemEval-S, show that MemFit achieves state-of-the-art performance while reducing memory construction time and cost several-fold, pr...",
+    "matched_keywords": [
+      "agentic",
+      "agents",
+      "retrieval"
+    ],
+    "tags": [
+      "agent",
+      "rag_data"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MCRI: A Four-Dimensional Framework for Analyzing and Evaluating Agent Skills",
+    "url": "https://arxiv.org/abs/2610.01506",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01506v1 Announce Type: new Abstract: As agents evolve from single-tool systems into modular, composite architectures, skills are becoming an important mechanism for capability development and distribution. However, the academic community lacks a structured framework for systematically analyzing and evaluating skills. Drawing on information gain and behavioral constraint, we propose the four-dimensional MCRI Framework and operationalize it as MCRI-Eval, a large language model-based evaluation method. We evaluate MCRI-Eval using 63,812 public skills from the OpenClaw skill Hub, with 58,275 skill-conditioned model executions across BigCodeBench, BFCL-Fundamental, and Mind2Web. MCRI-Eval scores are positively associated with community popularity signals and achieve the highest downstream ranking agreement among the evaluated methods. MCRI-Eval also improves top-1 skill selection across all three benchmarks: compared with the strongest baseline on each benchmark, the skills selected by MCRI-Eval advance by 17.7, 22.8, and 19.6 percentile points in downstream performance rank on BigCodeBench, BFCL-Fundamental, and Mind2Web, respectively. These results indicate that MCRI-Eval...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Agents Are Systems, Not Models: Rethinking Agentic Evaluation",
+    "url": "https://arxiv.org/abs/2610.01618",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01618v1 Announce Type: new Abstract: Agent evaluations increasingly go beyond a single success rate, reporting metrics such as cost, consistency, and robustness. Yet they typically treat the agent itself as fixed. In practice, an agent is a configurable system: users decide what to tell it, how long to let it run, and which model to use, and each of these choices can change how well and how consistently it performs. We study these choices on a new benchmark of four scientific tasks, where a coding agent must find and correctly operate a published specialist model. We investigate five parts of the agent's configuration: task information, reasoning, self-verification, time budget, and backbone model. We find substantial run-to-run variability, with approximately 54% of the outcome variance coming from repeating the same configuration rather than changing it. Across configurations, the information provided to the agent has the largest effect, exceeding both time budget and model size, while also reducing cost and improving calibration. Configuration choices also interact: additional time helps only when the agent has sufficient information or a capable enough model to use...",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "The Delegation Danger Band: Why Mid-Capability Sub-Agents Over-Trust Inherited Stale State",
+    "url": "https://arxiv.org/abs/2610.00041",
+    "source_name": "arXiv cs.AI",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-02T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00041v1 Announce Type: cross Abstract: Agent frameworks increasingly delegate work by forking sub-agents; a common default makes the child inherit the parent's full working context. We measure how the effect of inherited state changes with capability, where $C_m$ denotes clean fork-fresh accuracy. We compare 3 inheritance policies: Reset (fork fresh: base evidence only), Selective (curated handoff: + the useful prior conclusion), and Full (implicit fork: + the useful conclusion and $d$ copies of a superseded conclusion) over a same-family ladder (Qwen3 0.6/1.7/4/8B) on a frozen, closed-set, action-scored benchmark. Every task is solvable from the base evidence, so performance loss can be attributed to reliance on stale state. (1) Deference to superseded state falls sharply with measured capability $C_m$ (the slope's confidence interval, CI, excludes zero on every family) across 2 synthetic primitives plus MuSiQue and HotpotQA. (2) On the Qwen3 synthetic ladder, net inheritance harm follows a nonmonotone pattern: a mid-capability model (Qwen3-1.7B) is a statistically significant local minimum of net harm, falling below its fork-fresh baseline ($\\Delta(32)=-0.19$ [-0.25,...",
+    "matched_keywords": [
+      "Agent",
+      "agents",
+      "benchmark"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 52,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -214,182 +393,36 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "Agent Error Dataset: Scaling 50,000 Error--Diagnosis Pairs for Failure Analysis and Error-Aware Post-Training",
-    "url": "https://arxiv.org/abs/2609.40111",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.40111v1 Announce Type: new Abstract: An unsuccessful LLM agent rollout contains more information than its final reward: the observations available to the agent, the actions it chose, and the environment's responses. Reusing this experience for learning requires identifying a decision to revise and testing a concrete alternative. We introduce the Agent Error Dataset (AED), comprising 50,228 error-diagnosis pairs from 9,961 source tasks across 33 environments, 19 harness families, and 23 policy models in text-based agent systems. We retain source traces and execution metadata to support cross-setting failure analysis and re-diagnosis without repeating the original rollout. Our five-stage Agentic Error-to-Training (AET) pipeline collects natural failures, generates diagnoses and proposed corrections, and checks them against recorded evidence. Where replay is supported, we compare corrections with original-action retries from the same checkpoint under matched execution settings. We then construct separate training views for diagnosis and actor recovery. Across 3,062 matched replay pairs, first-proposal corrections raise verifier pass rates from 18.4% to 51.1%, a gain of 32....",
+    "title": "llama.cpp b11361：llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) (#29818)",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11361",
+    "source_name": "llama.cpp",
+    "source_type": "github_release",
+    "source_level": "official_confirmed",
+    "published_at": "2026-10-02T23:53:18+00:00",
+    "summary_or_excerpt": "llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) (#29818) * init conversion * convert: ok * model loaded * add server code * improve conversion script * support shared prompt prefix * add docs, imorove UX a bit * add vision support * add openjev tiny model for testing * add dev docs * support lev & kev * clean up * fix lev noul * fix py lint * nits docs * clarify about not supporting date_facts **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-ubuntu-arm64...",
     "matched_keywords": [
-      "Agent",
-      "agentic",
-      "dataset",
-      "policy"
+      "API",
+      "GitHub",
+      "Intel",
+      "Llama",
+      "llama.cpp"
     ],
     "tags": [
-      "agent",
       "business",
-      "open_source"
+      "model",
+      "open_source",
+      "semiconductor"
     ],
-    "score": 52,
-    "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
+    "score": 41,
+    "release_version": "b11361",
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
     "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "E2E-SWE: Benchmarking LLMs on Building Working Codebases from Scratch",
-    "url": "https://arxiv.org/abs/2609.38335",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.38335v1 Announce Type: cross Abstract: Coding agents powered by large language models (LLMs) are evolving from making localized code changes to developing complete software repositories. However, evaluating repository-scale generation remains challenging: tasks must demand system-level reasoning while ensuring that all evaluated behaviors are precisely specified and independent of any particular implementation. We introduce E2E-SWE, a benchmark for evaluating whether coding agents can build complete, functional software repositories end to end. E2E-SWE contains 186 whole-repository generation tasks spanning 11 programming languages. Given only a natural-language specification and an empty workspace, an agent must implement a complete, installable project that satisfies a comprehensive suite of hidden tests. Each task is constructed by a software engineer in collaboration with an LLM; together, they develop the test suite and a corresponding implementation-independent specification. To ensure that tasks are well specified and practically solvable, we further subject them to an iterative verification process in which autonomous agents audit and repair task defects using s...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "OpenCollab: A Multi-Agent Coding Framework with Programmable Collaboration and Controllable Runtime",
-    "url": "https://arxiv.org/abs/2609.38345",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-01T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.38345v1 Announce Type: cross Abstract: Multi-agent coding systems are designed to tackle complex software engineering tasks through collaboration. However, existing evaluations typically assume configured organizations are followed faithfully, whereas reality differs. This behavioral gap, combined with differences in underlying system components, prevents clear attribution of observed gains. To this end, we introduce OpenCollab, a multi-agent coding framework that provides a unified infrastructure for programmable collaboration and controllable runtime. Specifically, OpenCollab unifies organization design, enforces experimental control on a shared runtime, and tracks execution through fine-grained event streams. On this basis, we define Adherence to quantify whether the declared organization is actually realized. Our experiments reveal that agents collaborate very differently across configurations: changing any single dimension shifts Adherence, from 47.2% to as high as 97.2%. Furthermore, extensive agentic coding benchmarks show that a two-coder workflow built on OpenCollab establishes new SOTA performance compared to the mainstream harnesses such as Mini-SWE-agent, Co...",
-    "matched_keywords": [
-      "Agent",
-      "agentic",
-      "agents",
-      "multi-agent",
-      "software engineering",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "coding_tool"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Neuro-Symbolic Computer Use: Learning Reusable Policies for Reliable and Efficient Execution",
-    "url": "https://arxiv.org/abs/2609.36927",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.36927v1 Announce Type: new Abstract: Many computer tasks recur: the same workflow runs many times, with new inputs and from different starting states. Current computer-use agents re-plan every step of every run, which makes them costly and unreliable on such tasks. We introduce neuro-symbolic computer use, in which a recurring workflow is executed by a learned policy rather than re-derived by an agent on each run. The policy fixes the decisions that are stable across runs (ordering, variables, loops, and branches) in executable code, and delegates observation-dependent decisions, such as grounding and state checks, to neural models. We learn these policies with neuro-symbolic policy iteration: starting from one agent trajectory, it executes the policy, diagnoses failures with task-completion and step-level judges, and revises the code with a coding model informed by an agent's continuation from the point of failure, without access to the benchmark evaluator. Iterating on generated parameter and initial-state variants makes the policy reusable, and a pre-action verifier guards each state-mutating step at deployment. On OSWorld-Verified and ScienceBoard, the learned polic...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "benchmark",
-      "computer use",
-      "policy",
-      "workflow"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "business",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Boundary-State Control for Tool-Using Language-Model Agents: Commit-Time Consistency under State Drift",
-    "url": "https://arxiv.org/abs/2609.37475",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.37475v1 Announce Type: new Abstract: Tool-using language-model agents can decide that an action is permissible and execute it only after security-relevant state has changed. We study this proposal-to-commit gap and introduce BSC-R, a deterministic effect-boundary mechanism that binds a single-use commit authorization to the exact action and to a semantic projection of the authorization state that justified it. On 2,847 attacked AgentDojo episodes, the boundary kernel preserves the unprotected agent's behavior exactly (80.576% utility; 1.616% attack success). On 10,302 frozen proposals, it accepts every unchanged commit and rejects every instance of ten prospectively specified changed or replayed classes. In an independently generated boundary-drift experiment, full joint binding commits 0/4,403 invalid contexts while retaining 5,899/5,899 valid contexts. A prospective external evaluation on the 3,460-scenario CONTINUITY suite retains all 700 benign cases, prevents 1,200/1,200 represented non-replay invalid effects, handles 160/160 replay lifecycles correctly, and withholds 200/200 ambiguous no-release cases. The broader external suite also exposes the method's limit: ac...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "release"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Context Language Models",
-    "url": "https://arxiv.org/abs/2609.37725",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.37725v1 Announce Type: new Abstract: We introduce Context Language Models (CLMs), language models that natively manage their own context. We implement this by treating the context as a file and allowing the model to make unrestricted updates to this file. This allows the model to learn what is most important to maintain in context, and naturally extends to multi-agent systems where multiple agent contexts coexist as files. Building CLMs zero-shot with existing models outperforms SOTA context management strategies across a variety of tasks: 11.4% higher accuracy with 21.5% fewer FLOPs on BrowseComp-Plus, 5% higher scores with 59% fewer FLOPs on 12-hour EdgeBench, and 65% greater improvement with the same compute on a 24-hour multi-repository agent-swarm task. Moreover, by shifting context management from external harness control to intrinsic model behavior, CLMs naturally enable both in-context and parametric learning of context-management strategies. We show that CLMs can be steered with natural-language instructions evolved through a standard skill-optimization loop, improving held-out accuracy by up to 35.9 points on a context-management task while reducing compute. W...",
-    "matched_keywords": [
-      "Agent",
-      "multi-agent",
-      "repository"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "ContextRender: From Execution Dependencies to Agent Context",
-    "url": "https://arxiv.org/abs/2609.37743",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.37743v1 Announce Type: new Abstract: LLM agents performing long-horizon tasks accumulate tool results that later steps may need. Passing the full history to every invocation is costly even when it fits within the context window, while reducing it risks omitting needed information. Existing context management methods can overlook how earlier tool results are used in subsequent execution, leaving needed information out of context. We introduce ContextRender, which manages context through a persistent graph of execution dependencies. We develop Tool-Flow Analysis to track how later operations reuse information from earlier tool results, providing a signal called observed reuse. A renderer combines this signal with recency and semantic relevance to select results within a fixed history budget, retaining omitted results for later use. Across AppWorld and 8-objective QA with three execution models, ContextRender outperforms the evaluated context management baselines using a 6K history budget, well below the models' maximum context windows. Within this budget, it achieves task performance close to or above that of passing the full history while reducing mean inference cost by...",
-    "matched_keywords": [
-      "Agent",
-      "agents",
-      "inference"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 52,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -409,8 +442,30 @@
     ],
     "score": 38,
     "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-02T10:02:06.768771+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
     "backlog_source": "backlog",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Stateless GitHub App installation tokens rolled out",
+    "url": "https://github.blog/changelog/2026-10-02-stateless-github-app-installation-tokens-rolled-out",
+    "source_name": "GitHub Changelog",
+    "source_type": "rss",
+    "source_level": "official_confirmed",
+    "published_at": "2026-10-02T22:18:23+00:00",
+    "summary_or_excerpt": "The staged rollout of the stateless GitHub App installation token format, which began on April 27, 2026, is complete. By default, all newly minted GitHub App installation tokens will be… The post Stateless GitHub App installation tokens rolled out appeared first on The GitHub Blog .",
+    "matched_keywords": [
+      "changelog",
+      "GitHub"
+    ],
+    "tags": [
+      "business",
+      "open_source"
+    ],
+    "score": 37,
+    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   }
 ]

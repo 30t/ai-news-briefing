@@ -1,68 +1,12 @@
 [
   {
-    "title": "Mingbird: A Local-First Agent Harness Enabling Small Open Models to Complete Real Tasks",
-    "url": "https://arxiv.org/abs/2610.02001",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2610.02001v1 Announce Type: new Abstract: Small open-weight models (2-9B) run on ordinary laptops, but under cloud-scale agent harnesses they rarely complete real tasks: tool prefill overflows the context, self-correction diverges, tool demonstrations loop, and tasks are silently abandoned. We present evidence, from a controlled single-machine comparison and one third-party benchmark, that a substantial share of these failures is attributable to the harness rather than the model. We introduce Mingbird, a local-first agent harness for Windows and Ollama whose ten mechanisms compensate point-by-point for small-model failure forms, three of them representative: a byte-level net-zero prefill budget, a finish gate that re-reads the task before accepting completion, and signature-level loop detection. On LRAB, a controlled comparison holding machine, models, budgets, and scoring fixed (4 harnesses $\\times$ 4 open models (2B-35B) $\\times$ 18 real tasks, deterministic artifact scoring), Mingbird reaches 0.886 overall against 0.631 (goose), 0.479 (opencode), and 0.405 (agent-mini), with all 288 cells published; on $\\tau^2$-bench (278 tasks, three arms, one protocol) it totals 0.856 a...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "Ollama"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source"
-    ],
-    "score": 68,
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks",
-    "url": "https://arxiv.org/abs/2610.00917",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2610.00917v1 Announce Type: new Abstract: Choosing an agent system means choosing both a language model and the harness through which it acts. We ask whether a strong model, harness, or pairing stays strong when the setting changes. We evaluate 66 configurations: four configurable harnesses (OpenHands, DeepSeek Harness, PI, and openJiuwen) paired with five models on TUA-Bench, ALE-CLI, and Terminal-Bench 4, plus the native Codex-GPT and Claude Code-Claude pairings. Model rankings reverse across harnesses. On Terminal-Bench 4, Claude leads GPT by 7.94 points in OpenHands but trails it by 30.16 points in PI. For four of the five models, the best harness changes from one benchmark to another, yet some pairings hold: openJiuwen gives Kimi its highest score on all three benchmarks, by 5.61 to 11.11 points. A model's own vendor harness is not reliably its best, and higher cost does not reliably buy a higher score. On Terminal-Bench 4, GPT scores higher under PI than under DSH at less than a quarter of the cost per task. Matched trajectories suggest why fit varies. Models start almost all repairs themselves, so much depends on whether the harness hands failures back in a form the m...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "Claude",
-      "Claude Code",
-      "Codex",
-      "DeepSeek",
-      "GPT",
-      "Kimi",
-      "OpenHands",
-      "terminal"
-    ],
-    "tags": [
-      "agent",
-      "coding_tool",
-      "model",
-      "open_source"
-    ],
-    "score": 65,
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
-    "backlog_boost": 4
-  },
-  {
     "title": "Cross-Benchmark Transfer from RL on Agentic Coding Tasks",
     "url": "https://arxiv.org/abs/2610.00890",
-    "source_name": "arXiv cs.AI",
+    "source_name": "arXiv cs.LG",
     "source_type": "rss",
     "source_level": "early_signal",
-    "published_at": "2026-10-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2610.00890v1 Announce Type: cross Abstract: Coding agents often fail in the last mile: they build most of a feature but drop a requirement, test only the cases their implementation already handles, break behavior that was supposed to stay intact, or validate against an unchecked assumption. We ask whether reinforcement learning (RL) on expert-built agentic coding tasks closes this gap, and whether what the agent learns transfers beyond the training distribution. We post-train Kimi K2.7 Code, a 1T-parameter (32B active) open-weight mixture-of-experts model, with RL alone on 1,700 tasks: 1,000 repository tasks graded by hidden fail-to-pass tests and by pass-to-pass tests of existing behavior, and 700 terminal tasks graded by expert-written hidden verifiers. The reward is the fraction of target checks passed and drops to zero if any pass-to-pass test fails. One epoch of GSPO on a rank-32 LoRA adapter improves pass@1 on each of the six external benchmarks we evaluated, across three agent harnesses: SWE-Bench Pro (60.1 to 64.8), DeepSWE (31.0 to 43.4), Terminal-Bench 2.1 (67.4 to 82.0), Terminal-Bench 3 (1.4 to 12.1), Terminal-Bench 4 (0.0 to 7.6), and SWE-Marathon (5.0 to 25.0)....",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00890v1 Announce Type: new Abstract: Coding agents often fail in the last mile: they build most of a feature but drop a requirement, test only the cases their implementation already handles, break behavior that was supposed to stay intact, or validate against an unchecked assumption. We ask whether reinforcement learning (RL) on expert-built agentic coding tasks closes this gap, and whether what the agent learns transfers beyond the training distribution. We post-train Kimi K2.7 Code, a 1T-parameter (32B active) open-weight mixture-of-experts model, with RL alone on 1,700 tasks: 1,000 repository tasks graded by hidden fail-to-pass tests and by pass-to-pass tests of existing behavior, and 700 terminal tasks graded by expert-written hidden verifiers. The reward is the fraction of target checks passed and drops to zero if any pass-to-pass test fails. One epoch of GSPO on a rank-32 LoRA adapter improves pass@1 on each of the six external benchmarks we evaluated, across three agent harnesses: SWE-Bench Pro (60.1 to 64.8), DeepSWE (31.0 to 43.4), Terminal-Bench 2.1 (67.4 to 82.0), Terminal-Bench 3 (1.4 to 12.1), Terminal-Bench 4 (0.0 to 7.6), and SWE-Marathon (5.0 to 25.0). P...",
     "matched_keywords": [
       "Agent",
       "agentic",
@@ -79,8 +23,31 @@
       "open_source"
     ],
     "score": 64,
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Measuring the Microtask Eligibility Gap: When Is an Off-the-Shelf SLM Enough for an Agent Harness?",
+    "url": "https://arxiv.org/abs/2610.00025",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00025v1 Announce Type: cross Abstract: Agent harnesses increasingly want to run small language models (SLMs) on the microtasks around a frontier large language model (LLM) planner: auto-approving shell commands, writing memory, selecting tools, ranking past turns. We ask whether off-the-shelf SLMs meet practitioner-defined thresholds and, when they fail, why, and whether quantization changes the answer. We build a benchmark of 4 such microtasks with fixed prompts and automatic metrics, each with a pre-specified threshold $\\tau$ anchored to a cheap non-LLM baseline and a CI-aware eligibility rule (a configuration passes only if its confidence bound clears $\\tau$). Sweeping Qwen3 0.6/1.7/4/8B at their best (FP16, greedy, one frozen prompt, no tuning), we find an eligibility gap: 0 of 16 (4 tasks $\\times$ 4 models) configurations pass (verified by checking the raw outputs and parser behavior). A logprob decision-threshold diagnostic (T1/T3/T4; T2 via a context-length/cascade probe) separates the failures into capability deficits and failures that can be addressed by changing the decoding threshold (4 regimes). Quantization to 4-bit (RTN/GPTQ/AWQ) does damage that depends o...",
+    "matched_keywords": [
+      "Agent",
+      "benchmark",
+      "quantization"
+    ],
+    "tags": [
+      "agent",
+      "open_source"
+    ],
+    "score": 62,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
@@ -106,8 +73,8 @@
     ],
     "score": 62,
     "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -135,38 +102,7 @@
     ],
     "score": 62,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Energy Efficiency of Locally Deployed LLMs: A Preliminary Quantitative GPU Power Benchmark on Consumer Hardware",
-    "url": "https://arxiv.org/abs/2608.00008",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-29T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2608.00008v2 Announce Type: replace Abstract: The local deployment of large language models (LLMs) is gaining traction due to privacy concerns and the desire for on-premise inference. However, the energy costs on consumer hardware remain poorly characterized, as most benchmarks focus solely on accuracy. This paper presents a reproducible, hardware-level energy benchmark of 18 open-source LLMs (0.5B to 7B parameters) executed on a single consumer GPU (RTX 4060ti 16GB). Using the Ollama inference engine, GPU power draw was sampled at 2hz via nvidia-smi across a fixed prompt set. We evaluate mean/peak power, total energy per prompt (J/prompt), energy per output token (J/tok), and throughput (tok/s). Our findings suggest that factors beyond raw parameter count, including model architecture and quantization strategy, drive energy efficiency. Specifically, qwen2.5:0.5b and tinyllama:1.1b achieve the lowest energy cost (0.2747 J/tok and 0.3234 J/tok) and the highest throughput (>325 tok/s). In contrast, the 7B-Mistral model consumes up to 8.6x more energy per token than the most efficient model. Notably, qwen3.5:0.8b(on) exhibits anomalously high per-prompt energy due to extended i...",
-    "matched_keywords": [
-      "benchmark",
-      "GPU",
-      "inference",
-      "Mistral",
-      "NVIDIA",
-      "Ollama",
-      "privacy",
-      "quantization"
-    ],
-    "tags": [
-      "ai_app",
-      "business",
-      "model",
-      "open_source",
-      "semiconductor"
-    ],
-    "score": 62,
-    "first_seen_at": "2026-09-30T09:51:02.272746+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -196,58 +132,8 @@
     ],
     "score": 61,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "EngiWorld: What Can Frontier Agents Deliver in Professional Engineering Environments?",
-    "url": "https://arxiv.org/abs/2609.37686",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-09-30T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2609.37686v1 Announce Type: new Abstract: Autonomous agents have made rapid progress in general-purpose computer use, but reliable automation of professional industrial engineering remains out of reach, as engineering workflows demand reasoning over geometric and physical constraints and dependencies preserved across software and design stages. We present EngiWorld, the first benchmark structured around the complete design loop: 1,301 expert-curated tasks spanning 6 engineering domains (CAD, CAE, CAM, BIM, EDA, and 3D visualization) and 26 professional software platforms, with both GUI and CLI interfaces and 6 task types ranging from software-selection to open-ended tasks. We further introduce an artifact-centric evaluation methodology built on a unified domain-verifier suite, which programmatically checks the geometric validity, physical feasibility, and rule compliance of final and intermediate artifacts, and scores quantitative design tasks continuously by specification attainment rather than binary success. Evaluation of seven frontier models reveals a substantial capability gap: the strongest model achieves an EngiScore of only 44.3, and just 3.6% of multi-software atte...",
-    "matched_keywords": [
-      "agents",
-      "automation",
-      "benchmark",
-      "computer use",
-      "EDA"
-    ],
-    "tags": [
-      "agent",
-      "ai_app",
-      "open_source",
-      "riscv_stack"
-    ],
-    "score": 61,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "backlog",
-    "backlog_boost": 4
-  },
-  {
-    "title": "Measuring the Microtask Eligibility Gap: When Is an Off-the-Shelf SLM Enough for an Agent Harness?",
-    "url": "https://arxiv.org/abs/2610.00025",
-    "source_name": "arXiv cs.AI",
-    "source_type": "rss",
-    "source_level": "early_signal",
-    "published_at": "2026-10-02T04:00:00+00:00",
-    "summary_or_excerpt": "arXiv:2610.00025v1 Announce Type: new Abstract: Agent harnesses increasingly want to run small language models (SLMs) on the microtasks around a frontier large language model (LLM) planner: auto-approving shell commands, writing memory, selecting tools, ranking past turns. We ask whether off-the-shelf SLMs meet practitioner-defined thresholds and, when they fail, why, and whether quantization changes the answer. We build a benchmark of 4 such microtasks with fixed prompts and automatic metrics, each with a pre-specified threshold $\\tau$ anchored to a cheap non-LLM baseline and a CI-aware eligibility rule (a configuration passes only if its confidence bound clears $\\tau$). Sweeping Qwen3 0.6/1.7/4/8B at their best (FP16, greedy, one frozen prompt, no tuning), we find an eligibility gap: 0 of 16 (4 tasks $\\times$ 4 models) configurations pass (verified by checking the raw outputs and parser behavior). A logprob decision-threshold diagnostic (T1/T3/T4; T2 via a context-length/cascade probe) separates the failures into capability deficits and failures that can be addressed by changing the decoding threshold (4 regimes). Quantization to 4-bit (RTN/GPTQ/AWQ) does damage that depends on...",
-    "matched_keywords": [
-      "Agent",
-      "benchmark",
-      "quantization"
-    ],
-    "tags": [
-      "agent",
-      "open_source"
-    ],
-    "score": 53,
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
@@ -273,7 +159,7 @@
     ],
     "score": 53,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
@@ -296,8 +182,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -319,8 +205,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -343,8 +229,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -366,8 +252,8 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "today",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
@@ -393,78 +279,216 @@
     ],
     "score": 52,
     "first_seen_at": "2026-10-02T10:02:06.768771+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "backlog",
     "backlog_boost": 4
   },
   {
-    "title": "llama.cpp b11361：llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) (#29818)",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11361",
-    "source_name": "llama.cpp",
-    "source_type": "github_release",
-    "source_level": "official_confirmed",
-    "published_at": "2026-10-02T23:53:18+00:00",
-    "summary_or_excerpt": "llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) (#29818) * init conversion * convert: ok * model loaded * add server code * improve conversion script * support shared prompt prefix * add docs, imorove UX a bit * add vision support * add openjev tiny model for testing * add dev docs * support lev & kev * clean up * fix lev noul * fix py lint * nits docs * clarify about not supporting date_facts **Website:** - **Attestations:** - **macOS/iOS:** - [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-macos-arm64.tar.gz) - macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780) - [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-macos-x64.tar.gz) - [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-xcframework.zip) **Linux:** - [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-ubuntu-x64.tar.gz) - [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b11361/llama-b11361-bin-ubuntu-arm64...",
+    "title": "Match the Distribution, Not the Compute: Post-Training Multi-Token Prediction Heads",
+    "url": "https://arxiv.org/abs/2610.00888",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00888v1 Announce Type: new Abstract: Multi-token prediction (MTP) improves the throughput of autoregressive generation by enabling the language model to draft multiple next tokens per forward pass, while a verification step over draft tokens ensures that token distribution of the backbone is preserved. Every open MTP-family release (MiMo-7B, DeepSeek-V3, Qwen3) trains its heads jointly with the backbone over the full pretraining run of tens of trillions of tokens, thus setting the drafter quality at pretraining time. We ask whether a lightweight post-training pass on target-generated chain-of-thought is enough to reach the same expected throughput speedup on a frozen reasoning model, and study how a serving-time system built on such a checkpoint can be optimized. We present three findings. 1) On a frozen Qwen3-8B with $K{=}3$ chained MTP heads, we show that a post-training recipe with plain cross-entropy on $\\approx\\!2.5$B tokens reaches or exceeds the expected speedup of jointly trained MiMo-7B on math, coding and knowledge benchmarks. Our post-training recipe utilizes $10^3$-$10^4\\times$ less MTP-training tokens as compared with joint pre-training of MiMO-7B MTP basel...",
     "matched_keywords": [
-      "API",
-      "GitHub",
-      "Intel",
-      "Llama",
-      "llama.cpp"
+      "DeepSeek",
+      "release",
+      "serving"
     ],
     "tags": [
-      "business",
       "model",
-      "open_source",
-      "semiconductor"
+      "open_source"
     ],
-    "score": 41,
-    "release_version": "b11361",
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "score": 50,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Open-sourcing RightWayUp - a 360-degree image rotation model, and a JPEG shortcut we found in a common benchmark [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1wu6reb/opensourcing_rightwayup_a_360degree_image",
-    "source_name": "Reddit r/MachineLearning",
+    "title": "How Much Can Language Models Gain from Test-Time Computation?",
+    "url": "https://arxiv.org/abs/2610.01110",
+    "source_name": "arXiv cs.LG",
     "source_type": "rss",
-    "source_level": "tech_community",
-    "published_at": "2026-09-30T14:42:15+00:00",
-    "summary_or_excerpt": "We are open-sourcing RightWayUp - a new image rotation detection model. I work at ORTUS AI (we develop video analytics). We needed to tell from a single CCTV frame whether a camera had been rotated or installed at an angle (or upside-down), so we tried different models for that, without much luck (low accuracy, lots of false positives on regular camera-like frames). Some were not permissively licensed. Out of despair, we decided to train our own. We didn't expect it to come out this good. It is now called RightWayUp. It estimates how far an image is rotated from upright, all 360°, and abstains when there's no clear \"up\" (sky, ground, close-ups, etc.). We are releasing code and weights under Apache-2.0, in six sizes from Pico (small enough to run in a browser) to Max (ahead of the other models we tried on most of our tests). We tested it on many test images, including held-out ones (which the model never saw before). In tests with the held-out set, RightWayUp Max was within 10° on 93.0% of them vs 88.4% for Woehrer 2026 (one of the better other models we liked). In the Woehrer 2026 own COCO-based benchmark, it was 98.8% accurate within 10° (five-seed mean) vs Woehrer's 98.0%. It al...",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01110v1 Announce Type: new Abstract: How much can test-time computation improve a language model, and at what cost? Test-time scaling is widely proposed as a substitute for larger models, but existing comparisons mostly evaluate one domain at a time and rarely charge selection to the budget. We introduce SELF-POT, a benchmark and evaluation framework that measures the test-time potential of a model across competition mathematics, competitive programming, and agentic workflows. SELF-POT separates candidate coverage from final accuracy on static tasks, tracks correctness transitions under revision, and measures protocol completion alongside task success in agentic environments. Under a unified budget rule, it compares Direct inference with parallel sampling and self-revision under fixed multiples of the Direct budget, and charges every model call, including selection and critique, in dollars. This design supports two kinds of comparison: the gain a model obtains from additional inference, and a lower-cost model with additional inference against a stronger model. Across five low-cost reasoning models on 350 sealed tasks, with Claude Opus 5.5 Direct as the reference, the re...",
     "matched_keywords": [
+      "agentic",
       "benchmark",
-      "weights"
+      "Claude",
+      "inference"
+    ],
+    "tags": [
+      "agent",
+      "model",
+      "open_source"
+    ],
+    "score": 50,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Invent a Dataset: Measuring dataset generation abilities with zero seed",
+    "url": "https://arxiv.org/abs/2610.01674",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01674v1 Announce Type: new Abstract: Building datasets remains one of the most manual and brittle parts of AI development. In this technical report, we focus on the most extreme but also most prevalent setting real world practitioners face: a zero data regime. Here, practitioners don't have any data for the capability they want to learn. We introduce Invent-A-Dataset which is a prompt based system to go from dataset description to realistic and large scale post-training datasets. We evaluate Invent-A-Dataset against five frontier model APIs including Anthropic, Google, Open AI, DeepSeek, Zai. Across eight task types and dataset sizes up to 20K samples, Invent-A-Dataset significantly outperforms with both the highest quality (17% relative gains) while simultaneously producing the most diverse samples (19% relative gains). Its diversity advantage widens with scale of training dataset size (from parity at 200 samples to 37% relative gains at 20K samples). This translates into considerable downstream training gains, resulting in far more performant post-trained models. Invent-A-Dataset fine-tune consistently ranks higher compared to other generator fine-tunes across differe...",
+    "matched_keywords": [
+      "Anthropic",
+      "dataset",
+      "DeepSeek"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 46,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Have an LLM Write Your Anomaly Detector: Autonomous Discovery of Compact, Interpretable Detectors for Time Series",
+    "url": "https://arxiv.org/abs/2610.01223",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01223v1 Announce Type: new Abstract: Time-series anomaly detection trades off predictive accuracy, computational efficiency, and interpretability. We use a large language model not as the detector but as the author of one: an autonomous research loop in which the model repeatedly edits a single short NumPy program under a leakage-free objective, keeping the best-scoring detector it finds. The loop discovers two compact detectors, one for univariate and one for multivariate series, that describe short windows by their local spectral features and compare them with the training-region distribution through a covariance-aware distance. On the TSB-AD benchmark these detectors lead the field across metrics, ahead of the strongest classical, deep, and foundation-model baselines including Time-RCD, yet they train no network and use no GPU, and the multivariate detector is faster than every similarly performing baseline. LLM-driven program search is thus a practical route to accurate, efficient, and transparent detectors.",
+    "matched_keywords": [
+      "anomaly detection",
+      "benchmark",
+      "GPU"
+    ],
+    "tags": [
+      "embedded_edge_ai",
+      "open_source",
+      "semiconductor"
+    ],
+    "score": 43,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "Same Reward, Different Skills: When Multimodal RL Learns to Look",
+    "url": "https://arxiv.org/abs/2610.01908",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.01908v1 Announce Type: new Abstract: Reinforcement learning with verifiable rewards (RLVR) improves vision-language benchmark scores even without visual information during training. With images at test, blind-trained models recover roughly half of the real-image gain at 3B and nearly four fifths at 7B. Prolonged real-image training can erode grounding while benchmark gains persist. Both findings expose the same gap: an image in the prompt is not an image in the learning signal. Our design rule, visual resolvability, asks that visual evidence be necessary for a correct answer and that the task remain learnable. We test it on counterfactual coordinate scenes in which the question stays fixed and the target is never named, so a correct answer requires finding the target in the image. With standard GRPO and correctness-and-format rewards, a 7B model raises its accuracy at finding the target (discovery) from 0.425 to 0.875 on held-out scenes denser than any it trained on, and it improves on question types it never trained on. Two controls locate the source of the gain. Replacing test images with gray canvases drops discovery to zero; training on gray canvases instead, at mat...",
+    "matched_keywords": [
+      "benchmark"
     ],
     "tags": [
       "open_source"
     ],
-    "score": 38,
-    "first_seen_at": "2026-10-01T09:48:51.266739+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "backlog_source": "backlog",
+    "score": 42,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
     "backlog_boost": 4
   },
   {
-    "title": "Stateless GitHub App installation tokens rolled out",
-    "url": "https://github.blog/changelog/2026-10-02-stateless-github-app-installation-tokens-rolled-out",
-    "source_name": "GitHub Changelog",
+    "title": "VERITYGATE: A Four-Gate Schema-Level Faithfulness Framework and Paired Benchmark for Grounded LLM Narrations over Structured Evidence",
+    "url": "https://arxiv.org/abs/2610.00833",
+    "source_name": "arXiv cs.LG",
     "source_type": "rss",
-    "source_level": "official_confirmed",
-    "published_at": "2026-10-02T22:18:23+00:00",
-    "summary_or_excerpt": "The staged rollout of the stateless GitHub App installation token format, which began on April 27, 2026, is complete. By default, all newly minted GitHub App installation tokens will be… The post Stateless GitHub App installation tokens rolled out appeared first on The GitHub Blog .",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00833v1 Announce Type: cross Abstract: Fluent LLM explanations may not follow the evidence from a structured system. We present VERITYGATE, a four-gate checker for declared evidence IDs, entities, numbers, and claim types. It checks a fixed schema; it does not verify every fact in the prose. At r=0 and r=1, we test 900 instances per setting (450 grounded-ungrounded pairs) with GPT-4o-mini, Llama-3.3-70B, and Claude Sonnet 4.6. Under this schema-level contract and before repair, 80.3% of mini claims and 47.9% of Sonnet claims fail. These are verifier rejection rates, not prose-hallucination rates. One repair pass raises claim survival from 19.7% to 28.0% for mini and from 52.1% to 54.3% for Sonnet. Verified claims per example change by +0.14 for mini, -0.71 for Llama, and -0.47 for Sonnet, so survival and output volume must be reported together. A second Sonnet pass gives no clear gain. At r=1, Gate 4 covers 97.0%, 98.7%, and 100% of failing claims for mini, Llama, and Sonnet. Small human studies support the rules but show gaps between schema checks and correct prose. A domain-specific GPT-4o judge test shows an order effect, so it is only a usefulness check. We release...",
     "matched_keywords": [
-      "changelog",
-      "GitHub"
+      "benchmark",
+      "Claude",
+      "GPT",
+      "Llama",
+      "release"
+    ],
+    "tags": [
+      "model",
+      "open_source"
+    ],
+    "score": 42,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "T2SPO: Trajectory-to-Step Policy Optimization for Agentic Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2610.00388",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00388v1 Announce Type: new Abstract: Reinforcement learning enables large language model (LLM) agents to learn multi-step behaviors through interaction with their environments. However, rewards in many interactive tasks reflect only the final outcome, providing limited guidance on which intermediate decisions advance the task. Successful training trajectories contain intermediate states that can provide supervision for subsequent interactions. We introduce Trajectory-to-Step Policy Optimization (T2SPO), a method that uses past interaction trajectories to provide step-level feedback for policy learning. T2SPO derives remaining-distance targets from successful trajectories and pairs them with representations of the states visited along the way. Conditioned on these examples, a pretrained TabPFN regressor estimates the remaining distance to success at each state of a new rollout. Changes in this distance estimate across consecutive states yield auxiliary credit for agent steps alongside task-level supervision. As training proceeds, newly completed trajectories refresh the estimator's context, incorporating new experience without updating its parameters. Experiments with 1....",
+    "matched_keywords": [
+      "Agent",
+      "agentic",
+      "agents",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "MIKASA-Robo-VLA: Benchmarking Memory in VLA Models for Long-Horizon Manipulation",
+    "url": "https://arxiv.org/abs/2610.00604",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00604v1 Announce Type: new Abstract: Vision-language-action policies often see only one or a few recent frames, which makes it difficult to evaluate how they use information that disappears during a task. We introduce MIKASA-Robo-VLA, a benchmark of 90 language-conditioned manipulation tasks. All but 10 hide the cue an action depends on. Those 10 are reactive controls. MIKASA-Robo, the suite it rebuilds, has 32 tasks and uses language only in a representative VLA subset. Here every task provides an instruction, while memory-dependent tasks hide a task-relevant cue and reactive controls keep it available. For 70 tasks, environment phase timings specify an information gap, and for 28 of them the gap exceeds the 16-frame window of the widest fixed-context VLA we survey. The gap counts only the interval the cue is provably absent, not the full duration a policy must retain it, so every memory-dependent task still requires memory by construction, including the ones whose measured gap is short. We release 22,500 oracle trajectories across 10 memory types in RLDS and LeRobotDataset v3. A reference $\\pi_{0.5}$ baseline with current images and proprioception, but no observation...",
+    "matched_keywords": [
+      "benchmark",
+      "policy",
+      "release"
     ],
     "tags": [
       "business",
       "open_source"
     ],
-    "score": 37,
-    "first_seen_at": "2026-10-03T09:42:03.661057+08:00",
-    "last_seen_at": "2026-10-03T09:42:03.661057+08:00",
+    "score": 36,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "backlog_source": "today",
+    "backlog_boost": 4
+  },
+  {
+    "title": "SHARPO: Segment-Level Credit Assignment for Agentic Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2610.00838",
+    "source_name": "arXiv cs.LG",
+    "source_type": "rss",
+    "source_level": "early_signal",
+    "published_at": "2026-10-03T04:00:00+00:00",
+    "summary_or_excerpt": "arXiv:2610.00838v1 Announce Type: new Abstract: Agentic reinforcement learning (RL) trains a large language model (LLM) to act over long, multi-step interactions. However, a single localized error can cause task failure, while trajectory-level rewards provide limited guidance for assigning credit to individual decisions. To address this limitation, we introduce Segment-level Hindsight Advantage Reweighting for Policy Optimization (SHARPO), a credit-assignment mechanism that refines Group Relative Policy Optimization (GRPO) at the level of environment-facing segments. Inspired by the existing on-policy self-distillation (OPSD) method, SHARPO computes teacher-student log-probability gaps within each segment and uses the resulting signal to compute a bounded multiplier on the GRPO advantage. This multiplier is shared by all tokens within the segment, allowing credit to vary across different segments. With Qwen2.5-7B-Instruct, SHARPO outperforms existing baselines on the ALFWorld and WebShop benchmarks, including GRPO, SDAR, RLSD, and StepOPSD.",
+    "matched_keywords": [
+      "agentic",
+      "policy"
+    ],
+    "tags": [
+      "agent",
+      "business"
+    ],
+    "score": 36,
+    "first_seen_at": "2026-10-04T10:20:49.939388+08:00",
+    "last_seen_at": "2026-10-04T10:20:49.939388+08:00",
     "backlog_source": "today",
     "backlog_boost": 4
   }
